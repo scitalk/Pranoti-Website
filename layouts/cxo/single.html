@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="cxo-page">
+
+  <!-- HERO SECTION -->
+  <section class="cxo-hero">
+    <div class="cxo-hero-image">
+      <img src="{{ .Params.hero_image }}" alt="Pranoti Kshirsagar">
+    </div>
+    <div class="cxo-hero-content">
+      <h1 class="cxo-hero-title">{{ .Params.hero_title | safeHTML }}</h1>
+      <p class="cxo-hero-tagline">{{ .Params.hero_tagline }}</p>
+      <a href="{{ .Params.cta_link }}" class="cxo-btn">{{ .Params.cta_text }} <span>→</span></a>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS SECTION -->
+  <section class="cxo-pain">
+    <div class="cxo-pain-container">
+      <h2 class="cxo-pain-heading">{{ .Params.pain_heading | safeHTML }}</h2>
+      <p class="cxo-pain-subhead">{{ .Params.pain_subhead }}</p>
+      <div class="cxo-pain-cards">
+        {{ range .Params.pain_points }}
+        <div class="cxo-pain-card">
+          <p>{{ . }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY SECTION -->
+  <section class="cxo-story" style="background-image: url('{{ .Params.story_image }}');">
+    <div class="cxo-story-box">
+      <h2>{{ .Params.story_heading | safeHTML }}</h2>
+      {{ .Params.story_content | safeHTML }}
+      <a href="{{ .Params.cta_link }}" class="cxo-btn">{{ .Params.cta_text }} <span>→</span></a>
+    </div>
+  </section>
+
+</div>
+{{ end }}

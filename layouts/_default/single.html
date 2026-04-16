@@ -1,0 +1,108 @@
+{{ define "main" }}
+<article class="container">
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.description }}
+        <p class="description">{{ . }}</p>
+        {{ end }}
+    </header>
+    
+    <div class="content">
+        {{ .Content }}
+    </div>
+</article>
+
+<style>
+.page-header {
+    padding: 5rem 0 2rem; /* Added extra top padding for fixed header */
+}
+
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: #1c1c1c;
+    margin-bottom: 1.5rem;
+}
+
+.page-header .description {
+    font-size: 1.125rem;
+    color: #6f6f6f;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2.5rem 4rem;
+}
+
+.content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.875rem;
+}
+
+.content p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.content a {
+    color: #c76a5a;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+/* Remove horizontal lines */
+.content hr {
+    display: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 4rem 0 1.5rem; /* Adjusted for mobile fixed header */
+    }
+    
+    .content {
+        padding: 0 1.5rem 3rem;
+    }
+    
+    .page-header h1 {
+        font-size: 1.875rem;
+    }
+    
+    .content h1 {
+        font-size: 1.625rem;
+    }
+    
+    .content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .content h3 {
+        font-size: 1.375rem;
+    }
+}
+</style>
+{{ end }}

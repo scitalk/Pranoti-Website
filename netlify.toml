@@ -1,0 +1,12 @@
+[build]
+  command = "hugo --environment production"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.139.0"
+  HUGO_ENV = "production"
+
+[[redirects]]
+  from = "/"
+  to = "/portfolio/"
+  status = 301

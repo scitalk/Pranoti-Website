@@ -1,0 +1,140 @@
+{{ define "main" }}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<article class="pf-single pf-single-video">
+
+  <header class="pf-hero">
+    <div class="container narrow">
+      <p class="pf-hero-title">Portfolio</p>
+      <p class="pf-hero-sub">Science communication, training, and media — delivered across Europe.</p>
+    </div>
+  </header>
+
+  <div class="pf-top-bar">
+    <div class="container narrow">
+      <a href="/portfolio/#video" class="pf-back">← Portfolio</a>
+      <div class="pf-single-meta">
+        <span class="pf-cat-tag pf-cat-video">Video</span>
+        {{ with .Params.tags }}{{ range . }}<span class="pf-tag">{{ . }}</span>{{ end }}{{ end }}
+        <time>{{ .Date.Format "02.01.2006" }}</time>
+      </div>
+    </div>
+  </div>
+
+  <div class="pf-title-block">
+    <div class="container narrow">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.client }}<p class="pf-single-client">{{ . }}{{ with $.Params.affiliation }} · {{ . }}{{ end }}</p>{{ end }}
+    </div>
+  </div>
+
+  {{ with .Params.youtube_urls }}
+  <div class="pf-embed-wrap">
+    <div class="container narrow">
+      <div class="pf-embed-row{{ if gt (len .) 1 }} pf-embed-multi{{ end }}">
+        {{ range . }}
+        <div class="pf-embed-16-9">
+          <iframe src="https://www.youtube.com/embed/{{ index (split . "/") (sub (len (split . "/")) 1) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  {{ else }}{{ with .Params.youtube_url }}
+  <div class="pf-embed-wrap">
+    <div class="container narrow">
+      <div class="pf-embed-16-9">
+        <iframe src="https://www.youtube.com/embed/{{ index (split . "/") (sub (len (split . "/")) 1) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+  {{ end }}{{ end }}
+
+  <div class="pf-info-card-wrap">
+    <div class="container narrow">
+      <div class="pf-info-card">
+        {{ with .Params.client }}
+        <div class="pf-info-row"><p class="pf-info-label">Client</p><p class="pf-info-value">{{ . }}</p></div>
+        {{ end }}
+        {{ with .Params.job_title }}
+        <div class="pf-info-row"><p class="pf-info-label">Role</p><p class="pf-info-value">{{ . }}</p></div>
+        {{ end }}
+        {{ with .Params.affiliation }}
+        <div class="pf-info-row"><p class="pf-info-label">Affiliation</p><p class="pf-info-value">{{ . }}</p></div>
+        {{ end }}
+        {{ with .Params.location }}
+        <div class="pf-info-row"><p class="pf-info-label">Location</p><p class="pf-info-value">{{ . }}</p></div>
+        {{ end }}
+        <div class="pf-info-row"><p class="pf-info-label">Date</p><p class="pf-info-value">{{ .Date.Format "02.01.2006" }}</p></div>
+      </div>
+      {{ with .Params.episode_url }}
+      <a href="{{ . }}" class="pf-details-btn">Read more details →</a>
+      {{ end }}
+    </div>
+  </div>
+
+  {{ if .Content }}
+  <div class="pf-content"><div class="container narrow">{{ .Content }}</div></div>
+  {{ end }}
+
+  <div class="pf-single-footer">
+    <div class="container narrow">
+      <a href="/portfolio/#video" class="pf-back">← Back to portfolio</a>
+      <a href="https://thesciencetalk.com/contact-us/" class="pf-cta-link">Work with me →</a>
+    </div>
+  </div>
+
+</article>
+
+{{- $vSchema := dict "@context" "https://schema.org" "@type" "VideoObject" "name" .Title "description" (or .Params.description .Site.Params.description) "uploadDate" (.Date.Format "2006-01-02") "url" .Permalink -}}
+{{- $yturl := .Params.youtube_url -}}
+{{- if and (not $yturl) .Params.youtube_urls -}}{{- $yturl = index .Params.youtube_urls 0 -}}{{- end -}}
+{{- with $yturl -}}{{- $vSchema = merge $vSchema (dict "embedUrl" (printf "https://www.youtube.com/embed/%s" (index (split . "/") (sub (len (split . "/")) 1)))) -}}{{- end -}}
+{{- with .Params.thumbnail -}}{{- $vSchema = merge $vSchema (dict "thumbnailUrl" .) -}}{{- end -}}
+<script type="application/ld+json">{{ $vSchema | jsonify | safeJS }}</script>
+
+<style>
+.pf-hero{background:var(--ink);color:#fff;padding:5rem 2rem 3.5rem;text-align:center}
+.pf-hero h1,.pf-hero .pf-hero-title{font-family:'Montserrat',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:600;color:#fff;margin-bottom:.75rem}
+.pf-hero-sub{font-size:1rem;color:rgba(255,255,255,.6);margin:0;letter-spacing:.03em}
+.pf-top-bar { padding: 1.5rem 2rem 0; }
+.pf-top-bar .container { display: flex; justify-content: space-between; align-items: center; }
+.pf-single-meta { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.pf-tag { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(0,0,0,0.06); color: var(--ink-soft); padding: 0.2rem 0.55rem; border-radius: 3px; }
+.pf-single-meta time { font-size: 0.75rem; color: var(--ink-soft); }
+.pf-cat-tag { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 3px; }
+.pf-cat-tag.pf-cat-video { background: #1a2b4a; color: #fff; }
+.pf-title-block { padding: 1rem 2rem 0; }
+.pf-title-block h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 500; color: var(--ink); line-height: 1.2; margin-bottom: 0.4rem; }
+.pf-single-client { font-size: 0.9rem; color: var(--accent); font-weight: 500; margin: 0 0 1rem; }
+.pf-embed-wrap { padding: 1.5rem 2rem 0; }
+.pf-embed-row { display: flex; flex-direction: column; gap: 1.5rem; }
+.pf-embed-multi { flex-direction: row; gap: 1.5rem; }
+.pf-embed-multi .pf-embed-16-9 { flex: 1; min-width: 0; }
+.pf-embed-16-9 { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; }
+.pf-embed-16-9 iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.pf-info-card-wrap{padding:2rem 2rem 0}
+.pf-details-btn{display:inline-block;margin-top:1.25rem;font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:600;color:#1a2b4a;text-decoration:none;border:1.5px solid #1a2b4a;padding:.5rem 1.2rem;border-radius:6px;transition:all .2s}
+.pf-details-btn:hover{background:#1a2b4a;color:#fff}
+.pf-info-card{background:#f5f2ed;border-radius:8px;padding:2rem}
+.pf-info-row{display:flex;align-items:baseline;gap:.5rem;margin-bottom:1rem}
+.pf-info-row:last-child{margin-bottom:0}
+.pf-info-label{font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.05em;color:var(--ink);margin:0;white-space:nowrap;flex-shrink:0}
+.pf-info-value{font-family:'Montserrat',sans-serif;font-size:.95rem;color:var(--ink-soft);margin:0}
+.pf-content { padding: 2rem 2rem 0; }
+.pf-content p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-soft); margin-bottom: 1.5rem; }
+.pf-content blockquote { border-left: 3px solid var(--accent); padding-left: 1.25rem; margin: 2rem 0; font-style: italic; color: var(--ink-soft); }
+.pf-single-footer { padding: 2rem 2rem 0; border-top: 1px solid rgba(0,0,0,0.08); margin-top: 3rem; }
+.pf-single-footer .container { display: flex; justify-content: space-between; align-items: center; }
+.pf-back { font-size: 0.85rem; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+.pf-back:hover { color: var(--accent); }
+.pf-cta-link { font-size: 0.85rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+.pf-cta-link:hover { text-decoration: underline; }
+@media (max-width: 768px) {
+  .pf-top-bar .container { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .pf-title-block, .pf-content, .pf-embed-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .pf-single-footer .container { flex-direction: column; gap: 1rem; text-align: center; }
+  .pf-embed-multi { flex-direction: column; }
+}
+</style>
+{{ end }}

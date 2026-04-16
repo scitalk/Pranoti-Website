@@ -1,0 +1,156 @@
+{{ define "main" }}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<section class="pf-page">
+
+  <header class="pf-hero">
+    <div class="container narrow">
+      <p class="pf-owner-name">PRANOTI KSHIRSAGAR</p>
+      <h1>Portfolio</h1>
+      <p class="pf-hero-sub">Science communication, training, and media — delivered across Europe.</p>
+    </div>
+  </header>
+
+  {{ $portfolioPages := where .Site.RegularPages "Section" "portfolio" }}
+  {{ $total := len $portfolioPages }}
+  {{ $counts := dict }}
+  {{ range $portfolioPages }}
+    {{ $cat := .Params.category | default "other" }}
+    {{ $n := index $counts $cat | default 0 }}
+    {{ $counts = merge $counts (dict $cat (add $n 1)) }}
+  {{ end }}
+
+  <div class="pf-tabs-wrap">
+    <div class="container">
+      <div class="pf-tabs" role="tablist">
+        <button class="pf-tab active" data-filter="all" role="tab">All ({{ $total }})</button>
+        <button class="pf-tab" data-filter="podcast" role="tab">Podcast ({{ index $counts "podcast" | default 0 }})</button>
+        <button class="pf-tab" data-filter="video" role="tab">Video ({{ index $counts "video" | default 0 }})</button>
+        <button class="pf-tab" data-filter="shorts" role="tab">Shorts ({{ index $counts "shorts" | default 0 }})</button>
+        <button class="pf-tab" data-filter="trainings" role="tab">Trainings ({{ index $counts "trainings" | default 0 }})</button>
+        <button class="pf-tab" data-filter="proposal" role="tab">Proposals ({{ index $counts "proposal" | default 0 }})</button>
+        <button class="pf-tab" data-filter="scicommai" role="tab">SciComm + AI ({{ index $counts "scicommai" | default 0 }})</button>
+        <button class="pf-tab" data-filter="events" role="tab">Events ({{ index $counts "events" | default 0 }})</button>
+        <button class="pf-tab" data-filter="reports" role="tab">Engagement Reports ({{ index $counts "reports" | default 0 }})</button>
+        <button class="pf-tab" data-filter="ai-automation-integration" role="tab">AI Integration &amp; Automation ({{ index $counts "ai-automation-integration" | default 0 }})</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pf-grid-wrap">
+    <div class="pf-grid">
+      {{ range .Site.RegularPages }}
+      {{ if eq .Section "portfolio" }}
+      {{ $cat := .Params.category | default "other" }}
+      <article class="pf-card" data-category="{{ $cat }}">
+        <a href="{{ .Permalink }}" class="pf-card-link">
+          {{ if and (not (in (slice "podcast" "reports") $cat)) .Params.thumbnail }}
+          <div class="pf-card-img"><img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" loading="lazy"></div>
+          {{ else }}
+          <div class="pf-card-img pf-card-placeholder pf-cat-{{ $cat }}">
+            {{ if or (eq $cat "video") (eq $cat "podcast") (eq $cat "scicommai") (eq $cat "events") (eq $cat "reports") }}<span class="pf-placeholder-title">{{ .Title }}</span>{{ else }}<span>{{ .Params.display_category | default ($cat | title) }}</span>{{ end }}
+          </div>
+          {{ end }}
+          <div class="pf-card-body">
+            <div class="pf-card-meta">
+              <span class="pf-cat-tag pf-cat-{{ $cat }}">{{ .Params.display_category | default ($cat | title) }}</span>
+              <time>{{ .Date.Format "02.01.2006" }}</time>
+            </div>
+            {{ if or (eq $cat "video") (eq $cat "podcast") (eq $cat "scicommai") (eq $cat "events") (eq $cat "reports") }}
+            {{ with .Params.tags }}<div class="pf-keywords">{{ range . }}<span class="pf-keyword pf-keyword-{{ $cat }}">{{ . }}</span>{{ end }}</div>{{ end }}
+            {{ else }}
+            <h2>{{ .Title }}</h2>
+            {{ end }}
+            {{ with .Params.client }}<p class="pf-client">{{ . }}{{ with $.Params.affiliation }} · {{ . }}{{ end }}</p>{{ end }}
+          </div>
+        </a>
+      </article>
+      {{ end }}
+      {{ end }}
+    </div>
+    <p class="pf-empty" style="display:none;">No items in this category yet.</p>
+  </div>
+
+</section>
+
+<style>
+.pf-hero{background:var(--ink);color:#fff;padding:5rem 2rem 3.5rem;text-align:center}
+.pf-owner-name{font-family:'Montserrat',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:0 0 1rem}
+.pf-hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:600;color:#fff;margin-bottom:.75rem}
+.pf-hero-sub{font-size:1rem;color:rgba(255,255,255,.6);margin:0;letter-spacing:.03em}
+.pf-tabs-wrap{background:var(--white);border-bottom:1px solid rgba(0,0,0,.08);position:sticky;top:0;z-index:50}
+.pf-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;padding:1rem 0}
+.pf-tab{padding:.55rem 1.4rem;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:.03em;border:1.5px solid rgba(0,0,0,.15);background:transparent;color:var(--ink);cursor:pointer;transition:all .2s;white-space:nowrap;text-decoration:none}
+.pf-tab:hover{border-color:var(--accent);color:var(--accent)}
+.pf-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.pf-grid-wrap{padding:3rem 2rem 5rem}
+.pf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.pf-grid--4{grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.pf-grid--4 .pf-placeholder-title{font-size:clamp(0.85rem,1.8vw,1.2rem);font-weight:600}
+.pf-grid--4 .pf-card-body{padding:1rem}
+.pf-grid--4 .pf-card-meta{margin-bottom:.5rem}
+.pf-empty{text-align:center;padding:4rem 0;color:var(--ink-soft);font-size:1rem}
+.pf-card{background:var(--white);border-radius:10px;border:1px solid rgba(0,0,0,.07);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.pf-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.pf-card-link{display:block;text-decoration:none;color:var(--ink)}
+.pf-card-img{aspect-ratio:16/9;overflow:hidden;background:#f0ede8}
+.pf-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.pf-card:hover .pf-card-img img{transform:scale(1.03)}
+.pf-card-placeholder{display:flex;align-items:center;justify-content:center;padding:1.5rem}
+.pf-card-placeholder span{font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;opacity:.8}
+.pf-placeholder-title{font-family:'Montserrat',sans-serif;font-size:clamp(1.3rem,4vw,2rem);font-weight:600;line-height:1.35;color:#fff;text-align:center;width:100%;opacity:1;letter-spacing:0;text-transform:none}
+.pf-keywords{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.4rem}
+.pf-keyword{font-size:.65rem;font-weight:500;letter-spacing:.04em;background:rgba(26,43,74,.08);color:#1a2b4a;padding:.2rem .55rem;border-radius:3px}
+.pf-keyword-podcast{background:rgba(74,124,126,.1);color:#4a7c7e}
+.pf-keyword-scicommai{background:rgba(93,78,138,.1);color:#5d4e8a}
+.pf-keyword-events{background:rgba(168,101,42,.1);color:#a8652a}
+.pf-keyword-reports{background:rgba(46,107,94,.1);color:#2e6b5e}
+.pf-cat-video{background:#1a2b4a;color:#fff}
+.pf-cat-shorts{background:#c76a5a;color:#fff}
+.pf-cat-trainings{background:#e8a598;color:var(--ink)}
+.pf-cat-proposal{background:#8ba89e;color:#fff}
+.pf-cat-podcast{background:#4a7c7e;color:#fff}
+.pf-cat-scicommai{background:#5d4e8a;color:#fff}
+.pf-cat-events{background:#a8652a;color:#fff}
+.pf-cat-reports{background:#2e6b5e;color:#fff}
+.pf-cat-ai-automation-integration{background:#1A3828;color:#fff}
+.pf-keyword-ai-automation-integration{background:rgba(26,56,40,.1);color:#1A3828}
+.pf-cat-tag{font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:3px}
+.pf-card-body{padding:1.5rem}
+.pf-card-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.pf-card-meta time{font-size:.75rem;color:var(--ink-soft)}
+.pf-card-body h2{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:500;line-height:1.3;margin-bottom:.4rem;color:var(--ink)}
+.pf-client{font-size:.8rem;color:var(--accent);font-weight:500;margin:0}
+@media(max-width:900px){
+  .pf-grid--4{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .pf-grid,.pf-grid--4{grid-template-columns:1fr}
+  .pf-grid-wrap{padding:2rem 1rem 4rem}
+  .pf-tabs{gap:.4rem}
+  .pf-tab{font-size:.75rem;padding:.45rem 1rem}
+}
+</style>
+
+<script>
+(function(){
+  const tabs=document.querySelectorAll('.pf-tab[data-filter]');
+  const cards=document.querySelectorAll('.pf-card');
+  const empty=document.querySelector('.pf-empty');
+  const grid=document.querySelector('.pf-grid');
+  const fourColCats=['video','podcast','scicommai'];
+  function filter(cat){
+    let v=0;
+    cards.forEach(c=>{const s=cat==='all'||c.dataset.category===cat;c.style.display=s?'':'none';if(s)v++;});
+    empty.style.display=v===0?'':'none';
+    tabs.forEach(t=>t.classList.toggle('active',t.dataset.filter===cat));
+    grid.classList.toggle('pf-grid--4',fourColCats.includes(cat));
+    history.replaceState(null,'',cat==='all'?'/portfolio/':'#'+cat);
+  }
+  tabs.forEach(t=>t.addEventListener('click',()=>filter(t.dataset.filter)));
+  const hash=location.hash.replace('#','');
+  if(hash&&['podcast','video','shorts','trainings','proposal','scicommai','events','reports','ai-automation-integration'].includes(hash))filter(hash);
+})();
+</script>
+
+{{ end }}

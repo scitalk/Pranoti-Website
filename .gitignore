@@ -1,0 +1,8 @@
+public/
+.DS_Store
+.netlify/
+.hugo_build.lock
+.trash/
+.claude/
+resources/_gen/
+themes/

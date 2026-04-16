@@ -1,0 +1,385 @@
+/* =========================================================
+   case-study.css
+   Standalone stylesheet — loaded ONLY by layouts/case-studies/baseof.html
+   Never loaded alongside main.css, so no specificity conflicts.
+   ========================================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #F8F4ED;
+  color: #1a1a1a;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 24px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* PAGE WRAPPER */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #F8F4ED;
+  border: 0.5px solid #E0DDD8;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ─── HEADER ─────────────────────────────────────────── */
+.cs-header {
+  padding: 32px 40px;
+  border-bottom: 2px solid #2A6048;
+  background: #F8F4ED;
+  position: relative;
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cs-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2A6048, #7BBDA0);
+}
+.header-left  { flex: 1.3; }
+.header-right { flex: 1; min-width: 320px; }
+
+.cs-tag {
+  display: inline-block;
+  background: #E6F4ED;
+  color: #2A6048;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Explicit font-family on heading to prevent any bleed from external fonts */
+.cs-title {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  color: #0f0f0f;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  max-width: 680px;
+}
+.cs-subtitle {
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #666;
+  margin-bottom: 24px;
+  max-width: 620px;
+  line-height: 1.5;
+}
+
+/* ─── METRICS ────────────────────────────────────────── */
+.metrics-wrap {
+  padding: 24px 40px 16px;
+}
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.metric {
+  background: #E6F4ED;
+  border-radius: 10px;
+  padding: 12px 16px;
+  text-align: center;
+}
+.metric-num {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: #2A6048;
+  line-height: 1.1;
+}
+.metric-lbl {
+  font-size: 11px;
+  color: #1E4D34;
+  margin-top: 3px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ─── LAYOUT ROWS ────────────────────────────────────── */
+.layout-row-2col {
+  display: grid;
+  gap: 20px;
+  padding: 0 40px 20px;
+  align-items: stretch;
+}
+.layout-row-1col {
+  padding: 0 40px 20px;
+}
+.layout-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.stretch-card {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── SECTION & CARD LABELS ──────────────────────────── */
+.sec-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0;
+  font-family: 'DM Mono', monospace;
+}
+.card-lbl {
+  font-size: 10px;
+  font-weight: 500;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ─── CARDS ──────────────────────────────────────────── */
+.card {
+  background: #ffffff;
+  border: 0.5px solid #E0DDD8;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 0;
+}
+/* Explicit hover — prevents main.css .card:hover bleed on shared pages */
+.card:hover {
+  background: #ffffff;
+  border-color: #E0DDD8;
+}
+.card p {
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+}
+.card strong { color: #1a1a1a; font-weight: 500; }
+
+/* ─── WORKFLOW ───────────────────────────────────────── */
+.wf-row {
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+  margin-bottom: 7px;
+}
+.wf-row:last-child { margin-bottom: 0; }
+.wf-row-label {
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 54px;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+.wf-row-label.before { color: #D85A30; }
+.wf-row-label.after  { color: #2A6048; }
+.wf-steps { display: flex; flex: 1; align-items: center; gap: 4px; }
+.wf-step {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 7px;
+  text-align: center;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.35;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.wf-num {
+  font-size: 9px;
+  font-weight: 500;
+  margin-bottom: 3px;
+  font-family: 'DM Mono', monospace;
+}
+.wf-bad          { background: #FAECE7; color: #993C1D; }
+.wf-bad .wf-num  { color: #D85A30; }
+.wf-good         { background: #E6F4ED; color: #1E4D34; }
+.wf-good .wf-num { color: #2A6048; }
+.wf-arrow        { color: #ccc; font-size: 12px; flex-shrink: 0; display: flex; align-items: center; }
+
+/* ─── MISCONCEPTION ──────────────────────────────────── */
+.misconception {
+  background: #FFFBF0;
+  border: 0.5px solid #FAC775;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 0;
+}
+.misconception .card-lbl { color: #854F0B; }
+.misconception p  { font-size: 13px; font-family: 'Inter', sans-serif; color: #633806; line-height: 1.6; margin: 0; }
+.misconception strong { color: #412402; font-weight: 500; }
+
+/* ─── BLOCKER PAIRS ──────────────────────────────────── */
+.pair-headers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+.pair-hdr {
+  font-size: 10px;
+  font-weight: 500;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-left: 12px;
+  font-family: 'DM Mono', monospace;
+}
+.blocker-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.blocker-pair:last-child { margin-bottom: 0; }
+.blocker {
+  background: #FAECE7;
+  border-left: 3px solid #D85A30;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 14px;
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+}
+.blocker-x { color: #993C1D; font-size: 12px; font-weight: 500; flex-shrink: 0; margin-top: 1px; }
+.blocker p { font-size: 12px; font-family: 'Inter', sans-serif; color: #993C1D; line-height: 1.5; margin: 0; }
+.blocker strong { color: #712B13; font-weight: 500; }
+.fix {
+  background: #E6F4ED;
+  border-left: 3px solid #3B8067;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 14px;
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  height: 100%;
+}
+.fix-chk { color: #2A6048; font-size: 12px; font-weight: 500; flex-shrink: 0; margin-top: 1px; }
+.fix p { font-size: 12px; font-family: 'Inter', sans-serif; color: #1E4D34; line-height: 1.5; margin: 0; }
+.fix strong { color: #1A3828; font-weight: 500; }
+
+/* ─── OUTCOMES ───────────────────────────────────────── */
+.outcomes-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+.outcome {
+  background: #E6F4ED;
+  border-left: 3px solid #3B8067;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 14px;
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+.outcome-chk { color: #2A6048; font-size: 12px; font-weight: 500; flex-shrink: 0; margin-top: 1px; }
+.outcome p { font-size: 12px; font-family: 'Inter', sans-serif; color: #1E4D34; line-height: 1.5; margin: 0; }
+
+/* ─── ARCHITECTURE CARD (in header) ─────────────────── */
+.arch-card {
+  background: #1B4332;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 6px;
+}
+.arch-card .card-lbl { color: #7BBDA0; margin-bottom: 12px; }
+.arch-step {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.arch-step:last-child { margin-bottom: 0; }
+.arch-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #7BBDA0;
+  color: #1A3828;
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'DM Mono', monospace;
+}
+.arch-step p { font-size: 12px; font-family: 'Inter', sans-serif; color: #7BBDA0; line-height: 1.4; margin: 0; }
+.arch-step strong { color: #E6F4ED; font-weight: 500; }
+
+/* ─── TECH STACK BADGES ──────────────────────────────── */
+.badges-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge { font-size: 11px; font-weight: 500; font-family: 'Inter', sans-serif; padding: 4px 10px; border-radius: 5px; }
+.b-purple { background: #E6F4ED; color: #2A6048; border: 0.5px solid #7BBDA0; }
+.b-gray   { background: #F1EFE8; color: #5F5E5A; border: 0.5px solid #D3D1C7; }
+.b-warn   { background: #FFFBF0; color: #854F0B; border: 0.5px solid #FAC775; }
+
+/* ─── INSIGHT / REFLECTION ───────────────────────────── */
+.insight {
+  background: #F4F4F1;
+  border: 0.5px solid #D3D1C7;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-top: 6px;
+}
+.insight .card-lbl { color: #777; }
+.insight p { font-size: 13px; font-family: 'Inter', sans-serif; color: #444; line-height: 1.6; margin: 0; }
+
+/* ─── CTA BANNER & FOOTER ────────────────────────────── */
+.cta-footer-wrap { padding: 0 40px 16px; }
+.cta-banner {
+  background: #2A6048;
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.cta-banner p { font-size: 13px; font-family: 'Inter', sans-serif; color: #E6F4ED; line-height: 1.5; margin: 0; }
+.cta-banner a {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: #E6F4ED;
+  border: 1px solid #7BBDA0;
+  border-radius: 7px;
+  padding: 7px 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.cta-banner a:hover {
+  background: rgba(123, 189, 160, 0.15);
+}
+.cs-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F8F4ED;
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  color: #999;
+  padding: 8px 0;
+}
+.cs-footer a { color: #2A6048; font-weight: 500; text-decoration: none; padding-left: 4px; }
