@@ -1,0 +1,195 @@
+{{ define "main" }}
+<div class="courses-page">
+
+<!-- Hero -->
+<section class="courses-hero">
+  <h1>Courses & Trainings</h1>
+  <p>Build the skills to thrive as a scientist in the modern research landscape</p>
+</section>
+
+<!-- Course Cards -->
+<section class="courses-grid-section">
+  <div class="courses-grid">
+
+    <!-- CXO Mindset -->
+    <a href="/courses/cxo-mindset/" class="course-card course-card--cxo">
+      <span class="course-tag">Leadership</span>
+      <h2>CXO Mindset for Research Leaders</h2>
+      <p>Build systems to run your research group strategically. Lead with clarity and confidence using a calm, intentional approach to research leadership.</p>
+      <span class="course-cta">Learn more →</span>
+    </a>
+
+    <!-- Personal Branding -->
+    <a href="/courses/personal-branding/" class="course-card course-card--pb">
+      <span class="course-tag">Workshop</span>
+      <h2>Personal Branding for Scientists in the Age of AI</h2>
+      <p>A 2-hour interactive workshop to build your strategic digital presence. Proven frameworks, AI-powered workflows, and immediate implementation.</p>
+      <div class="course-meta">
+        <span>2 hours</span>
+        <span>249 EUR</span>
+      </div>
+      <span class="course-cta">Register now →</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- Bottom CTA -->
+<section class="courses-cta">
+  <h2>Looking for custom training for your institution?</h2>
+  <p>All courses can be tailored for research groups, departments, and organisations.</p>
+  <a href="mailto:trainings@thesciencetalk.com" class="courses-btn">Get in touch →</a>
+</section>
+
+</div>
+
+<style>
+.courses-page { --courses-coral: #c76a5a; --courses-navy: #1a2b4a; }
+
+.courses-hero {
+  background: var(--courses-navy);
+  color: #fff;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+.courses-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.courses-hero p {
+  font-size: 1.15rem;
+  opacity: 0.85;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.courses-grid-section {
+  background: var(--paper);
+  padding: 4rem 2rem;
+}
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  border-color: var(--courses-coral);
+}
+
+.course-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--courses-coral);
+  background: rgba(199, 106, 90, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
+
+.course-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+.course-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.course-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.course-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.course-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--courses-coral);
+  margin-top: auto;
+}
+
+.course-card--cxo { border-top: 4px solid #d4b8e8; }
+.course-card--pb { border-top: 4px solid var(--courses-coral); }
+
+.courses-cta {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.courses-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+.courses-cta p {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.5rem;
+}
+.courses-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 2px solid var(--courses-coral);
+  color: var(--courses-coral);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.courses-btn:hover {
+  background: var(--courses-coral);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .courses-hero { padding: 5rem 1.5rem 3rem; }
+  .courses-grid-section { padding: 3rem 1.5rem; }
+  .courses-grid { grid-template-columns: 1fr; }
+  .course-card { padding: 2rem; }
+}
+</style>
+{{ end }}

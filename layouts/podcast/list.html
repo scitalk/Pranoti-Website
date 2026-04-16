@@ -1,0 +1,79 @@
+{{ define "main" }}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<section class="podcast-list-page">
+
+  <header class="podcast-hero">
+    <div class="container narrow">
+      <p class="podcast-label">Under the Microscope</p>
+      <h1>233 conversations with scientists shaping the future of materials and nanoscience.</h1>
+      <p class="podcast-hero-sub">Hosted by Dr. Pranoti Kshirsagar · Materials Science · Nanotechnology · Quantum Research</p>
+      <div class="podcast-listen-strip">
+        <span>Listen on</span>
+        <a href="https://open.spotify.com/show/0joF8aDQP7VavEgsRdnCIA" target="_blank" rel="noopener" class="listen-btn listen-spotify">Spotify</a>
+        <a href="https://www.youtube.com/@TheScienceTalk" target="_blank" rel="noopener" class="listen-btn listen-youtube">YouTube</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container podcast-grid-wrap">
+    <div class="podcast-grid">
+      {{ range .Pages }}
+      <article class="ep-card">
+        <a href="{{ .Permalink }}" class="ep-card-link">
+          <div class="ep-card-meta">
+            {{ with .Params.episode_number }}<span class="ep-num">Ep. {{ . }}</span>{{ end }}
+            <time>{{ .Date.Format "Jan 2006" }}</time>
+          </div>
+          <h2>{{ .Title }}</h2>
+          {{ with .Params.guest_name }}<p class="ep-guest">{{ . }}</p>{{ end }}
+          <p class="ep-excerpt">{{ .Summary | truncate 120 }}</p>
+          <div class="ep-card-footer">
+            {{ with .Params.topics }}
+            <div class="ep-topics">{{ range . }}<span class="ep-tag">{{ . }}</span>{{ end }}</div>
+            {{ end }}
+            <span class="ep-read">Read more →</span>
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+
+</section>
+
+<style>
+.podcast-hero { background: var(--ink); color: var(--white); padding: 5rem 2rem 4rem; text-align: center; }
+.podcast-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+.podcast-hero h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; color: var(--white); line-height: 1.2; max-width: 700px; margin: 0 auto 1.5rem; }
+.podcast-hero-sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; letter-spacing: 0.05em; }
+.podcast-listen-strip { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+.podcast-listen-strip span { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+.listen-btn { padding: 0.55rem 1.4rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+.listen-btn:hover { opacity: 0.85; }
+.listen-spotify { background: #1DB954; color: #fff; }
+.listen-youtube { background: #FF0000; color: #fff; }
+
+.podcast-grid-wrap { padding: 4rem 2rem; }
+.podcast-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+
+.ep-card { background: var(--white); border-radius: 8px; border: 1px solid rgba(0,0,0,0.07); transition: transform 0.25s, box-shadow 0.25s; }
+.ep-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+.ep-card-link { display: flex; flex-direction: column; height: 100%; padding: 1.75rem; text-decoration: none; color: var(--ink); }
+.ep-card-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem; }
+.ep-num { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--accent); color: #fff; padding: 0.2rem 0.6rem; border-radius: 3px; }
+.ep-card-meta time { font-size: 0.75rem; color: var(--ink-soft); }
+.ep-card h2 { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 500; line-height: 1.3; margin-bottom: 0.5rem; color: var(--ink); letter-spacing: -0.01em; }
+.ep-guest { font-size: 0.8rem; color: var(--accent); font-weight: 500; margin-bottom: 0.75rem; }
+.ep-excerpt { font-size: 0.875rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 1.25rem; flex: 1; }
+.ep-card-footer { display: flex; justify-content: space-between; align-items: flex-end; }
+.ep-topics { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.ep-tag { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; background: var(--paper); color: var(--ink-soft); padding: 0.2rem 0.55rem; border-radius: 3px; border: 1px solid rgba(0,0,0,0.08); }
+.ep-read { font-size: 0.75rem; font-weight: 600; color: var(--accent); white-space: nowrap; margin-left: 0.5rem; }
+
+@media (max-width: 768px) {
+  .podcast-hero { padding: 4rem 1.5rem 3rem; }
+  .podcast-grid { grid-template-columns: 1fr; }
+  .podcast-grid-wrap { padding: 2.5rem 1.5rem; }
+}
+</style>
+{{ end }}

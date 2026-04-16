@@ -1,0 +1,659 @@
+{{ define "main" }}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ .Site.BaseURL }}about/#person",
+  "name": "Pranoti Kshirsagar",
+  "honorificPrefix": "Dr.",
+  "givenName": "Pranoti",
+  "familyName": "Kshirsagar",
+  "jobTitle": "AI Integration & Science Communication Consultant",
+  "description": "Materials scientist turned science communication and AI integration consultant. Founder of The Science Talk. Official EIC partner. Based in Mannheim, Germany.",
+  "url": "{{ .Permalink }}",
+  "image": "https://pranoti.thesciencetalk.com/images/pranoti-kshirsagar.jpg",
+  "email": "pranoti@thesciencetalk.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mannheim",
+    "addressCountry": "DE"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/pranoti-kshirsagar/",
+    "https://thesciencetalk.com/"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "The Science Talk",
+    "url": "https://thesciencetalk.com"
+  },
+  "founder": {
+    "@type": "Organization",
+    "name": "The Science Talk",
+    "url": "https://thesciencetalk.com",
+    "foundingDate": "2018"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Tübingen",
+      "url": "https://www.uni-tuebingen.de/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Stuttgart"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Visvesvaraya National Institute of Technology"
+    }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "name": "PhD (Dr. rer. nat.) Applied Physics",
+      "recognizedBy": { "@type": "CollegeOrUniversity", "name": "University of Tübingen" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "name": "Mini-MBA Marketing",
+      "recognizedBy": { "@type": "Organization", "name": "Marketing Week" }
+    }
+  ],
+  "knowsAbout": [
+    "Science Communication",
+    "AI Integration",
+    "AI Automation",
+    "European Research Funding",
+    "Horizon Europe",
+    "European Innovation Council",
+    "Research Dissemination",
+    "Proposal Writing",
+    "Materials Science",
+    "Nanoscience"
+  ],
+  "award": "Innovative Public Engagement across UK and Europe — Institute of Physics (IOP)"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "{{ .Permalink }}" }
+  ]
+}
+</script>
+
+<div class="about-page">
+
+  <!-- Hero -->
+  <header class="about-hero">
+    <div class="about-container">
+      <div class="about-hero-inner">
+        <div class="about-hero-text">
+          <span class="about-tag">About</span>
+          <h1>Dr. Pranoti Kshirsagar</h1>
+          <p class="about-subtitle">AI Integration &amp; Science Communication Consultant</p>
+          <p class="about-location">📍 Mannheim, Germany &nbsp;·&nbsp; she/her</p>
+          <div class="about-hero-links">
+            <a href="https://www.linkedin.com/in/pranoti-kshirsagar/" target="_blank" rel="noopener" class="about-link-pill">LinkedIn</a>
+            <a href="https://thesciencetalk.com" target="_blank" rel="noopener" class="about-link-pill">The Science Talk</a>
+            <a href="https://thesciencetalk.com/contact-us/" class="about-link-pill about-link-cta">Work with me →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats bar -->
+  <div class="about-stats-bar">
+    <div class="about-container">
+      <div class="about-stats-grid">
+        <div class="about-stat">
+          <span class="about-stat-num">15+</span>
+          <span class="about-stat-label">Years at the research–communication interface</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">500+</span>
+          <span class="about-stat-label">Researchers trained internationally</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">€32M+</span>
+          <span class="about-stat-label">European grant budgets supported</span>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-num">249</span>
+          <span class="about-stat-label">Podcast episodes, 1M+ views</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bio section -->
+  <section class="about-bio-section">
+    <div class="about-container">
+      <div class="about-bio-layout">
+
+        <div class="about-bio-main">
+          <h2 class="about-section-heading">The background</h2>
+
+          <p>I'm a materials scientist by training — PhD from the University of Tübingen, research on graphene-based transparent electrodes at the Natural and Medical Sciences Institute — who spent several years at the intersection of deep-tech science and commercial product strategy at Springer Nature, before making a full pivot into science communication consulting.</p>
+
+          <p>In 2018, I founded <a href="https://thesciencetalk.com" target="_blank" rel="noopener"><strong>The Science Talk</strong></a>, a science communication platform built around the conviction that researchers deserve better tools for talking about their work. Over the past seven years, I've grown it from a side project into a business with four product lines, an official <strong>EIC partnership</strong>, and a podcast that has reached scientists in 20+ countries.</p>
+
+          <p>Since late 2025, I've been adding a second specialisation: <strong>AI integration and automation</strong>. Not as a generalist tool coach, but with a specific focus on the operational infrastructure that research organisations need to work efficiently — proposal workflows, communication pipelines, content systems — built with Claude API and Make.</p>
+
+          <p>I work in English and German, hold a Mini-MBA in Marketing from Marketing Week, and have been recognised with the IOP Award for <em>Innovative Public Engagement across UK and Europe</em>.</p>
+        </div>
+
+        <aside class="about-bio-sidebar">
+          <div class="about-cred-card">
+            <h3 class="about-cred-heading">Credentials</h3>
+            <ul class="about-cred-list">
+              <li>
+                <span class="about-cred-icon">🎓</span>
+                <span>PhD (Dr. rer. nat.) Applied Physics<br><em>University of Tübingen</em></span>
+              </li>
+              <li>
+                <span class="about-cred-icon">📊</span>
+                <span>Mini-MBA Marketing<br><em>Marketing Week with Mark Ritson</em></span>
+              </li>
+              <li>
+                <span class="about-cred-icon">🏆</span>
+                <span>IOP Award<br><em>Innovative Public Engagement, UK &amp; Europe</em></span>
+              </li>
+              <li>
+                <span class="about-cred-icon">🇪🇺</span>
+                <span>Official EIC Partner<br><em>Business Acceleration Services</em></span>
+              </li>
+              <li>
+                <span class="about-cred-icon">💡</span>
+                <span>KreaSocTech Grant<br><em>2025 &amp; 2026</em></span>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What I do -->
+  <section class="about-services-section">
+    <div class="about-container">
+      <h2 class="about-section-heading">What I do</h2>
+      <div class="about-services-grid">
+
+        <div class="about-service-card">
+          <div class="about-service-icon">🤖</div>
+          <h3>AI Integration &amp; Automation</h3>
+          <p>Building AI-powered operational workflows for research organisations — proposal pipelines, content systems, training infrastructure — using Claude API and Make. Focused on durable, institution-grade implementation, not one-off experiments.</p>
+          <a href="/ai-guides/" class="about-service-link">Read AI guides →</a>
+        </div>
+
+        <div class="about-service-card">
+          <div class="about-service-icon">🔬</div>
+          <h3>Science Communication &amp; Grants</h3>
+          <p>End-to-end dissemination strategy and communication work packages for Horizon Europe consortia. Proposal writing, KPI frameworks, reporting deliverables, and partner relations — backed by €32M+ in grant budgets supported as official EIC partner.</p>
+          <a href="/portfolio/" class="about-service-link">See portfolio →</a>
+        </div>
+
+        <div class="about-service-card">
+          <div class="about-service-icon">🎤</div>
+          <h3>Training &amp; Keynotes</h3>
+          <p>Workshops and keynote sessions for researchers at all career stages — personal branding, science communication strategy, AI for scientists. Delivered at DTU Denmark, University of Sheffield, NTU Singapore, EPFL/ETH Zurich doctoral school, Max Planck Institute, and more.</p>
+          <a href="https://thesciencetalk.com/contact-us/" class="about-service-link">Book a session →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- The Science Talk -->
+  <section class="about-tst-section">
+    <div class="about-container">
+      <div class="about-tst-inner">
+        <div class="about-tst-text">
+          <span class="about-tst-label">Founded 2018</span>
+          <h2>The Science Talk</h2>
+          <p>I founded and run <a href="https://thesciencetalk.com" target="_blank" rel="noopener">The Science Talk</a> — a science communication platform for the European research community. It hosts <strong>Under the Microscope</strong>, a podcast exploring materials science and nanotechnology with 249 episodes, 130+ scientist guests, and over 1 million views across 20+ countries.</p>
+          <p>The Science Talk is also where I publish analysis on AI in research, EIC funding trends, and science communication strategy — all written from inside the research ecosystem, not outside it.</p>
+          <a href="https://thesciencetalk.com" target="_blank" rel="noopener" class="about-tst-btn">Visit The Science Talk →</a>
+        </div>
+        <div class="about-tst-stats">
+          <div class="about-tst-stat">
+            <span class="about-tst-num">249</span>
+            <span class="about-tst-lbl">Episodes</span>
+          </div>
+          <div class="about-tst-stat">
+            <span class="about-tst-num">130+</span>
+            <span class="about-tst-lbl">Scientist guests</span>
+          </div>
+          <div class="about-tst-stat">
+            <span class="about-tst-num">1M+</span>
+            <span class="about-tst-lbl">Views</span>
+          </div>
+          <div class="about-tst-stat">
+            <span class="about-tst-num">20+</span>
+            <span class="about-tst-lbl">Countries</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Institutions -->
+  <section class="about-institutions-section">
+    <div class="about-container">
+      <h2 class="about-section-heading about-section-heading--center">Spoken and trained at</h2>
+      <div class="about-institutions-list">
+        <span>DTU Denmark</span>
+        <span>University of Sheffield</span>
+        <span>NTU Singapore</span>
+        <span>EPFL / ETH Zurich Doctoral School</span>
+        <span>Max Planck Institute</span>
+        <span>Helmholtz Research Institute</span>
+        <span>NWO</span>
+        <span>Thoughtworks</span>
+        <span>IAPS</span>
+        <span>Young European Scientist Meeting</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta-section">
+    <div class="about-container">
+      <div class="about-cta-inner">
+        <h2>Let's work together</h2>
+        <p>I work with European research institutions, EIC-funded companies, and Horizon Europe consortia on science communication, AI integration, and grant dissemination. If that sounds like your situation, I'd like to hear from you.</p>
+        <div class="about-cta-btns">
+          <a href="https://thesciencetalk.com/contact-us/" class="about-btn-solid">Book a call →</a>
+          <a href="https://www.linkedin.com/in/pranoti-kshirsagar/" target="_blank" rel="noopener" class="about-btn-outline">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<style>
+/* ─── Base ─────────────────────────────────────────────── */
+.about-page { font-family: 'Inter', sans-serif; }
+.about-container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+
+/* ─── Hero ─────────────────────────────────────────────── */
+.about-hero {
+  background: var(--ink, #1c1c1c);
+  color: #fff;
+  padding: 4.5rem 2rem 3.5rem;
+}
+.about-hero-inner { max-width: 760px; }
+.about-tag {
+  display: inline-block;
+  background: rgba(107,183,152,.2);
+  color: #7BBDA0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  padding: .25rem .75rem;
+  border-radius: 20px;
+  margin-bottom: 1.1rem;
+}
+.about-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: .5rem;
+  color: #fff;
+}
+.about-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.7);
+  margin-bottom: .5rem;
+  font-weight: 400;
+}
+.about-location {
+  font-size: .85rem;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 1.5rem;
+}
+.about-hero-links { display: flex; flex-wrap: wrap; gap: .6rem; }
+.about-link-pill {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.75);
+  border: 1px solid rgba(255,255,255,.2);
+  padding: .4rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all .2s;
+}
+.about-link-pill:hover { color: #fff; border-color: rgba(255,255,255,.5); }
+.about-link-cta {
+  background: #2A6048;
+  border-color: #2A6048;
+  color: #fff;
+}
+.about-link-cta:hover { background: #1A3828; border-color: #1A3828; color: #fff; }
+
+/* ─── Stats bar ────────────────────────────────────────── */
+.about-stats-bar {
+  background: #1A3828;
+  padding: 1.75rem 2rem;
+}
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+.about-stat { color: #fff; }
+.about-stat-num {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #7BBDA0;
+  line-height: 1.1;
+  margin-bottom: .3rem;
+}
+.about-stat-label {
+  font-size: .78rem;
+  color: rgba(255,255,255,.6);
+  line-height: 1.4;
+}
+
+/* ─── Bio section ───────────────────────────────────────── */
+.about-bio-section {
+  background: #F8F4ED;
+  padding: 4rem 2rem;
+}
+.about-bio-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: start;
+}
+.about-section-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1A3828;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: 1.5rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid #E6F4ED;
+}
+.about-section-heading--center { text-align: center; }
+.about-bio-main p {
+  font-size: 1.06rem;
+  color: #444;
+  line-height: 1.85;
+  margin-bottom: 1.1rem;
+}
+.about-bio-main a { color: #2A6048; font-weight: 600; text-decoration: none; }
+.about-bio-main a:hover { text-decoration: underline; }
+.about-bio-main em { color: #666; font-style: italic; }
+
+/* Credentials card */
+.about-cred-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  border-top: 3px solid #2A6048;
+  position: sticky;
+  top: 2rem;
+}
+.about-cred-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #999;
+  margin: 0 0 1.1rem;
+}
+.about-cred-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+.about-cred-list li {
+  display: flex;
+  gap: .6rem;
+  align-items: flex-start;
+  font-size: .9rem;
+  color: #333;
+  line-height: 1.5;
+}
+.about-cred-icon { font-size: 1rem; flex-shrink: 0; margin-top: .05rem; }
+.about-cred-list em { font-size: .82rem; color: #888; font-style: normal; }
+
+/* ─── Services ─────────────────────────────────────────── */
+.about-services-section {
+  background: #fff;
+  padding: 4rem 2rem;
+}
+.about-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: .5rem;
+}
+.about-service-card {
+  background: #F8F4ED;
+  border-radius: 10px;
+  padding: 1.75rem;
+  border-top: 3px solid #E6F4ED;
+  transition: border-color .2s;
+}
+.about-service-card:hover { border-top-color: #2A6048; }
+.about-service-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+.about-service-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .95rem;
+  font-weight: 700;
+  color: #1A3828;
+  margin-bottom: .75rem;
+}
+.about-service-card p {
+  font-size: .9rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.about-service-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .78rem;
+  font-weight: 600;
+  color: #2A6048;
+  text-decoration: none;
+}
+.about-service-link:hover { text-decoration: underline; }
+
+/* ─── The Science Talk ──────────────────────────────────── */
+.about-tst-section {
+  background: #1A3828;
+  color: #fff;
+  padding: 4rem 2rem;
+}
+.about-tst-inner {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 3rem;
+  align-items: center;
+}
+.about-tst-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: #7BBDA0;
+  display: block;
+  margin-bottom: .6rem;
+}
+.about-tst-text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.about-tst-text p {
+  font-size: .98rem;
+  color: rgba(255,255,255,.75);
+  line-height: 1.75;
+  margin-bottom: .9rem;
+}
+.about-tst-text a { color: #7BBDA0; font-weight: 600; text-decoration: none; }
+.about-tst-text a:hover { text-decoration: underline; }
+.about-tst-btn {
+  display: inline-block;
+  margin-top: .5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .82rem;
+  font-weight: 700;
+  color: #1A3828;
+  background: #7BBDA0;
+  padding: .6rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.about-tst-btn:hover { background: #5EA88A; }
+.about-tst-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.about-tst-stat {
+  background: rgba(255,255,255,.07);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+.about-tst-num {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #7BBDA0;
+  margin-bottom: .25rem;
+}
+.about-tst-lbl {
+  font-size: .72rem;
+  color: rgba(255,255,255,.5);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* ─── Institutions ──────────────────────────────────────── */
+.about-institutions-section {
+  background: #F8F4ED;
+  padding: 3.5rem 2rem;
+}
+.about-institutions-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.about-institutions-list span {
+  font-size: .85rem;
+  color: #444;
+  background: #fff;
+  border: 1px solid #E0DDD8;
+  padding: .45rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* ─── CTA ───────────────────────────────────────────────── */
+.about-cta-section {
+  background: #fff;
+  padding: 4.5rem 2rem;
+}
+.about-cta-inner {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-cta-inner h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin-bottom: 1rem;
+}
+.about-cta-inner p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+.about-cta-btns { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+.about-btn-solid {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .88rem;
+  font-weight: 700;
+  color: #fff;
+  background: #2A6048;
+  padding: .7rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.about-btn-solid:hover { background: #1A3828; }
+.about-btn-outline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .88rem;
+  font-weight: 700;
+  color: #1A3828;
+  border: 1.5px solid #1A3828;
+  padding: .7rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all .2s;
+}
+.about-btn-outline:hover { background: #1A3828; color: #fff; }
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-bio-layout { grid-template-columns: 1fr; }
+  .about-cred-card { position: static; }
+  .about-services-grid { grid-template-columns: 1fr; }
+  .about-tst-inner { grid-template-columns: 1fr; }
+  .about-tst-stats { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 600px) {
+  .about-hero { padding: 3rem 1.25rem 2.5rem; }
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-bio-section,
+  .about-services-section,
+  .about-tst-section,
+  .about-institutions-section,
+  .about-cta-section { padding: 2.5rem 1.25rem; }
+  .about-tst-stats { grid-template-columns: repeat(2, 1fr); }
+  .about-container { padding: 0 1.25rem; }
+}
+</style>
+
+{{ end }}

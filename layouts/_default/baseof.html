@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  {{ $desc := or .Params.description .Site.Params.description }}
+  <meta name="description" content="{{ $desc }}">
+  {{ with .Params.keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
+  <link rel="canonical" href="{{ .Permalink }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:locale" content="en_GB">
+  {{ $ogImg := or .Params.episode_image .Params.thumbnail .Params.featured_image .Params.hero_image .Site.Params.og_image }}
+  {{ with $ogImg }}
+  <meta property="og:image" content="{{ . }}">
+  <meta property="og:image:alt" content="{{ $.Title }}">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  {{ end }}
+  {{ if .IsPage }}
+  <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+  <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{ end }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ .Title }}">
+  <meta name="twitter:description" content="{{ $desc }}">
+  {{ with $ogImg }}
+  <meta name="twitter:image" content="{{ . }}">
+  <meta name="twitter:image:alt" content="{{ $.Title }}">
+  {{ end }}
+  {{ if and .IsPage (eq .Section "podcast") }}
+  {{ with .PrevInSection }}<link rel="prev" href="{{ .Permalink }}">{{ end }}
+  {{ with .NextInSection }}<link rel="next" href="{{ .Permalink }}">{{ end }}
+  {{ end }}
+  {{ if and .IsPage (eq .Section "podcast") }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PodcastEpisode",
+    "name": {{ .Title | jsonify }},
+    "url": {{ .Permalink | jsonify }},
+    "datePublished": "{{ .Date.Format "2006-01-02" }}",
+    {{ with $desc }}"description": {{ . | jsonify }},{{ end }}
+    {{ with .Params.episode_number }}"episodeNumber": {{ . }},{{ end }}
+    {{ with .Params.season }}"partOfSeason": { "@type": "PodcastSeason", "name": {{ . | jsonify }} },{{ end }}
+    "partOfSeries": {
+      "@type": "PodcastSeries",
+      "name": "Under the Microscope",
+      "url": "{{ .Site.BaseURL }}podcast/"
+    },
+    {{ with .Params.guest_name }}
+    "actor": {
+      "@type": "Person",
+      "name": {{ . | jsonify }}
+      {{ with $.Params.guest_institution }},"affiliation": { "@type": "Organization", "name": {{ . | jsonify }} }{{ end }}
+      {{ with $.Params.guest_website }},"url": {{ . | jsonify }}{{ end }}
+    },
+    {{ end }}
+    {{ with $ogImg }}"image": {{ . | jsonify }},{{ end }}
+    {{ with .Params.spotify_url }}"associatedMedia": { "@type": "AudioObject", "contentUrl": {{ . | jsonify }} },{{ end }}
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Science Talk",
+      "url": {{ .Site.BaseURL | jsonify }}
+    }
+  }
+  </script>
+  {{ end }}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLGZLS20VW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JLGZLS20VW');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  {{ if eq .Section "case-studies" }}
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  {{ $csCss := resources.Get "css/case-study.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $csCss.RelPermalink }}">
+  {{ end }}
+</head>
+
+<body>
+
+  {{ if and (ne .Section "portfolio") (ne .Section "ai-guides") }}{{ partial "header.html" . }}{{ end }}
+
+  <main id="main-content"{{ if or (eq .Section "portfolio") (eq .Section "ai-guides") }} style="padding-top:0;"{{ end }}>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ if and (ne .Section "portfolio") (ne .Section "ai-guides") }}{{ partial "footer.html" . }}{{ end }}
+
+  {{ if and (ne .Section "portfolio") (ne .Section "ai-guides") }}<script src="/js/main.js"></script>{{ end }}
+
+</body>
+</html>

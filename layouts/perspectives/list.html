@@ -1,0 +1,146 @@
+{{ define "main" }}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<section class="perspectives-page">
+
+  <header class="perspectives-hero">
+    <div class="container narrow">
+      <span class="perspectives-eyebrow">Pranoti Kshirsagar</span>
+      <h1>Perspectives</h1>
+      <p class="perspectives-hero-sub">Strategic analysis and opinion on AI integration in European research — what the evidence shows, what it means, and what needs to change.</p>
+    </div>
+  </header>
+
+  <div class="perspectives-body">
+    <div class="container narrow">
+
+      {{ $pages := where .Pages "Kind" "page" }}
+      {{ if $pages }}
+      <div class="perspectives-grid">
+        {{ range $pages }}
+        <article class="perspective-card">
+          <a href="{{ .Permalink }}" class="perspective-card-link">
+            <div class="perspective-card-body">
+              <div class="perspective-card-meta">
+                <span class="perspective-card-tag">Perspectives</span>
+                <time>{{ .Date.Format "02 Jan 2006" }}</time>
+              </div>
+              <h2>{{ .Title }}</h2>
+              {{ with .Params.description }}<p class="perspective-card-desc">{{ . }}</p>{{ end }}
+              <div class="perspective-card-footer">
+                {{ with .Params.reading_time }}<span class="perspective-card-rt">{{ . }} read</span>{{ end }}
+                {{ with .Params.tags }}
+                <div class="perspective-card-tags">
+                  {{ range first 3 . }}<span class="perspective-card-pill">{{ . }}</span>{{ end }}
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </a>
+        </article>
+        {{ end }}
+      </div>
+      {{ else }}
+      <p class="perspectives-empty">More perspectives coming soon.</p>
+      {{ end }}
+
+      <div class="perspectives-cta">
+        <p>Working through AI integration at your organisation? <a href="https://thesciencetalk.com/contact-us/">Get in touch →</a></p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<style>
+.perspectives-page { font-family: 'Inter', sans-serif; }
+
+/* Hero */
+.perspectives-hero { background: var(--ink, #1c1c1c); color: #fff; padding: 5rem 2rem 3.5rem; text-align: center; }
+.perspectives-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #7BBDA0;
+  display: block;
+  margin-bottom: .75rem;
+}
+.perspectives-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: .85rem;
+}
+.perspectives-hero-sub { font-size: 1rem; color: rgba(255,255,255,.6); max-width: 580px; margin: 0 auto; line-height: 1.6; }
+
+/* Body */
+.perspectives-body { background: #F8F4ED; padding: 3.5rem 2rem 6rem; }
+.container.narrow { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+
+/* Grid */
+.perspectives-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+
+/* Card */
+.perspective-card { background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 10px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.perspective-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.08); }
+.perspective-card-link { display: block; text-decoration: none; color: var(--ink, #1c1c1c); }
+.perspective-card-body { padding: 1.5rem; }
+.perspective-card-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .75rem; }
+.perspective-card-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: #1A3828;
+  color: #fff;
+  padding: .2rem .6rem;
+  border-radius: 3px;
+}
+.perspective-card-meta time { font-size: .75rem; color: #999; }
+.perspective-card-body h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: .6rem;
+  color: #1c1c1c;
+}
+.perspective-card-desc { font-size: .85rem; color: #666; line-height: 1.6; margin-bottom: 1rem; }
+.perspective-card-footer { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+.perspective-card-rt { font-size: .75rem; color: #999; }
+.perspective-card-tags { display: flex; gap: .35rem; flex-wrap: wrap; }
+.perspective-card-pill {
+  font-size: .65rem;
+  font-weight: 500;
+  background: #E6F4ED;
+  color: #1A3828;
+  padding: .2rem .55rem;
+  border-radius: 3px;
+}
+
+/* Empty state */
+.perspectives-empty { text-align: center; color: #999; padding: 3rem 0; }
+
+/* Bottom CTA */
+.perspectives-cta {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #E0DDD8;
+}
+.perspectives-cta p { font-size: .9rem; color: #777; }
+.perspectives-cta a { color: #2A6048; font-weight: 600; text-decoration: none; }
+.perspectives-cta a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .perspectives-grid { grid-template-columns: 1fr; }
+  .perspectives-body { padding: 2.5rem 1.25rem 4rem; }
+  .container.narrow { padding: 0 1.25rem; }
+}
+</style>
+
+{{ end }}

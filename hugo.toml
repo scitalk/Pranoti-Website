@@ -1,0 +1,44 @@
+baseURL = 'https://pranoti.thesciencetalk.com/'
+languageCode = 'en-gb'
+title = 'Pranoti Kshirsagar'
+# theme = '' # No theme needed - using custom layouts
+
+[params]
+  author      = 'Pranoti Kshirsagar'
+  description = 'AI Integration & Automation Specialist | Science Communication Expert | pranoti.thesciencetalk.com'
+  tagline     = 'AI Integration, Science Communication, and Research Strategy'
+  og_image    = 'https://pranoti.thesciencetalk.com/images/pranoti-og-default.png'
+
+  # Social Media
+  linkedin = 'https://www.linkedin.com/in/pranoti-kshirsagar/'
+  twitter  = 'https://twitter.com/pranoti'
+  email    = 'pranoti@thesciencetalk.com'
+
+[menu]
+  [[menu.main]]
+    name = 'Perspectives'
+    url = '/perspectives/'
+    weight = 1
+  [[menu.main]]
+    name = 'Portfolio'
+    url = '/portfolio/'
+    weight = 2
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 3
+
+[sitemap]
+  changefreq = 'monthly'
+  priority   = 0.5
+  filename   = 'sitemap.xml'
+
+[outputs]
+  home    = ['HTML', 'RSS']
+  section = ['HTML', 'RSS']
+  page    = ['HTML']
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

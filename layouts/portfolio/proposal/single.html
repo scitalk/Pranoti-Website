@@ -1,0 +1,111 @@
+{{ define "main" }}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<article class="pf-single pf-single-proposal">
+
+  <header class="pf-hero">
+    <div class="container narrow">
+      <p class="pf-hero-title">Portfolio</p>
+      <p class="pf-hero-sub">Science communication, training, and media — delivered across Europe.</p>
+    </div>
+  </header>
+
+  <div class="pf-top-bar">
+    <div class="container narrow">
+      <a href="/portfolio/#proposal" class="pf-back">← Portfolio</a>
+      <div class="pf-single-meta">
+        <span class="pf-cat-tag pf-cat-proposal">Proposal</span>
+        {{ with .Params.tags }}{{ range . }}<span class="pf-tag">{{ . }}</span>{{ end }}{{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="pf-title-block">
+    <div class="container narrow">
+      <h1>{{ .Title }}</h1>
+    </div>
+  </div>
+
+  {{ with .Params.thumbnail }}
+  <div class="pf-proposal-img-wrap"><div class="container narrow"><img src="{{ . }}" alt="{{ $.Title }}" class="pf-proposal-img"></div></div>
+  {{ end }}
+
+  {{ if .Content }}
+  <div class="pf-content"><div class="container narrow">{{ .Content }}</div></div>
+  {{ end }}
+
+  <div class="pf-info-card-wrap">
+    <div class="container narrow">
+      <div class="pf-info-card">
+        {{ with .Params.client }}
+        <div class="pf-info-row">
+          <p class="pf-info-label">Client</p>
+          <p class="pf-info-value">{{ . }}</p>
+        </div>
+        {{ end }}
+        <div class="pf-info-row">
+          <p class="pf-info-label">Date</p>
+          <p class="pf-info-value">{{ .Date.Format "02.01.2006" }}</p>
+        </div>
+        {{ with .Params.funded_by }}
+        <div class="pf-info-row">
+          <p class="pf-info-label">Funded by</p>
+          <p class="pf-info-value">{{ . }}</p>
+        </div>
+        {{ end }}
+        {{ with .Params.external_url }}
+        <div class="pf-info-row">
+          <p class="pf-info-label">Link</p>
+          <p class="pf-info-value"><a href="{{ . }}" target="_blank" rel="noopener">Check out the project's webpage!</a></p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="pf-single-footer">
+    <div class="container narrow">
+      <a href="/portfolio/#proposal" class="pf-back">← Back to portfolio</a>
+      <a href="https://thesciencetalk.com/contact-us/" class="pf-cta-link">Work with me →</a>
+    </div>
+  </div>
+
+</article>
+
+<style>
+.pf-hero{background:var(--ink);color:#fff;padding:5rem 2rem 3.5rem;text-align:center}
+.pf-hero h1,.pf-hero .pf-hero-title{font-family:'Montserrat',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:600;color:#fff;margin-bottom:.75rem}
+.pf-hero-sub{font-size:1rem;color:rgba(255,255,255,.6);margin:0;letter-spacing:.03em}
+.pf-top-bar { padding: 1.5rem 2rem 0; }
+.pf-top-bar .container { display: flex; justify-content: space-between; align-items: center; }
+.pf-single-meta { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.pf-tag { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(0,0,0,0.06); color: var(--ink-soft); padding: 0.2rem 0.55rem; border-radius: 3px; }
+.pf-cat-tag { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 3px; }
+.pf-cat-tag.pf-cat-proposal { background: #8ba89e; color: #fff; }
+.pf-title-block { padding: 1rem 2rem 0; }
+.pf-title-block h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 500; color: var(--ink); line-height: 1.2; margin-bottom: 0.4rem; }
+.pf-proposal-img-wrap { padding: 1.5rem 2rem 0; }
+.pf-proposal-img { width: 100%; border-radius: 8px; }
+.pf-content { padding: 2rem 2rem 0; }
+.pf-content p { font-size: 1.05rem; line-height: 1.8; color: var(--ink-soft); margin-bottom: 1.5rem; }
+.pf-info-card-wrap { padding: 2rem 2rem 0; }
+.pf-info-card { background: #f5f2ed; border-radius: 8px; padding: 2rem; }
+.pf-info-row{display:flex;align-items:baseline;gap:.5rem;margin-bottom:1rem}
+.pf-info-row:last-child{margin-bottom:0}
+.pf-info-label{font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.05em;color:var(--ink);margin:0;white-space:nowrap;flex-shrink:0}
+.pf-info-value{font-family:'Montserrat',sans-serif;font-size:.95rem;color:var(--ink-soft);margin:0}
+.pf-info-value a { color: var(--accent); text-decoration: none; }
+.pf-info-value a:hover { text-decoration: underline; }
+.pf-single-footer { padding: 2rem 2rem 0; border-top: 1px solid rgba(0,0,0,0.08); margin-top: 3rem; }
+.pf-single-footer .container { display: flex; justify-content: space-between; align-items: center; }
+.pf-back { font-size: 0.85rem; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+.pf-back:hover { color: var(--accent); }
+.pf-cta-link { font-size: 0.85rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+.pf-cta-link:hover { text-decoration: underline; }
+@media (max-width: 768px) {
+  .pf-top-bar .container { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .pf-title-block, .pf-content, .pf-proposal-img-wrap, .pf-info-card-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .pf-single-footer .container { flex-direction: column; gap: 1rem; text-align: center; }
+}
+</style>
+{{ end }}

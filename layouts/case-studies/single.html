@@ -1,0 +1,140 @@
+{{ define "main" }}
+<div class="cs-page-wrapper">
+<div class="page">
+  
+  <div class="cs-header">
+    <div class="header-left">
+      <span class="cs-tag">Case Study · {{ .Params.display_category | default .Params.category | default "AI Integration" }}</span>
+      <h1 class="cs-title">{{ .Title }}</h1>
+      <p class="cs-subtitle">{{ .Params.subtitle }}</p>
+      
+      <div class="sec-label" style="margin-bottom: 8px; color: #888;">Tech stack</div>
+      <div class="badges-wrap">
+        {{ range .Params.tech_stack }}<span class="badge b-purple">{{ . }}</span>{{ end }}
+      </div>
+    </div>
+    
+    <div class="header-right">
+      <div class="sec-label">Final setup — what was built</div>
+      <div class="arch-card">
+        <div class="card-lbl">Architecture</div>
+        {{ range $index, $step := .Params.architecture }}
+        <div class="arch-step"><div class="arch-dot">{{ add $index 1 }}</div><p><strong>{{ index $step 0 }}</strong> — {{ index $step 1 }}</p></div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="metrics-wrap">
+    <div class="metrics-row">
+      {{ range .Params.metrics }}
+      <div class="metric"><div class="metric-num">{{ .value }}</div><div class="metric-lbl">{{ .label }}</div></div>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="layout-row-2col" style="grid-template-columns: 3.5fr 6.5fr;">
+    <div class="layout-col">
+      <div class="sec-label">01 · The real problem</div>
+      <div class="card stretch-card">
+        <div class="card-lbl">The goal</div>
+        <p>{{ .Params.problem.goal | markdownify }}</p>
+        <hr style="border: none; border-top: 0.5px solid #E0DDD8; margin: 16px 0;">
+        <div class="card-lbl">The daily reality</div>
+        <p>{{ .Params.problem.reality | markdownify }}</p>
+      </div>
+    </div>
+
+    {{ if .Params.workflow }}
+    <div class="layout-col">
+      <div class="sec-label">02 · Before vs After</div>
+      <div class="card">
+        <div class="wf-row">
+          <span class="wf-row-label before">Before</span>
+          <div class="wf-steps">
+            {{ $beforeLen := len .Params.workflow.before }}
+            {{ range $index, $step := .Params.workflow.before }}
+              <div class="wf-step wf-bad"><div class="wf-num">{{ add $index 1 }}</div>{{ . }}</div>
+              {{ if ne (add $index 1) $beforeLen }}<div class="wf-arrow">›</div>{{ end }}
+            {{ end }}
+          </div>
+        </div>
+        <div class="wf-row">
+          <span class="wf-row-label after">After</span>
+          <div class="wf-steps">
+            {{ $afterLen := len .Params.workflow.after }}
+            {{ range $index, $step := .Params.workflow.after }}
+              <div class="wf-step wf-good"><div class="wf-num">{{ add $index 1 }}</div>{{ . }}</div>
+              {{ if ne (add $index 1) $afterLen }}<div class="wf-arrow">›</div>{{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    {{ end }}
+      
+      {{ with .Params.misconception }}
+      <div class="sec-label">02b · The hidden misconception</div>
+      <div class="misconception stretch-card">
+        <div class="card-lbl">Common assumption that's wrong</div>
+        <p>{{ . | markdownify }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="layout-row-2col" style="grid-template-columns: 6.5fr 3.5fr;">
+    <div class="layout-col">
+      <div class="sec-label">03 · Blockers and solutions</div>
+      <div class="card stretch-card">
+        <div class="pair-headers">
+          <div class="pair-hdr">Blocker</div>
+          <div class="pair-hdr">Solution</div>
+        </div>
+        {{ range .Params.blockers }}
+        <div class="blocker-pair">
+          <div class="blocker"><span class="blocker-x">✕</span><p><strong>{{ .issue_title }}</strong> — {{ .issue_desc }}</p></div>
+          <div class="fix"><span class="fix-chk">✓</span><p>{{ .solution }}</p></div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="layout-col">
+      <div class="sec-label">04 · What Claude can now do</div>
+      <div class="card outcomes-grid stretch-card">
+        {{ range .Params.outcomes }}
+        <div class="outcome"><span class="outcome-chk">✓</span><p>{{ . }}</p></div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="layout-row-1col">
+    <div class="sec-label">05 · What I'd do differently</div>
+    <div class="insight">
+      <div class="card-lbl">Honest reflection</div>
+      <p>{{ .Params.reflection | markdownify }}</p>
+    </div>
+  </div>
+
+  {{ with .Params.related_tst_posts }}
+  <div class="layout-row-1col">
+    <div class="sec-label">Related reading on The Science Talk</div>
+    <div class="insight">
+      {{ range . }}<p><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></p>{{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="cta-footer-wrap">
+    <div class="cta-banner">
+      <p>{{ .Params.cta_text }}</p>
+      <a href="{{ .Params.guide_url }}">Read the guide →</a>
+    </div>
+    <div class="cs-footer">
+      To download more case studies, go to <a href="https://pranoti.thesciencetalk.com/ai-guides">pranoti.thesciencetalk.com/ai-guides</a>
+    </div>
+  </div>
+</div>
+</div>
+{{ end }}
