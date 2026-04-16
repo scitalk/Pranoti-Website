@@ -6,5 +6,6 @@ type: "portfolio/scicommai"
 category: "scicommai"
 description: "NotebookLM's new data tables tested on ERC/EIC funding programmes — what they mean for scientists and science communicators."
 post_url: "https://thesciencetalk.com/news/notebooklm-data-tables-scicomm-scientists/"
+thumbnail: "/images/scicommai/NotebookLM-data-tables-1.jpg"
 tags: ["NotebookLM", "AI tools", "Research grants"]
 ---
