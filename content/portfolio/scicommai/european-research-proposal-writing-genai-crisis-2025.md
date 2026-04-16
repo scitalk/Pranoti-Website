@@ -6,5 +6,6 @@ type: "portfolio/scicommai"
 category: "scicommai"
 description: "European researchers face 12% ERC success rates while investing 180+ hours per proposal. How GenAI tools can transform the process."
 post_url: "https://thesciencetalk.com/news/european-research-proposal-writing-genai-crisis-2025/"
+thumbnail: "/images/scicommai/Strategy_proposal-writing.jpg"
 tags: ["GenAI", "Grant writing", "ERC"]
 ---

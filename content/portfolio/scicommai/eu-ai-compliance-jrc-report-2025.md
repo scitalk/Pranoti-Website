@@ -6,5 +6,6 @@ type: "portfolio/scicommai"
 category: "scicommai"
 description: "The EU Joint Research Centre published 123 pages that address AI compliance for researchers. A breakdown of what it means for European scientists."
 post_url: "https://thesciencetalk.com/news/eu-ai-compliance-jrc-report-2025/"
+thumbnail: "/images/scicommai/EU-JRC-AI-Research-Report-October-2025.jpg"
 tags: ["EU policy", "AI compliance", "JRC"]
 ---

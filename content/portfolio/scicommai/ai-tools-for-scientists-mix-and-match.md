@@ -6,5 +6,6 @@ type: "portfolio/scicommai"
 category: "scicommai"
 description: "The power of mixing AI tools — not mastering one. Practical workflows for scientists using Claude, NotebookLM, and other tools together."
 post_url: "https://thesciencetalk.com/news/blog-perspectives/ai-tools-for-scientists-mix-and-match/"
+thumbnail: "/images/scicommai/mix-and-match-ai-tools-for-scientists-the-science-talk.jpg"
 tags: ["AI tools", "Workflow", "Scientists"]
 ---
