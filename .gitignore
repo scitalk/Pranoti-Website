@@ -6,3 +6,6 @@ public/
 .claude/
 resources/_gen/
 themes/
+static/case-studies/*.pdf
+static/case-studies/*.html
+static/reports/
