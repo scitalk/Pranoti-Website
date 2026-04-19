@@ -1,7 +1,7 @@
 ---
 title: "Google Drive Can Now Read Your Sheets in Claude — But Here's What It Still Can't Do"
-date: 2026-04-20
-lastmod: 2026-04-20
+date: 2026-04-19
+lastmod: 2026-04-19
 draft: false
 description: "Anthropic's Google Drive connector now reads Sheets data in Claude — a welcome update for quick analysis. But if you need to write, update formulas, or automate workflows, you're still one integration short."
 keywords: ["Google Drive Claude Sheets support", "Claude Google Sheets integration 2026", "MCP Google Sheets vs Google Drive connector", "Claude read-only Sheets access", "Google Sheets automation Claude", "bidirectional Sheets integration Claude"]

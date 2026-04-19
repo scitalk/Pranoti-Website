@@ -1,7 +1,7 @@
 ---
 title: "Native Connector vs. MCP: Which Google Sheets Integration Does Your Workflow Actually Need?"
-date: 2026-04-20
-lastmod: 2026-04-20
+date: 2026-04-19
+lastmod: 2026-04-19
 draft: false
 description: "Claude now connects to Google Sheets two ways: the new native Google Drive connector (read-only, zero setup) and the MCP server (full read/write, requires OAuth). Here's a side-by-side comparison, decision framework, and use-case matcher."
 keywords: ["Claude Google Sheets comparison 2026", "Google Drive connector vs MCP Sheets", "Claude Sheets integration decision guide", "read-only vs bidirectional Sheets Claude", "Google Sheets automation MCP", "Claude native connector limitations"]
