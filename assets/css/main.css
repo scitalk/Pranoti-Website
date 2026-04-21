@@ -1,5 +1,5 @@
 /* Pranoti Website - Combined Styles */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
   --ink: #1c1c1c;
@@ -7,8 +7,8 @@
   --paper: #faf7f2;
   --white: #ffffff;
   --accent: #c76a5a;
-  --font-display: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
   --container: 1200px;
 }
 
