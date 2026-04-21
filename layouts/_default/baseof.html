@@ -93,15 +93,15 @@
 
 <body>
 
-  {{ if and (ne .Section "portfolio") (ne .Section "ai-guides") }}{{ partial "header.html" . }}{{ end }}
+  {{ if ne .Section "portfolio" }}{{ partial "header.html" . }}{{ end }}
 
-  <main id="main-content"{{ if or (eq .Section "portfolio") (eq .Section "ai-guides") }} style="padding-top:0;"{{ end }}>
+  <main id="main-content"{{ if eq .Section "portfolio" }} style="padding-top:0;"{{ end }}>
     {{ block "main" . }}{{ end }}
   </main>
 
-  {{ if and (ne .Section "portfolio") (ne .Section "ai-guides") }}{{ partial "footer.html" . }}{{ end }}
+  {{ if ne .Section "portfolio" }}{{ partial "footer.html" . }}{{ end }}
 
-  {{ if and (ne .Section "portfolio") (ne .Section "ai-guides") }}<script src="/js/main.js"></script>{{ end }}
+  {{ if ne .Section "portfolio" }}<script src="/js/main.js"></script>{{ end }}
 
 </body>
 </html>

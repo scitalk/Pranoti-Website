@@ -194,4 +194,4 @@ From here, the most useful next steps are connecting Claude to the specific tool
 This guide is the entry point for MCP setup. From here, the next step is connecting Claude to specific tools — including a detailed walkthrough of [connecting Claude Desktop to Google Sheets](https://thesciencetalk.com/news/ai-integration-use-cases/connect-claude-desktop-google-sheets-mcp-guide/) and [connecting a self-hosted WordPress site to Claude Desktop](/ai-guides/connect-wordpress-claude-desktop-mcp-guide/).
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

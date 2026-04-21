@@ -134,4 +134,4 @@ This research sprint mapped confirmed public evidence — strategy documents, pu
 For a more comprehensive or ongoing intelligence picture, a systematic literature monitoring workflow — combining RSS feeds, job board scraping, and periodic deep research sprints — would be the appropriate architecture.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*
