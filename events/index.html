@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | The Science Talk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral: #FF5757;
+      --white: #ffffff;
+      --ink: #333333;
+      --ink-soft: #666666;
+      --bg: #f5f5f5;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.5; }
+
+    .page-header { text-align: center; padding: 3rem 1.5rem 1.5rem; }
+    .page-header h1 { font-size: 2rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .page-header p { font-size: 0.9rem; color: var(--ink-soft); }
+
+    .legend { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; font-size: 0.75rem; color: var(--ink-soft); }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; }
+    .legend-swatch { width: 16px; height: 16px; border-radius: 3px; background: var(--white); }
+    .legend-swatch.featured { box-shadow: 0 2px 8px rgba(255,87,87,0.3); }
+    .legend-swatch.attending { box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
+
+    .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; padding: 0 1.5rem 2rem; }
+    .filter-btn {
+      padding: 0.5rem 1rem; font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.04em; border: 1px solid #d0d0d0; background: var(--white);
+      color: var(--ink-soft); border-radius: 4px; cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+    .filter-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+    .events-grid {
+      column-count: 3; column-gap: 1.25rem;
+      max-width: 1000px; margin: 0 auto; padding: 0 1.5rem 3rem;
+    }
+
+    .event-card {
+      break-inside: avoid; margin-bottom: 1.25rem;
+      border-radius: 8px; padding: 1.25rem;
+      background: var(--white); 
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .event-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .event-card.featured { box-shadow: 0 3px 14px rgba(255,87,87,0.2); }
+    .event-card.featured:hover { box-shadow: 0 6px 20px rgba(255,87,87,0.28); }
+
+    .event-logo { width: 70px; height: 70px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .event-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+    .event-content { flex: 1; min-width: 0; }
+    .event-title { font-size: 0.95rem; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 0.35rem; }
+    .event-meta { font-size: 0.8rem; color: var(--ink-soft); }
+
+    .event-btn {
+      display: inline-block; margin-top: 0.5rem; padding: 0.35rem 0.7rem; font-size: 0.65rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.03em; text-decoration: none;
+      color: var(--coral); border: 1px solid var(--coral); border-radius: 3px; transition: all 0.2s;
+    }
+    .event-btn:hover { background: var(--coral); color: var(--white); }
+
+    @media (max-width: 700px) { .events-grid { column-count: 2; } }
+    @media (max-width: 450px) {
+      .events-grid { column-count: 1; max-width: 300px; }
+      .filters { gap: 0.4rem; }
+      .filter-btn { padding: 0.4rem 0.7rem; font-size: 0.6rem; }
+    }
+    .event-card.hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>Events</h1>
+    <p>Conferences, workshops, and webinars</p>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch featured"></div> Featured</div>
+    <div class="legend-item"><div class="legend-swatch attending"></div> Attending</div>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" data-filter="time" data-value="all">All</button>
+    <button class="filter-btn" data-filter="time" data-value="upcoming">Upcoming</button>
+    <button class="filter-btn" data-filter="time" data-value="past">Past</button>
+    <button class="filter-btn active" data-filter="role" data-value="all">All Roles</button>
+    <button class="filter-btn" data-filter="role" data-value="featured">Featured</button>
+    <button class="filter-btn" data-filter="role" data-value="attending">Attending</button>
+  </div>
+
+  <div class="events-grid">
+
+    <!-- 16.12.2025 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="OECD"></div>
+      <div class="event-content">
+        <h3 class="event-title">The Future of AI and Materials Science</h3>
+        <p class="event-meta">16.12.2025 · Participant</p>
+      </div>
+    </div>
+
+    <!-- 10.12.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/DTU_logo.png" alt="DTU"></div>
+      <div class="event-content">
+        <h3 class="event-title">Personal Branding Workshop</h3>
+        <p class="event-meta">10.12.2025 · Trainer</p>
+      </div>
+    </div>
+
+    <!-- 09.12.2025 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/DTU_logo.png" alt="DTU"></div>
+      <div class="event-content">
+        <h3 class="event-title">NNF Challenge Grants Kick-off</h3>
+        <p class="event-meta">09.12.2025 · Participant</p>
+      </div>
+    </div>
+
+    <!-- 03.12.2025 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="Creative Europe"></div>
+      <div class="event-content">
+        <h3 class="event-title">EC/CREA Media Literacy Info Session</h3>
+        <p class="event-meta">03.12.2025 · Participant</p>
+      </div>
+    </div>
+
+    <!-- 28.11.2025 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="ERC"></div>
+      <div class="event-content">
+        <h3 class="event-title">ERC Plus Grants Webinar</h3>
+        <p class="event-meta">28.11.2025 · Participant</p>
+        <a href="https://erc.europa.eu/news-events/events" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 25.11.2025 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="EIC"></div>
+      <div class="event-content">
+        <h3 class="event-title">EIC ACCESS+ Matchmaking Session</h3>
+        <p class="event-meta">25.11.2025 · Participant</p>
+      </div>
+    </div>
+
+    <!-- 19.11.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="TST"></div>
+      <div class="event-content">
+        <h3 class="event-title">ERC Consolidator 2026: Dissemination Budgeting</h3>
+        <p class="event-meta">19.11.2025 · Speaker</p>
+        <a href="https://www.linkedin.com/events/ercconsolidator2026-disseminati7393925448994299905/" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 11.11.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="TST"></div>
+      <div class="event-content">
+        <h3 class="event-title">AI for Scientists: Compliance, Tools, Workflows</h3>
+        <p class="event-meta">11.11.2025 · Organiser</p>
+        <a href="https://thesciencetalk.com/ai-for-scientists-compliant-ethical-powerful/" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 05.11.2025 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="IOP"></div>
+      <div class="event-content">
+        <h3 class="event-title">IOP Awards Ceremony</h3>
+        <p class="event-meta">05.11.2025 · Participant</p>
+      </div>
+    </div>
+
+    <!-- 04.11.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/Logo_Sheffield_Horiontal.png" alt="Sheffield"></div>
+      <div class="event-content">
+        <h3 class="event-title">Personal Branding Workshop</h3>
+        <p class="event-meta">04.11.2025 · Trainer</p>
+      </div>
+    </div>
+
+    <!-- 21.10.2025 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="EIC"></div>
+      <div class="event-content">
+        <h3 class="event-title">EIC Partnerships Onboarding Call</h3>
+        <p class="event-meta">21.10.2025 · Participant</p>
+      </div>
+    </div>
+
+    <!-- 10.10.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="TST"></div>
+      <div class="event-content">
+        <h3 class="event-title">Supercharge Proposal Writing with GenAI</h3>
+        <p class="event-meta">10.10.2025 · Organiser</p>
+        <a href="https://thesciencetalk.com/genai-proposal-writing-workshop/" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 02.09.2025 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="Swedish Research Council"></div>
+      <div class="event-content">
+        <h3 class="event-title">SciComm Webinar</h3>
+        <p class="event-meta">02.09.2025 · Participant</p>
+        <a href="https://www.vr.se/soka-finansiering/utlysningar/2024-11-12-bidrag-till-forskares-kommunikation-inom-konstnarlig-forskning.html" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 13.08.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/Nanyang_Technological_University_Logo.png" alt="NTU"></div>
+      <div class="event-content">
+        <h3 class="event-title">Own Your Digital Brand: Your Science, Your Story</h3>
+        <p class="event-meta">13.08.2025 · Speaker</p>
+        <a href="https://www.ntu.edu.sg/women/powers" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 23.07.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="Goethe Institute"></div>
+      <div class="event-content">
+        <h3 class="event-title">Karriere Quantum</h3>
+        <p class="event-meta">23.07.2025 · Speaker</p>
+        <a href="https://www.goethe.de/prj/lqs/en/ktn.html?wt_sc=karrierequantum" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 17.06.2025 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="IWPA"></div>
+      <div class="event-content">
+        <h3 class="event-title">International Women's Podcast Awards</h3>
+        <p class="event-meta">17.06.2025 · Participant</p>
+        <a href="https://everybody-media.com/awards/" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 11.06.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="TST"></div>
+      <div class="event-content">
+        <h3 class="event-title">Carousels that Convert: LinkedIn Guide</h3>
+        <p class="event-meta">11.06.2025 · Organiser</p>
+        <a href="https://thesciencetalk.com/carousels-that-convert-science-marketers-linkedin-guide/#register" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 14.04.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="DPG"></div>
+      <div class="event-content">
+        <h3 class="event-title">QuanTour Returns: World Quantum Day 2025</h3>
+        <p class="event-meta">14.04.2025 · Speaker</p>
+        <a href="https://www.dpg-physik.de/veranstaltungen/2025/world-quantum-day-2025-in-der-urania-berlin" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 27.03.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="Zeeks"></div>
+      <div class="event-content">
+        <h3 class="event-title">Turn Listeners into Leads: Podcasts in Marketing</h3>
+        <p class="event-meta">27.03.2025 · Speaker</p>
+        <a href="https://www.zeeks-artforgeeks.com/event-details/turn-listeners-into-leads-integrating-podcasts-into-your-marketing-funnel" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 22.03.2025 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="TEDx"></div>
+      <div class="event-content">
+        <h3 class="event-title">TEDxUniMannheim: The Art of Breakthrough</h3>
+        <p class="event-meta">22.03.2025 · Participant</p>
+        <a href="https://www.linkedin.com/posts/pranoti-kshirsagar_my-very-first-tedx-was-a-wonderful-experience-activity-7309941642260566016-FLxv" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 18.03.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="COALESCE"></div>
+      <div class="event-content">
+        <h3 class="event-title">Sound & Science Communication Workshop</h3>
+        <p class="event-meta">18.03.2025 · Contributor</p>
+      </div>
+    </div>
+
+    <!-- 06.03.2025 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="NNF"></div>
+      <div class="event-content">
+        <h3 class="event-title">Science Communication for Greater Research Impact</h3>
+        <p class="event-meta">06.03.2025 · Attendee</p>
+        <a href="https://sciencecluster.dk/event/science-communication-for-greater-research-impact-copy/" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 04.03.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="TST"></div>
+      <div class="event-content">
+        <h3 class="event-title">Secure your Twitter/X Data</h3>
+        <p class="event-meta">04.03.2025 · Trainer</p>
+        <a href="https://thesciencetalk.com/twitter-x-data-webinar/" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 03.02.2025 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="TST"></div>
+      <div class="event-content">
+        <h3 class="event-title">Secure your Twitter/X Data</h3>
+        <p class="event-meta">03.02.2025 · Trainer</p>
+        <a href="https://thesciencetalk.com/twitter-x-data-webinar/" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 29.10.2024 -->
+    <div class="event-card featured" data-time="past" data-role="featured">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="TU Dortmund"></div>
+      <div class="event-content">
+        <h3 class="event-title">Own Your Digital Brand: Your Science, Your Story</h3>
+        <p class="event-meta">29.10.2024 · Keynote</p>
+        <a href="https://graduateschool.physik.tu-dortmund.de/details-veranstaltungen/own-your-digital-brand-your-science-your-story-45475/" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+    <!-- 08.05.2024 -->
+    <div class="event-card" data-time="past" data-role="attending">
+      <div class="event-logo"><img src="/images/logos/events/TST-Logo_square_4x4.jpg" alt="CyberLab"></div>
+      <div class="event-content">
+        <h3 class="event-title">Empowering Female Founders</h3>
+        <p class="event-meta">08.05.2024 · Participant</p>
+        <a href="https://www.cyberforum.de/empowering-female-founders" class="event-btn" target="_blank">Read More</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const btns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.event-card');
+    let activeTime = 'all', activeRole = 'all';
+
+    function applyFilters() {
+      cards.forEach(c => {
+        const timeOk = activeTime === 'all' || c.dataset.time === activeTime;
+        const roleOk = activeRole === 'all' || c.dataset.role === activeRole;
+        c.classList.toggle('hidden', !(timeOk && roleOk));
+      });
+    }
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        document.querySelectorAll(`[data-filter="${filter}"]`).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (filter === 'time') activeTime = btn.dataset.value;
+        else activeRole = btn.dataset.value;
+        applyFilters();
+      });
+    });
+  </script>
+
+</body>
+</html>
