@@ -8,7 +8,7 @@ keywords: ["AI adoption European research institutes", "deep research AI methodo
 author: "Pranoti Kshirsagar"
 reading_time: "9 min"
 tags: ["AI adoption", "deep research", "EU AI Act", "European research", "AI strategy"]
-category: "ai-integration-guides"
+category: "AI Research"
 sidebar_links:
   - title: "Connect Claude Desktop to Google Sheets via MCP"
     url: "/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/"
