@@ -28,15 +28,24 @@
     gtag('js', new Date());
     gtag('config', 'G-JLGZLS20VW');
   </script>
-  <!-- Fonts: Inter + DM Mono only — no Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {{ if eq .Kind "section" }}
+  <!-- List page: load main.css for nav + global styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  {{ $mainCss := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $mainCss.RelPermalink }}">
+  {{ else }}
+  <!-- Single page: Inter + DM Mono only — main.css excluded to prevent conflicts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <!-- case-study.css only — main.css is intentionally excluded to prevent conflicts -->
-  {{ $css := resources.Get "css/case-study.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  {{ $csCss := resources.Get "css/case-study.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $csCss.RelPermalink }}">
+  {{ end }}
 </head>
 <body>
-  {{ block "main" . }}{{ end }}
+  {{ if eq .Kind "section" }}{{ partial "header.html" . }}{{ end }}
+  <main id="main-content">{{ block "main" . }}{{ end }}</main>
+  {{ if eq .Kind "section" }}{{ partial "footer.html" . }}{{ end }}
+  {{ if eq .Kind "section" }}<script src="/js/main.js"></script>{{ end }}
 </body>
 </html>
