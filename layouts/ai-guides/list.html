@@ -44,6 +44,15 @@
       <p class="guides-empty">More guides coming soon.</p>
       {{ end }}
 
+      <div class="guides-also-explore">
+        <p class="guides-also-label">Also explore</p>
+        <div class="guides-also-links">
+          <a href="/perspectives/">Perspectives</a>
+          <a href="/case-studies/">Case Studies</a>
+          <a href="/portfolio/">Portfolio</a>
+        </div>
+      </div>
+
       <div class="guides-cta">
         <p>Working on an AI integration and want it documented? <a href="https://thesciencetalk.com/contact-us/">Get in touch →</a></p>
       </div>
@@ -125,6 +134,41 @@
 
 /* Empty state */
 .guides-empty { text-align: center; color: #999; padding: 3rem 0; }
+
+/* Also explore strip */
+.guides-also-explore {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.07);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.guides-also-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #999;
+  white-space: nowrap;
+  margin: 0;
+}
+.guides-also-links { display: flex; gap: .75rem; flex-wrap: wrap; }
+.guides-also-links a {
+  font-size: .85rem;
+  font-weight: 600;
+  color: #2A6048;
+  text-decoration: none;
+  border: 1px solid #2A6048;
+  padding: .3rem .8rem;
+  border-radius: 5px;
+  transition: background .2s, color .2s;
+}
+.guides-also-links a:hover { background: #2A6048; color: #fff; }
 
 /* Bottom CTA */
 .guides-cta {

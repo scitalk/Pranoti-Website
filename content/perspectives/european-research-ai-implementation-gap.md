@@ -84,7 +84,7 @@ The EU AI Act has created a compliance floor. The RAISE initiative is building s
 
 That is the problem I find genuinely interesting. And it is the problem I am working on.
 
-If you are working through this at your organisation — or thinking about what it means for a role or project you are involved in — I am happy to talk through it. [Get in touch →](/contact/)
+If you are working through this at your organisation — or thinking about what it means for a role or project you are involved in — I am happy to talk through it. [Get in touch →](https://thesciencetalk.com/contact-us/)
 
 ---
 

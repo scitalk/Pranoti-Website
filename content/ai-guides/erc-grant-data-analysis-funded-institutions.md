@@ -109,4 +109,4 @@ For broader context on why ERC funding patterns matter and how AI is changing gr
 - [ERC Starting Grant 2027 — Competitive landscape analysis](https://thesciencetalk.com/erc-starting-grant-2027/) — STG funding patterns and what they reveal for 2027 applicants
 - [NotebookLM Data Tables: Relevance for Scientists and SciComm](https://thesciencetalk.com/notebooklm-data-tables-scicomm-scientists/) — how NotebookLM compares to Claude for structured data work
 
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

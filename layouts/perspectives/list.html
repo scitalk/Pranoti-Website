@@ -44,6 +44,15 @@
       <p class="perspectives-empty">More perspectives coming soon.</p>
       {{ end }}
 
+      <div class="perspectives-also-explore">
+        <p class="perspectives-also-label">Also explore</p>
+        <div class="perspectives-also-links">
+          <a href="/ai-guides/">AI Guides</a>
+          <a href="/case-studies/">Case Studies</a>
+          <a href="/portfolio/">Portfolio</a>
+        </div>
+      </div>
+
       <div class="perspectives-cta">
         <p>Working through AI integration at your organisation? <a href="https://thesciencetalk.com/contact-us/">Get in touch →</a></p>
       </div>
@@ -125,6 +134,41 @@
 
 /* Empty state */
 .perspectives-empty { text-align: center; color: #999; padding: 3rem 0; }
+
+/* Also explore strip */
+.perspectives-also-explore {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.07);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.perspectives-also-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #999;
+  white-space: nowrap;
+  margin: 0;
+}
+.perspectives-also-links { display: flex; gap: .75rem; flex-wrap: wrap; }
+.perspectives-also-links a {
+  font-size: .85rem;
+  font-weight: 600;
+  color: #2A6048;
+  text-decoration: none;
+  border: 1px solid #2A6048;
+  padding: .3rem .8rem;
+  border-radius: 5px;
+  transition: background .2s, color .2s;
+}
+.perspectives-also-links a:hover { background: #2A6048; color: #fff; }
 
 /* Bottom CTA */
 .perspectives-cta {

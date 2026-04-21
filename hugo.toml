@@ -20,13 +20,21 @@ title = 'Pranoti Kshirsagar'
     url = '/perspectives/'
     weight = 1
   [[menu.main]]
+    name = 'AI Guides'
+    url = '/ai-guides/'
+    weight = 2
+  [[menu.main]]
+    name = 'Case Studies'
+    url = '/case-studies/'
+    weight = 3
+  [[menu.main]]
     name = 'Portfolio'
     url = '/portfolio/'
-    weight = 2
+    weight = 4
   [[menu.main]]
     name = 'About'
     url = '/about/'
-    weight = 3
+    weight = 5
 
 [sitemap]
   changefreq = 'monthly'

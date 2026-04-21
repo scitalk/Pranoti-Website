@@ -217,4 +217,4 @@ Example: Fix the top "Fix First" post (30 min). Re-run analysis in 2 weeks. If s
 
 ---
 
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

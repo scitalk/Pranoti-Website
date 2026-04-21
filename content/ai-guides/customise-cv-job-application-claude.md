@@ -166,4 +166,4 @@ For Claude's capabilities with document processing, explore [Claude's official d
 
 ---
 
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*
