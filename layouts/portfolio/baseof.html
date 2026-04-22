@@ -44,8 +44,11 @@
   <script type="application/ld+json">{{ $personSchema | jsonify | safeJS }}</script>
 </head>
 <body>
-  <main id="main-content" style="padding-top:0;">
+  {{ partial "header.html" . }}
+  <main id="main-content">
     {{ block "main" . }}{{ end }}
   </main>
+  {{ partial "footer.html" . }}
+  <script src="/js/main.js"></script>
 </body>
 </html>
