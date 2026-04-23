@@ -93,6 +93,25 @@
           </div>
           {{ end }}
 
+          {{ if .Params.sidebar_product }}
+          {{ with .Params.sidebar_product }}
+          <div class="sidebar-card sidebar-product">
+            <p class="sidebar-product-label">{{ .label }}</p>
+            <p class="sidebar-product-title">{{ .title }}</p>
+            <ul class="sidebar-product-bullets">
+              {{ range .bullets }}<li><span class="sidebar-product-check">✓</span> {{ . }}</li>{{ end }}
+            </ul>
+            {{ if .details }}
+            <ul class="sidebar-product-details">
+              {{ range .details }}<li><span>→</span> {{ . }}</li>{{ end }}
+            </ul>
+            {{ end }}
+            <a href="{{ .stripe_url }}" target="_blank" rel="noopener noreferrer" class="sidebar-product-btn">{{ .cta }}</a>
+            {{ if .footnote }}<p class="sidebar-product-footnote">{{ .footnote }}</p>{{ end }}
+          </div>
+          {{ end }}
+          {{ end }}
+
           <div class="sidebar-card sidebar-cta">
             <h3 class="sidebar-heading">Work with Pranoti</h3>
             <p class="sidebar-text">AI integration and science communication consultant for European researchers and EIC-funded companies. Proposal writing, workflow automation, research visibility.</p>
@@ -234,6 +253,47 @@
   text-decoration: none; transition: background .2s;
 }
 .sidebar-btn:hover { background: #1A3828; }
+
+/* Product card */
+.sidebar-product { border-top: 3px solid #FF5757; }
+.sidebar-product-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .65rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: #FF5757; margin: 0 0 .4rem;
+}
+.sidebar-product-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .95rem; font-weight: 700; color: #1A3828;
+  line-height: 1.3; margin: 0 0 .9rem;
+}
+.sidebar-product-bullets {
+  list-style: none; padding: 0; margin: 0 0 .75rem;
+  border-top: 1px solid #F0EDE8; padding-top: .75rem;
+}
+.sidebar-product-bullets li {
+  font-size: .85rem; color: #444; line-height: 1.55;
+  margin-bottom: .35rem; display: flex; align-items: flex-start; gap: .35rem;
+}
+.sidebar-product-check { color: #FF5757; font-weight: 700; flex-shrink: 0; }
+.sidebar-product-details {
+  list-style: none; padding: 0; margin: 0 0 .9rem;
+  border-top: 1px solid #F0EDE8; padding-top: .65rem;
+}
+.sidebar-product-details li {
+  font-size: .78rem; color: #888; line-height: 1.5;
+  margin-bottom: .25rem; display: flex; align-items: flex-start; gap: .35rem;
+}
+.sidebar-product-details li span { flex-shrink: 0; color: #bbb; }
+.sidebar-product-btn {
+  display: block; text-align: center;
+  font-family: 'Montserrat', sans-serif; font-size: .82rem; font-weight: 700;
+  color: #fff; background: #FF5757; padding: .65rem 1rem; border-radius: 6px;
+  text-decoration: none; transition: background .2s; margin-bottom: .6rem;
+}
+.sidebar-product-btn:hover { background: #e04444; }
+.sidebar-product-footnote {
+  font-size: .7rem; color: #aaa; text-align: center; margin: 0;
+}
 
 /* Responsive */
 @media (max-width: 900px) {
