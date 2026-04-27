@@ -16,6 +16,19 @@ sidebar_links:
     url: "/ai-guides/event-registration-automation-stripe-make-mailerlite/"
   - title: "How to Restore a WordPress Page from a WP Engine Backup"
     url: "/ai-guides/restore-wordpress-page-wpengine-backup/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Claude Connected to Google Sheets via MCP"
+  bullets:
+    - "Complete OAuth 2.0 setup walkthrough"
+    - "Service account alternative (with org policy guidance)"
+    - "5 real-world integration templates"
+  details:
+    - "Instant PDF delivery"
+    - "Email support included"
+  stripe_url: "https://buy.stripe.com/9B614n7699puePn0jm8Ra0o"
+  cta: "Get the guide — €12 →"
+  footnote: "Complete setup guide + templates"
 ---
 
 If you use **Claude Desktop** and want it to read, edit, and manage your Google Sheets directly, the **Model Context Protocol (MCP)** is the cleanest and most secure way to do it. No copy-pasting data, no exporting CSVs — just natural language commands like "update cell B5" or "list all my spreadsheets."

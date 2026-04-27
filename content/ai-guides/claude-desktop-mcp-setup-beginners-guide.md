@@ -16,6 +16,19 @@ sidebar_links:
     url: "/ai-guides/connect-wordpress-claude-desktop-mcp-guide/"
   - title: "Automate Event Registration with Stripe, Make.com and MailerLite"
     url: "/ai-guides/event-registration-automation-stripe-make-mailerlite/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Claude Connected to Google Sheets via MCP"
+  bullets:
+    - "Step-by-step OAuth 2.0 setup"
+    - "Service account + password authentication patterns"
+    - "5 ready-to-use integration examples"
+  details:
+    - "Instant PDF delivery"
+    - "Email setup support"
+  stripe_url: "https://buy.stripe.com/9B614n7699puePn0jm8Ra0o"
+  cta: "Get the guide — €12 →"
+  footnote: "Complete setup guide"
 ---
 
 Claude Desktop becomes significantly more useful once you connect it to MCP servers — tools that give Claude access to your files, apps, and workflows directly from the chat interface. This guide covers everything you need to get Claude Desktop installed and your first MCP server connected, even if you have never edited a configuration file before.
