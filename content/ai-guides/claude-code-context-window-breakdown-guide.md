@@ -16,6 +16,19 @@ sidebar_links:
     url: "/ai-guides/event-registration-automation-stripe-make-mailerlite/"
   - title: "Connect Your Self-Hosted WordPress Site to Claude Desktop via MCP"
     url: "/ai-guides/connect-wordpress-claude-desktop-mcp-guide/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Claude + Google Sheets via MCP"
+  bullets:
+    - "Connect Claude Desktop to Google Sheets in under 30 minutes"
+    - "Read, write, and update sheets with plain-language prompts"
+    - "Automate reporting and data tasks without formulas"
+  details:
+    - "Step-by-step setup guide, no coding required"
+    - "Works with Claude Desktop on Mac and Windows"
+  stripe_url: "https://buy.stripe.com/9B614n7699puePn0jm8Ra0o"
+  cta: "Get the guide — €12 →"
+  footnote: "Instant PDF delivery. Lifetime access."
 ---
 
 Claude Desktop now shows a live context window breakdown directly in the session interface — no terminal command needed. You can see exactly how full your context window is, which categories consume the most tokens, and how much free space remains. This guide explains what each category in the breakdown means and what to do when the numbers start climbing.
