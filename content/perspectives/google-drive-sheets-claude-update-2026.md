@@ -16,6 +16,19 @@ sidebar_links:
     url: "/case-studies/google-sheets-mcp/"
   - title: "ERC Grant Data Analysis with Claude and Sheets"
     url: "/ai-guides/erc-grant-data-analysis-funded-institutions/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Claude + Google Sheets via MCP"
+  bullets:
+    - "Connect Claude Desktop to Google Sheets in under 30 minutes"
+    - "Read, write, and update sheets with plain-language prompts"
+    - "Automate reporting and data tasks without formulas"
+  details:
+    - "Step-by-step setup guide, no coding required"
+    - "Works with Claude Desktop on Mac and Windows"
+  stripe_url: "https://buy.stripe.com/9B614n7699puePn0jm8Ra0o"
+  cta: "Get the guide — €12 →"
+  footnote: "Instant PDF delivery. Lifetime access."
 ---
 
 Anthropic quietly rolled out Google Sheets support for the Google Drive connector in Claude. If you've been exporting CSVs or manually copying data between your spreadsheets and Claude conversations, this is good news — the friction just dropped.
