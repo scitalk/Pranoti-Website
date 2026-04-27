@@ -16,6 +16,19 @@ sidebar_links:
     url: "/ai-guides/connect-wordpress-claude-desktop-mcp-guide/"
   - title: "Restore a Single WordPress Page from a WP Engine Backup"
     url: "/ai-guides/restore-wordpress-page-wpengine-backup/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Claude + WordPress via MCP"
+  bullets:
+    - "Connect Claude Desktop to WordPress in under 30 minutes"
+    - "Draft, edit, and publish posts without touching the dashboard"
+    - "Batch operations across 15–20 posts with one prompt"
+  details:
+    - "Step-by-step setup for self-hosted WordPress"
+    - "Works with Claude Desktop on Mac and Windows"
+  stripe_url: "https://buy.stripe.com/bJe28railfNSaz70jm8Ra0p"
+  cta: "Get the guide — €17 →"
+  footnote: "Instant PDF delivery. Lifetime access."
 ---
 
 Knowledge workers running multiple paid online events — workshops, webinars, guidance sessions — spend a disproportionate amount of time on registration admin: manual emails, spreadsheet updates, copy-pasting registrant details. This guide documents a clean, reliable automated registration pipeline using Stripe, Make.com, and MailerLite that eliminates that overhead entirely. Every paid registration triggers a full onboarding sequence automatically, from payment confirmation to inbox — without any manual steps after the initial build.
