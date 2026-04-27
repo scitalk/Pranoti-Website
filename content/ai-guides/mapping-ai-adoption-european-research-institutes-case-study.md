@@ -16,6 +16,19 @@ sidebar_links:
     url: "/ai-guides/connect-wordpress-claude-desktop-mcp-guide/"
   - title: "Automate Event Registration with Stripe, Make.com and MailerLite"
     url: "/ai-guides/event-registration-automation-stripe-make-mailerlite/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Claude + Google Sheets via MCP"
+  bullets:
+    - "Connect Claude Desktop to Google Sheets in under 30 minutes"
+    - "Read, write, and update sheets with plain-language prompts"
+    - "Automate reporting and data tasks without formulas"
+  details:
+    - "Step-by-step setup guide, no coding required"
+    - "Works with Claude Desktop on Mac and Windows"
+  stripe_url: "https://buy.stripe.com/9B614n7699puePn0jm8Ra0o"
+  cta: "Get the guide — €12 →"
+  footnote: "Instant PDF delivery. Lifetime access."
 ---
 
 Understanding where an industry stands on AI adoption is useful. Being able to map it systematically — with verified sources, structured synthesis, and actionable conclusions — is a different skill. This case study documents a deep research sprint on AI integration across European research institutes: what the question was, how it was investigated using AI-assisted research tools, what the evidence shows, and what it means strategically. It is also a worked example of what AI-assisted research analysis actually looks like in practice, as distinct from AI-generated content.
