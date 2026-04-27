@@ -16,6 +16,19 @@ sidebar_links:
     url: "/perspectives/european-research-ai-implementation-gap/"
   - title: "Google Drive Can Now Read Your Sheets in Claude"
     url: "/perspectives/google-drive-sheets-claude-update-2026/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Claude + Google Sheets via MCP"
+  bullets:
+    - "Connect Claude Desktop to Google Sheets in under 30 minutes"
+    - "Read, write, and update sheets with plain-language prompts"
+    - "Automate reporting and data tasks without formulas"
+  details:
+    - "Step-by-step setup guide, no coding required"
+    - "Works with Claude Desktop on Mac and Windows"
+  stripe_url: "https://buy.stripe.com/9B614n7699puePn0jm8Ra0o"
+  cta: "Get the guide — €12 →"
+  footnote: "Instant PDF delivery. Lifetime access."
 ---
 
 I have been building Claude skills for about six months. What started as a handful of reusable workflows has grown into a library of over twenty skills — each one a Claude Code instruction file encoding a complete, repeatable process. At some point this year, I stopped knowing exactly what I had. Some skills were working perfectly. Others were quietly broken. A few had been replaced by better versions but never deleted.
