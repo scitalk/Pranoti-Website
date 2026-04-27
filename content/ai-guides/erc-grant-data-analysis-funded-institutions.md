@@ -16,6 +16,19 @@ sidebar_links:
     url: "/ai-guides/connect-wordpress-claude-desktop-mcp-guide/"
   - title: "Automate Event Registration with Stripe, Make.com and MailerLite"
     url: "/ai-guides/event-registration-automation-stripe-make-mailerlite/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Claude + Google Sheets via MCP"
+  bullets:
+    - "Connect Claude Desktop to Google Sheets in under 30 minutes"
+    - "Read, write, and update sheets with plain-language prompts"
+    - "Automate reporting and data tasks without formulas"
+  details:
+    - "Step-by-step setup guide, no coding required"
+    - "Works with Claude Desktop on Mac and Windows"
+  stripe_url: "https://buy.stripe.com/9B614n7699puePn0jm8Ra0o"
+  cta: "Get the guide — €12 →"
+  footnote: "Instant PDF delivery. Lifetime access."
 ---
 
 The European Commission publishes detailed data on every ERC-funded project — host institution, PI, country, funding amount, project dates, abstract, CORDIS link, and more. All of it is public. All of it is downloadable. Almost none of it gets used by the people who would benefit most: researchers, grant advisors, and research development offices. This guide walks through how to find the data, export it from the official EC database, and turn it into interactive dashboards using Claude AI and a Google Sheets MCP connection — the whole process takes about 15 minutes.
