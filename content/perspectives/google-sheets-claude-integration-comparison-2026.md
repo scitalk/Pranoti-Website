@@ -16,6 +16,19 @@ sidebar_links:
     url: "/perspectives/google-drive-sheets-claude-update-2026/"
   - title: "Google Sheets MCP Case Study"
     url: "/case-studies/google-sheets-mcp/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Claude + Google Sheets via MCP"
+  bullets:
+    - "Connect Claude Desktop to Google Sheets in under 30 minutes"
+    - "Read, write, and update sheets with plain-language prompts"
+    - "Automate reporting and data tasks without formulas"
+  details:
+    - "Step-by-step setup guide, no coding required"
+    - "Works with Claude Desktop on Mac and Windows"
+  stripe_url: "https://buy.stripe.com/9B614n7699puePn0jm8Ra0o"
+  cta: "Get the guide — €12 →"
+  footnote: "Instant PDF delivery. Lifetime access."
 ---
 
 Claude can now connect to your Google Sheets in two fundamentally different ways — and choosing the wrong one will either leave critical features on the table or waste time on setup you don't need.
