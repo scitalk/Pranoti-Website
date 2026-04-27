@@ -17,6 +17,19 @@ sidebar_links:
     url: "/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/"
   - title: "Automate Event Registration with Stripe, Make.com and MailerLite"
     url: "/ai-guides/event-registration-automation-stripe-make-mailerlite/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Claude + WordPress via MCP"
+  bullets:
+    - "Connect Claude Desktop to WordPress in under 30 minutes"
+    - "Draft, edit, and publish posts without touching the dashboard"
+    - "Batch operations across 15–20 posts with one prompt"
+  details:
+    - "Step-by-step setup for self-hosted WordPress"
+    - "Works with the workflow patterns in this guide"
+  stripe_url: "https://buy.stripe.com/bJe28railfNSaz70jm8Ra0p"
+  cta: "Get the guide — €17 →"
+  footnote: "Instant PDF delivery. Lifetime access."
 ---
 
 In European R&D — a €403 billion industry — a single factual error in a grant reference isn't just a typo. It's a million-euro mistake for the researcher who trusted your content. Here is how I built the workflow to prevent it.
