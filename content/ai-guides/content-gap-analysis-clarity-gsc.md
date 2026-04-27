@@ -16,6 +16,19 @@ sidebar_links:
     url: "/ai-guides/event-registration-automation-stripe-make-mailerlite/"
   - title: "Connect Your Self-Hosted WordPress Site to Claude Desktop via MCP"
     url: "/ai-guides/connect-wordpress-claude-desktop-mcp-guide/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Claude + WordPress via MCP"
+  bullets:
+    - "Connect Claude Desktop to WordPress in under 30 minutes"
+    - "Draft, edit, and publish posts without touching the dashboard"
+    - "Batch operations across 15–20 posts with one prompt"
+  details:
+    - "Step-by-step setup for self-hosted WordPress"
+    - "Works with Claude Desktop on Mac and Windows"
+  stripe_url: "https://buy.stripe.com/bJe28railfNSaz70jm8Ra0p"
+  cta: "Get the guide — €17 →"
+  footnote: "Instant PDF delivery. Lifetime access."
 ---
 
 Most content decisions are guesses. You write about topics you think matter, but without data, you don't know if visitors actually engage with your posts, or what they're searching for but not finding. This guide teaches you to combine two powerful data sources — Microsoft Clarity (real user behaviour) and Google Search Console (search intent) — to build a data-backed content strategy. Claude automates the analysis, surfacing gaps, quick wins, and problems worth fixing.
