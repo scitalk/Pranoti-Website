@@ -9,8 +9,6 @@ author: "Pranoti Kshirsagar"
 reading_time: "6 min"
 tags: ["Claude Desktop", "WordPress", "MCP", "AI Integration", "Automation"]
 category: "ai-integration-guides"
-stripe_url: "https://buy.stripe.com/bJe28railfNSaz70jm8Ra0p"
-stripe_note: "Background, blockers encountered, and workflow context — for members on The Science Talk"
 sidebar_links:
   - title: "Connect Claude Desktop to Google Sheets via MCP"
     url: "/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/"
@@ -18,6 +16,19 @@ sidebar_links:
     url: "/ai-guides/event-registration-automation-stripe-make-mailerlite/"
   - title: "How to Restore a WordPress Page from a WP Engine Backup"
     url: "/ai-guides/restore-wordpress-page-wpengine-backup/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Connect Your WordPress Site to Claude Desktop"
+  bullets:
+    - "Complete WordPress REST API setup"
+    - "Application Password configuration (WordPress 5.6+)"
+    - "5 ready-to-use content workflow templates"
+  details:
+    - "Instant PDF delivery"
+    - "Email support included"
+  stripe_url: "https://buy.stripe.com/bJe28railfNSaz70jm8Ra0p"
+  cta: "Get the guide — €17 →"
+  footnote: "Complete setup guide + workflow examples"
 ---
 
 What if you could create, edit, and manage your WordPress posts without ever opening your browser? With **Claude Desktop and the Model Context Protocol (MCP)**, you can connect your self-hosted WordPress site directly to Claude — and manage your entire content workflow through natural language conversation.
