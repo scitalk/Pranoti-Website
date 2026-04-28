@@ -1,4 +1,4 @@
 ---
-title: "Pranoti Kshirsagar - Science Communication Expert"
-description: "Transform complex science into compelling stories. Expert podcast production, strategy, and branding for researchers and innovation-driven companies."
+title: "Pranoti Kshirsagar — AI Integration for Research-Driven Organisations"
+description: "Practical AI workflows for European research teams, science communicators, and grant writers — built from real implementations, not theory. AI guides, perspectives, and case studies by Pranoti Kshirsagar."
 ---
