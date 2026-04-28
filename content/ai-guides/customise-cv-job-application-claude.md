@@ -24,11 +24,10 @@ sidebar_product:
     - "Job description matching & keyword alignment"
     - "Approval gates to maintain authenticity"
   details:
-    - "Video walkthrough included"
     - "Lifetime access + updates"
   stripe_url: "https://buy.stripe.com/00w5kD8adaty22Bgik8Ra0v"
   cta: "Get the system — €49 →"
-  footnote: "Complete system + templates + video"
+  footnote: "Complete system + templates"
 ---
 
 One-size-fits-all CVs don't work. Hiring managers spend seconds screening, and applicant tracking systems (ATS) filter applications based on keyword match. Yet truly customising a CV for each role — researching the employer, understanding the team context, and strategically reframing your experience — is time-consuming enough that most people skip it entirely. This guide teaches you to use Claude with structured approval gates to customise your CV intelligently for every application, without losing authenticity or fabricating experience.
