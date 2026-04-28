@@ -1,11 +1,229 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <link rel="canonical" href="https://pranoti.thesciencetalk.com/portfolio/">
-  <script>window.location.replace('/portfolio/');</script>
-</head>
-<body>
-  <a href="/portfolio/">Redirecting to portfolio…</a>
-</body>
-</html>
+{{ define "main" }}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<section class="home-page">
+
+  <header class="home-hero">
+    <div class="container narrow">
+      <span class="home-eyebrow">Pranoti Kshirsagar</span>
+      <h1>AI integration for research-driven organisations</h1>
+      <p class="home-hero-sub">Practical AI workflows for European research teams, science communicators, and grant writers — built from real implementations, not theory.</p>
+      <div class="home-hero-ctas">
+        <a href="/ai-guides/" class="home-cta home-cta-primary">Read the guides</a>
+        <a href="/case-studies/" class="home-cta home-cta-secondary">See case studies</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="home-body">
+    <div class="container narrow">
+
+      {{ $guides := first 3 (where .Site.RegularPages "Section" "ai-guides").ByDate.Reverse }}
+      {{ if $guides }}
+      <section class="home-section">
+        <div class="home-section-header">
+          <h2>Latest AI Guides</h2>
+          <a href="/ai-guides/" class="home-section-more">All guides →</a>
+        </div>
+        <div class="home-grid">
+          {{ range $guides }}
+          <article class="home-card">
+            <a href="{{ .Permalink }}" class="home-card-link">
+              <div class="home-card-body">
+                <div class="home-card-meta">
+                  <span class="home-card-tag">AI Integration</span>
+                  <time>{{ .Date.Format "02 Jan 2006" }}</time>
+                </div>
+                <h3>{{ .Title }}</h3>
+                {{ with .Params.description }}<p class="home-card-desc">{{ . }}</p>{{ end }}
+              </div>
+            </a>
+          </article>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      {{ $persp := first 3 (where .Site.RegularPages "Section" "perspectives").ByDate.Reverse }}
+      {{ if $persp }}
+      <section class="home-section">
+        <div class="home-section-header">
+          <h2>Latest Perspectives</h2>
+          <a href="/perspectives/" class="home-section-more">All perspectives →</a>
+        </div>
+        <div class="home-grid">
+          {{ range $persp }}
+          <article class="home-card">
+            <a href="{{ .Permalink }}" class="home-card-link">
+              <div class="home-card-body">
+                <div class="home-card-meta">
+                  <span class="home-card-tag perspective">Perspectives</span>
+                  <time>{{ .Date.Format "02 Jan 2006" }}</time>
+                </div>
+                <h3>{{ .Title }}</h3>
+                {{ with .Params.description }}<p class="home-card-desc">{{ . }}</p>{{ end }}
+              </div>
+            </a>
+          </article>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+
+      <div class="home-work-strip">
+        <div class="home-work-text">
+          <h2>Work with me</h2>
+          <p>I help research organisations and science-driven teams integrate AI tools into real workflows — proposal preparation, science communication, knowledge management.</p>
+        </div>
+        <div class="home-work-links">
+          <a href="/case-studies/" class="home-work-link">Case studies</a>
+          <a href="/portfolio/" class="home-work-link">Portfolio</a>
+          <a href="https://thesciencetalk.com/contact-us/" class="home-work-link primary">Get in touch →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<style>
+.home-page { font-family: 'Inter', sans-serif; }
+
+.home-hero { background: var(--ink, #1c1c1c); color: #fff; padding: 5.5rem 2rem 4rem; text-align: center; }
+.home-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #7BBDA0;
+  display: block;
+  margin-bottom: .85rem;
+}
+.home-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.home-hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.65); max-width: 600px; margin: 0 auto 1.75rem; line-height: 1.6; }
+.home-hero-ctas { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+.home-cta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  padding: .7rem 1.4rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: transform .2s, background .2s, color .2s;
+}
+.home-cta-primary { background: #7BBDA0; color: #1c1c1c; }
+.home-cta-primary:hover { background: #94d0b5; transform: translateY(-1px); }
+.home-cta-secondary { color: #fff; border: 1px solid rgba(255,255,255,.3); }
+.home-cta-secondary:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); }
+
+.home-body { background: #F8F4ED; padding: 3.5rem 2rem 5rem; }
+.container.narrow { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+
+.home-section { margin-bottom: 3rem; }
+.home-section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.25rem; gap: 1rem; }
+.home-section-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin: 0;
+}
+.home-section-more {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #2A6048;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.home-section-more:hover { text-decoration: underline; }
+
+.home-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+.home-card { background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 10px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.home-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.08); }
+.home-card-link { display: block; text-decoration: none; color: var(--ink, #1c1c1c); }
+.home-card-body { padding: 1.25rem; }
+.home-card-meta { display: flex; align-items: center; gap: .5rem; margin-bottom: .75rem; flex-wrap: wrap; }
+.home-card-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: #1A3828;
+  color: #fff;
+  padding: .2rem .55rem;
+  border-radius: 3px;
+}
+.home-card-tag.perspective { background: #2A6048; }
+.home-card-meta time { font-size: .72rem; color: #999; }
+.home-card-body h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 .5rem;
+  color: #1c1c1c;
+}
+.home-card-desc { font-size: .82rem; color: #666; line-height: 1.55; margin: 0; }
+
+.home-work-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.07);
+  border-radius: 10px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.home-work-text { flex: 1 1 320px; }
+.home-work-text h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 .5rem;
+  color: #1c1c1c;
+}
+.home-work-text p { font-size: .9rem; color: #666; line-height: 1.6; margin: 0; }
+.home-work-links { display: flex; gap: .6rem; flex-wrap: wrap; }
+.home-work-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #2A6048;
+  text-decoration: none;
+  border: 1px solid #2A6048;
+  padding: .4rem .9rem;
+  border-radius: 5px;
+  transition: background .2s, color .2s;
+}
+.home-work-link:hover { background: #2A6048; color: #fff; }
+.home-work-link.primary { background: #2A6048; color: #fff; }
+.home-work-link.primary:hover { background: #1A3828; border-color: #1A3828; }
+
+@media (max-width: 860px) {
+  .home-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .home-grid { grid-template-columns: 1fr; }
+  .home-body { padding: 2.5rem 1.25rem 4rem; }
+  .container.narrow { padding: 0 1.25rem; }
+  .home-work-strip { padding: 1.5rem; }
+}
+</style>
+
+{{ end }}
