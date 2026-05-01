@@ -15,8 +15,21 @@ sidebar_links:
     url: "/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/"
   - title: "How to Find Content Gaps Using Clarity and Google Search Console"
     url: "/ai-guides/content-gap-analysis-clarity-gsc/"
-  - title: "WordPress MCP Setup Guide"
-    url: "/products/wordpress-mcp-setup-guide/"
+  - title: "Connect Your WordPress Site to Claude Desktop via MCP"
+    url: "/ai-guides/connect-wordpress-claude-desktop-mcp-guide/"
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Connect Your WordPress Site to Claude Desktop"
+  bullets:
+    - "Complete WordPress REST API setup"
+    - "Application Password configuration (WordPress 5.6+)"
+    - "5 ready-to-use content workflow templates"
+  details:
+    - "Instant PDF delivery"
+    - "Email support included"
+  stripe_url: "https://buy.stripe.com/bJe28railfNSaz70jm8Ra0p"
+  cta: "Get the guide — €17 →"
+  footnote: "Complete setup guide + workflow examples"
 ---
 
 Once the Google Analytics MCP server is connected to Claude Desktop, you can query your GA4 data in plain English — no dashboards, no tab-switching, no exports. Ask Claude for your top pages this week, your traffic by source, or your session counts by country, and get the answer directly in your conversation.
