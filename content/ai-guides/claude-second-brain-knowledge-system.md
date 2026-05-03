@@ -14,6 +14,19 @@ related_posts: [
   "/ai-guides/ai-content-workflow-billion-euro-industry/",
   "/ai-guides/mapping-ai-adoption-european-research-institutes-case-study/"
 ]
+sidebar_product:
+  label: "DIGITAL GUIDE"
+  title: "Publish Smarter with WordPress + AI"
+  bullets:
+    - "Connect Claude directly to your WordPress site"
+    - "Draft, format and publish posts without copy-pasting"
+    - "Works with any WordPress.com or self-hosted site"
+  details:
+    - "Step-by-step MCP setup guide"
+    - "Prompt templates included"
+  stripe_url: "https://buy.stripe.com/bJe28railfNSaz70jm8Ra0p"
+  cta: "Get the guide — €17 →"
+  footnote: "Instant PDF delivery · Email support"
 ---
 
 If you use Claude daily for research, writing, or complex problem-solving, your most valuable knowledge is scattered across dozens of chat sessions.
