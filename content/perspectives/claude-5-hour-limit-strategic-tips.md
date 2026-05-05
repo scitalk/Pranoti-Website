@@ -28,7 +28,21 @@ sidebar_links:
     url: "/perspectives/claude-skills-hygiene-audit/"
   - title: "Claude Skills Registry: Why Your Automation Library Needs One"
     url: "/perspectives/claude-skills-registry-and-audit/"
-sidebar_product: "wp-mcp"
+sidebar_product:
+  label: "AI Integration Guide"
+  title: "Connect WordPress to Claude Desktop — MCP Setup Guide"
+  bullets:
+    - "Read, create and update posts — using plain language"
+    - "No browser switching, no copy-pasting"
+    - "Fully connected in under 15 minutes"
+  details:
+    - "Copy-paste config for Mac & Windows"
+    - "Application Password walkthrough"
+    - "7 troubleshooting fixes"
+    - "Security best practices"
+  stripe_url: "https://buy.stripe.com/bJe28railfNSaz70jm8Ra0p"
+  cta: "Get the guide — €17 →"
+  footnote: "Instant PDF delivery"
 ---
 
 The 5-hour limit is a session budget, not a wall. Here's how I work with it strategically in my own Claude sessions.
