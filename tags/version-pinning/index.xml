@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Version Pinning on Pranoti Kshirsagar</title><link>https://pranoti.thesciencetalk.com/tags/version-pinning/</link><description>Recent content in Version Pinning on Pranoti Kshirsagar</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Tue, 05 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://pranoti.thesciencetalk.com/tags/version-pinning/index.xml" rel="self" type="application/rss+xml"/><item><title>Claude Desktop MCP Stopped Working: How to Fix It</title><link>https://pranoti.thesciencetalk.com/ai-guides/claude-desktop-mcp-stopped-working-fix/</link><pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate><guid>https://pranoti.thesciencetalk.com/ai-guides/claude-desktop-mcp-stopped-working-fix/</guid><description>&lt;p>On May 1st, your Claude Desktop MCP connector stopped working. You didn&amp;rsquo;t change anything. This guide explains why your MCP broke silently, how to diagnose the root cause using the Google Analytics MCP as a worked example, and how to prevent future breakage through version pinning.&lt;/p>
+&lt;h2 id="what-you-need-before-starting">What you need before starting&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Claude Desktop&lt;/strong> (current version installed on your Mac or Linux machine)&lt;/li>
+&lt;li>An active &lt;strong>Google Cloud project&lt;/strong> with OAuth 2.0 desktop app credentials (if fixing the GA MCP specifically)&lt;/li>
+&lt;li>&lt;strong>Access to your Claude config file&lt;/strong> at &lt;code>~/.claude/claude_desktop_config.json&lt;/code>&lt;/li>
+&lt;li>Basic familiarity with YAML syntax and environment variables&lt;/li>
+&lt;li>&lt;strong>5–10 minutes&lt;/strong> for diagnosis and fix (longer if creating new OAuth credentials)&lt;/li>
+&lt;/ul>
+&lt;h2 id="understanding-why-mcp-connectors-break-silently">Understanding why MCP connectors break silently&lt;/h2>
+&lt;p>When you install an MCP server using &lt;code>uvx&lt;/code> with the &lt;code>@latest&lt;/code> tag, you&amp;rsquo;re not downloading a pinned version—you&amp;rsquo;re telling &lt;code>uvx&lt;/code> to check PyPI every time Claude Desktop launches and fetch whatever the latest published version is.&lt;/p></description></item></channel></rss>
