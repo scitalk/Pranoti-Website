@@ -1,6 +1,4 @@
 {{ define "main" }}
-<!-- Montserrat for episode pages only -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <article class="ep-page">
 
@@ -12,7 +10,7 @@
     {{ else }}
     <div class="ep-hero-placeholder">
       <div class="ep-hero-placeholder-inner">
-        <span class="ep-hero-show-label">Under the Microscope</span>
+        <span class="ep-hero-show-label">Podcast</span>
       </div>
     </div>
     {{ end }}
@@ -39,6 +37,14 @@
 
         <div class="ep-content">
           {{ .Content }}
+        </div>
+
+        <div class="ep-cta-block">
+          <p>Enjoyed this episode? Explore more or get in touch.</p>
+          <div class="ep-cta-row">
+            <a href="/podcast/" class="ep-cta-outline">← More episodes</a>
+            <a href="https://thesciencetalk.com/contact-us/" class="ep-cta-solid">Work with me →</a>
+          </div>
         </div>
 
       </main>
@@ -129,21 +135,11 @@
 
 <style>
 /* ─────────────────────────────────────────
-   BRAND TOKENS
+   EP PAGE — inherits site tokens from main.css
 ───────────────────────────────────────── */
 .ep-page {
-  --coral:  #ff5757;
-  --teal:   #6fbec5;
-  --sand:   #eadbc4;
-  --ink:    #111111;
-  --soft:   #4a4a4a;
-  --muted:  #888888;
-  --white:  #ffffff;
-  --bg:     #f9f8f6;
-  --rule:   rgba(0,0,0,0.09);
-  --ep-font: 'Montserrat', sans-serif;
-  background: var(--bg);
-  font-family: var(--ep-font);
+  background: var(--paper);
+  font-family: var(--font-body);
 }
 
 /* ─────────────────────────────────────────
@@ -167,19 +163,17 @@
 .ep-hero-placeholder {
   width: 100%;
   height: 100%;
-  background: var(--sand);
+  background: var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .ep-hero-placeholder-inner { text-align: center; }
 .ep-hero-show-label {
-  font-family: var(--ep-font);
   font-size: 0.7rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--soft);
-  opacity: 0.6;
+  color: rgba(255,255,255,0.5);
 }
 .ep-hero-overlay {
   position: absolute;
@@ -188,8 +182,8 @@
   right: 0;
   padding: 4rem 3rem 2.5rem;
   background: linear-gradient(to top,
-    rgba(234,219,196,0.97) 0%,
-    rgba(234,219,196,0.6) 45%,
+    rgba(28,28,28,0.95) 0%,
+    rgba(28,28,28,0.55) 50%,
     transparent 100%);
 }
 .ep-hero-overlay-inner {
@@ -198,19 +192,17 @@
 }
 .ep-ep-num {
   display: block;
-  font-family: var(--ep-font);
   font-size: 0.62rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--coral);
+  color: rgba(255,255,255,0.6);
   margin-bottom: 0.6rem;
   font-weight: 600;
 }
 .ep-title {
-  font-family: var(--ep-font);
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 600;
-  color: var(--ink);
+  color: #fff;
   line-height: 1.15;
   margin: 0;
   max-width: 780px;
@@ -238,26 +230,24 @@
   font-size: 0.68rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ink-soft);
   text-decoration: none;
   margin-bottom: 2rem;
   transition: color 0.2s;
 }
-.ep-back:hover { color: var(--coral); }
+.ep-back:hover { color: var(--accent); }
 
 .ep-summary {
-  font-family: var(--ep-font);
   font-size: clamp(1.15rem, 2vw, 1.35rem);
   font-weight: 400;
   color: var(--ink);
   line-height: 1.6;
   margin-bottom: 2.5rem;
   padding-bottom: 2.5rem;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .ep-content h2 {
-  font-family: var(--ep-font);
   font-size: clamp(1.2rem, 2vw, 1.55rem);
   font-weight: 400;
   color: var(--ink);
@@ -266,7 +256,6 @@
   letter-spacing: -0.01em;
 }
 .ep-content h3 {
-  font-family: var(--ep-font);
   font-size: 1.1rem;
   font-weight: 500;
   color: var(--ink);
@@ -276,23 +265,23 @@
 .ep-content p {
   font-size: 1.05rem;
   line-height: 1.85;
-  color: var(--soft);
+  color: var(--ink-soft);
   margin-bottom: 1.4rem;
 }
 .ep-content strong { color: var(--ink); font-weight: 600; }
-.ep-content a { color: var(--coral); text-underline-offset: 3px; }
+.ep-content a { color: var(--accent); text-underline-offset: 3px; }
 .ep-content a:hover { opacity: 0.75; }
 .ep-content ul, .ep-content ol { padding-left: 1.5rem; margin-bottom: 1.4rem; }
 .ep-content li {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: var(--soft);
+  color: var(--ink-soft);
   margin-bottom: 0.4rem;
 }
 .ep-content blockquote {
   margin: 2.5rem 0;
   padding: 1.5rem 2rem;
-  border-left: 3px solid var(--teal);
+  border-left: 3px solid var(--accent);
   background: var(--white);
 }
 .ep-content blockquote p {
@@ -302,7 +291,33 @@
   margin: 0;
   line-height: 1.6;
 }
-.ep-content hr { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+.ep-content hr { border: none; border-top: 1px solid rgba(0,0,0,0.08); margin: 3rem 0; }
+
+/* CTA block */
+.ep-cta-block {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 8px;
+  padding: 1.75rem 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+.ep-cta-block p { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 1rem; }
+.ep-cta-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.ep-cta-outline {
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--ink); border: 1.5px solid var(--ink);
+  padding: 0.55rem 1.25rem; border-radius: 6px;
+  text-decoration: none; transition: all 0.2s;
+}
+.ep-cta-outline:hover { background: var(--ink); color: var(--white); }
+.ep-cta-solid {
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--white); background: var(--accent);
+  padding: 0.55rem 1.25rem; border-radius: 6px;
+  text-decoration: none; transition: background 0.2s;
+}
+.ep-cta-solid:hover { background: #b05a4a; }
 
 /* ─────────────────────────────────────────
    SIDEBAR (RIGHT)
@@ -316,14 +331,16 @@
 }
 .ep-sidebar-card {
   background: var(--white);
-  border: 1px solid var(--rule);
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 8px;
   padding: 1.5rem;
 }
 .ep-sidebar-label {
   font-size: 0.58rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ink-soft);
+  opacity: 0.7;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -334,7 +351,8 @@
   align-items: center;
   gap: 0.65rem;
   padding: 0.75rem 1rem;
-  border: 1px solid var(--rule);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 6px;
   text-decoration: none;
   color: var(--ink);
   font-size: 0.82rem;
@@ -343,7 +361,7 @@
   transition: border-color 0.2s, background 0.2s;
 }
 .ep-platform-btn:last-child { margin-bottom: 0; }
-.ep-platform-btn:hover { border-color: var(--ink); background: var(--bg); }
+.ep-platform-btn:hover { border-color: var(--ink); background: var(--paper); }
 .ep-platform-btn .ep-arrow { margin-left: auto; opacity: 0.4; }
 .ep-platform-spotify svg:first-child { color: #1DB954; }
 .ep-platform-youtube svg:first-child { color: #FF0000; }
@@ -355,6 +373,7 @@
   object-fit: cover;
   display: block;
   margin-bottom: 1.25rem;
+  border-radius: 4px;
   filter: grayscale(20%);
 }
 .ep-guest-name {
@@ -367,7 +386,7 @@
 .ep-guest-role {
   display: block;
   font-size: 0.78rem;
-  color: var(--coral);
+  color: var(--accent);
   font-style: italic;
   margin-bottom: 0.25rem;
   line-height: 1.4;
@@ -375,21 +394,22 @@
 .ep-guest-institution {
   display: block;
   font-size: 0.78rem;
-  color: var(--soft);
+  color: var(--ink-soft);
   margin-bottom: 0.2rem;
   line-height: 1.4;
 }
 .ep-guest-country {
   display: block;
   font-size: 0.72rem;
-  color: var(--muted);
+  color: var(--ink-soft);
+  opacity: 0.7;
   margin-bottom: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 .ep-guest-bio {
   font-size: 0.85rem;
-  color: var(--soft);
+  color: var(--ink-soft);
   line-height: 1.7;
   margin: 0 0 0.85rem;
 }
@@ -397,10 +417,10 @@
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--accent);
   text-decoration: none;
 }
-.ep-guest-link:hover { color: var(--coral); }
+.ep-guest-link:hover { opacity: 0.75; }
 
 /* Meta card */
 .ep-meta-row {
@@ -408,7 +428,7 @@
   justify-content: space-between;
   align-items: baseline;
   padding: 0.5rem 0;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
   gap: 0.5rem;
 }
 .ep-meta-row:last-child { border-bottom: none; }
@@ -417,7 +437,8 @@
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ink-soft);
+  opacity: 0.7;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -427,9 +448,10 @@
   font-size: 0.6rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--teal);
-  border: 1px solid var(--teal);
+  color: var(--accent);
+  border: 1px solid var(--accent);
   padding: 0.15rem 0.5rem;
+  border-radius: 3px;
   opacity: 0.85;
 }
 
@@ -437,7 +459,7 @@
    FOOTER
 ───────────────────────────────────────── */
 .ep-footer {
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid rgba(0,0,0,0.07);
   padding: 1.75rem 2.5rem;
   background: var(--white);
 }
@@ -446,11 +468,11 @@
   font-size: 0.68rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ink-soft);
   text-decoration: none;
   transition: color 0.2s;
 }
-.ep-footer-back:hover { color: var(--coral); }
+.ep-footer-back:hover { color: var(--accent); }
 
 /* ─────────────────────────────────────────
    MOBILE
