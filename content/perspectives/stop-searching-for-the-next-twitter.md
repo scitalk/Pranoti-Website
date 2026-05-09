@@ -12,10 +12,10 @@ category: "perspectives"
 sidebar_links:
   - title: "European research has an AI problem — and it's not the one you think"
     url: "/perspectives/european-research-ai-implementation-gap/"
-  - title: "Personal branding for scientists: the TST approach"
-    url: "https://thesciencetalk.com/news/personal-branding-for-scientists-the-tst-approach/"
-  - title: "LinkedIn for scientists"
-    url: "https://thesciencetalk.com/news/blog-perspectives/linkedin-for-scientists/"
+  - title: "Personal Branding for Scientists: 3 Foundations First"
+    url: "https://thesciencetalk.com/news/personal-branding-for-scientists-foundations-before-content/"
+  - title: "LinkedIn Strategy for Research Leaders: Why Frequency Doesn't Determine Your Reach"
+    url: "https://thesciencetalk.com/news/linkedin-strategy-for-research-leaders-why-frequency-doesnt-determine-your-reach/"
 ---
 
 I know what it feels like to build something real on a platform — and then watch it disappear. For years, I ran [RealScientists Nano](https://thesciencetalk.com/news/realscientists-nano-is-now-under-the-microscope-on-bluesky/), a rotation curation account where a new materials or nanoscientist took over every week to share their research, their life in the lab, their questions. Over 120 scientists from around the world took part. During the pandemic, it became a genuine lifeline — a space to connect, to laugh, to feel less isolated. In 2022 alone, the account generated close to a million impressions. Then Twitter changed, and slowly, that community scattered. I hear the same question constantly from scientists now: *"Where do we go next? What's the new Twitter?"* I understand why they're asking. But I think it's the wrong question entirely.
