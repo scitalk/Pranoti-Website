@@ -115,6 +115,7 @@ If you're working through this at your organisation or on your own setup — [ge
 
 ## If you found this useful
 
+- [MCP Security Checklist for Claude Desktop Users](/ai-guides/mcp-security-checklist-claude-desktop/) — the practical five-check checklist: credential storage, server trust, scope control, and subprocess protection
 - [Native Connector vs. MCP: Which Google Sheets Integration Does Your Workflow Actually Need?](/perspectives/google-sheets-claude-integration-comparison-2026/) — the security and capability trade-offs between Claude's two Sheets integration paths
 - [Model Context Protocol for Non-Developers: A Practical Primer](/ai-guides/model-context-protocol-non-developers/) — what MCP actually is, and what it means when you connect it to your tools
 
