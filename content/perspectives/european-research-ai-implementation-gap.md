@@ -1,5 +1,5 @@
 ---
-title: "European Research Has an AI Problem — And It's Not the One You Think"
+title: "European Research's Real AI Problem Isn't Adoption — It's Implementation"
 date: 2026-04-05
 lastmod: 2026-04-05
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "I Gave Claude Full Access to My Machine. Here's What That Actually Means."
+title: "MCP Security in Claude Code: What Full Machine Access Really Involves"
 date: 2026-05-06
 lastmod: 2026-05-06
 draft: false

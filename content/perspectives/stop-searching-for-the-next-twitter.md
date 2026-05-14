@@ -1,5 +1,5 @@
 ---
-title: "Stop searching for the next Twitter. Build your island instead."
+title: "Stop Chasing Platforms. Own Your Audience Instead."
 date: 2026-05-06
 lastmod: 2026-05-06
 draft: false

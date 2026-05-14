@@ -1,5 +1,5 @@
 ---
-title: "Stop Losing Your Best AI Insights: One Simple Prompt to Track Every Session"
+title: "How to Make Your Claude Sessions Searchable and Reusable"
 date: 2026-04-28
 lastmod: 2026-04-28
 slug: "claude-session-tracking-prompt"
