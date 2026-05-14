@@ -1,5 +1,5 @@
 ---
-title: "Google Drive Can Now Read Your Sheets in Claude — But Here's What It Still Can't Do"
+title: "Claude's Google Drive Integration: What Works and Where the Gaps Are"
 date: 2026-04-19
 lastmod: 2026-04-19
 draft: false
