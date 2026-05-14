@@ -106,7 +106,7 @@
               {{ range .details }}<li><span>→</span> {{ . }}</li>{{ end }}
             </ul>
             {{ end }}
-            <a href="{{ .stripe_url }}" target="_blank" rel="noopener noreferrer" class="sidebar-product-btn">{{ .cta }}</a>
+            <a href="{{ .stripe_url }}" target="_blank" rel="noopener noreferrer" class="sidebar-product-btn" onclick="gtag('event', 'purchase_intent', {'item_name': '{{ $.Title }}', 'location': 'sidebar_product'})">{{ .cta }}</a>
             {{ if .footnote }}<p class="sidebar-product-footnote">{{ .footnote }}</p>{{ end }}
           </div>
           {{ end }}
@@ -122,7 +122,7 @@
           <div class="sidebar-card sidebar-cta">
             <h3 class="sidebar-heading">The Science Talk</h3>
             {{ with .Params.stripe_note }}<p class="sidebar-text">{{ . }}</p>{{ end }}
-            <a href="{{ .Params.stripe_url }}" class="sidebar-btn" target="_blank" rel="noopener">Read on The Science Talk →</a>
+            <a href="{{ .Params.stripe_url }}" class="sidebar-btn" target="_blank" rel="noopener" onclick="gtag('event', 'purchase_intent', {'item_name': '{{ $.Title }}', 'location': 'sidebar_tst'})">Read on The Science Talk →</a>
           </div>
           {{ end }}
 
