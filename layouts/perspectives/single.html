@@ -106,7 +106,7 @@
               {{ range .details }}<li><span>→</span> {{ . }}</li>{{ end }}
             </ul>
             {{ end }}
-            <a href="{{ .stripe_url }}" target="_blank" rel="noopener noreferrer" class="sidebar-product-btn">{{ .cta }}</a>
+            <a href="{{ .stripe_url }}" target="_blank" rel="noopener noreferrer" class="sidebar-product-btn" onclick="gtag('event', 'purchase_intent', {'item_name': '{{ $.Title }}', 'location': 'sidebar_product'})">{{ .cta }}</a>
             {{ if .footnote }}<p class="sidebar-product-footnote">{{ .footnote }}</p>{{ end }}
           </div>
           {{ end }}
