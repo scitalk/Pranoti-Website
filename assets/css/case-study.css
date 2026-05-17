@@ -221,9 +221,9 @@ body {
   padding: 16px 18px;
   margin-bottom: 0;
 }
-.misconception .card-lbl { color: #854F0B; }
-.misconception p  { font-size: 13px; font-family: 'Inter', sans-serif; color: #633806; line-height: 1.6; margin: 0; }
-.misconception strong { color: #412402; font-weight: 500; }
+.misconception .card-lbl { color: #6B3D00; }
+.misconception p  { font-size: 13px; font-family: 'Inter', sans-serif; color: #3D2000; line-height: 1.6; margin: 0; }
+.misconception strong { color: #3D2000; font-weight: 500; }
 
 /* ─── BLOCKER PAIRS ──────────────────────────────────── */
 .pair-headers {
