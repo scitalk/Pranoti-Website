@@ -326,6 +326,41 @@
   .container.wide { padding: 0 1.25rem; }
   .guide-cta-block { padding: 1.25rem; }
 }
+
+/* Copy button */
+.guide-content pre { position: relative; }
+.copy-btn {
+  position: absolute; top: .6rem; right: .6rem;
+  font-family: 'Montserrat', sans-serif; font-size: .7rem; font-weight: 600;
+  color: #C8E6D4; background: rgba(255,255,255,.1); border: 1px solid rgba(200,230,212,.3);
+  border-radius: 4px; padding: .25rem .6rem; cursor: pointer;
+  transition: background .15s, color .15s; line-height: 1.4;
+}
+.copy-btn:hover { background: rgba(255,255,255,.2); }
+.copy-btn.copied { color: #fff; background: #2A6048; border-color: #2A6048; }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.guide-content pre').forEach(function (pre) {
+    var btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    pre.appendChild(btn);
+    btn.addEventListener('click', function () {
+      var code = pre.querySelector('code');
+      var text = (code ? code.innerText : pre.innerText).trim();
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  });
+});
+</script>
 
 {{ end }}
