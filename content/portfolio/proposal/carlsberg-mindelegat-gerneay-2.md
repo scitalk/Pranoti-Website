@@ -1,7 +1,7 @@
 ---
 title: "Carlsberg Mindelegat"
 date: 2025-03-01
-draft: false
+draft: true
 type: "portfolio/proposal"
 description: "I supported a researcher at Denmark Technical University with the Carlsberg Mindelegat proposal, developing the research story and dissemination strategy."
 thumbnail: ""
