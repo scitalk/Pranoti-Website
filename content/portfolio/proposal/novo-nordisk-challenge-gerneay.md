@@ -1,7 +1,7 @@
 ---
 title: "Novo Nordisk Foundation Challenge Programme"
 date: 2025-01-25
-draft: false
+draft: true
 type: "portfolio/proposal"
 description: "I supported a researcher at Denmark Technical University with the Novo Nordisk Foundation Challenge Programme proposal, building the communication and impact narrative."
 thumbnail: ""
