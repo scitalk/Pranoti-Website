@@ -383,3 +383,50 @@ body {
   padding: 8px 0;
 }
 .cs-footer a { color: #2A6048; font-weight: 500; text-decoration: none; padding-left: 4px; }
+
+/* ─── CASE STUDY NAVIGATION ─────────────────────────── */
+.cs-nav-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 40px 16px;
+}
+.cs-nav-prev, .cs-nav-next { flex: 1; }
+.cs-nav-next { text-align: right; }
+.cs-nav-row a {
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  color: #2A6048;
+  text-decoration: none;
+  font-weight: 500;
+}
+.cs-nav-row a:hover { text-decoration: underline; }
+
+.cs-back-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 40px 16px;
+}
+.cs-btn-outline {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: #2A6048;
+  border: 1px solid #2A6048;
+  border-radius: 7px;
+  padding: 7px 16px;
+  text-decoration: none;
+}
+.cs-btn-outline:hover { background: rgba(42, 96, 72, 0.06); }
+.cs-btn-solid {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  background: #2A6048;
+  border-radius: 7px;
+  padding: 7px 16px;
+  text-decoration: none;
+}
+.cs-btn-solid:hover { background: #1f4e38; }

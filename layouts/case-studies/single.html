@@ -126,13 +126,31 @@
   </div>
   {{ end }}
 
+  {{ $prev := .PrevInSection }}
+  {{ $next := .NextInSection }}
+  {{ if or $prev $next }}
+  <div class="cs-nav-row">
+    <div class="cs-nav-prev">
+      {{ with $prev }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
+    </div>
+    <div class="cs-nav-next">
+      {{ with $next }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="cs-back-row">
+    <a href="/case-studies/" class="cs-btn-outline">← More case studies</a>
+    <a href="https://thesciencetalk.com/contact-us/" class="cs-btn-solid">Work with me →</a>
+  </div>
+
   <div class="cta-footer-wrap">
     <div class="cta-banner">
       <p>{{ .Params.cta_text }}</p>
       <a href="{{ .Params.guide_url }}">Read the guide →</a>
     </div>
     <div class="cs-footer">
-      To download more case studies, go to <a href="https://pranoti.thesciencetalk.com/ai-guides">pranoti.thesciencetalk.com/ai-guides</a>
+      To see more case studies, go to <a href="https://pranoti.thesciencetalk.com/case-studies">pranoti.thesciencetalk.com/case-studies</a>
     </div>
   </div>
 </div>
