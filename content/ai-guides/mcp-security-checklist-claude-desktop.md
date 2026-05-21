@@ -11,7 +11,7 @@ reading_time: "7 min"
 tags: ["MCP", "Claude Desktop", "security", "credentials", "AI tool access"]
 category: "ai-integration-guides"
 sidebar_links:
-  - title: "I Gave Claude Full Access to My Machine. Here's What That Actually Means."
+  - title: "MCP Security in Claude Code: What Full Machine Access Really Involves"
     url: "/perspectives/claude-code-mcp-credential-security/"
   - title: "Model Context Protocol for Non-Developers: A Practical Primer"
     url: "/ai-guides/model-context-protocol-non-developers/"
