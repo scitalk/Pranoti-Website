@@ -85,6 +85,28 @@ static/                ← assets (images, CSS, JS, PDFs)
 
 ---
 
+## Purchase intent tracking
+
+Every buy button on this site must fire a `purchase_intent` GA4 event on click.
+
+```html
+onclick="gtag('event', 'purchase_intent', {'item_name': 'PRODUCT NAME', 'location': 'LOCATION'})"
+```
+
+**Location values:**
+- `product_page` — buy buttons on `/products/` standalone layouts
+- `sidebar_product` — buy buttons in ai-guides and perspectives sidebars
+
+**Rules:**
+- Add to every new product layout before pushing
+- `item_name` must be a human-readable name matching what appears in GA4 reports
+- GA4 property: `G-JLGZLS20VW`
+- To make it a Key Event: GA4 Admin → Events → `purchase_intent` → toggle "Mark as key event"
+
+**Do not use old-format events** like `Purchase_intent_Personal_branding_Jun_23` — always use the standardised `purchase_intent` event name with `item_name` and `location` params.
+
+---
+
 ## DNS
 
 - Provider: Cloudflare
