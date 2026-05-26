@@ -90,5 +90,16 @@ If you are navigating AI vendor decisions at a European research institution and
 
 This piece accompanies [The Knowledge Work Automation Gap in European Research](https://thesciencetalk.com/news/knowledge-work-automation-european-research/) — which covers the broader automation readiness gap in European research organisations and why the tools are often the least of the problem.
 
+## Sources
+
+- [European Parliament Research Service — European Software and Cyber Dependencies (EPRS ECTI_STU(2025)778576)](https://www.europarl.europa.eu/) — Market share data for Microsoft and Google in EU higher education
+- [GÉANT Cloud Framework](https://www.geant.org/) — National consortium procurement infrastructure for European research
+- [Sparkle and Anthropic Partnership — Capacity Global](https://capacityglobal.com/news/sparkle-anthropic-claude-enterprise-ai-europe-amazon-bedrock/) — Claude distribution via AWS Bedrock in Europe
+- [Claude Marketplace: Does Anthropic Offer Convenience or Vendor Lock-In? — Trending Topics](https://www.trendingtopics.eu/claude-marketplace-anthropic/) — Enterprise procurement strategy analysis
+- [Microsoft EU Data Boundary Initiative](https://blogs.microsoft.com/blog/) — Data residency commitments in European infrastructure
+- [AWS Bedrock — EU Frankfurt Region](https://aws.amazon.com/bedrock/) — EU data residency options for Claude access
+- GDPR Article 28 (Data Processing Agreements)
+- [EU AI Act — Article 50 (Transparency requirements)](https://artificialintelligenceact.eu/) — Vendor compliance obligations
+
 ---
 *Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
