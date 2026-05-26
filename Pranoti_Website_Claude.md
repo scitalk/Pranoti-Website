@@ -224,3 +224,73 @@ Once shorts are done, Pranoti may ask to create pages for **video**, **podcast**
 - Write `.md` files to `content/portfolio/{category}/`
 
 For **trainings**: pages already exist with images in `static/images/trainings/`. Check before creating duplicates.
+
+---
+
+## GIT & DEPLOYMENT SETUP
+
+### Overview
+
+The site uses **GitHub Pages** via GitHub Actions. Netlify is no longer used.
+
+### Key details
+
+- **GitHub repo:** `https://github.com/scitalk/Pranoti-Website` (public)
+- **Branch:** `main` (source) → `gh-pages` (built site)
+- **Hosting:** GitHub Pages at `pranoti.thesciencetalk.com`
+- **Build command:** `hugo --environment production --minify` (run by GitHub Actions)
+- **Hugo version:** 0.139.0 (set in `.github/workflows/deploy.yml`)
+- **DNS:** Cloudflare CNAME `pranoti` → `scitalk.github.io`
+
+### How deploys work
+
+Every `git push` to `main` triggers GitHub Actions automatically (~30 seconds). No manual steps needed.
+
+### .gitignore — what is excluded from Git
+
+These files/folders are intentionally excluded and stay on your Mac only:
+
+```
+public/
+.DS_Store
+.netlify/
+.hugo_build.lock
+.trash/
+.claude/
+resources/_gen/
+themes/
+static/case-studies/*.pdf
+static/case-studies/*.html
+static/reports/
+```
+
+### Deploy workflow
+
+```bash
+# Check what has changed
+git status
+
+# Stage specific files
+git add content/portfolio/events/new-event.md
+
+# Or stage everything
+git add .
+
+# Commit
+git commit -m "describe what changed"
+
+# Push to GitHub → triggers GitHub Actions auto-deploy
+git push
+```
+
+### Local tinkering vs deploying
+
+- Editing files locally **never** affects GitHub or the live site
+- Run `hugo server` to preview locally at `http://localhost:1313`
+- Only files you explicitly `git add` + `git commit` + `git push` get deployed
+
+### Authentication
+
+- **GitHub username:** `scitalk`
+- **Password:** Personal Access Token with `repo` + `workflow` scopes (generated at github.com/settings/tokens) — NOT your GitHub account password
+- Token expiry: renew when GitHub sends reminder email
