@@ -26,7 +26,7 @@ sidebar_product:
   details:
     - "Step-by-step setup guide, no coding required"
     - "Works with Claude Desktop on Mac and Windows"
-  stripe_url: "https://buy.stripe.com/9B614n7699puePn0jm8Ra0o"
+  stripe_url: "https://buy.stripe.com/9B614n7699puePn0jm8Ra0o?utm_source=pranoti_site&utm_medium=sidebar&utm_campaign=claude_sheets_mcp"
   cta: "Get the guide — €12 →"
   footnote: "Instant PDF delivery. Lifetime access."
 ---

@@ -27,7 +27,7 @@ sidebar_product:
   details:
     - "Instant PDF delivery"
     - "Email support included"
-  stripe_url: "https://buy.stripe.com/bJe28railfNSaz70jm8Ra0p"
+  stripe_url: "https://buy.stripe.com/bJe28railfNSaz70jm8Ra0p?utm_source=pranoti_site&utm_medium=sidebar&utm_campaign=claude_wordpress_mcp"
   cta: "Get the guide — €17 →"
   footnote: "Complete setup guide + workflow examples"
 ---
