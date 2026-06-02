@@ -25,7 +25,7 @@ sidebar_product:
     - "Approval gates to maintain authenticity"
   details:
     - "Lifetime access + updates"
-  stripe_url: "https://buy.stripe.com/00w5kD8adaty22Bgik8Ra0v"
+  stripe_url: "https://buy.stripe.com/00w5kD8adaty22Bgik8Ra0v?utm_source=pranoti_site&utm_medium=sidebar&utm_campaign=claude_cv_guide"
   cta: "Get the system — €49 →"
   footnote: "Complete system + templates"
 ---
