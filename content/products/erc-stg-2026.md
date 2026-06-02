@@ -1,6 +1,6 @@
 ---
-title: "ERC Starting Grant 2026 — 48 Official Resources"
-description: "48 verified official resources for your ERC StG 2026 application. Organised into 8 sections. Compiled by The Science Talk."
+title: "ERC Starting Grant 2027 — 47 Official Resources"
+description: "47 verified official resources for your ERC StG 2027 application. Organised into 11 sections. Compiled by The Science Talk."
 layout: "erc-stg-2026"
 url: "/products/erc-starting-grant-resource-kit/"
 draft: false
