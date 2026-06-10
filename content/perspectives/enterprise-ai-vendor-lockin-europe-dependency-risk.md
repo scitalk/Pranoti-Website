@@ -81,7 +81,7 @@ In October 2025, a major AWS outage disrupted European business and government s
 
 The enterprises that will navigate this well are not the ones with the most advanced AI deployments. They are the ones that have mapped what they depend on, at every layer, and made deliberate decisions about where that dependency is acceptable and where it is not. That mapping exercise is not a compliance activity. It is a board-level strategic question that most European enterprises have not yet asked in the right terms.
 
-If you are working through this at your organisation — [get in touch →](/contact/)
+If you are working through this at your organisation — [get in touch →](https://thesciencetalk.com/contact-us/)
 
 ---
 
@@ -90,4 +90,4 @@ If you are working through this at your organisation — [get in touch →](/con
 - [How Europe's leading research institutes are integrating AI — and what it means for your organisation](https://thesciencetalk.com/news/ai-integration-european-research-institutes-2026/) — extended context on AI adoption patterns across European institutions, with implementation data.
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*
