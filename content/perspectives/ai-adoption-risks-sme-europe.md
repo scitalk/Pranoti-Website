@@ -86,7 +86,7 @@ If you are working through this at your business — [get in touch →](https://
 
 ## Related reading on The Science Talk
 
-- [The hidden cost of enterprise AI in Europe: compounding vendor lock-in](https://thesciencetalk.com/news/enterprise-ai-vendor-lockin-europe-dependency-risk/) — extended data on cloud concentration, AI governance gaps, and the regulatory timeline converging on European organisations in 2026.
+- [The hidden cost of enterprise AI in Europe: compounding vendor lock-in](https://pranoti.thesciencetalk.com/perspectives/enterprise-ai-vendor-lockin-europe-dependency-risk/) — extended data on cloud concentration, AI governance gaps, and the regulatory timeline converging on European organisations in 2026.
 
 ---
 *Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*
