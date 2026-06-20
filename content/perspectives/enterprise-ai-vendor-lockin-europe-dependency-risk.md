@@ -1,5 +1,5 @@
 ---
-title: "The hidden cost of enterprise AI in Europe: compounding vendor lock-in"
+title: "Enterprise AI in Europe: The Hidden Cost of Vendor Lock-In"
 date: 2026-06-09
 lastmod: 2026-06-09
 draft: false
