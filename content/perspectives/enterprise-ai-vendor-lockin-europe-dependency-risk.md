@@ -4,10 +4,10 @@ date: 2026-06-09
 lastmod: 2026-06-09
 draft: false
 description: "Europe's AI adoption is deepening software dependency concentration — yet only 21% of enterprises have a governance model for it. Here's what the data shows."
-keywords: ["enterprise AI vendor lock-in Europe", "software dependency risk CIO", "EU AI Act compliance 2026", "cloud concentration risk enterprise", "NIS2 enterprise scope", "AI governance gap", "hyperscaler dependency Europe"]
+keywords: ["enterprise AI vendor lock-in Europe", "enterprise AI dependency audit", "compounding AI vendor lock-in", "cloud concentration risk enterprise", "AI governance gap enterprise", "AI governance gap", "hyperscaler dependency Europe"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
-tags: ["AI strategy", "enterprise risk", "EU regulation", "digital sovereignty", "vendor lock-in"]
+tags: ["AI strategy", "enterprise risk", "AI governance", "enterprise compliance", "vendor lock-in"]
 category: "perspectives"
 sidebar_links:
   - title: "European research has an AI problem — and it's not the one you think"

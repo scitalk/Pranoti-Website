@@ -1,5 +1,5 @@
 ---
-title: "MCP Security in Claude Code: What Full Machine Access Really Involves"
+title: "Claude Code MCP Security: What Full Machine Access Means"
 date: 2026-05-06
 lastmod: 2026-05-06
 draft: false

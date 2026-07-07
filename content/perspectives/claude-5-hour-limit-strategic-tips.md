@@ -1,17 +1,19 @@
 ---
 title: "Claude's 5-Hour Limit: 7 Strategic Tips for AI Power Users"
-description: "Strategic tips for managing Claude's 5-hour limit: model selection, batching, compact commands, starting fresh—how AI power users optimise tokens."
 date: 2026-05-05
+lastmod: 2026-06-19
+draft: false
+category: "perspectives"
+description: "Strategic tips for managing Claude's 5-hour limit: model selection, batching, compact commands, starting fresh—how AI power users optimise tokens."
 author: "Pranoti Kshirsagar"
 keywords:
   - Claude 5-hour limit strategy
   - AI power users
   - Claude token management
+  - Claude token optimisation tips
   - Claude session tips
-  - regular Claude users
   - Claude productivity
-  - AI tool optimisation
-  - Claude Code context window
+  - Claude usage efficiency
 tags:
   - claude-tips
   - AI-productivity

@@ -3,7 +3,7 @@ title: "Stop Chasing Platforms. Own Your Audience Instead."
 date: 2026-05-06
 lastmod: 2026-05-06
 draft: false
-description: "Scientists and professionals keep searching for the next Twitter — but the platform era is over. Here's why the island era is already here, and what to build instead."
+description: "Scientists and professionals keep searching for the next Twitter — but the platform era is over. Here's why the island era is here, and what to build instead."
 keywords: ["scientists online community after Twitter", "platform fatigue researchers", "science Twitter alternative", "owning your audience", "Bluesky scientists", "digital presence researchers", "island-driven community"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"

@@ -3,11 +3,11 @@ title: "AI Vendor Lock-In: The Startup Audit You Should Run Before Scale"
 date: 2026-06-17
 lastmod: 2026-06-17
 draft: false
-description: "The EU Parliament documented €264bn/year in software lock-in. Startups building AI products are recreating the same patterns at micro level. Here is the audit to run before scale."
-keywords: ["AI vendor lock-in startups Europe", "startup AI stack audit", "EU software dependency risk", "AI procurement European enterprise", "open-source AI startup strategy", "cloud dependency startup", "AI interoperability compliance"]
+description: "Startups building on AI are recreating enterprise lock-in patterns at scale. Here's the dependency audit every European startup should run before it's too late."
+keywords: ["AI vendor lock-in startups Europe", "startup AI stack audit", "AI stack portability", "startup AI vendor evaluation", "open-source AI startup strategy", "cloud dependency startup", "AI interoperability compliance"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["AI strategy", "startups", "vendor lock-in", "digital sovereignty", "EU regulation"]
+tags: ["AI strategy", "startups", "vendor lock-in", "startup strategy", "AI stack audit"]
 category: "perspectives"
 sidebar_links:
   - title: "The hidden cost of enterprise AI in Europe: compounding vendor lock-in"

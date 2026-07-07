@@ -3,11 +3,11 @@ title: "AI Adoption Risks Every European SME Should Know About"
 date: 2026-06-13
 lastmod: 2026-06-13
 draft: false
-description: "SMEs are adopting AI without mapping dependencies. Here's what vendor lock-in, the EU AI Act, and NIS2 mean for your business before August 2026."
-keywords: ["AI adoption risks SME Europe", "vendor lock-in SME", "EU AI Act SME compliance 2026", "NIS2 small business scope", "cloud dependency European SME", "AI tools procurement strategy", "digital sovereignty SME"]
+description: "SMEs are adopting AI without mapping dependencies. Here's what vendor lock-in, the EU AI Act, and NIS2 mean for your business in 2026 and beyond."
+keywords: ["AI adoption risks SME Europe", "vendor lock-in SME", "EU AI Act SME compliance 2026", "NIS2 small business scope", "cloud dependency European SME", "EU AI Act SME checklist", "AI tools procurement strategy"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["AI strategy", "SME", "EU regulation", "vendor lock-in", "digital sovereignty"]
+tags: ["AI strategy", "SME", "NIS2 compliance", "vendor lock-in", "EU AI Act"]
 category: "perspectives"
 sidebar_links:
   - title: "The hidden cost of enterprise AI in Europe: compounding vendor lock-in"
