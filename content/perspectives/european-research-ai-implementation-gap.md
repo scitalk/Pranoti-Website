@@ -1,13 +1,13 @@
 ---
-title: "European Research's Real AI Problem Isn't Adoption — It's Implementation"
+title: "European Research's AI Problem: Implementation, Not Adoption"
 date: 2026-04-05
-lastmod: 2026-04-05
+lastmod: 2026-06-19
 draft: false
-description: "European research institutes have AI strategies but no AI workflows. Here's what the implementation gap means — and what needs to change."
+description: "European research institutes have AI strategies but no AI workflows. Here's what the implementation gap means for research managers and what needs to change."
 keywords: ["AI integration European research", "EU AI Act research organisations", "knowledge work automation research", "AI implementation gap", "research institute AI strategy", "AI literacy compliance", "Fraunhofer AI knowledge work"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["AI strategy", "EU AI Act", "research organisations", "knowledge work", "opinion"]
+tags: ["AI strategy", "EU AI Act", "research organisations", "knowledge work automation", "implementation"]
 category: "perspectives"
 sidebar_links:
   - title: "Mapping AI Adoption Across European Research Institutes: A Deep Research Case Study"

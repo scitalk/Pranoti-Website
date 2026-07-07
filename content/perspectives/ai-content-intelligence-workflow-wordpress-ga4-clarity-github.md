@@ -3,7 +3,7 @@ title: "AI Content Intelligence Workflow: WordPress, GA4, Clarity, GitHub"
 date: 2026-05-11
 lastmod: 2026-05-11
 draft: false
-description: "I connect Clarity, two GA4 properties, and GSC into Claude via MCP across a WordPress and GitHub-hosted site — no spreadsheets, no downloads. Here's what changed."
+description: "I connect Clarity, two GA4 properties, and GSC into Claude via MCP across WordPress and GitHub Pages — no spreadsheets, no downloads. Here's what changed."
 keywords: ["AI content intelligence workflow", "Microsoft Clarity Claude AI", "Google Analytics MCP", "WordPress analytics AI", "GitHub Pages content strategy", "content analytics synthesis", "GA4 Claude MCP"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"

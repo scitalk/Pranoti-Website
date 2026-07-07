@@ -3,7 +3,7 @@ title: "Claude Skills Hygiene Audit: The Productivity Hack You're Missing"
 date: 2026-04-28
 lastmod: 2026-04-28
 draft: false
-description: "Claude skills degrade silently as models and connectors evolve. Without a hygiene audit framework, your automation library becomes unreliable — here's why you need one."
+description: "Claude skills degrade silently as models and connectors evolve. Without a hygiene audit, your automation library becomes unreliable — here's why you need one."
 keywords: ["Claude skills hygiene audit", "Claude skills maintenance", "skill regression automation", "Claude workflow degradation", "automation library audit", "Claude skills framework", "environmental change Claude", "Claude skills reliability"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"

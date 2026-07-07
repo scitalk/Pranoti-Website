@@ -4,7 +4,7 @@ date: 2026-04-26
 lastmod: 2026-04-26
 draft: false
 description: "A Claude skills registry prevents skill sprawl before it starts. Here's how I audit my automation library — and the pattern that makes it work."
-keywords: ["Claude skills registry", "Claude skills audit", "automation library maintenance", "Claude skills management", "knowledge work automation", "Claude Desktop skills", "claude.ai skills", "AI workflow governance", "Cowork Claude skills"]
+keywords: ["Claude skills registry", "Claude skills audit", "automation library maintenance", "Claude skills management", "Claude workflow governance", "Claude automation tracking", "AI workflow governance"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
 tags: ["Claude Code", "Claude Desktop", "automation", "skills", "workflow", "knowledge-work"]

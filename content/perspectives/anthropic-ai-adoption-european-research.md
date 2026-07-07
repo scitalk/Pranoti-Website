@@ -1,13 +1,13 @@
 ---
-title: "The Infrastructure Gap Slowing Claude Adoption in European Research"
+title: "Claude Adoption in European Research: The Infrastructure Gap"
 date: 2026-05-26
-lastmod: 2026-05-26
+lastmod: 2026-06-19
 draft: false
-description: "Why European research institutions can't easily adopt Claude — and what procurement decision-makers need to know about IT lock-in, GDPR, and AI Act compliance."
+description: "European research institutions struggle to adopt Claude — here's what procurement decision-makers need to know about IT lock-in, GDPR, and AI Act compliance."
 keywords: ["Anthropic European research institutions", "Claude AI procurement gap", "Microsoft 365 higher education Europe", "AI vendor adoption European universities", "GÉANT procurement consortium", "EU AI Act AI vendor compliance", "AI adoption barriers research institutions"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["AI strategy", "European research", "procurement", "Claude AI", "Microsoft 365", "EU AI Act"]
+tags: ["Claude adoption", "European research", "procurement", "Claude AI", "Microsoft 365", "EU AI Act"]
 category: "perspectives"
 sidebar_links:
   - title: "European Research's Real AI Problem Isn't Adoption — It's Implementation"
