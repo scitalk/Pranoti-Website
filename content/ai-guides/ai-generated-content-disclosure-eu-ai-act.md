@@ -1,11 +1,11 @@
 ---
 title: "How to add AI disclosures that comply with the EU AI Act"
 date: 2026-05-15
-lastmod: 2026-05-15
+lastmod: 2026-07-13
 slug: "ai-generated-content-disclosure-eu-ai-act"
 draft: false
-description: "AI-generated content disclosures become mandatory under EU AI Act Article 50 from August 2026. This guide covers where, when, and how to add compliant labels to your content."
-keywords: ["AI-generated content disclosure EU AI Act", "Article 50 AI Act transparency", "AI disclaimer blog post", "EU AI Act content creators", "AI Act compliance 2026", "EU AI Act freelancer", "AI content label requirement"]
+description: "AI-generated content disclosures become mandatory under EU AI Act Article 50 from August 2026. This guide covers where, when, and how to add compliant labels to your content — including the EU's official AI-content icons."
+keywords: ["AI-generated content disclosure EU AI Act", "Article 50 AI Act transparency", "AI disclaimer blog post", "EU AI Act content creators", "AI Act compliance 2026", "EU AI Act freelancer", "AI content label requirement", "EU AI content icon", "AI generated content label icon"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["EU AI Act", "AI transparency", "AI Act compliance", "content creators", "science communication"]
@@ -110,6 +110,22 @@ Note: These show notes contain content that has been artificially generated or m
 ```
 
 > Adapt the wording to your context as needed, provided the disclosure remains **clear**, **distinguishable**, and placed **before** your substantive content. Do not move it to end credits, footers, or linked policy pages.
+
+## The EU's official AI-content icons
+
+Alongside the text-based disclosure obligations above, the European Commission has published a set of standard **icons for labelling AI-generated content**, developed to support compliance with Article 50 as part of the Code of Practice on marking and labelling AI-generated content. Details: [digital-strategy.ec.europa.eu — EU icons for labelling AI-generated content](https://digital-strategy.ec.europa.eu/en/policies/eu-icons-labelling-ai-generated-content).
+
+There are three variants:
+
+- **Basic icon** — signals AI was involved in creating the content; implementation of the surrounding label can vary (e.g. custom wording or an interactive layer).
+- **Fully AI-generated** — for content created entirely by AI, with no human-made elements beyond the prompt.
+- **Partially AI-modified** — for pre-existing human content that AI has altered.
+
+Each icon is available in black, white, and 50%-transparency versions, in SVG and PNG, and can be used without attribution to the Commission.
+
+**Important nuance:** using the icon itself is **optional** — what's mandatory is the underlying disclosure obligation under Article 50(5) (clear, distinguishable, present at first exposure) described above. The icon is a recognised way to help meet that standard visually, not a separate legal requirement. Code of Practice signatories commit to specific placement rules for it; everyone else can adopt it voluntarily as a faster, more visually distinguishable alternative — or complement — to a text disclosure line.
+
+The same placement rule applies: the icon must be clearly perceivable at the latest at the time of first exposure, and must remain visible if the content is reshared or downloaded.
 
 ## What you can do before August 2026
 
