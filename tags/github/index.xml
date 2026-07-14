@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GitHub on Pranoti Kshirsagar</title><link>https://pranoti.thesciencetalk.com/tags/github/</link><description>Recent content in GitHub on Pranoti Kshirsagar</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Tue, 14 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://pranoti.thesciencetalk.com/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Rotate an Expiring GitHub Token on GitHub Pages</title><link>https://pranoti.thesciencetalk.com/ai-guides/rotate-expiring-github-token-github-pages/</link><pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate><guid>https://pranoti.thesciencetalk.com/ai-guides/rotate-expiring-github-token-github-pages/</guid><description>&lt;p>Your GitHub personal access token is about to expire, and your site runs on GitHub Pages. The reassuring part first: your automated deploys keep working regardless. This guide shows exactly where the token is actually used, how to rotate it, and how to revoke the old one safely — so a routine token expiry never turns into a broken site.&lt;/p>
+&lt;h2 id="what-you-need-before-starting">What you need before starting&lt;/h2>
+&lt;ul>
+&lt;li>A GitHub account with a repository already deploying to GitHub Pages&lt;/li>
+&lt;li>Terminal access on macOS (the Keychain steps are Mac-specific)&lt;/li>
+&lt;li>Permission to create tokens on your GitHub account&lt;/li>
+&lt;li>About 10 minutes&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>This guide assumes your site auto-deploys from a &lt;code>main&lt;/code> branch push via GitHub Actions — the standard setup for Hugo and other static-site generators on GitHub Pages.&lt;/p></description></item></channel></rss>
