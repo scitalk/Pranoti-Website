@@ -127,6 +127,12 @@ Each icon is available in black, white, and 50%-transparency versions, in SVG an
 
 The same placement rule applies: the icon must be clearly perceivable at the latest at the time of first exposure, and must remain visible if the content is reshared or downloaded.
 
+**Placement mechanics:** the icon must be embedded directly within the content itself — not just linked or referenced elsewhere on the page — except for evidently creative works. No overlapping element (a cookie banner, a popup, a sticky header) may obstruct it.
+
+**Accessibility requirements:** the Commission's guidance also specifies that any text accompanying the icon should use plain language and avoid jargon or abbreviations beyond "AI" itself; the icon needs alt text or an ARIA label for screen readers; if you use the interactive second-layer version (e.g. a tooltip or expandable label), it must be navigable via keyboard and assistive technology; and where content is likely to reach users with cognitive difficulties, visibility should be extended beyond a brief flash.
+
+**How the icons relate to the Code of Practice:** the icons formally implement Section 2 of the [Code of Practice on Transparency of AI-Generated Content](https://digital-strategy.ec.europa.eu/en/policies/eu-icons-labelling-ai-generated-content). Code of Practice signatories commit to following its placement specifications; if you're not a signatory, you can still use the icons freely, but doing so does not itself signal Code adherence. The same source page also notes narrower disclosure exceptions beyond editorial review — evidently artistic, creative, satirical, or fictional works, and content whose disclosure is restricted by law (e.g. for criminal investigation or prosecution purposes).
+
 ## What you can do before August 2026
 
 The transparency obligations under Article 50 apply from 2 August 2026 — and they apply to all in-scope AI systems and content in use at that date, not only to content created after it.
