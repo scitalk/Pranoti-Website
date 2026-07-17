@@ -34,7 +34,7 @@ nav { position: fixed; top: 0; width: 100%; background: rgba(250,247,242,0.92); 
 .nav-menu a:hover { opacity: 1; }
 .nav-menu a.nav-active { opacity: 1; font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 2px; }
 .nav-menu a.nav-active-perspectives { color: #2A6048; }
-.nav-menu a.nav-active-ai-guides { color: #8A6200; }
+.nav-menu a.nav-active-ai-guides { color: #2951E0; }
 .nav-menu a.nav-active-portfolio { color: var(--accent-text); }
 .nav-menu a.nav-active-testimonials,
 .nav-menu a.nav-active-about { color: var(--ink); }
