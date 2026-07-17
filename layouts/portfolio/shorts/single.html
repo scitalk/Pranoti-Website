@@ -33,7 +33,7 @@
       <div class="pf-shorts-row">
         {{ range .Params.youtube_urls }}
         <div class="pf-embed-9-16">
-          <iframe src="https://www.youtube.com/embed/{{ index (split . "/") (sub (len (split . "/")) 1) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/{{ index (split . "/") (sub (len (split . "/")) 1) }}" title="YouTube video: {{ $.Title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
         {{ end }}
       </div>
@@ -90,7 +90,7 @@
 .pf-cat-tag.pf-cat-shorts { background: #c76a5a; color: #fff; }
 .pf-title-block { padding: 1rem 2rem 0; }
 .pf-title-block h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 500; color: var(--ink); line-height: 1.2; margin-bottom: 0.4rem; }
-.pf-single-client { font-size: 0.9rem; color: var(--accent); font-weight: 500; margin: 0 0 1rem; }
+.pf-single-client { font-size: 0.9rem; color: var(--accent-text); font-weight: 500; margin: 0 0 1rem; }
 .pf-shorts-embeds { padding: 1.5rem 2rem 0; }
 .pf-shorts-row { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
 .pf-embed-9-16 { width: 340px; max-width: 100%; aspect-ratio: 9/16; border-radius: 12px; overflow: hidden; background: #000; }
@@ -107,7 +107,7 @@
 .pf-single-footer .container { display: flex; justify-content: space-between; align-items: center; }
 .pf-back { font-size: 0.85rem; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
 .pf-back:hover { color: var(--accent); }
-.pf-cta-link { font-size: 0.85rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+.pf-cta-link { font-size: 0.85rem; font-weight: 600; color: var(--accent-text); text-decoration: none; }
 .pf-cta-link:hover { text-decoration: underline; }
 @media (max-width: 768px) {
   .pf-top-bar .container { flex-direction: column; align-items: flex-start; gap: 0.5rem; }

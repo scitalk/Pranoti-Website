@@ -2,15 +2,16 @@
     <nav>
         <div class="container nav-container">
             <div class="nav-brand">
-                <a href="/" class="brand-name">PRANOTI KSHIRSAGAR</a>
-                <ul class="nav-menu">
+                <a href="/" class="brand-name">PRANOTI KSHIRSAGAR, PhD</a>
+                <ul class="nav-menu" id="nav-menu">
                     {{ range .Site.Menus.main }}
                     <li><a href="{{ .URL }}">{{ .Name }}</a></li>
                     {{ end }}
+                    <li><a href="/search/" class="nav-search-link" aria-label="Search">Search</a></li>
                 </ul>
             </div>
 
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
