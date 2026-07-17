@@ -34,7 +34,7 @@
       <div class="pf-embed-row{{ if gt (len .) 1 }} pf-embed-multi{{ end }}">
         {{ range . }}
         <div class="pf-embed-16-9">
-          <iframe src="https://www.youtube.com/embed/{{ index (split . "/") (sub (len (split . "/")) 1) }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/{{ index (split . "/") (sub (len (split . "/")) 1) }}" title="YouTube video: {{ $.Title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
         {{ end }}
       </div>
@@ -106,7 +106,7 @@
 .pf-cat-tag.pf-cat-video { background: #1a2b4a; color: #fff; }
 .pf-title-block { padding: 1rem 2rem 0; }
 .pf-title-block h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 500; color: var(--ink); line-height: 1.2; margin-bottom: 0.4rem; }
-.pf-single-client { font-size: 0.9rem; color: var(--accent); font-weight: 500; margin: 0 0 1rem; }
+.pf-single-client { font-size: 0.9rem; color: var(--accent-text); font-weight: 500; margin: 0 0 1rem; }
 .pf-embed-wrap { padding: 1.5rem 2rem 0; }
 .pf-embed-row { display: flex; flex-direction: column; gap: 1.5rem; }
 .pf-embed-multi { flex-direction: row; gap: 1.5rem; }
@@ -128,7 +128,7 @@
 .pf-single-footer .container { display: flex; justify-content: space-between; align-items: center; }
 .pf-back { font-size: 0.85rem; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
 .pf-back:hover { color: var(--accent); }
-.pf-cta-link { font-size: 0.85rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+.pf-cta-link { font-size: 0.85rem; font-weight: 600; color: var(--accent-text); text-decoration: none; }
 .pf-cta-link:hover { text-decoration: underline; }
 @media (max-width: 768px) {
   .pf-top-bar .container { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
