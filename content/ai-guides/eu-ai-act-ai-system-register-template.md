@@ -1,7 +1,7 @@
 ---
 title: "How to Build an EU AI Act AI System Register (Free Template)"
-date: 2026-07-16
-lastmod: 2026-07-16
+date: 2026-07-17
+lastmod: 2026-07-17
 slug: "eu-ai-act-ai-system-register-template"
 draft: false
 description: "Build an EU AI Act system register in 30 minutes, and find out whether you owe an official Article 71 EU database filing — free spreadsheet template included."
@@ -51,7 +51,7 @@ If you are unsure whether a tool you white-label or customise tips you into "pro
 
 ## Step 3: Flag high-risk candidates
 
-Most marketing, content, and general productivity tools will not qualify as high-risk. Run a quick check against the systems most likely to trigger [**Annex III**](https://artificialintelligenceact.eu/annex/3/) — mainly tools used for:
+Most marketing, content, and general productivity tools will not qualify as high-risk. Run a quick check against the systems most likely to trigger [**Annex III**](https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3) — mainly tools used for:
 
 - HR or recruitment decisions (screening, ranking candidates)
 - Credit scoring or financial risk assessment
@@ -73,7 +73,7 @@ Fill in one row for every tool found in Step 1. Leave "Unsure" in the high-risk 
 
 Run this self-test before assuming you need to do anything further.
 
-[**Article 71**](https://artificialintelligenceact.eu/article/71/) requires providers of high-risk Annex III systems to register themselves and the system in the official EU database before placing it on the market. The database must be operational by **2 August 2026**, and the mechanism itself is set out in **Article 49**.
+[**Article 71**](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-71) requires providers of high-risk Annex III systems to register themselves and the system in the official EU database before placing it on the market. The database must be operational by **2 August 2026**, and the mechanism itself is set out in **Article 49**.
 
 You are very likely exempt from this right now if any of the following is true:
 
@@ -81,7 +81,7 @@ You are very likely exempt from this right now if any of the following is true:
 - None of your tools flagged as high-risk in Step 3
 - Your organisation has not rebranded, fine-tuned, or substantially modified a third-party AI system
 
-There is no general SME exemption from Article 71 itself, but [**Article 62**](https://artificialintelligenceact.eu/article/62/) provides supportive measures for smaller organisations that do end up in scope — reduced conformity-assessment fees, simplified technical documentation, and priority access to regulatory sandboxes.
+There is no general SME exemption from Article 71 itself, but [**Article 62**](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-62) provides supportive measures for smaller organisations that do end up in scope — reduced conformity-assessment fees, simplified technical documentation, and priority access to regulatory sandboxes.
 
 ## Keep it alive
 
