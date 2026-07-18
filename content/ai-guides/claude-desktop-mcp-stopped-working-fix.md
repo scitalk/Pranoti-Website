@@ -25,7 +25,7 @@ On May 1st, your Claude Desktop MCP connector stopped working. You didn't change
 
 - **Claude Desktop** (current version installed on your Mac or Linux machine)
 - An active **Google Cloud project** with OAuth 2.0 desktop app credentials (if fixing the GA MCP specifically)
-- **Access to your Claude config file** at `~/.claude/claude_desktop_config.json`
+- **Access to your Claude config file** at `~/Library/Application Support/Claude/claude_desktop_config.json`
 - Basic familiarity with YAML syntax and environment variables
 - **5–10 minutes** for diagnosis and fix (longer if creating new OAuth credentials)
 
@@ -59,7 +59,7 @@ You can't see token scopes directly in your config file—they're stored in Goog
 
 **Check 3: Check the MCP package version in your config**
 
-Open `~/.claude/claude_desktop_config.json` and find the MCP server entry. Look for the `args` line:
+Open `~/Library/Application Support/Claude/claude_desktop_config.json` and find the MCP server entry. Look for the `args` line:
 
 ```json
 "args": ["mcp-google-analytics@latest"]
@@ -106,7 +106,7 @@ A browser window will open. Sign in with the Google account that owns your Analy
 
 ### Step 3: Update your Claude config with new credentials
 
-Open `~/.claude/claude_desktop_config.json` in your text editor. Find your MCP server entry (or create one if missing):
+Open `~/Library/Application Support/Claude/claude_desktop_config.json` in your text editor. Find your MCP server entry (or create one if missing):
 
 ```json
 "google-analytics-thesciencetalk": {

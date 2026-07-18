@@ -24,7 +24,7 @@ If you run a solo AI-assisted content operation, **EU AI Act** compliance is mos
 
 ## Article 4: the obligation you already owe
 
-Article 4 requires providers and deployers of AI systems to ensure "a sufficient level of AI literacy" among staff and other people operating those systems on their behalf. That scope is wider than most agency owners assume:
+Article 4 requires providers and deployers of AI systems to ensure "a sufficient level of AI literacy" among staff and other people operating those systems on their behalf. (The Commission's November 2025 Digital Omnibus proposal would soften this from an obligation to *ensure* literacy to one to *support the development of* it — an "obligation of effort" rather than a guaranteed result — but as of this writing that change has not been adopted, so the stricter "ensure" wording below still applies.) That scope is wider than most agency owners assume:
 
 - **Employees** using AI tools as part of their role
 - **Freelancers and contractors** you bring in for specific projects

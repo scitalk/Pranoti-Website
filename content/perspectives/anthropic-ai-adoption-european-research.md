@@ -94,12 +94,11 @@ This piece accompanies [The Knowledge Work Automation Gap in European Research](
 
 - [European Parliament Research Service — European Software and Cyber Dependencies (EPRS ECTI_STU(2025)778576)](https://www.europarl.europa.eu/) — Market share data for Microsoft and Google in EU higher education
 - [GÉANT Cloud Framework](https://www.geant.org/) — National consortium procurement infrastructure for European research
-- [Sparkle and Anthropic Partnership — Capacity Global](https://capacityglobal.com/news/sparkle-anthropic-claude-enterprise-ai-europe-amazon-bedrock/) — Claude distribution via AWS Bedrock in Europe
-- [Claude Marketplace: Does Anthropic Offer Convenience or Vendor Lock-In? — Trending Topics](https://www.trendingtopics.eu/claude-marketplace-anthropic/) — Enterprise procurement strategy analysis
-- [Microsoft EU Data Boundary Initiative](https://blogs.microsoft.com/blog/) — Data residency commitments in European infrastructure
-- [AWS Bedrock — EU Frankfurt Region](https://aws.amazon.com/bedrock/) — EU data residency options for Claude access
+- [European Parliament Research Service — European Software and Cyber Dependencies (EPRS ECTI_STU(2025)778576)](https://www.europarl.europa.eu/RegData/etudes/STUD/2025/778576/EPRS_STU(2025)778576_EN.pdf) — Enterprise procurement and vendor dependency analysis
+- [Microsoft EU Data Boundary — Microsoft Learn](https://learn.microsoft.com/en-us/privacy/eudb/eu-data-boundary-learn) — Data residency commitments in European infrastructure
+- [AWS Bedrock — EU Frankfurt Region](https://aws.amazon.com/bedrock/) — EU data residency options for Claude access (Anthropic's own AWS/Bedrock offering)
 - GDPR Article 28 (Data Processing Agreements)
-- [EU AI Act — Article 50 (Transparency requirements)](https://artificialintelligenceact.eu/) — Vendor compliance obligations
+- [EU AI Act — Article 50 (Transparency requirements), Regulation (EU) 2024/1689 — EUR-Lex](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) — Vendor compliance obligations
 
 ---
 *Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*

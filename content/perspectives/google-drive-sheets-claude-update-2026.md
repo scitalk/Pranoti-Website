@@ -59,7 +59,7 @@ You can't create new spreadsheets, append rows, or update cell values. If your w
 Sheets get exported as CSV. Formulas don't survive the round trip. If you need Claude to work with formulas directly — reading them, updating them, or creating new ones — that requires API access via MCP.
 
 ### 3. Batch Operations
-The connector treats each Sheet as a static snapshot. You can't run batch updates across multiple tabs, apply formatting, or manage sharing permissions. MCP exposes 19 tools for these operations; the connector has none.
+The connector treats each Sheet as a static snapshot. You can't run batch updates across multiple tabs, apply formatting, or manage sharing permissions. The Google Sheets MCP server this site's setup guide uses exposes around 19 tools for these operations; the connector has none.
 
 ### 4. Live Data
 CSV export means the data Claude sees is whatever existed at the moment you attached the file. If the Sheet updates while you're working, Claude won't see those changes unless you re-attach. MCP queries live cells every time.

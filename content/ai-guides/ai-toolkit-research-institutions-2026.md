@@ -27,7 +27,7 @@ The AI toolkit for research institutions in 2026 is not one tool — it is five,
 - **Claude:** Free account works for light use; Pro plan (€18/month) recommended for consistent institutional workflows and MCP connections; Claude Desktop app required for MCP features
 - **ChatGPT:** Free account or Plus plan ($20/month) for GPT-4o access, memory, and the GPT Store
 - **Gemini:** Google account; Gemini Advanced (included in Google One AI Premium) for Deep Research and Nano Banana access
-- **Napkin.ai:** Free account (500 AI credits/week); Plus ($12/month) for unlimited exports
+- **Napkin.ai:** Free account (500 AI credits/week); Plus ($9/month) for unlimited exports
 
 No command-line experience needed for any of these tools.
 

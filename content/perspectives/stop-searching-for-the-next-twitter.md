@@ -24,7 +24,7 @@ I know what it feels like to build something real on a platform — and then wat
 
 What scientists lost when Twitter changed was not just a platform. It was a specific, almost accidental kind of community — one that let a nanoscientist in the Netherlands stumble into a conversation with a materials researcher in India, or a PhD student ask a question publicly and get an answer from someone they'd never have met otherwise. **That low-barrier, high-serendipity environment was genuinely unusual.** It did not exist before Twitter in quite that form, and it has not been replicated since.
 
-The grief scientists feel about this is proportionate to the actual loss. A [Nature survey](https://www.nature.com/articles/d41586-023-02554-0) confirmed what most scientists already knew: thousands were cutting back on Twitter, feeling genuine uncertainty about where to build and maintain community. Climate scientists reported a 15 to 30-fold increase in hostile replies over two months. The platform that had been a relatively safe, intellectually rich space became something else entirely — and people mourned it.
+The grief scientists feel about this is proportionate to the actual loss. A [Nature survey](https://www.nature.com/articles/d41586-023-02554-0) confirmed what most scientists already knew: thousands were cutting back on Twitter, feeling genuine uncertainty about where to build and maintain community. Separately, climate scientist Katharine Hayhoe tracked a 15 to 30-fold increase in hostile replies to her own account over two months. The platform that had been a relatively safe, intellectually rich space became something else entirely — and people mourned it.
 
 That mourning is valid. What comes after it matters.
 
@@ -50,7 +50,7 @@ What AI has done is accelerate the decay. When the cost of producing fake engage
 
 The shift I am watching — and living — is away from platform-driven community and towards what I think of as **island-driven presence**: owned, followable, multi-format spaces that do not depend on any platform's survival.
 
-Substack is the closest mainstream analogue. [Nature published a piece in 2025](https://www.nature.com/articles/d41586-025-02497-8) titled *"Why scientists are flocking to Substack"* — and the numbers are real. Epidemiologist Katelyn Jetelina built a newsletter during the pandemic that now reaches over 365,000 readers directly. No algorithm decides who sees it. No ownership change can scatter her audience. She owns the list.
+Substack is the closest mainstream analogue. [Nature published a piece in 2025](https://www.nature.com/articles/d41586-025-02497-8) titled *"Why scientists are flocking to Substack"* — and the numbers are real. Epidemiologist Katelyn Jetelina built a newsletter during the pandemic that now reaches over 425,000 readers directly. No algorithm decides who sees it. No ownership change can scatter her audience. She owns the list.
 
 This is what an island looks like in practice. It is not necessarily a website — though it can be. It is a space where your audience follows *you*, not a feed you happen to appear in. It can be a newsletter, a podcast, a membership hub, a combination of formats. The key distinction is ownership: **if the platform closes tomorrow, your audience can still find you.**
 

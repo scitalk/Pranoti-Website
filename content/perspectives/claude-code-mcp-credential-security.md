@@ -66,7 +66,7 @@ For power users doing serious work — running reports, managing databases, depl
 
 **Scientists and researchers:** Lab data, unpublished results, IRB-sensitive participant data. If any of it sits on a machine where Claude Code runs, it can be read. Institutional review boards have almost certainly not contemplated this access model — and the EU AI Act's provisions on high-risk AI systems are only beginning to reach this territory.
 
-**Companies:** If developers are using Claude Code on machines with production database credentials, AWS keys, or customer PII — you need a policy. Not a preference. A policy. What can Claude read? What can it run? Who approves what? [Research by Astrix](https://stacklok.com/blog/the-enterprise-it-security-guide-to-claude-and-mcp/) found that 53% of MCP server deployments rely on long-lived static credentials — credentials that persist as a risk indefinitely after any compromise.
+**Companies:** If developers are using Claude Code on machines with production database credentials, AWS keys, or customer PII — you need a policy. Not a preference. A policy. What can Claude read? What can it run? Who approves what? [Research by Astrix Security](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/) found that 53% of MCP server deployments rely on long-lived static credentials — credentials that persist as a risk indefinitely after any compromise.
 
 ## What "getting ugly" actually looks like
 

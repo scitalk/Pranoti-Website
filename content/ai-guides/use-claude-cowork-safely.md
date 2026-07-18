@@ -5,7 +5,7 @@ lastmod: 2026-05-26
 slug: "use-claude-cowork-safely"
 draft: false
 description: "Claude Cowork gives Claude direct access to your files, browser, and apps. Learn which permissions to enable, when to use each mode, and what to avoid."
-keywords: ["Claude Cowork safety", "Claude Cowork permissions", "Claude Desktop computer use", "act without asking mode Claude", "Claude agentic AI setup", "Claude Chrome extension safety", "prompt injection Claude Cowork", "scheduled tasks Claude Desktop"]
+keywords: ["Claude Cowork safety", "Claude Cowork permissions", "Claude Desktop computer use", "skip all approvals mode Claude", "Claude agentic AI setup", "Claude Chrome extension safety", "prompt injection Claude Cowork", "scheduled tasks Claude Desktop"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
 tags: ["Claude Cowork", "Claude Desktop", "agentic AI", "AI safety", "computer use"]
@@ -37,15 +37,17 @@ Cowork operates across four access layers, each with a different risk profile:
 - **Connected apps and services** — third-party integrations you authorise
 - **Computer use** — direct screen interaction: Claude clicks, types, and navigates your interface
 
-> **Computer use is the highest-risk layer.** Unlike file and browser access, it does not gate individual actions behind permission prompts. Claude interacts directly with whatever is on your screen.
+> **Computer use is the highest-risk layer** because Claude interacts directly with whatever is on your screen — but it still follows the same approval-mode system as file and browser access, asking permission before accessing each application and before destructive actions.
 
-Cowork runs in one of three modes:
+Cowork runs in one of three approval modes:
 
 | Mode | Behaviour |
 |------|-----------|
-| **Standard** | Claude pauses between steps and asks for approval before acting |
-| **Act without asking** | Claude executes tasks continuously without pausing |
-| **Scheduled tasks** | Automated workflows that run when your desktop is awake and the app is open |
+| **Manually Approve** | Claude pauses between steps and asks for approval before acting |
+| **Automatically Approve** | Claude works continuously, but every action still gets a safety review, blocking anything flagged as unsafe |
+| **Skip All Approvals** | Claude executes tasks continuously with no safety review at all |
+
+Scheduled tasks are a separate feature, not a fourth mode — they run automated workflows on a schedule while your desktop is awake and the app is open, using whichever approval mode you've set.
 
 ## Step 1: Enable Cowork in Claude Desktop
 
@@ -88,17 +90,19 @@ Once installed, Claude can read the content of open tabs and interact with page 
 
 ## Step 4: Choose the right mode for your task
 
-**Standard mode** is the right default for almost everything. Claude pauses after each step, shows you what it plans to do next, and waits for your approval. This adds a small amount of friction but gives you a meaningful checkpoint before each action.
+**Manually Approve** is the right default for almost everything. Claude pauses after each step, shows you what it plans to do next, and waits for your approval. This adds a small amount of friction but gives you a meaningful checkpoint before each action.
 
-**"Act without asking" mode** removes those checkpoints entirely. It is appropriate only when:
+**Automatically Approve** is the recommended mode for continuous work you still want a safety net on. Claude keeps working without pausing for your sign-off on every step, but each action still passes through a safety review that blocks anything flagged as unsafe. This is a reasonable middle ground for well-scoped, trusted tasks.
+
+**Skip All Approvals** removes checkpoints and safety review entirely. It is appropriate only when:
 
 - The source files are fully trusted (your own documents, not content fetched from the web)
 - The task scope is narrow and well-defined
 - You are actively present at your screen and can interrupt immediately
 
-> **Using "act without asking" significantly increases prompt injection risk.** If Claude reads a malicious web page, email, or document while operating autonomously, it has no pause point at which you can intervene. Anthropic's own documentation acknowledges that attack probability in this mode is non-zero even with classifier-based defences in place.
+> **Using "Skip All Approvals" significantly increases prompt injection risk.** If Claude reads a malicious web page, email, or document while operating with no safety review, there is no checkpoint at which anything can catch or pause a hijacked action. Anthropic's own documentation acknowledges that attack probability is non-zero even with classifier-based defences in place elsewhere in the product.
 
-The practical rule: use standard mode by default. Switch to "act without asking" only for short, contained tasks on trusted content.
+The practical rule: use Manually Approve by default, reach for Automatically Approve for routine trusted work, and reserve Skip All Approvals for short, contained tasks on fully trusted content.
 
 ## Step 5: Set up scheduled tasks safely
 
@@ -115,7 +119,7 @@ Anthropic explicitly flags these as high-risk scheduled task patterns. If a sche
 
 ## Claude Cowork Safety: What to Keep in Mind
 
-**Prompt injection is a real attack vector.** Any untrusted content that enters Claude's context — a web page, a shared document, an email — can potentially contain instructions designed to hijack Claude's actions. Standard mode mitigates this by giving you an approval step. "Act without asking" removes it.
+**Prompt injection is a real attack vector.** Any untrusted content that enters Claude's context — a web page, a shared document, an email — can potentially contain instructions designed to hijack Claude's actions. Manually Approve mitigates this by giving you an approval step for every action; Automatically Approve keeps a safety-review backstop; Skip All Approvals removes both.
 
 **Cowork activity is not currently captured in the Compliance API.** If you are using Claude on an Enterprise plan for regulated work, be aware that Cowork sessions are not logged in the same way as standard interactions.
 
@@ -125,9 +129,9 @@ Anthropic explicitly flags these as high-risk scheduled task patterns. If a sche
 
 ## What you can do now
 
-With Cowork configured on the principle of least privilege — a dedicated working folder, standard mode as the default, and browser access granted only when needed — you are set up to use Claude's agentic capabilities without unnecessary exposure.
+With Cowork configured on the principle of least privilege — a dedicated working folder, Manually Approve as the default, and browser access granted only when needed — you are set up to use Claude's agentic capabilities without unnecessary exposure.
 
-Good starting tasks for Cowork in standard mode:
+Good starting tasks for Cowork in Manually Approve mode:
 
 - Organising and renaming files in your designated working folder
 - Drafting and iterating on documents, with Claude reading source files you have explicitly shared

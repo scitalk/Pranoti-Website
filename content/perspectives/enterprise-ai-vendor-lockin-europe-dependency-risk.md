@@ -59,7 +59,7 @@ Against that deployment velocity, the governance picture is stark. Only **21% of
 
 **35% of employees have entered proprietary information into public AI tools.** That is not a shadow IT problem in the traditional sense — it is a data sovereignty problem occurring at the point of AI adoption, in organisations that already have 80–90% of their sensitive cloud data hosted by US providers.
 
-The governance gap here is structural, not incidental. Enterprise risk frameworks were designed for a software procurement paradigm where adoption was slower, vendor relationships were more bounded, and data flows were more contained. AI adoption has broken all three assumptions simultaneously. Gartner projects that over **40% of AI-related data breaches by 2027 will stem from unapproved or improper generative AI use** — in organisations that, by then, will be subject to mandatory EU compliance requirements that treat exactly this kind of exposure as a reportable event.
+The governance gap here is structural, not incidental. Enterprise risk frameworks were designed for a software procurement paradigm where adoption was slower, vendor relationships were more bounded, and data flows were more contained. AI adoption has broken all three assumptions simultaneously. Gartner projects that over **40% of AI-related data breaches by 2027 will stem from improper cross-border use of generative AI** — in organisations that, by then, will be subject to mandatory EU compliance requirements that treat exactly this kind of exposure as a reportable event.
 
 ---
 
@@ -67,7 +67,7 @@ The governance gap here is structural, not incidental. Enterprise risk framework
 
 The EU regulatory stack converging on enterprise AI in 2026 is not primarily about AI. It is about the dependency architecture enterprises have been building for a decade, and the exposure that architecture creates under conditions of geopolitical or market disruption.
 
-NIS2 is now in force across EU member states, with the first administrative penalties issued in Q1 2026. Essential entities face fines up to **€10 million or 2% of global annual turnover**. In Germany alone, the number of entities in scope under NIS2 has expanded from approximately 4,500 under the previous regime to around **29,500** — a more than sixfold increase. The compliance audit deadline for in-scope entities is 30 June 2026.
+NIS2 is now in force across EU member states, with the first administrative penalties beginning to surface in early-transposing member states in 2026 and enforcement activity accelerating through the year. Essential entities face fines up to **€10 million or 2% of global annual turnover**. In Germany alone, the number of entities in scope under NIS2 has expanded from approximately 4,500 under the previous regime to around **29,500** — a more than sixfold increase. The compliance audit deadline for in-scope entities is 30 June 2026.
 
 The EU AI Act's high-risk system requirements become mandatory on **2 August 2026**, with fines for prohibited AI practices reaching **€35 million or 7% of global annual turnover**. High-risk AI violations — which include AI used in recruitment, credit scoring, and critical infrastructure — carry fines of up to €15 million or 3% of global turnover.
 

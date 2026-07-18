@@ -5,7 +5,7 @@ lastmod: 2026-05-09
 slug: "mcp-security-checklist-claude-desktop"
 draft: false
 description: "A practical MCP security checklist for anyone using Claude Desktop professionally — credential storage, server trust, scope control, and subprocess protection covered."
-keywords: ["MCP security checklist Claude Desktop", "MCP credential storage", "Claude Desktop MCP trust", "secure MCP server installation", "macOS Keychain Claude secrets", "CLAUDE_CODE_SUBPROCESS_ENV_SCRUB", "MCP security professionals"]
+keywords: ["MCP security checklist Claude Desktop", "MCP credential storage", "Claude Desktop MCP trust", "secure MCP server installation", "macOS Keychain Claude secrets", "MCP subprocess credential scoping", "MCP security professionals"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["MCP", "Claude Desktop", "security", "credentials", "AI tool access"]
@@ -56,7 +56,7 @@ Open it and look for any line containing a key, token, password, or secret store
 
 The safer approach is to use your operating system's secure credential store:
 
-- **macOS:** Store secrets in Keychain Access. Reference them in your terminal via `security find-generic-password` or use a tool like [Keychain Secure MCP](https://mcpmarket.com/tools/skills/keychain-secure) to surface them to Claude directly.
+- **macOS:** Store secrets in Keychain Access. Reference them in your terminal via `security find-generic-password`, or use a Keychain-backed MCP wrapper to surface them to Claude directly.
 - **Windows:** Use Credential Manager. Access stored credentials via `cmdkey` in the command line.
 
 Some MCP servers also support marking fields as `"sensitive": true` in their manifest — when supported, Claude Desktop routes those values through OS-level secure storage automatically. Check the documentation for any server you install.
@@ -91,36 +91,23 @@ By default, Claude Desktop can only use the tools that your installed MCP server
 
 If you have installed a filesystem MCP — or any MCP that accesses local files — check what root path it is pointed at. A server configured to read `~/Documents` has access to everything in that folder, including any credentials, client data, or personal files stored there.
 
-**Scope your installations by project.** Claude Desktop supports local-scope MCP configuration, which loads a server only in the context of a specific project and stores the config in `~/.claude.json` rather than the global file. Use local scope for:
+**Scope what each server can reach.** Claude Desktop's `claude_desktop_config.json` is global — every server listed under `mcpServers` is available in every conversation, with no per-project isolation. (Project-scoped MCP configuration is a Claude Code feature, not a Claude Desktop one — don't confuse the two if you use both.) Since there's no built-in way to limit a server to specific conversations, treat every server you add as always-on and scope its *own* permissions accordingly:
 
-- Servers that access sensitive client data
-- Servers whose credentials you do not want shared across projects
-- Experimental servers you are testing
+- Point filesystem servers at the narrowest folder they actually need, not your whole home directory
+- Use read-only database roles and API scopes wherever the server supports them
+- Remove servers you're only testing once you're done, rather than leaving them installed indefinitely
 
-**Global scope** (the default `claude_desktop_config.json`) makes a server available in every conversation. Reserve global scope for general-purpose tools you trust fully and use daily.
+Reserve installation for tools you trust fully and expect to use regularly — there's no "sandboxed for one project" middle ground in Claude Desktop today.
 
 ---
 
 ## Check 4: Are credentials leaking into subprocesses?
 
-When Claude Desktop runs tools — including MCP servers, the bash tool, and hooks — it spawns child processes. By default, those child processes inherit the environment variables of the parent process, which can include any credentials you have set as environment variables in your shell.
+Each MCP server Claude Desktop launches runs as its own subprocess, with the environment variables you defined for it in `claude_desktop_config.json`. The risk isn't your entire shell environment leaking in by default — it's the opposite mistake: putting more into a server's `env` block than that specific server needs, so every tool call it makes can see credentials unrelated to its job.
 
-The fix is a single environment variable:
+Keep each server's `env` entry minimal — only the keys that server actually requires — rather than reusing one broad set of credentials across multiple `mcpServers` entries. If you're also a Claude Code user, note that `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` is a Claude Code setting for its Bash tool and hooks; it has no effect on Claude Desktop, which doesn't run a general-purpose shell tool.
 
-```bash
-CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1
-```
-
-Setting this strips credentials from the subprocess environment before any child process is launched. To enable it permanently on macOS, add it to your shell profile:
-
-```bash
-# In ~/.zshrc or ~/.bash_profile
-export CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1
-```
-
-Then restart your terminal and Claude Desktop.
-
-> This setting is particularly important if you store API keys or tokens as shell environment variables. Without it, any MCP server running as a subprocess can read those values.
+> If you store API keys or tokens as shell environment variables for other tools, don't assume Claude Desktop automatically isolates MCP servers from them — check each server's own documentation for how it reads credentials.
 
 ---
 
@@ -153,7 +140,7 @@ Use this before every new MCP server installation:
 **Credential storage**
 - [ ] No API keys or tokens stored in plain text in `claude_desktop_config.json`
 - [ ] Sensitive values stored in macOS Keychain or Windows Credential Manager
-- [ ] `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1` set in shell profile
+- [ ] Each server's `env` block contains only the credentials that specific server needs
 
 **Scope and access**
 - [ ] Filesystem MCP servers scoped to the minimum required folder path

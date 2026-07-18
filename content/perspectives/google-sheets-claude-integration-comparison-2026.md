@@ -65,7 +65,7 @@ Here's the breakdown, the decision framework, and the use cases each one actuall
 - Full read/write access (create, update, append, delete)
 - Formula access (read and manipulate formulas directly)
 - Live data queries (always sees current values)
-- 19 tools: batch operations, formatting, sharing, multi-sheet workflows
+- ~19 tools (via the Google Sheets MCP server this site's setup guide uses): batch operations, formatting, sharing, multi-sheet workflows
 
 **What it doesn't do:**
 - Work in claude.ai web (Claude Desktop only)
@@ -81,7 +81,7 @@ Here's the breakdown, the decision framework, and the use cases each one actuall
 | **Write to Sheets** | ✗ | ✓ |
 | **Formula access** | ✗ (CSV strips formulas) | ✓ (read/write formulas) |
 | **Live data** | ✗ (snapshot at attach) | ✓ (queries current state) |
-| **Batch operations** | ✗ | ✓ (19 tools) |
+| **Batch operations** | ✗ | ✓ (~19 tools, server-dependent) |
 | **Multi-sheet workflows** | ✗ (one at a time) | ✓ (programmatic access) |
 | **Formatting control** | ✗ | ✓ |
 | **Sharing management** | ✗ | ✓ |

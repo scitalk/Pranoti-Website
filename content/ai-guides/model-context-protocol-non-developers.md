@@ -25,7 +25,7 @@ MCP is the reason Claude can read your actual spreadsheet instead of asking you 
 
 Think of MCP like USB-C for AI tools. Before it existed, every connection between an AI model and an external tool had to be built from scratch by a developer — every integration was its own fragile project. MCP removes that requirement by defining a universal language that Claude (and increasingly other AI models) can use to talk to any compliant tool.
 
-As of early 2026, there are over 1,800 MCP servers in the ecosystem. The standard is now governed by the Agentic AI Foundation under the Linux Foundation — backed by Anthropic, OpenAI, Google, Microsoft, and AWS — which means it has broad industry commitment behind it.
+As of early 2026, there are over 10,000 MCP servers in the ecosystem. The standard is now governed by the Agentic AI Foundation under the Linux Foundation — backed by Anthropic, OpenAI, Google, Microsoft, and AWS — which means it has broad industry commitment behind it.
 
 ## What you can do with it
 
@@ -50,13 +50,13 @@ Once installed, Claude can see and use that tool automatically in every conversa
 - **No-code installation path**: Desktop Extensions install with one click from Claude Desktop's built-in directory for the major official servers.
 - **Open standard**: MCP is not proprietary. Servers you set up now will work across Claude, OpenAI models, and other AI clients.
 - **Bidirectional**: Claude can read data *and* write back — not just retrieve context.
-- **Growing ecosystem**: Over 1,800 servers cover tools from Google Workspace to GitHub to local file access, with Anthropic's directory surfacing the verified ones.
+- **Growing ecosystem**: Over 10,000 servers cover tools from Google Workspace to GitHub to local file access, with Anthropic's directory surfacing the verified ones.
 
 ## Limitations
 
 - **Claude Desktop only**: MCP connections require the Claude Desktop application. They are not available on claude.ai in the browser or on mobile.
 - **Some servers still need config editing**: Desktop Extensions cover the major official servers, but community-maintained servers may still require manual `claude_desktop_config.json` edits.
-- **Quality varies across the ecosystem**: The 1,800+ server count is community-driven. Stick to official or Anthropic-reviewed servers for anything you rely on regularly.
+- **Quality varies across the ecosystem**: The 10,000+ server count is community-driven. Stick to official or Anthropic-reviewed servers for anything you rely on regularly.
 - **Requires a paid Claude plan**: Claude Desktop on a Free plan has limited tool use. A Pro plan or higher is recommended for consistent MCP workflows.
 
 ## Verdict: which MCP server should you start with?
