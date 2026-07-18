@@ -2,7 +2,6 @@ baseURL = 'https://pranoti.thesciencetalk.com/'
 languageCode = 'en-gb'
 title = 'Pranoti Kshirsagar'
 # theme = '' # No theme needed - using custom layouts
-buildFuture = true
 
 [params]
   author      = 'Pranoti Kshirsagar'
