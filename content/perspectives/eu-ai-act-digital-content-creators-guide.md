@@ -35,7 +35,7 @@ Here's the quick map before the detail:
 The Act sorts every AI system into one of four risk tiers: unacceptable, high, limited, or minimal.
 
 - **Most creator tools sit in "limited risk."** Script generators, voice cloners, thumbnail optimisers — these carry transparency duties, not the heavy documentation and conformity assessments high-risk systems face.
-- **"Limited" isn't a permanent address.** An AI persona used to entertain is limited risk. The same persona used to make decisions that affect someone's access to a service — or deployed in a way that touches [Annex III](https://artificialintelligenceact.eu/annex/3/) categories like employment or essential services — can tip into high-risk territory.
+- **"Limited" isn't a permanent address.** An AI persona used to entertain is limited risk. The same persona used to make decisions that affect someone's access to a service — or deployed in a way that touches [Annex III](https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3) categories like employment or essential services — can tip into high-risk territory.
 - **Check the mismatch.** Most creators never compare what a tool is marketed for against how they're actually using it. That gap is exactly what regulators look for first.
 
 ## Article 5: the red line most creators don't know exists
@@ -65,7 +65,7 @@ I've written a full walkthrough of the mechanics — [how to add AI disclosures 
 
 TikTok, Meta, and YouTube aren't waiting for enforcement:
 
-- **TikTok** has adopted [C2PA Content Credentials](https://blog.pebblous.ai/blog/eu-ai-content-labeling-article-50-provenance/en/) and has labelled over a billion AI videos using embedded metadata and watermarking.
+- **TikTok** has adopted [C2PA Content Credentials](https://newsroom.tiktok.com/partnering-with-our-industry-to-advance-ai-transparency-and-literacy) and has labelled billions of AI-generated videos using embedded metadata and watermarking.
 - **Meta** auto-labels content made with its own generative tools.
 - **YouTube** requires an "altered or synthetic content" disclosure checkbox for relevant uploads.
 

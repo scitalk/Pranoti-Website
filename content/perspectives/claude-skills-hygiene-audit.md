@@ -30,7 +30,7 @@ Your skills were built in a specific technical environment. Specific Claude mode
 
 ## The environment your skills were built for no longer exists
 
-Between October 2025 and April 2026, Anthropic shipped Claude Sonnet 4.5, Claude Opus 4.6, Claude Sonnet 4.6, and Claude Opus 4.7. Claude Sonnet 4 and Opus 4 were deprecated in February 2026 with retirement scheduled for June 15, 2026. Prefilling assistant messages — a parameter many skills relied on — now returns a 400 error on Sonnet 4.6. Extended thinking changed from budget_tokens to adaptive mode. The output_format parameter was deprecated in favour of output_config.format.
+Between October 2025 and April 2026, Anthropic shipped Claude Sonnet 4.5, Claude Opus 4.6, Claude Sonnet 4.6, and Claude Opus 4.7. Claude Sonnet 4 and Opus 4 were deprecated on April 14, 2026 and retired June 15, 2026. Extended thinking changed from budget_tokens to adaptive mode. The output_format parameter was deprecated in favour of output_config.format.
 
 Every one of these changes broke skills silently. A skill written in December 2025 for Sonnet 4.5 that used assistant prefilling to control output structure would fail on Sonnet 4.6 without returning an error message that makes the cause obvious. The skill invokes. Claude processes the request. The output is wrong. You debug the skill logic, find nothing, and assume the model is hallucinating.
 
@@ -74,7 +74,7 @@ Together, they prevent the failure mode I hit repeatedly before I formalised thi
 
 ---
 
-The right time to implement a hygiene audit framework is before your first skill fails in production. The second-best time is now. Environmental change is not slowing down. Claude shipped four major model updates between October 2025 and April 2026, with Sonnet 4.8 expected in May 2026. MCP connectors are proliferating. Native tool capabilities are expanding. Every change is an opportunity for skill regression.
+The right time to implement a hygiene audit framework is before your first skill fails in production. The second-best time is now. Environmental change is not slowing down. Claude shipped four major model updates between October 2025 and April 2026, with Opus 4.8 following in May 2026 and Sonnet 5 in June 2026. MCP connectors are proliferating. Native tool capabilities are expanding. Every change is an opportunity for skill regression.
 
 A hygiene audit framework doesn't prevent environmental change. It ensures your skills adapt to it before the gap between "what the skill was built for" and "what the skill is running in" becomes a productivity drain you only notice after the damage is done.
 

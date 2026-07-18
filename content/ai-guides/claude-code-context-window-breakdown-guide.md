@@ -157,11 +157,11 @@ Using the context breakdown regularly means you will see the window filling in t
 
 ## When to consider upgrading your context window
 
-If you regularly hit the 200,000-token limit despite active management, the Max, Team, and Enterprise plans for Claude Code support a 1,000,000-token context window via Opus 4.6 and Opus 4.7. This removes the constraint entirely for most long-form research and writing workflows.
+If you regularly hit the 200,000-token limit despite active management, the Max, Team, and Enterprise plans for Claude Code support a 1,000,000-token context window on Sonnet 4.6 and later, and Opus 4.6 and later (including Opus 4.8 and Sonnet 5). This removes the constraint entirely for most long-form research and writing workflows.
 
 The upgrade is worth evaluating if you work with large document sets, run extended multi-phase sessions, or use several MCP integrations simultaneously.
 
-Pro plan users can access the 1M context window by enabling extra usage — type `/extra-usage` in Claude Code to unlock it.
+Pro plan users have more limited access to the 1M context window and may need to enable extra usage to unlock it — check the current option under your plan settings in Claude Code, since how this is surfaced has changed as the feature has rolled out more broadly.
 
 ## Related reading on The Science Talk
 

@@ -35,7 +35,7 @@ The European Commission publishes detailed data on every ERC-funded project — 
 
 ## Why this data matters
 
-The ERC budget for 2021–2027 is **€16 billion** — 17% of the entire Horizon Europe budget. Since 2007, the ERC has funded more than **18,000 projects** and distributed **€32.5 billion**, evaluated over 130,000 proposals, and supported more than 10,000 researchers across 97 nationalities. ERC grantees have published over 200,000 journal articles, filed more than 2,200 patents, and founded over 400 startups. 15 Nobel Prizes, 7 Fields Medals, and 11 Wolf Prizes have been awarded to ERC grantees.
+The ERC budget for 2021–2027 is **€16 billion** — 17% of the entire Horizon Europe budget. Since 2007, the ERC has funded more than **18,000 projects** and distributed **€32.5 billion**, evaluated over 140,000 proposals, and supported more than 10,000 researchers across 97 nationalities. ERC grantees have published over 200,000 journal articles, filed more than 2,200 patents, and founded over 400 startups. 15 Nobel Prizes, 6 Fields Medals, and 12 Wolf Prizes have been awarded to ERC grantees.
 
 The breakdown by grant type:
 
