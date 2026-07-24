@@ -51,15 +51,15 @@ Message weight is not uniform. A short question in a fresh conversation costs fa
 
 ## The peak-hour effect most European users miss
 
-Since late March 2026, Anthropic has confirmed that session limits deplete faster during peak hours. The official peak window is **weekdays, 13:00–19:00 GMT** — which translates to **15:00–21:00 CET / CEST** for users in Germany, the Netherlands, and most of Central Europe.
+Since late March 2026, an Anthropic team member confirmed on X (not a formal Help Center article) that session limits deplete faster during peak hours. The stated peak window is **weekdays, 13:00–19:00 GMT** — which translates to **15:00–21:00 CET / CEST** for users in Germany, the Netherlands, and most of Central Europe.
 
-During these hours, the same volume of work consumes your session allowance at a faster rate than it would outside this window. Your weekly total is unchanged — it is the speed of depletion per session that shifts. Anthropic confirmed the change affects roughly 7% of users, with Pro subscribers most exposed.
+During these hours, the same volume of work consumes your session allowance at a faster rate than it would outside this window. Your weekly total is unchanged — it is the speed of depletion per session that shifts. Anthropic said the change affects roughly 7% of users, with Pro subscribers most exposed.
+
+**Update, May 2026:** Anthropic's official [Claude Code capacity announcement](https://www.anthropic.com/news/higher-limits-spacex) confirms the peak-hours reduction was removed for Claude Code on Pro and Max plans. Whether it still applies to claude.ai chat or Desktop is not stated in current official documentation — the [Claude Help Center's usage-limits article](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work) doesn't mention peak hours at all as of this update, so treat the peak-hour effect on those surfaces as unconfirmed rather than guaranteed.
 
 For European knowledge workers, the practical effect is this: if you do your heaviest Claude work in the afternoon — which is when most meetings, writing sessions, and deep work happen — you are working during the most constrained window of the day. Mornings, evenings, and weekends are all off-peak, and your session allowance stretches further during those times.
 
-If you are based in Central European Time and primarily use Claude for writing, research, or grant-related work, shifting your most intensive sessions to before 15:00 or after 21:00 is the single highest-leverage change you can make to your usage habits.
-
-**Update, May 2026:** Anthropic doubled the 5-hour rate limits for Pro, Max, Team, and seat-based Enterprise Claude Code accounts and removed the peak-hours reduction specifically for Claude Code on those plans. The peak-hour effect described above still applies to claude.ai chat and Claude Desktop, but no longer constrains Claude Code sessions on Pro or Max.
+If you are based in Central European Time and primarily use Claude for writing, research, or grant-related work — on claude.ai chat or Desktop specifically — shifting your most intensive sessions to before 15:00 or after 21:00 was the single highest-leverage change per the March 2026 policy; see the update above for what's changed and what's unconfirmed since.
 
 ## Something I noticed this week
 

@@ -62,11 +62,13 @@ These are approximate: your actual capacity depends on message length, attached 
 
 ## The peak-hours rule — and the Claude Code exception
 
-Since March 2026, Anthropic has applied a reduced session allowance during **peak hours: weekdays, 13:00–19:00 GMT** (15:00–21:00 CET/CEST for Central Europe). During this window, the same volume of work depletes your session faster than it would off-peak. Your weekly total doesn't change — only the speed of depletion per session does. Anthropic has said the change affects roughly 7% of users, with Pro subscribers most exposed.
+In March 2026, an Anthropic team member confirmed on X that the company was applying a reduced session allowance during **peak hours: weekdays, 13:00–19:00 GMT** (15:00–21:00 CET/CEST for Central Europe), affecting roughly 7% of users with Pro subscribers most exposed. This was not published as a formal Claude Help Center article — it was a direct company statement, not an official documentation page.
 
-**Update — May 2026:** when Anthropic doubled Claude Code's 5-hour limits, it also **removed the peak-hours reduction for Claude Code on Pro and Max plans**. The peak-hour effect described above still applies to claude.ai chat and Claude Desktop, but no longer constrains Claude Code sessions on those plans.
+**Update — May 2026:** Anthropic's official announcement of the [Claude Code capacity increase](https://www.anthropic.com/news/higher-limits-spacex) confirms it doubled Claude Code's 5-hour rate limits for Pro, Max, Team, and seat-based Enterprise plans, and explicitly **removed the peak-hours reduction on Claude Code for Pro and Max accounts**.
 
-Practical takeaway: if your heaviest work is in claude.ai chat or Desktop, shifting intensive sessions to before 15:00 or after 21:00 CET is still the highest-leverage habit. If your heaviest work is in Claude Code on Pro or Max, peak-hour timing no longer matters for that surface.
+> **What's unconfirmed:** whether the peak-hour reduction still applies to claude.ai chat or Claude Desktop today is not stated in current official documentation — the [Claude Help Center's usage-limits article](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work) makes no mention of peak hours at all as of this guide's last update. Treat the peak-hour effect on non-Claude-Code surfaces as historical (confirmed for March–May 2026) rather than a currently guaranteed constraint.
+
+Practical takeaway: the peak-hour effect no longer applies to Claude Code on Pro or Max — that's confirmed directly by Anthropic. For claude.ai chat and Desktop, timing your sessions outside 15:00–21:00 CET was a documented advantage as of the March 2026 change, but confirm current behaviour in-app if this matters to your workflow.
 
 ## Context window vs. usage limit: two different constraints
 
