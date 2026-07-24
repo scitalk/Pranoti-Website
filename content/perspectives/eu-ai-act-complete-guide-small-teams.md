@@ -50,6 +50,8 @@ Before anything else, confirm you're actually building or deploying an "AI syste
 These apply now, regardless of company size — they were unaffected by the 2026 delay package.
 
 - **Prohibited practices (Article 5), in force since 2 February 2025.** A short, fixed list of AI uses that are banned outright — workplace emotion recognition, certain biometric categorisation, dark-pattern manipulation. See [EU AI Act Article 5: AI Practices You're Banned From Using](/ai-guides/eu-ai-act-prohibited-practices-article-5/).
+
+  > The prohibitions themselves have been legally binding since 2 February 2025. The enforcement infrastructure — national competent authorities and penalty mechanisms — only takes effect from 2 August 2026. The ban applies regardless; what changes on that later date is who can formally penalise a breach.
 - **AI-literacy duties (Article 4), in force since 2 February 2025.** Covers your staff, freelancers, and contractors who use AI tools — not just the tools themselves. See [EU AI Act Article 4: What Creator Agencies and Small Teams Owe](/perspectives/eu-ai-act-article-4-creator-agencies-small-teams/).
 
 ## If you build on top of someone else's AI model or tool
