@@ -1,7 +1,7 @@
 ---
 title: "Claude's 5-Hour Limit: 7 Strategic Tips for AI Power Users"
 date: 2026-05-05
-lastmod: 2026-06-19
+lastmod: 2026-07-23
 draft: false
 category: "perspectives"
 description: "Strategic tips for managing Claude's 5-hour limit: model selection, batching, compact commands, starting fresh—how AI power users optimise tokens."
@@ -51,11 +51,13 @@ The 5-hour limit is a session budget, not a wall. Here's how I work with it stra
 
 I used to burn through my Claude quota by late morning and spend the rest of the day waiting. The turning point came when I stopped treating the 5-hour window as a constraint to fight and started treating it like a resource to manage. These are the tactics I use now—model selection, batching work, compact commands in Claude Code, knowing when to start fresh, prioritising by tokens left, connector hygiene, and building approval gates into my skills.
 
+*This post covers power-user tactics. For the full picture — mechanics, plan comparisons, and cost — see [Claude Usage Limits 2026: The Complete Guide](/perspectives/claude-usage-limits-2026-complete-guide/).*
+
 ## Choose the right model for the task
 
 Sonnet handles 90% of my work. Blog post drafts, WordPress updates via MCP, Google Sheets analysis, research summaries—all Sonnet. I only switch to Opus when I need deep reasoning: complex MCP skill builds, multi-step automation logic, or work where one mistake would cost more to fix than the Opus tokens cost upfront.
 
-The cost difference is significant. Opus burns tokens roughly 1.7× faster than Sonnet. If you're using Opus for formatting fixes or routine content work, you're paying premium rates for commodity tasks. Regular Claude users who optimise their model choice stretch their sessions significantly further.
+The cost difference is significant. Opus is priced well above Sonnet and generally consumes your session allowance at a higher rate for equivalent tasks. If you're using Opus for formatting fixes or routine content work, you're paying premium rates for commodity tasks. Regular Claude users who optimise their model choice stretch their sessions significantly further.
 
 ## Batch content work to maximise token efficiency
 

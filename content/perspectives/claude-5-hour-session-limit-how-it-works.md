@@ -1,7 +1,7 @@
 ---
 title: "Claude's 5-Hour Session Limit: How It Actually Works"
 date: 2026-04-23
-lastmod: 2026-04-23
+lastmod: 2026-07-23
 draft: false
 description: "How Claude's 5-hour session window really works, why peak hours drain it faster, and five habits that give you more from every session."
 keywords: ["how Claude session limit works", "Claude 5-hour session window mechanics", "Claude peak hours Europe", "Claude session window explained", "Claude context reset", "Claude usage window", "knowledge worker AI productivity"]
@@ -37,6 +37,8 @@ You're mid-task, deep in a document, and Claude stops responding. The message re
 
 The instinct is to assume you need a bigger plan. But in most cases, the issue isn't capacity — it's that the session system works differently from what most people expect. Once you understand the mechanics, you can plan around them and get significantly more from every session.
 
+*This post is a mechanics deep-dive. For the full picture — including plan comparisons and cost — see [Claude Usage Limits 2026: The Complete Guide](/perspectives/claude-usage-limits-2026-complete-guide/).*
+
 ## What the 5-hour session actually means
 
 Claude's usage limit is not a daily message cap, and it does not reset at midnight. It operates on a rolling 5-hour window that starts from the moment you send your first message.
@@ -56,6 +58,8 @@ During these hours, the same volume of work consumes your session allowance at a
 For European knowledge workers, the practical effect is this: if you do your heaviest Claude work in the afternoon — which is when most meetings, writing sessions, and deep work happen — you are working during the most constrained window of the day. Mornings, evenings, and weekends are all off-peak, and your session allowance stretches further during those times.
 
 If you are based in Central European Time and primarily use Claude for writing, research, or grant-related work, shifting your most intensive sessions to before 15:00 or after 21:00 is the single highest-leverage change you can make to your usage habits.
+
+**Update, May 2026:** Anthropic doubled the 5-hour rate limits for Pro, Max, Team, and seat-based Enterprise Claude Code accounts and removed the peak-hours reduction specifically for Claude Code on those plans. The peak-hour effect described above still applies to claude.ai chat and Claude Desktop, but no longer constrains Claude Code sessions on Pro or Max.
 
 ## Something I noticed this week
 
