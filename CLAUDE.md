@@ -74,9 +74,13 @@ content/
 ├── case-studies/      ← LIVE
 ├── ai-guides/         ← LIVE
 ├── perspectives/      ← LIVE
-├── about.md           ← draft: true (not published)
+├── about.md           ← LIVE (draft: false)
+├── search.md          ← LIVE (draft: false)
+├── testimonials.md    ← LIVE (draft: false)
 ├── contact.md         ← draft: true
-└── blog/              ← draft: true
+├── blog/              ← draft: true
+├── courses/           ← still in exploration, not linked in nav — do not publish without explicit go-ahead
+└── old-portfolio-files/ ← superseded duplicates of case-studies/portfolio content, excluded from build via `build: {render: never, list: never}` — safe to ignore, candidate for deletion
 
 layouts/               ← Hugo templates
 static/                ← assets (images, CSS, JS, PDFs)
@@ -104,6 +108,24 @@ onclick="gtag('event', 'purchase_intent', {'item_name': 'PRODUCT NAME', 'locatio
 - To make it a Key Event: GA4 Admin → Events → `purchase_intent` → toggle "Mark as key event"
 
 **Do not use old-format events** like `Purchase_intent_Personal_branding_Jun_23` — always use the standardised `purchase_intent` event name with `item_name` and `location` params.
+
+---
+
+## Known Hugo gotchas
+
+### Don't use `.IsMenuCurrent` for nav active-states
+
+This site's main nav (`[menu.main]` in `hugo.toml`) is defined entirely in config, not linked to content pages via front matter `menu:` blocks. Hugo's built-in `.IsMenuCurrent "main" .` helper needs a page reference behind the menu entry to compare against — since there isn't one here, it silently always returns `false`, no matter what page you're on. It won't error, it just never matches.
+
+**Use instead:** a plain URL-prefix check in `layouts/partials/header.html`:
+```go-html-template
+{{ $path := .RelPermalink }}
+{{ range .Site.Menus.main }}
+  {{ $isActive := and (ne .URL "/") (hasPrefix $path .URL) }}
+  ...
+{{ end }}
+```
+This is what powers the nav active-state highlighting (bold + underline + section accent color) added in commit `37b0c65`.
 
 ---
 
