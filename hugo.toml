@@ -38,7 +38,7 @@ title = 'Pranoti Kshirsagar'
   filename   = 'sitemap.xml'
 
 [outputs]
-  home    = ['HTML', 'RSS']
+  home    = ['HTML', 'RSS', 'JSON']
   section = ['HTML', 'RSS']
   page    = ['HTML']
 
