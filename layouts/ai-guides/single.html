@@ -113,14 +113,15 @@
           {{ end }}
 
           <div class="sidebar-card sidebar-cta">
-            {{ if .Params.sidebar_author_bio }}<img src="/images/About_Pranoti.jpeg" alt="Dr. Pranoti Kshirsagar" class="sidebar-author-photo">{{ end }}
-            <h3 class="sidebar-heading">Work with Pranoti</h3>
             {{ if .Params.sidebar_author_bio }}
+            <h3 class="sidebar-heading sidebar-heading-center">About the Author</h3>
+            <img src="/images/About_Pranoti.jpeg" alt="Dr. Pranoti Kshirsagar" class="sidebar-author-photo sidebar-author-photo-center">
             <p class="sidebar-text">Dr. Pranoti Kshirsagar helps European businesses cut through the AI hype and build robust systems with AI to drive commercial success. She specialises in the EU AI Act and delivers AI literacy trainings. She has spent seven years building, deploying, and applying AI.</p>
             {{ else }}
+            <h3 class="sidebar-heading">Work with Pranoti</h3>
             <p class="sidebar-text">Science communication consultant for European researchers and EIC-funded companies. Proposal writing, AI integration, research visibility.</p>
             {{ end }}
-            <a href="https://thesciencetalk.com/contact-us/" class="sidebar-btn">Book a call →</a>
+            <a href="https://thesciencetalk.com/contact-us/" class="sidebar-btn">{{ if .Params.sidebar_author_bio }}Get in touch →{{ else }}Book a call →{{ end }}</a>
           </div>
 
           {{ if .Params.stripe_url }}
@@ -260,6 +261,7 @@
   font-size: .75rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .08em; color: #999; margin: 0 0 .9rem;
 }
+.sidebar-heading-center { text-align: center; }
 .sidebar-related { border-top: 3px solid #DCE6FA; }
 .sidebar-link {
   display: block; font-size: .92rem; color: #2951E0; text-decoration: none;
@@ -274,6 +276,7 @@
   object-fit: cover; object-position: top center;
   border: 2px solid rgba(41,81,224,.2); margin-bottom: .9rem;
 }
+.sidebar-author-photo-center { margin-left: auto; margin-right: auto; }
 .sidebar-text { font-size: .92rem; color: #666; line-height: 1.65; margin-bottom: 1rem; }
 .sidebar-btn {
   display: block; text-align: center;
