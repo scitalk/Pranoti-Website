@@ -1,7 +1,7 @@
 ---
 title: "GPAI Code of Practice: Provider vs. Deployer, Explained"
 date: 2026-07-22
-lastmod: 2026-07-22
+lastmod: 2026-07-27
 slug: "gpai-code-of-practice-provider-vs-deployer"
 draft: false
 description: "Does the GPAI Code of Practice apply to you? It binds general-purpose AI model providers, not deployers — here's the test and what to ask your AI vendor."
@@ -10,6 +10,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "6 min"
 tags: ["EU AI Act", "GPAI", "AI regulation", "AI vendor due diligence", "AI governance"]
 category: "ai-integration-guides"
+sidebar_author_bio: true
 sidebar_links:
   - title: "The Infrastructure Gap Slowing Claude Adoption in European Research"
     url: "/ai-guides/anthropic-ai-adoption-european-research/"
@@ -22,6 +23,14 @@ sidebar_links:
 **Does the GPAI Code of Practice apply to you?** For most teams building AI-powered products, the answer is no — the Code is the European Commission's voluntary compliance tool for providers of general-purpose AI models under the EU AI Act, published on 10 July 2025 after input from more than 1,000 stakeholders, and it binds model providers, not the teams building on top of their models. This guide walks through the provider-vs-deployer test, what each of the Code's three chapters covers, and what a downstream team building on GPT, Claude, or similar models should take from it.
 
 > **Scope note:** The Code is a voluntary tool. Providers who sign it and follow its measures get a presumption of compliance with the AI Act's Chapter V obligations. Providers who don't sign it must demonstrate compliance another way — a higher evidential burden, but not a legal requirement to sign.
+
+## What is the GPAI Code of Practice?
+
+The GPAI Code of Practice is a voluntary compliance tool, developed by the European Commission for providers of general-purpose AI models under the EU AI Act. It was published on 10 July 2025 after input from more than 1,000 stakeholders — including model providers, industry bodies, civil society, and academia — coordinated through a multi-stakeholder drafting process.
+
+The Code translates the AI Act's Chapter V obligations (Articles 53 and 55) into concrete measures across three chapters: **Transparency**, **Copyright**, and **Safety and Security**. Providers who sign it and follow its measures get a presumption of compliance with those obligations, reducing the evidential burden of demonstrating compliance case-by-case.
+
+It is not a law — it is the Commission's recommended route to compliance with a law that already applies. The GPAI obligations themselves came into application on 2 August 2025 regardless of whether a provider signs the Code.
 
 ## What you need before starting
 
