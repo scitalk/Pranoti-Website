@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "8 min"
 tags: ["science communication", "platform migration", "digital presence", "thought leadership", "online community"]
 category: "perspectives"
+sidebar_author_bio: false
 sidebar_links:
   - title: "European research has an AI problem — and it's not the one you think"
     url: "/perspectives/european-research-ai-implementation-gap/"

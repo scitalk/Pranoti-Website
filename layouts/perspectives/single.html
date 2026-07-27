@@ -113,9 +113,15 @@
           {{ end }}
 
           <div class="sidebar-card sidebar-cta">
+            {{ if ne .Params.sidebar_author_bio false }}
+            <h3 class="sidebar-heading sidebar-heading-center">About the Author</h3>
+            <img src="/images/About_Pranoti.jpeg" alt="Dr. Pranoti Kshirsagar" class="sidebar-author-photo sidebar-author-photo-center">
+            <p class="sidebar-text">Dr. Pranoti Kshirsagar helps European businesses cut through the AI hype and build robust systems with AI to drive commercial success. She specialises in the EU AI Act and delivers AI literacy trainings. She has spent seven years building, deploying, and applying AI.</p>
+            {{ else }}
             <h3 class="sidebar-heading">Work with Pranoti</h3>
             <p class="sidebar-text">AI integration and science communication consultant for European researchers and EIC-funded companies. Proposal writing, workflow automation, research visibility.</p>
-            <a href="https://thesciencetalk.com/contact-us/" class="sidebar-btn">Book a call →</a>
+            {{ end }}
+            <a href="https://thesciencetalk.com/contact-us/" class="sidebar-btn">{{ if ne .Params.sidebar_author_bio false }}Get in touch →{{ else }}Book a call →{{ end }}</a>
           </div>
 
         </aside>
@@ -235,6 +241,12 @@
   font-family: 'Montserrat', sans-serif;
   font-size: .75rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .08em; color: #999; margin: 0 0 .9rem;
+}
+.sidebar-heading-center { text-align: center; }
+.sidebar-author-photo {
+  display: block; width: 100%; max-width: 160px; height: 190px; border-radius: 16px;
+  object-fit: cover; object-position: top center;
+  border: 2px solid rgba(42,96,72,.2); margin: 0 auto .9rem;
 }
 .sidebar-related { border-top: 3px solid #E6F4ED; }
 .sidebar-link {

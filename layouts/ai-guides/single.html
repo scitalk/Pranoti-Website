@@ -113,7 +113,7 @@
           {{ end }}
 
           <div class="sidebar-card sidebar-cta">
-            {{ if .Params.sidebar_author_bio }}
+            {{ if ne .Params.sidebar_author_bio false }}
             <h3 class="sidebar-heading sidebar-heading-center">About the Author</h3>
             <img src="/images/About_Pranoti.jpeg" alt="Dr. Pranoti Kshirsagar" class="sidebar-author-photo sidebar-author-photo-center">
             <p class="sidebar-text">Dr. Pranoti Kshirsagar helps European businesses cut through the AI hype and build robust systems with AI to drive commercial success. She specialises in the EU AI Act and delivers AI literacy trainings. She has spent seven years building, deploying, and applying AI.</p>
@@ -121,7 +121,7 @@
             <h3 class="sidebar-heading">Work with Pranoti</h3>
             <p class="sidebar-text">Science communication consultant for European researchers and EIC-funded companies. Proposal writing, AI integration, research visibility.</p>
             {{ end }}
-            <a href="https://thesciencetalk.com/contact-us/" class="sidebar-btn">{{ if .Params.sidebar_author_bio }}Get in touch →{{ else }}Book a call →{{ end }}</a>
+            <a href="https://thesciencetalk.com/contact-us/" class="sidebar-btn">{{ if ne .Params.sidebar_author_bio false }}Get in touch →{{ else }}Book a call →{{ end }}</a>
           </div>
 
           {{ if .Params.stripe_url }}
