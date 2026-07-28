@@ -4,12 +4,14 @@ date: 2026-07-20
 lastmod: 2026-07-19
 slug: "eu-ai-act-compliance-starter-kit-small-teams"
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "A 5-step EU AI Act compliance starter kit for small teams: check scope, rule out prohibited uses, classify risk, meet transparency duties, and handle literacy and records."
 keywords: ["EU AI Act compliance starter kit", "AI Act compliance small teams", "EU AI Act checklist SME", "how to comply with the EU AI Act", "AI Act risk classification", "AI Act transparency Article 50", "EU AI Act deadlines 2027"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
 tags: ["EU AI Act", "compliance", "small teams", "risk classification", "AI governance"]
 category: "ai-integration-guides"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "EU AI Act AI System Definition: The Official 7-Element Test"
     url: "/ai-guides/eu-ai-act-ai-system-definition-7-element-test/"

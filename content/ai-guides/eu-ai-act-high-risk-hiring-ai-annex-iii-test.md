@@ -4,12 +4,14 @@ date: 2026-07-18
 lastmod: 2026-07-18
 slug: "eu-ai-act-high-risk-hiring-ai-annex-iii-test"
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "Run this 3-step EU AI Act test to check if your recruitment or HR software counts as high-risk hiring AI under Annex III, before 2 December 2027."
 keywords: ["EU AI Act high-risk hiring AI", "Annex III employment", "AI Act recruitment compliance", "high-risk AI recruitment tool test", "Article 6 AI Act classification", "AI Act HR compliance small agency", "AI hiring tool compliance 2027"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["EU AI Act", "Annex III", "AI hiring", "HR compliance", "high-risk AI"]
 category: "ai-integration-guides"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "How to Build an AI System Register"
     url: "/ai-guides/eu-ai-act-ai-system-register-template/"

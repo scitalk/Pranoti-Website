@@ -4,12 +4,14 @@ date: 2026-07-17
 lastmod: 2026-07-17
 slug: "eu-ai-act-ai-system-register-template"
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "Build an EU AI Act system register in 30 minutes, and find out whether you owe an official Article 71 EU database filing — free spreadsheet template included."
 keywords: ["AI system register EU AI Act", "AI inventory template SME", "Article 71 EU AI database", "shadow AI inventory", "provider vs deployer register", "EU AI Act compliance template", "AI Act Article 49 registration"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
 tags: ["EU AI Act", "AI governance", "AI Act compliance", "SME", "AI inventory"]
 category: "ai-integration-guides"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "GPAI Code of Practice: Provider vs. Deployer, Explained"
     url: "/ai-guides/gpai-code-of-practice-provider-vs-deployer/"
