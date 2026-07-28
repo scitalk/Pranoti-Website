@@ -3,12 +3,14 @@ title: "Recommender Systems: Even EU Regulators Don't Agree Which Law Applies"
 date: 2026-07-26
 lastmod: 2026-07-19
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "The European Commission's own DSA review admits recommender systems sit ambiguously between the DSA and the AI Act. Here's what that means for teams building one."
 keywords: ["recommender systems DSA AI Act", "which law applies recommender system EU", "DSA AI Act overlap", "recommender system compliance Europe", "algorithmic recommender EU regulation", "DSA Article 33 review"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
 tags: ["DSA", "EU AI Act", "recommender systems", "regulatory overlap", "algorithmic transparency"]
 category: "perspectives"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "EU CADA Sovereignty Tiers: What the Four Cloud Levels Mean"
     url: "/perspectives/eu-cada-cloud-sovereignty-tiers/"
