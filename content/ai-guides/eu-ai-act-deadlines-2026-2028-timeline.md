@@ -4,12 +4,14 @@ date: 2026-07-25
 lastmod: 2026-07-25
 slug: "eu-ai-act-deadlines-2026-2028-timeline"
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "The EU AI Act's high-risk deadlines were pushed back in 2026 — here is the current, officially confirmed timeline through 2028 and which date applies to you."
 keywords: ["EU AI Act deadlines 2026 2028", "EU AI Act timeline delayed", "AI Act high-risk deadline December 2027", "EU AI Act simplification 2026", "EU AI Act compliance calendar", "AI Act deadline pushed back", "when does EU AI Act high-risk apply"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
 tags: ["EU AI Act", "AI Act compliance", "AI regulation", "AI governance"]
 category: "ai-integration-guides"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "EU AI Act AI System Definition: The Official 7-Element Test"
     url: "/ai-guides/eu-ai-act-ai-system-definition-7-element-test/"

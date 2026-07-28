@@ -4,12 +4,14 @@ date: 2026-07-19
 lastmod: 2026-07-19
 slug: "eu-ai-act-ai-system-definition-7-element-test"
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "The European Commission's official 7-element test for what counts as an 'AI system' under EU AI Act Article 3(1) — worked examples and a self-assessment checklist."
 keywords: ["EU AI Act AI system definition", "Article 3(1) AI Act", "AI system definition test", "does the EU AI Act apply to my tool", "EU AI Act scope research tools", "AI Act applicability checklist", "what counts as an AI system EU"]
 author: "Pranoti Kshirsagar"
 reading_time: "10 min"
 tags: ["EU AI Act", "AI regulation", "AI Act compliance", "research tools", "AI governance"]
 category: "ai-integration-guides"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "How to add AI disclosures that comply with the EU AI Act"
     url: "/ai-guides/ai-generated-content-disclosure-eu-ai-act/"

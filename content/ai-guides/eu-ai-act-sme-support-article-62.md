@@ -4,12 +4,14 @@ date: 2026-07-23
 lastmod: 2026-07-19
 slug: "eu-ai-act-sme-support-article-62"
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "Article 62 of the EU AI Act gives SMEs and start-ups real support — priority sandbox access, free training, a direct advice channel and reduced fees. Here's how to claim it."
 keywords: ["EU AI Act Article 62 SME support", "AI Act support for start-ups", "AI regulatory sandbox priority access", "reduced conformity assessment fees SME", "AI Act small mid-caps", "EU AI Act SME compliance help", "AI Office information platform"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["EU AI Act", "Article 62", "SME support", "regulatory sandbox", "start-ups"]
 category: "ai-integration-guides"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "GPAI Code of Practice: Provider vs. Deployer, Explained"
     url: "/ai-guides/gpai-code-of-practice-provider-vs-deployer/"
