@@ -3,12 +3,14 @@ title: "The EU AI Act: Everything Digital Creators Need to Know"
 date: 2026-07-15
 lastmod: 2026-07-15
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "The EU AI Act isn't just a labeling rule. Here's what digital content creators need to know about risk tiers, red lines, and Article 50 before August 2026."
 keywords: ["EU AI Act content creators", "Article 50 AI Act", "AI Act risk tiers", "AI-generated content disclosure", "EU AI Act deadline 2026", "AI Act digital creators", "Article 5 AI Act manipulative techniques"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
 tags: ["EU AI Act", "content creators", "AI transparency", "AI regulation", "digital marketing"]
 category: "perspectives"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "How to add AI disclosures that comply with the EU AI Act"
     url: "/ai-guides/ai-generated-content-disclosure-eu-ai-act/"

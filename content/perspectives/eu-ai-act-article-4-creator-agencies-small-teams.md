@@ -1,14 +1,16 @@
 ---
 title: "EU AI Act Article 4: What Creator Agencies and Small Teams Owe"
 date: 2026-07-28
-lastmod: 2026-07-28
+lastmod: 2026-07-23
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "Article 4's AI literacy obligation already covers your freelancers and contractors. Here's exactly what creator agencies and small teams need to do now."
 keywords: ["EU AI Act Article 4", "AI literacy obligation", "creator agency compliance", "EU AI Act small teams", "freelancer AI Act", "AI Act deployer obligations", "EU AI Act SME"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
 tags: ["EU AI Act", "AI literacy", "creator agencies", "AI regulation", "small teams"]
 category: "perspectives"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "The EU AI Act: Everything Digital Creators Need to Know"
     url: "/perspectives/eu-ai-act-digital-content-creators-guide/"
@@ -24,7 +26,7 @@ If you run a solo AI-assisted content operation, **EU AI Act** compliance is mos
 
 ## Article 4: the obligation you already owe
 
-Article 4 requires providers and deployers of AI systems to ensure "a sufficient level of AI literacy" among staff and other people operating those systems on their behalf. (The Commission's November 2025 Digital Omnibus proposal would soften this from an obligation to *ensure* literacy to one to *support the development of* it — an "obligation of effort" rather than a guaranteed result — but as of this writing that change has not been adopted, so the stricter "ensure" wording below still applies.) That scope is wider than most agency owners assume:
+[Article 4](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-4) requires providers and deployers of AI systems to ensure "a sufficient level of AI literacy" among staff and other people operating those systems on their behalf. (The Commission's [November 2025 Digital Omnibus proposal](https://digital-strategy.ec.europa.eu/en/library/digital-omnibus-ai-regulation-proposal) would soften this from an obligation to *ensure* literacy to one to *support the development of* it — an "obligation of effort" rather than a guaranteed result — but as of this writing that change has not been adopted, so the stricter "ensure" wording below still applies.) That scope is wider than most agency owners assume:
 
 - **Employees** using AI tools as part of their role
 - **Freelancers and contractors** you bring in for specific projects
@@ -32,17 +34,19 @@ Article 4 requires providers and deployers of AI systems to ensure "a sufficient
 
 If someone on your team uses an AI voice cloner, script generator, or thumbnail tool for a client project, Article 4 treats that as your organisation's use — not just theirs.
 
-## Why this has been live since August 2025, not August 2026
+## Why this has been live since February 2025, not August 2026
 
-Most of the EU AI Act's creator-facing conversation centres on the 2 August 2026 enforcement date for Article 50 disclosure. Article 4 works differently.
+Most of the EU AI Act's creator-facing conversation centres on the 2 August 2026 enforcement date for Article 50 disclosure. Article 4 works differently — it sits in Chapter I (general provisions), one of the two chapters that became directly applicable first.
 
 | Date | What happened |
 |---|---|
-| **2 August 2024** | AI Act enters into force |
-| **2 August 2025** | Liability begins — an untrained team member's AI-related mistake is already your organisation's exposure |
-| **2 August 2026** | Formal supervision and enforcement of the AI literacy rules begins |
+| **1 August 2024** | AI Act enters into force |
+| **2 February 2025** | Chapters I and II apply — Article 4's AI literacy obligation and Article 5's prohibited-practices rules take direct legal effect |
+| **2 August 2026** | General application date; formal supervision and enforcement structures for the Act as a whole are fully operational |
 
-> If an untrained freelancer on your team causes harm using an AI system — leaking client data, publishing an undisclosed deepfake, misrepresenting a synthetic persona as real — your agency has been liable for that since August 2025, regardless of when enforcement formally starts.
+Dates per [Article 113 — entry into force and application](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113).
+
+> If an untrained freelancer on your team causes harm using an AI system — leaking client data, publishing an undisclosed deepfake, misrepresenting a synthetic persona as real — your agency has been liable for that since February 2025, regardless of when the Act's broader enforcement machinery becomes fully operational.
 
 ## What "sufficient AI literacy" actually means in practice
 
@@ -74,7 +78,7 @@ That asymmetry — low probability of formal enforcement, high cost if it does h
 
 ## What small teams get in return
 
-The Act isn't uniformly heavier for smaller operations. SMEs get real concessions:
+The Act isn't uniformly heavier for smaller operations. SMEs get real concessions under [Article 62](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-62):
 
 - **Simplified technical documentation** using a Commission-provided template, where documentation obligations apply at all
 - **No requirement to appoint a formal AI officer or governance board** — Article 4 doesn't demand new organisational structure, just demonstrable measures

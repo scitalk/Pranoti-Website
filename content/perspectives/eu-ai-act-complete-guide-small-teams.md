@@ -3,12 +3,14 @@ title: "The EU AI Act: The Complete Guide for Small Teams"
 date: 2026-07-24
 lastmod: 2026-07-24
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "Every EU AI Act obligation that applies to small teams and agencies — organised by audience and article, with current 2026–2028 deadlines and links to full guides."
 keywords: ["EU AI Act complete guide", "EU AI Act small teams", "EU AI Act for agencies", "EU AI Act articles explained", "EU AI Act compliance guide 2026", "AI Act checklist SME", "EU AI Act deadlines"]
 author: "Pranoti Kshirsagar"
 reading_time: "10 min"
 tags: ["EU AI Act", "AI regulation", "AI compliance", "AI governance", "small business"]
 category: "perspectives"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "EU AI Act Deadlines 2026–2028: The Current Timeline"
     url: "/ai-guides/eu-ai-act-deadlines-2026-2028-timeline/"

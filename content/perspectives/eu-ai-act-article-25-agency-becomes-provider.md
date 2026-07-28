@@ -3,12 +3,14 @@ title: "EU AI Act Article 25: When You Become the AI 'Provider'"
 date: 2026-07-21
 lastmod: 2026-07-19
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "Under Article 25 of the EU AI Act, agencies can become the legal 'provider' of an AI system — and inherit every obligation. Here's how the flip happens."
 keywords: ["EU AI Act Article 25 provider obligations", "when does a deployer become a provider", "substantial modification AI Act", "AI value chain responsibilities", "accidental AI provider agency", "EU AI Act compliance agencies", "Article 25 high-risk AI system"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
 tags: ["EU AI Act", "Article 25", "AI provider", "agencies", "AI value chain"]
 category: "perspectives"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "GPAI Code of Practice: Provider vs. Deployer, Explained"
     url: "/ai-guides/gpai-code-of-practice-provider-vs-deployer/"

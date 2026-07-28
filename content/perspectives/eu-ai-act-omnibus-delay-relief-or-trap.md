@@ -3,12 +3,14 @@ title: "The AI Act Omnibus Delay: Relief or a Trap for Small Teams?"
 date: 2026-07-24
 lastmod: 2026-07-19
 draft: false
+featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "The EU AI Act's high-risk rules were pushed to 2027 and 2028 by the Digital Omnibus. Here's why teams that stop preparing now are making a mistake."
 keywords: ["AI Act Omnibus delay", "EU AI Act high-risk rules 2027", "Digital Omnibus on AI", "AI Act deadline postponed", "AI Act simplification 2026", "AI Act compliance timeline"]
 author: "Pranoti Kshirsagar"
 reading_time: "9 min"
 tags: ["EU AI Act", "Digital Omnibus", "compliance strategy", "high-risk AI", "regulatory timeline"]
 category: "perspectives"
+pillar: "EU AI Act & Compliance"
 sidebar_links:
   - title: "EU AI Act Deadlines 2026–2028: Timeline"
     url: "/ai-guides/eu-ai-act-deadlines-2026-2028-timeline/"
