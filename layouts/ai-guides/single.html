@@ -6,8 +6,8 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "@id": "{{ .Permalink }}#article",
-  "headline": {{ .Title | jsonify }},
-  "description": {{ .Params.description | jsonify }},
+  "headline": {{ .Title | jsonify | safeJS }},
+  "description": {{ .Params.description | jsonify | safeJS }},
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
   "author": {
@@ -20,7 +20,7 @@
   "publisher": { "@type": "Person", "name": "Pranoti Kshirsagar", "url": "{{ .Site.BaseURL }}" },
   "mainEntityOfPage": { "@id": "{{ .Permalink }}" },
   "url": "{{ .Permalink }}"{{ with .Params.keywords }},
-  "keywords": {{ . | jsonify }}{{ end }}
+  "keywords": {{ . | jsonify | safeJS }}{{ end }}
 }
 </script>
 
@@ -31,7 +31,7 @@
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}" },
     { "@type": "ListItem", "position": 2, "name": "AI Guides", "item": "{{ .Site.BaseURL }}ai-guides/" },
-    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}, "item": "{{ .Permalink }}" }
+    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify | safeJS }}, "item": "{{ .Permalink }}" }
   ]
 }
 </script>
