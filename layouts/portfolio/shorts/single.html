@@ -75,7 +75,7 @@
 
 {{- $sSchema := dict "@context" "https://schema.org" "@type" "VideoObject" "name" .Title "description" (or .Params.description .Site.Params.description) "uploadDate" (.Date.Format "2006-01-02") "url" .Permalink -}}
 {{- with .Params.youtube_urls -}}{{- $sSchema = merge $sSchema (dict "embedUrl" (printf "https://www.youtube.com/embed/%s" (index (split (index . 0) "/") (sub (len (split (index . 0) "/")) 1)))) -}}{{- end -}}
-<script type="application/ld+json">{{ $sSchema | jsonify }}</script>
+<script type="application/ld+json">{{ $sSchema | jsonify | safeJS }}</script>
 
 <style>
 .pf-hero{background:var(--ink);color:#fff;padding:5rem 2rem 3.5rem;text-align:center}

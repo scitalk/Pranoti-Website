@@ -42,12 +42,12 @@
   {
     "@context": "https://schema.org",
     "@type": "PodcastEpisode",
-    "name": {{ .Title | jsonify }},
-    "url": {{ .Permalink | jsonify }},
+    "name": {{ .Title | jsonify | safeJS }},
+    "url": {{ .Permalink | jsonify | safeJS }},
     "datePublished": "{{ .Date.Format "2006-01-02" }}",
-    {{ with $desc }}"description": {{ . | jsonify }},{{ end }}
+    {{ with $desc }}"description": {{ . | jsonify | safeJS }},{{ end }}
     {{ with .Params.episode_number }}"episodeNumber": {{ . }},{{ end }}
-    {{ with .Params.season }}"partOfSeason": { "@type": "PodcastSeason", "name": {{ . | jsonify }} },{{ end }}
+    {{ with .Params.season }}"partOfSeason": { "@type": "PodcastSeason", "name": {{ . | jsonify | safeJS }} },{{ end }}
     "partOfSeries": {
       "@type": "PodcastSeries",
       "name": "Under the Microscope",
@@ -56,17 +56,17 @@
     {{ with .Params.guest_name }}
     "actor": {
       "@type": "Person",
-      "name": {{ . | jsonify }}
-      {{ with $.Params.guest_institution }},"affiliation": { "@type": "Organization", "name": {{ . | jsonify }} }{{ end }}
-      {{ with $.Params.guest_website }},"url": {{ . | jsonify }}{{ end }}
+      "name": {{ . | jsonify | safeJS }}
+      {{ with $.Params.guest_institution }},"affiliation": { "@type": "Organization", "name": {{ . | jsonify | safeJS }} }{{ end }}
+      {{ with $.Params.guest_website }},"url": {{ . | jsonify | safeJS }}{{ end }}
     },
     {{ end }}
-    {{ with $ogImg }}"image": {{ . | jsonify }},{{ end }}
-    {{ with .Params.spotify_url }}"associatedMedia": { "@type": "AudioObject", "contentUrl": {{ . | jsonify }} },{{ end }}
+    {{ with $ogImg }}"image": {{ . | jsonify | safeJS }},{{ end }}
+    {{ with .Params.spotify_url }}"associatedMedia": { "@type": "AudioObject", "contentUrl": {{ . | jsonify | safeJS }} },{{ end }}
     "publisher": {
       "@type": "Organization",
       "name": "The Science Talk",
-      "url": {{ .Site.BaseURL | jsonify }}
+      "url": {{ .Site.BaseURL | jsonify | safeJS }}
     }
   }
   </script>
