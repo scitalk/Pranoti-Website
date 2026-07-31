@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "6 min"
 tags: ["Google Sheets", "MCP", "Claude integration", "comparison", "decision framework"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Connect Claude Desktop to Google Sheets via MCP"
     url: "/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/"

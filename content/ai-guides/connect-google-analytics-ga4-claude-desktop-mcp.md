@@ -10,6 +10,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "6 min"
 tags: ["google-analytics", "MCP", "claude-desktop", "GA4", "website-analytics"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Connect Claude Desktop to Google Sheets via MCP"
     url: "/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/"

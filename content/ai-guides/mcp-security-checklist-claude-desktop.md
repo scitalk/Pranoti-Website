@@ -10,6 +10,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["MCP", "Claude Desktop", "security", "credentials", "AI tool access"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "MCP Security in Claude Code: What Full Machine Access Really Involves"
     url: "/perspectives/claude-code-mcp-credential-security/"

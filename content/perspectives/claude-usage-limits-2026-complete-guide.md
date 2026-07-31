@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "9 min"
 tags: ["claude-pro", "claude-max", "usage-limits", "claude-tips", "ai-productivity"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Claude's 5-Hour Session Limit: How It Actually Works"
     url: "/perspectives/claude-5-hour-session-limit-how-it-works/"

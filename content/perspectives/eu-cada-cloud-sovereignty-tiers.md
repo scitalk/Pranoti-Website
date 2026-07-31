@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["CADA", "cloud compliance", "procurement", "EU tech sovereignty", "sovereign cloud"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "The hidden cost of enterprise AI in Europe: compounding vendor lock-in"
     url: "/perspectives/enterprise-ai-vendor-lockin-europe-dependency-risk/"

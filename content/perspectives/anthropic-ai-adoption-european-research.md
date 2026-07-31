@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["Claude adoption", "European research", "procurement", "Claude AI", "Microsoft 365", "EU AI Act"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "European Research's Real AI Problem Isn't Adoption — It's Implementation"
     url: "/perspectives/european-research-ai-implementation-gap/"

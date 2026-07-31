@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["Microsoft Clarity", "Google Analytics", "MCP", "content strategy", "AI workflow", "Claude AI"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "How to Find Content Gaps Using Clarity and Google Search Console"
     url: "/ai-guides/content-gap-analysis-clarity-gsc/"

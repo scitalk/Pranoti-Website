@@ -9,6 +9,7 @@ keywords: ["Claude session tracking", "AI conversation notes", "prompt engineeri
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
 tags: ["productivity", "prompts", "knowledge-work", "ai-workflow"]
+pillar: "AI Adoption"
 related_posts: [
   "/ai-guides/claude-code-context-window-breakdown-guide/",
   "/ai-guides/customise-cv-job-application-claude/",

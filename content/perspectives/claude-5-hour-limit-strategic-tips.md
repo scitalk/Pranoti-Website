@@ -4,6 +4,7 @@ date: 2026-05-05
 lastmod: 2026-07-23
 draft: false
 category: "perspectives"
+pillar: "AI Adoption"
 description: "Strategic tips for managing Claude's 5-hour limit: model selection, batching, compact commands, starting fresh—how AI power users optimise tokens."
 author: "Pranoti Kshirsagar"
 keywords:

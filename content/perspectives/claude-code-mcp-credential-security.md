@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "6 min"
 tags: ["Claude Code", "MCP", "security", "credentials", "AI tool access"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Native Connector vs. MCP: Which Google Sheets Integration Does Your Workflow Actually Need?"
     url: "/perspectives/google-sheets-claude-integration-comparison-2026/"

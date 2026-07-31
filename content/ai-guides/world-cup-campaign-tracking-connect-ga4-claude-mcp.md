@@ -10,6 +10,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "6 min"
 tags: ["GA4", "MCP", "Google Analytics", "campaign tracking", "Claude Desktop"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Connect Google Analytics GA4 to Claude Desktop via MCP"
     url: "/ai-guides/connect-google-analytics-ga4-claude-desktop-mcp/"

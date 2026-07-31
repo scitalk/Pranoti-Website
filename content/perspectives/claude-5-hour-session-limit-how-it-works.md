@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["claude-pro", "usage-limits", "ai-productivity", "claude-tips", "knowledge-work"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Claude Code Context Window: What Each Category Means and How to Manage It"
     url: "/ai-guides/claude-code-context-window-breakdown-guide/"

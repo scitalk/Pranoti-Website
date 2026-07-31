@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "5 min"
 tags: ["AI strategy", "SME", "NIS2 compliance", "vendor lock-in", "EU AI Act"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "The hidden cost of enterprise AI in Europe: compounding vendor lock-in"
     url: "/perspectives/enterprise-ai-vendor-lockin-europe-dependency-risk/"

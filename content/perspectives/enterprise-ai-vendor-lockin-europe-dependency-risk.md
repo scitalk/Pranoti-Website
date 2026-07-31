@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "8 min"
 tags: ["AI strategy", "enterprise risk", "AI governance", "enterprise compliance", "vendor lock-in"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "European research has an AI problem — and it's not the one you think"
     url: "/perspectives/european-research-ai-implementation-gap/"

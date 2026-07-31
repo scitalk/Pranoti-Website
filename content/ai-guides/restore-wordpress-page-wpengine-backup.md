@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "5 min"
 tags: ["WordPress", "WP Engine", "REST API", "MCP", "Database"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Connect WordPress to Claude Desktop via MCP"
     url: "/ai-guides/connect-wordpress-claude-desktop-mcp-guide/"

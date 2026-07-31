@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["Stripe", "Make.com", "MailerLite", "automation", "event registration"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Connect Claude Desktop to Google Sheets via MCP"
     url: "/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/"
