@@ -10,6 +10,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "15 min"
 tags: ["Claude Desktop", "MCP", "WordPress automation", "content workflow", "approval gates", "editorial systems"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Connect Your Self-Hosted WordPress Site to Claude Desktop via MCP"
     url: "/ai-guides/connect-wordpress-claude-desktop-mcp-guide/"

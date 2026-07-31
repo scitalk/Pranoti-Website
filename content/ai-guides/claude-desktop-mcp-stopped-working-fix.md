@@ -10,6 +10,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "~12 min"
 tags: ["Claude Desktop", "MCP", "Google Analytics", "debugging", "version pinning", "OAuth"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Connect Google Analytics GA4 to Claude Desktop via MCP"
     url: "/ai-guides/connect-google-analytics-ga4-claude-desktop-mcp/"

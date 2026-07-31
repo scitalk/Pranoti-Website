@@ -10,6 +10,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "6 min"
 tags: ["NotebookLM", "Claude", "Gemini", "ChatGPT", "Napkin.ai", "research institutions"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Mapping AI Adoption Across European Research Institutes: A Deep Research Case Study"
     url: "/ai-guides/mapping-ai-adoption-european-research-institutes-case-study/"

@@ -10,6 +10,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "4 min"
 tags: ["Claude Desktop", "MCP", "Model Context Protocol", "AI tools", "research workflows"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Claude Desktop MCP Setup: A Beginner's Guide"
     url: "/ai-guides/claude-desktop-mcp-setup-beginners-guide/"

@@ -9,6 +9,7 @@ keywords: ["second brain AI", "Claude knowledge management", "AI conversation or
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["knowledge-management", "productivity", "research", "ai-workflow"]
+pillar: "AI Adoption"
 related_posts: [
   "/ai-guides/claude-code-context-window-breakdown-guide/",
   "/ai-guides/ai-content-workflow-billion-euro-industry/",

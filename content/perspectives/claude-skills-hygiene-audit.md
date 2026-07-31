@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "6 min"
 tags: ["Claude skills", "automation", "workflow maintenance", "skill regression", "productivity", "knowledge-work"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Claude Skills Registry: Why Your Automation Library Needs One"
     url: "/perspectives/claude-skills-registry-and-audit/"

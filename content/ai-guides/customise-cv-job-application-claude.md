@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "8 min"
 tags: ["Claude", "job search", "CV customisation", "career automation", "AI workflow"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Connect Claude Desktop to Google Sheets via MCP"
     url: "/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/"

@@ -10,6 +10,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "5 min"
 tags: ["Claude Cowork", "Claude Desktop", "agentic AI", "AI safety", "computer use"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "MCP Security Checklist for Claude Desktop Users"
     url: "/ai-guides/mcp-security-checklist-claude-desktop/"

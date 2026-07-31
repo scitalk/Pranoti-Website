@@ -10,6 +10,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["n8n", "automation", "Docker", "Node.js", "self-hosting"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "How to Automate Event Registration with Stripe, Make.com and MailerLite"
     url: "/ai-guides/event-registration-automation-stripe-make-mailerlite/"

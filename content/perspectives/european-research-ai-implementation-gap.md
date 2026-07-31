@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["AI strategy", "EU AI Act", "research organisations", "knowledge work automation", "implementation"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Mapping AI Adoption Across European Research Institutes: A Deep Research Case Study"
     url: "/ai-guides/mapping-ai-adoption-european-research-institutes-case-study/"

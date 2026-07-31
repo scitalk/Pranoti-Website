@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "8 min"
 tags: ["Clarity", "Google Search Console", "SEO", "content strategy", "analytics", "Claude automation"]
 category: "ai-integration-guides"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Connect Claude Desktop to Google Sheets via MCP"
     url: "/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/"

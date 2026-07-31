@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "7 min"
 tags: ["AI strategy", "startups", "vendor lock-in", "startup strategy", "AI stack audit"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "The hidden cost of enterprise AI in Europe: compounding vendor lock-in"
     url: "/perspectives/enterprise-ai-vendor-lockin-europe-dependency-risk/"

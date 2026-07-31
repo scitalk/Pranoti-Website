@@ -9,6 +9,7 @@ keywords: ["AI business intelligence", "Claude ROI tracking", "decision log AI",
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
 tags: ["business-strategy", "decision-making", "roi", "knowledge-work"]
+pillar: "AI Adoption"
 related_posts: [
   "/ai-guides/ai-content-workflow-billion-euro-industry/",
   "/ai-guides/customise-cv-job-application-claude/",
