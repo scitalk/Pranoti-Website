@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="container">
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.description }}
+        <p class="description">{{ . }}</p>
+        {{ end }}
+    </header>
+
+    <div class="search-box">
+        <label for="search-input" class="visually-hidden">Search AI guides, perspectives, case studies, portfolio</label>
+        <input type="text" id="search-input" placeholder="Search AI guides, perspectives, case studies, portfolio..." autofocus>
+    </div>
+
+    <div id="search-suggestions" class="search-suggestions"></div>
+
+    <p id="search-status" class="search-status"></p>
+
+    <div id="search-results" class="posts-grid"></div>
+</section>
+
+<script src="/js/search.js" defer></script>
+{{ end }}

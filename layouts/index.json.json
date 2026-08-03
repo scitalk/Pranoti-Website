@@ -1,0 +1,19 @@
+{{- $sections := slice "ai-guides" "perspectives" "case-studies" "portfolio" -}}
+[
+{{- $items := slice -}}
+{{- range where .Site.RegularPages "Section" "in" $sections -}}
+  {{- $items = $items | append . -}}
+{{- end -}}
+{{- range $i, $p := $items -}}
+  {{- if $i }},{{ end -}}
+  {
+    "title": {{ $p.Title | jsonify }},
+    "url": {{ $p.RelPermalink | jsonify }},
+    "section": {{ $p.Section | jsonify }},
+    "description": {{ (or $p.Params.description $p.Summary) | plainify | jsonify }},
+    "keywords": {{ $p.Params.keywords | jsonify }},
+    "tags": {{ $p.Params.tags | jsonify }},
+    "date": {{ $p.Date.Format "2006-01-02" | jsonify }}
+  }
+{{- end -}}
+]
