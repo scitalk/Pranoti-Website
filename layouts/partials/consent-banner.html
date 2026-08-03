@@ -1,0 +1,204 @@
+{{ $gaId := .Site.Params.ga_measurement_id }}
+{{ with $gaId }}
+<div class="consent-banner" id="consent-banner" role="dialog" aria-modal="false" aria-labelledby="consent-title" aria-describedby="consent-body" hidden>
+  <div class="consent-inner">
+    <div class="consent-text">
+      <h2 id="consent-title">Cookies</h2>
+      <p id="consent-body">
+        This site uses Google Analytics to understand which articles are worth writing more of.
+        Nothing is loaded unless you accept. Rejecting keeps the site fully usable.
+        See the <a href="/cookies/">Cookie Policy</a> and <a href="/privacy/">Privacy Policy</a>.
+      </p>
+    </div>
+    <div class="consent-actions">
+      <button type="button" class="consent-btn consent-btn-reject" data-consent="denied">Reject</button>
+      <button type="button" class="consent-btn consent-btn-accept" data-consent="granted">Accept analytics</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var KEY = 'pk_consent';
+  var MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000; // re-ask after 12 months
+  var GA_ID = {{ $gaId | jsonify }};
+  var banner = document.getElementById('consent-banner');
+  var loaded = false;
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+
+  // Consent Mode v2: everything denied until the visitor says otherwise.
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+
+  function stored() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return null;
+      var v = JSON.parse(raw);
+      if (!v || !v.status || !v.ts) return null;
+      if (Date.now() - v.ts > MAX_AGE_MS) return null; // expired, ask again
+      return v.status;
+    } catch (e) { return null; }
+  }
+
+  function loadAnalytics() {
+    if (loaded) return;
+    loaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
+  function apply(status) {
+    gtag('consent', 'update', { analytics_storage: status });
+    if (status === 'granted') loadAnalytics();
+  }
+
+  function showBanner() { banner.hidden = false; }
+  function hideBanner() { banner.hidden = true; }
+
+  function record(status) {
+    try { localStorage.setItem(KEY, JSON.stringify({ status: status, ts: Date.now() })); } catch (e) {}
+    apply(status);
+    hideBanner();
+  }
+
+  banner.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-consent]');
+    if (btn) record(btn.getAttribute('data-consent'));
+  });
+
+  // "Change cookie settings" links anywhere on the site (see /cookies/).
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('[data-consent-reopen]')) {
+      e.preventDefault();
+      showBanner();
+    }
+  });
+
+  var choice = stored();
+  if (choice) {
+    apply(choice);
+  } else {
+    showBanner();
+  }
+})();
+</script>
+
+<style>
+.consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #FFFDF9;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.consent-banner[hidden] { display: none; }
+
+.consent-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.consent-text h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #1c1c1c;
+  margin: 0 0 0.5rem;
+}
+
+.consent-text p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+.consent-text a {
+  color: #c76a5a;
+  text-decoration: underline;
+}
+
+.consent-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.consent-btn,
+.consent-reopen {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.7rem 1.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Reject must be as easy to find as Accept — equal weight, not a hidden link. */
+.consent-btn-reject,
+.consent-reopen {
+  background: transparent;
+  border: 1px solid #1A3828;
+  color: #1A3828;
+}
+
+.consent-btn-reject:hover,
+.consent-reopen:hover {
+  background: rgba(26, 56, 40, 0.06);
+}
+
+.consent-btn-accept {
+  background: #1A3828;
+  border: 1px solid #1A3828;
+  color: #fff;
+}
+
+.consent-btn-accept:hover { background: #24513a; }
+
+.consent-btn:focus-visible,
+.consent-reopen:focus-visible {
+  outline: 2px solid #c76a5a;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .consent-banner { padding: 1.25rem 1.5rem; }
+
+  .consent-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .consent-actions > * { flex: 1; }
+}
+</style>
+{{ end }}
