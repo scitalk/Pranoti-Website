@@ -10,7 +10,6 @@
                     {{ $isActive := and (ne .URL "/") (hasPrefix $path .URL) }}
                     <li><a href="{{ .URL }}" class="{{ if $isActive }}nav-active nav-active-{{ $section }}{{ end }}"{{ if $isActive }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
                     {{ end }}
-                    <li><a href="/search/" class="nav-search-link" aria-label="Search">Search</a></li>
                 </ul>
             </div>
 
