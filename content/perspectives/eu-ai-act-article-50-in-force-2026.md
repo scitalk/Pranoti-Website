@@ -1,5 +1,5 @@
 ---
-title: "EU AI Act Article 50 Deadline: What Changes on 2 August 2026"
+title: "EU AI Act Article 50 Is Now in Force: What Changed on 2 August 2026"
 date: 2026-07-31
 lastmod: 2026-08-04
 draft: false
@@ -11,6 +11,8 @@ reading_time: "4 min"
 tags: ["EU AI Act", "Article 50", "AI transparency", "compliance deadline"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
+aliases:
+  - "/perspectives/eu-ai-act-article-50-deadline-august-2026/"
 sidebar_links:
   - title: "How to add AI disclosures that comply with the EU AI Act"
     url: "/ai-guides/ai-generated-content-disclosure-eu-ai-act/"
