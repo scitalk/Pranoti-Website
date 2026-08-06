@@ -9,6 +9,10 @@ title = 'Pranoti Kshirsagar'
   tagline     = 'AI Integration, Science Communication, and Research Strategy'
   og_image    = 'https://pranoti.thesciencetalk.com/images/pranoti-og-default.png'
 
+  # Analytics — loaded only after consent (see layouts/partials/consent-banner.html).
+  # Unset this to disable analytics and the cookie banner entirely.
+  ga_measurement_id = 'G-JLGZLS20VW'
+
   # Social Media
   linkedin = 'https://www.linkedin.com/in/pranoti-kshirsagar/'
   twitter  = 'https://twitter.com/pranoti'

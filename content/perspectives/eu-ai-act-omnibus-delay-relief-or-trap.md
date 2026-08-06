@@ -1,7 +1,7 @@
 ---
 title: "The AI Act Omnibus Delay: Relief or a Trap for Small Teams?"
 date: 2026-07-24
-lastmod: 2026-07-19
+lastmod: 2026-08-02
 draft: false
 featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "The EU AI Act's high-risk rules were pushed to 2027 and 2028 by the Digital Omnibus. Here's why teams that stop preparing now are making a mistake."
@@ -24,13 +24,13 @@ sidebar_links:
 
 The headline version of the 2026 Digital Omnibus on AI is simple: the EU pushed the high-risk rules back. Stand-alone high-risk systems now have until **2 December 2027**, and high-risk systems embedded in regulated products until **2 August 2028** — both later than the original 2 August 2026 date. I think that headline is going to cost some small teams a compliance scramble in eighteen months, because they will read "delayed" as "cancelled" and stop preparing.
 
-That is the trap. The delay is real, adopted, and confirmed by the co-legislators. It is not relief from the obligations — it is more runway to build the same obligations properly, plus a few genuine simplifications. Treat it as the former and you will be starting from zero in late 2027.
+That is the trap. The delay is real and now in force as Regulation (EU) 2026/1744. It is not relief from the obligations — it is more runway to build the same obligations properly, plus a few genuine simplifications. Treat it as the former and you will be starting from zero in late 2027.
 
 ## What actually happened, precisely
 
 On 19 November 2025 the European Commission published a proposal to amend the AI Act as part of a wider Digital Omnibus package. Parliament and Council reached a **trilogue agreement on 7 May 2026**. Member States' ambassadors (Coreper) approved it on 13 May 2026, Parliament's IMCO and LIBE committees approved it on 2 June 2026, and **Parliament's plenary adopted it on 16 June 2026** with 423 votes in favour, 57 against, and 174 abstentions.
 
-That is not a proposal sitting in a drawer. It is agreed text, working through the final formal steps to publication in the Official Journal.
+That is not a proposal sitting in a drawer. It is law. The Council gave final approval on 29 June 2026, and the text was published in the Official Journal on 24 July 2026 as **Regulation (EU) 2026/1744**, entering into force three days later on **27 July 2026**.
 
 ## What actually changed
 
@@ -64,7 +64,7 @@ The delay is a genuine gift if you use it to build rather than to relax. Concret
 
 **Track the harmonised standards as they publish**, rather than waiting for a single announcement that "compliance is now possible." Standards will land in stages, and the teams that start building against draft guidance early will not be starting from scratch when the final versions appear.
 
-**Use the sandbox provisions while sandboxes are quiet.** [Article 62](/ai-guides/eu-ai-act-sme-support-article-62/) gives SMEs and start-ups priority access to national AI regulatory sandboxes, which must be operational by 2 August 2026. Getting in early, before every other high-risk provider in the EU is queuing for the same conformity assessment capacity in 2027, is a genuine advantage this delay hands you.
+**Use the sandbox provisions while sandboxes are quiet.** [Article 62](/ai-guides/eu-ai-act-sme-support-article-62/) gives SMEs and start-ups priority access to national AI regulatory sandboxes, which must be operational by 2 August 2027 — a year later than originally set, after the Omnibus amended Article 57(1). Getting in early, before every other high-risk provider in the EU is queuing for the same conformity assessment capacity in 2027, is a genuine advantage this delay hands you.
 
 **Do not delay the parts that were never delayed.** Article 5 prohibitions have applied since February 2025. GPAI model rules have applied since August 2025. Article 50 transparency duties apply from August 2026 regardless of the high-risk timeline. The Omnibus did not touch these.
 

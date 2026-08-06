@@ -22,8 +22,53 @@
         </div>
         <div class="cta-laura-text">
           <p>Pranoti's presentations go beyond theory. She shows researchers and innovators how to communicate with clarity, build their professional brand, and navigate complex ecosystems with confidence. Covering science communication, AI compliance, personal branding, and research impact, Pranoti inspires her audiences to bridge the gap between discovery and real-world understanding.</p>
-          <a href="mailto:pranoti@thesciencetalk.com" class="btn-book-laura">Book Pranoti <span>→</span></a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeI2mccDfPe0QXIrEX0KF_nrpP1Pp1yMkOvkVA0ctwzbg1m7g/viewform" target="_blank" rel="noopener" class="btn-book-laura">Book Pranoti <span>→</span></a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Track Record Stats -->
+  {{ $events := where .Site.RegularPages "Section" "portfolio" }}
+  {{ $events = where $events "Params.category" "events" }}
+  {{ $events = where $events "Params.academic" "ne" true }}
+  {{ $events = $events.ByDate.Reverse }}
+  {{ $total := len $events }}
+  {{ $roleCounts := dict "Organiser" 0 "Speaker" 0 "Trainer" 0 }}
+  {{ range $events }}
+    {{ $role := .Params.role | default "" }}
+    {{ if in $role "Organiser" }}
+      {{ $roleCounts = merge $roleCounts (dict "Organiser" (add (index $roleCounts "Organiser") 1)) }}
+    {{ else if in $role "Speaker" }}
+      {{ $roleCounts = merge $roleCounts (dict "Speaker" (add (index $roleCounts "Speaker") 1)) }}
+    {{ else if in $role "Trainer" }}
+      {{ $roleCounts = merge $roleCounts (dict "Trainer" (add (index $roleCounts "Trainer") 1)) }}
+    {{ end }}
+  {{ end }}
+
+  <section class="track-record" aria-labelledby="track-record-heading">
+    <div class="track-record-container">
+      <h2 id="track-record-heading" class="sr-only">Track Record</h2>
+      <div class="track-record-stats">
+        <div class="tr-stat"><span class="tr-num">{{ $total }}</span><span class="tr-label">Engagements</span></div>
+        <div class="tr-stat"><span class="tr-num">{{ index $roleCounts "Speaker" }}</span><span class="tr-label">As Speaker</span></div>
+        <div class="tr-stat"><span class="tr-num">{{ index $roleCounts "Trainer" }}</span><span class="tr-label">As Trainer</span></div>
+        <div class="tr-stat"><span class="tr-num">{{ index $roleCounts "Organiser" }}</span><span class="tr-label">As Organiser</span></div>
+        <div class="tr-stat"><span class="tr-num">2016–2026</span><span class="tr-label">Across Europe &amp; beyond</span></div>
+      </div>
+
+      <div class="track-record-recent">
+        <h3 class="tr-recent-label">Recent Engagements</h3>
+        <div class="tr-recent-list">
+          {{ range first 5 $events }}
+          <a href="{{ .Permalink }}" class="tr-recent-item">
+            <span class="tr-recent-date">{{ .Date.Format "Jan 2006" }}</span>
+            <span class="tr-recent-title">{{ .Title }}</span>
+            <span class="tr-recent-org">{{ with .Params.client }}{{ . }}{{ end }}{{ with .Params.location }} · {{ . }}{{ end }}</span>
+          </a>
+          {{ end }}
+        </div>
+        <a href="/portfolio/events/" class="tr-recent-more">See all {{ $total }} engagements →</a>
       </div>
     </div>
   </section>
@@ -31,7 +76,7 @@
   <!-- Featured At Logo Strip -->
   <section class="featured-at">
     <div class="featured-at-container">
-      <span class="featured-at-label">SEEN AT</span>
+      <h2 class="featured-at-label">SEEN AT</h2>
       <div class="featured-at-logos">
         <img src="/images/logos/speaking_seen-at/2023_Pune_thoughtworks_flamingo_wave.png" alt="ThoughtWorks Pune">
         <img src="/images/logos/speaking_seen-at/Logo_BAM.png" alt="BAM">
@@ -53,24 +98,66 @@
     <div class="topics-laura-content">
       <span class="topics-laura-label">SPEAKING TOPICS</span>
       
-      <div class="topic-laura-item">
+      <a href="/portfolio/events/?topic=personal+branding" class="topic-laura-item" aria-label="Personal Branding for Scientists — see related engagements">
         <h3>Personal Branding for Scientists</h3>
         <p>BUILD VISIBILITY AND CREDIBILITY THAT OPENS DOORS</p>
-      </div>
-      
-      <div class="topic-laura-item">
+      </a>
+
+      <a href="/portfolio/events/?topic=cxo" class="topic-laura-item" aria-label="CXO Mindset for Research Leaders — see related engagements">
         <h3>CXO Mindset for Research Leaders</h3>
         <p>THINK STRATEGICALLY, LEAD WITH IMPACT</p>
-      </div>
-      
-      <div class="topic-laura-item">
+      </a>
+
+      <a href="/portfolio/events/?topic=ai" class="topic-laura-item" aria-label="AI for Scientists — see related engagements">
         <h3>AI for Scientists</h3>
         <p>PRACTICAL TOOLS AND RESPONSIBLE ADOPTION FOR RESEARCHERS</p>
-      </div>
-      
-      <div class="topic-laura-item">
+      </a>
+
+      <a href="/portfolio/events/?topic=research+impact" class="topic-laura-item" aria-label="Research Impact through Strategic Communication — see related engagements">
         <h3>Research Impact through Strategic Communication</h3>
         <p>AMPLIFY YOUR WORK BEYOND THE LAB</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Testimonials from actual engagements -->
+  <section class="speaking-testimonials">
+    <div class="speaking-testimonials-container">
+      <h2 class="speaking-testimonials-label">What Organisers Say</h2>
+      <div class="speaking-testimonials-grid">
+
+        <blockquote class="st-quote">
+          <p>"I have worked with Pranoti both with her as a partner on grant proposals (in a training/science communication capacity) and for her training workshops... I would wholeheartedly recommend her trainings, she is clear, engaging and very knowledgeable."</p>
+          <footer>
+            <strong>Dr Alex Ramadan</strong> — Lecturer in Energy Materials, University of Sheffield
+            <a href="/portfolio/events/personal-branding-workshop-sheffield/">Personal Branding Workshop, Sheffield →</a>
+          </footer>
+        </blockquote>
+
+        <blockquote class="st-quote">
+          <p>"It was a great opportunity for our students and researchers to learn key tips from an expert science communicator. Pranoti shared personal insights and professional guidance with the same passion and details."</p>
+          <footer>
+            <strong>Prof. Hortense Le Ferrand</strong> — Nanyang Technological University, Singapore
+            <a href="/portfolio/events/own-your-digital-brand-your-science-your-story/">Own Your Digital Brand, POWERS NTU →</a>
+          </footer>
+        </blockquote>
+
+        <blockquote class="st-quote">
+          <p>"Dr. Pranoti Kshirsagar was invited to share her journey with the students of Kalpana-She for STEM program. Her rich and diverse experience inspired the young aspiring minds... a lasting impression on our students."</p>
+          <footer>
+            <strong>Dr. Tripti Joshi</strong> — Director, VigyanShaala International
+            <a href="/portfolio/events/speak-up-kalpana/">Speak-Up Kalpana →</a>
+          </footer>
+        </blockquote>
+
+        <blockquote class="st-quote">
+          <p>"Pranoti is very open and engaging, which made for an amazing discussion about neurodiversity in academia... really nice to work with all around."</p>
+          <footer>
+            <strong>Kaylee Elliott, MSc</strong> — PhD Candidate, Vrije Universiteit Amsterdam
+            <a href="/portfolio/events/neurodiversity-earth-environmental-sciences/">NWO NAC Neurodiversity Panel →</a>
+          </footer>
+        </blockquote>
+
       </div>
     </div>
   </section>
@@ -98,7 +185,7 @@
   <section class="final-cta">
     <h2>Want Pranoti to speak at your event?</h2>
     <p>Ready to bring practical science communication insights to your audience?</p>
-    <a href="mailto:pranoti@thesciencetalk.com" class="btn-cta-speaking">Get in Touch</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeI2mccDfPe0QXIrEX0KF_nrpP1Pp1yMkOvkVA0ctwzbg1m7g/viewform" target="_blank" rel="noopener" class="btn-cta-speaking">Get in Touch</a>
   </section>
 
 </article>

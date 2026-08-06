@@ -1,5 +1,4 @@
 {{ define "main" }}
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <article class="pf-single pf-single-automation">
 
@@ -79,7 +78,9 @@
 </article>
 
 <style>
-.pf-single-automation { font-family: 'Montserrat', sans-serif; }
+.pf-single-automation { font-family: var(--font-body); }
+/* Headings, tags, labels and chrome stay Montserrat; prose is Inter. */
+.pf-single-automation .pf-tag, .pf-single-automation .pf-meta-item, .pf-single-automation .pf-metric-lbl, .pf-single-automation .pf-download-label, .pf-single-automation .pf-back, .pf-single-automation .pf-single-meta { font-family: var(--font-display); }
 
 /* Hero */
 .pf-hero { background: var(--ink); color: #fff; padding: 5rem 2rem 3.5rem; text-align: center; }
@@ -137,6 +138,9 @@
   .pf-top-bar .container { flex-direction: column; align-items: flex-start; }
   .pf-single-footer { flex-direction: column; gap: 1rem; }
 }
+
+/* Tags, buttons and chrome stay Montserrat (body is Inter). */
+.pf-cat-ai-automation-integration,.pf-cta-link{font-family:var(--font-display)}
 </style>
 
 {{ end }}

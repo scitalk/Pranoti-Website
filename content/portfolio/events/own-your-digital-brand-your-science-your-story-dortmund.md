@@ -4,6 +4,7 @@ date: "2024-10-29"
 draft: false
 type: "portfolio/events"
 category: "events"
+seo_title: "Own Your Digital Brand: Your Science, Your Story — TU Dortmund Keynote"
 description: "Keynote Speaker at Own Your Digital Brand: Your Science, Your Story — Keynote hosted by TU Dortmund Graduate School of Physics in Dortmund, Germany."
 client: "TU Dortmund Graduate School of Physics"
 location: "Dortmund, Germany"

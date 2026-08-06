@@ -10,5 +10,6 @@ location: "Online"
 role: "Organiser"
 event_type: "Workshop"
 read_more_url: "https://thesciencetalk.com/genai-proposal-writing-workshop/"
+event_website: "https://www.linkedin.com/events/7375789855823339520/"
 tags: ["Organiser", "Workshop"]
 ---

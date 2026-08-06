@@ -4,6 +4,7 @@ date: "2025-03-04"
 draft: false
 type: "portfolio/events"
 category: "events"
+seo_title: "Secure your Twitter/X Data — February 2025 Webinar"
 description: "Trainer at Secure your Twitter/X Data: Why it's Critical & How to do it Right — Webinar hosted by The Science Talk in Online."
 client: "The Science Talk"
 location: "Online"

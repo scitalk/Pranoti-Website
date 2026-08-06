@@ -4,6 +4,7 @@ date: "2023-12-07"
 draft: false
 type: "portfolio/events"
 category: "events"
+seo_title: "Under the Microscope: Spotlighting Materials & Nano Science — Fritz Haber Institute Special Seminar"
 description: "Speaker at Under the Microscope – Spotlighting Materials & Nano Science — Special Seminar hosted by Fritz Haber Institute of the Max Planck Society in Berlin, Germany."
 client: "Fritz Haber Institute of the Max Planck Society"
 location: "Berlin, Germany"

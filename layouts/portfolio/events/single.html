@@ -1,5 +1,4 @@
 {{ define "main" }}
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <article class="pf-single pf-single-events">
 
@@ -12,7 +11,7 @@
 
   <div class="pf-top-bar">
     <div class="container narrow">
-      <a href="/portfolio/#events" class="pf-back">← Portfolio</a>
+      <a href="{{ if .Params.academic }}/portfolio/events/academic-history/{{ else }}/portfolio/events/{{ end }}" class="pf-back">← {{ if .Params.academic }}Academic History{{ else }}Events{{ end }}</a>
       <div class="pf-single-meta">
         <span class="pf-cat-tag pf-cat-events">Events</span>
         {{ with .Params.role }}<span class="pf-tag">{{ . }}</span>{{ end }}
@@ -52,10 +51,22 @@
         <div class="pf-info-row"><p class="pf-info-label">Location</p><p class="pf-info-value">{{ . }}</p></div>
         {{ end }}
         <div class="pf-info-row"><p class="pf-info-label">Date</p><p class="pf-info-value">{{ .Date.Format "02.01.2006" }}</p></div>
+        {{ with .Params.event_website }}
+        <div class="pf-info-row">
+          <p class="pf-info-label">Event Website</p>
+          <p class="pf-info-value"><a href="{{ . }}" target="_blank" rel="noopener">Visit event page →</a></p>
+        </div>
+        {{ end }}
         {{ with .Params.read_more_url }}
         <div class="pf-info-row">
-          <p class="pf-info-label">Link</p>
-          <p class="pf-info-value"><a href="{{ . }}" target="_blank" rel="noopener">View event →</a></p>
+          <p class="pf-info-label">{{ if $.Params.academic }}Abstract{{ else }}Link{{ end }}</p>
+          <p class="pf-info-value"><a href="{{ . }}" target="_blank" rel="noopener">{{ if $.Params.academic }}Read Abstract (PDF) →{{ else }}View event →{{ end }}</a></p>
+        </div>
+        {{ end }}
+        {{ with .Params.watch_url }}
+        <div class="pf-info-row">
+          <p class="pf-info-label">Recording</p>
+          <p class="pf-info-value"><a href="{{ . }}" target="_blank" rel="noopener">Watch recording →</a></p>
         </div>
         {{ end }}
       </div>
@@ -66,17 +77,28 @@
   <div class="pf-content"><div class="container narrow">{{ .Content }}</div></div>
   {{ end }}
 
+  {{ if not .Params.academic }}
+  <div class="pf-inquiry-cta">
+    <div class="container narrow">
+      <p class="pf-inquiry-text">Looking for a {{ .Params.role | default "speaker" }} for your {{ .Params.event_type | default "event" }}?</p>
+      <a href="/speaking/" class="pf-cta-btn">Get in touch →</a>
+    </div>
+  </div>
+  {{ end }}
+
   <div class="pf-single-footer">
     <div class="container narrow">
-      <a href="/portfolio/#events" class="pf-back">← Back to portfolio</a>
-      <a href="https://thesciencetalk.com/contact-us/" class="pf-cta-link">Work with me →</a>
+      <a href="{{ if .Params.academic }}/portfolio/events/academic-history/{{ else }}/portfolio/events/{{ end }}" class="pf-back">← Back to {{ if .Params.academic }}academic history{{ else }}events{{ end }}</a>
+      <a href="/speaking/" class="pf-cta-link">Work with me →</a>
     </div>
   </div>
 
 </article>
 
 <style>
-.pf-single-events{font-family:'Montserrat',sans-serif}
+.pf-single-events{font-family:var(--font-body)}
+/* Headings, tags and chrome stay Montserrat; prose is Inter. */
+.pf-single-events .pf-hero-title,.pf-single-events .pf-tag,.pf-single-events .pf-cat-events,.pf-single-events .pf-single-meta{font-family:var(--font-display)}
 .pf-hero{background:var(--ink);color:#fff;padding:5rem 2rem 3.5rem;text-align:center}
 .pf-hero h1,.pf-hero .pf-hero-title{font-family:'Montserrat',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:600;color:#fff;margin-bottom:.75rem}
 .pf-hero-sub{font-size:1rem;color:rgba(255,255,255,.6);margin:0;letter-spacing:.03em}
@@ -100,6 +122,10 @@
 .pf-info-value a{color: var(--accent-text);text-decoration:none}
 .pf-info-value a:hover{text-decoration:underline}
 .pf-content{padding:2rem 2rem 0}
+.pf-inquiry-cta{margin:2.5rem 2rem 0;background:#f5f2ed;border-radius:8px;padding:1.75rem 2rem;text-align:center}
+.pf-inquiry-text{font-size:.95rem;color:var(--ink);margin:0 0 .85rem;font-weight:500}
+.pf-cta-btn{display:inline-block;background:var(--accent);color:#fff;font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:600;padding:.7rem 1.5rem;border-radius:50px;text-decoration:none;transition:opacity .2s}
+.pf-cta-btn:hover{opacity:.85}
 .pf-single-footer{padding:2rem 2rem 4rem;border-top:1px solid rgba(0,0,0,.08);margin-top:3rem}
 .pf-single-footer .container{display:flex;justify-content:space-between;align-items:center}
 .pf-back{font-family:'Montserrat',sans-serif;font-size:.85rem;color:var(--ink-soft);text-decoration:none;transition:color .2s}

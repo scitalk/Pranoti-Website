@@ -1,0 +1,65 @@
+{{ define "main" }}
+
+<section class="tst-page">
+
+  <header class="tst-hero">
+    <div class="tst-hero-inner">
+      <span class="tst-hero-tag">Testimonials</span>
+      <h1>What people say about working with me</h1>
+      <p class="tst-hero-sub">Feedback from professors, researchers, and research institutions across Europe and beyond — on training and keynotes, science communication, and the <em>Under the Microscope</em> podcast.</p>
+      <div class="tst-hero-ctas">
+        <a href="https://thesciencetalk.com/contact-us/" class="tst-hero-btn tst-hero-btn--solid">Work with me →</a>
+        <a href="/about/" class="tst-hero-btn tst-hero-btn--outline">About Pranoti</a>
+      </div>
+    </div>
+  </header>
+
+  {{ partial "testimonials.html" (dict
+      "Site" .Site
+      "featuredOnly" false
+      "limit" 0
+  ) }}
+
+  <section class="tst-cta">
+    <div class="tst-cta-inner">
+      <h2>Want to be next?</h2>
+      <p>I work with European research institutions, EIC-funded companies, and Horizon Europe consortia on science communication, AI integration, training, and grant dissemination.</p>
+      <a href="https://thesciencetalk.com/contact-us/" class="tst-hero-btn tst-hero-btn--solid">Get in touch →</a>
+    </div>
+  </section>
+
+</section>
+
+<style>
+.tst-page { font-family: 'Inter', sans-serif; }
+.tst-hero {
+  background: #1A3828; color: #fff; padding: 4rem 2rem 3.25rem;
+}
+.tst-hero-inner { max-width: 760px; margin: 0 auto; }
+.tst-hero-tag {
+  display: inline-block; text-transform: uppercase; letter-spacing: 0.12em;
+  font-size: 0.72rem; font-weight: 600; color: #7BBDA0; margin-bottom: 1rem;
+}
+.tst-hero h1 {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: clamp(1.9rem, 4vw, 2.9rem); line-height: 1.15; margin: 0 0 1rem;
+  color: #fff;
+}
+.tst-cta h2 { color: #fff; }
+.tst-hero-sub { font-size: 1.08rem; line-height: 1.6; color: #d8e6de; margin: 0 0 1.75rem; }
+.tst-hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.tst-hero-btn {
+  display: inline-block; padding: 0.7rem 1.35rem; border-radius: 8px;
+  font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.15s;
+}
+.tst-hero-btn--solid { background: #7BBDA0; color: #123021; }
+.tst-hero-btn--solid:hover { background: #96cfb5; }
+.tst-hero-btn--outline { border: 1px solid rgba(255,255,255,0.4); color: #fff; }
+.tst-hero-btn--outline:hover { background: rgba(255,255,255,0.1); }
+.tst-cta { background: #1A3828; color: #fff; padding: 3.25rem 2rem; text-align: center; }
+.tst-cta-inner { max-width: 620px; margin: 0 auto; }
+.tst-cta h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; margin: 0 0 0.75rem; }
+.tst-cta p { color: #d8e6de; line-height: 1.6; margin: 0 0 1.5rem; }
+@media (max-width: 640px) { .tst-hero { padding: 2.75rem 1.25rem 2.25rem; } }
+</style>
+{{ end }}

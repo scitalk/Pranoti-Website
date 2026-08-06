@@ -1,0 +1,98 @@
+{{ define "main" }}
+
+<section class="ev-page">
+
+  <header class="pf-hero">
+    <div class="container narrow">
+      <h1 class="pf-hero-title">Academic Conference History</h1>
+      <p class="pf-hero-sub">PhD-era research posters and talks in materials science, graphene, and neural microelectrode technology, 2016–2018.</p>
+    </div>
+  </header>
+
+  <div class="pf-top-bar">
+    <div class="container narrow">
+      <a href="/portfolio/events/" class="pf-back">← Speaking &amp; Training Events</a>
+    </div>
+  </div>
+
+  {{ $events := where .Site.RegularPages "Section" "portfolio" }}
+  {{ $events = where $events "Params.academic" true }}
+  {{ $events = $events.ByDate.Reverse }}
+  {{ $total := len $events }}
+
+  <div class="ev-timeline-wrap">
+    <div class="container narrow">
+
+      {{ $currentYear := "" }}
+      {{ range $events }}
+        {{ $year := .Date.Format "2006" }}
+        {{ if ne $year $currentYear }}
+          {{ if ne $currentYear "" }}</div>{{ end }}
+          <h2 class="ev-year">{{ $year }}</h2>
+          <div class="ev-year-group">
+          {{ $currentYear = $year }}
+        {{ end }}
+
+        <article class="ev-entry">
+          <div class="ev-entry-date mono">{{ .Date.Format "02.01.2006" }}</div>
+          <div class="ev-entry-body">
+            <div class="ev-entry-top">
+              {{ with .Params.role }}<span class="ev-badge">{{ . }}</span>{{ end }}
+              {{ with .Params.event_type }}<span class="ev-type-tag">{{ . }}</span>{{ end }}
+            </div>
+            <p class="ev-entry-title"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+            <p class="ev-entry-meta">{{ with .Params.client }}{{ . }}{{ end }}{{ if and .Params.client .Params.location }}<span class="ev-dot">·</span>{{ end }}{{ with .Params.location }}{{ . }}{{ end }}</p>
+            <p class="ev-entry-links">
+              {{ with .Params.event_website }}<a href="{{ . }}" target="_blank" rel="noopener">🔗 Event Website →</a>{{ end }}
+              {{ with .Params.read_more_url }}<a href="{{ . }}" target="_blank" rel="noopener">📄 Read Abstract (PDF) →</a>{{ end }}
+            </p>
+          </div>
+        </article>
+      {{ end }}
+      {{ if gt $total 0 }}</div>{{ end }}
+
+    </div>
+  </div>
+
+</section>
+
+<style>
+.ev-page{font-family:var(--font-body)}
+/* Headings, tags, dates and chrome stay Montserrat; prose is Inter. */
+.ev-page .pf-hero-title,.ev-page .ev-entry-title,.ev-page .ev-type-tag,.ev-page .ev-badge,.ev-page .ev-entry-date,.ev-page .ev-entry-meta,.ev-page .pf-back{font-family:var(--font-display)}
+.ev-page .pf-hero{background:var(--ink);color:#fff;padding:5rem 2rem 3.5rem;text-align:center}
+.ev-page .pf-hero-title{font-family:'Montserrat',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:600;color:#fff;margin-bottom:.75rem}
+.ev-page .pf-hero-sub{font-size:1rem;color:rgba(255,255,255,.6);margin:0;letter-spacing:.03em}
+.ev-page .pf-top-bar{padding:1.5rem 2rem 0}
+.ev-page .pf-back{font-family:'Montserrat',sans-serif;font-size:.85rem;color:var(--ink-soft);text-decoration:none;transition:color .2s}
+.ev-page .pf-back:hover{color:var(--accent)}
+
+.ev-timeline-wrap{padding:3rem 2rem 5rem}
+.ev-year{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:600;color:var(--ink);margin:2.5rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid var(--accent)}
+.ev-year:first-of-type{margin-top:0}
+.ev-year-group{display:flex;flex-direction:column;gap:1.25rem}
+
+.ev-entry{display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.ev-entry:last-child{border-bottom:none}
+.ev-entry-date{flex-shrink:0;width:6.5rem;font-size:.8rem;color:var(--ink-soft);padding-top:.15rem}
+.ev-entry-body{flex:1;min-width:0}
+.ev-entry-top{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem}
+.ev-badge{font-size:.65rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:#fff;padding:.2rem .55rem;border-radius:3px}
+.ev-type-tag{font-size:.65rem;letter-spacing:.04em;text-transform:uppercase;background:rgba(0,0,0,.06);color:var(--ink-soft);padding:.2rem .55rem;border-radius:3px}
+.ev-entry-title{font-size:1rem;font-weight:500;margin:0 0 .3rem;line-height:1.35}
+.ev-entry-title a{color:var(--ink);text-decoration:none}
+.ev-entry-title a:hover{color:var(--accent-text);text-decoration:underline}
+.ev-entry-meta{font-size:.82rem;color:var(--ink-soft);margin:0}
+.ev-dot{margin:0 .4rem}
+.ev-entry-links{margin:.5rem 0 0;display:flex;gap:1rem;flex-wrap:wrap}
+.ev-entry-links a{font-size:.78rem;color:var(--accent-text);text-decoration:none;font-weight:500}
+.ev-entry-links a:hover{text-decoration:underline}
+
+@media(max-width:768px){
+  .ev-entry{gap:.85rem}
+  .ev-entry-date{width:5rem;font-size:.72rem}
+  .ev-timeline-wrap{padding:2rem 1rem 4rem}
+}
+</style>
+
+{{ end }}

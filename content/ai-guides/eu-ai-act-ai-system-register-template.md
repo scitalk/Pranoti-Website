@@ -1,7 +1,7 @@
 ---
 title: "How to Build an EU AI Act AI System Register (Free Template)"
 date: 2026-07-17
-lastmod: 2026-07-17
+lastmod: 2026-08-02
 slug: "eu-ai-act-ai-system-register-template"
 draft: false
 featured_image: "/images/ai-guides/eu-ai-act.webp"
@@ -75,7 +75,7 @@ Fill in one row for every tool found in Step 1. Leave "Unsure" in the high-risk 
 
 Run this self-test before assuming you need to do anything further.
 
-[**Article 71**](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-71) requires providers of high-risk Annex III systems to register themselves and the system in the official EU database before placing it on the market. The database must be operational by **2 August 2026**, and the mechanism itself is set out in **Article 49**.
+[**Article 71**](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-71) requires providers of high-risk Annex III systems to register themselves and the system in the official EU database before placing it on the market. Article 71 applies from **2 August 2026**, and the registration mechanism itself is set out in **Article 49**.
 
 You are very likely exempt from this right now if any of the following is true:
 
@@ -83,7 +83,7 @@ You are very likely exempt from this right now if any of the following is true:
 - None of your tools flagged as high-risk in Step 3
 - Your organisation has not rebranded, fine-tuned, or substantially modified a third-party AI system
 
-There is no general SME exemption from Article 71 itself, but [**Article 62**](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-62) provides supportive measures for smaller organisations that do end up in scope — reduced conformity-assessment fees, simplified technical documentation, and priority access to regulatory sandboxes.
+There is no general SME exemption from Article 71 itself, but [**Article 62**](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-62) provides supportive measures for smaller organisations that do end up in scope — reduced conformity-assessment fees and priority access to regulatory sandboxes. Simplified technical documentation sits separately, in Article 11(1), which lets SMEs, start-ups and small mid-caps file the Annex IV elements on a simplified Commission form.
 
 ## Keep it alive
 

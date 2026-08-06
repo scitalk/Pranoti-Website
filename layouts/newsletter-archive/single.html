@@ -1,0 +1,47 @@
+{{ define "main" }}
+<article class="container newsletter-single">
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+        <p class="newsletter-meta">{{ .Date.Format "2 January 2006" }}</p>
+        {{ with .Params.preheader }}<p class="description">{{ . }}</p>{{ end }}
+    </header>
+
+    <iframe class="newsletter-frame"
+            src="/newsletter-archive/{{ .File.BaseFileName }}.html"
+            title="{{ .Title }}"
+            loading="lazy"
+            sandbox="allow-same-origin"
+            scrolling="no"></iframe>
+</article>
+
+<style>
+.newsletter-single .page-header { padding: 5rem 0 1.5rem; text-align: center; }
+.newsletter-single .page-header h1 {
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+    color: #1c1c1c;
+    margin-bottom: 0.5rem;
+}
+.newsletter-meta { color: #6f6f6f; font-size: 0.95rem; margin-bottom: 0.5rem; }
+.newsletter-single .description { color: #6f6f6f; max-width: 700px; margin: 0 auto; }
+.newsletter-frame {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+}
+</style>
+
+<script>
+(function () {
+    var frame = document.querySelector('.newsletter-frame');
+    if (!frame) return;
+    window.addEventListener('message', function (e) {
+        if (e.source === frame.contentWindow && e.data && e.data.h) {
+            frame.style.height = e.data.h + 'px';
+        }
+    });
+})();
+</script>
+{{ end }}

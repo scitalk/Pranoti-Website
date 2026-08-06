@@ -1,0 +1,16 @@
+{{/* One QuanTour partner card. Expects a map from content/quantour.md organisers/heroes. */}}
+<div class="qt-partner">
+  <h4 class="qt-partner-name">
+    {{ if .group_url }}<a href="{{ .group_url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ else }}{{ .name }}{{ end }}
+    <span class="qt-partner-country">{{ .country }}</span>
+  </h4>
+  <p class="qt-partner-aff">{{ if .group_url }}<a href="{{ .group_url }}" target="_blank" rel="noopener">{{ .affiliation }}</a>{{ else }}{{ .affiliation }}{{ end }}</p>
+  {{ with .note }}<p class="qt-partner-note">{{ . }}</p>{{ end }}
+  {{ if or .episode_url .spotify .youtube }}
+  <p class="qt-partner-links">
+    {{ with .episode_url }}<a href="{{ . }}">Episode</a>{{ end }}
+    {{ with .spotify }}<a href="{{ . }}" target="_blank" rel="noopener">Spotify ↗</a>{{ end }}
+    {{ with .youtube }}<a href="{{ . }}" target="_blank" rel="noopener">YouTube ↗</a>{{ end }}
+  </p>
+  {{ end }}
+</div>

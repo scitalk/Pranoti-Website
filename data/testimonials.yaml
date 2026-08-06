@@ -1,0 +1,312 @@
+# Testimonials — single source of truth for the /testimonials page and the
+# About-page section. Mirrors the "Master Feedback & Testimonials" Google Sheet.
+# Only entries marked "Yes" in the sheet's "Worth adding?" (column K) are included.
+#
+# To add a new one: copy a block below and fill it in.
+#   name    – leave blank ("") for entries without documented name consent;
+#             the card then shows the role + organisation only.
+#   role    – job title (always safe to show)
+#   org     – affiliation
+#   context – service / event it relates to (small label on the card)
+#   year    – for ordering / display
+#   featured: true  – surfaces it in the curated set (homepage / top of page / About)
+#
+# Consent rule: entries with a real `name` have documented consent in the master
+# sheet (column M). Entries with an empty `name` do not, and are shown
+# anonymised (role + org only) — never their name.
+
+testimonials:
+  # ─── Featured (consent documented, strongest) ───────────────────────────
+  - name: "Alex Ramadan"
+    role: "Researcher"
+    org: "University of Sheffield"
+    context: "Personal Branding, AI & Grant Proposal collaboration"
+    year: "2025"
+    featured: true
+    quote: >-
+      I have worked with Pranoti both as a partner on grant proposals and for her
+      training workshops. She is friendly, has clear communication, and works hard
+      to support you. She ran her 'personal branding for scientists' workshop for
+      our ECRs and it was excellent — she tailored it to make sure it was as relevant
+      as possible. I have since done her AI for scientists workshop and found it very
+      helpful. Pranoti is a joy to work with and I would wholeheartedly recommend her.
+
+  - name: "Dr. Tripti Joshi"
+    role: "Director"
+    org: "VigyanShaala International"
+    context: "Speaker — Kalpana She for STEM"
+    year: "2024"
+    featured: true
+    quote: >-
+      Dr. Pranoti Kshirsagar was invited to share her journey with the students of
+      our Kalpana-She for STEM program. Her rich and diverse experience inspired the
+      young aspiring minds. Her journey from academia to the founder of 'The Science
+      Talk' left a lasting impression on our students, providing them with valuable
+      lessons. We are deeply grateful for her time and for sharing her remarkable story.
+
+  - name: "Prof. Hortense Le Ferrand"
+    role: "Professor"
+    org: "Nanyang Technological University, Singapore"
+    context: "Personal Branding keynote"
+    year: "2025"
+    featured: true
+    quote: >-
+      It was a great opportunity for our students and researchers to learn key tips
+      from an expert science communicator. Pranoti shared personal insights and
+      professional guidance with the same passion and detail. It was very useful and
+      inspiring — it just opened the conversation: we want to learn more!
+
+  - name: "Prof. Krist V. Gernaey"
+    role: "Professor"
+    org: "Technical University of Denmark"
+    context: "Under the Microscope podcast guest"
+    year: "2024"
+    featured: true
+    quote: >-
+      The recording was done very professionally, and the host is an experienced
+      interviewer that understands perfectly how to make a guest feel at ease with
+      the recording and interview format.
+
+  - name: "Dr. Anna Sandak"
+    role: "Researcher"
+    org: "InnoRenew CoE"
+    context: "Under the Microscope podcast guest"
+    year: "2026"
+    featured: true
+    quote: >-
+      I recently had the pleasure of recording a podcast with Pranoti, where we
+      discussed my research on engineered living materials. The entire experience was
+      exceptionally well organized, with clear communication and a highly professional
+      approach from start to finish. Pranoti is a curious and thoughtful interviewer
+      who asked insightful questions and created an engaging atmosphere for discussion.
+      I truly enjoyed participating and appreciated the opportunity to share my work.
+
+  - name: "Dr. Fola Ogungbemi"
+    role: "Regulatory Scientist / Ecotoxicologist"
+    org: ""
+    context: "Science Communication Training — YES Meeting"
+    year: "2023"
+    featured: true
+    quote: >-
+      Dr Pranoti delivered an outstanding session by explaining in simple terms how to
+      communicate science, with clear examples. I learnt a lot on how to communicate
+      science in creative ways using social media and podcasts. This has inspired me to
+      imagine a podcast series of my own.
+
+  - name: "Kaylee Elliott, MSc"
+    role: "PhD Candidate"
+    org: "Vrije Universiteit Amsterdam, TNO & SRON"
+    context: "NWO NAC 2026 Neurodiversity Workshop"
+    year: "2026"
+    featured: true
+    quote: >-
+      Pranoti is very open and engaging, which made for an amazing discussion about
+      neurodiversity in academia. She did a great job expressing a lot of the challenges
+      neurodiverse people face in academia as well as in corporations. Just really nice
+      to work with all around.
+
+  - name: "George Mihailescu"
+    role: "PhD Researcher"
+    org: "University College Dublin"
+    context: "Under the Microscope podcast guest"
+    year: "2023"
+    featured: true
+    quote: >-
+      It was really amazing. Pranoti is a really fun and engaging host, who asks great
+      questions. The online form which provides the questions in advance is a really
+      helpful device!
+
+  # ─── Podcast & host praise (consent documented) ─────────────────────────
+  - name: "Prof. Anna Musiał"
+    role: "Professor"
+    org: "Wrocław University of Science and Technology"
+    context: "Under the Microscope podcast guest"
+    year: "2024"
+    featured: false
+    quote: >-
+      It was easy and natural to talk to Pranoti as a podcast host. She creates a
+      positive atmosphere and tries to make even stressed guests more relaxed. Her
+      follow-up questions make it easier not to forget something important and give
+      time to think about the answers.
+
+  - name: "Prof. Martin Rejhon"
+    role: "Professor"
+    org: "Charles University"
+    context: "Under the Microscope podcast guest"
+    year: "2024"
+    featured: false
+    quote: >-
+      Pranoti is a really nice host who makes you feel comfortable during the recording.
+      Her guidance through the conversation makes the podcast flow naturally. It has
+      been a pleasure to be her guest.
+
+  - name: "Jose Luis Ocaña Pujol"
+    role: "PhD Researcher"
+    org: "ETH Zurich"
+    context: "Under the Microscope podcast guest"
+    year: "2024"
+    featured: false
+    quote: >-
+      Appearing on The Science Talk was a genuinely enjoyable and recommendable
+      experience. Having Pranoti as a host made something as initially daunting as a
+      first podcast feel surprisingly natural. From the clear pre-recording guidance to
+      the thoughtful post-recording debrief, every step was designed to put me at ease.
+
+  - name: "Dr. Mary Jialu Chen"
+    role: "Researcher"
+    org: "ETH Zürich"
+    context: "Personal Branding Workshop for summer school"
+    year: "2024"
+    featured: false
+    quote: >-
+      Pranoti and her team created a customized personal branding workshop which was
+      very helpful for our summer school participants, covering an important topic they
+      were unfamiliar with. They were also incredibly engaging and fun, frequently
+      bringing the house down with laughter.
+
+  - name: "Dr. Hendrieke Voss"
+    role: "Project Manager"
+    org: "Junge Tüftler*innen"
+    context: "Speaker — Quantum Career Camp"
+    year: "2025"
+    featured: false
+    quote: >-
+      Pranoti has a very honest and approachable way of talking about her work and
+      experiences in physics. She brought a very interesting and helpful perspective on
+      studying and working in science for our students.
+
+  - name: "Dr. Said Rodriguez"
+    role: "Group Leader"
+    org: "AMOLF"
+    context: "The Science Talk podcast & curation"
+    year: "2021"
+    featured: false
+    quote: >-
+      I liked it very much. Very well organized, nice network, enjoyed the interview a
+      lot. It couldn't be better.
+
+  # ─── Anonymised (positive, name consent not documented) ─────────────────
+  - name: ""
+    role: "Professor"
+    org: "Maastricht University"
+    context: "Personal Branding Workshop — YES Meeting"
+    year: "2023"
+    featured: false
+    quote: >-
+      I found the workshop insightful and inspiring to further develop my own personal
+      brand as a scientist on professional social media. Great tips and tricks were
+      shared to enhance visibility, increase engagement and grow followers. I would
+      recommend the workshop if you are looking for structured ways to 'shine' in the
+      digital world!
+
+  - name: ""
+    role: "Editor"
+    org: "Nature (journal)"
+    context: "The Science Talk curator"
+    year: "2021"
+    featured: false
+    quote: >-
+      Very interesting — I got in contact with new people and it was an opportunity to
+      think about the interesting aspects of my job that I could share. It was also
+      more intense than I thought it would be, as writing reasonable threads takes
+      time! Very happy overall.
+
+  - name: ""
+    role: "Postdoctoral Researcher"
+    org: "Polytechnic University of Madrid"
+    context: "The Science Talk curator"
+    year: "2021"
+    featured: false
+    quote: >-
+      It was a nice experience to show my work and my career to new people. I had total
+      freedom to post, with suggestions from Pranoti when required. The experience was
+      fun and enriching.
+
+  - name: ""
+    role: "Personal Branding & LinkedIn Training participant"
+    org: "AC Network"
+    context: "Ace your LinkedIn training"
+    year: "2024"
+    featured: false
+    quote: >-
+      It was actually hands-on and practical, fast-paced. A good investment of time and
+      money.
+
+  - name: ""
+    role: "Personal Branding & LinkedIn Training participant"
+    org: "AC Network"
+    context: "Ace your LinkedIn training"
+    year: "2024"
+    featured: false
+    quote: "I realized that I needed it more than I knew."
+
+  - name: ""
+    role: "Researcher"
+    org: ""
+    context: "Personal Branding Workshop — Beyond the Lab"
+    year: "2024"
+    featured: false
+    quote: >-
+      To actually write my own branding. I would never have done this by myself, and by
+      doing it I realized better what actually makes me unique. You two absolutely rock!
+
+  - name: ""
+    role: "Researcher"
+    org: "University of South Australia"
+    context: "The Science Talk curator"
+    year: "2019"
+    featured: false
+    quote: >-
+      It was an excellent opportunity to curate an account dedicated to nano and
+      materials science. The interactions and exposure were enjoyable.
+
+  - name: ""
+    role: "Researcher"
+    org: "Curtin University"
+    context: "The Science Talk curator"
+    year: "2020"
+    featured: false
+    quote: >-
+      Great. I really enjoyed it. Thanks Pranoti for being very contactable and
+      answering questions quickly and directly.
+
+  - name: ""
+    role: "Postdoctoral Researcher"
+    org: "Imperial College London"
+    context: "The Science Talk curator"
+    year: "2020"
+    featured: false
+    quote: >-
+      Really fun! Keep up the good work — amazed you managed to do all of this alongside
+      your daily job as well!
+
+  - name: ""
+    role: "Researcher"
+    org: "University of Sheffield"
+    context: "The Science Talk curator"
+    year: "2020"
+    featured: false
+    quote: >-
+      Great fun! I had more to say than I thought and enjoyed saying it more than I
+      thought I would — and more people liked it than I expected.
+
+  - name: ""
+    role: "Researcher"
+    org: "ANSTO (Australian Nuclear Science and Technology Organisation)"
+    context: "The Science Talk curator"
+    year: "2022"
+    featured: false
+    quote: >-
+      Really great! Thanks for extending my stay to 2 weeks. I had lots of fun, got some
+      good interaction going and pushed the follower numbers over 3000!
+
+  - name: ""
+    role: "Researcher"
+    org: ""
+    context: "The Science Talk podcast & curation"
+    year: "2023"
+    featured: false
+    quote: >-
+      I found it very well organized. It was really fun to record the podcast and take
+      over the Twitter page. It was great to have this space to disseminate a bit of
+      what I do and tell about my career.

@@ -1,5 +1,4 @@
 {{ define "main" }}
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <section class="pf-page">
 
@@ -27,7 +26,6 @@
         <button class="pf-tab" data-filter="video" aria-pressed="false">Video ({{ index $counts "video" | default 0 }})</button>
         <button class="pf-tab" data-filter="shorts" aria-pressed="false">Shorts ({{ index $counts "shorts" | default 0 }})</button>
         <button class="pf-tab" data-filter="trainings" aria-pressed="false">Trainings ({{ index $counts "trainings" | default 0 }})</button>
-        <button class="pf-tab" data-filter="proposal" aria-pressed="false">Proposals ({{ index $counts "proposal" | default 0 }})</button>
         <button class="pf-tab" data-filter="scicommai" aria-pressed="false">SciComm + AI ({{ index $counts "scicommai" | default 0 }})</button>
         <button class="pf-tab" data-filter="events" aria-pressed="false">Events ({{ index $counts "events" | default 0 }})</button>
         <button class="pf-tab" data-filter="reports" aria-pressed="false">Engagement Reports ({{ index $counts "reports" | default 0 }})</button>
@@ -108,7 +106,6 @@
 .pf-cat-video{background:#1a2b4a;color:#fff}
 .pf-cat-shorts{background:#c76a5a;color:#fff}
 .pf-cat-trainings{background:#e8a598;color:var(--ink)}
-.pf-cat-proposal{background:#8ba89e;color:#fff}
 .pf-cat-podcast{background:#4a7c7e;color:#fff}
 .pf-cat-scicommai{background:#5d4e8a;color:#fff}
 .pf-cat-events{background:#a8652a;color:#fff}
@@ -130,6 +127,9 @@
   .pf-tabs{gap:.4rem}
   .pf-tab{font-size:.75rem;padding:.45rem 1rem}
 }
+
+/* Tags, buttons and chrome stay Montserrat (body is Inter). */
+.pf-client,.pf-keyword{font-family:var(--font-display)}
 </style>
 
 <script>
@@ -149,7 +149,7 @@
   }
   tabs.forEach(t=>t.addEventListener('click',()=>filter(t.dataset.filter)));
   const hash=location.hash.replace('#','');
-  if(hash&&['podcast','video','shorts','trainings','proposal','scicommai','events','reports','ai-automation-integration'].includes(hash))filter(hash);
+  if(hash&&['podcast','video','shorts','trainings','scicommai','events','reports','ai-automation-integration'].includes(hash))filter(hash);
 })();
 </script>
 

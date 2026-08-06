@@ -4,6 +4,7 @@ date: "2023-11-15"
 draft: false
 type: "portfolio/events"
 category: "events"
+seo_title: "Under the Microscope: Spotlighting Materials & Nano Science — University of Groningen Seminar"
 description: "Speaker at Under the Microscope – Spotlighting Materials & Nano Science — Special Seminar hosted by University of Groningen in Groningen, Netherlands."
 client: "University of Groningen"
 location: "Groningen, Netherlands"
