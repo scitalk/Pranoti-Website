@@ -1,5 +1,4 @@
 {{ define "main" }}
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <article class="pf-single pf-single-scicommai">
 
@@ -56,7 +55,9 @@
 <script type="application/ld+json">{{ $aSchema | jsonify | safeJS }}</script>
 
 <style>
-.pf-single-scicommai{font-family:'Montserrat',sans-serif}
+.pf-single-scicommai{font-family:var(--font-body)}
+/* Headings, tags and chrome stay Montserrat; prose is Inter. */
+.pf-single-scicommai .pf-hero-title,.pf-single-scicommai .pf-tag,.pf-single-scicommai .pf-cat-scicommai,.pf-single-scicommai .pf-single-meta{font-family:var(--font-display)}
 .pf-hero{background:var(--ink);color:#fff;padding:5rem 2rem 3.5rem;text-align:center}
 .pf-hero h1,.pf-hero .pf-hero-title{font-family:'Montserrat',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:600;color:#fff;margin-bottom:.75rem}
 .pf-hero-sub{font-size:1rem;color:rgba(255,255,255,.6);margin:0;letter-spacing:.03em}
@@ -71,7 +72,7 @@
 .pf-title-block h1{font-family:'Montserrat',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:500;color:var(--ink);line-height:1.2;margin-bottom:.4rem}
 .pf-info-card-wrap{padding:2rem 2rem 0}
 .pf-info-card{background:#f5f2ed;border-radius:8px;padding:2rem}
-.pf-description{font-family:'Montserrat',sans-serif;font-size:1rem;line-height:1.75;color:var(--ink-soft);margin:0 0 1.5rem}
+.pf-description{font-family:var(--font-body);font-size:1rem;line-height:1.75;color:var(--ink-soft);margin:0 0 1.5rem}
 .pf-read-btn{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:600;color:#fff;background:#5d4e8a;padding:.7rem 1.5rem;border-radius:6px;text-decoration:none;transition:background .2s}
 .pf-read-btn:hover{background:#4a3d70}
 .pf-content{padding:2rem 2rem 0}

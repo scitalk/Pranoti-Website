@@ -1,0 +1,204 @@
+{{ define "main" }}
+{{ $p := .Params }}
+<article class="qt-page">
+
+  <!-- Hero -->
+  <header class="qt-hero">
+    {{ with $p.hero_image }}<div class="qt-hero-bg"><img src="{{ . }}" alt="Pranoti Kshirsagar presenting QuanTour on stage"></div>{{ end }}
+    <div class="qt-hero-overlay"></div>
+    <div class="qt-hero-inner">
+      <p class="qt-eyebrow">Project Report · Science Communication Partnership</p>
+      <h1>QuanTour</h1>
+      {{ with $p.subtitle }}<p class="qt-hero-sub">{{ . }}</p>{{ end }}
+      <dl class="qt-hero-meta">
+        {{ with $p.role }}<div><dt>Role</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with $p.period }}<div><dt>Period</dt><dd>{{ . }}</dd></div>{{ end }}
+      </dl>
+      <div class="qt-hero-links">
+        {{ with $p.project_site }}<a href="{{ . }}" target="_blank" rel="noopener">Project website ↗</a>{{ end }}
+        {{ with $p.instagram }}<a href="{{ . }}" target="_blank" rel="noopener">Instagram ↗</a>{{ end }}
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats -->
+  {{ with $p.stats }}
+  <section class="qt-stats" aria-label="Project at a glance">
+    <div class="qt-container">
+      <div class="qt-stats-grid">
+        {{ range . }}
+        <div class="qt-stat"><span class="qt-stat-num">{{ .value }}</span><span class="qt-stat-label">{{ .label }}</span></div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Award -->
+  {{ with $p.award }}
+  <section class="qt-award" aria-labelledby="qt-award-h">
+    <div class="qt-container qt-award-inner">
+      <p class="qt-award-badge">Awarded</p>
+      <h2 id="qt-award-h"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></h2>
+      <blockquote class="qt-award-citation">{{ .citation }}</blockquote>
+      <p class="qt-award-meta">Announced {{ .announced }} · Ceremony {{ .ceremony }}<br><strong>Recipients:</strong> {{ .recipients }}</p>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- About -->
+  <section class="qt-section" aria-labelledby="qt-about-h">
+    <div class="qt-container qt-about-layout">
+      <div class="qt-about-copy qt-prose">
+        <p class="qt-eyebrow">About</p>
+        <h2 id="qt-about-h">{{ $p.about_heading | default "QuanTour Project" }}</h2>
+        {{ with $p.about_text }}<p>{{ . }}</p>{{ end }}
+        {{ with $p.hashtags }}<p class="qt-hashtags">{{ . }}</p>{{ end }}
+      </div>
+      <div class="qt-about-visual">
+        {{ with $p.about_image }}<img src="{{ . }}" alt="Map of the 12 QuanTour stops across Europe">{{ else }}<div class="qt-about-placeholder"></div>{{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities -->
+  {{ with $p.activities }}
+  <section class="qt-section qt-section-alt" aria-labelledby="qt-act-h">
+    <div class="qt-container qt-activities-layout">
+      <div class="qt-activities-copy">
+        <h2 id="qt-act-h">What was delivered</h2>
+        <ol class="qt-activities">
+          {{ range . }}
+          <li><h3>{{ .title }}</h3><p>{{ .body }}</p></li>
+          {{ end }}
+        </ol>
+      </div>
+      {{ with $p.activities_image }}
+      <div class="qt-activities-visual"><img src="{{ . }}" alt="QuanTour 12-month engagement report"></div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Featured in -->
+  {{ with $p.featured_in }}
+  <section class="qt-section qt-section-alt" aria-labelledby="qt-featured-h">
+    <div class="qt-container">
+      <h2 id="qt-featured-h">QuanTour featured in</h2>
+      <ul class="qt-featured-list">
+        {{ range . }}
+        <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a><span class="qt-featured-meta">{{ .source }} · {{ .date }}</span></li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Partners: map + coordinators/stops -->
+  {{ with $p.partners_map }}
+  <section class="qt-section qt-section-alt" aria-labelledby="qt-map-h">
+    <div class="qt-container qt-map-layout qt-map-layout-reverse">
+      <div class="qt-map-copy">
+        <h2 id="qt-map-h">The route</h2>
+        {{ with $.Params.coordinators }}
+        <ul class="qt-coordinators">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        {{ with $.Params.stops }}
+        <ol class="qt-stops">
+          {{ range . }}<li>{{ . }}</li>{{ end }}
+        </ol>
+        {{ end }}
+      </div>
+      <div class="qt-map-visual"><img src="{{ . }}" alt="Map of the 12 QuanTour stops across Europe"></div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Partners -->
+  <section class="qt-section qt-section-alt" aria-labelledby="qt-partners-h">
+    <div class="qt-container">
+      <h2 id="qt-partners-h">The 14 partners</h2>
+      <p class="qt-section-intro">Two organisers and twelve host laboratories — the “QuanTour Heroes” — each hosting the source for several weeks and appearing on the podcast series.</p>
+
+      {{ with $p.organisers }}
+      <h3 class="qt-subhead">Organisers</h3>
+      <div class="qt-partner-grid">{{ range . }}{{ partial "qt-partner.html" . }}{{ end }}</div>
+      {{ end }}
+
+      {{ with $p.heroes }}
+      <h3 class="qt-subhead">QuanTour Heroes</h3>
+      <div class="qt-partner-grid">{{ range . }}{{ partial "qt-partner.html" . }}{{ end }}</div>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Impact growth -->
+  {{ with $p.growth }}
+  <section class="qt-section" aria-labelledby="qt-growth-h">
+    <div class="qt-container">
+      <h2 id="qt-growth-h">Measured impact, report by report</h2>
+      <p class="qt-section-intro">Figures as published in the five QuanTour engagement reports issued across the project.</p>
+      <div class="qt-table-wrap">
+        <table class="qt-table">
+          <thead><tr><th scope="col">Report</th><th scope="col">Views</th><th scope="col">Instagram</th><th scope="col">Milestone</th></tr></thead>
+          <tbody>
+            {{ range . }}
+            <tr><th scope="row">{{ .issue }}</th><td>{{ .views }}</td><td>{{ .instagram }}</td><td>{{ .note }}</td></tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Related engagements -->
+  {{ with $p.events }}
+  {{ $pages := slice }}
+  {{ range . }}{{ with $.Site.GetPage . }}{{ $pages = $pages | append . }}{{ end }}{{ end }}
+  {{ with $pages }}
+  <section class="qt-section qt-section-alt" aria-labelledby="qt-ev-h">
+    <div class="qt-container">
+      <h2 id="qt-ev-h">QuanTour on stage</h2>
+      <div class="qt-event-list">
+        {{ range (sort . "Date" "desc") }}
+        <a class="qt-event" href="{{ .RelPermalink }}">
+          <span class="qt-event-date">{{ .Date.Format "Jan 2006" }}</span>
+          <span class="qt-event-title">{{ .Title }}</span>
+          <span class="qt-event-org">{{ with .Params.role }}{{ . }}{{ end }}{{ with .Params.client }} · {{ . }}{{ end }}{{ with .Params.location }} · {{ . }}{{ end }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  {{ end }}
+
+  <!-- Further reading -->
+  {{ with $p.further_reading }}
+  <section class="qt-section" aria-labelledby="qt-read-h">
+    <div class="qt-container">
+      <h2 id="qt-read-h">Coverage and further reading</h2>
+      <ul class="qt-reading">
+        {{ range . }}
+        <li><a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .title }}</a><span>{{ .source }}</span></li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- CTA -->
+  <section class="qt-cta">
+    <div class="qt-container">
+      <h2>{{ $p.cta_heading | default "Let's talk" }}</h2>
+      {{ with $p.cta_text }}<p>{{ . }}</p>{{ end }}
+      <a class="qt-cta-btn" href="{{ $p.cta_url }}" target="_blank" rel="noopener">{{ $p.cta_button | default "Get in touch" }} <span>→</span></a>
+      {{ with $p.cta_secondary_url }}<a class="qt-cta-alt" href="{{ . }}">{{ $p.cta_secondary_label | default "See more" }} →</a>{{ end }}
+    </div>
+  </section>
+
+</article>
+{{ end }}

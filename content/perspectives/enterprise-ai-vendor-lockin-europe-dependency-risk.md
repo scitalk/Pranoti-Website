@@ -1,7 +1,7 @@
 ---
 title: "Enterprise AI in Europe: The Hidden Cost of Vendor Lock-In"
 date: 2026-06-09
-lastmod: 2026-06-09
+lastmod: 2026-08-02
 draft: false
 description: "Europe's AI adoption is deepening software dependency concentration — yet only 21% of enterprises have a governance model for it. Here's what the data shows."
 keywords: ["enterprise AI vendor lock-in Europe", "enterprise AI dependency audit", "compounding AI vendor lock-in", "cloud concentration risk enterprise", "AI governance gap enterprise", "AI governance gap", "hyperscaler dependency Europe"]
@@ -70,7 +70,7 @@ The EU regulatory stack converging on enterprise AI in 2026 is not primarily abo
 
 NIS2 is now in force across EU member states, with the first administrative penalties beginning to surface in early-transposing member states in 2026 and enforcement activity accelerating through the year. Essential entities face fines up to **€10 million or 2% of global annual turnover**. In Germany alone, the number of entities in scope under NIS2 has expanded from approximately 4,500 under the previous regime to around **29,500** — a more than sixfold increase. The compliance audit deadline for in-scope entities is 30 June 2026.
 
-The EU AI Act's high-risk system requirements become mandatory on **2 August 2026**, with fines for prohibited AI practices reaching **€35 million or 7% of global annual turnover**. High-risk AI violations — which include AI used in recruitment, credit scoring, and critical infrastructure — carry fines of up to €15 million or 3% of global turnover.
+The EU AI Act's high-risk system requirements become mandatory on **2 December 2027** for stand-alone Annex III systems and **2 August 2028** for AI embedded in already-regulated products — both deferred from the original 2 August 2026 date by the 2026 Digital Omnibus amendment. Fines for prohibited AI practices reach **€35 million or 7% of global annual turnover**. High-risk AI violations — which include AI used in recruitment, credit scoring, and critical infrastructure — carry fines of up to €15 million or 3% of global turnover.
 
 These are not independent compliance events. NIS2 governs the security of the network and information systems that enterprise AI runs on. The AI Act governs the AI systems themselves. The Data Act governs data access and portability — directly relevant to data pipelines locked inside hyperscaler infrastructure. **They are converging pressure on the same dependency architecture, arriving on overlapping timelines.**
 

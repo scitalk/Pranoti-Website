@@ -10,5 +10,6 @@ location: "Online"
 role: "Organiser"
 event_type: "Workshop"
 read_more_url: "https://thesciencetalk.com/ai-for-scientists-compliant-ethical-powerful/"
+event_website: "https://www.linkedin.com/events/7384220972419137536/"
 tags: ["Organiser", "Workshop"]
 ---

@@ -1,5 +1,4 @@
 {{ define "main" }}
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <article class="pf-single pf-single-reports">
 
@@ -55,7 +54,9 @@
 </article>
 
 <style>
-.pf-single-reports{font-family:'Montserrat',sans-serif}
+.pf-single-reports{font-family:var(--font-body)}
+/* Headings, tags and chrome stay Montserrat; prose is Inter. */
+.pf-single-reports .pf-hero-title,.pf-single-reports .pf-tag,.pf-single-reports .pf-cat-reports,.pf-single-reports .pf-single-meta{font-family:var(--font-display)}
 .pf-hero{background:var(--ink);color:#fff;padding:5rem 2rem 3.5rem;text-align:center}
 .pf-hero h1,.pf-hero .pf-hero-title{font-family:'Montserrat',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:600;color:#fff;margin-bottom:.75rem}
 .pf-hero-sub{font-size:1rem;color:rgba(255,255,255,.6);margin:0;letter-spacing:.03em}

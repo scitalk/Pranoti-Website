@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="container">
+<section class="container{{ if eq .Section "products" }} products-list{{ end }}">
     <header class="page-header">
         <h1>{{ .Title }}</h1>
         {{ with .Params.description }}
@@ -21,12 +21,16 @@
 </section>
 
 <style>
+/* /products/ keeps its original look: Playfair headings, Montserrat body. */
+.products-list { font-family: 'Montserrat', sans-serif; }
+.products-list .page-header h1,
+.products-list .post-card h2 { font-family: 'Playfair Display', serif; }
+
 .page-header {
     padding: 5rem 0 2rem; /* Extra top padding for fixed header */
 }
 
 .page-header h1 {
-    font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     color: #1c1c1c;
     margin-bottom: 1rem;
@@ -63,7 +67,6 @@
 }
 
 .post-card h2 {
-    font-family: 'Playfair Display', serif;
     font-size: 1.75rem;
     margin-bottom: 1rem;
     color: #1c1c1c;

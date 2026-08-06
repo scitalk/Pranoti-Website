@@ -8,7 +8,7 @@
   <meta name="description" content="{{ $desc }}">
   {{ with .Params.keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="robots" content="{{ .Params.robots | default "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" }}">
   <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
   <meta property="og:site_name" content="{{ .Site.Title }}">
   <meta property="og:title" content="{{ .Title }}">
@@ -71,24 +71,16 @@
   }
   </script>
   {{ end }}
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLGZLS20VW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JLGZLS20VW');
-  </script>
+  <!-- Google Analytics is loaded by partials/consent-banner.html, only after consent. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  {{ if and (eq .Section "products") .IsSection }}
+  <!-- /products/ listing keeps its Playfair headings. -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  {{ end }}
   {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-  {{ if eq .Section "case-studies" }}
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  {{ $csCss := resources.Get "css/case-study.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $csCss.RelPermalink }}">
-  {{ end }}
 </head>
 
 <body>
@@ -100,6 +92,8 @@
   </main>
 
   {{ partial "footer.html" . }}
+
+  {{ partial "consent-banner.html" . }}
 
   <script src="/js/main.js"></script>
 

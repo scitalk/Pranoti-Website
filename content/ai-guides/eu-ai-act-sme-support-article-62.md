@@ -1,7 +1,7 @@
 ---
 title: "EU AI Act Article 62: Free Support SMEs Can Claim"
 date: 2026-07-23
-lastmod: 2026-07-19
+lastmod: 2026-08-02
 slug: "eu-ai-act-sme-support-article-62"
 draft: false
 featured_image: "/images/ai-guides/eu-ai-act.webp"
@@ -48,7 +48,7 @@ Article 62 places duties on Member States (paragraph 1), on the way fees are set
 
 Under Article 62(1)(a), Member States must give SMEs and start-ups **priority access** to their AI regulatory sandboxes. A sandbox is a supervised environment where you can develop and test an AI system with the regulator alongside you.
 
-[Article 57](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-57) requires each Member State to have at least one national sandbox **operational by 2 August 2026**. Inside it, competent authorities provide guidance, supervision and support to help you identify risks and test mitigations.
+[Article 57](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-57) requires each Member State to have at least one national sandbox **operational by 2 August 2027**. That date was originally 2 August 2026; the 2026 Digital Omnibus amendment pushed it back by a year. Inside it, competent authorities provide guidance, supervision and support to help you identify risks and test mitigations.
 
 On exit you receive **written proof** of the activities carried out and an exit report. Market-surveillance authorities and notified bodies must take that report positively into account, which can accelerate a later conformity assessment.
 
@@ -74,9 +74,11 @@ For a small team, the templates and the single platform are the fastest wins —
 
 ## What changed for small mid-caps in 2026
 
-The [Digital Omnibus on AI](https://digital-strategy.ec.europa.eu/en/library/digital-omnibus-ai-regulation-proposal), agreed by the co-legislators in mid-2026, **extended several SME accommodations to small mid-caps (SMCs)** — notably the simplified documentation regime and special consideration in applying penalties.
+The Digital Omnibus on AI is now law: **Regulation (EU) 2026/1744**, published in the Official Journal on 24 July 2026 and in force since 27 July 2026. It **extended several SME accommodations to small mid-caps (SMCs)** — notably the simplified technical documentation form under Article 11(1), the proportionality rule for quality management systems under Article 17(2), and the more favourable fine calculation under Article 99.
 
-If you sit just above the SME threshold, you are no longer automatically outside these simplifications. Check the final adopted text before assuming which bracket you fall into.
+If you sit just above the SME threshold, you are no longer automatically outside these simplifications.
+
+Note that the simplified documentation regime lives in **Article 11(1)**, not Article 62 — it lets SMEs, start-ups and SMCs supply the Annex IV elements on a simplified form that the Commission must produce and that notified bodies must accept.
 
 ## What you can do now
 

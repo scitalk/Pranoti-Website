@@ -1,16 +1,30 @@
 {{ define "main" }}
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <section class="home-page">
 
+  <!-- Hero -->
   <header class="home-hero">
     <div class="container narrow">
       <span class="home-eyebrow">Pranoti Kshirsagar</span>
-      <h1>AI Literacy and EU AI Act specialist for European businesses</h1>
-      <p class="home-hero-sub">Cut through the AI hype and build robust systems with AI to drive commercial success. AI integration training and EU AI Act briefings, built from seven years working in AI.</p>
-      <div class="home-hero-ctas">
-        <a href="/ai-guides/" class="home-cta home-cta-primary">Read the guides</a>
-        <a href="/case-studies/" class="home-cta home-cta-secondary">See case studies</a>
+      <p class="home-philosophy">"I use AI to cut cognitive load — so people can focus on the work only they can do."</p>
+
+      <div class="home-paths">
+        <div class="home-path-card">
+          <span class="home-path-label">AI Integration &amp; Automation</span>
+          <p>Consulting for businesses, research institutions, and EIC-funded companies — practical AI workflows and EU AI Act compliance, built from real implementation.</p>
+          <div class="home-path-ctas">
+            <a href="#browse-by-topic" class="home-path-btn primary">Explore the work →</a>
+            <a href="https://thesciencetalk.com/contact-us/" class="home-path-btn">Book a consultation</a>
+          </div>
+        </div>
+        <div class="home-path-card">
+          <span class="home-path-label">Speaking &amp; Training</span>
+          <p>Personal branding, science communication, and LinkedIn training for scientists — keynotes, workshops, and panels delivered across Europe.</p>
+          <div class="home-path-ctas">
+            <a href="/portfolio/events/" class="home-path-btn primary">See past talks →</a>
+            <a href="https://thesciencetalk.com/contact-us/" class="home-path-btn">Book a session</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -18,47 +32,92 @@
   <div class="home-body">
     <div class="container narrow">
 
-      {{ $guides := first 3 (where .Site.RegularPages "Section" "ai-guides").ByDate.Reverse }}
-      {{ if $guides }}
-      <section class="home-section">
+      <!-- Browse by topic -->
+      {{ $guides := where .Site.RegularPages "Section" "ai-guides" }}
+      {{ $persp := where .Site.RegularPages "Section" "perspectives" }}
+      {{ $all := (where .Site.RegularPages "Section" "in" (slice "ai-guides" "perspectives")).ByDate.Reverse }}
+
+      {{ if $all }}
+      <section class="home-section" id="browse-by-topic">
         <div class="home-section-header">
-          <h2>Latest AI Guides</h2>
-          <a href="/ai-guides/" class="home-section-more">All guides →</a>
+          <h2>Browse by topic</h2>
+          <span class="home-section-count">{{ len $all }} guides &amp; perspectives</span>
         </div>
-        <div class="home-grid">
-          {{ range $guides }}
-          <article class="home-card">
-            <a href="{{ .Permalink }}" class="home-card-link">
-              <div class="home-card-body">
-                <div class="home-card-meta">
-                  <span class="home-card-tag">AI Integration</span>
-                  <time>{{ .Date.Format "02 Jan 2006" }}</time>
-                </div>
-                <h3>{{ .Title }}</h3>
-                {{ with .Params.description }}<p class="home-card-desc">{{ . }}</p>{{ end }}
+
+        {{ $pillarOrder := slice "EU AI Act & Compliance" "AI Adoption" }}
+        {{ $present := slice }}
+        {{ range $all }}
+          {{ with .Params.pillar }}
+            {{ if not (in $present .) }}{{ $present = $present | append . }}{{ end }}
+          {{ end }}
+        {{ end }}
+        {{ $orderedPillars := slice }}
+        {{ range $pillarOrder }}
+          {{ if in $present . }}{{ $orderedPillars = $orderedPillars | append . }}{{ end }}
+        {{ end }}
+
+        <div class="home-filter-bar">
+          <button class="home-filter-chip is-active" data-filter="all">All</button>
+          {{ range $orderedPillars }}
+          {{ $slug := . | urlize }}
+          <button class="home-filter-chip pillar-chip--{{ $slug }}" data-filter="{{ . }}">{{ . }} <span class="home-filter-count">{{ len (where $all "Params.pillar" .) }}</span></button>
+          {{ end }}
+        </div>
+
+        <div class="home-topic-grid">
+          {{ range $i, $p := $all }}
+          {{ $slug := $p.Params.pillar | urlize }}
+          <article class="home-topic-card pillar-card--{{ $slug }}" data-pillar="{{ $p.Params.pillar }}" data-recent="{{ if lt $i 12 }}true{{ else }}false{{ end }}">
+            <a href="{{ $p.Permalink }}" class="home-topic-link">
+              <div class="home-topic-meta">
+                <span class="home-topic-format {{ if eq $p.Section "perspectives" }}perspective{{ end }}">{{ if eq $p.Section "perspectives" }}Perspective{{ else }}Guide{{ end }}</span>
+                <time>{{ $p.Date.Format "02 Jan 2006" }}</time>
               </div>
+              <h3>{{ $p.Title }}</h3>
+              {{ with $p.Params.description }}<p class="home-topic-desc">{{ . }}</p>{{ end }}
+              {{ with $p.Params.pillar }}<span class="home-topic-pillar pillar-tag--{{ $slug }}">{{ . }}</span>{{ end }}
             </a>
           </article>
           {{ end }}
         </div>
+        <p class="home-topic-empty" hidden>No posts in this topic yet.</p>
+
+        <div class="home-topic-links">
+          <a href="/ai-guides/">All AI Guides →</a>
+          <a href="/perspectives/">All Perspectives →</a>
+        </div>
       </section>
       {{ end }}
 
-      {{ $persp := first 3 (where .Site.RegularPages "Section" "perspectives").ByDate.Reverse }}
-      {{ if $persp }}
+      <!-- Speaking & Training -->
+      <section class="home-speaking-strip">
+        <div class="home-speaking-text">
+          <span class="home-speaking-label">Speaking &amp; Training</span>
+          <h2>Personal branding &amp; science communication for scientists</h2>
+          <p>Workshops and keynotes on personal branding, effective science communication, and using LinkedIn as a scientist — delivered at DTU Denmark, University of Sheffield, NTU Singapore, EPFL/ETH Zurich, Max Planck Institute, and more. Open to paid corporate and institutional bookings.</p>
+        </div>
+        <div class="home-speaking-links">
+          <a href="/portfolio/events/" class="home-work-link">See past talks →</a>
+          <a href="https://thesciencetalk.com/contact-us/" class="home-work-link primary">Book a session →</a>
+        </div>
+      </section>
+
+      <!-- Products -->
+      {{ $products := where .Site.RegularPages "Section" "products" }}
+      {{ $products = $products.ByDate.Reverse }}
+      {{ if $products }}
       <section class="home-section">
         <div class="home-section-header">
-          <h2>Latest Perspectives</h2>
-          <a href="/perspectives/" class="home-section-more">All perspectives →</a>
+          <h2>Digital Guides</h2>
+          <span class="home-section-count">Instant-download resources</span>
         </div>
-        <div class="home-grid">
-          {{ range $persp }}
+        <div class="home-grid home-products-grid">
+          {{ range $products }}
           <article class="home-card">
-            <a href="{{ .Permalink }}" class="home-card-link">
+            <a href="{{ .Params.url | default .Permalink }}" class="home-card-link">
               <div class="home-card-body">
                 <div class="home-card-meta">
-                  <span class="home-card-tag perspective">Perspectives</span>
-                  <time>{{ .Date.Format "02 Jan 2006" }}</time>
+                  <span class="home-card-tag product">Digital Guide</span>
                 </div>
                 <h3>{{ .Title }}</h3>
                 {{ with .Params.description }}<p class="home-card-desc">{{ . }}</p>{{ end }}
@@ -85,10 +144,34 @@
 
 </section>
 
+<script>
+(function () {
+  var chips = document.querySelectorAll('.home-filter-chip');
+  var cards = document.querySelectorAll('.home-topic-card');
+  var emptyState = document.querySelector('.home-topic-empty');
+  if (!chips.length) return;
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      chips.forEach(function (c) { c.classList.remove('is-active'); });
+      chip.classList.add('is-active');
+      var filter = chip.getAttribute('data-filter');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show = filter === 'all' ? card.getAttribute('data-recent') === 'true' : card.getAttribute('data-pillar') === filter;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      if (emptyState) emptyState.hidden = visible !== 0;
+    });
+  });
+})();
+</script>
+
 <style>
 .home-page { font-family: 'Inter', sans-serif; }
 
-.home-hero { background: var(--ink, #1c1c1c); color: #fff; padding: 5.5rem 2rem 4rem; text-align: center; }
+/* Hero */
+.home-hero { background: var(--ink, #1c1c1c); color: #fff; padding: 4.5rem 2rem 3.5rem; text-align: center; }
 .home-eyebrow {
   font-family: 'Montserrat', sans-serif;
   font-size: .7rem;
@@ -97,38 +180,57 @@
   text-transform: uppercase;
   color: #7BBDA0;
   display: block;
-  margin-bottom: .85rem;
-}
-.home-hero h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  color: #fff;
   margin-bottom: 1rem;
-  line-height: 1.2;
 }
-.home-hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.65); max-width: 600px; margin: 0 auto 1.75rem; line-height: 1.6; }
-.home-hero-ctas { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
-.home-cta {
+.home-philosophy {
   font-family: 'Montserrat', sans-serif;
-  font-size: .85rem;
+  font-size: clamp(1.3rem, 3.2vw, 1.9rem);
   font-weight: 600;
-  letter-spacing: .02em;
-  padding: .7rem 1.4rem;
+  font-style: italic;
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.4;
+}
+.home-paths { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; max-width: 860px; margin: 0 auto; text-align: left; }
+.home-path-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+.home-path-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #7BBDA0;
+  display: block;
+  margin-bottom: .75rem;
+}
+.home-path-card p { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.6; margin-bottom: 1.25rem; }
+.home-path-ctas { display: flex; flex-wrap: wrap; gap: .6rem; }
+.home-path-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: .55rem 1.1rem;
   border-radius: 5px;
   text-decoration: none;
-  transition: transform .2s, background .2s, color .2s;
+  color: rgba(255,255,255,.75);
+  border: 1px solid rgba(255,255,255,.25);
+  transition: all .2s;
 }
-.home-cta-primary { background: #1A3828; color: #fff; }
-.home-cta-primary:hover { background: #2A6048; transform: translateY(-1px); }
-.home-cta-secondary { color: #fff; border: 1px solid rgba(255,255,255,.3); }
-.home-cta-secondary:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); }
+.home-path-btn:hover { color: #fff; border-color: rgba(255,255,255,.5); }
+.home-path-btn.primary { background: #2A6048; border-color: #2A6048; color: #fff; }
+.home-path-btn.primary:hover { background: #1A3828; border-color: #1A3828; }
 
 .home-body { background: #F8F4ED; padding: 3.5rem 2rem 5rem; }
-.container.narrow { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+.container.narrow { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
 
-.home-section { margin-bottom: 3rem; }
-.home-section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.25rem; gap: 1rem; }
+.home-section { margin-bottom: 3.5rem; }
+.home-section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.25rem; gap: 1rem; flex-wrap: wrap; }
 .home-section-header h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.4rem;
@@ -136,18 +238,125 @@
   color: #1c1c1c;
   margin: 0;
 }
-.home-section-more {
+.home-section-count { font-size: .78rem; color: #999; font-weight: 500; }
+
+/* Topic filter chips */
+.home-filter-bar { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+.home-filter-chip {
   font-family: 'Montserrat', sans-serif;
-  font-size: .8rem;
+  font-size: .78rem;
   font-weight: 600;
-  color: #2A6048;
-  text-decoration: none;
-  white-space: nowrap;
+  color: #1A3828;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.1);
+  padding: .45rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all .15s;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
 }
-.home-section-more:hover { text-decoration: underline; }
+.home-filter-chip:hover { border-color: #2A6048; }
+.home-filter-chip.is-active { background: #1A3828; border-color: #1A3828; color: #fff; }
+.home-filter-count { font-size: .68rem; font-weight: 600; opacity: .6; }
 
+/* Topic grid */
+.home-topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.home-topic-card { background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 10px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.home-topic-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.08); }
+.home-topic-link { display: block; text-decoration: none; color: var(--ink, #1c1c1c); padding: 1.25rem; }
+.home-topic-meta { display: flex; align-items: center; gap: .5rem; margin-bottom: .75rem; }
+.home-topic-format {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: #1A3828;
+  color: #fff;
+  padding: .2rem .55rem;
+  border-radius: 3px;
+}
+.home-topic-format.perspective { background: #2A6048; }
+.home-topic-meta time { font-size: .72rem; color: #999; }
+.home-topic-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .92rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 .5rem;
+  color: #1c1c1c;
+}
+.home-topic-desc { font-size: .8rem; color: #666; line-height: 1.55; margin: 0 0 .75rem; }
+.home-topic-pillar { font-size: .68rem; font-weight: 600; padding: .15rem .5rem; border-radius: 3px; display: inline-block; }
+
+/* Pillar colour tokens — EU AI Act: blue-grey, AI Integration: teal, Workflows: amber, AI Adoption: purple */
+:root {
+  --p-eu:   #3B5F8A; --p-eu-bg:   #EBF0F7;
+  --p-int:  #2A6048; --p-int-bg:  #E6F2EC;
+  --p-wf:   #8A6200; --p-wf-bg:   #FDF4DC;
+  --p-adopt:#6B4299; --p-adopt-bg:#F3EDFC;
+}
+
+/* chip colours (inactive) */
+.pillar-chip--eu-ai-act-compliance        { color: var(--p-eu);   border-color: var(--p-eu); }
+.pillar-chip--ai-integration              { color: var(--p-int);  border-color: var(--p-int); }
+.pillar-chip--ai-powered-workflows        { color: var(--p-wf);   border-color: var(--p-wf); }
+.pillar-chip--ai-adoption                 { color: var(--p-adopt);border-color: var(--p-adopt); }
+
+/* chip active state */
+.pillar-chip--eu-ai-act-compliance.is-active  { background: var(--p-eu);   border-color: var(--p-eu);   color: #fff; }
+.pillar-chip--ai-integration.is-active        { background: var(--p-int);  border-color: var(--p-int);  color: #fff; }
+.pillar-chip--ai-powered-workflows.is-active  { background: var(--p-wf);   border-color: var(--p-wf);   color: #fff; }
+.pillar-chip--ai-adoption.is-active           { background: var(--p-adopt);border-color: var(--p-adopt);color: #fff; }
+
+/* card left-border accent */
+.pillar-card--eu-ai-act-compliance  { border-left: 3px solid var(--p-eu); }
+.pillar-card--ai-integration        { border-left: 3px solid var(--p-int); }
+.pillar-card--ai-powered-workflows  { border-left: 3px solid var(--p-wf); }
+.pillar-card--ai-adoption           { border-left: 3px solid var(--p-adopt); }
+
+/* pillar tag badge */
+.pillar-tag--eu-ai-act-compliance  { background: var(--p-eu-bg);   color: var(--p-eu); }
+.pillar-tag--ai-integration        { background: var(--p-int-bg);  color: var(--p-int); }
+.pillar-tag--ai-powered-workflows  { background: var(--p-wf-bg);   color: var(--p-wf); }
+.pillar-tag--ai-adoption           { background: var(--p-adopt-bg);color: var(--p-adopt); }
+.home-topic-empty { text-align: center; color: #999; padding: 2rem 0; }
+.home-topic-links { display: flex; gap: 1.25rem; justify-content: center; margin-top: 1.75rem; }
+.home-topic-links a { font-size: .85rem; font-weight: 600; color: #2A6048; text-decoration: none; }
+.home-topic-links a:hover { text-decoration: underline; }
+
+/* Speaking strip */
+.home-speaking-strip {
+  background: #1A3828;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-bottom: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.home-speaking-text { flex: 1 1 420px; }
+.home-speaking-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: #7BBDA0;
+  display: block;
+  margin-bottom: .6rem;
+}
+.home-speaking-text h2 { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 0 0 .75rem; color: #fff; }
+.home-speaking-text p { font-size: .9rem; color: rgba(255,255,255,.75); line-height: 1.65; margin: 0; }
+.home-speaking-links { display: flex; gap: .6rem; flex-wrap: wrap; }
+
+/* Reused card grid (products) */
 .home-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-
 .home-card { background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 10px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
 .home-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.08); }
 .home-card-link { display: block; text-decoration: none; color: var(--ink, #1c1c1c); }
@@ -164,8 +373,7 @@
   padding: .2rem .55rem;
   border-radius: 3px;
 }
-.home-card-tag.perspective { background: #2A6048; }
-.home-card-meta time { font-size: .72rem; color: #999; }
+.home-card-tag.product { background: #B08D57; }
 .home-card-body h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: .95rem;
@@ -185,7 +393,6 @@
   background: #fff;
   border: 1px solid rgba(0,0,0,.07);
   border-radius: 10px;
-  margin-top: 1rem;
   flex-wrap: wrap;
 }
 .home-work-text { flex: 1 1 320px; }
@@ -208,19 +415,25 @@
   padding: .4rem .9rem;
   border-radius: 5px;
   transition: background .2s, color .2s;
+  white-space: nowrap;
 }
 .home-work-link:hover { background: #2A6048; color: #fff; }
 .home-work-link.primary { background: #2A6048; color: #fff; }
 .home-work-link.primary:hover { background: #1A3828; border-color: #1A3828; }
 
 @media (max-width: 860px) {
+  .home-topic-grid { grid-template-columns: repeat(2, 1fr); }
   .home-grid { grid-template-columns: repeat(2, 1fr); }
 }
+@media (max-width: 700px) {
+  .home-paths { grid-template-columns: 1fr; }
+}
 @media (max-width: 640px) {
+  .home-topic-grid { grid-template-columns: 1fr; }
   .home-grid { grid-template-columns: 1fr; }
   .home-body { padding: 2.5rem 1.25rem 4rem; }
   .container.narrow { padding: 0 1.25rem; }
-  .home-work-strip { padding: 1.5rem; }
+  .home-speaking-strip { padding: 1.75rem; }
 }
 </style>
 

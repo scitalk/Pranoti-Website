@@ -20,14 +20,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ .Title }}">
   <meta name="twitter:description" content="{{ $desc }}">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLGZLS20VW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JLGZLS20VW');
-  </script>
+  <!-- Google Analytics is loaded by partials/consent-banner.html, only after consent. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   {{ if eq .Kind "section" }}
@@ -47,5 +40,7 @@
   <main id="main-content">{{ block "main" . }}{{ end }}</main>
   {{ if eq .Kind "section" }}{{ partial "footer.html" . }}{{ end }}
   {{ if eq .Kind "section" }}<script src="/js/main.js"></script>{{ end }}
+  {{ partial "consent-banner.html" . }}
+
 </body>
 </html>

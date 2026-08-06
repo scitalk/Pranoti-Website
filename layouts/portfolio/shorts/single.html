@@ -1,5 +1,4 @@
 {{ define "main" }}
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <article class="pf-single pf-single-shorts">
 
@@ -115,5 +114,8 @@
   .pf-embed-9-16 { width: 300px; }
   .pf-single-footer .container { flex-direction: column; gap: 1rem; text-align: center; }
 }
+
+/* Tags, buttons and chrome stay Montserrat (body is Inter). */
+.pf-back,.pf-tag,.pf-cat-shorts,.pf-cta-link,.pf-single-client{font-family:var(--font-display)}
 </style>
 {{ end }}

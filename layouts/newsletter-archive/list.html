@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="container newsletter-list">
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+        <p class="description">Every newsletter sent to the general mailing list.</p>
+    </header>
+
+    <ul class="newsletter-index">
+        {{ range .Pages.ByDate.Reverse }}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 Jan 2006" }}</time>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+
+<style>
+.newsletter-list .page-header { padding: 5rem 0 2rem; text-align: center; }
+.newsletter-list .page-header h1 {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: #1c1c1c;
+}
+.newsletter-index {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    padding: 0 2.5rem;
+}
+.newsletter-index li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid #ececec;
+}
+.newsletter-index a { color: #1c1c1c; text-decoration: none; }
+.newsletter-index a:hover { text-decoration: underline; }
+.newsletter-index time { color: #999; white-space: nowrap; font-size: 0.9rem; }
+</style>
+{{ end }}
