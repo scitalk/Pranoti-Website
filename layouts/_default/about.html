@@ -101,7 +101,7 @@
           <span class="about-tag">About</span>
           <h1>Dr. Pranoti Kshirsagar</h1>
           <p class="about-subtitle">AI Integration &amp; Science Communication Consultant</p>
-          <p class="about-location">📍 Mannheim, Germany &nbsp;·&nbsp; she/her</p>
+          <p class="about-location">Mannheim, Germany &nbsp;·&nbsp; she/her</p>
           <div class="about-hero-links">
             <a href="https://www.linkedin.com/in/pranoti-kshirsagar/" target="_blank" rel="noopener" class="about-link-pill">LinkedIn</a>
             <a href="https://thesciencetalk.com" target="_blank" rel="noopener" class="about-link-pill">The Science Talk</a>
@@ -158,23 +158,18 @@
             <h3 class="about-cred-heading">Credentials</h3>
             <ul class="about-cred-list">
               <li>
-                <span class="about-cred-icon">🎓</span>
                 <span>PhD (Dr. rer. nat.) Applied Physics<br><em>University of Tübingen</em></span>
               </li>
               <li>
-                <span class="about-cred-icon">📊</span>
                 <span>Mini-MBA Marketing<br><em>Marketing Week with Mark Ritson</em></span>
               </li>
               <li>
-                <span class="about-cred-icon">🏆</span>
                 <span>IOP Award<br><em>Innovative Public Engagement, UK &amp; Europe</em></span>
               </li>
               <li>
-                <span class="about-cred-icon">🇪🇺</span>
                 <span>Official EIC Partner<br><em>Business Acceleration Services</em></span>
               </li>
               <li>
-                <span class="about-cred-icon">💡</span>
                 <span>KreaSocTech Grant<br><em>2025 &amp; 2026</em></span>
               </li>
             </ul>
@@ -192,27 +187,19 @@
       <div class="about-services-grid">
 
         <div class="about-service-card">
-          <div class="about-service-icon">🤖</div>
           <h3>AI Integration &amp; Automation</h3>
-          <p>Building AI-powered operational workflows for research organisations — proposal pipelines, content systems, training infrastructure — using Claude API and Make. Focused on durable, institution-grade implementation, not one-off experiments.</p>
+          <p>Building AI-powered operational workflows for businesses, research organisations, and EIC-funded companies — proposal pipelines, content systems, training infrastructure — using Claude API and Make. Focused on durable, institution-grade implementation, not one-off experiments.</p>
           <a href="/ai-guides/" class="about-service-link">Read AI guides →</a>
         </div>
 
         <div class="about-service-card">
-          <div class="about-service-icon">🔬</div>
-          <h3>Science Communication &amp; Grants</h3>
-          <p>End-to-end dissemination strategy and communication work packages for Horizon Europe consortia. Proposal writing, KPI frameworks, reporting deliverables, and partner relations — backed by €32M+ in grant budgets supported as official EIC partner.</p>
-          <a href="/portfolio/" class="about-service-link">See portfolio →</a>
-        </div>
-
-        <div class="about-service-card">
-          <div class="about-service-icon">🎤</div>
           <h3>Training &amp; Keynotes</h3>
           <p>Workshops and keynote sessions for researchers at all career stages — personal branding, science communication strategy, AI for scientists. Delivered at DTU Denmark, University of Sheffield, NTU Singapore, EPFL/ETH Zurich doctoral school, Max Planck Institute, and more.</p>
-          <a href="https://thesciencetalk.com/contact-us/" class="about-service-link">Book a session →</a>
+          <a href="/portfolio/events/" class="about-service-link">See past talks →</a>
         </div>
 
       </div>
+      <p class="about-services-footnote">Also available on request: science communication and dissemination work packages for Horizon Europe proposals — see <a href="https://thesciencetalk.com" target="_blank" rel="noopener">The Science Talk</a> for that service.</p>
     </div>
   </section>
 
@@ -267,6 +254,18 @@
       </div>
     </div>
   </section>
+
+  <!-- Testimonials -->
+  {{ partial "testimonials.html" (dict
+      "Site" .Site
+      "featuredOnly" true
+      "limit" 6
+      "heading" "What people say"
+      "subheading" "A selection from researchers, professors, and institutions I've worked with. See the full set on the testimonials page."
+  ) }}
+  <div class="about-container" style="text-align:center; margin: -1rem auto 2.5rem;">
+    <a href="/testimonials/" class="about-service-link">Read all testimonials →</a>
+  </div>
 
   <!-- CTA -->
   <section class="about-cta-section">
@@ -441,7 +440,6 @@
   color: #333;
   line-height: 1.5;
 }
-.about-cred-icon { font-size: 1rem; flex-shrink: 0; margin-top: .05rem; }
 .about-cred-list em { font-size: .82rem; color: #888; font-style: normal; }
 
 /* ─── Services ─────────────────────────────────────────── */
@@ -451,10 +449,18 @@
 }
 .about-services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: .5rem;
 }
+.about-services-footnote {
+  font-size: .85rem;
+  color: #888;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.about-services-footnote a { color: #2A6048; font-weight: 600; text-decoration: none; }
+.about-services-footnote a:hover { text-decoration: underline; }
 .about-service-card {
   background: #F8F4ED;
   border-radius: 10px;
@@ -463,7 +469,6 @@
   transition: border-color .2s;
 }
 .about-service-card:hover { border-top-color: #2A6048; }
-.about-service-icon { font-size: 1.75rem; margin-bottom: 1rem; }
 .about-service-card h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: .95rem;
