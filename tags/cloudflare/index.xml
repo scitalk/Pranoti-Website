@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloudflare on Pranoti Kshirsagar</title><link>https://pranoti.thesciencetalk.com/tags/cloudflare/</link><description>Recent content in Cloudflare on Pranoti Kshirsagar</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Tue, 21 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://pranoti.thesciencetalk.com/tags/cloudflare/index.xml" rel="self" type="application/rss+xml"/><item><title>GitHub Pages SSL Certificate Stuck? How to Force a Fix</title><link>https://pranoti.thesciencetalk.com/ai-guides/github-pages-ssl-certificate-stuck-fix/</link><pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate><guid>https://pranoti.thesciencetalk.com/ai-guides/github-pages-ssl-certificate-stuck-fix/</guid><description>&lt;p>A GitHub Pages custom domain&amp;rsquo;s SSL certificate can expire and get stuck in a retry loop that GitHub&amp;rsquo;s own documentation says may take &lt;strong>up to 24 hours&lt;/strong> to resolve — even when your DNS, CNAME, and CAA records are all correctly configured. This guide covers the exact fix for that stuck state, which resolves it in minutes rather than hours.&lt;/p>
+&lt;h2 id="what-you-need-before-starting">What you need before starting&lt;/h2>
+&lt;ul>
+&lt;li>A GitHub Pages site with a custom domain configured&lt;/li>
+&lt;li>Access to your DNS provider&amp;rsquo;s dashboard (this guide uses Cloudflare, but the principle applies to any provider)&lt;/li>
+&lt;li>Repository admin access to &lt;strong>Settings → Pages&lt;/strong>&lt;/li>
+&lt;li>&lt;code>dig&lt;/code> and &lt;code>curl&lt;/code> available in a terminal, for verification&lt;/li>
+&lt;/ul>
+&lt;h2 id="confirm-the-ssl-certificate-is-actually-stuck-not-dns">Confirm the SSL certificate is actually stuck, not DNS&lt;/h2>
+&lt;p>Before touching any settings, confirm the site is failing on an expired certificate rather than a DNS problem:&lt;/p></description></item></channel></rss>
