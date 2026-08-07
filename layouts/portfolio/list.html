@@ -17,6 +17,7 @@
     {{ $n := index $counts $cat | default 0 }}
     {{ $counts = merge $counts (dict $cat (add $n 1)) }}
   {{ end }}
+  {{ $newsletterCount := len (where .Site.RegularPages "Section" "newsletter-archive") }}
 
   <div class="pf-tabs-wrap">
     <div class="container">
@@ -30,6 +31,7 @@
         <button class="pf-tab" data-filter="events" aria-pressed="false">Events ({{ index $counts "events" | default 0 }})</button>
         <button class="pf-tab" data-filter="reports" aria-pressed="false">Engagement Reports ({{ index $counts "reports" | default 0 }})</button>
         <button class="pf-tab" data-filter="ai-automation-integration" aria-pressed="false">AI Integration &amp; Automation ({{ index $counts "ai-automation-integration" | default 0 }})</button>
+        <button class="pf-tab" data-filter="newsletter" aria-pressed="false">Newsletter ({{ $newsletterCount }})</button>
       </div>
     </div>
   </div>
@@ -40,12 +42,12 @@
       {{ if eq .Section "portfolio" }}
       {{ $cat := .Params.category | default "other" }}
       <article class="pf-card" data-category="{{ $cat }}">
-        <a href="{{ .Permalink }}" class="pf-card-link">
+        <a href="{{ .Params.external_url | default .Permalink }}" class="pf-card-link">
           {{ if and (not (in (slice "podcast" "reports") $cat)) .Params.thumbnail }}
           <div class="pf-card-img"><img src="{{ .Params.thumbnail }}" alt="{{ .Title }}" loading="lazy"></div>
           {{ else }}
           <div class="pf-card-img pf-card-placeholder pf-cat-{{ $cat }}">
-            {{ if or (eq $cat "video") (eq $cat "podcast") (eq $cat "scicommai") (eq $cat "events") (eq $cat "reports") }}<span class="pf-placeholder-title">{{ .Title }}</span>{{ else }}<span>{{ .Params.display_category | default ($cat | title) }}</span>{{ end }}
+            {{ if or (eq $cat "video") (eq $cat "podcast") (eq $cat "scicommai") (eq $cat "events") (eq $cat "reports") (eq $cat "newsletter") }}<span class="pf-placeholder-title">{{ .Title }}</span>{{ else }}<span>{{ .Params.display_category | default ($cat | title) }}</span>{{ end }}
           </div>
           {{ end }}
           <div class="pf-card-body">
@@ -53,7 +55,7 @@
               <span class="pf-cat-tag pf-cat-{{ $cat }}">{{ .Params.display_category | default ($cat | title) }}</span>
               <time>{{ .Date.Format "02.01.2006" }}</time>
             </div>
-            {{ if or (eq $cat "video") (eq $cat "podcast") (eq $cat "scicommai") (eq $cat "events") (eq $cat "reports") }}
+            {{ if or (eq $cat "video") (eq $cat "podcast") (eq $cat "scicommai") (eq $cat "events") (eq $cat "reports") (eq $cat "newsletter") }}
             {{ with .Params.tags }}<div class="pf-keywords">{{ range . }}<span class="pf-keyword pf-keyword-{{ $cat }}">{{ . }}</span>{{ end }}</div>{{ end }}
             {{ else }}
             <h2>{{ .Title }}</h2>
@@ -112,6 +114,10 @@
 .pf-cat-reports{background:#2e6b5e;color:#fff}
 .pf-cat-ai-automation-integration{background:#1A3828;color:#fff}
 .pf-keyword-ai-automation-integration{background:rgba(26,56,40,.1);color:#1A3828}
+.pf-cat-newsletter{background:#fff;color:#ff5757;border:1px solid #ff5757}
+.pf-keyword-newsletter{background:rgba(255,87,87,.1);color:#e04545}
+.pf-card-placeholder.pf-cat-newsletter{background:#fff;color:#1c1c1c;border:1px solid #ececec}
+.pf-card-placeholder.pf-cat-newsletter .pf-placeholder-title{color:#1c1c1c}
 .pf-cat-tag{font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:3px}
 .pf-card-body{padding:1.5rem}
 .pf-card-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}

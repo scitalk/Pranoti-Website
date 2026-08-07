@@ -1,47 +1,51 @@
 {{ define "main" }}
 <article class="container newsletter-single">
     <header class="page-header">
+        <p class="newsletter-seq">{{ with .Params.sequence }}#{{ . }}{{ end }}</p>
         <h1>{{ .Title }}</h1>
         <p class="newsletter-meta">{{ .Date.Format "2 January 2006" }}</p>
-        {{ with .Params.preheader }}<p class="description">{{ . }}</p>{{ end }}
     </header>
-
-    <iframe class="newsletter-frame"
-            src="/newsletter-archive/{{ .File.BaseFileName }}.html"
-            title="{{ .Title }}"
-            loading="lazy"
-            sandbox="allow-same-origin"
-            scrolling="no"></iframe>
+    <div class="content">
+        {{ .Content }}
+    </div>
 </article>
 
 <style>
 .newsletter-single .page-header { padding: 5rem 0 1.5rem; text-align: center; }
+.newsletter-seq {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: #ff5757;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
 .newsletter-single .page-header h1 {
+    font-family: 'Playfair Display', serif;
     font-size: clamp(1.75rem, 3.2vw, 2.5rem);
     color: #1c1c1c;
     margin-bottom: 0.5rem;
 }
-.newsletter-meta { color: #6f6f6f; font-size: 0.95rem; margin-bottom: 0.5rem; }
-.newsletter-single .description { color: #6f6f6f; max-width: 700px; margin: 0 auto; }
-.newsletter-frame {
-    display: block;
-    width: 100%;
+.newsletter-meta { color: #6f6f6f; font-size: 0.95rem; }
+.newsletter-single .content {
     max-width: 700px;
     margin: 0 auto 4rem;
-    border: 1px solid #e5e5e5;
+    padding: 3rem 3rem;
+    line-height: 1.7;
+    background: #ffffff;
+    color: #1c1c1c;
+    border: 1px solid #ececec;
     border-radius: 8px;
 }
+.newsletter-single .content img { max-width: 100%; height: auto; border-radius: 4px; }
+.newsletter-single .content a { color: #ff5757; text-decoration: underline; text-underline-offset: 2px; }
+.newsletter-single .content a:hover { color: #e04545; }
+.newsletter-single .content h1,
+.newsletter-single .content h2,
+.newsletter-single .content h3,
+.newsletter-single .content h4 { color: #1c1c1c; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+.newsletter-single .content p { margin-bottom: 1.1rem; }
+.newsletter-single .content ul,
+.newsletter-single .content ol { margin: 0 0 1.1rem 1.4rem; }
 </style>
-
-<script>
-(function () {
-    var frame = document.querySelector('.newsletter-frame');
-    if (!frame) return;
-    window.addEventListener('message', function (e) {
-        if (e.source === frame.contentWindow && e.data && e.data.h) {
-            frame.style.height = e.data.h + 'px';
-        }
-    });
-})();
-</script>
 {{ end }}
