@@ -9,6 +9,7 @@ author: "Pranoti Kshirsagar"
 reading_time: "4 min"
 tags: ["Claude Code", "data backup", "macOS automation", "AI workflow hygiene", "digital sovereignty"]
 category: "perspectives"
+pillar: "AI Adoption"
 sidebar_links:
   - title: "Build a Second Brain from Your Claude Sessions: A Three-Layer Knowledge System"
     url: "/ai-guides/claude-second-brain-knowledge-system/"
