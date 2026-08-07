@@ -32,6 +32,10 @@ title = 'Pranoti Kshirsagar'
     url = '/portfolio/'
     weight = 3
   [[menu.main]]
+    name = 'Newsletter'
+    url = '/newsletter-archive/'
+    weight = 4
+  [[menu.main]]
     name = 'About'
     url = '/about/'
     weight = 5

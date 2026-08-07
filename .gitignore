@@ -9,3 +9,5 @@ themes/
 static/case-studies/*.pdf
 static/case-studies/*.html
 static/reports/
+tools/.venv/
+tools/__pycache__/
