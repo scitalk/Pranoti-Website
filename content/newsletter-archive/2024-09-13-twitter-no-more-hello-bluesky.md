@@ -1,5 +1,5 @@
 ---
-title: "Twitter no more, hello Bluesky\ud83e\udd8b"
+title: "Twitter no more, hello Bluesky🦋"
 description: "Moving to Bluesky, open & read to know why."
 date: 2024-09-13T18:42:05
 draft: false

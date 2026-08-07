@@ -1,6 +1,6 @@
 ---
-title: "Delighted to announce our FIRST sponsor! \ud83e\udd73"
-description: "FIRST sponsor, aaaaa! Welcome Park Systems We are delighted to welcome our FIRST ever sponsor of The Science Talk - Park Systems. More details below! Discover\u2026"
+title: "Delighted to announce our FIRST sponsor! 🥳"
+description: "FIRST sponsor, aaaaa! Welcome Park Systems We are delighted to welcome our FIRST ever sponsor of The Science Talk - Park Systems. More details below! Discover…"
 date: 2023-01-30T21:47:03
 draft: false
 sequence: 8

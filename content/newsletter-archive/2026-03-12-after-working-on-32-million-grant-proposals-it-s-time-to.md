@@ -1,5 +1,5 @@
 ---
-title: "After working on \u20ac32 million grant proposals it's time to"
+title: "After working on €32 million grant proposals it's time to"
 description: "formalise my new service. Early access for you!"
 date: 2026-03-12T15:13:17
 draft: false

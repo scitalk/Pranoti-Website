@@ -1,6 +1,6 @@
 ---
 title: "We have been busy, how are you?"
-description: "Shelium Anniversary celebration! Our partner, Shelium, was busy playing (read directing, recording, editing & releasing) chemical whack-a-mole. Bisphenol A\u2026"
+description: "Shelium Anniversary celebration! Our partner, Shelium, was busy playing (read directing, recording, editing & releasing) chemical whack-a-mole. Bisphenol A…"
 date: 2023-03-07T05:30:05
 draft: false
 sequence: 14

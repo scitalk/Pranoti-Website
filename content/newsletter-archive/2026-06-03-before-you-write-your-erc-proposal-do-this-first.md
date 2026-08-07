@@ -1,12 +1,12 @@
 ---
 title: "Before you write your ERC proposal, do this first"
-description: "Every edge counts \u2014 including this one. Hello hellooo, The ERC Advanced Grant 2026 is now open! ERC Advanced Grant 2026 Call identifier: ERC-2026-AdGFunding:\u2026"
+description: "Every edge counts — including this one. Hello hellooo, The ERC Advanced Grant 2026 is now open! ERC Advanced Grant 2026 Call identifier: ERC-2026-AdGFunding:…"
 date: 2026-06-03T09:10:31
 draft: false
 sequence: 67
 campaign_id: "189239226678642042"
 campaign_name: "General/ERC-Advanced-Open"
-preheader: "Every edge counts \u2014 including this one."
+preheader: "Every edge counts — including this one."
 sent_count: 232
 ---
 Every edge counts — including this one.

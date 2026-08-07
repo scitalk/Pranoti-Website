@@ -1,6 +1,6 @@
 ---
 title: "\"When should I loop you in?\""
-description: "A special welcome to new joiners of this newsletter. \ud83e\udd17 My name is Pranoti and I am the founder of The Science Talk. My mission is to empower and enable\u2026"
+description: "A special welcome to new joiners of this newsletter. 🤗 My name is Pranoti and I am the founder of The Science Talk. My mission is to empower and enable…"
 date: 2026-03-24T10:10:01
 draft: false
 sequence: 59

@@ -162,6 +162,15 @@ def to_markdown(raw):
     return re.sub(r"\n{3,}", "\n\n", md).strip()
 
 
+def yaml_str(s):
+    """Quoted YAML string with raw UTF-8 emoji, not \\uXXXX surrogate-pair
+    escapes. json.dumps() defaults to ensure_ascii=True, which encodes
+    astral characters (emoji) as UTF-16 surrogate pairs — valid JSON, but
+    each half is not a real Unicode codepoint, so Go's YAML parser (what
+    Hugo's production build uses) rejects it outright."""
+    return json.dumps(s, ensure_ascii=False)
+
+
 def slugify(s, fallback):
     s = re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")[:70]
     return s or fallback
@@ -223,14 +232,14 @@ def main():
         front = "\n".join(
             [
                 "---",
-                f"title: {json.dumps(subject)}",
-                f"description: {json.dumps(description)}",
+                f"title: {yaml_str(subject)}",
+                f"description: {yaml_str(description)}",
                 f"date: {sent}",
                 "draft: true",
                 f"sequence: {seq}",
                 f'campaign_id: "{c["id"]}"',
-                f"campaign_name: {json.dumps(c.get('name') or '')}",
-                f"preheader: {json.dumps(c.get('_preheader') or '')}",
+                f"campaign_name: {yaml_str(c.get('name') or '')}",
+                f"preheader: {yaml_str(c.get('_preheader') or '')}",
                 f"sent_count: {(c.get('stats') or {}).get('sent', 0)}",
                 "---",
                 "",

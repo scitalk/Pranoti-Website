@@ -1,6 +1,6 @@
 ---
-title: "\ud83d\ude80 New Episode: High Precision 3D Sculpting at the Nanoscale with Elisa Riedo\ud83c\udf99\ufe0f"
-description: "Using NanoFrazer! Hi there, We\u2019re thrilled to bring you the latest episode of Under the Microscope! This week, Dr. Pranoti Kshirsagar sits down with the\u2026"
+title: "🚀 New Episode: High Precision 3D Sculpting at the Nanoscale with Elisa Riedo🎙️"
+description: "Using NanoFrazer! Hi there, We’re thrilled to bring you the latest episode of Under the Microscope! This week, Dr. Pranoti Kshirsagar sits down with the…"
 date: 2024-11-07T06:01:26
 draft: false
 sequence: 28

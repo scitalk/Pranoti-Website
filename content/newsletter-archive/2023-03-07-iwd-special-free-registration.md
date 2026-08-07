@@ -1,6 +1,6 @@
 ---
 title: "IWD special - FREE registration"
-description: "Celebrate International Women's Day FREE registration for all Women Come celebrate International Women's day 2023 with The Science Talk. This is an open\u2026"
+description: "Celebrate International Women's Day FREE registration for all Women Come celebrate International Women's day 2023 with The Science Talk. This is an open…"
 date: 2023-03-07T11:45:07
 draft: false
 sequence: 15

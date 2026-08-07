@@ -1,6 +1,6 @@
 ---
-title: "Christmas giveaway - here comes the first clue!\ud83c\udf84"
-description: "Let's play! Hello hello, First of all, thank you very much for your support. Be it subscribing to our Youtube channel, leaving a review on our podcasts,\u2026"
+title: "Christmas giveaway - here comes the first clue!🎄"
+description: "Let's play! Hello hello, First of all, thank you very much for your support. Be it subscribing to our Youtube channel, leaving a review on our podcasts,…"
 date: 2022-11-30T22:10:03
 draft: false
 sequence: 3

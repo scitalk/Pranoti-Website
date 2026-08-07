@@ -1,6 +1,6 @@
 ---
 title: "MALE Nobel laureate claimed ANTIMALE DISCRIMINATION"
-description: "Last week a Nobel laureate claimed ANTIMALE DISCRIMINATION at the Lindau Nobel Laureate Meetings Yep, Antimale Discrimination. I tried my best to stay out of\u2026"
+description: "Last week a Nobel laureate claimed ANTIMALE DISCRIMINATION at the Lindau Nobel Laureate Meetings Yep, Antimale Discrimination. I tried my best to stay out of…"
 date: 2023-07-06T21:32:07
 draft: false
 sequence: 19

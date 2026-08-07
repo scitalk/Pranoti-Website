@@ -1,6 +1,6 @@
 ---
 title: "How often should you post on LinkedIn?"
-description: "Not as often as you think \u2757\ufe0fIf you're a human who opened this email, please reply to this email with \"Got it\".\u2757\ufe0fWhy? Because your email bots have been hiding\u2026"
+description: "Not as often as you think ❗️If you're a human who opened this email, please reply to this email with \"Got it\".❗️Why? Because your email bots have been hiding…"
 date: 2026-02-04T09:53:02
 draft: false
 sequence: 53

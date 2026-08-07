@@ -1,12 +1,12 @@
 ---
-title: "\ud83c\udf99\ufe0fInside Scoop on Quantum Dots\ud83e\udd2b"
-description: "All the way from Ireland. Do NOT tell anyone!\ud83e\udd2b"
+title: "🎙️Inside Scoop on Quantum Dots🤫"
+description: "All the way from Ireland. Do NOT tell anyone!🤫"
 date: 2024-10-24T11:12:16
 draft: false
 sequence: 26
 campaign_id: "136070263731127926"
 campaign_name: "225_Emanuele/QuanTour - Announcement"
-preheader: "All the way from Ireland. Do NOT tell anyone!\ud83e\udd2b"
+preheader: "All the way from Ireland. Do NOT tell anyone!🤫"
 sent_count: 74
 ---
 All the way from Ireland. Do NOT tell anyone!🤫

@@ -1,6 +1,6 @@
 ---
 title: "Ace your LinkedIn training, SAVE your spot!"
-description: "We are migrating your tweets to Bluesky and need your help! Ace Your LinkedIn - Training \ud83d\udd2c Calling All Scientists and Researchers! \ud83d\udcc6 Dates to Mark: Day 1\u2026"
+description: "We are migrating your tweets to Bluesky and need your help! Ace Your LinkedIn - Training 🔬 Calling All Scientists and Researchers! 📆 Dates to Mark: Day 1…"
 date: 2024-03-20T13:37:11
 draft: false
 sequence: 21

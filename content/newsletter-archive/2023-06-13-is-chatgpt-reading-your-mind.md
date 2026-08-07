@@ -1,6 +1,6 @@
 ---
-title: "Is ChatGPT Reading Your Mind?\ud83d\ude31\ud83d\udd2c\ud83e\udd14"
-description: "I finally gave into ChatGPT and here is the outcome Hello you, I couldn't resist the AI buzz, so I finally checked out ChatGPT \ud83d\udca5\u2728 In my quest for knowledge, I\u2026"
+title: "Is ChatGPT Reading Your Mind?😱🔬🤔"
+description: "I finally gave into ChatGPT and here is the outcome Hello you, I couldn't resist the AI buzz, so I finally checked out ChatGPT 💥✨ In my quest for knowledge, I…"
 date: 2023-06-13T19:46:06
 draft: false
 sequence: 18

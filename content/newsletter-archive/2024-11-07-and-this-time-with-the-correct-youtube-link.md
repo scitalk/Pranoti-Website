@@ -1,12 +1,12 @@
 ---
-title: "And this time with the correct YouTube link\ud83d\ude00"
-description: "\ud83d\ude80 New Episode: High Precision 3D Sculpting at the Nanoscale with Elisa Riedo\ud83c\udf99\ufe0f"
+title: "And this time with the correct YouTube link😀"
+description: "🚀 New Episode: High Precision 3D Sculpting at the Nanoscale with Elisa Riedo🎙️"
 date: 2024-11-07T09:37:49
 draft: false
 sequence: 29
 campaign_id: "137333978100139028"
 campaign_name: "New YouTube link_226_Elisa/HIN - Announcement"
-preheader: "\ud83d\ude80 New Episode: High Precision 3D Sculpting at the Nanoscale with Elisa Riedo\ud83c\udf99\ufe0f"
+preheader: "🚀 New Episode: High Precision 3D Sculpting at the Nanoscale with Elisa Riedo🎙️"
 sent_count: 75
 ---
 🚀 New Episode: High Precision 3D Sculpting at the Nanoscale with Elisa Riedo🎙️

@@ -1,6 +1,6 @@
 ---
 title: "Missed the live? No worries, watch the recording!"
-description: "We recorded the live for you! In the first ever live, I shared how the website editing is done. Added three curator pages to The Science Talk website. A lot\u2026"
+description: "We recorded the live for you! In the first ever live, I shared how the website editing is done. Added three curator pages to The Science Talk website. A lot…"
 date: 2022-11-17T09:39:06
 draft: false
 sequence: 2

@@ -1,6 +1,6 @@
 ---
 title: "New EU AI Act disclosures start Aug 2, 2026"
-description: "Are you ready for Article 50? Hello helllooo, The EU AI Act\u2019s transparency obligations under Article 50 apply from 2 August 2026 \u2014 and if you publish\u2026"
+description: "Are you ready for Article 50? Hello helllooo, The EU AI Act’s transparency obligations under Article 50 apply from 2 August 2026 — and if you publish…"
 date: 2026-05-19T06:21:00
 draft: false
 sequence: 65

@@ -1,6 +1,6 @@
 ---
-title: "What I told scientists at DTU Denmark\ud83c\udde9\ud83c\uddf0"
-description: "Think it, write it, say it out loud How to make your elevator pitch \"stick\" Your elevator pitch = Your personal branding statement. These are one or two\u2026"
+title: "What I told scientists at DTU Denmark🇩🇰"
+description: "Think it, write it, say it out loud How to make your elevator pitch \"stick\" Your elevator pitch = Your personal branding statement. These are one or two…"
 date: 2026-01-28T08:19:01
 draft: false
 sequence: 51

@@ -1,6 +1,6 @@
 ---
 title: "[Last Chance] 42% off on Navigate Twitter as a Scientist"
-description: "March 22, 2 pm CET Navigate Twitter as a Scientist Code expires in 24 hours List42 SciArt of the month Virtual section through the eye of a developing\u2026"
+description: "March 22, 2 pm CET Navigate Twitter as a Scientist Code expires in 24 hours List42 SciArt of the month Virtual section through the eye of a developing…"
 date: 2023-01-31T22:47:04
 draft: false
 sequence: 9

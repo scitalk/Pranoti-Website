@@ -1,12 +1,12 @@
 ---
-title: "Why is AI adoption so slow? \ud83d\udc0c"
-description: "Turns out it starts with a \u20ac264 billion infrastructure situation."
+title: "Why is AI adoption so slow? 🐌"
+description: "Turns out it starts with a €264 billion infrastructure situation."
 date: 2026-06-19T09:46:03
 draft: false
 sequence: 69
 campaign_id: "190614228990690462"
 campaign_name: "General/264B dependency"
-preheader: "Turns out it starts with a \u20ac264 billion infrastructure situation."
+preheader: "Turns out it starts with a €264 billion infrastructure situation."
 sent_count: 244
 ---
 Turns out it starts with a €264 billion infrastructure situation.

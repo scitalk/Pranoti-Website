@@ -1,6 +1,6 @@
 ---
 title: "Sometimes finding info feels like finding a needle in the haystack"
-description: "until NotebookLM enters the chat Helloo! Sometimes finding useful information in dense pdfs feels like looking for a needle in the haystack. This happens with\u2026"
+description: "until NotebookLM enters the chat Helloo! Sometimes finding useful information in dense pdfs feels like looking for a needle in the haystack. This happens with…"
 date: 2026-01-21T15:53:00
 draft: false
 sequence: 49

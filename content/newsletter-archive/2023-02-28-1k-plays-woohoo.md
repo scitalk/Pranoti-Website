@@ -1,6 +1,6 @@
 ---
 title: "1K+ plays - woohoo!"
-description: "Under the Microscope podcast crossed 1k plays Wanted to share the good news first with you all. Thank you for your continued love and support! SciArt of the\u2026"
+description: "Under the Microscope podcast crossed 1k plays Wanted to share the good news first with you all. Thank you for your continued love and support! SciArt of the…"
 date: 2023-02-28T21:45:05
 draft: false
 sequence: 13

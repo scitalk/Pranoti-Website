@@ -1,6 +1,6 @@
 ---
 title: "42% off on training for scientists"
-description: "March 22, 2 pm CET Navigate Twitter as a Scientist Feel free to share your coupon code with literally ANYONE you want! Remember to input the code in the last\u2026"
+description: "March 22, 2 pm CET Navigate Twitter as a Scientist Feel free to share your coupon code with literally ANYONE you want! Remember to input the code in the last…"
 date: 2023-01-25T17:35:04
 draft: false
 sequence: 7

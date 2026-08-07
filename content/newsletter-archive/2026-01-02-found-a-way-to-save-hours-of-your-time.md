@@ -1,6 +1,6 @@
 ---
 title: "Found a way to save hours of your time"
-description: "less admin, more creativity. Happy new year\ud83e\udd73 I hope your transition from 2025 into 2026 was smooth\ud83e\udde1 In Germany we say \"have a good transition\" instead of happy\u2026"
+description: "less admin, more creativity. Happy new year🥳 I hope your transition from 2025 into 2026 was smooth🧡 In Germany we say \"have a good transition\" instead of happy…"
 date: 2026-01-02T05:46:01
 draft: false
 sequence: 47

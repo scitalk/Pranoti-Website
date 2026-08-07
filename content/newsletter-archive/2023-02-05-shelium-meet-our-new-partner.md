@@ -1,6 +1,6 @@
 ---
-title: "Shelium - Meet our new partner \ud83e\udd73"
-description: "Welcome our newest partner - Shelium HAPPY SUNDAY! Shelium is a brainchild of Susi Seibt (who also featured on Under the Microscope & RealScientists Nano). In\u2026"
+title: "Shelium - Meet our new partner 🥳"
+description: "Welcome our newest partner - Shelium HAPPY SUNDAY! Shelium is a brainchild of Susi Seibt (who also featured on Under the Microscope & RealScientists Nano). In…"
 date: 2023-02-05T18:58:03
 draft: false
 sequence: 10

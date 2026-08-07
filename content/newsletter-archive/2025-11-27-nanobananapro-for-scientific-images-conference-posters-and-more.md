@@ -1,6 +1,6 @@
 ---
 title: "NanoBananaPro for scientific images, conference posters and more"
-description: "This one is worth your time! Hello hello, Last week, Google launched Nano Banana Pro claiming \"Turn your visions into studio-quality designs with unprecedented\u2026"
+description: "This one is worth your time! Hello hello, Last week, Google launched Nano Banana Pro claiming \"Turn your visions into studio-quality designs with unprecedented…"
 date: 2025-11-27T05:46:00
 draft: false
 sequence: 43

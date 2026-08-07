@@ -1,6 +1,6 @@
 ---
 title: "EU AI Act Article 4 - Why should you care?"
-description: "legal obligation from Aug 3, 2026. Hellooo! Today I want to share something really important with you. Since February 2025, AI literacy in European research\u2026"
+description: "legal obligation from Aug 3, 2026. Hellooo! Today I want to share something really important with you. Since February 2025, AI literacy in European research…"
 date: 2026-04-16T09:08:19
 draft: false
 sequence: 62

@@ -1,6 +1,6 @@
 ---
-title: "Emerging Quantum Technology?\ud83e\udd14"
-description: "Read on We\u2019re thrilled to bring you the latest episode of Under the Microscope! This week, Dr. Pranoti Kshirsagar sits down with the incredible Brian Gerardot,\u2026"
+title: "Emerging Quantum Technology?🤔"
+description: "Read on We’re thrilled to bring you the latest episode of Under the Microscope! This week, Dr. Pranoti Kshirsagar sits down with the incredible Brian Gerardot,…"
 date: 2024-11-21T07:45:57
 draft: false
 sequence: 31

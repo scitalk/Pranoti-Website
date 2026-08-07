@@ -1,5 +1,5 @@
 ---
-title: "What I told researchers at NTU Singapore \ud83c\uddf8\ud83c\uddec"
+title: "What I told researchers at NTU Singapore 🇸🇬"
 description: "The KNOW-BUILD-GROW approach that helps scientists amplify their impact beyond the lab!"
 date: 2025-08-17T05:31:50
 draft: false
