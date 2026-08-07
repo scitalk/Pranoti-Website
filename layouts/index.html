@@ -55,6 +55,8 @@
           {{ if in $present . }}{{ $orderedPillars = $orderedPillars | append . }}{{ end }}
         {{ end }}
 
+        {{ $products := (where .Site.RegularPages "Section" "products").ByDate.Reverse }}
+
         {{ range $orderedPillars }}
         {{ $pillar := . }}
         {{ $slug := $pillar | urlize }}
@@ -86,6 +88,33 @@
           </div>
         </div>
         {{ end }}
+
+        {{ if and (eq $pillar "EU AI Act & Compliance") $products }}
+        <div class="home-topic-row">
+          <div class="home-topic-row-header">
+            <h3 class="pillar-row-title pillar-row-title--products">Digital Guides</h3>
+            <div class="home-topic-row-nav">
+              <button class="home-carousel-btn" data-dir="-1" aria-label="Previous">‹</button>
+              <button class="home-carousel-btn" data-dir="1" aria-label="Next">›</button>
+            </div>
+          </div>
+          <div class="home-topic-carousel">
+            <div class="home-topic-track">
+              {{ range $products }}
+              <article class="home-topic-card">
+                <a href="{{ .Params.url | default .Permalink }}" class="home-topic-link">
+                  <div class="home-topic-meta">
+                    <span class="home-topic-format product">Digital Guide</span>
+                  </div>
+                  <h3>{{ .Title }}</h3>
+                  {{ with .Params.description }}<p class="home-topic-desc">{{ . }}</p>{{ end }}
+                </a>
+              </article>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        {{ end }}
         {{ end }}
 
         <div class="home-topic-links">
@@ -107,33 +136,6 @@
           <a href="https://thesciencetalk.com/contact-us/" class="home-work-link primary">Book a session →</a>
         </div>
       </section>
-
-      <!-- Products -->
-      {{ $products := where .Site.RegularPages "Section" "products" }}
-      {{ $products = $products.ByDate.Reverse }}
-      {{ if $products }}
-      <section class="home-section">
-        <div class="home-section-header">
-          <h2>Digital Guides</h2>
-          <span class="home-section-count">Instant-download resources</span>
-        </div>
-        <div class="home-grid home-products-grid">
-          {{ range $products }}
-          <article class="home-card">
-            <a href="{{ .Params.url | default .Permalink }}" class="home-card-link">
-              <div class="home-card-body">
-                <div class="home-card-meta">
-                  <span class="home-card-tag product">Digital Guide</span>
-                </div>
-                <h3>{{ .Title }}</h3>
-                {{ with .Params.description }}<p class="home-card-desc">{{ . }}</p>{{ end }}
-              </div>
-            </a>
-          </article>
-          {{ end }}
-        </div>
-      </section>
-      {{ end }}
 
       <div class="home-work-strip">
         <div class="home-work-text">
@@ -276,6 +278,8 @@
   border-radius: 3px;
 }
 .home-topic-format.perspective { background: #2A6048; }
+.home-topic-format.product { background: #B08D57; }
+.pillar-row-title--products { background: #F1EAE0; color: #B08D57; }
 .home-topic-meta time { font-size: .72rem; color: #999; }
 .home-topic-card h3 {
   font-family: 'Montserrat', sans-serif;
