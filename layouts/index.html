@@ -6,7 +6,6 @@
   <header class="home-hero">
     <div class="container narrow">
       <span class="home-eyebrow">Pranoti Kshirsagar</span>
-      <p class="home-philosophy">"I use AI to cut cognitive load — so people can focus on the work only they can do."</p>
 
       <div class="home-paths">
         <div class="home-path-card">
@@ -56,31 +55,38 @@
           {{ if in $present . }}{{ $orderedPillars = $orderedPillars | append . }}{{ end }}
         {{ end }}
 
-        <div class="home-filter-bar">
-          <button class="home-filter-chip is-active" data-filter="all">All</button>
-          {{ range $orderedPillars }}
-          {{ $slug := . | urlize }}
-          <button class="home-filter-chip pillar-chip--{{ $slug }}" data-filter="{{ . }}">{{ . }} <span class="home-filter-count">{{ len (where $all "Params.pillar" .) }}</span></button>
-          {{ end }}
+        {{ range $orderedPillars }}
+        {{ $pillar := . }}
+        {{ $slug := $pillar | urlize }}
+        {{ $posts := where $all "Params.pillar" $pillar }}
+        {{ if $posts }}
+        <div class="home-topic-row">
+          <div class="home-topic-row-header">
+            <h3 class="pillar-row-title pillar-tag--{{ $slug }}">{{ $pillar }}</h3>
+            <div class="home-topic-row-nav">
+              <button class="home-carousel-btn" data-dir="-1" aria-label="Previous">‹</button>
+              <button class="home-carousel-btn" data-dir="1" aria-label="Next">›</button>
+            </div>
+          </div>
+          <div class="home-topic-carousel">
+            <div class="home-topic-track">
+              {{ range $posts }}
+              <article class="home-topic-card pillar-card--{{ $slug }}">
+                <a href="{{ .Permalink }}" class="home-topic-link">
+                  <div class="home-topic-meta">
+                    <span class="home-topic-format {{ if eq .Section "perspectives" }}perspective{{ end }}">{{ if eq .Section "perspectives" }}Perspective{{ else }}Guide{{ end }}</span>
+                    <time>{{ .Date.Format "02 Jan 2006" }}</time>
+                  </div>
+                  <h3>{{ .Title }}</h3>
+                  {{ with .Params.description }}<p class="home-topic-desc">{{ . }}</p>{{ end }}
+                </a>
+              </article>
+              {{ end }}
+            </div>
+          </div>
         </div>
-
-        <div class="home-topic-grid">
-          {{ range $i, $p := $all }}
-          {{ $slug := $p.Params.pillar | urlize }}
-          <article class="home-topic-card pillar-card--{{ $slug }}" data-pillar="{{ $p.Params.pillar }}" data-recent="{{ if lt $i 12 }}true{{ else }}false{{ end }}">
-            <a href="{{ $p.Permalink }}" class="home-topic-link">
-              <div class="home-topic-meta">
-                <span class="home-topic-format {{ if eq $p.Section "perspectives" }}perspective{{ end }}">{{ if eq $p.Section "perspectives" }}Perspective{{ else }}Guide{{ end }}</span>
-                <time>{{ $p.Date.Format "02 Jan 2006" }}</time>
-              </div>
-              <h3>{{ $p.Title }}</h3>
-              {{ with $p.Params.description }}<p class="home-topic-desc">{{ . }}</p>{{ end }}
-              {{ with $p.Params.pillar }}<span class="home-topic-pillar pillar-tag--{{ $slug }}">{{ . }}</span>{{ end }}
-            </a>
-          </article>
-          {{ end }}
-        </div>
-        <p class="home-topic-empty" hidden>No posts in this topic yet.</p>
+        {{ end }}
+        {{ end }}
 
         <div class="home-topic-links">
           <a href="/ai-guides/">All AI Guides →</a>
@@ -146,22 +152,20 @@
 
 <script>
 (function () {
-  var chips = document.querySelectorAll('.home-filter-chip');
-  var cards = document.querySelectorAll('.home-topic-card');
-  var emptyState = document.querySelector('.home-topic-empty');
-  if (!chips.length) return;
-  chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      chips.forEach(function (c) { c.classList.remove('is-active'); });
-      chip.classList.add('is-active');
-      var filter = chip.getAttribute('data-filter');
-      var visible = 0;
-      cards.forEach(function (card) {
-        var show = filter === 'all' ? card.getAttribute('data-recent') === 'true' : card.getAttribute('data-pillar') === filter;
-        card.style.display = show ? '' : 'none';
-        if (show) visible++;
+  document.querySelectorAll('.home-topic-row').forEach(function (row) {
+    var carousel = row.querySelector('.home-topic-carousel');
+    var track = row.querySelector('.home-topic-track');
+    var btns = row.querySelectorAll('.home-carousel-btn');
+    if (!carousel || !track) return;
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = track.querySelector('.home-topic-card');
+        if (!card) return;
+        var cardWidth = card.getBoundingClientRect().width;
+        var gap = parseFloat(getComputedStyle(track).gap) || 0;
+        var dir = parseInt(btn.getAttribute('data-dir'), 10);
+        carousel.scrollBy({ left: dir * (cardWidth + gap) * 3, behavior: 'smooth' });
       });
-      if (emptyState) emptyState.hidden = visible !== 0;
     });
   });
 })();
@@ -240,30 +244,23 @@
 }
 .home-section-count { font-size: .78rem; color: #999; font-weight: 500; }
 
-/* Topic filter chips */
-.home-filter-bar { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
-.home-filter-chip {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .78rem;
-  font-weight: 600;
-  color: #1A3828;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.1);
-  padding: .45rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all .15s;
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
+/* Topic rows (carousel per pillar) */
+.home-topic-row { margin-bottom: 2.25rem; }
+.home-topic-row-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: .9rem; }
+.pillar-row-title { font-family: 'Montserrat', sans-serif; font-size: .95rem; font-weight: 700; margin: 0; padding: .2rem .65rem; border-radius: 4px; display: inline-block; }
+.home-topic-row-nav { display: flex; gap: .4rem; }
+.home-carousel-btn {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1px solid rgba(0,0,0,.15); background: #fff; color: #1A3828;
+  font-size: 1.1rem; line-height: 1; cursor: pointer; transition: all .15s;
+  display: flex; align-items: center; justify-content: center;
 }
-.home-filter-chip:hover { border-color: #2A6048; }
-.home-filter-chip.is-active { background: #1A3828; border-color: #1A3828; color: #fff; }
-.home-filter-count { font-size: .68rem; font-weight: 600; opacity: .6; }
+.home-carousel-btn:hover { background: #1A3828; border-color: #1A3828; color: #fff; }
 
-/* Topic grid */
-.home-topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-.home-topic-card { background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 10px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.home-topic-carousel { overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.home-topic-carousel::-webkit-scrollbar { display: none; }
+.home-topic-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 2.5rem) / 3); gap: 1.25rem; }
+.home-topic-card { scroll-snap-align: start; background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 10px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
 .home-topic-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.08); }
 .home-topic-link { display: block; text-decoration: none; color: var(--ink, #1c1c1c); padding: 1.25rem; }
 .home-topic-meta { display: flex; align-items: center; gap: .5rem; margin-bottom: .75rem; }
@@ -422,14 +419,14 @@
 .home-work-link.primary:hover { background: #1A3828; border-color: #1A3828; }
 
 @media (max-width: 860px) {
-  .home-topic-grid { grid-template-columns: repeat(2, 1fr); }
+  .home-topic-track { grid-auto-columns: calc((100% - 1.25rem) / 2); }
   .home-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 700px) {
   .home-paths { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-  .home-topic-grid { grid-template-columns: 1fr; }
+  .home-topic-track { grid-auto-columns: 85%; }
   .home-grid { grid-template-columns: 1fr; }
   .home-body { padding: 2.5rem 1.25rem 4rem; }
   .container.narrow { padding: 0 1.25rem; }
