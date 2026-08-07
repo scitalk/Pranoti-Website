@@ -1,6 +1,6 @@
 ---
 title: "Last one, see you in 2023!"
-description: "Ending 2022 and how! Hello hello, A LOT happened in 2022. Several milestones and some challenges along the way. The two main milestones are - 1. RealSci\\Nano\u2026"
+description: "Ending 2022 and how! Hello hello, A LOT happened in 2022. Several milestones and some challenges along the way. The two main milestones are - 1. RealSci\\Nano…"
 date: 2022-12-30T08:23:08
 draft: false
 sequence: 6

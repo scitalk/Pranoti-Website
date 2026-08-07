@@ -1,12 +1,12 @@
 ---
 title: "Mix and match AI tools for better results"
-description: "Three attempts, then switch\u2014the rhythm that actually works"
+description: "Three attempts, then switch—the rhythm that actually works"
 date: 2025-10-30T17:20:24
 draft: false
 sequence: 41
 campaign_id: "169702214165595941"
 campaign_name: "General/AI_Mix-&-Match_Oct2025"
-preheader: "Three attempts, then switch\u2014the rhythm that actually works"
+preheader: "Three attempts, then switch—the rhythm that actually works"
 sent_count: 159
 ---
 Three attempts, then switch—the rhythm that actually works

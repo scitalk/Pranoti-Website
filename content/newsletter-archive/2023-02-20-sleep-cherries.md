@@ -1,6 +1,6 @@
 ---
-title: "Sleep & Cherries \ud83d\ude34\ud83c\udf52"
-description: "Happy Sunday! New technology transforms our sleep into data. Sleep scores and hypnograms are telling me every day how good my watch perceived my sleep during\u2026"
+title: "Sleep & Cherries 😴🍒"
+description: "Happy Sunday! New technology transforms our sleep into data. Sleep scores and hypnograms are telling me every day how good my watch perceived my sleep during…"
 date: 2023-02-20T00:00:05
 draft: false
 sequence: 12

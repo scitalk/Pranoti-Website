@@ -1,6 +1,6 @@
 ---
-title: "Christmas giveaway - here comes the second clue!\ud83c\udf84"
-description: "Christmas giveaway - 2nd clue! Hello hello, Holiday season is approaching which means frantically planning/wrapping gifts for your loved ones. We might just be\u2026"
+title: "Christmas giveaway - here comes the second clue!🎄"
+description: "Christmas giveaway - 2nd clue! Hello hello, Holiday season is approaching which means frantically planning/wrapping gifts for your loved ones. We might just be…"
 date: 2022-12-13T12:32:19
 draft: false
 sequence: 4

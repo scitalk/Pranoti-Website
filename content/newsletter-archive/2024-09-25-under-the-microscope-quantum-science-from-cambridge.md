@@ -1,6 +1,6 @@
 ---
-title: "\ud83d\udd2cUnder the Microscope - Quantum Science from Cambridge\ud83c\udfa7"
-description: "New podcast episode, what to expect? New Episode Quantum Ceilidh: Photons & Spin in Sync Autumn is here. It is time to cozy up and listen to your favourite\u2026"
+title: "🔬Under the Microscope - Quantum Science from Cambridge🎧"
+description: "New podcast episode, what to expect? New Episode Quantum Ceilidh: Photons & Spin in Sync Autumn is here. It is time to cozy up and listen to your favourite…"
 date: 2024-09-25T13:15:20
 draft: false
 sequence: 24

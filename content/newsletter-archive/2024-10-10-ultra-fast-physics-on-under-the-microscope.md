@@ -1,5 +1,5 @@
 ---
-title: "Ultra-Fast Physics on Under the Microscope \ud83d\udd2c\ud83c\udfa7"
+title: "Ultra-Fast Physics on Under the Microscope 🔬🎧"
 description: "Attosecond tech, Diversity, DESY & links."
 date: 2024-10-10T08:44:13
 draft: false

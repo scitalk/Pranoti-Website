@@ -1,6 +1,6 @@
 ---
 title: "Your Twitter/X Data - Safe?"
-description: "FREE webinar with how to tips Hey you, We\u2019re thrilled to announce the kickoff of our exclusive webinar series designed to empower scientists and science\u2026"
+description: "FREE webinar with how to tips Hey you, We’re thrilled to announce the kickoff of our exclusive webinar series designed to empower scientists and science…"
 date: 2025-01-27T17:15:54
 draft: false
 sequence: 34

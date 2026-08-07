@@ -1,6 +1,6 @@
 ---
-title: "March update \ud83d\udca0\ud83c\udf0d\ud83d\udcf9\ud83c\udfa4\ud83d\udd2c"
-description: "We have been busy busy busssssyy Two scientists featured on Under the Microscope and curated @RealSci\\Nano - Julio Terra & Jodie Bradby Our partners, Shelium &\u2026"
+title: "March update 💠🌍📹🎤🔬"
+description: "We have been busy busy busssssyy Two scientists featured on Under the Microscope and curated @RealSci\\Nano - Julio Terra & Jodie Bradby Our partners, Shelium &…"
 date: 2023-04-26T20:59:05
 draft: false
 sequence: 17

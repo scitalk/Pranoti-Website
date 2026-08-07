@@ -1,12 +1,12 @@
 ---
 title: "Your AI Proposal Writing Workshop Invite (As Promised!)"
-description: "The live AI proposal workshop I promised you is here \u2192 Register now"
+description: "The live AI proposal workshop I promised you is here → Register now"
 date: 2025-09-21T12:05:48
 draft: false
 sequence: 38
 campaign_id: "166086255395735539"
 campaign_name: "General-Visuals/Workshop_invite"
-preheader: "The live AI proposal workshop I promised you is here \u2192 Register now"
+preheader: "The live AI proposal workshop I promised you is here → Register now"
 sent_count: 146
 ---
 The live AI proposal workshop I promised you is here → Register now

@@ -1,6 +1,6 @@
 ---
 title: "What you need to know about impact in your research proposal"
-description: "+ new training announcement Hellooo! For the past two years I've been actively helping scientists with grants and fundraising. My clients, who are almost\u2026"
+description: "+ new training announcement Hellooo! For the past two years I've been actively helping scientists with grants and fundraising. My clients, who are almost…"
 date: 2026-04-29T12:01:58
 draft: false
 sequence: 63

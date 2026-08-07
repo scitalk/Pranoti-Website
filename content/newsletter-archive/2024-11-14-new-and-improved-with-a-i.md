@@ -1,6 +1,6 @@
 ---
 title: "New and Improved With A.I."
-description: "We're trying something new. Under the Microscope, brought to you by artificial intelligence. Listen Here! I love hosting Under the Microscope because it gives\u2026"
+description: "We're trying something new. Under the Microscope, brought to you by artificial intelligence. Listen Here! I love hosting Under the Microscope because it gives…"
 date: 2024-11-14T15:46:06
 draft: false
 sequence: 30

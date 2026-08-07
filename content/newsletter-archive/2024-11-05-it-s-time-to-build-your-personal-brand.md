@@ -1,6 +1,6 @@
 ---
 title: "It's Time to Build Your Personal Brand"
-description: "It's not as painful as it sounds! \u201cI don\u2019t know where to begin.\u201d I hear this often when I talk to scientists and professors about building their digital\u2026"
+description: "It's not as painful as it sounds! “I don’t know where to begin.” I hear this often when I talk to scientists and professors about building their digital…"
 date: 2024-11-05T07:12:17
 draft: false
 sequence: 27

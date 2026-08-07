@@ -1,6 +1,6 @@
 ---
-title: "Get a grip on your research \ud83d\udc69\u200d\ud83d\udd2c\ud83d\udc69\u200d\ud83d\udd2c\ud83e\udd38"
-description: "Welcome - PhD talk - our brand new partner Are you thinking about doing a PhD, currently a PhD candidate, or early career researcher? The PhD Talk podcast is\u2026"
+title: "Get a grip on your research 👩‍🔬👩‍🔬🤸"
+description: "Welcome - PhD talk - our brand new partner Are you thinking about doing a PhD, currently a PhD candidate, or early career researcher? The PhD Talk podcast is…"
 date: 2023-03-14T20:46:05
 draft: false
 sequence: 16

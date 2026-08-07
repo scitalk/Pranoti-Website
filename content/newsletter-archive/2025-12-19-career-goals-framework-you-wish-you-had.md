@@ -1,6 +1,6 @@
 ---
 title: "Career goals framework you wish you had"
-description: "and now you have it! Hellllooo, It's that time of the year when everyone is reflecting, slowing down, setting goals for next year. Speaking of goals, I want to\u2026"
+description: "and now you have it! Hellllooo, It's that time of the year when everyone is reflecting, slowing down, setting goals for next year. Speaking of goals, I want to…"
 date: 2025-12-19T08:18:52
 draft: false
 sequence: 46

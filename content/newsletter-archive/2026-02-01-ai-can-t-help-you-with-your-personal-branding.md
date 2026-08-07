@@ -1,6 +1,6 @@
 ---
 title: "AI can't help you with your personal branding"
-description: "I can and I will I didn't want to write this email. But that won't be fair to you. I don't like posting on social media. I feel a knot in my stomach. My right\u2026"
+description: "I can and I will I didn't want to write this email. But that won't be fair to you. I don't like posting on social media. I feel a knot in my stomach. My right…"
 date: 2026-02-01T18:11:12
 draft: false
 sequence: 52

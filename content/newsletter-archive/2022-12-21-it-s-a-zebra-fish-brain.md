@@ -1,6 +1,6 @@
 ---
-title: "It's a Zebra fish brain \ud83e\udd93\ud83d\udc1f\ud83e\udde0"
-description: "Blood vessels in Zebra fish brain! Hello hello, Thank you for playing along! Some of you came close and the closest guess was by Prathik Roy via LinkedIn.\u2026"
+title: "It's a Zebra fish brain 🦓🐟🧠"
+description: "Blood vessels in Zebra fish brain! Hello hello, Thank you for playing along! Some of you came close and the closest guess was by Prathik Roy via LinkedIn.…"
 date: 2022-12-21T13:19:05
 draft: false
 sequence: 5

@@ -1,6 +1,6 @@
 ---
-title: "The next LinkedIn doesn't exist yet \u2014 and that's good!"
-description: "What this means for scientists now. Hello hellooo, \"LinkedIn feels icky \u2014 what's the next platform scientists should be on?\" An professor based in Netherlands\u2026"
+title: "The next LinkedIn doesn't exist yet — and that's good!"
+description: "What this means for scientists now. Hello hellooo, \"LinkedIn feels icky — what's the next platform scientists should be on?\" An professor based in Netherlands…"
 date: 2026-05-28T08:18:39
 draft: false
 sequence: 66

@@ -1,12 +1,12 @@
 ---
-title: "From \u20ac1M proposals to strategic AI workflows"
-description: "Strategic AI workflow - 6 tools, 5 proposals, \u20ac1M funding"
+title: "From €1M proposals to strategic AI workflows"
+description: "Strategic AI workflow - 6 tools, 5 proposals, €1M funding"
 date: 2025-09-18T11:57:52
 draft: false
 sequence: 37
 campaign_id: "165769960629470533"
 campaign_name: "General/AI-visuals_Freebie"
-preheader: "Strategic AI workflow - 6 tools, 5 proposals, \u20ac1M funding"
+preheader: "Strategic AI workflow - 6 tools, 5 proposals, €1M funding"
 sent_count: 146
 ---
 Strategic AI workflow - 6 tools, 5 proposals, €1M funding

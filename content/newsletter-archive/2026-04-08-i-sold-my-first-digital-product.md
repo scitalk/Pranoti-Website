@@ -1,12 +1,12 @@
 ---
-title: "I sold my first digital product \ud83e\udd73"
-description: "and it had nothing to do with science. \ud83d\ude01"
+title: "I sold my first digital product 🥳"
+description: "and it had nothing to do with science. 😁"
 date: 2026-04-08T16:15:52
 draft: false
 sequence: 61
 campaign_id: "184169153193576423"
 campaign_name: "General/Claude-googlesheets"
-preheader: "and it had nothing to do with science. \ud83d\ude01"
+preheader: "and it had nothing to do with science. 😁"
 sent_count: 230
 ---
 and it had nothing to do with science. 😁

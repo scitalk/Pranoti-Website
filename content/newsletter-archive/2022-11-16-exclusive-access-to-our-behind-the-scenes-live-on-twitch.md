@@ -1,6 +1,6 @@
 ---
 title: "Exclusive access to our behind the scenes - Live on Twitch"
-description: "Exclusive access to our BTS - SciComm content management A lot goes on at The Science Talk HQ (Pranoti's mind). As part of our mailing list, you get exclusive\u2026"
+description: "Exclusive access to our BTS - SciComm content management A lot goes on at The Science Talk HQ (Pranoti's mind). As part of our mailing list, you get exclusive…"
 date: 2022-11-16T17:23:04
 draft: false
 sequence: 1

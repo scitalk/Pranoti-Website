@@ -1,6 +1,6 @@
 ---
-title: "Scientists did \u20ac469 million of invisible work"
-description: "Hellooo! The MSCA Postdoctoral Fellowship results reopened research funding debate. \ufeff\ufeff\ufeff17,066 proposals submitted. 1,610 funded. 9.6% success rate. Scientists\u2026"
+title: "Scientists did €469 million of invisible work"
+description: "Hellooo! The MSCA Postdoctoral Fellowship results reopened research funding debate. ﻿﻿﻿17,066 proposals submitted. 1,610 funded. 9.6% success rate. Scientists…"
 date: 2026-02-20T10:01:31
 draft: false
 sequence: 55

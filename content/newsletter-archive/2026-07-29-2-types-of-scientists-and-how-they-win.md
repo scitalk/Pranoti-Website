@@ -1,6 +1,6 @@
 ---
 title: "2 types of scientists and how they win"
-description: "research grants and awards. Over the years, I've worked with and interviewed hundreds of scientists. And somewhere along the way, I started noticing a pattern\u2026"
+description: "research grants and awards. Over the years, I've worked with and interviewed hundreds of scientists. And somewhere along the way, I started noticing a pattern…"
 date: 2026-07-29T15:18:23
 draft: false
 sequence: 73

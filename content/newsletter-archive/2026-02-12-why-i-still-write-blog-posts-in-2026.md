@@ -1,6 +1,6 @@
 ---
 title: "Why I still write blog posts in 2026"
-description: "and how Claude does the heavy lifting. Hellooo! How are you doing? I'm not trying tobe polite. I really want to know. How ARE you doing - What's bothering you\u2026"
+description: "and how Claude does the heavy lifting. Hellooo! How are you doing? I'm not trying tobe polite. I really want to know. How ARE you doing - What's bothering you…"
 date: 2026-02-12T07:01:31
 draft: false
 sequence: 54

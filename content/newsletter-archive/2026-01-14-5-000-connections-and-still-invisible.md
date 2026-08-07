@@ -1,5 +1,5 @@
 ---
-title: "5,000 connections and still invisible? \ud83e\udd14"
+title: "5,000 connections and still invisible? 🤔"
 description: "why most social media advice doesn't work for scientists"
 date: 2026-01-14T13:51:57
 draft: false

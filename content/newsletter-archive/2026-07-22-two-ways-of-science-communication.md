@@ -1,6 +1,6 @@
 ---
 title: "Two ways of science communication"
-description: "and why human angle always wins! When creating content for science communication, you generally have two options: 1. The Science Angle: You talk strictly about\u2026"
+description: "and why human angle always wins! When creating content for science communication, you generally have two options: 1. The Science Angle: You talk strictly about…"
 date: 2026-07-22T10:33:53
 draft: false
 sequence: 72

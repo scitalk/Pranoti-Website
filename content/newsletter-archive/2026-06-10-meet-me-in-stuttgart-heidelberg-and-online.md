@@ -1,5 +1,5 @@
 ---
-title: "Meet me in Stuttgart, Heidelberg \u2014 and online"
+title: "Meet me in Stuttgart, Heidelberg — and online"
 description: "Three events coming up + a workshop closing soon"
 date: 2026-06-10T08:42:51
 draft: false

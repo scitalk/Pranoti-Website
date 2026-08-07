@@ -1,5 +1,5 @@
 ---
-title: "\u20ac8 million project, CXO Mindset registration open now"
+title: "€8 million project, CXO Mindset registration open now"
 description: "Who should join, why now, what's in it for me"
 date: 2025-12-12T10:08:12
 draft: false
