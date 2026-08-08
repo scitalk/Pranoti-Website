@@ -77,6 +77,14 @@
   <div class="pf-content"><div class="container narrow">{{ .Content }}</div></div>
   {{ end }}
 
+  {{ with .Params.picture }}
+  <div class="pf-event-img-wrap">
+    <div class="container narrow">
+      <img src="{{ . }}" alt="{{ $.Title }}" class="pf-event-img" loading="lazy">
+    </div>
+  </div>
+  {{ end }}
+
   {{ if not .Params.academic }}
   <div class="pf-inquiry-cta">
     <div class="container narrow">

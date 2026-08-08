@@ -9,6 +9,8 @@ client: "EuroSTEMPeers"
 location: "BioLabs, BDC Heidelberg, Germany"
 role: "Speaker"
 event_type: "Conference"
+thumbnail: "/images/speaking/2026_EuroSTEM-Peers_Crowd-talk.jpg"
+picture: "/images/speaking/EU-AI-Act_2026_EuroSTEM-Peers.jpg"
 tags: ["Speaker", "Conference"]
 ---
 
