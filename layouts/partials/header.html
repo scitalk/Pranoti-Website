@@ -8,7 +8,22 @@
                     {{ range .Site.Menus.main }}
                     {{ $section := trim .URL "/" }}
                     {{ $isActive := and (ne .URL "/") (hasPrefix $path .URL) }}
+                    {{ if .Children }}
+                    {{ $childActive := false }}
+                    {{ range .Children }}{{ if and (ne .URL "/") (hasPrefix $path .URL) }}{{ $childActive = true }}{{ end }}{{ end }}
+                    <li class="nav-has-dropdown">
+                        <a href="{{ .URL }}" class="{{ if or $isActive $childActive }}nav-active nav-active-{{ $section }}{{ end }}"{{ if or $isActive $childActive }} aria-current="page"{{ end }}>{{ .Name }}</a>
+                        <ul class="nav-dropdown">
+                            {{ range .Children }}
+                            {{ $childSection := trim .URL "/" }}
+                            {{ $childIsActive := and (ne .URL "/") (hasPrefix $path .URL) }}
+                            <li><a href="{{ .URL }}" class="{{ if $childIsActive }}nav-active nav-active-{{ $childSection }}{{ end }}"{{ if $childIsActive }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                    {{ else }}
                     <li><a href="{{ .URL }}" class="{{ if $isActive }}nav-active nav-active-{{ $section }}{{ end }}"{{ if $isActive }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+                    {{ end }}
                     {{ end }}
                 </ul>
             </div>
