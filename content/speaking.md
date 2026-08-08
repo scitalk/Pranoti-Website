@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "Speaking"
 description: "Book Pranoti Kshirsagar for your next event - Expert in science communication, quantum technology, and European innovation ecosystems"
 layout: "speaking"

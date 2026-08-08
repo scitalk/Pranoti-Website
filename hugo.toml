@@ -39,6 +39,10 @@ title = 'Pranoti Kshirsagar'
     name = 'About'
     url = '/about/'
     weight = 5
+  [[menu.main]]
+    name = 'Speaking'
+    url = '/speaking/'
+    weight = 6
 
 [sitemap]
   changefreq = 'monthly'
