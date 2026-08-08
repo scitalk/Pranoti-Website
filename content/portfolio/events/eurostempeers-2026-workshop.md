@@ -9,6 +9,7 @@ client: "EuroSTEMPeers"
 location: "BioLabs, BDC Heidelberg, Germany"
 role: "Trainer"
 event_type: "Conference"
+thumbnail: "/images/trainings/2026_Euro-STEM-Peers_Workshop_Group-picture.jpg"
 tags: ["Trainer", "Conference"]
 ---
 
