@@ -9,7 +9,7 @@ I write about AI integration, so it would be strange not to say plainly how I us
 
 ## How AI is used on this site
 
-Articles in [Perspectives](/perspectives/), [AI Guides](/ai-guides/) and [Case Studies](/case-studies/) are **drafted with the assistance of AI tools**, principally Claude. Every published piece is then reviewed, edited, fact-checked and approved by me before it goes live. The judgement, the argument, the recommendations and the errors are mine.
+Articles in [Perspectives](/perspectives/), [AI Guides](/ai-guides/) and [Case Studies](/case-studies/) are **drafted with the assistance of AI tools**, principally Claude. Every piece is reviewed, edited and fact-checked at drafting stage, and only then is it published. The judgement, the argument, the recommendations and the errors are mine.
 
 Specifically:
 
@@ -26,6 +26,10 @@ Specifically:
 That obligation **does not apply where the AI-generated content has undergone a process of human review or editorial control and a natural or legal person holds editorial responsibility** for the publication. That is the case for every article here.
 
 This page is therefore published voluntarily rather than because a disclosure is mandated. Readers deciding what weight to give an argument should know how it was produced.
+
+## Code of Practice on Transparency of AI-Generated Content
+
+The Science Talk has signed the European Commission's **Code of Practice on Transparency of AI-generated Content**, under **Section 2, as a deployer of generative AI systems** — ahead of the Article 50 obligations becoming legally binding on 2 August 2026. Signing commits us to marking AI-generated content appropriately and disclosing its use where it matters, consistently rather than only when required. Read more in [The Science Talk Signs the EU Code of Practice on Transparency of AI-Generated Content](/perspectives/the-science-talk-signs-eu-code-of-practice-ai-transparency/).
 
 ## What is not used
 

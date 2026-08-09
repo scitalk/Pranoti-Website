@@ -15,7 +15,7 @@ E7, 8
 68159 Mannheim
 Germany
 
-Legal form: sole proprietorship (Einzelunternehmen)
+Legal form: sole proprietorship (Einzelunternehmen), freelance/liberal profession (freiberufliche Tätigkeit)
 
 ## Contact
 
