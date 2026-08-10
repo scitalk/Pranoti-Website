@@ -32,30 +32,30 @@ sidebar_product:
   footnote: "Instant PDF delivery. Lifetime access."
 ---
 
-Knowledge workers running multiple paid online events — workshops, webinars, guidance sessions — spend a disproportionate amount of time on registration admin: manual emails, spreadsheet updates, copy-pasting registrant details. This guide documents a clean, reliable automated registration pipeline using Stripe, Make.com, and MailerLite that eliminates that overhead entirely. Every paid registration triggers a full onboarding sequence automatically, from payment confirmation to inbox — without any manual steps after the initial build.
+Knowledge workers who run multiple paid online events, such as workshops, webinars, and guidance sessions, spend a lot of time on registration admin. This includes manual emails, spreadsheet updates, and copy-pasting registrant details. This guide documents a clean, reliable, automated registration pipeline using Stripe, Make.com, and MailerLite. It eliminates that overhead entirely. Every paid registration triggers a full onboarding sequence automatically, from payment confirmation to inbox, without any manual steps after the initial build.
 
 ## What you will have at the end
 
-By the end of this setup, every paid registration will automatically trigger a complete onboarding experience. The moment a payment clears in Stripe, Make.com catches it, identifies which event the registrant purchased, and tells MailerLite to add them to the correct group and fire the right automation sequence.
+By the end of this setup, every paid registration will automatically trigger a complete onboarding experience. The moment a payment clears in Stripe, Make.com catches it. It identifies which event the registrant purchased. It tells MailerLite to add them to the correct group and fire the right automation sequence.
 
-Your registrant receives an onboarding email within seconds of paying. You get the data, the revenue, and none of the admin.
+Your registrant receives an onboarding email within seconds of paying. You get the data and the revenue, with none of the admin.
 
 ## What you need before starting
 
-- **A Stripe account** — with at least one active payment link or product set up
-- **A Make.com account** — the free plan supports this workflow
-- **A MailerLite account** — with at least one group and one automation created
-- **A MailerLite API key** — found in your MailerLite account settings under Integrations
+- **A Stripe account** with at least one active payment link or product set up
+- **A Make.com account.** The free plan supports this workflow.
+- **A MailerLite account** with at least one group and one automation created
+- **A MailerLite API key**, found in your MailerLite account settings under Integrations
 
-> **Scope note:** This guide covers the core registration-to-onboarding flow. It does not include cancellation handling, refund webhooks, or multi-currency routing — those are separate workflow extensions you can add once the base scenario is working.
+> **Scope note:** This guide covers the core registration-to-onboarding flow. It does not cover cancellation handling, refund webhooks, or multi-currency routing. Add those separate workflow extensions once the base scenario works.
 
 ## The stack
 
-Three tools connected in sequence:
+Three tools connect in sequence:
 
-- **Stripe** — payment processing and the trigger point for the entire workflow
-- **Make.com** (free plan) — the automation layer connecting Stripe to MailerLite
-- **MailerLite** — subscriber management and automated email sequences
+- **Stripe** handles payment processing and triggers the entire workflow
+- **Make.com** (free plan) is the automation layer that connects Stripe to MailerLite
+- **MailerLite** manages subscribers and automated email sequences
 
 Make.com sits entirely in the backend. Your registrant moves from your landing page to the Stripe checkout to their inbox. The automation runs invisibly in between.
 
@@ -63,46 +63,46 @@ Make.com sits entirely in the backend. Your registrant moves from your landing p
 
 The Make.com scenario has **2 modules and 1 filter**:
 
-- **Module 1 (Stripe)** — watches for new events
-- **Filter** — passes only successful payments through
-- **Router** — directs each registration to the correct MailerLite group based on which event was purchased
-- **Module 2 (MailerLite)** — creates or updates the subscriber, adds them to the group, and triggers the automation
+- **Module 1 (Stripe)** watches for new events
+- **Filter** passes only successful payments through
+- **Router** directs each registration to the correct MailerLite group based on which event was purchased
+- **Module 2 (MailerLite)** creates or updates the subscriber, adds them to the group, and triggers the automation
 
-> **Why the Router matters:** Without a Router, you would need a separate Make.com scenario for every single event. The Router is what makes this setup scalable — once in place, **adding a new event takes less than five minutes**. You simply add a new route with the new group name.
+> **Why the Router matters:** Without a Router, you need a separate Make.com scenario for every event. The Router makes this setup scalable. Once in place, **adding a new event takes less than five minutes**. Add a new route with the new group name.
 
 ## Step-by-step setup
 
 ### Step 1: Set up your Stripe payment link with metadata
 
-The key to routing registrations to the correct MailerLite group is **Stripe metadata**. In your Stripe dashboard, go to **Payment Links → Create a link**. Under Advanced options, find the **Metadata** section and add:
+**Stripe metadata** routes registrations to the correct MailerLite group. In your Stripe dashboard, go to **Payment Links → Create a link**. Under Advanced options, find the **Metadata** section and add:
 
 - **Key:** `Mailerlite_Group`
-- **Value:** the exact name of your MailerLite group (e.g. `Your_Event_Name_Month_Year`)
+- **Value:** the exact name of your MailerLite group (for example, `Your_Event_Name_Month_Year`)
 
-Do this for every event payment link. The value must match your MailerLite group name exactly — spelling, capitalisation, underscores.
+Do this for every event payment link. The value must match your MailerLite group name exactly: same spelling, capitalization, and underscores.
 
 ### Step 2: Create your MailerLite group and automation
 
-In MailerLite, go to **Subscribers → Groups → Add Group**. Name it to match exactly what you put in your Stripe metadata. Then build your automation: go to **Automations → Create automation**, set the trigger to **"When subscriber is added to a group"**, and select your new group.
+In MailerLite, go to **Subscribers → Groups → Add Group**. Name it to match exactly what you put in your Stripe metadata. Then build your automation. Go to **Automations → Create automation**, set the trigger to **"When subscriber is added to a group"**, and select your new group.
 
-**Activate the automation before you go live** — Make.com will add the subscriber correctly, but the automation only fires if it is active at the moment they are added.
+**Activate the automation before you go live.** Make.com adds the subscriber correctly, but the automation only fires if it is active at the moment Make.com adds them.
 
 ### Step 3: Create the Make.com scenario
 
-Log into Make.com and click **Create a new scenario**. Add Module 1 — search for Stripe and select **Watch Events**. Connect your Stripe account and set the event type to **Payment Intent**. Make.com will generate a webhook URL — copy it.
+Log into Make.com and click **Create a new scenario**. Add Module 1. Search for Stripe and select **Watch Events**. Connect your Stripe account and set the event type to **Payment Intent**. Make.com generates a webhook URL. Copy it.
 
 Then go to your **Stripe dashboard → Developers → Webhooks → Add endpoint**, paste the URL, and select **payment_intent.succeeded** as the event to listen to.
 
 ### Step 4: Add the filter
 
-Between Module 1 and Module 2, click the small circle on the connection line to **add a filter**. Set two conditions using the token picker (always pick from the dropdown — never type manually):
+Between Module 1 and Module 2, click the small circle on the connection line to **add a filter**. Set two conditions using the token picker. Always pick from the dropdown. Never type manually.
 
 - **Condition 1:** `data → object → payment_status` equals `paid`
 - **Condition 2:** `data → object → metadata → Mailerlite_Group` exists
 
 Set both with **AND logic**.
 
-> **Token picker tip.** Make.com flattens Stripe's data structure visually. Manually typed field paths often reference the wrong context and silently fail. Always navigate through the dropdown — it takes 30 extra seconds and saves hours of debugging.
+> **Token picker tip.** Make.com flattens Stripe's data structure visually. Manually typed field paths often reference the wrong context and fail silently. Always navigate through the dropdown. It takes 30 extra seconds and saves hours of debugging.
 
 ### Step 5: Add the Router
 
@@ -112,9 +112,9 @@ After the filter, add a **Router** module. For each Route, set a filter:
 - Operator: Equal to
 - Right side: the group name for that route
 
-When you add a new event in the future, you simply **add a new Route** to this Router. The rest of the scenario stays untouched.
+To add a new event in the future, **add a new Route** to this Router. The rest of the scenario stays untouched.
 
-### Step 6: Add Module 2 — MailerLite: create or update subscriber
+### Step 6: Add Module 2, MailerLite create or update subscriber
 
 At the end of each Route, add a **MailerLite Classic: Create or Update Subscriber** module. Connect your MailerLite account via API key and map the fields:
 
@@ -124,49 +124,49 @@ At the end of each Route, add a **MailerLite Classic: Create or Update Subscribe
 - **Autoresponders** → **Yes**
 - **Resubscribe** → **No**
 
-> **Critical setting:** **Autoresponders: Yes** is the single most important setting in this entire workflow. Without it, the subscriber gets added to the group but the automation does not fire. The onboarding email never sends. Double-check this before you test.
+> **Critical setting:** **Autoresponders: Yes** is the single most important setting in this entire workflow. Without it, Make.com adds the subscriber to the group but the automation does not fire. The onboarding email never sends. Double-check this before you test.
 
 ### Step 7: Test the full flow
 
-Click **Run once** in Make.com, then make a test payment via your Stripe payment link using a test card (no real charge). Watch each module show a green tick. Check MailerLite — the test subscriber should appear in the correct group with the automation active.
+Click **Run once** in Make.com. Then make a test payment via your Stripe payment link using a test card (no real charge). Watch each module show a green tick. Check MailerLite. The test subscriber must appear in the correct group with the automation active.
 
 If the filter blocks the event, confirm your Stripe metadata key is spelled exactly as `Mailerlite_Group` and the group name matches precisely.
 
 ### Step 8: Activate the scenario
 
-Once the test passes, **toggle the scenario to ON** using the switch at the bottom left of the scenario editor. Make.com will now watch for Stripe events continuously — no action required. Every paid registration triggers the full flow automatically from this point forward.
+Once the test passes, **toggle the scenario to ON** using the switch at the bottom left of the scenario editor. Make.com now watches for Stripe events continuously. No action is required. Every paid registration triggers the full flow automatically from this point forward.
 
 ## What you can do now
 
 With this workflow active, you can:
 
-- **Add a new event in under five minutes** — create the Stripe link with new metadata, create the MailerLite group and automation, add a Route in Make.com
-- **Run multiple events simultaneously** with zero extra admin — each Router route handles its own group independently
-- **Track conversion data directly in Stripe** — see payment volume, drop-off at checkout, and revenue per event
-- **Personalise every onboarding sequence per event** — each MailerLite automation is independent and fully customisable
-- **Resubscribe returning registrants safely** — the Resubscribe: No setting prevents duplicate sequences without losing the subscriber record
+- **Add a new event in under five minutes.** Create the Stripe link with new metadata, create the MailerLite group and automation, and add a Route in Make.com.
+- **Run multiple events simultaneously** with zero extra admin. Each Router route handles its own group independently.
+- **Track conversion data directly in Stripe.** See payment volume, drop-off at checkout, and revenue per event.
+- **Personalize every onboarding sequence per event.** Each MailerLite automation is independent and fully customizable.
+- **Resubscribe returning registrants safely.** The Resubscribe: No setting prevents duplicate sequences without losing the subscriber record.
 
 ## Troubleshooting
 
 **Filter blocking all events**
 
-Almost always caused by incorrect token mapping. Delete both filter conditions and re-add them fresh by navigating through the token picker: `Stripe → Raw Webhook Data → data → object → payment_status`. Never type paths manually.
+Incorrect token mapping almost always causes this. Delete both filter conditions and re-add them fresh by navigating through the token picker: `Stripe → Raw Webhook Data → data → object → payment_status`. Never type paths manually.
 
 **Subscriber added but automation does not fire**
 
-Check two things: confirm **Autoresponders is set to Yes** in the MailerLite module, and confirm the automation is **active** in MailerLite. A paused or draft automation will not trigger even when subscribers are added correctly.
+Check two things. Confirm **Autoresponders is set to Yes** in the MailerLite module. Confirm the automation is **active** in MailerLite. A paused or draft automation will not trigger even when Make.com adds subscribers correctly.
 
 **Wrong group receiving the registration**
 
-The Stripe metadata value and the MailerLite group name must be **identical** — same capitalisation, same underscores, no spaces. A mismatch means the Router filter lets the event through to the wrong route or no route at all.
+The Stripe metadata value and the MailerLite group name must be **identical**: same capitalization, same underscores, no spaces. A mismatch means the Router filter lets the event through to the wrong route or no route at all.
 
 **How to check Make.com logs**
 
-In your scenario, click **History** in the left panel. Each run shows a full trace — which modules processed, what data passed through, and where it stopped. **Always check the logs before changing your scenario config** — the error message tells you exactly what went wrong.
+In your scenario, click **History** in the left panel. Each run shows a full trace of which modules processed, what data passed through, and where it stopped. **Always check the logs before you change your scenario config.** The error message tells you exactly what went wrong.
 
 ---
 ## Related reading on The Science Talk
 
-This guide accompanies the [full event registration automation post on The Science Talk](https://thesciencetalk.com/event-registration-automation-stripe-make-mailerlite/) — covering the context behind building this workflow, the decisions made along the way, and how it fits into a broader no-code automation stack.
+This guide accompanies the [full event registration automation post on The Science Talk](https://thesciencetalk.com/event-registration-automation-stripe-make-mailerlite/). It covers the context behind building this workflow, the decisions made along the way, and how it fits into a broader no-code automation stack.
 
 *Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*
