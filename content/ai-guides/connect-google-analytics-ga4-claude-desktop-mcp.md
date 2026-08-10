@@ -33,9 +33,9 @@ sidebar_product:
   footnote: "Complete setup guide + workflow examples"
 ---
 
-Once the Google Analytics MCP server is connected to Claude Desktop, you can query your GA4 data in plain English — no dashboards, no tab-switching, no exports. Ask Claude for your top pages this week, your traffic by source, or your session counts by country, and get the answer directly in your conversation.
+After you connect the Google Analytics MCP server to Claude Desktop, you can query your GA4 data in plain English. You do not need dashboards, tab-switching, or exports. Ask Claude for your top pages this week, your traffic by source, or your session counts by country. Claude gives the answer directly in your conversation.
 
-This guide covers the complete setup: enabling the right Google Cloud APIs, authenticating with your Google account, installing the MCP server via pipx, and adding it to Claude Desktop. It also shows how this connection feeds directly into combined workflows — including the [clarity-insights-and-seo skill](/ai-guides/) for cross-referencing behaviour data with your analytics.
+This guide covers the complete setup. It shows how to enable the correct Google Cloud APIs, authenticate with your Google account, install the MCP server with pipx, and add it to Claude Desktop. It also shows how this connection feeds directly into combined workflows, including the [clarity-insights-and-seo skill](/ai-guides/) for cross-referencing behavior data with your analytics.
 
 ---
 
@@ -49,7 +49,7 @@ This guide covers the complete setup: enabling the right Google Cloud APIs, auth
 - **A Google account** with access to the GA4 property you want to connect
 - **A Google Cloud project** — free to create at [console.cloud.google.com](https://console.cloud.google.com)
 
-> **Scope note:** This guide uses the official [googleanalytics/google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) server, which runs locally on your machine. Your GA4 data is never sent to a third party — it goes directly from Google's API to Claude Desktop.
+> **Scope note:** This guide uses the official [googleanalytics/google-analytics-mcp](https://github.com/googleanalytics/google-analytics-mcp) server. It runs locally on your machine. The server never sends your GA4 data to a third party. Data goes directly from Google's API to Claude Desktop.
 
 ---
 
@@ -57,9 +57,9 @@ This guide covers the complete setup: enabling the right Google Cloud APIs, auth
 
 ### Step 1: Enable the Google Analytics APIs in Google Cloud Console
 
-The MCP server uses two Google APIs to read your analytics data. Both need to be enabled in your Google Cloud project before authentication will work.
+The MCP server uses two Google APIs to read your analytics data. Enable both APIs in your Google Cloud project before you authenticate.
 
-Go to [Google Cloud Console](https://console.cloud.google.com) and select your project (or create a new one — a free project is fine).
+Go to [Google Cloud Console](https://console.cloud.google.com). Select your project, or create a new one. A free project works.
 
 Enable the **Google Analytics Admin API**:
 - Navigate to [APIs & Services → Library](https://console.cloud.google.com/apis/library)
@@ -70,9 +70,9 @@ Then enable the **Google Analytics Data API**:
 - Search for **Google Analytics Data API**
 - Click **Enable**
 
-> Both APIs must be enabled. The Admin API gives Claude access to your account and property structure. The Data API is what runs reports and returns traffic data.
+> You must enable both APIs. The Admin API gives Claude access to your account and property structure. The Data API runs reports and returns traffic data.
 
-Note your **Google Cloud Project ID** — you'll need it in Step 5. Find it in the top bar of Google Cloud Console (format: `my-project-123456`).
+Note your **Google Cloud Project ID**. You need it in Step 5. Find it in the top bar of Google Cloud Console (format: `my-project-123456`).
 
 ---
 
@@ -93,29 +93,29 @@ pipx ensurepath
 brew install --cask google-cloud-sdk
 ```
 
-After installation, initialise gcloud:
+After installation, initialize gcloud:
 
 ```bash
 gcloud init
 ```
 
-Follow the prompts — sign in with your Google account and select the Cloud project you enabled the APIs on. This links your local gcloud tool to the right project.
+Follow the prompts. Sign in with your Google account and select the Cloud project where you enabled the APIs. This links your local gcloud tool to the correct project.
 
 ---
 
 ### Step 3: Set up your Google credentials with Application Default Credentials
 
-The MCP server authenticates using **Application Default Credentials (ADC)** — a standard Google authentication method that stores credentials locally and passes them to any tool that needs them.
+The MCP server authenticates with **Application Default Credentials (ADC)**. This is a standard Google authentication method. It stores credentials locally and passes them to any tool that needs them.
 
-You'll need an **OAuth client credentials file** from your Google Cloud project. To create one:
+You need an **OAuth client credentials file** from your Google Cloud project. To create one:
 
 1. Go to **APIs & Services → Credentials** in Google Cloud Console
 2. Click **Create Credentials → OAuth client ID**
 3. Select **Desktop app** as the application type
-4. Name it (e.g. `analytics-mcp-desktop`) and click **Create**
-5. Click **Download JSON** — save the file somewhere accessible, e.g. `~/Downloads/client_secret.json`
+4. Name it (for example, `analytics-mcp-desktop`) and click **Create**
+5. Click **Download JSON**. Save the file in an accessible location, for example `~/Downloads/client_secret.json`
 
-Now run the authentication command in Terminal, pointing to that file:
+Now run the authentication command in Terminal. Point it to that file.
 
 ```bash
 gcloud auth application-default login \
@@ -123,17 +123,17 @@ gcloud auth application-default login \
   --client-id-file=~/Downloads/client_secret.json
 ```
 
-A browser window will open. Sign in with the Google account that has access to your GA4 property and grant the requested permissions.
+A browser window opens. Sign in with the Google account that has access to your GA4 property. Grant the requested permissions.
 
-When complete, Terminal will print a line like:
+When the process finishes, Terminal prints a line like this:
 
 ```
 Credentials saved to file: [/Users/your-username/.config/gcloud/application_default_credentials.json]
 ```
 
-**Copy this full path.** You will need it in the next step.
+**Copy this full path.** You need it in the next step.
 
-> The `analytics.readonly` scope gives read-only access to your GA4 data. The MCP server cannot modify your analytics configuration.
+> The `analytics.readonly` scope gives read-only access to your GA4 data. The MCP server cannot change your analytics configuration.
 
 ---
 
@@ -141,9 +141,9 @@ Credentials saved to file: [/Users/your-username/.config/gcloud/application_defa
 
 ### Step 4: Add the Google Analytics MCP to Claude Desktop
 
-Open the Claude Desktop configuration file. In Claude Desktop, go to **Settings → Developer → Edit Config** — this opens `claude_desktop_config.json` in your default text editor.
+Open the Claude Desktop configuration file. In Claude Desktop, go to **Settings → Developer → Edit Config**. This opens `claude_desktop_config.json` in your default text editor.
 
-Add the following block inside the `mcpServers` object. If you already have other MCP servers configured (e.g. Google Sheets, WordPress), add this alongside them:
+Add the following block inside the `mcpServers` object. If you already have other MCP servers configured (for example, Google Sheets or WordPress), add this block alongside them.
 
 ```json
 {
@@ -162,28 +162,28 @@ Add the following block inside the `mcpServers` object. If you already have othe
 
 Replace the two values:
 
-- **`GOOGLE_APPLICATION_CREDENTIALS`** — paste the full path printed by the gcloud command in Step 3
-- **`GOOGLE_PROJECT_ID`** — your Google Cloud project ID (e.g. `my-project-123456`)
+- **`GOOGLE_APPLICATION_CREDENTIALS`**: paste the full path printed by the gcloud command in Step 3
+- **`GOOGLE_PROJECT_ID`**: your Google Cloud project ID (for example, `my-project-123456`)
 
 Save the file.
 
-> If your `claude_desktop_config.json` already has an `mcpServers` block, add the `"analytics-mcp"` entry inside the existing object — do not create a second `mcpServers` block.
+> If your `claude_desktop_config.json` already has an `mcpServers` block, add the `"analytics-mcp"` entry inside the existing object. Do not create a second `mcpServers` block.
 
 ---
 
 ### Step 5: Restart Claude Desktop and verify the connection
 
-Fully quit Claude Desktop (**Cmd + Q**) and reopen it. This is required — the config is only read on startup.
+Fully quit Claude Desktop (**Cmd + Q**) and reopen it. This step is required. Claude Desktop reads the config only at startup.
 
-To confirm the MCP is running, go to **Settings → Developer**. You should see **analytics-mcp** listed with a green **Running** status.
+To confirm the MCP is running, go to **Settings → Developer**. Look for **analytics-mcp** listed with a green **Running** status.
 
-Test the connection by typing a natural-language query in any Claude conversation:
+Test the connection. Type a natural-language query in any Claude conversation.
 
 ```
 What Google Analytics properties do I have access to?
 ```
 
-Claude will call `get_account_summaries` and return a list of your GA4 accounts and properties. Once you can see your property name, the connection is working.
+Claude calls `get_account_summaries` and returns a list of your GA4 accounts and properties. When you see your property name, the connection works.
 
 ---
 
@@ -191,7 +191,7 @@ Claude will call `get_account_summaries` and return a list of your GA4 accounts 
 
 ### Step 6: Run your first GA4 report
 
-With the connection verified, you can query your GA4 data directly. The MCP server supports plain English queries — Claude handles the translation to GA4 API parameters automatically.
+After you verify the connection, you can query your GA4 data directly. The MCP server supports plain English queries. Claude translates each query to GA4 API parameters automatically.
 
 A few queries to try:
 
@@ -215,21 +215,21 @@ How many active users do I have on my site right now?
 Break down my sessions by device category for the past 30 days
 ```
 
-> When Claude asks which property to use, paste your **GA4 Property ID** — a numeric ID found in your GA4 account under **Admin → Property Settings**. It looks like `123456789`. You can also ask Claude to list your properties first using `get_account_summaries`.
+> When Claude asks which property to use, paste your **GA4 Property ID**. This is a numeric ID found in your GA4 account under **Admin → Property Settings**. It looks like `123456789`. You can also ask Claude to list your properties first with `get_account_summaries`.
 
 ---
 
 ## What you can do now
 
-Your GA4 data is now available inside every Claude conversation. The connection enables three immediate capabilities.
+Your GA4 data is now available inside every Claude conversation. The connection gives you three immediate capabilities.
 
-**Monitor website performance without leaving Claude.** Ask for weekly session summaries, check which posts are driving traffic, or spot drops in engagement — all in plain English, without opening GA4.
+**Monitor website performance without leaving Claude.** Ask for weekly session summaries, check which posts drive traffic, or spot drops in engagement. Do all of this in plain English, without you opening GA4.
 
-**Feed analytics data into combined workflows.** The [clarity-insights-and-seo skill](/ai-guides/) cross-references Microsoft Clarity behaviour data with Google Analytics traffic data to produce content recommendations. With this MCP connected, that skill has access to your live GA4 data automatically — no manual export needed. The [content gap analysis guide](/ai-guides/content-gap-analysis-clarity-gsc/) shows how to use that combined data to find pages worth improving.
+**Feed analytics data into combined workflows.** The [clarity-insights-and-seo skill](/ai-guides/) cross-references Microsoft Clarity behavior data with Google Analytics traffic data to produce content recommendations. When you connect this MCP, that skill accesses your live GA4 data automatically. You do not need a manual export. The [content gap analysis guide](/ai-guides/content-gap-analysis-clarity-gsc/) shows how to use that combined data to find pages worth improving.
 
-**Connect your other tools.** If you also manage your site through [WordPress connected to Claude Desktop via MCP](/ai-guides/connect-wordpress-claude-desktop-mcp-guide/), you can cross-reference your GA4 traffic data with your post archive in the same conversation — useful for identifying which posts to update or repurpose.
+**Connect your other tools.** If you also manage your site through [WordPress connected to Claude Desktop via MCP](/ai-guides/connect-wordpress-claude-desktop-mcp-guide/), you can cross-reference your GA4 traffic data with your post archive in the same conversation. This helps you identify which posts to update or repurpose.
 
-**Build repeatable reporting workflows.** Ask Claude to summarise your top content by sessions, bounce rate, and engagement time each Monday morning. Once you have a query that works, you can reuse it as a prompt template or feed it into a scheduled task.
+**Build repeatable reporting workflows.** Ask Claude to summarize your top content by sessions, bounce rate, and engagement time each Monday morning. Once you have a query that works, you can reuse it as a prompt template or feed it into a scheduled task.
 
 ---
 
@@ -239,23 +239,23 @@ Your GA4 data is now available inside every Claude conversation. The connection 
 Run `pipx ensurepath`, then close and reopen Terminal. The path update requires a new shell session.
 
 **`analytics-mcp` shows as not running in Claude Desktop settings**
-Check that `GOOGLE_APPLICATION_CREDENTIALS` in your config points to the exact file path printed by gcloud — including the full `/Users/your-username/...` prefix. A relative path or typo will prevent the server from starting.
+Check that `GOOGLE_APPLICATION_CREDENTIALS` in your config points to the exact file path printed by gcloud, including the full `/Users/your-username/...` prefix. A relative path or a typo prevents the server from starting.
 
 **`Permission denied` or `Access not configured` error**
-Both the Google Analytics Admin API and Google Analytics Data API must be enabled in your Google Cloud project. Go back to Step 1 and confirm both show as **Enabled** in APIs & Services.
+You must enable both the Google Analytics Admin API and the Google Analytics Data API in your Google Cloud project. Go back to Step 1 and confirm both show as **Enabled** in APIs & Services.
 
 **Claude returns no properties**
-The Google account you authenticated with in Step 3 must have at least **Viewer** access to the GA4 property. In GA4, go to **Admin → Property Access Management** and confirm your account is listed.
+The Google account you used to authenticate in Step 3 must have at least **Viewer** access to the GA4 property. In GA4, go to **Admin → Property Access Management** and confirm your account is listed.
 
 **`invalid_client` error during gcloud auth**
-The OAuth client JSON file must be a **Desktop app** type. Web app or service account credentials will not work with this authentication flow.
+The OAuth client JSON file must be a **Desktop app** type. Web app or service account credentials do not work with this authentication flow.
 
 ---
 
 ## Related reading on The Science Talk
 
-- [How to Connect Claude Desktop to Google Sheets via MCP](https://thesciencetalk.com/news/connect-claude-desktop-google-sheets-mcp-guide/) — the same authentication and pipx pattern applied to Google Sheets, useful if you want both data sources available in Claude simultaneously
-- [How to Connect Your Self-Hosted WordPress Site to Claude Desktop](https://thesciencetalk.com/news/connect-wordpress-claude-desktop-mcp-guide/) — adding a third MCP alongside GA4 so you can cross-reference traffic data with your post archive without leaving Claude
+- [How to Connect Claude Desktop to Google Sheets via MCP](https://thesciencetalk.com/news/connect-claude-desktop-google-sheets-mcp-guide/): the same authentication and pipx pattern applied to Google Sheets. Use this if you want both data sources available in Claude at the same time.
+- [How to Connect Your Self-Hosted WordPress Site to Claude Desktop](https://thesciencetalk.com/news/connect-wordpress-claude-desktop-mcp-guide/): add a third MCP alongside GA4 so you can cross-reference traffic data with your post archive without leaving Claude.
 
 ---
 
