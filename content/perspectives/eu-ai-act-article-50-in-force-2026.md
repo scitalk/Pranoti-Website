@@ -24,48 +24,48 @@ sidebar_links:
 
 <!-- MAINTENANCE NOTE: this is a time-sensitive companion piece to /ai-guides/ai-generated-content-disclosure-eu-ai-act/. Review after 2 December 2026 (when the provider grace period ends) — either noindex this post or fold any still-relevant facts back into the evergreen guide, so it doesn't sit indefinitely competing with it for the same "Article 50" keywords. -->
 
-As of **2 August 2026**, Article 50 of the EU AI Act has stopped being "the thing everyone's been meaning to prepare for" and is an enforceable transparency obligation. If you publish AI-generated or AI-manipulated content professionally — text, video, audio, social posts — this is the date the disclosure duty starts to bite. Here's what that means in practice, and what it doesn't.
+As of **2 August 2026**, Article 50 of the EU AI Act is an enforceable transparency obligation. It is no longer a future requirement. If you publish AI-generated or AI-manipulated content professionally — text, video, audio, or social posts — the disclosure duty now applies to you. This article explains what that means in practice, and what it does not mean.
 
 ## What actually changed on 2 August
 
-Nothing about the *rule* changed — Article 50(4) and (5) have read the same way since the AI Act was published in 2024. What changed on 2 August is that the obligation became **applicable law**, not a future date on a compliance roadmap. Deployers who publish AI-generated text on matters of public interest, or AI-generated/manipulated deepfake-style image, audio, or video, must disclose that clearly and distinguishably, at the point a reader or viewer first encounters the content — not in a footer, not in end credits, not behind a linked policy page.
+The *rule* itself did not change. Article 50(4) and (5) read the same way since the EU published the AI Act in 2024. On 2 August, the obligation became **applicable law**, not a future date on a compliance roadmap. Deployers who publish AI-generated text on matters of public interest must disclose this clearly and distinguishably. The same duty applies to AI-generated or AI-manipulated deepfake-style image, audio, or video. Show the disclosure at the point a reader or viewer first encounters the content, not in a footer, in end credits, or behind a linked policy page.
 
-If you've already read [the full disclosure guide](/ai-guides/ai-generated-content-disclosure-eu-ai-act/) and adjusted your publishing workflow, this date changes nothing for you operationally. If you haven't, this is the actual line: content published from 2 August onward without a compliant disclosure is a live compliance gap, not a future one.
+If you already read [the full disclosure guide](/ai-guides/ai-generated-content-disclosure-eu-ai-act/) and adjusted your publishing workflow, this date changes nothing for your operations. If you have not, note this line: content published from 2 August onward without a compliant disclosure creates a live compliance gap, not a future one.
 
 ## The one grace period that matters
 
-There's a genuine carve-out, and it's easy to miss. The July 2026 "AI Omnibus" amendment (Regulation (EU) 2026/1744) gives providers of generative AI systems that were **already on the market before 2 August 2026** until **2 December 2026** to bring the underlying content-marking mechanisms into compliance with Article 50(2) — the machine-readable marking obligation that sits on providers, not deployers.
+A genuine carve-out exists, and teams often miss it. The July 2026 "AI Omnibus" amendment (Regulation (EU) 2026/1744) gives providers of generative AI systems extra time. Providers with systems **already on the market before 2 August 2026** have until **2 December 2026**. In that time, they must bring content-marking mechanisms into compliance with Article 50(2). This machine-readable marking obligation sits on providers, not deployers.
 
-Don't read that as a personal extension. It's a technical transition window for AI system *providers* to update their tooling, not a delay to your disclosure obligation as a *deployer* publishing content. If you're publishing AI-assisted content from 2 August onward, your disclosure duty applies regardless of whether the tool you used has finished rolling out its own machine-readable markers.
+Do not read this as a personal extension. It is a technical transition window for AI system *providers* to update their tooling. It does not delay your disclosure obligation as a *deployer* who publishes content. If you publish AI-assisted content from 2 August onward, your disclosure duty applies. This is true regardless of whether the tool you used finished rolling out its own machine-readable markers.
 
 ## What didn't happen on 2 August
 
-The other headline EU AI Act date most people have heard — high-risk AI system obligations under Annex III (recruitment, credit scoring, education, and similar) — is **not** what arrived on 2 August. That deadline was pushed to **2 December 2027** by the same Omnibus amendment. If you've been putting off high-risk classification work because "the August deadline is coming," you have more runway than the old date suggested — see the [full deadline breakdown](/ai-guides/eu-ai-act-deadlines-2026-2028-timeline/) if that's what you're tracking.
+Most people know another headline EU AI Act date: high-risk AI system obligations under Annex III (recruitment, credit scoring, education, and similar). That deadline did **not** arrive on 2 August. The same Omnibus amendment pushed it to **2 December 2027**. If you delayed high-risk classification work because "the August deadline is coming," you now have more time than the old date suggested. See the [full deadline breakdown](/ai-guides/eu-ai-act-deadlines-2026-2028-timeline/) for details.
 
 ## The rest of Article 50, briefly
 
-The disclosure duty for public-facing content is the part that hits most small teams, but Article 50 covers more ground than deepfakes and text:
+The disclosure duty for public-facing content affects most small teams. Article 50 also covers more ground than deepfakes and text:
 
-- **§1 — chatbots and AI assistants:** if you deploy an AI system that interacts directly with people (a chatbot, voice assistant, automated support agent), you must make it clear they're talking to an AI — unless that's already obvious from context. Law-enforcement use is exempt, subject to safeguards.
-- **§3 — emotion recognition and biometric categorisation:** deploying either of these systems requires informing the people exposed to it, and any personal data processed still has to comply with GDPR. Again, exempt for lawful law-enforcement use.
-- **§4 exceptions:** the deepfake and public-interest-text disclosure duties don't override evidently artistic, creative, satirical, or fictional work — disclosure is still required, but in a way that doesn't get in the way of displaying or enjoying the work. Content under a genuine editorial-responsibility review process (see the human-review test above) is also carved out.
-- **§6 — non-prejudice clause:** none of this replaces or lowers the bar set by Chapter III for high-risk systems, and it doesn't override other transparency obligations elsewhere in EU or national law.
-- **§7 — codes of practice:** the AI Office is tasked with encouraging Union-level codes of practice to help everyone implement this consistently. None are finalised yet.
+- **§1 — chatbots and AI assistants:** if you deploy an AI system that interacts directly with people (a chatbot, voice assistant, or automated support agent), you must make it clear they are talking to an AI. This does not apply when it is already obvious from context. Law-enforcement use is exempt, subject to safeguards.
+- **§3 — emotion recognition and biometric categorization:** if you deploy either system, you must inform the people exposed to it. Any personal data processed must still comply with GDPR. This is exempt for lawful law-enforcement use.
+- **§4 exceptions:** the deepfake and public-interest-text disclosure duties do not override evidently artistic, creative, satirical, or fictional work. Disclosure is still required, but must not interfere with displaying or enjoying the work. Content under a genuine editorial-responsibility review process (see the human-review test above) is also exempt.
+- **§6 — non-prejudice clause:** none of this replaces or lowers the bar set by Chapter III for high-risk systems. It also does not override other transparency obligations elsewhere in EU or national law.
+- **§7 — codes of practice:** the AI Office must encourage Union-level codes of practice to help everyone implement this consistently. None exist in final form yet.
 
-If you're not running a chatbot or biometric system, §1 and §3 won't touch your workflow — but the exceptions in §4 are worth knowing if you ever publish clearly satirical or fictional AI-assisted content and have been over-disclosing out of caution.
+If you do not run a chatbot or biometric system, §1 and §3 do not affect your workflow. But learn the exceptions in §4 if you publish clearly satirical or fictional AI-assisted content and tend to over-disclose out of caution.
 
 ## What to check today
 
-1. **Audit anything you're about to publish or have scheduled** — blog posts, social captions, video, podcast notes — and confirm the disclosure sits before the first line of substantive content, not after it.
-2. **Check your editorial process honestly** if you're relying on the human-review exception. A light read-through before publishing does not qualify. The Commission's transparency guidelines are explicit at paragraph 135: "superficial, solely formal or procedural checks (e.g. spell-checking or grammatical correction), the mere existence of an editorial policy, automated review processes or cursory editorial approval without substantive engagement" cannot satisfy the condition. Human review means deliberate examination of the *substance* by someone with relevant expertise, and fact-checking is described as a minimum.
-3. **Watch what happens after sign-off.** Paragraph 136 closes a gap most workflows have: if an AI system modifies, supplements or reformulates the text *after* editorial review, the exception becomes void and the content must be treated as AI-generated. An AI-assisted headline rewrite or SEO pass applied post-approval is enough to lose it.
-4. **Don't confuse the provider grace period with your own deadline.** If you're a deployer publishing content, your date has arrived — the December extension belongs to the tool vendors, not to you.
+1. **Audit anything you plan to publish or have scheduled** — blog posts, social captions, video, podcast notes. Confirm the disclosure appears before the first line of substantive content, not after it.
+2. **Check your editorial process honestly** if you rely on the human-review exception. A light read-through before publishing does not qualify. The Commission's transparency guidelines state this clearly at paragraph 135: "superficial, solely formal or procedural checks (e.g. spell-checking or grammatical correction), the mere existence of an editorial policy, automated review processes or cursory editorial approval without substantive engagement" cannot satisfy the condition. Human review means deliberate examination of the *substance* by someone with relevant expertise. Fact-checking is described as a minimum requirement.
+3. **Watch what happens after sign-off.** Paragraph 136 closes a gap in most workflows. If an AI system modifies, supplements, or reformulates the text *after* editorial review, the exception becomes void. Then you must treat the content as AI-generated. An AI-assisted headline rewrite or SEO pass applied after approval is enough to lose the exception.
+4. **Do not confuse the provider grace period with your own deadline.** If you are a deployer who publishes content, your date has arrived. The December extension belongs to the tool vendors, not to you.
 
-This is a deadline recap, not a new rulebook — the [full guide](/ai-guides/ai-generated-content-disclosure-eu-ai-act/) has the placement templates, the EU's official icon set, and the editorial-responsibility test in detail.
+This article is a deadline recap, not a new rulebook. The [full guide](/ai-guides/ai-generated-content-disclosure-eu-ai-act/) has the placement templates, the EU's official icon set, and the editorial-responsibility test in detail.
 
 ## Related reading
 
-See the [EU AI Act checklist for small business](/perspectives/eu-ai-act-checklist-small-business/) for how Article 50 fits alongside the other five articles that actually apply to ordinary teams.
+See the [EU AI Act checklist for small business](/perspectives/eu-ai-act-checklist-small-business/) to learn how Article 50 fits alongside the other five articles that apply to ordinary teams.
 
 ---
 *Want more guides like this? Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
