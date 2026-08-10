@@ -64,7 +64,7 @@
     </div>
   </div>
 
-  <header class="perspective-hero">
+  <header class="perspective-hero{{ if .Params.hero_light }} perspective-hero-light{{ end }}">
     <div class="container wide">
       <div class="perspective-hero-inner">
         <span class="perspective-tag">Perspectives</span>
@@ -80,6 +80,9 @@
           {{ range . }}<span class="perspective-pill">{{ . }}</span>{{ end }}
         </div>
         {{ end }}
+        {{ if .Params.hero_light }}{{ with .Params.featured_image }}
+        <img src="{{ . }}" alt="" class="perspective-hero-image">
+        {{ end }}{{ end }}
       </div>
     </div>
   </header>
@@ -193,6 +196,29 @@
 .perspective-pill {
   font-size: .68rem; font-weight: 500; padding: .2rem .65rem; border-radius: 3px;
   background: rgba(255,255,255,.08); color: rgba(255,255,255,.6); letter-spacing: .03em;
+}
+
+/* Light hero variant (page-scoped via hero_light: true) */
+.perspective-hero-light { background: #fff; }
+.perspective-hero-light .perspective-hero-inner { grid-template-columns: 1fr 220px; align-items: center; }
+.perspective-hero-light .perspective-tag,
+.perspective-hero-light h1,
+.perspective-hero-light .perspective-desc,
+.perspective-hero-light .perspective-meta-row,
+.perspective-hero-light .perspective-tags { grid-column: 1; }
+.perspective-hero-light h1 { color: #1A3828; }
+.perspective-hero-light .perspective-desc { color: #555; }
+.perspective-hero-light .perspective-meta-item { color: #777; }
+.perspective-hero-light .perspective-meta-sep { color: #ccc; }
+.perspective-hero-light .perspective-pill { background: #E6F4ED; color: #2A6048; }
+.perspective-hero-light .perspective-hero-image {
+  grid-column: 2; grid-row: 1 / -1;
+  width: 100%; max-width: 220px; height: 220px; object-fit: cover;
+  border-radius: 12px; justify-self: end;
+}
+@media (max-width: 900px) {
+  .perspective-hero-light .perspective-hero-inner { grid-template-columns: 1fr; }
+  .perspective-hero-light .perspective-hero-image { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 1.25rem; max-width: 100%; height: auto; aspect-ratio: 16/9; }
 }
 
 /* Body + layout */
