@@ -20,7 +20,7 @@ sidebar_links:
     url: "/ai-guides/model-context-protocol-non-developers/"
 ---
 
-On May 1st, your Claude Desktop MCP connector stopped working. You didn't change anything. This guide explains why your MCP broke silently, how to diagnose the root cause using the Google Analytics MCP as a worked example, and how to prevent future breakage through version pinning.
+On May 1st, your Claude Desktop MCP connector stopped working. You did not change anything. This guide explains why your MCP broke silently. It shows how to diagnose the root cause with the Google Analytics MCP as an example. It also shows how to prevent future breakage with version pinning.
 
 ## What you need before starting
 
@@ -32,31 +32,31 @@ On May 1st, your Claude Desktop MCP connector stopped working. You didn't change
 
 ## Understanding why MCP connectors break silently
 
-When you install an MCP server using `uvx` with the `@latest` tag, you're not downloading a pinned version—you're telling `uvx` to check PyPI every time Claude Desktop launches and fetch whatever the latest published version is.
+If you install an MCP server with `uvx` and the `@latest` tag, `uvx` does not download a pinned version. Instead, `uvx` checks PyPI every time Claude Desktop starts and fetches the latest published version.
 
-Third-party MCP packages (like `mcp-google-analytics`) live on PyPI, not on your machine. Each time you start Claude, `uvx` queries PyPI to see if a newer version exists and silently swaps it in. If the new version introduces an API change, adds new scopes, or modifies authentication, your old credentials and configuration may no longer work.
+Third-party MCP packages (for example `mcp-google-analytics`) live on PyPI, not on your machine. Each time you start Claude, `uvx` queries PyPI for a newer version and installs it without notice. If the new version changes the API, adds new scopes, or changes authentication, your old credentials and configuration can stop working.
 
-> **This is not a Claude Desktop update.** Claude itself is not changing. A third-party developer published a new version of their MCP package, and `uvx @latest` pulled it without notifying you.
+> **This is not a Claude Desktop update.** Claude itself does not change. A third-party developer published a new version of their MCP package. `uvx @latest` installed it without notice to you.
 
-On May 1st, `mcp-google-analytics` was updated with new features that required the Google Analytics Admin API in addition to the Data API. The Admin API requires the `analytics.edit` scope, but the existing refresh token only had `analytics.readonly` scope. When Claude tried to call the Admin API method, Google's OAuth server rejected the request: **`ACCESS_TOKEN_SCOPE_INSUFFICIENT` (403).**
+On May 1st, a new version of `mcp-google-analytics` added features that need the Google Analytics Admin API in addition to the Data API. The Admin API needs the `analytics.edit` scope. The existing refresh token had only the `analytics.readonly` scope. When Claude called the Admin API method, Google's OAuth server rejected the request: **`ACCESS_TOKEN_SCOPE_INSUFFICIENT` (403).**
 
 ## Diagnosing a broken MCP: three checks
 
 **Check 1: Look for error messages in Claude Desktop's console**
 
-Open Claude Desktop. If your MCP is broken, you may see an error in your chat or in the debug output. The most common signature is:
+Open Claude Desktop. If your MCP is broken, the chat or the debug output can show an error. The most common signature is:
 
 ```
 ACCESS_TOKEN_SCOPE_INSUFFICIENT
 ```
 
-This means the access token your MCP is using doesn't have permission for what it's trying to do.
+This error means the access token your MCP uses does not have permission for the task.
 
 **Check 2: Verify the refresh token has the right scopes**
 
-For Google Analytics MCP specifically, your refresh token must include the `analytics.readonly` scope. If the token was created before the MCP update and the new version added Admin API calls, the token is now insufficient.
+For the Google Analytics MCP, your refresh token must include the `analytics.readonly` scope. If you created the token before the MCP update, and the new version added Admin API calls, the token is now insufficient.
 
-You can't see token scopes directly in your config file—they're stored in Google's OAuth server. The only way to verify is to create a new token with explicit scope declaration.
+You cannot see token scopes directly in your config file. Google's OAuth server stores them. To verify the scopes, create a new token with an explicit scope declaration.
 
 **Check 3: Check the MCP package version in your config**
 
@@ -66,17 +66,17 @@ Open `~/Library/Application Support/Claude/claude_desktop_config.json` and find 
 "args": ["mcp-google-analytics@latest"]
 ```
 
-If you see `@latest`, your MCP can update automatically without warning. This is the root cause of silent breakage.
+If you see `@latest`, your MCP can update automatically without warning. This setting is the root cause of silent breakage.
 
 ## Fixing the GA MCP connector: step-by-step
 
 ### Step 1: Create new OAuth credentials in Google Cloud
 
-Go to [Google Cloud Console](https://console.cloud.google.com/). Create a new project or use an existing one.
+Go to [Google Cloud Console](https://console.cloud.google.com/). Create a new project, or use an existing one.
 
-Navigate to **APIs & Services** → **Credentials**. Click **+ Create Credentials** → **OAuth client ID** → **Desktop app**.
+Go to **APIs & Services** → **Credentials**. Click **+ Create Credentials** → **OAuth client ID** → **Desktop app**.
 
-Download the JSON file. This will contain your **client_id** and **client_secret**.
+Download the JSON file. It contains your **client_id** and **client_secret**.
 
 ### Step 2: Re-authenticate with the correct scopes
 
@@ -101,13 +101,13 @@ print(creds.refresh_token)
 "
 ```
 
-A browser window will open. Sign in with the Google account that owns your Analytics property. Approve access when prompted. The script will print your new refresh token—**copy this value**.
+A browser window opens. Sign in with the Google account that owns your Analytics property. Approve access when the prompt appears. The script prints your new refresh token. **Copy this value.**
 
-> **Why `analytics.readonly` and not `analytics.edit`?** The GA Data API (for querying data) only needs read access. The Admin API is not needed unless you're managing GA properties, accounts, or creating new properties. For most users, `analytics.readonly` is sufficient.
+> **Why `analytics.readonly` and not `analytics.edit`?** The GA Data API (for data queries) needs only read access. You do not need the Admin API unless you manage GA properties, accounts, or create new properties. For most users, `analytics.readonly` is enough.
 
 ### Step 3: Update your Claude config with new credentials
 
-Open `~/Library/Application Support/Claude/claude_desktop_config.json` in your text editor. Find your MCP server entry (or create one if missing):
+Open `~/Library/Application Support/Claude/claude_desktop_config.json` in your text editor. Find your MCP server entry. If the entry is missing, create one:
 
 ```json
 "google-analytics-thesciencetalk": {
@@ -125,10 +125,10 @@ Open `~/Library/Application Support/Claude/claude_desktop_config.json` in your t
 Replace:
 - **`YOUR_CLIENT_ID`** — from your downloaded JSON (the `client_id` field)
 - **`YOUR_CLIENT_SECRET`** — from your downloaded JSON (the `client_secret` field)
-- **`YOUR_REFRESH_TOKEN`** — the token you just printed
-- **`YOUR_PROPERTY_ID`** — your Google Analytics GA4 property ID (e.g., `465530700`)
+- **`YOUR_REFRESH_TOKEN`** — the token you printed in Step 2
+- **`YOUR_PROPERTY_ID`** — your Google Analytics GA4 property ID (for example `465530700`)
 
-> **Note the version pinning:** Instead of `mcp-google-analytics@latest`, we're using `@0.0.3`. This is intentional—see the next section.
+> **Note the version pinning.** This example uses `@0.0.3` instead of `mcp-google-analytics@latest`. This choice is intentional. See the next section.
 
 ### Step 4: Restart Claude Desktop and test
 
@@ -138,11 +138,11 @@ Close Claude Desktop completely. Reopen it. In your chat, try a simple query:
 Get me the active users and sessions for the last 7 days.
 ```
 
-If the MCP is fixed, you'll see data. If you see `ACCESS_TOKEN_SCOPE_INSUFFICIENT` again, double-check that your refresh token was created with the correct scopes and that you've restarted Claude after updating the config.
+If the MCP is fixed, you see data. If `ACCESS_TOKEN_SCOPE_INSUFFICIENT` appears again, check that you created the refresh token with the correct scopes. Also check that you restarted Claude after you updated the config.
 
 ## Preventing future breakage: pin your package version
 
-The root cause of May 1st's breakage was `@latest`. Every time Claude starts, `uvx` queries PyPI. If a new version exists, you silently get it. When that new version has breaking changes, your MCP breaks without warning.
+The root cause of the May 1st breakage was `@latest`. Every time Claude starts, `uvx` queries PyPI. If a new version exists, `uvx` installs it without notice. If that new version has breaking changes, your MCP breaks without warning.
 
 **Replace `@latest` with a specific version number.**
 
@@ -158,54 +158,54 @@ Use:
 "args": ["mcp-google-analytics@0.0.3"]
 ```
 
-> **What version should I use?** Check [PyPI](https://pypi.org/project/mcp-google-analytics/) for the latest stable version. As of May 2026, `0.0.3` is stable. Replace `0.0.3` with whatever is current.
+> **What version should I use?** Check [PyPI](https://pypi.org/project/mcp-google-analytics/) for the latest stable version. As of May 2026, `0.0.3` is stable. Replace `0.0.3` with the current version.
 
 **Trade-offs:**
 
 | Using `@latest` | Using a pinned version |
 |---|---|
 | Automatic updates (convenience) | No automatic updates (stability) |
-| Silent breakage risk | You control when to upgrade |
-| Latest features immediately | May miss security patches |
+| Risk of silent breakage | You control when to upgrade |
+| Immediate access to latest features | Possible delay in security patches |
 | Requires investigation when broken | Requires manual version bump |
 
-**For production use or daily automation, pinning is worth the extra step.** You sacrifice early access to new features in exchange for reliability.
+**For production use or daily automation, pin the version.** The extra step is worth the reliability, even if it delays access to new features.
 
 ## Troubleshooting
 
 **Error: `ACCESS_TOKEN_SCOPE_INSUFFICIENT`**
 
-Cause: Your refresh token doesn't have `analytics.readonly` scope.
-Fix: Create a new token following Step 2 above. Make sure the SCOPES list includes `https://www.googleapis.com/auth/analytics.readonly`.
+Cause: Your refresh token does not have the `analytics.readonly` scope.
+Fix: Create a new token. Follow Step 2 above. Make sure the SCOPES list includes `https://www.googleapis.com/auth/analytics.readonly`.
 
 **Error: `Invalid Credentials` or `Unauthorized`**
 
 Cause: Your `CLIENT_ID`, `CLIENT_SECRET`, or `PROPERTY_ID` is incorrect.
-Fix: Double-check each value in your config against your Google Cloud Console. Restart Claude after making changes.
+Fix: Check each value in your config against your Google Cloud Console. Restart Claude after you make changes.
 
 **Error: `Property not found`**
 
-Cause: Your `PROPERTY_ID` doesn't exist or isn't linked to your Google account.
-Fix: Log into Google Analytics and verify the property ID. You can find it in **Admin** → **Property Settings** → **Property ID**.
+Cause: Your `PROPERTY_ID` does not exist, or it is not linked to your Google account.
+Fix: Log into Google Analytics and verify the property ID. Find it in **Admin** → **Property Settings** → **Property ID**.
 
 **Error: MCP still not working after restart**
 
-Cause: Claude caches the config and may not reload it immediately.
-Fix: (1) Close Claude completely. (2) Wait 5 seconds. (3) Reopen Claude. Avoid force-quit if possible—a clean shutdown helps the config reload.
+Cause: Claude caches the config and can fail to reload it right away.
+Fix: Close Claude completely. Wait 5 seconds. Reopen Claude. If possible, avoid a force-quit. A clean shutdown helps the config reload.
 
 ## What you can do now
 
-Your GA MCP is now stable and won't break unexpectedly if you've pinned the version. You can now:
+If you pinned the version, your GA MCP is now stable and does not break without warning. You can now:
 
 - **Query Google Analytics data** directly in Claude: "What's my top traffic source this week?"
 - **Build automation** that reliably fetches GA data as part of a larger workflow
-- **Set up regular reports** using scheduled Claude sessions that pull GA metrics
+- **Set up regular reports** with scheduled Claude sessions that pull GA metrics
 
-Next steps: If you have multiple GA properties, add them as separate MCP server entries in your config (use different `env` sections for each property). If you use other MCP tools from PyPI (Google Sheets, WordPress, etc.), apply the same version pinning pattern to prevent similar silent breakage.
+Next steps: If you have multiple GA properties, add them as separate MCP server entries in your config. Use a different `env` section for each property. If you use other MCP tools from PyPI (for example Google Sheets or WordPress), apply the same version pinning pattern to prevent similar silent breakage.
 
 ## Related reading on The Science Talk
 
-This guide accompanies the [complete GA4 MCP setup guide on The Science Talk](https://thesciencetalk.com/news/connect-google-analytics-ga4-claude-desktop-mcp/) — which walks through the initial installation step-by-step from scratch. That post assumes no prior MCP experience; this post focuses on troubleshooting and preventing breakage after initial setup.
+This guide accompanies the [complete GA4 MCP setup guide on The Science Talk](https://thesciencetalk.com/news/connect-google-analytics-ga4-claude-desktop-mcp/), which walks through the initial installation step by step from scratch. That post assumes no prior MCP experience. This post focuses on troubleshooting and on preventing breakage after initial setup.
 
 ---
 
