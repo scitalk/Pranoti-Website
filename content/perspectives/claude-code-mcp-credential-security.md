@@ -21,13 +21,13 @@ sidebar_links:
     url: "/ai-guides/model-context-protocol-non-developers/"
 ---
 
-I've been building local MCP servers — a way to give Claude direct access to my Google Analytics, Google Sheets, and WordPress site, so I can run reports and manage content without switching tools. It's genuinely powerful. It's also the reason I spent yesterday rotating every credential on my machine.
+I build local MCP servers. These servers give Claude direct access to my Google Analytics, Google Sheets, and WordPress site. I can run reports and manage content without switching tools. This method is powerful. It is also the reason I rotated every credential on my machine yesterday.
 
-Let me tell you what I found out the hard way.
+This article describes what I learned the hard way.
 
 ## What Claude can access when you give it tool access
 
-When you run Claude Code — Anthropic's CLI tool — on your machine, it runs as you. Not a sandboxed version of you. Not a restricted subprocess. You.
+When you run Claude Code, Anthropic's CLI tool, on your machine, it runs as you. It does not run as a sandboxed version of you. It does not run as a restricted subprocess. It runs as you.
 
 That means:
 
@@ -37,82 +37,82 @@ That means:
 - It can make network requests
 - It has no mandatory filesystem boundary by default
 
-I discovered this when I asked Claude to help me configure some credential files. It did exactly what I asked. It read the files, wrote the configuration, and helped me build the servers. What I hadn't fully reckoned with: **every file it reads becomes part of the conversation context, and that context goes to Anthropic's servers.**
+I discovered this when I asked Claude to help me configure some credential files. Claude did exactly what I asked. It read the files, wrote the configuration, and helped me build the servers. I did not fully understand one fact: **every file Claude reads becomes part of the conversation context. That context goes to Anthropic's servers.**
 
-In one session, Claude had read:
+In one session, Claude read:
 
 - My WordPress application password (plaintext, in a JSON file)
 - My Google OAuth refresh tokens for Sheets and Analytics
 - My Claude Desktop config file containing all my API credentials
 
-Not maliciously. Not sneakily. I asked it to. I approved each tool call. But the result was the same: those credentials were now in a third party's logs.
+Claude did not act maliciously or secretly. I asked it to read the files. I approved each tool call. But the result was the same. Those credentials were now in a third party's logs.
 
-## The permission prompts — what they actually protect
+## What the permission prompts actually protect
 
-Claude Code does show you a prompt before executing tool calls. You see "reading this file" or "running this command" and you can approve or deny.
+Claude Code shows a prompt before it executes tool calls. You see messages like "reading this file" or "running this command." You can approve or deny each one.
 
 This is real protection. But it has limits.
 
-The prompts show you **what is happening, not why it matters.** When you're in flow, building something, the instinct is to keep approving. And once you approve reading a credential file, the contents are already in context — no second prompt asks whether it's okay to include that in the data sent to Anthropic.
+The prompts show you **what is happening, not why it matters.** When you work quickly on a build, the instinct is to keep approving. Once you approve a credential file for reading, the content is already in context. No second prompt asks if you want to send that data to Anthropic.
 
-There's also no allowlist by default. The permission system doesn't say "Claude can only read files in this folder." If Claude has a reason to read `~/.ssh/id_rsa`, it can ask to. If you approve it, it reads it.
+There is no allowlist by default. The permission system does not say "Claude can only read files in this folder." If Claude has a reason to read `~/.ssh/id_rsa`, it can ask to read it. If you approve the request, Claude reads the file.
 
-> **Note:** Anthropic has introduced a sandboxing feature that lets you define which directories and network hosts Claude can access — reducing unsolicited permission prompts by 84% in internal testing. This is worth configuring, but it is opt-in, not the default.
+> **Note:** Anthropic introduced a sandboxing feature that lets you define which directories and network hosts Claude can access. In internal testing, this feature reduced unsolicited permission prompts by 84 percent. You can configure this feature, but it is optional, not the default.
 
-For power users doing serious work — running reports, managing databases, deploying code — the default setup is the reality most people are operating in.
+Power users do serious work: they run reports, manage databases, and deploy code. The default setup is the reality most people use.
 
 ## Who should care most
 
-**Solopreneurs:** You likely run everything through one machine, one account. Your Google credentials, payment processor keys, client data, and domain registrar login might all be on that filesystem. Claude doesn't distinguish between files you meant to share and files you didn't.
+**Solopreneurs:** You likely run everything through one machine and one account. Your Google credentials, payment processor keys, client data, and domain registrar login can all be on that filesystem. Claude does not distinguish between files you meant to share and files you did not mean to share.
 
-**Scientists and researchers:** Lab data, unpublished results, IRB-sensitive participant data. If any of it sits on a machine where Claude Code runs, it can be read. Institutional review boards have almost certainly not contemplated this access model — and the EU AI Act's provisions on high-risk AI systems are only beginning to reach this territory.
+**Scientists and researchers:** This risk applies to lab data, unpublished results, and IRB-sensitive participant data. If any of this data sits on a machine where Claude Code runs, Claude can read it. Institutional review boards likely did not consider this access model. The EU AI Act's provisions on high-risk AI systems barely address this area yet.
 
-**Companies:** If developers are using Claude Code on machines with production database credentials, AWS keys, or customer PII — you need a policy. Not a preference. A policy. What can Claude read? What can it run? Who approves what? [Research by Astrix Security](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/) found that 53% of MCP server deployments rely on long-lived static credentials — credentials that persist as a risk indefinitely after any compromise.
+**Companies:** If developers use Claude Code on machines with production database credentials, AWS keys, or customer PII, you need a policy. Not a preference. A policy. What can Claude read? What can it run? Who approves each action? [Research by Astrix Security](https://astrix.security/learn/blog/state-of-mcp-server-security-2025/) found that 53 percent of MCP server deployments rely on long-lived static credentials. These credentials stay a risk indefinitely after any compromise.
 
 ## What "getting ugly" actually looks like
 
-It's not a dramatic breach. It's quieter than that.
+It is not a dramatic breach. It is quieter than that.
 
-You're building something useful. You ask Claude to help configure a server. It reads a credentials file to understand the format. You don't think twice — it needs to see the structure. But now those credentials are in Anthropic's infrastructure.
+You build something useful. You ask Claude to help configure a server. Claude reads a credentials file to understand the format. You do not think twice, because Claude needs to see the structure. But now those credentials are in Anthropic's infrastructure.
 
-You ask Claude to debug why something isn't connecting. It runs a test command. The command output includes an error message with a database URL and a connection string embedded in it. That goes to Anthropic too.
+You ask Claude to debug why something is not connecting. Claude runs a test command. The command output includes an error message with an embedded database URL and connection string. That data goes to Anthropic too.
 
-You're doing legitimate work. Claude is being helpful. And somewhere in that process, **the blast radius of a future Anthropic security incident just got wider.**
+You do legitimate work. Claude helps you. Somewhere in that process, **the blast radius of a future Anthropic security incident grows wider.**
 
-The credentials I rotated were all perfectly functional credentials that Claude had a legitimate reason to see. That's what makes this hard. The risk doesn't require anyone to do anything wrong.
+The credentials I rotated were all functional credentials that Claude had a legitimate reason to see. That is what makes this hard. The risk does not require anyone to do anything wrong.
 
-## What I'm doing about it
+## What I did about it
 
 After a proper audit of what happened in that session, I took these steps:
 
 **1. Rotate first, ask questions later.**
-Any credential Claude read, I rotated. WordPress application password, Google OAuth tokens — all of them. A rotated credential that was leaked is harmless. An unrotated one that was leaked is not.
+Any credential Claude read, I rotated. WordPress application password, Google OAuth tokens: all of them. A rotated credential that was leaked is harmless. An unrotated one that was leaked is not.
 
 **2. Move secrets to macOS Keychain.**
-Keychain is the one credential store on a Mac that Claude cannot read silently. Accessing it requires an explicit shell call (`security find-generic-password`) that shows up as a visible, deniable tool call. I'm migrating all secrets there.
+Keychain is the one credential store on a Mac that Claude cannot read silently. To access it, Claude must make an explicit shell call (`security find-generic-password`). This call shows up as a visible, deniable tool call. I will move all secrets there.
 
 **3. Separate Claude's role from credential access.**
-Claude writes the code. I supply the credential values. Claude doesn't need to see the actual token — only the structure of the JSON file it reads. This is a discipline change, not a technical one, but it matters.
+Claude writes the code. I supply the credential values. Claude does not need to see the actual token. Claude needs only the structure of the JSON file it reads. This change is a discipline change, not a technical one. But it matters.
 
 **4. New session hygiene.**
-Each new Claude Code session starts fresh. Credentials from a previous session aren't automatically re-exposed. I'm keeping sessions shorter and more focused, with a clear scope before I start.
+Each new Claude Code session starts fresh. Credentials from a previous session do not automatically become exposed again. I keep sessions shorter and more focused. I set a clear scope before I start each session.
 
 **5. Revoke and reissue the API key.**
-The API key Claude Code was using on my machine — revoked. Fresh key, issued after I'd rotated everything else. Belt and suspenders.
+I revoked the API key Claude Code used on my machine. I issued a fresh key after I rotated everything else. This step adds an extra layer of protection.
 
 ## The fair counterpoint
 
-None of this means Claude Code is dangerous or that you shouldn't use it. I still use it. The productivity it enables — for the kind of solo infrastructure work I do — is real.
+None of this means Claude Code is dangerous. It does not mean you must avoid using it. I still use it. The productivity it enables for the kind of solo infrastructure work I do is real.
 
-What it means is that **the mental model most users bring ("it's just a chat interface") is wrong once you add tool access.** You are giving a very capable, very fast process the same permissions you have. That's not a bug — it's the point. It's why it can actually do useful things.
+It means that **the mental model most users bring ("it is just a chat interface") is wrong once you add tool access.** You give a very capable, very fast process the same permissions you have. That is not a bug. It is the point. It is why Claude can do useful things.
 
-But it requires the same intentionality you'd bring to giving SSH access to a contractor. What can they see? What can they run? What's the blast radius if something goes wrong? Those are questions worth answering before you need them, not after.
+But it requires the same care you bring when you grant SSH access to a contractor. What can they see? What can they run? What is the blast radius if something goes wrong? Answer these questions before you need them, not after.
 
 ---
 
-**Claude with tool access is not a chat interface. It's a process running as you. Treat it accordingly.**
+**Claude with tool access is not a chat interface. It is a process that runs as you. Treat it with the same care.**
 
-If you're working through this at your organisation or on your own setup — [get in touch →](/contact/)
+If you work through this issue at your organization or in your own setup, [get in touch →](/contact/)
 
 ## If you found this useful
 
