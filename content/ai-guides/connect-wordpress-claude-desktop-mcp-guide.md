@@ -32,18 +32,18 @@ sidebar_product:
   footnote: "Complete setup guide + workflow examples"
 ---
 
-What if you could create, edit, and manage your WordPress posts without ever opening your browser? With **Claude Desktop and the Model Context Protocol (MCP)**, you can connect your self-hosted WordPress site directly to Claude — and manage your entire content workflow through natural language conversation.
+You can create, edit, and manage your WordPress posts without opening your browser. **Claude Desktop and the Model Context Protocol (MCP)** let you connect your self-hosted WordPress site directly to Claude. You can then manage your entire content workflow through natural language conversation.
 
 ## What the integration enables
 
 - "Show me all draft posts"
 - "Create a new draft about European AI regulation"
 - "Change the title of post 1234 to…"
-- "Analyse the SEO of my latest published post"
+- "Analyze the SEO of my latest published post"
 - "Add the tag 'Horizon Europe' to all posts from 2025"
 - "List all images uploaded this month"
 
-The MCP server exposes tools covering read, write, bulk operations, SEO analysis, and media management — all accessible directly from a Claude conversation. No plugins to configure on your WordPress side. No third-party dashboard to learn.
+The MCP server provides tools for read, write, bulk operations, SEO analysis, and media management. You can use all tools directly from a Claude conversation. You do not need to configure plugins on your WordPress site. You do not need to learn a third-party dashboard.
 
 ## What you need before starting
 
@@ -53,13 +53,13 @@ The MCP server exposes tools covering read, write, bulk operations, SEO analysis
 - **Terminal / Command Prompt access** — for a small number of commands
 - **Node.js v22+** — installed during setup
 
-No prior cloud experience needed. The companion guide walks through each of these from scratch, including the gotchas that trip most people up the first time.
+You do not need prior cloud experience. The companion guide explains each step from the start. It includes the common mistakes that trip up most people the first time.
 
 ## The setup: seven steps
 
-The setup covers installing Node.js, creating a WordPress Application Password, verifying your REST API, creating the site configuration file, finding your system username, configuring Claude Desktop, and verifying the connection. The whole thing takes about 15 minutes.
+The setup covers seven steps: install Node.js, create a WordPress Application Password, verify your REST API, create the site configuration file, find your system username, configure Claude Desktop, and verify the connection. The whole process takes about 15 minutes.
 
-The most common failure point is the Claude Desktop config file — the path to your credentials file must contain your exact system username. The guide includes copy-paste commands for both Mac and Windows so there is no guesswork.
+The most common failure point is the Claude Desktop config file. The path to your credentials file must contain your exact system username. The guide includes copy-paste commands for Mac and Windows. This removes guesswork.
 
 ## Common errors — all covered in the guide
 
@@ -71,6 +71,6 @@ The most common failure point is the Claude Desktop config file — the path to 
 - Config changes not taking effect after restart
 - Apache-based host blocking authentication headers
 
-The complete step-by-step guide — every configuration file, authentication step, and fix for the errors above — is on The Science Talk.
+The complete step-by-step guide is on The Science Talk. It includes every configuration file, authentication step, and fix for the errors above.
 
 [Read the full guide on The Science Talk →](https://thesciencetalk.com/news/blog-perspectives/connect-wordpress-claude-desktop-mcp-guide/)
