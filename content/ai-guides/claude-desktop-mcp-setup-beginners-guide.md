@@ -32,7 +32,7 @@ sidebar_product:
   footnote: "Complete setup guide"
 ---
 
-Claude Desktop becomes significantly more useful once you connect it to MCP servers — tools that give Claude access to your files, apps, and workflows directly from the chat interface. This guide covers everything you need to get Claude Desktop installed and your first MCP server connected, even if you have never edited a configuration file before.
+Claude Desktop becomes much more useful when you connect it to MCP servers. MCP servers are tools that give Claude access to your files, apps, and workflows directly from the chat interface. This guide shows you how to install Claude Desktop and connect your first MCP server. You do not need experience with configuration files.
 
 ## What you need before starting
 
@@ -41,7 +41,7 @@ Claude Desktop becomes significantly more useful once you connect it to MCP serv
 - An Anthropic account (free tier works)
 - For most MCP servers: [Node.js](https://nodejs.org) installed (LTS version recommended)
 
-> **Check Node.js first.** Open your terminal (macOS: search "Terminal" in Spotlight; Windows: press Windows + R, type `cmd`, press Enter) and run `node --version`. If you see a version number like `v20.x.x`, you are ready. If not, download the LTS version from nodejs.org before continuing.
+> **Check Node.js first.** Open your terminal. On macOS, search for "Terminal" in Spotlight. On Windows, press Windows + R, type `cmd`, and press Enter. Run `node --version`. If you see a version number like `v20.x.x`, you are ready. If not, download the LTS version from nodejs.org before you continue.
 
 ---
 
@@ -52,7 +52,7 @@ Go to [claude.com/download](https://claude.com/download) and download the instal
 - **macOS:** Open the `.dmg` file and drag Claude to your Applications folder.
 - **Windows:** Run the `.exe` installer and follow the prompts.
 
-Once installed, open Claude Desktop and sign in with your Anthropic account. You will see a standard chat interface — this is your starting point.
+Once installed, open Claude Desktop and sign in with your Anthropic account. You will see a standard chat interface. This is your starting point.
 
 > Claude Desktop and the Claude.ai browser interface are separate products. MCP connections are only available in the desktop app, not the browser.
 
@@ -60,11 +60,11 @@ Once installed, open Claude Desktop and sign in with your Anthropic account. You
 
 ## Step 2: Understand what MCP servers do
 
-MCP stands for **Model Context Protocol** — an open standard that lets Claude connect to external tools and data sources running on your machine (or hosted remotely).
+MCP stands for **Model Context Protocol**. It is an open standard. It lets Claude connect to external tools and data sources on your machine or on a remote host.
 
-Without MCP, Claude works only with text you paste into the conversation. With an MCP server connected, Claude can read files from your computer, query a spreadsheet, interact with your calendar, push content to your website, and more — with your explicit approval for each action.
+Without MCP, Claude works only with text you paste into the conversation. With an MCP server connected, Claude can read files from your computer, query a spreadsheet, interact with your calendar, push content to your website, and do more. Claude asks for your approval before each action.
 
-Each MCP server is a small background process. Claude Desktop launches it automatically when you start the app, based on a configuration file you set up once.
+Each MCP server is a small background process. Claude Desktop starts it automatically when you open the app, based on a configuration file you configure once.
 
 ---
 
@@ -77,7 +77,7 @@ Claude Desktop reads its MCP settings from a file called `claude_desktop_config.
 3. In the Settings window, click the **Developer** tab in the left sidebar
 4. Click **Edit Config**
 
-This opens the configuration file — or creates it if it does not exist yet. The file lives at:
+This opens the configuration file. If the file does not exist yet, Claude Desktop creates it. The file location is:
 
 - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
@@ -88,7 +88,7 @@ If the file is new, it will be empty or contain `{}`. That is expected.
 
 ## Step 4: Add your first MCP server
 
-The most straightforward MCP server to start with is the **Filesystem server** — it gives Claude access to specific folders on your computer.
+The **Filesystem server** is the simplest MCP server to start with. It gives Claude access to specific folders on your computer.
 
 Open `claude_desktop_config.json` in a text editor (VS Code, Notepad, TextEdit) and replace the contents with the following:
 
@@ -126,9 +126,9 @@ Open `claude_desktop_config.json` in a text editor (VS Code, Notepad, TextEdit) 
 }
 ```
 
-Replace `YOUR_USERNAME` with your actual computer username. The folder paths in `args` define which directories Claude can access — add or remove paths as needed.
+Replace `YOUR_USERNAME` with your actual computer username. The folder paths in `args` define which directories Claude can access. Add or remove paths as needed.
 
-> **Only grant access to folders you are comfortable with Claude reading and modifying.** Start narrow — Desktop and Documents is a sensible default. You can always expand later.
+> **Only grant access to folders you trust Claude to read and change.** Start narrow. Desktop and Documents is a good default. You can expand access later.
 
 Save the file.
 
@@ -136,17 +136,17 @@ Save the file.
 
 ## Step 5: Restart Claude Desktop and verify
 
-Close Claude Desktop completely (on macOS: right-click the Dock icon → Quit; on Windows: close the window and check the system tray).
+Close Claude Desktop completely. On macOS, right-click the Dock icon and select Quit. On Windows, close the window and check the system tray.
 
-Reopen it. After restarting, look for a **hammer icon** (🔨) in the bottom-right corner of the chat input box. Click it — you should see a list of tools provided by the Filesystem server, such as `read_file`, `write_file`, `list_directory`, and `search_files`.
+Reopen it. After the restart, look for a **hammer icon** (🔨) in the bottom-right corner of the chat input box. Click it. You should see a list of tools from the Filesystem server, such as `read_file`, `write_file`, `list_directory`, and `search_files`.
 
-If the hammer icon appears: your MCP server is connected and ready.
+If the hammer icon appears, your MCP server is connected and ready.
 
 ---
 
 ## Step 6: Add a second MCP server (optional but recommended)
 
-Once you are comfortable with the config file structure, adding more servers follows exactly the same pattern — add another entry inside `"mcpServers"`:
+After you learn the config file structure, you can add more servers the same way. Add another entry inside `"mcpServers"`:
 
 ```json
 {
@@ -169,23 +169,23 @@ Once you are comfortable with the config file structure, adding more servers fol
 
 Each server gets its own key inside `mcpServers`. Restart Claude Desktop after every change to the config file.
 
-Popular next steps from here: connecting Google Sheets, your WordPress site, or your email. See the related guides linked in the sidebar.
+Popular next steps include connecting Claude to Google Sheets, your WordPress site, or your email. See the related guides in the sidebar.
 
 ---
 
 ## Troubleshooting
 
 **The hammer icon does not appear after restarting**
-Check your `claude_desktop_config.json` for JSON syntax errors — a missing comma or bracket will prevent the server from loading. Paste the file contents into [jsonlint.com](https://jsonlint.com) to validate it.
+Check your `claude_desktop_config.json` for JSON syntax errors. A missing comma or bracket prevents the server from loading. Paste the file contents into [jsonlint.com](https://jsonlint.com) to check it.
 
 **"npx is not recognised" error (Windows)**
-Node.js may not be on your system PATH. Reinstall Node.js from nodejs.org, making sure to tick "Add to PATH" during installation. Then restart your computer before trying again.
+Node.js can be missing from your system PATH. Reinstall Node.js from nodejs.org. During installation, select "Add to PATH". Then restart your computer and try again.
 
 **Claude says it cannot access a file I expect it to reach**
 The file is probably outside the folders listed in your config. Add the folder path to the `args` array in `claude_desktop_config.json` and restart Claude Desktop.
 
 **The server connects but Claude is not using it**
-Ask Claude directly: "What tools do you have access to?" — this prompts it to list connected MCP tools and confirms the connection is active.
+Ask Claude directly: "What tools do you have access to?" This prompts Claude to list connected MCP tools and confirms the connection is active.
 
 ---
 
@@ -197,15 +197,15 @@ With your first MCP server connected, Claude Desktop can:
 - Create and save documents: *"Write a meeting summary and save it to my Desktop as meeting-notes.md"*
 - Search across your files: *"Find any file containing the phrase 'project proposal'"*
 
-Each action requires your approval — Claude will ask before reading or writing anything.
+Each action requires your approval. Claude asks before it reads or writes anything.
 
-From here, the most useful next steps are connecting Claude to the specific tools you already use every day: spreadsheets, your website, your calendar. The guides in the sidebar cover those connections in detail.
+From here, the most useful next step is to connect Claude to the tools you already use every day: spreadsheets, your website, your calendar. The guides in the sidebar cover those connections in detail.
 
 ---
 
 ## Related reading on The Science Talk
 
-This guide is the entry point for MCP setup. From here, the next step is connecting Claude to specific tools — including a detailed walkthrough of [connecting Claude Desktop to Google Sheets](https://thesciencetalk.com/news/ai-integration-use-cases/connect-claude-desktop-google-sheets-mcp-guide/) and [connecting a self-hosted WordPress site to Claude Desktop](/ai-guides/connect-wordpress-claude-desktop-mcp-guide/).
+This guide is the entry point for MCP setup. The next step is to connect Claude to specific tools. See the detailed walkthrough for [connecting Claude Desktop to Google Sheets](https://thesciencetalk.com/news/ai-integration-use-cases/connect-claude-desktop-google-sheets-mcp-guide/) and for [connecting a self-hosted WordPress site to Claude Desktop](/ai-guides/connect-wordpress-claude-desktop-mcp-guide/).
 
 ---
 *Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*
