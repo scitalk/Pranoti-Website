@@ -20,15 +20,15 @@ sidebar_links:
     url: "/ai-guides/claude-desktop-mcp-setup-beginners-guide/"
 ---
 
-MCP servers extend what Claude can do — connecting it to your files, databases, analytics tools, and third-party services. Before you install one, it is worth understanding what you are actually handing over and what a basic security check looks like in practice. This guide covers the five checks that matter most, written for anyone using Claude Desktop professionally, regardless of technical background.
+MCP servers extend what Claude can do. They connect it to your files, databases, analytics tools, and third-party services. Before you install one, understand what you actually hand over and what a basic security check looks like in practice. This guide covers the five checks that matter most, written for anyone who uses Claude Desktop professionally, regardless of technical background.
 
 ## What you are actually installing
 
 An MCP (Model Context Protocol) server is a piece of software that runs locally on your machine and gives Claude tools to interact with external systems. When you install one, Claude can use it to read files, call APIs, query databases, or take actions in connected apps.
 
-**Anthropic does not audit or approve MCP servers.** The ecosystem has over 10,000 published servers as of 2026, the majority community-developed and lightly reviewed. Installing an MCP server is closer to installing a browser extension than downloading software from an app store — you are trusting the author directly.
+**Anthropic does not audit or approve MCP servers.** The ecosystem has over 10,000 published servers as of 2026. The majority are community-developed and lightly reviewed. Installing an MCP server is closer to installing a browser extension than downloading software from an app store. You trust the author directly.
 
-The security model is simple: the MCP server runs as you, with your permissions, on your machine.
+The security model is simple. The MCP server runs as you, with your permissions, on your machine.
 
 ---
 
@@ -53,68 +53,68 @@ Open it and look for any line containing a key, token, password, or secret store
 }
 ```
 
-**Plain text in this file is a risk.** The file is not encrypted, it may sync via cloud backup, and it can end up in version control if you store your dotfiles in a Git repository.
+**Plain text in this file is a risk.** The file is not encrypted. It can sync via cloud backup. It can end up in version control if you store your dotfiles in a Git repository.
 
 The safer approach is to use your operating system's secure credential store:
 
 - **macOS:** Store secrets in Keychain Access. Reference them in your terminal via `security find-generic-password`, or use a Keychain-backed MCP wrapper to surface them to Claude directly.
 - **Windows:** Use Credential Manager. Access stored credentials via `cmdkey` in the command line.
 
-Some MCP servers also support marking fields as `"sensitive": true` in their manifest — when supported, Claude Desktop routes those values through OS-level secure storage automatically. Check the documentation for any server you install.
+Some MCP servers also support marking fields as `"sensitive": true` in their manifest. When supported, Claude Desktop routes those values through OS-level secure storage automatically. Check the documentation for any server you install.
 
-> **Practical step:** Open your `claude_desktop_config.json` now. Any value that looks like a key, token, or password should be moved out of plain text before you continue.
+> **Practical step:** Open your `claude_desktop_config.json` now. Move any value that looks like a key, token, or password out of plain text before you continue.
 
 ---
 
 ## Check 2: Does this MCP server deserve your trust?
 
-Before installing any MCP server, run through these four questions:
+Before you install any MCP server, run through these four questions:
 
 **Where does it come from?**
-Prefer servers published by the tool vendor directly (e.g. the official Stripe MCP, the official GitHub MCP) or by known community maintainers with a public track record. Be cautious with servers that have no linked repository, no author identity, or no usage history.
+Prefer servers published by the tool vendor directly (for example, the official Stripe MCP, the official GitHub MCP) or by known community maintainers with a public track record. Be cautious with servers that have no linked repository, no author identity, or no usage history.
 
 **Is it actively maintained?**
-Check the repository's last commit date. An MCP server that has not been updated in six months may have unpatched vulnerabilities or break silently as Claude Desktop updates.
+Check the repository's last commit date. An MCP server that has not been updated in six months can have unpatched vulnerabilities or break silently as Claude Desktop updates.
 
 **What permissions does it request?**
-Read the server's documentation before installing. If an MCP server only needs to read data, it should not be requesting write permissions. If a database MCP asks to connect as a superuser, that is a red flag — it should use a read-only role scoped to the minimum it needs.
+Read the server's documentation before you install. If an MCP server only needs to read data, it must not request write permissions. If a database MCP asks to connect as a superuser, treat that as a red flag. It must use a read-only role scoped to the minimum it needs.
 
 **Does the source code exist and is it readable?**
 For open-source servers, scan the repository for hardcoded credentials, unusual network calls, or code that reads and transmits file contents. You do not need to be a developer to spot a block of code that sends data to an unfamiliar endpoint.
 
-> Research from 2026 found that approximately 3% of MCP servers in production contain hardcoded credentials designed to function as credential theft traps. The risk is small but real — especially with servers distributed through unofficial channels.
+> Research from 2026 found that approximately 3% of MCP servers in production contain hardcoded credentials designed to function as credential theft traps. The risk is small but real, especially with servers distributed through unofficial channels.
 
 ---
 
 ## Check 3: What can Claude see on your machine?
 
-By default, Claude Desktop can only use the tools that your installed MCP servers provide. It does not have blanket access to your file system unless you have installed a filesystem MCP server.
+By default, Claude Desktop can only use the tools that your installed MCP servers provide. It does not have blanket access to your file system unless you install a filesystem MCP server.
 
-If you have installed a filesystem MCP — or any MCP that accesses local files — check what root path it is pointed at. A server configured to read `~/Documents` has access to everything in that folder, including any credentials, client data, or personal files stored there.
+If you install a filesystem MCP, or any MCP that accesses local files, check what root path it points at. A server configured to read `~/Documents` has access to everything in that folder, including any credentials, client data, or personal files stored there.
 
-**Scope what each server can reach.** Claude Desktop's `claude_desktop_config.json` is global — every server listed under `mcpServers` is available in every conversation, with no per-project isolation. (Project-scoped MCP configuration is a Claude Code feature, not a Claude Desktop one — don't confuse the two if you use both.) Since there's no built-in way to limit a server to specific conversations, treat every server you add as always-on and scope its *own* permissions accordingly:
+**Scope what each server can reach.** Claude Desktop's `claude_desktop_config.json` is global. Every server listed under `mcpServers` is available in every conversation, with no per-project isolation. (Project-scoped MCP configuration is a Claude Code feature, not a Claude Desktop one. Do not confuse the two if you use both.) Since Claude Desktop has no built-in way to limit a server to specific conversations, treat every server you add as always-on and scope its *own* permissions accordingly:
 
 - Point filesystem servers at the narrowest folder they actually need, not your whole home directory
 - Use read-only database roles and API scopes wherever the server supports them
-- Remove servers you're only testing once you're done, rather than leaving them installed indefinitely
+- Remove servers you only test once you finish, rather than leave them installed indefinitely
 
-Reserve installation for tools you trust fully and expect to use regularly — there's no "sandboxed for one project" middle ground in Claude Desktop today.
+Reserve installation for tools you trust fully and expect to use regularly. Claude Desktop has no "sandboxed for one project" middle ground today.
 
 ---
 
 ## Check 4: Are credentials leaking into subprocesses?
 
-Each MCP server Claude Desktop launches runs as its own subprocess, with the environment variables you defined for it in `claude_desktop_config.json`. The risk isn't your entire shell environment leaking in by default — it's the opposite mistake: putting more into a server's `env` block than that specific server needs, so every tool call it makes can see credentials unrelated to its job.
+Each MCP server Claude Desktop launches runs as its own subprocess, with the environment variables you defined for it in `claude_desktop_config.json`. The risk is not your entire shell environment leaking in by default. It is the opposite mistake: putting more into a server's `env` block than that specific server needs, so every tool call it makes can see credentials unrelated to its job.
 
-Keep each server's `env` entry minimal — only the keys that server actually requires — rather than reusing one broad set of credentials across multiple `mcpServers` entries. If you're also a Claude Code user, note that `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` is a Claude Code setting for its Bash tool and hooks; it has no effect on Claude Desktop, which doesn't run a general-purpose shell tool.
+Keep each server's `env` entry minimal, with only the keys that server actually requires, rather than reuse one broad set of credentials across multiple `mcpServers` entries. If you also use Claude Code, note that `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` is a Claude Code setting for its Bash tool and hooks. It has no effect on Claude Desktop, which does not run a general-purpose shell tool.
 
-> If you store API keys or tokens as shell environment variables for other tools, don't assume Claude Desktop automatically isolates MCP servers from them — check each server's own documentation for how it reads credentials.
+> If you store API keys or tokens as shell environment variables for other tools, do not assume Claude Desktop automatically isolates MCP servers from them. Check each server's own documentation for how it reads credentials.
 
 ---
 
 ## Check 5: What have you already installed?
 
-If you have been using Claude Desktop with MCP servers for a while, it is worth auditing what is currently running.
+If you have used Claude Desktop with MCP servers for a while, audit what currently runs.
 
 Open your `claude_desktop_config.json` and list every entry under `mcpServers`. For each one, ask:
 
@@ -122,9 +122,9 @@ Open your `claude_desktop_config.json` and list every entry under `mcpServers`. 
 - Do I know what credentials it holds?
 - Is it still maintained?
 
-Remove any server you no longer actively use. Unused MCP servers are an unnecessary attack surface — they hold credentials and run code even when you are not thinking about them.
+Remove any server you no longer actively use. Unused MCP servers create an unnecessary attack surface. They hold credentials and run code even when you are not thinking about them.
 
-For servers you keep, check whether their credentials have been rotated recently. API keys that have not been rotated in over a year should be regenerated and the old keys revoked.
+For servers you keep, check whether you have rotated their credentials recently. Regenerate API keys that have not been rotated in over a year and revoke the old keys.
 
 ---
 
@@ -159,12 +159,12 @@ Use this before every new MCP server installation:
 
 Running through this checklist takes under thirty minutes for most setups. The highest-impact actions are moving plain-text credentials to Keychain, enabling subprocess environment scrubbing, and removing MCP servers you no longer use.
 
-Security with AI tools is not about avoiding them — it is about knowing what you have installed and making deliberate choices about access. The checklist above gives you a repeatable baseline to come back to as your setup evolves.
+Security with AI tools is not about avoiding them. It is about knowing what you have installed and making deliberate choices about access. The checklist above gives you a repeatable baseline to return to as your setup evolves.
 
 ## Related reading on The Science Talk
 
-- [How to Connect Claude Desktop to Google Sheets via MCP](https://thesciencetalk.com/news/connect-claude-desktop-google-sheets-mcp-guide/) — setup guide including OAuth credential configuration
-- [How to Connect Your Self-Hosted WordPress Site to Claude Desktop via MCP](https://thesciencetalk.com/news/connect-wordpress-claude-desktop-mcp-guide/) — covers application password setup for WordPress MCP
+- [How to Connect Claude Desktop to Google Sheets via MCP](https://thesciencetalk.com/news/connect-claude-desktop-google-sheets-mcp-guide/), a setup guide including OAuth credential configuration
+- [How to Connect Your Self-Hosted WordPress Site to Claude Desktop via MCP](https://thesciencetalk.com/news/connect-wordpress-claude-desktop-mcp-guide/), covering application password setup for WordPress MCP
 
 ---
 *Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
