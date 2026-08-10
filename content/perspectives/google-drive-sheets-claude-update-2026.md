@@ -32,45 +32,45 @@ sidebar_product:
   footnote: "Instant PDF delivery. Lifetime access."
 ---
 
-Anthropic quietly rolled out Google Sheets support for the Google Drive connector in Claude. If you've been exporting CSVs or manually copying data between your spreadsheets and Claude conversations, this is good news — the friction just dropped.
+Anthropic added Google Sheets support to the Google Drive connector in Claude. If you export CSVs or copy data between your spreadsheets and Claude conversations by hand, this update removes that friction.
 
-But the update also raised a question I've been fielding all week: **"Do I still need the MCP setup, or does the native connector replace it?"**
+But the update also raised a question many people asked this week: **"Do I still need the MCP setup, or does the native connector replace it?"**
 
-The short answer: it depends entirely on what you're trying to do.
+The short answer: it depends on your task.
 
 ## What Actually Changed
 
-The Google Drive connector — the built-in integration available in claude.ai and Claude Desktop — now pulls data from Google Sheets. Previously, it only worked with Google Docs and Slides. Now it reads Sheets too, exporting them as CSV for Claude to analyse.
+The Google Drive connector is the built-in integration in claude.ai and Claude Desktop. It now pulls data from Google Sheets. Before this update, it worked only with Google Docs and Slides. It now reads Sheets too, and exports them as CSV files for Claude to analyze.
 
 This means you can:
 - Attach a Sheet directly from your Drive
-- Ask Claude to summarise, compare, or analyse the data
+- Ask Claude to summarize, compare, or analyze the data
 - Get instant insights without leaving the conversation
 
-For read-only analysis — "What's the average in column C?" or "Which rows have values over 500?" — the native connector handles it cleanly.
+For read-only analysis, for example "What is the average in column C?" or "Which rows have values over 500?", the native connector handles the task well.
 
 ## Where It Stops
 
-The Google Drive connector is **read-only**. It can pull data in, but it can't push changes back. Here's what it still can't do:
+The Google Drive connector is **read-only**. It can pull data in, but it cannot push changes back. The list below shows what it still cannot do.
 
 ### 1. Write Operations
-You can't create new spreadsheets, append rows, or update cell values. If your workflow involves Claude writing data back to Sheets — logging results, updating trackers, or generating reports — the native connector won't cut it.
+You cannot create new spreadsheets, append rows, or update cell values with the connector. If your workflow needs Claude to write data back to Sheets, for example to log results, update trackers, or generate reports, the native connector cannot do this. Use MCP instead.
 
 ### 2. Formula Preservation
-Sheets get exported as CSV. Formulas don't survive the round trip. If you need Claude to work with formulas directly — reading them, updating them, or creating new ones — that requires API access via MCP.
+The connector exports Sheets as CSV files. Formulas do not survive this export. If Claude must read, update, or create formulas, use API access through MCP.
 
 ### 3. Batch Operations
-The connector treats each Sheet as a static snapshot. You can't run batch updates across multiple tabs, apply formatting, or manage sharing permissions. The Google Sheets MCP server this site's setup guide uses exposes around 19 tools for these operations; the connector has none.
+The connector treats each Sheet as a static snapshot. You cannot run batch updates across multiple tabs, apply formatting, or manage sharing permissions with it. The Google Sheets MCP server in this site's setup guide provides around 19 tools for these operations. The connector provides none.
 
 ### 4. Live Data
-CSV export means the data Claude sees is whatever existed at the moment you attached the file. If the Sheet updates while you're working, Claude won't see those changes unless you re-attach. MCP queries live cells every time.
+CSV export means Claude sees only the data that existed when you attached the file. If the Sheet changes while you work, Claude will not see the changes unless you attach the file again. MCP reads live cells every time.
 
 ### 5. Multi-Sheet Workflows
-If you're working across several Sheets — pulling data from one, writing to another, cross-referencing a third — the connector makes you attach each separately. MCP lets Claude operate across your entire Drive programmatically.
+If you work across several Sheets, for example to pull data from one, write to another, and cross-reference a third, the connector requires you to attach each file separately. MCP lets Claude operate across your entire Drive through the API.
 
 ## When You Need MCP
 
-The native connector is perfect for one-off analysis. MCP is for automation, dashboards, and bidirectional workflows.
+Use the native connector for one-off analysis. Use MCP for automation, dashboards, and bidirectional workflows.
 
 **Use the native Google Drive connector when:**
 - You're asking Claude to analyse existing data
@@ -87,12 +87,12 @@ The native connector is perfect for one-off analysis. MCP is for automation, das
 
 ## The Integration Landscape in 2026
 
-This update reflects a broader shift: native connectors are getting simpler and more accessible, but they're deliberately scoped to read-only use cases. That keeps them low-risk, low-friction, and easy to approve in organisational settings.
+This update reflects a broader shift. Native connectors are becoming simpler and more accessible, but they remain scoped to read-only use cases. This scope keeps them low-risk, low-friction, and easy to approve in organizational settings.
 
-MCP, by contrast, is the power-user route. It requires OAuth setup, API enablement, and a bit of config-file editing — but it gives you full programmatic control. The two approaches serve different needs, and for most knowledge workers, having both available is the ideal state.
+MCP is the power-user route. It requires OAuth setup, API enablement, and some config file editing, but it gives you full programmatic control. The two approaches serve different needs. For most knowledge workers, the ideal state includes both options.
 
-If you're already running the MCP integration, nothing changes. If you've been on the fence about setting it up, the native connector now handles the simple cases — so you can reserve MCP for workflows that genuinely need it.
+If you already run the MCP integration, nothing changes for you. If you have not yet set up MCP, the native connector now handles the simple cases. You can reserve MCP for workflows that truly need it.
 
 ---
 
-**For the complete MCP setup guide** — OAuth walkthrough, copy-paste config, and all 7 troubleshooting fixes — see [How to Connect Claude Desktop to Google Sheets via MCP](/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/).
+**For the complete MCP setup guide**, including the OAuth walkthrough, copy-paste config, and all 7 troubleshooting fixes, see [How to Connect Claude Desktop to Google Sheets via MCP](/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/).
