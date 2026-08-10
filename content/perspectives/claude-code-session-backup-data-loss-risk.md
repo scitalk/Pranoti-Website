@@ -21,31 +21,31 @@ sidebar_links:
     url: "/perspectives/claude-skills-hygiene-audit/"
 ---
 
-I found out the hard way that Claude's data export doesn't include Claude Code sessions. Not a setting I had missed, not a plan tier limitation — an architectural gap in Claude's own infrastructure. So I built a **Claude Code session backup** system to close it: three parts, running on its own daily schedule, entirely independent of whether Claude Code is even open.
+I found out the hard way. Claude's data export does not include Claude Code sessions. This is not a setting that I missed. It is not a limit of a plan tier. It is an architectural gap in Claude's own infrastructure. So I built a **Claude Code session backup** system to close this gap. The system has three parts. It runs on its own daily schedule. It runs even when Claude Code is closed.
 
 ## Claude Code data loss: why your data export doesn't include Claude Code sessions
 
 Claude's account-level data export, the one you request from Settings → Privacy, covers your claude.ai conversations. It does not cover Claude Code.
 
-That's not an oversight so much as a consequence of how the two products are built. Claude Code is a separate CLI product with no server-side sync — every session lives only as a local file on your own machine, appended to for as long as that session runs. Anthropic's own [Claude Help Center article on exporting your data](https://support.claude.com/en/articles/9450526-export-your-claude-data) confirms this scope directly: the export is conversation data from the web app and desktop app, full stop.
+This is not an oversight. It is a result of how Anthropic built the two products. Claude Code is a separate CLI product. It has no server-side sync. Each session exists only as a local file on your own computer. Claude Code adds to this file for as long as the session runs. Anthropic's own [Claude Help Center article on exporting your data](https://support.claude.com/en/articles/9450526-export-your-claude-data) confirms this scope directly: the export is conversation data from the web app and desktop app, full stop.
 
-If you use Claude Code the way I do — daily, for real project work, sometimes across sessions that span days — that means months of problem-solving, decisions, and context exist in exactly one place, with zero built-in redundancy.
+I use Claude Code daily for real project work. Some sessions span many days. As a result, months of problem-solving, decisions, and context exist in only one place. The system has no built-in redundancy.
 
 ## The real risk for Claude Code power users
 
-This isn't a hypothetical. It's a documented, recurring complaint — [reports of entire session histories disappearing to app updates and automatic retention cleanup](https://github.com/anthropics/claude-code/issues/59248), with **no warning, no export prompt, and no recovery path**, because the data was never anywhere but the one folder on their disk.
+This is not a hypothetical case. It is a documented, recurring complaint. Users report that [app updates and automatic retention cleanup delete entire session histories](https://github.com/anthropics/claude-code/issues/59248). Claude Code gives **no warning, no export prompt, and no recovery path**, because the data exists only in one folder on the user's disk.
 
-For a casual user, that's an inconvenience. For a consultant or a power user running client work, design decisions, and technical debugging through Claude Code, it's a genuine liability. Once a session is pruned by Claude Code's own retention behaviour, or put away as archived, there is no local tool — mine or anyone else's — that can read its content back. The only real leverage you have is capturing it *before* that happens.
+For a casual user, that is an inconvenience. For a consultant or a power user who runs client work, design decisions, and technical debugging through Claude Code, it is a genuine liability. Once Claude Code's retention process prunes or archives a session, no local tool can read the content back. The only real leverage you have is to capture the data *before* that happens.
 
 ## A sophisticated local backup system for Claude Code sessions
 
-The pattern I landed on has three parts, and none of them require touching Claude Code's own storage destructively.
+The pattern that I use has three parts. None of the parts change Claude Code's own storage.
 
-1. **Copy, never move.** The raw session logs get copied from Claude Code's working folder into a permanent, separate location on disk. The originals stay exactly where Claude Code expects them, so nothing about resuming a session breaks.
-2. **Make it readable.** Those raw logs get turned into plain text — the underlying format is technically complete but genuinely unreadable at a glance — named and dated so a specific session is findable later without opening a single raw file.
-3. **Keep the important ones properly.** For sessions worth keeping as a proper record — not every session, just the ones that matter — a polished, shareable version gets generated, with formatting, links, and code intact.
+1. **Copy, never move.** The system copies the raw session logs from Claude Code's working folder into a permanent, separate location on disk. The originals stay exactly where Claude Code expects them, so nothing about resuming a session breaks.
+2. **Make it readable.** The system converts the raw logs to plain text. The underlying format is technically complete but genuinely unreadable at a glance. Each file is named and dated so you can find a specific session later without opening a single raw file.
+3. **Keep the important ones properly.** For sessions worth keeping as a proper record, not every session, just the ones that matter, the system generates a polished, shareable version, with formatting, links, and code intact.
 
-The part that actually makes it useful, though, isn't any single step — it's that it runs **on its own**, daily, using nothing beyond what's already built into the operating system. No third-party service, no account, nothing installed beyond what ships with the machine. If something ever breaks — a format changes, a step fails — it fails loudly, with a notification I can't miss, rather than quietly producing an incomplete backup I'd only discover was broken the day I actually needed it.
+No single step makes the system useful. The system runs on its own, every day. It uses only what is already part of the operating system. The system needs no third-party service and no account. It needs nothing beyond what ships with the machine. If a format changes or a step fails, the system fails loudly. It sends a notification that I cannot miss. It does not quietly produce an incomplete backup that I only find broken on the day that I need it.
 
 > **Key takeaways:**
 > - Claude's data export does not include Claude Code sessions — confirmed via Anthropic's own documentation.
@@ -54,13 +54,13 @@ The part that actually makes it useful, though, isn't any single step — it's t
 
 ## Why this matters beyond Claude Code
 
-The specific mechanism here is Claude Code's, but the principle isn't. Any platform you rely on heavily — LinkedIn, Google Workspace, ChatGPT, Claude itself — deserves the same instinct: don't assume the platform's own export covers everything, and don't assume "it's stored somewhere" means "it's safe."
+The mechanism here is specific to Claude Code, but the principle applies more broadly. Any platform that you rely on heavily, such as LinkedIn, Google Workspace, ChatGPT, or Claude itself, deserves the same instinct. Do not assume that the platform's own export covers everything. Do not assume that "it is stored somewhere" means "it is safe."
 
-There's a second, forward-looking reason this matters. If you ever want to build a personal knowledge system or a [second brain from your own AI sessions](/ai-guides/claude-second-brain-knowledge-system/) — a private RAG setup, a searchable archive of your own reasoning — this kind of durable, readable record is exactly the raw material that requires. Archiving isn't just insurance against loss; it's the foundation for anything you might want to build on top of your own work later.
+There is a second reason why this matters. If you ever want to build a personal knowledge system, such as a [second brain from your own AI sessions](/ai-guides/claude-second-brain-knowledge-system/), for example a private RAG setup or a searchable archive of your own reasoning, this kind of durable, readable record is exactly the raw material that you need. Archiving is not only insurance against loss. It is the foundation for anything that you want to build later on your own work.
 
 ---
 
-I wish I'd set this up on day one instead of after nearly losing something I needed. If you're a Claude Code power user reading this and thinking "I don't actually know what happens to my sessions" — that's worth five minutes of attention now, because it's a much longer problem to solve after the fact.
+I wish that I had set up this system on day one, not after I nearly lost data that I needed. If you are a Claude Code power user reading this and thinking "I do not actually know what happens to my sessions," that is worth five minutes of attention now, because it becomes a much longer problem to solve after the fact.
 
 ## Related reading on The Science Talk
 
