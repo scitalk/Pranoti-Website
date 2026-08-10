@@ -32,39 +32,39 @@ sidebar_product:
   footnote: "Complete setup guide + templates"
 ---
 
-If you use **Claude Desktop** and want it to read, edit, and manage your Google Sheets directly, the **Model Context Protocol (MCP)** is the cleanest and most secure way to do it. No copy-pasting data, no exporting CSVs — just natural language commands like "update cell B5" or "list all my spreadsheets."
+If you use **Claude Desktop** and want it to read, edit, and manage your Google Sheets directly, use the **Model Context Protocol (MCP)**. It is the cleanest and most secure way to do this. You do not need to copy data or export CSV files. You can use natural language commands like "update cell B5" or "list all my spreadsheets."
 
-I built and documented this setup end-to-end — including every configuration decision and the troubleshooting rabbit holes — so you can get it running in under 30 minutes.
+I built and documented this setup from start to end. The guide includes every configuration decision and the troubleshooting steps. You can get the connection running in under 30 minutes.
 
-## What you'll achieve
+## What you will achieve
 
-By the end of the full guide, your Claude Desktop will be able to **directly interact with any Google Sheet** you give it access to — reading data ranges, writing to cells, appending rows, creating new spreadsheets, and sharing them, all from within a Claude conversation.
+At the end of the full guide, Claude Desktop can **directly interact with any Google Sheet** you give it access to. It can read data ranges, write to cells, append rows, create new spreadsheets, and share them. You can do all of this from within a Claude conversation.
 
-The connection uses [MCP (Model Context Protocol)](https://modelcontextprotocol.io/), an open standard by Anthropic for connecting AI assistants to external tools.
+The connection uses [MCP (Model Context Protocol)](https://modelcontextprotocol.io/). This is an open standard from Anthropic. It connects AI assistants to external tools.
 
 ## Prerequisites
 
-Before starting, you'll need:
+Before you start, you need:
 
 - **Claude Desktop** — the latest version installed on macOS or Windows
-- **A Google account** — personal Gmail or Google Workspace both work
-- **A Google Cloud project** — free to create at [console.cloud.google.com](https://console.cloud.google.com/)
-- **Terminal/command line access** — you'll need to run a few commands
-- **Python package manager (uv)** — covered in the setup guide
+- **A Google account** — a personal Gmail account or Google Workspace account both work
+- **A Google Cloud project** — you can create one for free at [console.cloud.google.com](https://console.cloud.google.com/)
+- **Terminal or command line access** — you must run a few commands
+- **Python package manager (uv)** — the setup guide covers this
 
 ## Authentication: two options
 
-The MCP server supports two authentication methods:
+The MCP server supports two authentication methods.
 
-**Service account** — a separate Google identity that accesses only the sheets you share with it. Headless (no browser login) and good for automation, but many Workspace accounts block service account key creation by default.
+**Service account.** This is a separate Google identity. It accesses only the sheets you share with it. It does not need a browser login, and it works well for automation. Many Workspace accounts block service account key creation by default.
 
-**OAuth 2.0 (recommended for most users)** — authenticate as yourself via a browser login. No organisation policy issues, no service account keys. This is the approach I walk through in the full guide.
+**OAuth 2.0 (recommended for most users).** You authenticate as yourself through a browser login. This method has no organization policy issues and needs no service account keys. The full guide walks through this approach.
 
 ---
 
 ## Get the complete guide
 
-The full step-by-step walkthrough — OAuth setup from scratch, service account configuration, Claude Desktop config, and solutions to every common error — is available as a paid guide.
+The full step-by-step walkthrough covers OAuth setup from the start, service account configuration, Claude Desktop configuration, and solutions to every common error. It is available as a paid guide.
 
 [Get access →](https://thesciencetalk.com/claude-google-sheets-guide/)
 
@@ -72,6 +72,6 @@ The full step-by-step walkthrough — OAuth setup from scratch, service account 
 
 ## Related reading on The Science Talk
 
-This guide accompanies the [full Google Sheets MCP post on The Science Talk](https://thesciencetalk.com/connect-claude-desktop-google-sheets-mcp-guide/) — covering the background, setup decisions, and what this integration unlocks in a real workflow.
+This guide accompanies the [full Google Sheets MCP post on The Science Talk](https://thesciencetalk.com/connect-claude-desktop-google-sheets-mcp-guide/). That post covers the background, the setup decisions, and what this integration enables in a real workflow.
 
 *Want more guides like this? Browse all [AI Guides](/ai-guides/) or [explore the case studies](/case-studies/).*
