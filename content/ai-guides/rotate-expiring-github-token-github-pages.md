@@ -20,7 +20,7 @@ sidebar_links:
     url: "/ai-guides/run-n8n-locally-mac-nodejs-docker-guide/"
 ---
 
-Your GitHub personal access token is about to expire, and your site runs on GitHub Pages. The reassuring part first: your automated deploys keep working regardless. This guide shows exactly where the token is actually used, how to rotate it, and how to revoke the old one safely — so a routine token expiry never turns into a broken site.
+Your GitHub personal access token is about to expire, and your site runs on GitHub Pages. Here is the reassuring part first. Your automated deploys keep working regardless. This guide shows exactly where you actually use the token, how to rotate it, and how to revoke the old one safely, so a routine token expiry never turns into a broken site.
 
 ## What you need before starting
 
@@ -29,21 +29,21 @@ Your GitHub personal access token is about to expire, and your site runs on GitH
 - Permission to create tokens on your GitHub account
 - About 10 minutes
 
-> This guide assumes your site auto-deploys from a `main` branch push via GitHub Actions — the standard setup for Hugo and other static-site generators on GitHub Pages.
+> This guide assumes your site auto-deploys from a `main` branch push via GitHub Actions, the standard setup for Hugo and other static-site generators on GitHub Pages.
 
 ## Why your GitHub Pages deploy is not at risk
 
-The single most useful thing to understand: your **personal access token never touches the deploy pipeline**. GitHub Actions authenticates with its own automatically generated `GITHUB_TOKEN`.
+Here is the single most useful thing to understand. Your **personal access token never touches the deploy pipeline**. GitHub Actions authenticates with its own automatically generated `GITHUB_TOKEN`.
 
-That token is created fresh at the start of every workflow run, scoped to that one repository, and expires the moment the run finishes. It is not your personal token, and you never manage it.
+GitHub creates that token fresh at the start of every workflow run, scopes it to that one repository, and expires it the moment the run finishes. It is not your personal token, and you never manage it.
 
-So when a workflow builds your Hugo site and publishes to the `gh-pages` branch, it uses the built-in `GITHUB_TOKEN` — not the personal token sitting in your laptop's credential store. Your expiring token has no effect on it.
+So when a workflow builds your Hugo site and publishes to the `gh-pages` branch, it uses the built-in `GITHUB_TOKEN`, not the personal token sitting in your laptop's credential store. Your expiring token has no effect on it.
 
-> Your personal access token only matters for actions **you** run from your own machine — pushing commits, pulling, or using the `gh` CLI. Everything the server does on its own is covered by [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token).
+> Your personal access token only matters for actions **you** run from your own machine, such as pushing commits, pulling, or using the `gh` CLI. [`GITHUB_TOKEN`](https://docs.github.com/en/actions/concepts/security/github_token) covers everything the server does on its own.
 
 ## Where your personal token is actually used
 
-Before changing anything, confirm where the token lives. There are only three realistic places.
+Before you change anything, confirm where the token lives. There are only three realistic places.
 
 **1. The git remote URL.** Check whether a token is embedded directly in the remote:
 
@@ -71,7 +71,7 @@ If this returns `command not found`, you do not have `gh` installed and can skip
 
 ## Step 1: Create the replacement token
 
-You do not renew an existing token — you **create a new one** and swap it in. GitHub recommends [fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens), which you can limit to specific repositories and permissions.
+Do not renew an existing token. **Create a new one** and swap it in. GitHub recommends [fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens), which you can limit to specific repositories and permissions.
 
 ### Create the token
 
@@ -83,7 +83,7 @@ You do not renew an existing token — you **create a new one** and swap it in. 
 
 Copy the token immediately. GitHub shows it once and never again.
 
-> Set a calendar reminder for a week before the new expiry date. Rotating on your own schedule is far calmer than rotating the day a push suddenly fails.
+> Set a calendar reminder for a week before the new expiry date. Rotating on your own schedule is far calmer than rotating on the day a push suddenly fails.
 
 ## Step 2: Update the token where macOS caches it
 
@@ -93,7 +93,7 @@ If a token was embedded in your remote URL (case 1 above), reset the remote to a
 git remote set-url origin https://github.com/your-username/your-repo.git
 ```
 
-Now handle the Keychain. The simplest approach is to let the next push prompt you. First clear the stale credential:
+Now handle the Keychain. The simplest approach is to let the next push prompt you. First, clear the stale credential:
 
 ```bash
 git credential-osxkeychain erase
@@ -101,7 +101,7 @@ host=github.com
 protocol=https
 ```
 
-Press **Return twice** after the last line. The next time you push, git asks for your username and password — paste the **new token** as the password. macOS stores it in the Keychain automatically.
+Press **Return twice** after the last line. The next time you push, git asks for your username and password. Paste the **new token** as the password. macOS stores it in the Keychain automatically.
 
 If you prefer a visual route, open **Keychain Access**, search for `github.com`, delete the existing internet-password entry, and let the next push recreate it with the new token.
 
@@ -125,46 +125,46 @@ A green check mark confirms the CLI now holds the new token.
 
 ## Step 4: Confirm a push still deploys
 
-Verify the new token works **before** you revoke the old one. Make a trivial change, commit, and push:
+Verify the new token works **before** you revoke the old one. Make a trivial change, commit it, and push:
 
 ```bash
 git commit --allow-empty -m "Verify token rotation"
 git push
 ```
 
-If the push succeeds without an authentication error, the new token is working. Open the **Actions** tab on your repository and watch the workflow run go green — that confirms the full path from your machine to a live deploy.
+If the push succeeds without an authentication error, the new token works. Open the **Actions** tab on your repository and watch the workflow run go green. That confirms the full path from your machine to a live deploy.
 
 > The empty commit triggers your normal deploy workflow without changing any content. It is the safest possible test push.
 
 ## Step 5: Revoke the old token
 
-Only now — with the new token confirmed working — remove the old one.
+Only now, with the new token confirmed working, remove the old one.
 
-1. Go to **GitHub → Settings → Developer settings → Personal access tokens**
-2. Find the expiring token in the list
-3. Select **Delete** (or **Revoke**)
+1. Go to **GitHub → Settings → Developer settings → Personal access tokens**.
+2. Find the expiring token in the list.
+3. Select **Delete** (or **Revoke**).
 
-Revoking last means you always have one working token in place. If you revoke first and something is misconfigured, you lock yourself out of pushing until you rotate again.
+Revoke the old token last so you always have one working token in place. If you revoke first and something is misconfigured, you lock yourself out of pushing until you rotate again.
 
 ## Troubleshooting
 
 **"remote: Invalid username or password" after rotating**
-The Keychain is still serving the old token. Run the `git credential-osxkeychain erase` block from Step 2, then push again and paste the new token.
+The Keychain still serves the old token. Run the `git credential-osxkeychain erase` block from Step 2, then push again and paste the new token.
 
 **Push succeeds but Keychain still shows the old token**
-You may have two entries. Open Keychain Access, search `github.com`, and delete every matching internet-password entry, then push once to recreate a single clean entry.
+You may have two entries. Open Keychain Access, search `github.com`, and delete every matching internet-password entry. Then push once to recreate a single clean entry.
 
 **"gh: command not found"**
-You do not have the GitHub CLI installed. This is normal — skip Step 3 completely. It changes nothing about your deploy.
+You do not have the GitHub CLI installed. This is normal. Skip Step 3 completely. It changes nothing about your deploy.
 
 **The token expired before you rotated it**
-No harm done. Your GitHub Pages site stays live because the last deploy already published, and future deploys use `GITHUB_TOKEN`. Simply create a new token (Step 1) and update the Keychain (Step 2) to restore your ability to push.
+No harm done. Your GitHub Pages site stays live because the last deploy already published, and future deploys use `GITHUB_TOKEN`. Create a new token (Step 1) and update the Keychain (Step 2) to restore your ability to push.
 
 ## What you can do now
 
-You have a working replacement token, a verified deploy, and a cleanly revoked old token — with zero downtime for your site. More importantly, you now know that token expiry is a local-machine housekeeping task, not a threat to your published site.
+You have a working replacement token, a verified deploy, and a cleanly revoked old token, with zero downtime for your site. More importantly, you now know that token expiry is a local-machine housekeeping task, not a threat to your published site.
 
-Turn it into a routine: rotate a week before expiry, test with an empty commit, then revoke. Set the reminder once and a task that used to feel risky becomes a two-minute habit.
+Turn it into a routine. Rotate a week before expiry, test with an empty commit, then revoke. Set the reminder once, and a task that used to feel risky becomes a two-minute habit.
 
 ---
 *Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
