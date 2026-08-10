@@ -31,11 +31,11 @@ sidebar_product:
   footnote: ""
 ---
 
-The European Commission publishes detailed data on every ERC-funded project — host institution, PI, country, funding amount, project dates, abstract, CORDIS link, and more. All of it is public. All of it is downloadable. Almost none of it gets used by the people who would benefit most: researchers, grant advisors, and research development offices. This guide walks through how to find the data, export it from the official EC database, and turn it into interactive dashboards using Claude AI and a Google Sheets MCP connection — the whole process takes about 15 minutes.
+The European Commission publishes detailed data on every ERC-funded project. This data includes host institution, PI, country, funding amount, project dates, abstract, and CORDIS link. All of it is public and downloadable. Almost no one uses it, including researchers, grant advisors, and research development offices. This guide shows how to find the data, export it from the official EC database, and build interactive dashboards with Claude AI and a Google Sheets MCP connection. The whole process takes about 15 minutes.
 
 ## Why this data matters
 
-The ERC budget for 2021–2027 is **€16 billion** — 17% of the entire Horizon Europe budget. Since 2007, the ERC has funded more than **18,000 projects** and distributed **€32.5 billion**, evaluated over 140,000 proposals, and supported more than 10,000 researchers across 97 nationalities. ERC grantees have published over 200,000 journal articles, filed more than 2,200 patents, and founded over 400 startups. 15 Nobel Prizes, 6 Fields Medals, and 12 Wolf Prizes have been awarded to ERC grantees.
+The ERC budget for 2021–2027 is **€16 billion**. That is 17% of the entire Horizon Europe budget. Since 2007, the ERC funded more than **18,000 projects** and distributed **€32.5 billion**. The ERC evaluated over 140,000 proposals and supported more than 10,000 researchers across 97 nationalities. ERC grantees published over 200,000 journal articles, filed more than 2,200 patents, and founded over 400 startups. ERC grantees won 15 Nobel Prizes, 6 Fields Medals, and 12 Wolf Prizes.
 
 The breakdown by grant type:
 
@@ -47,9 +47,9 @@ The breakdown by grant type:
 | Synergy Grant (SyG) | 306 | €3.2 billion |
 | Proof of Concept | 2,397 | €358 million |
 
-That is a substantial dataset — and it can tell you which institutions are winning grants, which scientific domains dominate, how funding concentrates by country and region, and how the landscape has shifted over time. For anyone working on ERC applications or advising researchers who are, this is genuinely useful competitive intelligence.
+This is a large dataset. It can show you which institutions win grants, which scientific domains dominate, how funding concentrates by country and region, and how the landscape changed over time. For anyone working on ERC applications, or advising researchers who are, this is useful competitive intelligence.
 
-The common misconception is that this level of detail is not publicly available. It is. The EC database contains everything: institution name, PI, CORDIS project link, abstract, funding amount, project start and end date, project status, country, and region — for every funded project. The bottleneck has never been access. It has been the capacity to analyse it at scale.
+Many people assume this level of detail is not public. It is. The EC database contains everything: institution name, PI, CORDIS project link, abstract, funding amount, project start and end date, project status, country, and region, for every funded project. Access was never the problem. The problem was the capacity to analyze the data at scale.
 
 ## What you need before starting
 
@@ -59,30 +59,30 @@ The common misconception is that this level of detail is not publicly available.
 
 ## Finding and downloading the data
 
-The official starting point is the [ERC projects and statistics page](https://erc.europa.eu/projects-statistics/erc-dashboard). This links through to the European Commission's R&I Dashboard — the actual structured database.
+Start at the [ERC projects and statistics page](https://erc.europa.eu/projects-statistics/erc-dashboard). This page links to the European Commission's R&I Dashboard, the actual structured database.
 
 Direct link to the R&I Dashboard:
 [https://dashboard.tech.ec.europa.eu/qs_digit_dashboard_mt/public/sense/app/c140622a-87e0-412e-8b29-9b5ddd857e13/sheet/61a0bd1d-cd6d-4ac8-8b55-80d8661e44c0/state/analysis](https://dashboard.tech.ec.europa.eu/qs_digit_dashboard_mt/public/sense/app/c140622a-87e0-412e-8b29-9b5ddd857e13/sheet/61a0bd1d-cd6d-4ac8-8b55-80d8661e44c0/state/analysis)
 
-The dashboard runs on **Qlik Sense** — a business intelligence platform. It is powerful but unintuitive if you have not used it before. The most important thing to know before exporting: **apply your filters first**. Qlik exports whatever is currently visible on screen, so set your grant type and call year filters before touching the export button. For this workflow, filter by grant type (STG, COG, or ADG) and call years 2021–2024.
+The dashboard runs on **Qlik Sense**, a business intelligence platform. It is powerful, but not easy to use if you have not used it before. Before you export data, apply your filters first. Qlik exports only the data visible on screen. Set your grant type and call year filters before you select the export button. For this workflow, filter by grant type (STG, COG, or ADG) and call years 2021–2024.
 
-Once filters are set, use the export option — typically a download icon or right-click on the data table — and export as **CSV or Excel**. The file will include: host institution, PI name, country, region, scientific domain (PE/LS/SH), funding amount, project start and end dates, project status, abstract, and CORDIS link.
+After you set the filters, use the export option (usually a download icon, or right-click on the data table) and export as **CSV or Excel**. The file will include: host institution, PI name, country, region, scientific domain (PE/LS/SH), funding amount, project start and end dates, project status, abstract, and CORDIS link.
 
-Export one file per grant type, then upload each to its own tab in Google Sheets. This keeps the analysis clean and lets Claude handle each grant type independently.
+Export one file for each grant type. Upload each file to its own tab in Google Sheets. This keeps the analysis clean and lets Claude handle each grant type independently.
 
-A note on the PDFs: the call result PDFs the ERC releases for individual calls contain only a text list of awardees — limited fields, no structured data. The R&I database is incomparably richer. If you have been working from PDFs, this workflow will significantly expand what you can do.
+Note on the PDFs: the call result PDFs the ERC releases for individual calls contain only a text list of awardees. These PDFs have limited fields and no structured data. The R&I database contains far more data. If you worked from PDFs before, this workflow will significantly expand what you can do.
 
 ## Connecting Claude to your data
 
-If you have not yet set up the Google Sheets MCP connection, follow the [full setup guide here](/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/) first. Once connected, Claude Desktop reads and writes directly to your spreadsheet — no copy-pasting, no CSV uploads.
+If you have not set up the Google Sheets MCP connection, follow the [full setup guide here](/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/) first. After you connect it, Claude Desktop reads and writes directly to your spreadsheet. You do not need to copy and paste or upload CSV files.
 
-Open Claude Desktop, confirm the MCP connection is active, and share the spreadsheet URL or tab name in your prompt so Claude knows which data to work with.
+Open Claude Desktop. Confirm the MCP connection is active. Share the spreadsheet URL or tab name in your prompt so Claude knows which data to work with.
 
 ## Prompting Claude to clean, analyse, and build the dashboard
 
-This is where the time saving becomes significant. Cleaning data, building pivot analysis, and creating charts that would take hours in Excel or Sheets alone — Claude handles in a single session.
+This step saves the most time. Cleaning data, building pivot analysis, and creating charts can take hours in Excel or Sheets alone. Claude does all of this in a single session.
 
-A prompt structure that works well:
+This prompt structure works well:
 
 ```
 I've uploaded ERC Starting Grant data (2021–2024) to this Google Sheet: [URL or tab name].
@@ -95,26 +95,26 @@ Please:
 Output the dashboard as a self-contained HTML file.
 ```
 
-Repeat for COG and ADG, adjusting the sheet reference each time. All three dashboards can be completed in one session.
+Repeat this prompt for COG and ADG. Adjust the sheet reference each time. You can complete all three dashboards in one session.
 
-The interactive element matters. A static chart gives you one fixed view. An interactive dashboard lets you filter by country, drill into specific institutions, and explore from multiple angles — which is where the real strategic value is.
+The interactive element matters. A static chart gives you one fixed view. An interactive dashboard lets you filter by country, drill into specific institutions, and explore from multiple angles. This is where the real strategic value is.
 
 ## What the data shows
 
-Across 822 grants in the 2021–2024 period, a few patterns emerge clearly. **Germany dominates** — German institutions account for 151 Starting Grants, 98 Consolidator Grants, and 87 Advanced Grants, by a considerable margin. The Max Planck Society alone hosts 32 STG, 10 COG, and 13 ADG — the single most successful research organisation across all three types. France (led by CNRS), the Netherlands, Sweden, and Switzerland follow. **CNRS leads in Synergy Grants**, appearing in 12 of the 77 projects in the 2022–2024 period. **Life Sciences dominates** across all grant types, representing 37–57% of funded projects depending on the scheme.
+Across 822 grants in the 2021–2024 period, a few clear patterns emerge. **Germany dominates.** German institutions account for 151 Starting Grants, 98 Consolidator Grants, and 87 Advanced Grants, by a considerable margin. The Max Planck Society alone hosts 32 STG, 10 COG, and 13 ADG. This makes it the single most successful research organization across all three grant types. France (led by CNRS), the Netherlands, Sweden, and Switzerland follow. **CNRS leads in Synergy Grants**, and appears in 12 of the 77 projects in the 2022–2024 period. **Life Sciences dominates** across all grant types, and represents 37–57% of funded projects depending on the scheme.
 
-These patterns are strategically useful. Understanding which institutions consistently win, which domains are over-represented, and how success concentrates geographically gives any applicant — or the advisors supporting them — a meaningful edge before writing a single word of a proposal.
+These patterns are strategically useful. If you understand which institutions consistently win, which domains are over-represented, and how success concentrates geographically, you gain a meaningful edge before you write a single word of a proposal. This applies to applicants and to the advisors who support them.
 
 ## What you can do now
 
-With the dashboards built, you can benchmark your target host institution against national and European peers, identify whether your scientific domain is over- or under-represented in recent cohorts, and track how the competitive landscape shifts across call years. The EC updates its R&I database each trimester, so the workflow is fully repeatable — download a fresh export, run the same prompts, refresh the dashboards.
+After you build the dashboards, you can benchmark your target host institution against national and European peers. You can identify whether your scientific domain is over-represented or under-represented in recent cohorts. You can track how the competitive landscape shifts across call years. The EC updates its R&I database each trimester, so you can repeat this workflow. Download a fresh export, run the same prompts, and refresh the dashboards.
 
-The same approach works for any EC programme with data on the R&I platform: Horizon Europe projects, EIC funding, MSCA grants, and more. The data is there. The tools to work with it at scale now exist.
+The same approach works for any EC program with data on the R&I platform, including Horizon Europe projects, EIC funding, and MSCA grants. The data exists. The tools to work with it at scale now exist too.
 
 ---
 ## Related reading on The Science Talk
 
-For broader context on why ERC funding patterns matter and how AI is changing grant strategy:
+For broader context on why ERC funding patterns matter and how AI is changing grant strategy, see these related posts.
 
 - [ERC Guidelines on AI in Grant Proposal Evaluation](https://thesciencetalk.com/erc-ai-grant-proposal-evaluation-guidelines/) — what the ERC's own guidance says about AI use in proposals
 - [How I Used GenAI to Support €1M Grant Proposals](https://thesciencetalk.com/ai-tools-for-proposal-writing/) — practical application of Claude in a real proposal workflow
