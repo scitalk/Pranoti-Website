@@ -32,45 +32,45 @@ sidebar_product:
   footnote: "Instant PDF delivery. Lifetime access."
 ---
 
-Claude can now connect to your Google Sheets in two fundamentally different ways — and choosing the wrong one will either leave critical features on the table or waste time on setup you don't need.
+Claude can now connect to your Google Sheets in two different ways. If you choose the wrong one, you will lose critical features or waste time on setup you do not need.
 
-Here's the breakdown, the decision framework, and the use cases each one actually serves.
+This article gives the breakdown, the decision framework, and the use cases each option serves.
 
 ## The Two Integration Paths
 
 ### Native Google Drive Connector
-**What it is:** Built-in integration in claude.ai and Claude Desktop. Attaches Sheets directly from your Drive as read-only CSV exports.
+**What it is:** A built-in integration in claude.ai and Claude Desktop. It attaches Sheets directly from your Drive as read-only CSV exports.
 
-**Setup time:** Zero (if you already use the Google Drive connector). One-click OAuth if not.
+**Setup time:** Zero, if you already use the Google Drive connector. If not, a one-click OAuth step is required.
 
 **What it does:**
-- Reads Sheet data for analysis, summarisation, comparison
+- Reads Sheet data for analysis, summary, and comparison
 - Exports Sheets as CSV snapshots
 - Works alongside Docs and Slides in the same connector
 
-**What it doesn't do:**
+**What it does not do:**
 - Write, update, or append data
-- Access formulas (CSV export strips them)
-- Query live data (snapshot at attach time)
-- Batch operations, formatting, sharing
+- Access formulas (CSV export removes them)
+- Query live data (it shows a snapshot from the time you attach the Sheet)
+- Run batch operations, formatting, or sharing
 - Work across multiple Sheets programmatically
 
 ---
 
 ### MCP Google Sheets Server
-**What it is:** Model Context Protocol server that connects Claude Desktop to the Google Sheets API via OAuth 2.0.
+**What it is:** A Model Context Protocol server. It connects Claude Desktop to the Google Sheets API through OAuth 2.0.
 
-**Setup time:** 30 minutes (Google Cloud project, OAuth credentials, config file, authentication).
+**Setup time:** 30 minutes. You must create a Google Cloud project, generate OAuth credentials, edit a config file, and authenticate.
 
 **What it does:**
-- Full read/write access (create, update, append, delete)
-- Formula access (read and manipulate formulas directly)
-- Live data queries (always sees current values)
-- ~19 tools (via the Google Sheets MCP server this site's setup guide uses): batch operations, formatting, sharing, multi-sheet workflows
+- Gives full read and write access (create, update, append, delete)
+- Gives formula access (read and edit formulas directly)
+- Runs live data queries (always shows current values)
+- Provides about 19 tools (through the Google Sheets MCP server this site's setup guide uses) for batch operations, formatting, sharing, and multi-sheet workflows
 
-**What it doesn't do:**
-- Work in claude.ai web (Claude Desktop only)
-- Simplify setup (requires Google Cloud Console, terminal commands)
+**What it does not do:**
+- Work in claude.ai web (it works only in Claude Desktop)
+- Simplify setup. It requires Google Cloud Console and terminal commands.
 
 ---
 
@@ -96,23 +96,23 @@ Here's the breakdown, the decision framework, and the use cases each one actuall
 
 ### Start Here: What Are You Trying to Do?
 
-**Scenario 1: "I need Claude to read and analyse my existing data"**
-→ **Native connector.** If the Sheet isn't changing mid-conversation and you don't need to write anything back, the built-in option is faster.
+**Scenario 1: "I need Claude to read and analyze my existing data"**
+→ **Use the native connector.** If the Sheet does not change mid-conversation and you do not need to write data back, the built-in option is faster.
 
 **Scenario 2: "Claude needs to log results, update trackers, or generate reports"**
-→ **MCP.** Write operations require API access. Native connector can't do this.
+→ **Use MCP.** Write operations require API access. The native connector cannot do this.
 
-**Scenario 3: "I'm building a dashboard that pulls live data from multiple Sheets"**
-→ **MCP.** You need programmatic multi-sheet access and real-time queries.
+**Scenario 3: "I am building a dashboard that pulls live data from multiple Sheets"**
+→ **Use MCP.** You need programmatic multi-sheet access and real-time queries.
 
-**Scenario 4: "I need Claude to work with formulas — reading them, updating them, or creating new ones"**
-→ **MCP.** CSV export strips formulas entirely.
+**Scenario 4: "I need Claude to work with formulas: read them, update them, or create new ones"**
+→ **Use MCP.** CSV export removes formulas entirely.
 
 **Scenario 5: "I want to ask quick questions about a budget spreadsheet"**
-→ **Native connector.** One-off analysis doesn't justify the MCP setup.
+→ **Use the native connector.** A one-off analysis does not justify the MCP setup.
 
-**Scenario 6: "I'm automating a workflow where Claude processes data from one Sheet and writes summary rows to another"**
-→ **MCP.** This is a bidirectional, multi-sheet automation — exactly what MCP is built for.
+**Scenario 6: "I am automating a workflow where Claude processes data from one Sheet and writes summary rows to another"**
+→ **Use MCP.** This is a bidirectional, multi-sheet automation. This is exactly what MCP is built for.
 
 ---
 
@@ -132,32 +132,32 @@ Here's the breakdown, the decision framework, and the use cases each one actuall
 - Formula-dependent workflows (budget calculators, financial models)
 - Multi-sheet operations (cross-referencing data across tabs)
 - Batch updates (applying changes to hundreds of rows)
-- Integration with other MCP servers (e.g., Claude reads Gmail, writes to Sheets)
+- Integration with other MCP servers (for example, Claude reads Gmail and writes to Sheets)
 
 ---
 
 ## Can You Use Both?
 
-Yes — and for many workflows, that's the optimal setup.
+Yes. For many workflows, this is the best setup.
 
 **Pattern:**
 - Use the **native connector** for quick, exploratory analysis on claude.ai (mobile, web, anywhere)
 - Use the **MCP server** in Claude Desktop when you need automation, write access, or multi-sheet workflows
 
-The native connector is your "quick look" tool. MCP is your automation engine. They're not competitors; they're complementary.
+The native connector is your quick-look tool. MCP is your automation engine. The two tools do not compete. They work together.
 
 ---
 
 ## What This Means for Your Workflow
 
-If you've been manually exporting CSVs to analyse data in Claude, the native connector eliminates that step — and you should start using it immediately.
+If you have manually exported CSVs to analyze data in Claude, the native connector removes that step. Start using it now.
 
-If you've been thinking about automating Sheet-based workflows but the setup felt like overkill, the native connector now handles the simple cases. You can reserve MCP for workflows that genuinely need full API access.
+If you have thought about automating Sheet-based workflows but the setup felt like too much work, the native connector now handles the simple cases. Reserve MCP for workflows that genuinely need full API access.
 
-If you're already running the MCP setup, nothing changes. You have both options available, and you can use whichever fits the task at hand.
+If you already run the MCP setup, nothing changes. You have both options available. Use whichever option fits the task.
 
 ---
 
-**To set up the MCP server:** See the complete guide at [How to Connect Claude Desktop to Google Sheets via MCP](/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/) — OAuth walkthrough, copy-paste config, and all 7 troubleshooting fixes.
+**To set up the MCP server:** See the complete guide at [How to Connect Claude Desktop to Google Sheets via MCP](/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/). It has an OAuth walkthrough, copy-paste config, and all 7 troubleshooting fixes.
 
-**To enable the native connector:** In claude.ai or Claude Desktop, click the attachment icon → "Add from Google Drive" → authenticate with your Google account. Sheets are now available alongside Docs and Slides.
+**To enable the native connector:** In claude.ai or Claude Desktop, click the attachment icon. Select "Add from Google Drive." Authenticate with your Google account. Sheets are now available alongside Docs and Slides.
