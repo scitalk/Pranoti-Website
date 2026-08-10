@@ -21,11 +21,11 @@ sidebar_links:
     url: "/perspectives/eu-ai-act-omnibus-delay-relief-or-trap/"
 ---
 
-We signed the European Commission's **Code of Practice on Transparency of AI-generated Content**, under **Section 2, as a deployer of generative AI systems**. That puts The Science Talk in the same signatory pool as Bulgari, Getty Images, Lenovo, and Lufthansa. Section 1 of the framework counts Anthropic, Google, Meta, Microsoft, OpenAI, and Mistral among its signatories.
+We signed the European Commission's [**Code of Practice on Transparency of AI-generated Content**](https://digital-strategy.ec.europa.eu/en/news/strong-backing-code-practice-transparency-ai-generated-content), under **Section 2, as a deployer of generative AI systems**. That puts The Science Talk in the same signatory pool as Bulgari, Getty Images, Lenovo, and Lufthansa. Section 1 of the framework counts Anthropic, Google, Meta, Microsoft, OpenAI, and Mistral among its signatories.
 
 ## Why this, why now
 
-The AI Act's transparency obligations become legally binding on **2 August 2026**. These are the rules that require AI-generated and AI-modified content to be marked and disclosed. The Commission approved the Code of Practice as the sanctioned route to compliance ([source](https://digital-strategy.ec.europa.eu/en/news/strong-backing-code-practice-transparency-ai-generated-content)). Independent experts drafted it. The Commission and the AI Board found it sufficient. It gives signatories "a streamlined, predictable and legally certain pathway," regardless of which national authority ends up supervising them.
+The AI Act's transparency obligations become legally binding on **2 August 2026**. These are the rules that require AI-generated and AI-modified content to be marked and disclosed. The Commission approved the Code of Practice as the sanctioned route to compliance. Independent experts drafted it. The Commission and the AI Board found it sufficient. It gives signatories "a streamlined, predictable and legally certain pathway," regardless of which national authority ends up supervising them.
 
 By the Commission's own count, about **190 organizations** signed as of end of July 2026. We are one of them. About half of that signatory base is small, recently founded companies. This is not a club reserved for platforms with in-house legal teams. It is a framework built to scale down as well as up.
 
@@ -33,9 +33,9 @@ By the Commission's own count, about **190 organizations** signed as of end of J
 
 The Code splits obligations by role, not by size:
 
-**Section 1 — Providers.** This covers providers of generative AI systems, the companies that build tools to mark and detect AI content, and AI model providers themselves. This is the technical backbone: the commitments that make labeling and detection possible at the infrastructure level. Anthropic, Google, Meta, Microsoft, OpenAI, and Mistral sit here. These are the organizations whose models and systems generate the content in the first place.
+**Section 1: Providers.** This covers providers of generative AI systems, the companies that build tools to mark and detect AI content, and AI model providers themselves. This is the technical backbone: the commitments that make labeling and detection possible at the infrastructure level. Anthropic, Google, Meta, Microsoft, OpenAI, and Mistral sit here. These are the organizations whose models and systems generate the content in the first place.
 
-**Section 2 — Deployers.** This covers organizations that put generative AI systems to work in production. Deployers use AI tools to create, adapt, or publish content for real audiences. Deployers must mark AI-generated content in the correct way. Deployers must disclose its use where it matters. Deployers must build practices that support public trust and do not erode it. This is where The Science Talk signed.
+**Section 2: Deployers.** This covers organizations that put generative AI systems to work in production. Deployers use AI tools to create, adapt, or publish content for real audiences. Deployers must mark AI-generated content in the correct way. Deployers must disclose its use where it matters. Deployers must build practices that support public trust and do not erode it. This is where The Science Talk signed.
 
 The distinction matters for how we frame this: we are not a lab that builds AI models. We are an agency that uses AI systems in science communication work. Section 2 is the commitment that we do that transparently, every time, not just when convenient.
 
