@@ -3,10 +3,13 @@
     <header class="page-header">
         <p class="newsletter-seq">{{ with .Params.sequence }}#{{ . }}{{ end }}</p>
         <h1>{{ .Title }}</h1>
-        <p class="newsletter-meta">{{ .Date.Format "2 January 2006" }}</p>
+        <p class="newsletter-meta">Sent on {{ .Date.Format "2 January 2006" }}</p>
     </header>
     <div class="content">
-        {{ .Content }}
+        {{/* The campaigns set the "special welcome" intro apart — centred, 14px, on a
+             #f6f6f6 band. The archive markdown carries no wrapper, so tag it on its text.
+             [^\n]{0,80} keeps the match inside the paragraph that holds the phrase. */}}
+        {{ .Content | replaceRE `(?s)<p>([^\n]{0,80}[Ss]pecial welcome.*?)</p>` `<p class="newsletter-welcome">$1</p>` | safeHTML }}
     </div>
 </article>
 
@@ -21,7 +24,7 @@
     margin-bottom: 0.5rem;
 }
 .newsletter-single .page-header h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: clamp(1.75rem, 3.2vw, 2.5rem);
     color: #1c1c1c;
     margin-bottom: 0.5rem;
@@ -45,6 +48,13 @@
 .newsletter-single .content h3,
 .newsletter-single .content h4 { color: #1c1c1c; margin-top: 1.75rem; margin-bottom: 0.75rem; }
 .newsletter-single .content p { margin-bottom: 1.1rem; }
+.newsletter-single .content p.newsletter-welcome {
+    text-align: center;
+    font-size: 0.875rem;
+    background: #f6f6f6;
+    margin: 0 -3rem 1.6rem;
+    padding: 1.5rem 3rem;
+}
 .newsletter-single .content ul,
 .newsletter-single .content ol { margin: 0 0 1.1rem 1.4rem; }
 </style>
