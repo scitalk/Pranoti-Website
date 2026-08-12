@@ -15,6 +15,7 @@
 {{ $iow := slice }}
 {{ $listenUp := slice }}
 {{ $mfs := slice }}
+{{ $tst := slice }}
 {{ range $years }}
   {{ range .episodes }}
     {{ if eq .series "Under the Microscope" }}
@@ -23,10 +24,11 @@
     {{ else if eq .series "InOtherWords" }}{{ $iow = $iow | append . }}
     {{ else if eq .series "Listen Up" }}{{ $listenUp = $listenUp | append . }}
     {{ else if eq .series "My First Science" }}{{ $mfs = $mfs | append . }}
+    {{ else if eq .series "The Science Talk" }}{{ $tst = $tst | append . }}
     {{ end }}
   {{ end }}
 {{ end }}
-{{ $total := add (add (add (add (len $utm) (len $utmBonus)) (add (len $s42) (len $iow))) (len $listenUp)) (len $mfs) }}
+{{ $total := add (add (add (add (add (len $utm) (len $utmBonus)) (add (len $s42) (len $iow))) (len $listenUp)) (len $mfs)) (len $tst) }}
 
 {{/* JSON-LD: CollectionPage wrapping a PodcastSeries + ItemList per video series, all counts from len() over the data — never hardcoded */}}
 {{ $podcastSeries := dict
@@ -37,6 +39,15 @@
   "webFeed" "https://anchor.fm/s/7d43fb84/podcast/rss"
   "author" (dict "@type" "Person" "name" "Dr. Pranoti Kshirsagar" "url" "https://pranoti.thesciencetalk.com/about/")
   "numberOfEpisodes" (add (len $utm) (len $utmBonus))
+}}
+{{ $tstSeries := dict
+  "@type" "PodcastSeries"
+  "name" "The Science Talk"
+  "url" .Permalink
+  "description" "The Science Talk podcast covers science communication, research culture, and AI integration, hosted by Dr. Pranoti Kshirsagar."
+  "webFeed" "https://anchor.fm/s/1123f82a8/podcast/rss"
+  "author" (dict "@type" "Person" "name" "Dr. Pranoti Kshirsagar" "url" "https://pranoti.thesciencetalk.com/about/")
+  "numberOfEpisodes" (len $tst)
 }}
 {{ $makeItemList := dict }}
 {{ $itemLists := slice }}
@@ -57,7 +68,7 @@
   "name" "Digital Content Hub"
   "url" .Permalink
   "description" (.Params.description)
-  "mainEntity" (append (slice $podcastSeries) $itemLists)
+  "mainEntity" (append (slice $podcastSeries $tstSeries) $itemLists)
 }}
 <script type="application/ld+json">{{ jsonify (dict "indent" "  ") $collectionPage | safeJS }}</script>
 
@@ -86,12 +97,12 @@
       {{ if gt $ei 0 }}<div class="ep-divider"></div>{{ end }}
       <section class="episode-section">
         <div class="wrap">
-          <p class="ep-series-label">{{ if $ep.bonus }}The Science Talk Podcast &mdash; Bonus Clip{{ else if eq $ep.series "Under the Microscope" }}The Science Talk Podcast{{ else }}{{ $ep.series }}{{ end }}</p>
+          <p class="ep-series-label">{{ if $ep.bonus }}Under the Microscope &mdash; Bonus Clip{{ else if eq $ep.series "Under the Microscope" }}Under the Microscope{{ else }}{{ $ep.series }}{{ end }}</p>
           <hr class="ep-rule"/>
           <div class="episode-grid">
             <div class="ep-col">
               <h3 class="ep-title">{{ $ep.title }}</h3>
-              <p class="ep-meta">In this episode: {{ $ep.meta }}</p>
+              <p class="ep-meta">{{ $ep.meta }}</p>
               {{ if and (eq $ep.series "Under the Microscope") (not $ep.bonus) }}
               <p class="ep-guest">{{ $ep.guest_name }}{{ with $ep.guest_country }} &mdash; {{ . }}{{ end }}</p>
               {{ end }}
@@ -107,7 +118,7 @@
             </div>
             <div class="ep-col">
               {{ if $ep.image_src }}
-              <img alt="{{ $ep.image_alt }}" class="ep-img ep-img-overlap" src="{{ $ep.image_src }}"/>
+              <img alt="{{ $ep.image_alt }}" class="ep-img ep-img-overlap" src="{{ $ep.image_src }}" loading="lazy" decoding="async"/>
               {{ else if $ep.youtube }}
               {{ $ytid := "" }}
               {{ if strings.Contains $ep.youtube "youtu.be/" }}{{ $ytid = index (strings.Split (index (strings.Split $ep.youtube "youtu.be/") 1) "?") 0 }}{{ end }}
@@ -174,6 +185,7 @@
 
 /* episode entries */
 .dch-page .episode-section { padding: 72px 0; background: #fdf7f8; }
+.dch-page .episode-section:nth-of-type(even) { background: #ffffff; }
 .dch-page .ep-divider { height: 1px; background: #e5e0d8; max-width: 1140px; margin: 0 auto; }
 .dch-page .episode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: stretch; }
 .dch-page .ep-col { display: flex; flex-direction: column; }
