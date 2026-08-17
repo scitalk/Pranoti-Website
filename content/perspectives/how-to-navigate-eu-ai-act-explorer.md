@@ -25,8 +25,6 @@ The EU AI Act can feel like one more thing to track. New updates arrive. You rea
 
 This article helps you through that process. The most important resource is the [EU AI Act Explorer](https://ai-act-service-desk.ec.europa.eu/en/ai-act-explorer), built by the European Commission. This article uses Article 50 as the example. Article 50 became enforceable on 2 August 2026. See [Article 50 Is Now in Force](/perspectives/eu-ai-act-article-50-in-force-2026/) for what that date changed.
 
-![EU AI Act Explorer: what, why, how](/images/perspectives/eu-ai-act-explorer-what-why-how.jpg)
-
 Regulation (EU) 2024/1689, the EU AI Act, is not one document. It has three parts, and each part does a different job. A reader who looks at only one part gets an incomplete answer. This article explains how Articles, Recitals, and Annexes work together. It uses Article 50, the transparency rule, as the example, because Article 50 touches all three parts.
 
 ## The three-part structure
@@ -35,9 +33,11 @@ Regulation (EU) 2024/1689, the EU AI Act, is not one document. It has three part
 - **Recitals (the "why"):** the numbered paragraphs before the Articles. Recitals explain the reason for an Article and give context for it. A Recital does not create an obligation by itself.
 - **Annexes (the "how"):** technical detail. Annexes list classification criteria, documentation items, and data fields. An Article points to an Annex when the detail is too long for the Article itself.
 
+![EU AI Act Explorer: what, why, how](/images/perspectives/eu-ai-act-explorer-what-why-how.jpg)
+
 Not every Article has a matching Annex. A link between an Article and an Annex exists only when the Article names that Annex. Always check the Article text. Do not assume a link exists.
 
-## Article 50: the binding obligations
+## Article 50: the binding obligations - the WHAT
 
 Article 50 states four transparency duties. Each duty applies to a provider (the party that builds the system) or a deployer (the party that uses it):
 
@@ -50,8 +50,7 @@ Article 50 states four transparency duties. Each duty applies to a provider (the
 
 Two provisions apply to all four duties. **Article 50(5)** states that this information must reach people no later than the first interaction or exposure. **Article 50(7)** gives the AI Office the task of encouraging Union-level Codes of Practice, to help standardize how providers apply the marking duty.
 
-## Recitals: what they add and what they do not add
-
+## Recitals: what they add and what they do not add - the WHY
 A Recital explains the reason for an Article. A Recital does not add a new rule. Three Recitals apply directly to Article 50:
 
 - **Recital 132** explains why the transparency duties exist. Certain AI systems that interact with people or generate content "may pose specific risks of impersonation or deception." For this reason, the Act requires disclosure, using the same "reasonably well-informed, observant and circumspect" test that appears in Article 50(1).
@@ -60,23 +59,24 @@ A Recital explains the reason for an Article. A Recital does not add a new rule.
 
 A Recital helps you show how you met an obligation. A Recital is not a substitute for the obligation. A Recital does not override what an Article requires.
 
-## Where the Annexes apply, and where they do not
+## Article 50 has no matching Annex
 
-Read this section with care. It is easy to link an Annex to an Article that does not name it.
+Here is the point worth remembering: Article 50 does not name a single Annex. No Annex names Article 50. The transparency duty stands on its own, with no linked checklist or classification list behind it.
 
-- **Annex III** lists the categories of high-risk AI systems under Article 6(2). The list is organized by area of use: biometrics, education, employment, essential services, law enforcement, and more. Emotion recognition is a separate item under the **Biometrics** category, at Annex III point 1(c). An emotion-recognition system does not need an education or employment context to qualify as high-risk. It qualifies as a biometric system on its own, subject to permitted use under EU or national law. A system can still match more than one Annex III category at the same time. For example, an emotion-recognition tool that also evaluates students can match both the Biometrics category and the Education category. Each category applies on its own terms. One category does not unlock another category.
-- **Annex IV** is the technical documentation checklist, but it applies only to **Article 11(1)**, which covers documentation for high-risk AI systems. Article 50 and its Recitals do not reference Annex IV. Annex IV does not reference Article 50. A team that builds the marking solution required under Article 50(2) must not use Annex IV as the checklist for that task.
-- **Annex VIII** lists the data fields for the EU database registration required under **Article 49**. That registration duty applies to high-risk systems on the Annex III list, and to systems that a provider has determined are not high-risk under Article 6(3). Annex VIII does not connect to Article 50(4) or to any other Article 50 transparency duty. A deepfake-disclosure duty under Article 50 does not, by itself, create a registration duty.
+This surprises people, because three Annexes get pulled into Article 50 discussions by mistake:
 
-Here is the general rule: an Annex attaches only to the Article that names it. Do not assume a documentation or registration Annex applies to a system just because the system also carries a transparency duty under Article 50. Check whether the Article you rely on names the Annex, before you treat the Annex as a requirement.
+- **Annex III** (high-risk classification) belongs to **Article 6(2)**, not Article 50. It lists high-risk categories by area of use: biometrics, education, employment, essential services, law enforcement, and more. Emotion recognition sits in the **Biometrics** category, at Annex III point 1(c) — a system qualifies as high-risk there on its own, with no education or employment context needed.
+- **Annex IV** (technical documentation) belongs to **Article 11(1)**, not Article 50. A team building the machine-readable marking solution required under Article 50(2) should not treat Annex IV as its checklist. Annex IV documents high-risk systems. Article 50(2) is a transparency duty that can apply regardless of risk classification.
+- **Annex VIII** (database registration fields) belongs to **Article 49**, not Article 50. Registration applies to high-risk systems on the Annex III list. A deepfake-disclosure duty under Article 50 does not, on its own, create a registration duty.
+
+The general rule: an Annex attaches only to the Article that names it. Do not assume a documentation or registration Annex applies just because a system also carries a transparency duty under Article 50. Check the Article's own text for the cross-reference before you treat an Annex as a requirement.
 
 ## Reading checklist
 
 - **Identify your role.** Your role as provider or deployer determines which parts of Article 50 apply to you.
 - **Check the exemptions before you assume disclosure is necessary.** The "reasonably well-informed, observant and circumspect" test in Article 50(1), and the human-editorial-control exemption in Article 50(4), both depend on the facts of your setup.
 - **Use Recitals to understand intent. Do not use a Recital to expand or replace an obligation.** A Recital explains why a rule exists. A Recital does not create a new duty.
-- **Confirm that an Annex applies by checking the Article's own cross-reference.** Do not infer a link. Annex III (high-risk classification, Article 6(2)), Annex IV (technical documentation, Article 11(1)), and Annex VIII (database registration, Article 49) each attach to one specific Article. None of them attach to Article 50.
-- **Watch for genuine stacking.** A system can match more than one Annex III category, on independent grounds. This differs from one category triggering another category.
+- **Confirm that an Annex applies by checking the Article's own cross-reference.** Do not infer a link. Article 50 names no Annex, so do not treat Annex III, IV, or VIII as a checklist for it.
 
 ## Related reading
 
