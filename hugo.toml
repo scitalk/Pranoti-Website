@@ -29,7 +29,7 @@ title = 'Pranoti Kshirsagar'
     weight = 2
   [[menu.main]]
     name = 'Repository'
-    url = '/content-repository/'
+    url = '/digital-content-hub/'
     weight = 3
   [[menu.main]]
     name = 'About'
