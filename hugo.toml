@@ -28,13 +28,9 @@ title = 'Pranoti Kshirsagar'
     url = '/ai-guides/'
     weight = 2
   [[menu.main]]
-    name = 'Portfolio'
-    url = '/portfolio/'
+    name = 'Repository'
+    url = '/content-repository/'
     weight = 3
-  [[menu.main]]
-    name = 'Newsletter'
-    url = '/newsletter-archive/'
-    weight = 4
   [[menu.main]]
     name = 'About'
     url = '/about/'
@@ -44,6 +40,11 @@ title = 'Pranoti Kshirsagar'
     name = 'Speaking'
     url = '/speaking/'
     weight = 1
+    parent = 'about'
+  [[menu.main]]
+    name = 'Newsletter'
+    url = '/newsletter-archive/'
+    weight = 2
     parent = 'about'
 
 [sitemap]

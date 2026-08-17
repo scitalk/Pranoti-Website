@@ -9,7 +9,7 @@ client: "Physikalisch-Technische Bundesanstalt"
 location: "Berlin, Germany"
 role: "Moderator"
 event_type: "Public Event"
-thumbnail: "/images/portfolio/04/1.png"
+thumbnail: "/images/speaking/2024-04-14_QuanTour-Kick-Off.jpg"
 tags: ["Moderator", "Public Event"]
 ---
 
