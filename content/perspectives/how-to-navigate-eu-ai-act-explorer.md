@@ -59,7 +59,7 @@ A Recital explains the reason for an Article. A Recital does not add a new rule.
 
 A Recital helps you show how you met an obligation. A Recital is not a substitute for the obligation. A Recital does not override what an Article requires.
 
-## Article 50 has no matching Annex
+## Annex for Article 50 - the HOW
 
 Here is the point worth remembering: Article 50 does not name a single Annex. No Annex names Article 50. The transparency duty stands on its own, with no linked checklist or classification list behind it.
 
