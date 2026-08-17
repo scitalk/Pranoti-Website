@@ -69,7 +69,7 @@ This surprises people, because three Annexes get pulled into Article 50 discussi
 - **Annex IV** (technical documentation) belongs to **Article 11(1)**, not Article 50. A team building the machine-readable marking solution required under Article 50(2) should not treat Annex IV as its checklist. Annex IV documents high-risk systems. Article 50(2) is a transparency duty that can apply regardless of risk classification.
 - **Annex VIII** (database registration fields) belongs to **Article 49**, not Article 50. Registration applies to high-risk systems on the Annex III list. A deepfake-disclosure duty under Article 50 does not, on its own, create a registration duty.
 
-The general rule: an Annex attaches only to the Article that names it. Do not assume a documentation or registration Annex applies just because a system also carries a transparency duty under Article 50. Check the Article's own text for the cross-reference before you treat an Annex as a requirement.
+The general rule: an Annex attaches only to the Article that names it. Article 50 does not name Annex III, IV, or VIII — so a system does not owe those Annexes just for having an Article 50 duty. It would need to separately trigger the Article that actually names the Annex (Article 6(2), 11(1), or 49). Check the Article's own text before you treat any Annex as a requirement.
 
 ## Reading checklist
 
