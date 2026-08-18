@@ -1,7 +1,7 @@
 ---
 title: "EU AI Act Article 50 Is Now in Force: What Changed on 2 August 2026"
 date: 2026-07-31
-lastmod: 2026-08-04
+lastmod: 2026-08-18
 draft: false
 featured_image: "/images/ai-guides/eu-ai-act.webp"
 description: "Article 50 is now in force. What changed under the EU AI Act on 2 August 2026, what's been delayed, and the grace period small teams keep confusing with their own deadline."
@@ -50,7 +50,7 @@ The disclosure duty for public-facing content affects most small teams. Article 
 - **§3 — emotion recognition and biometric categorization:** if you deploy either system, you must inform the people exposed to it. Any personal data processed must still comply with GDPR. This is exempt for lawful law-enforcement use.
 - **§4 exceptions:** the deepfake and public-interest-text disclosure duties do not override evidently artistic, creative, satirical, or fictional work. Disclosure is still required, but must not interfere with displaying or enjoying the work. Content under a genuine editorial-responsibility review process (see the human-review test above) is also exempt.
 - **§6 — non-prejudice clause:** none of this replaces or lowers the bar set by Chapter III for high-risk systems. It also does not override other transparency obligations elsewhere in EU or national law.
-- **§7 — codes of practice:** the AI Office must encourage Union-level codes of practice to help everyone implement this consistently. None exist in final form yet.
+- **§7 — codes of practice:** the AI Office must encourage Union-level codes of practice to help everyone implement this consistently. One now exists: the Commission published the final [Code of Practice on Transparency of AI-generated Content](https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content) on 10 June 2026, and the Commission and AI Board confirmed it as an adequate voluntary tool for demonstrating Article 50 compliance. Adherence is voluntary; the underlying obligations are not. Non-signatories have to show their own measures are adequate. [We signed it](/perspectives/the-science-talk-signs-eu-code-of-practice-ai-transparency/).
 
 If you do not run a chatbot or biometric system, §1 and §3 do not affect your workflow. But learn the exceptions in §4 if you publish clearly satirical or fictional AI-assisted content and tend to over-disclose out of caution.
 

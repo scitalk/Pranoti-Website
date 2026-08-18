@@ -1,7 +1,7 @@
 ---
 title: "EU AI Act AI System Definition: The Official 7-Element Test"
 date: 2026-07-19
-lastmod: 2026-07-19
+lastmod: 2026-08-18
 slug: "eu-ai-act-ai-system-definition-7-element-test"
 draft: false
 featured_image: "/images/ai-guides/eu-ai-act.webp"
@@ -143,7 +143,7 @@ This checklist resolves three situations quickly:
 
 ## Related reading on The Science Talk
 
-- [EU AI Act Article 4: What AI Literacy Requirements Mean for European Research Institutes](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/): covers the parallel Article 4 obligation to make sure staff have sufficient AI literacy. This obligation applies regardless of which systems in your institute meet the Article 3(1) definition.
+- [EU AI Act Article 4: What AI Literacy Requirements Mean for European Research Institutes](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/): covers the parallel Article 4 AI-literacy provision, which the July 2026 Digital Omnibus simplified at company level. Note that the piece describes the original, stricter wording.
 
 ---
 *Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
