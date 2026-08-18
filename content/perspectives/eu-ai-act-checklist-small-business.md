@@ -1,7 +1,7 @@
 ---
 title: "EU AI Act Checklist for Small Business: 6 Articles That Matter"
 date: 2026-07-31
-lastmod: 2026-07-31
+lastmod: 2026-08-18
 draft: false
 description: "A practical EU AI Act checklist for small business — the six articles that actually apply, what each demands, and links to the full guide on each one."
 featured_image: "/images/ai-guides/eu-ai-act.webp"
@@ -24,14 +24,14 @@ Most SMEs and agencies file the **EU AI Act** as someone else's problem. It has 
 
 We have written a full deep-dive on each of these six articles separately. This piece is the index. Read it first, then follow whichever link matches where you are.
 
-> **Key takeaways:** Two of these six obligations (Articles 4 and 5) apply since February 2025. That date is not a future deadline. One article (62) exists only to help you, not to burden you. If your agency rebrands, fine-tunes, or repurposes any AI tool for a client, read Article 25. Most teams have never read it, but most need it.
+> **Key takeaways:** Two of these six obligations (Articles 4 and 5) apply since February 2025. That date is not a future deadline, though the July 2026 Omnibus has since lightened what Article 4 asks of you. One article (62) exists only to help you, not to burden you. If your agency rebrands, fine-tunes, or repurposes any AI tool for a client, read Article 25. Most teams have never read it, but most need it.
 
 ## The EU AI Act checklist for small business: 6 articles at a glance
 
 | Article | What it demands | Applies to |
 |---|---|---|
 | **Art. 3** | Are you a provider or a deployer? This article defines the roles the rest of the Act depends on | Everyone: the gateway question |
-| **Art. 4** | Ensure "sufficient AI literacy" among staff, freelancers, and contractors | Anyone with a team, in force since Feb 2025 |
+| **Art. 4** | AI literacy among staff, freelancers, and contractors — simplified by the July 2026 Omnibus | Anyone with a team, in force since Feb 2025 |
 | **Art. 5** | This article bans red lines outright: workplace emotion recognition, dark-pattern design, face-scraping | Everyone, in force since Feb 2025 |
 | **Art. 25** | You can become the legal "provider" by rebranding, modifying, or repurposing a tool | Agencies doing white-label or custom AI work |
 | **Art. 50** | Disclose AI-generated content clearly, before the reader reaches it | Anyone publishing AI-assisted content, from 2 Aug 2026 |
@@ -45,7 +45,7 @@ For a deeper walkthrough of how to classify your own tools, see [the official 7-
 
 ## Art. 4 — You already have a literacy duty
 
-[Article 4](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-4) requires providers and deployers to ensure "a sufficient level of AI literacy" among staff. This duty extends to anyone who operates AI systems on their behalf, including freelancers and contractors. It has applied since **2 February 2025**, six months earlier than most teams assume.
+[Article 4](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-4) covers AI literacy among staff and anyone who operates AI systems on your behalf, including freelancers and contractors. It has applied since **2 February 2025**, six months earlier than most teams assume — but the July 2026 Digital Omnibus, [Regulation (EU) 2026/1744](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng), simplified the company-level requirement, shifting the leading role onto the Commission and Member States. Most coverage still describes the stricter original wording.
 
 Full breakdown, including what "sufficient" actually means in practice: [Article 4 for creator agencies and small teams](/perspectives/eu-ai-act-article-4-creator-agencies-small-teams/).
 

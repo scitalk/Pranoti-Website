@@ -1,7 +1,7 @@
 ---
 title: "European Research's AI Problem: Implementation, Not Adoption"
 date: 2026-04-05
-lastmod: 2026-06-19
+lastmod: 2026-08-18
 draft: false
 description: "European research institutes have AI strategies but no AI workflows. Here's what the implementation gap means for research managers and what needs to change."
 keywords: ["AI integration European research", "EU AI Act research organisations", "knowledge work automation research", "AI implementation gap", "research institute AI strategy", "AI literacy compliance", "Fraunhofer AI knowledge work"]
@@ -35,7 +35,7 @@ For most European research organisations, the strategy layer is largely in place
 
 ## Since February 2025, AI literacy is a legal obligation
 
-[Article 4 of the EU AI Act](https://digital-strategy.ec.europa.eu/en/policies/ai-talent-skills-and-literacy) entered into force on 2 February 2025. It requires every organisation that deploys AI systems to ensure a sufficient level of AI literacy among staff who deal with those systems. National market surveillance authorities enforce this rule.
+[Article 4 of the EU AI Act](https://digital-strategy.ec.europa.eu/en/policies/ai-talent-skills-and-literacy) entered into force on 2 February 2025, covering AI literacy among staff who deal with the AI systems an organisation deploys. The July 2026 Digital Omnibus, [Regulation (EU) 2026/1744](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng), simplified the company-level requirement and gave the Commission and Member States the leading role in promoting literacy. The gap this piece describes is not a legal-compliance gap in the first place, which is rather the point.
 
 Most research organisations underestimate their exposure to this rule. Here is what "deployer" means. If your team uses Microsoft Copilot, an AI-assisted writing tool, an AI chatbot for literature search, or any automated tool that uses machine learning to process work-related data, your organisation is a deployer. The obligation applies to the institution, not the individual researcher.
 
