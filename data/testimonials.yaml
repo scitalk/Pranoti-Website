@@ -185,6 +185,82 @@ testimonials:
       I liked it very much. Very well organized, nice network, enjoyed the interview a
       lot. It couldn't be better.
 
+  # ─── LinkedIn recommendations (Recommendations_Received.csv, all VISIBLE) ─
+  - name: "Nick Gaunt, Ph.D."
+    role: "Founder, Director and CEO"
+    org: "Acorn Scientific Marketing"
+    context: "LinkedIn recommendation"
+    year: "2024"
+    featured: false
+    quote: >-
+      I have been working alongside Pranoti for the best part of 6 months and what is
+      clear is that she is a sea of knowledge. As well as being incredibly professional,
+      she brings creativity and positivity to everything she does. Since recently
+      becoming a freelancer, and working on The Science Talk more, Pranoti is a
+      scientist unbound, and the content she produces is top quality and fun, as well
+      as informative. I would highly recommend following and connecting with Pranoti,
+      and witness her expertise for yourself!
+
+  - name: "Elisabeth Kugler"
+    role: "Founder & Director"
+    org: "Zeeks - Art for Geeks"
+    context: "LinkedIn recommendation"
+    year: "2023"
+    featured: false
+    quote: >-
+      In 2022 I started to work with Dr. Pranoti Kshirsagar in her role as Founder of
+      The Science Talk. Working with Pranoti regularly to create science communication
+      and public outreach content, I can say that she has an incredibly constructive
+      and enthusiastic approach to work. She has a truly once-in-a-million combo of
+      creativity and business growth, and I know that I can always approach her for
+      constructive feedback and advice. I particularly like that she brings energy,
+      motivation, and creativity to each conversation, making it a true joy to work
+      with her.
+
+  - name: "Sanket Suman Dash"
+    role: "Vice President"
+    org: "InspeCity"
+    context: "LinkedIn recommendation"
+    year: "2023"
+    featured: false
+    quote: >-
+      Dr. Pranoti is a rare individual who can articulate complex topics in a creative
+      and engaging manner. I have had the privilege to collaborate with her at The
+      Science Talk where she mentored me and our team in science communication and
+      gave us a platform to learn and build podcasts for the Under the Microscope
+      series. I would highly recommend her for leadership and communication positions.
+
+  - name: "Martijn de Valk"
+    role: "Director Institutional Sales — Scandinavia, Belgium, The Netherlands"
+    org: "Springer Nature Group"
+    context: "LinkedIn recommendation"
+    year: "2023"
+    featured: false
+    quote: >-
+      I've enjoyed a close working relationship with Pranoti for about four years when
+      she was a Senior Product Manager at Springer Nature. Throughout this period, I
+      have seen Pranoti excel at all aspects of her work. She has a creative (and
+      sharp) mind which she brilliantly balanced with a solutions-focused and
+      customer-centric approach. She has a wealth of knowledge when it comes to the
+      needs of the scientific community, which was a huge strength in the further
+      development of the products she was responsible for. I have found her to be
+      inspiring and fun to work with, and I cannot recommend Pranoti highly enough.
+
+  - name: "Prathik Roy, Ph.D."
+    role: "Product Director — Data Solutions and Strategy (TDM/ML/AI)"
+    org: "Springer Nature Group"
+    context: "LinkedIn recommendation"
+    year: "2022"
+    featured: false
+    quote: >-
+      Pranoti is a once-in-a-generation product management professional. I had the
+      privilege of managing Pranoti directly when working together on Springer
+      Nature's first AI-based platform for scientists in the materials domain. She was
+      always a step ahead of her peers and had a knack for finding the pain points of
+      our users and building solutions that created the highest impact. She has
+      excellent user empathy, commercial acumen, product strategy and marketing whiz,
+      making her a brilliant product strategy professional.
+
   # ─── Anonymised (positive, name consent not documented) ─────────────────
   - name: ""
     role: "Professor"
