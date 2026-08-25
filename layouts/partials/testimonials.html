@@ -2,15 +2,25 @@
   Testimonials partial — renders cards from data/testimonials.yaml
   Params (pass a dict):
     featuredOnly (bool)  – show only entries with `featured: true`
+    contextMatch (string)– show only entries whose `context` contains this substring
     limit        (int)   – cap the number shown (0 / omitted = all)
     heading      (string)– optional section heading
     subheading   (string)– optional intro line
+    class        (string)– extra class on the wrapper, for page-specific styling
 */}}
 {{ $items := .Site.Data.testimonials.testimonials }}
 {{ if .featuredOnly }}{{ $items = where $items "featured" true }}{{ end }}
+{{ $needle := lower (.contextMatch | default "") }}
+{{ if $needle }}
+  {{ $matched := slice }}
+  {{ range $items }}
+    {{ if in (lower (.context | default "")) $needle }}{{ $matched = $matched | append . }}{{ end }}
+  {{ end }}
+  {{ $items = $matched }}
+{{ end }}
 {{ if and .limit (gt .limit 0) }}{{ $items = first .limit $items }}{{ end }}
 
-<section class="tst-quotes">
+<section class="tst-quotes{{ with .class }} {{ . }}{{ end }}">
   <div class="tst-quotes-container">
     {{ with .heading }}<h2 class="tst-quotes-heading">{{ . }}</h2>{{ end }}
     {{ with .subheading }}<p class="tst-quotes-sub">{{ . }}</p>{{ end }}
@@ -20,12 +30,19 @@
       <figure class="tst-card{{ if .featured }} tst-card--featured{{ end }}">
         <blockquote class="tst-card-quote">{{ .quote }}</blockquote>
         <figcaption class="tst-card-meta">
-          {{ with .name }}<span class="tst-card-name">{{ . }}</span>{{ end }}
-          <span class="tst-card-role">
-            {{- .role -}}
-            {{- with .org }}{{ if $.name }}, {{ else }} · {{ end }}{{ . }}{{ end -}}
+          {{ if .photo }}
+            <img class="tst-card-photo" src="{{ .photo | relURL }}" alt="{{ .name }}" loading="lazy">
+          {{ else if .name }}
+            <span class="tst-card-photo tst-card-photo-placeholder" aria-hidden="true">{{ substr .name 0 1 }}</span>
+          {{ end }}
+          <span class="tst-card-id">
+            {{ with .name }}<span class="tst-card-name">{{ . }}</span>{{ end }}
+            <span class="tst-card-role">
+              {{- .role -}}
+              {{- with .org }}{{ if $.name }}, {{ else }} · {{ end }}{{ . }}{{ end -}}
+            </span>
+            {{ with .context }}<span class="tst-card-context">{{ . }}{{ with $.year }} · {{ . }}{{ end }}</span>{{ end }}
           </span>
-          {{ with .context }}<span class="tst-card-context">{{ . }}{{ with $.year }} · {{ . }}{{ end }}</span>{{ end }}
         </figcaption>
       </figure>
       {{ end }}
@@ -49,13 +66,25 @@
   display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.25rem; align-items: start;
 }
+.tst-quotes--pods .tst-quotes-grid {
+  display: block; column-count: 3; column-gap: 1.25rem;
+}
+.tst-quotes--pods .tst-card {
+  break-inside: avoid; margin-bottom: 1.25rem;
+}
+@media (max-width: 900px) {
+  .tst-quotes--pods .tst-quotes-grid { column-count: 2; }
+}
+@media (max-width: 640px) {
+  .tst-quotes--pods .tst-quotes-grid { column-count: 1; }
+}
 .tst-card {
   background: #fff; border: 1px solid #E6F4ED; border-top: 3px solid #2A6048;
   border-radius: 10px; padding: 1.5rem 1.5rem 1.35rem; margin: 0;
   display: flex; flex-direction: column; gap: 1rem;
   box-shadow: 0 1px 3px rgba(26,56,40,0.05);
 }
-.tst-card--featured { border-top-color: #1A3828; background: #FffDf9; }
+.tst-card--featured { border-top-color: #1A3828; }
 .tst-card-quote {
   margin: 0; color: #2a3a32; font-size: 0.98rem; line-height: 1.6;
   position: relative;
@@ -65,7 +94,17 @@
   line-height: 0; position: absolute; left: -0.15rem; top: 0.7rem;
 }
 .tst-card-quote { padding-left: 1.15rem; }
-.tst-card-meta { display: flex; flex-direction: column; gap: 0.15rem; margin-top: auto; }
+.tst-card-meta { display: flex; flex-direction: row; align-items: center; gap: 0.85rem; margin-top: auto; }
+.tst-card-photo {
+  width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+  flex: 0 0 auto; border: 2px solid #E6F4ED;
+}
+.tst-card-photo-placeholder {
+  display: flex; align-items: center; justify-content: center;
+  background: #E6F4ED; color: #1A3828; font-weight: 700; font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+.tst-card-id { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
 .tst-card-name { font-weight: 700; color: #1A3828; font-size: 0.95rem; }
 .tst-card-role { color: #2A6048; font-size: 0.88rem; font-weight: 500; }
 .tst-card-context { color: #8a9a92; font-size: 0.78rem; margin-top: 0.15rem; }

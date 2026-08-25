@@ -1,0 +1,385 @@
+{{ define "main" }}
+{{ $email := .Params.cta_email | default "pranoti@thesciencetalk.com" }}
+<article class="pods-page">
+
+  <!-- Hero — dark gradient (darker left, lighter right), video contained on the right -->
+  <section class="pods-hero">
+    <div class="pods-hero-overlay"></div>
+    <div class="pods-container pods-hero-grid">
+      <div class="pods-hero-inner">
+        {{ with .Params.hero_kicker }}<span class="pods-kicker pods-kicker-pill">{{ . }}</span>{{ end }}
+        <h1>
+          {{ range .Params.hero_title_lines }}<span>{{ . }}</span>{{ end }}
+        </h1>
+        {{ with .Params.hero_standfirst }}<p class="pods-standfirst">{{ . }}</p>{{ end }}
+        <div class="pods-hero-cta-row">
+          <a href="mailto:{{ $email }}?subject=Science%20Podcast%20as%20a%20Service"
+             class="pods-btn pods-btn-light"
+             onclick="gtag('event', 'purchase_intent', {'item_name': 'Science Podcast as a Service', 'location': 'product_page'})">
+            {{ .Params.cta_label | default "Get in touch" }} <span aria-hidden="true">→</span>
+          </a>
+          <a href="#packages" class="pods-btn pods-btn-outline">See packages</a>
+        </div>
+      </div>
+      {{ with .Params.hero_video }}
+      <div class="pods-hero-media">
+        <video src="{{ . }}" autoplay loop muted playsinline></video>
+      </div>
+      {{ end }}
+    </div>
+    {{ with .Params.proof }}
+    <div class="pods-container pods-hero-proof">
+      <h2 id="pods-proof-heading" class="visually-hidden">Track record</h2>
+      <div class="pods-proof-grid pods-proof-grid--hero">
+        {{ range . }}
+        {{ $inner := printf `<span class="pods-stat-num%s">%s</span><span class="pods-stat-label">%s</span>` (cond .wide " pods-stat-num-text" "") .number .label | safeHTML }}
+        {{ if .url }}
+          <a class="pods-stat pods-stat-link" href="{{ .url }}" target="_blank" rel="noopener">{{ $inner }}</a>
+        {{ else }}
+          <div class="pods-stat">{{ $inner }}</div>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </section>
+
+  <!-- Two tracks: guest vs custom — BioMed X wireframe's alternating audience-block layout, placeholder visuals -->
+  {{ with .Params.tracks }}
+  <div class="pods-tracks-wrap">
+    {{ range $i, $track := . }}
+    <section class="pods-track-section{{ if eq (mod $i 2) 1 }} pods-track-section-alt{{ end }}" aria-labelledby="pods-track-heading-{{ $i }}">
+      <div class="pods-container pods-track-audience">
+        <div class="pods-track-visual{{ if $track.image }} pods-track-visual-has-img{{ end }}">
+          {{ if $track.image }}
+          <img src="{{ $track.image | relURL }}" alt="{{ $track.name }}" class="pods-track-visual-img" loading="lazy">
+          {{ else }}
+          <span class="pods-track-visual-placeholder">{{ $track.audience }} photo</span>
+          {{ end }}
+        </div>
+        <div class="pods-track-copy">
+          <span class="pods-track-eyebrow">{{ $track.audience }}</span>
+          <h3 id="pods-track-heading-{{ $i }}">{{ $track.name }}</h3>
+          <p class="pods-track-body">{{ $track.body }}</p>
+          <ul class="pods-track-points">
+            {{ range $track.points }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          <a href="mailto:{{ $email }}?subject={{ $track.cta_subject | urlquery }}"
+             class="pods-btn pods-btn-outline-accent"
+             onclick="gtag('event', 'purchase_intent', {'item_name': 'Science Podcast as a Service — {{ $track.name }}', 'location': 'product_page'})">
+            {{ $track.cta_label }} <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- Episode impact -->
+  {{ if .Params.impact_pieces }}
+  {{ $icons := dict
+      "mic" `<circle cx="12" cy="9" r="4"/><path d="M6 12a6 6 0 0 0 12 0M12 18v3"/>`
+      "video" `<rect x="3" y="6" width="13" height="12" rx="1"/><path d="M16 10.5l5-3v9l-5-3z"/>`
+      "image" `<rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5.5-5.5L9 17"/>`
+      "clip" `<rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 8l4 3-4 3z"/>`
+      "mail" `<rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/>`
+      "web" `<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/>`
+  }}
+  <section class="pods-impact" aria-labelledby="pods-impact-heading">
+    <div class="pods-container">
+      <h2 id="pods-impact-heading">{{ .Params.impact_heading | default "Episode impact" }}</h2>
+      {{ with .Params.impact_note }}<p class="pods-note">{{ . }}</p>{{ end }}
+
+      <div class="pods-impact-grid">
+
+        <div class="pods-impact-col">
+          {{ with .Params.impact_platforms }}
+          <div class="pods-impact-platforms">
+            <span class="pods-impact-label">Distributed to</span>
+            <ul class="pods-platform-list">
+              {{ range . }}<li>{{ . }}</li>{{ end }}
+            </ul>
+          </div>
+          {{ end }}
+
+          <div class="pods-impact-stat">
+            <span class="pods-impact-stat-num">{{ .Params.impact_pieces_total }}</span>
+            <span class="pods-impact-stat-label">{{ .Params.impact_pieces_label }}</span>
+          </div>
+          <ul class="pods-pieces-list">
+            {{ range .Params.impact_pieces }}
+            <li>
+              <span class="pods-piece-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{{ index $icons .icon | safeHTML }}</svg>
+              </span>
+              <span class="pods-piece-count">{{ .count }}</span>
+              <span class="pods-piece-label">{{ .label }}</span>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+
+        <div class="pods-impact-col">
+          <div class="pods-impact-stat">
+            <span class="pods-impact-stat-num">{{ .Params.impact_views_total }}</span>
+            <span class="pods-impact-stat-label">{{ .Params.impact_views_label }}</span>
+          </div>
+          {{ with .Params.impact_views }}
+          <div class="pods-views-row">
+            {{ range . }}
+            <div class="pods-views-item">
+              <span class="pods-views-value">{{ .value }}</span>
+              <span class="pods-views-platform">{{ .platform }}</span>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+
+          {{ with .Params.impact_chart }}
+          {{ $max := 0.0 }}
+          {{ range . }}{{ if gt (float .value) $max }}{{ $max = float .value }}{{ end }}{{ end }}
+          <div class="pods-chart">
+            <div class="pods-chart-head">
+              <span class="pods-chart-title">{{ $.Params.impact_chart_heading | default "Views and impressions" }}</span>
+              {{ with $.Params.impact_chart_note }}<span class="pods-chart-note">{{ . }}</span>{{ end }}
+            </div>
+            <div class="pods-chart-bars">
+              {{ range . }}
+              {{ $pct := 6 }}
+              {{ if gt $max 0.0 }}{{ $pct = mul (div (float .value) $max) 100 }}{{ end }}
+              <div class="pods-chart-bar-col">
+                <span class="pods-chart-bar-value">{{ .value }}</span>
+                <div class="pods-chart-bar-track">
+                  <div class="pods-chart-bar" style="height: {{ $pct }}%;"></div>
+                </div>
+                <span class="pods-chart-bar-label">{{ .platform }}</span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Testimonials — podcast guests only, from data/testimonials.yaml -->
+  {{ with .Params.testimonials_heading }}
+  <section class="pods-testimonials">
+    {{ partial "testimonials.html" (dict
+        "Site" $.Site
+        "contextMatch" "Under the Microscope"
+        "featuredOnly" false
+        "limit" 0
+        "heading" .
+        "subheading" $.Params.testimonials_sub
+        "class" "tst-quotes--pods"
+    ) }}
+    <div class="pods-container pods-narrow pods-tst-more">
+      <a href="/testimonials/">See all testimonials <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Process -->
+  {{ with .Params.process }}
+  <section class="pods-process" aria-labelledby="pods-process-heading">
+    <div class="pods-container">
+      <h2 id="pods-process-heading">{{ $.Params.process_heading | default "How it works" }}</h2>
+      <ol class="pods-process-list">
+        {{ range . }}
+        <li class="pods-step">
+          <span class="pods-step-num">{{ .step }}</span>
+          <div>
+            <h3>{{ .title }}</h3>
+            <p>{{ .body }}</p>
+          </div>
+        </li>
+        {{ end }}
+      </ol>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Tiers -->
+  {{ with .Params.tiers }}
+  <section class="pods-tiers" id="packages" aria-labelledby="pods-tiers-heading">
+    <div class="pods-container">
+      <h2 id="pods-tiers-heading">{{ $.Params.tiers_heading | default "Three packages" }}</h2>
+      {{ with $.Params.tiers_intro }}<p class="pods-note">{{ . }}</p>{{ end }}
+      {{ with $.Params.tiers_note }}<p class="pods-note">{{ . }}</p>{{ end }}
+      <div class="pods-tier-grid">
+        {{ range . }}
+        <div class="pods-tier{{ if .highlight }} pods-tier-featured{{ end }}">
+          {{ if .highlight }}<span class="pods-tier-badge">Most chosen</span>{{ end }}
+          <h3 class="pods-tier-name">{{ .name }}</h3>
+          <span class="pods-tier-length">{{ .length }}</span>
+          <span class="pods-tier-price">{{ .price }}<em>+ VAT</em></span>
+          <p class="pods-tier-summary">{{ .summary }}</p>
+          <ul class="pods-tier-features">
+            {{ range .features }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          <a href="mailto:{{ $email }}?subject={{ printf "Science Podcast as a Service — %s package" .name | urlquery }}"
+             class="pods-btn pods-btn-dark"
+             onclick="gtag('event', 'purchase_intent', {'item_name': 'Science Podcast as a Service — {{ .name }}', 'location': 'product_page'})">
+            Enquire about {{ .name }} <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Comparison table -->
+  {{ with .Params.compare_rows }}
+  <section class="pods-compare" aria-labelledby="pods-compare-heading">
+    <div class="pods-container">
+      <h2 id="pods-compare-heading">{{ $.Params.compare_heading | default "Compare the packages" }}</h2>
+      <div class="pods-table-scroll">
+        <table class="pods-table">
+          <thead>
+            <tr>
+              <th scope="col">What you get</th>
+              <th scope="col">Nano</th>
+              <th scope="col">Micro</th>
+              <th scope="col">Macro</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range . }}
+            <tr>
+              <th scope="row">
+                <span class="pods-row-feature">{{ .feature }}</span>
+                {{ with .detail }}<span class="pods-row-detail">{{ . }}</span>{{ end }}
+              </th>
+              {{ range slice .nano .micro .macro }}
+                {{ if eq . "yes" }}
+                  <td class="pods-yes"><span aria-hidden="true">✓</span><span class="visually-hidden">Included</span></td>
+                {{ else if eq . "no" }}
+                  <td class="pods-no"><span aria-hidden="true">—</span><span class="visually-hidden">Not included</span></td>
+                {{ else }}
+                  <td>{{ . }}</td>
+                {{ end }}
+              {{ end }}
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Two ways onto the podcast — framing, placed after the two track blocks it describes -->
+  {{ if false }}
+  {{ if .Params.tracks }}
+  <section class="pods-tracks-head" aria-labelledby="pods-tracks-heading">
+    <div class="pods-container pods-narrow">
+      <h2 id="pods-tracks-heading">{{ .Params.tracks_heading | default "Two ways onto the podcast" }}</h2>
+      {{ with .Params.tracks_intro }}<p class="pods-note">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+  {{ end }}
+  {{ end }}
+
+  <!-- Approach statement -->
+  {{ if .Params.approach_body }}
+  <section class="pods-approach" aria-labelledby="pods-approach-heading">
+    <div class="pods-container pods-narrow">
+      <h2 id="pods-approach-heading">{{ .Params.approach_heading | default "The scientist approach" }}</h2>
+      <p>{{ .Params.approach_body }}</p>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Who it's for -->
+  {{ with .Params.audience }}
+  <section class="pods-audience" aria-labelledby="pods-audience-heading">
+    <div class="pods-container pods-narrow">
+      <h2 id="pods-audience-heading">{{ $.Params.audience_heading | default "Who this is for" }}</h2>
+      <ul class="pods-audience-list">
+        {{ range . }}<li>{{ . }}</li>{{ end }}
+      </ul>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Coverage / credibility -->
+  {{ with .Params.coverage }}
+  <section class="pods-coverage" aria-labelledby="pods-coverage-heading">
+    <div class="pods-container">
+      <h2 id="pods-coverage-heading">{{ $.Params.coverage_heading | default "The receipts" }}</h2>
+      {{ with $.Params.coverage_standfirst }}<p class="pods-note">{{ . }}</p>{{ end }}
+      <div class="pods-coverage-grid">
+        {{ range . }}
+        {{ $external := hasPrefix .url "http" }}
+        <a class="pods-cov-card" href="{{ .url }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>
+          <span class="pods-cov-meta">
+            <span class="pods-cov-source">{{ .source }}</span>
+            {{ with .date }}<span class="pods-cov-date">{{ . }}</span>{{ end }}
+          </span>
+          <span class="pods-cov-title">{{ .title }}</span>
+          {{ with .why }}<span class="pods-cov-why">{{ . }}</span>{{ end }}
+          <span class="pods-cov-link">{{ if $external }}Read on thesciencetalk.com{{ else }}Read more{{ end }} <span aria-hidden="true">→</span></span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Intro -->
+  {{ if false }}
+  <section class="pods-intro">
+    <div class="pods-container pods-narrow">
+      {{ with .Params.intro_heading }}<h2>{{ . }}</h2>{{ end }}
+      {{ with .Params.intro_body }}<p>{{ . }}</p>{{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- FAQ -->
+  {{ if false }}
+  {{ with .Params.faq }}
+  <section class="pods-faq" aria-labelledby="pods-faq-heading">
+    <div class="pods-container pods-narrow">
+      <h2 id="pods-faq-heading">{{ $.Params.faq_heading | default "Questions we get asked" }}</h2>
+      <div class="pods-faq-list">
+        {{ range . }}
+        <details class="pods-faq-item">
+          <summary>{{ .q }}</summary>
+          <div class="pods-faq-answer"><p>{{ .a | markdownify }}</p></div>
+        </details>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+  {{ end }}
+
+  <!-- Body copy, if any -->
+  {{ with .Content }}
+  <section class="pods-body">
+    <div class="pods-container pods-narrow">{{ . }}</div>
+  </section>
+  {{ end }}
+
+  <!-- Closing CTA -->
+  <section class="pods-cta">
+    <div class="pods-container pods-narrow">
+      <h2>{{ .Params.cta_heading | default "Ready to record?" }}</h2>
+      {{ with .Params.cta_body }}<p>{{ . }}</p>{{ end }}
+      <a href="mailto:{{ $email }}?subject=Science%20Podcast%20as%20a%20Service"
+         class="pods-btn pods-btn-light"
+         onclick="gtag('event', 'purchase_intent', {'item_name': 'Science Podcast as a Service', 'location': 'product_page'})">
+        {{ .Params.cta_label | default "Get in touch" }} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+</article>
+{{ end }}

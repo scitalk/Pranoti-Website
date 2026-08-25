@@ -62,6 +62,7 @@ testimonials:
     context: "Under the Microscope podcast guest"
     year: "2024"
     featured: true
+    photo: "/images/services/science-podcast-as-a-service/Krist Garneay - Edited.jpg"
     quote: >-
       The recording was done very professionally, and the host is an experienced
       interviewer that understands perfectly how to make a guest feel at ease with
@@ -73,6 +74,7 @@ testimonials:
     context: "Under the Microscope podcast guest"
     year: "2026"
     featured: true
+    photo: "/images/services/science-podcast-as-a-service/Anna Sandak new - Anna Sandak - Edited.jpg"
     quote: >-
       I recently had the pleasure of recording a podcast with Pranoti, where we
       discussed my research on engineered living materials. The entire experience was
@@ -105,17 +107,6 @@ testimonials:
       neurodiverse people face in academia as well as in corporations. Just really nice
       to work with all around.
 
-  - name: "George Mihailescu"
-    role: "PhD Researcher"
-    org: "University College Dublin"
-    context: "Under the Microscope podcast guest"
-    year: "2023"
-    featured: true
-    quote: >-
-      It was really amazing. Pranoti is a really fun and engaging host, who asks great
-      questions. The online form which provides the questions in advance is a really
-      helpful device!
-
   # ─── Podcast & host praise (consent documented) ─────────────────────────
   - name: "Prof. Anna Musiał"
     role: "Professor"
@@ -123,6 +114,7 @@ testimonials:
     context: "Under the Microscope podcast guest"
     year: "2024"
     featured: false
+    photo: "/images/services/science-podcast-as-a-service/Anna Musiał - Edited.jpg"
     quote: >-
       It was easy and natural to talk to Pranoti as a podcast host. She creates a
       positive atmosphere and tries to make even stressed guests more relaxed. Her
@@ -135,6 +127,7 @@ testimonials:
     context: "Under the Microscope podcast guest"
     year: "2024"
     featured: false
+    photo: "/images/services/science-podcast-as-a-service/_Martin Rejhon.jpg"
     quote: >-
       Pranoti is a really nice host who makes you feel comfortable during the recording.
       Her guidance through the conversation makes the podcast flow naturally. It has
