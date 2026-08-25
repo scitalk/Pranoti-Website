@@ -92,8 +92,8 @@
         </div>
         {{ range .Params.blockers }}
         <div class="blocker-pair">
-          <div class="blocker"><span class="blocker-x">✕</span><p><strong>{{ .issue_title }}</strong> — {{ .issue_desc }}</p></div>
-          <div class="fix"><span class="fix-chk">✓</span><p>{{ .solution }}</p></div>
+          <div class="blocker"><span class="blocker-x">✕</span><p><strong>{{ .issue_title }}</strong> — {{ .issue_desc | markdownify }}</p></div>
+          <div class="fix"><span class="fix-chk">✓</span><p>{{ .solution | markdownify }}</p></div>
         </div>
         {{ end }}
       </div>
@@ -103,7 +103,7 @@
       <div class="sec-label">04 · What Claude can now do</div>
       <div class="card outcomes-grid stretch-card">
         {{ range .Params.outcomes }}
-        <div class="outcome"><span class="outcome-chk">✓</span><p>{{ . }}</p></div>
+        <div class="outcome"><span class="outcome-chk">✓</span><p>{{ . | markdownify }}</p></div>
         {{ end }}
       </div>
     </div>
