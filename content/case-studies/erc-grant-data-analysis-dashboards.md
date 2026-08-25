@@ -56,7 +56,7 @@ cta_text: "Read the full analysis: What 5 years of ERC data reveals about Europe
 guide_url: "https://pranoti.thesciencetalk.com/ai-guides/erc-grant-data-analysis-funded-institutions/"
 related_tst_posts:
   - title: "ERC Guidelines on AI in Grant Proposal Evaluation — The Science Talk"
-    url: "https://thesciencetalk.com/erc-ai-grant-proposal-evaluation-guidelines/"
+    url: "https://thesciencetalk.com/services/grants-fundraising/erc-ai-grant-proposal-evaluation-guidelines/"
   - title: "How I Used GenAI to Support €1M Grant Proposals — The Science Talk"
-    url: "https://thesciencetalk.com/ai-tools-for-proposal-writing/"
+    url: "https://thesciencetalk.com/news/ai-tools-for-proposal-writing/"
 ---

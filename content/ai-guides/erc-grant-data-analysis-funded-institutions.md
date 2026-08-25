@@ -116,10 +116,10 @@ The same approach works for any EC program with data on the R&I platform, includ
 
 For broader context on why ERC funding patterns matter and how AI is changing grant strategy, see these related posts.
 
-- [ERC Guidelines on AI in Grant Proposal Evaluation](https://thesciencetalk.com/erc-ai-grant-proposal-evaluation-guidelines/) — what the ERC's own guidance says about AI use in proposals
-- [How I Used GenAI to Support €1M Grant Proposals](https://thesciencetalk.com/ai-tools-for-proposal-writing/) — practical application of Claude in a real proposal workflow
-- [ERC Advanced Grant 2026 — What the data shows](https://thesciencetalk.com/erc-advanced-grant-2026/) — funded institutions, domains, and patterns for ADG applicants
-- [ERC Starting Grant 2027 — Competitive landscape analysis](https://thesciencetalk.com/erc-starting-grant-2027/) — STG funding patterns and what they reveal for 2027 applicants
-- [NotebookLM Data Tables: Relevance for Scientists and SciComm](https://thesciencetalk.com/notebooklm-data-tables-scicomm-scientists/) — how NotebookLM compares to Claude for structured data work
+- [ERC Guidelines on AI in Grant Proposal Evaluation](https://thesciencetalk.com/services/grants-fundraising/erc-ai-grant-proposal-evaluation-guidelines/) — what the ERC's own guidance says about AI use in proposals
+- [How I Used GenAI to Support €1M Grant Proposals](https://thesciencetalk.com/news/ai-tools-for-proposal-writing/) — practical application of Claude in a real proposal workflow
+- [ERC Advanced Grant 2026 — What the data shows](https://thesciencetalk.com/services/grants-fundraising/erc-advanced-grant-2026/) — funded institutions, domains, and patterns for ADG applicants
+- [ERC Starting Grant 2027 — Competitive landscape analysis](https://thesciencetalk.com/services/grants-fundraising/erc-starting-grant-2027/) — STG funding patterns and what they reveal for 2027 applicants
+- [NotebookLM Data Tables: Relevance for Scientists and SciComm](https://thesciencetalk.com/news/notebooklm-data-tables-scicomm-scientists/) — how NotebookLM compares to Claude for structured data work
 
 *Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*
