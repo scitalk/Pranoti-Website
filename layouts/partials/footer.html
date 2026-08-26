@@ -1,42 +1,53 @@
 <footer>
     <div class="container">
         <div class="footer-content">
-            <div class="footer-section footer-section-left">
-                <h3>{{ .Site.Title }}, PhD</h3>
-                <p>AI Literacy and EU AI Act specialist for European businesses</p>
-                <div class="footer-connect">
-                    <h3>Connect</h3>
-                    <div class="social-links">
-                        {{ with .Site.Params.linkedin }}
-                        <a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>
-                        {{ end }}
+            <div class="footer-group footer-group-about">
+                <div class="footer-section footer-section-left">
+                    <h3>{{ .Site.Title }}, PhD</h3>
+                    <p>AI Literacy and EU AI Act specialist for European businesses</p>
+                    <div class="footer-connect">
+                        <h3>Connect</h3>
+                        <div class="social-links">
+                            {{ with .Site.Params.linkedin }}
+                            <a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>
+                            {{ end }}
+                        </div>
                     </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul class="footer-menu">
+                        <li><a href="/perspectives/">Perspectives</a></li>
+                        <li><a href="/ai-guides/">AI Guides</a></li>
+                        <li><a href="/case-studies/">Case Studies</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/about/">About</a></li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="footer-section">
-                <h3>Explore</h3>
-                <ul class="footer-menu">
-                    <li><a href="/perspectives/">Perspectives</a></li>
-                    <li><a href="/ai-guides/">AI Guides</a></li>
-                    <li><a href="/case-studies/">Case Studies</a></li>
-                    <li><a href="/portfolio/">Portfolio</a></li>
-                    <li><a href="/about/">About</a></li>
-                </ul>
-            </div>
+            <div class="footer-group footer-group-products">
+                <div class="footer-section">
+                    <h3><a href="/products/">Grants &amp; Fundraising</a></h3>
+                    <ul class="footer-menu">
+                        <li><a href="/products/erc-starting-grant-resource-kit/">ERC Starting Grant - Resource Kit</a></li>
+                        <li><a href="/products/erc-advanced-grant-resource-kit/">ERC Advanced Grant - Resource Kit</a></li>
+                        <li><a href="/products/erc-synergy-grant-resource-kit/">ERC Synergy Grant - Resource Kit</a></li>
+                        <li><a href="/products/erc-consolidator-grant-resource-kit/">ERC Consolidator Grant - Resource Kit</a></li>
+                        <li><a href="https://thesciencetalk.com/ai-proposal-writing-workflow-visuals/">AI Proposal Writing Workflow - Visuals</a></li>
+                        <li><a href="/erc-projects-database/">ERC Projects Database</a></li>
+                    </ul>
+                </div>
 
-            <div class="footer-section">
-                <h3><a href="/products/">Products</a></h3>
-                <ul class="footer-menu">
-                    <li><a href="/products/erc-starting-grant-resource-kit/">ERC Starting Grant - Resource Kit</a></li>
-                    <li><a href="/products/erc-advanced-grant-resource-kit/">ERC Advanced Grant - Resource Kit</a></li>
-                    <li><a href="/products/erc-synergy-grant-resource-kit/">ERC Synergy Grant - Resource Kit</a></li>
-                    <li><a href="/products/erc-consolidator-grant-resource-kit/">ERC Consolidator Grant - Resource Kit</a></li>
-                    <li><a href="/products/claude-wordpress-mcp-guide/">WordPress MCP Guide</a></li>
-                    <li><a href="/products/claude-google-sheets-mcp-guide/">Google Sheets MCP Guide</a></li>
-                    <li><a href="/products/claude-cv-system/">The Claude CV System</a></li>
-                    <li><a href="https://thesciencetalk.com/ai-proposal-writing-workflow-visuals/">AI Proposal Writing Workflow - Visuals</a></li>
-                </ul>
+                <div class="footer-section">
+                    <h3><a href="/products/">AI Integration Guides</a></h3>
+                    <ul class="footer-menu">
+                        <li><a href="/products/claude-wordpress-mcp-guide/">WordPress MCP Guide</a></li>
+                        <li><a href="/products/claude-google-sheets-mcp-guide/">Google Sheets MCP Guide</a></li>
+                        <li><a href="/products/claude-cv-system/">The Claude CV System</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         
@@ -66,9 +77,24 @@ footer {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 2fr 3fr;
     gap: 2.5rem;
     margin-bottom: 2rem;
+}
+
+.footer-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+@media (max-width: 640px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .footer-group {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
 }
 
 .footer-section h3 {
