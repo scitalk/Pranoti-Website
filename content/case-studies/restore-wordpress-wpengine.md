@@ -1,6 +1,8 @@
 ---
 title: "Restoring a Single WordPress Page from a WP Engine Backup — Without Touching the Rest of the Site"
 date: 2026-04-03
+aliases:
+  - "/portfolio/ai-automation-integration/restore-wordpress-wpengine/"
 subtitle: "How I used Claude AI to extract one page's data from a full database dump and push it back directly via the WordPress MCP — no REST API calls, no manual copy-paste, no downtime."
 category: "AI Integration"
 tech_stack:
