@@ -171,7 +171,7 @@ tiers:
       - "Personal shoutout from Pranoti"
   - name: "Macro"
     length: "30 minutes"
-    price: "€15,900"
+    price: "€15,700"
     summary: "A long-form episode with a full year of visibility built in. Best for flagship projects, consortia, and institutional storytelling."
     highlight: false
     features:
@@ -239,7 +239,7 @@ compare_rows:
   - feature: "Price, excluding VAT"
     nano: "€6,900"
     micro: "€10,800"
-    macro: "€15,900"
+    macro: "€15,700"
 
 audience_heading: "Who this is for"
 audience:
