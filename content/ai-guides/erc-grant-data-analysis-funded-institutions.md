@@ -19,9 +19,9 @@ sidebar_links:
     url: "/ai-guides/event-registration-automation-stripe-make-mailerlite/"
 sidebar_product:
   label: "RESOURCE KIT"
-  title: "ERC Starting Grant 2027 — 47 Official Resources"
+  title: "ERC Starting Grant 2027 — 51 Official Resources"
   bullets:
-    - "47 verified official resources for your ERC StG 2027 application"
+    - "51 verified official resources for your ERC StG 2027 application"
     - "Organised into 11 sections"
     - "Compiled by The Science Talk"
   details:
