@@ -170,6 +170,6 @@ The page was fully restored from backup: all 11 content blocks live, all testimo
 
 ## Related reading on The Science Talk
 
-This guide accompanies the [full WP Engine page restore post on The Science Talk](https://thesciencetalk.com/restore-wordpress-page-wpengine-backup/), covering how this situation arose, why a full restore was not an option, and what the WordPress MCP made possible.
+This guide accompanies the [full WP Engine page restore post on The Science Talk](https://thesciencetalk.com/ai-academy/restore-wordpress-page-wpengine-backup/), covering how this situation arose, why a full restore was not an option, and what the WordPress MCP made possible.
 
 Need help setting up Claude Desktop with your WordPress site? [Get in touch →](https://thesciencetalk.com/contact-us/)

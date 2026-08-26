@@ -107,7 +107,7 @@ If you want the technical setup rather than the practitioner reflection, the ste
 
 ## Related reading on The Science Talk
 
-This post accompanies the [knowledge work automation overview on The Science Talk](https://thesciencetalk.com/news/knowledge-work-automation-european-research/), which covers the broader pattern of how knowledge workers restructure research and content workflows using AI, with examples beyond content strategy.
+This post accompanies the [knowledge work automation overview on The Science Talk](https://thesciencetalk.com/ai-academy/knowledge-work-automation-european-research/), which covers the broader pattern of how knowledge workers restructure research and content workflows using AI, with examples beyond content strategy.
 
 ---
 *Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*

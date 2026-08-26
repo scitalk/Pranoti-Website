@@ -167,6 +167,6 @@ In your scenario, click **History** in the left panel. Each run shows a full tra
 ---
 ## Related reading on The Science Talk
 
-This guide accompanies the [full event registration automation post on The Science Talk](https://thesciencetalk.com/event-registration-automation-stripe-make-mailerlite/). It covers the context behind building this workflow, the decisions made along the way, and how it fits into a broader no-code automation stack.
+This guide accompanies the [full event registration automation post on The Science Talk](https://thesciencetalk.com/ai-academy/event-registration-automation-stripe-make-mailerlite/). It covers the context behind building this workflow, the decisions made along the way, and how it fits into a broader no-code automation stack.
 
 *Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

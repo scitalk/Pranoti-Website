@@ -108,7 +108,7 @@ The goal is not a perfect registry from day one. It is a registry that makes you
 
 ## Related reading on The Science Talk
 
-This post sits alongside the broader analysis on The Science Talk: [The Knowledge Work Automation Gap in European Research](https://thesciencetalk.com/news/knowledge-work-automation-european-research/). That analysis covers why European knowledge workers underuse automation tooling, and what the implementation gap actually looks like in practice.
+This post sits alongside the broader analysis on The Science Talk: [The Knowledge Work Automation Gap in European Research](https://thesciencetalk.com/ai-academy/knowledge-work-automation-european-research/). That analysis covers why European knowledge workers underuse automation tooling, and what the implementation gap actually looks like in practice.
 
 ---
 *Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*

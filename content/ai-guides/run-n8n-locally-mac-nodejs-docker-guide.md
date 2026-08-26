@@ -235,7 +235,7 @@ Try three things next:
 
 ## Related reading on The Science Talk
 
-This guide pairs well with the [workflow automation walkthrough on The Science Talk](https://thesciencetalk.com/news/event-registration-automation-stripe-make-mailerlite/), a practical example of connecting Stripe, Make.com, and MailerLite that shows how the same automation-first thinking applies across different tool combinations.
+This guide pairs well with the [workflow automation walkthrough on The Science Talk](https://thesciencetalk.com/ai-academy/event-registration-automation-stripe-make-mailerlite/), a practical example of connecting Stripe, Make.com, and MailerLite that shows how the same automation-first thinking applies across different tool combinations.
 
 ---
 *Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*

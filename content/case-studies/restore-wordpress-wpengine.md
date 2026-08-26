@@ -62,5 +62,5 @@ cta_text: "Read the full write-up — how this happened, why MCP changed everyth
 guide_url: "https://pranoti.thesciencetalk.com/blog/restore-wordpress-page-wpengine-backup-mcp/"
 related_tst_posts:
   - title: "How to Restore a Single WordPress Page from a WP Engine Backup — full post on The Science Talk"
-    url: "https://thesciencetalk.com/restore-wordpress-page-wpengine-backup/"
+    url: "https://thesciencetalk.com/ai-academy/restore-wordpress-page-wpengine-backup/"
 ---

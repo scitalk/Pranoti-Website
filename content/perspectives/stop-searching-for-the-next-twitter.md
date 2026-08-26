@@ -14,7 +14,7 @@ sidebar_links:
   - title: "European research has an AI problem — and it's not the one you think"
     url: "/perspectives/european-research-ai-implementation-gap/"
   - title: "Personal Branding for Scientists: 3 Foundations First"
-    url: "https://thesciencetalk.com/news/personal-branding-for-scientists-foundations-before-content/"
+    url: "https://thesciencetalk.com/news/blog-perspectives/personal-branding-for-scientists-foundations-before-content/"
   - title: "LinkedIn Strategy for Research Leaders: Why Frequency Doesn't Determine Your Reach"
     url: "https://thesciencetalk.com/news/linkedin-strategy-for-research-leaders-why-frequency-doesnt-determine-your-reach/"
 ---

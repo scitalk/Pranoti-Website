@@ -163,8 +163,8 @@ Security with AI tools is not about avoiding them. It is about knowing what you 
 
 ## Related reading on The Science Talk
 
-- [How to Connect Claude Desktop to Google Sheets via MCP](https://thesciencetalk.com/news/connect-claude-desktop-google-sheets-mcp-guide/), a setup guide including OAuth credential configuration
-- [How to Connect Your Self-Hosted WordPress Site to Claude Desktop via MCP](https://thesciencetalk.com/news/connect-wordpress-claude-desktop-mcp-guide/), covering application password setup for WordPress MCP
+- [How to Connect Claude Desktop to Google Sheets via MCP](https://thesciencetalk.com/ai-academy/connect-claude-desktop-google-sheets-mcp-guide/), a setup guide including OAuth credential configuration
+- [How to Connect Your Self-Hosted WordPress Site to Claude Desktop via MCP](https://thesciencetalk.com/news/blog-perspectives/connect-wordpress-claude-desktop-mcp-guide/), covering application password setup for WordPress MCP
 
 ---
 *Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
