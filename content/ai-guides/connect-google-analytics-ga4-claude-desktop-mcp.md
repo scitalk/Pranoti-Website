@@ -254,8 +254,8 @@ The OAuth client JSON file must be a **Desktop app** type. Web app or service ac
 
 ## Related reading on The Science Talk
 
-- [How to Connect Claude Desktop to Google Sheets via MCP](https://thesciencetalk.com/news/connect-claude-desktop-google-sheets-mcp-guide/): the same authentication and pipx pattern applied to Google Sheets. Use this if you want both data sources available in Claude at the same time.
-- [How to Connect Your Self-Hosted WordPress Site to Claude Desktop](https://thesciencetalk.com/news/connect-wordpress-claude-desktop-mcp-guide/): add a third MCP alongside GA4 so you can cross-reference traffic data with your post archive without leaving Claude.
+- [How to Connect Claude Desktop to Google Sheets via MCP](https://thesciencetalk.com/ai-academy/connect-claude-desktop-google-sheets-mcp-guide/): the same authentication and pipx pattern applied to Google Sheets. Use this if you want both data sources available in Claude at the same time.
+- [How to Connect Your Self-Hosted WordPress Site to Claude Desktop](https://thesciencetalk.com/news/blog-perspectives/connect-wordpress-claude-desktop-mcp-guide/): add a third MCP alongside GA4 so you can cross-reference traffic data with your post archive without leaving Claude.
 
 ---
 

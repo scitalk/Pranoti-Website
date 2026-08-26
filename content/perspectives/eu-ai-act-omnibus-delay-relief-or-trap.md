@@ -76,7 +76,7 @@ If you want to work out what the Omnibus changes mean for your specific systems,
 
 ## Related reading on The Science Talk
 
-This piece pairs with [ERC Reverses Resubmission Rule Changes After Community Feedback](https://thesciencetalk.com/news/erc-reverses-resubmission-rule-changes-after-community-feedback/) for a sense of how EU processes revise rules mid-stream. It also pairs with the EPRS's own tracked timeline for the Act, [AI Act Implementation Timeline (At a Glance)](https://www.europarl.europa.eu/RegData/etudes/ATAG/2025/772906/EPRS_ATA(2025)772906_EN.pdf), for the pre-Omnibus statutory baseline this piece updates.
+This piece pairs with [ERC Reverses Resubmission Rule Changes After Community Feedback](https://thesciencetalk.com/services/grants-fundraising/erc-reverses-resubmission-rule-changes-after-community-feedback/) for a sense of how EU processes revise rules mid-stream. It also pairs with the EPRS's own tracked timeline for the Act, [AI Act Implementation Timeline (At a Glance)](https://www.europarl.europa.eu/RegData/etudes/ATAG/2025/772906/EPRS_ATA(2025)772906_EN.pdf), for the pre-Omnibus statutory baseline this piece updates.
 
 ---
 *Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*

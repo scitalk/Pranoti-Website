@@ -26,7 +26,7 @@ sidebar_links:
   - title: "Claude's 5-Hour Session Limit: How It Actually Works"
     url: "/perspectives/claude-5-hour-session-limit-how-it-works/"
   - title: "Claude Code Context Window: What Each Category Means and How to Manage It"
-    url: "https://thesciencetalk.com/claude-code-context-window-explained/"
+    url: "https://thesciencetalk.com/ai-academy/claude-code-context-window-explained/"
   - title: "Claude Skills Hygiene Audit: The Productivity Hack You're Missing"
     url: "/perspectives/claude-skills-hygiene-audit/"
   - title: "Claude Skills Registry: Why Your Automation Library Needs One"
@@ -72,7 +72,7 @@ When I work in Claude Code and the session starts to feel sluggish, with slower 
 
 Two commands fix this. `/compact` compresses the conversation history into a summary, keeping the essential context while it clears the noise. `/clear` wipes everything and starts fresh when I switch to an unrelated task. Both recover tokens immediately. Long Claude Code sessions without compaction waste tokens by re-reading dead context on every turn.
 
-For more on managing Claude Code's context window effectively, see [this breakdown of what each category means](https://thesciencetalk.com/claude-code-context-window-explained/). Anthropic's official [cost management documentation](https://code.claude.com/docs/en/costs) covers additional strategies for enterprise teams that track token consumption.
+For more on managing Claude Code's context window effectively, see [this breakdown of what each category means](https://thesciencetalk.com/ai-academy/claude-code-context-window-explained/). Anthropic's official [cost management documentation](https://code.claude.com/docs/en/costs) covers additional strategies for enterprise teams that track token consumption.
 
 ## Know when to start fresh instead of teaching Claude
 

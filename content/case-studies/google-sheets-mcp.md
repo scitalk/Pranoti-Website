@@ -59,5 +59,5 @@ cta_text: "Full step-by-step walkthrough published at thesciencetalk.com · More
 guide_url: "https://pranoti.thesciencetalk.com/ai-integration-guides/connect-claude-desktop-google-sheets-mcp-guide/index.html"
 related_tst_posts:
   - title: "How to Connect Claude Desktop to Google Sheets via MCP — full post on The Science Talk"
-    url: "https://thesciencetalk.com/connect-claude-desktop-google-sheets-mcp-guide/"
+    url: "https://thesciencetalk.com/ai-academy/connect-claude-desktop-google-sheets-mcp-guide/"
 ---

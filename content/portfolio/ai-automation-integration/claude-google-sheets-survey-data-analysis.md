@@ -11,4 +11,4 @@ tags: ["Claude", "Google Sheets", "Data analysis"]
 
 A documented workflow for connecting Claude to Google Sheets and using it to process survey data: cleaning messy responses, categorising open-ended answers, and producing structured summaries. Published on The Science Talk.
 
-[Read the full article →](https://thesciencetalk.com/news/claude-google-sheets-survey-data-analysis/)
+[Read the full article →](https://thesciencetalk.com/ai-academy/claude-google-sheets-survey-data-analysis/)

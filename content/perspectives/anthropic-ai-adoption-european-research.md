@@ -89,7 +89,7 @@ If you navigate AI vendor decisions at a European research institution and want 
 
 ## Related reading on The Science Talk
 
-This piece accompanies [The Knowledge Work Automation Gap in European Research](https://thesciencetalk.com/news/knowledge-work-automation-european-research/), which covers the broader automation readiness gap in European research organizations and why the tools are often the least of the problem.
+This piece accompanies [The Knowledge Work Automation Gap in European Research](https://thesciencetalk.com/ai-academy/knowledge-work-automation-european-research/), which covers the broader automation readiness gap in European research organizations and why the tools are often the least of the problem.
 
 ## Sources
 

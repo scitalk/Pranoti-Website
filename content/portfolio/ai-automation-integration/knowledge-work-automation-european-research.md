@@ -11,4 +11,4 @@ tags: ["AI adoption", "Research automation", "EU research"]
 
 An evidence-based analysis of AI deployment patterns in European research organisations: which knowledge work tasks are being automated, what the operational evidence shows versus institutional press releases, and where the implementation gap sits. Published on The Science Talk.
 
-[Read the full article →](https://thesciencetalk.com/news/knowledge-work-automation-european-research/)
+[Read the full article →](https://thesciencetalk.com/ai-academy/knowledge-work-automation-european-research/)

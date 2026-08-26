@@ -72,6 +72,6 @@ The full step-by-step walkthrough covers OAuth setup from the start, service acc
 
 ## Related reading on The Science Talk
 
-This guide accompanies the [full Google Sheets MCP post on The Science Talk](https://thesciencetalk.com/connect-claude-desktop-google-sheets-mcp-guide/). That post covers the background, the setup decisions, and what this integration enables in a real workflow.
+This guide accompanies the [full Google Sheets MCP post on The Science Talk](https://thesciencetalk.com/ai-academy/connect-claude-desktop-google-sheets-mcp-guide/). That post covers the background, the setup decisions, and what this integration enables in a real workflow.
 
 *Want more guides like this? Browse all [AI Guides](/ai-guides/) or [explore the case studies](/case-studies/).*
