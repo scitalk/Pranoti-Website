@@ -18,7 +18,7 @@ product_url: "/products/erc-synergy-grant-resource-kit/"
 stripe_url: "https://buy.stripe.com/8x2dR9gGJ6dicHf9TW8Ra0s"
 price: "19"
 layout: "erc-scheme"
-draft: false
+draft: true
 date: 2026-08-27
 ---
 

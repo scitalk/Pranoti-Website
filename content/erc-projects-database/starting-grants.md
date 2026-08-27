@@ -18,7 +18,7 @@ product_url: "/products/erc-starting-grant-resource-kit/"
 stripe_url: "https://buy.stripe.com/6oU9ATail7hmgXveac8Ra0C"
 price: "47"
 layout: "erc-scheme"
-draft: false
+draft: true
 date: 2026-08-27
 ---
 

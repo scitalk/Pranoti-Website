@@ -18,7 +18,7 @@ product_url: "/products/erc-advanced-grant-resource-kit/"
 stripe_url: "https://buy.stripe.com/9B63cv0HL0SY22B0jm8Ra0z"
 price: "29"
 layout: "erc-scheme"
-draft: false
+draft: true
 date: 2026-08-27
 ---
 

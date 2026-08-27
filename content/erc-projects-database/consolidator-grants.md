@@ -18,7 +18,7 @@ product_url: "/products/erc-consolidator-grant-resource-kit/"
 stripe_url: "https://buy.stripe.com/14A3cvail0SYaz73vy8Ra0B"
 price: "49"
 layout: "erc-scheme"
-draft: false
+draft: true
 date: 2026-08-27
 ---
 
