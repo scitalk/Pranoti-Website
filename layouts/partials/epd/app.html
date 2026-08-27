@@ -1,0 +1,199 @@
+<script>
+(function () {
+  var CONFIG = window.EPD_CONFIG || {};
+  var DATA_URL = CONFIG.dataUrl;
+  var FILTER_KEYS = CONFIG.filterKeys || ['year', 'grant_type', 'domain'];
+  var PAGE_SIZE = 24; // matches the server-rendered first page
+
+  var LABELS = { year: 'Call Year', grant_type: 'Grant Scheme', domain: 'Domain' };
+  var DATA = [];
+
+  function stripHost(h) {
+    return (h || '').replace(/\s*\[[^\]]*\]\s*$/, '');
+  }
+
+  var TAXONOMIES = {};
+  var FACET_COUNTS = {};
+  FILTER_KEYS.forEach(function (k) { TAXONOMIES[k] = []; FACET_COUNTS[k] = {}; });
+
+  function addUnique(list, val) { if (val && list.indexOf(val) === -1) list.push(val); }
+  function buildTaxonomies() {
+    DATA.forEach(function (p) {
+      FILTER_KEYS.forEach(function (k) {
+        addUnique(TAXONOMIES[k], p[k]);
+        if (p[k]) FACET_COUNTS[k][p[k]] = (FACET_COUNTS[k][p[k]] || 0) + 1;
+      });
+    });
+    FILTER_KEYS.forEach(function (k) {
+      if (k === 'year') {
+        TAXONOMIES[k].sort().reverse();
+      } else {
+        TAXONOMIES[k].sort(function (a, b) { return FACET_COUNTS[k][b] - FACET_COUNTS[k][a]; });
+      }
+    });
+  }
+
+  var state = {};
+  FILTER_KEYS.forEach(function (k) { state[k] = []; });
+  var page = 1;
+  var collapsed = {};
+
+  function toggleGroup(key) { collapsed[key] = !collapsed[key]; render(); }
+
+  function parseUrl() {
+    var p = new URLSearchParams(location.hash.replace(/^#/, ''));
+    FILTER_KEYS.forEach(function (k) {
+      var v = p.get(k);
+      state[k] = v ? v.split(',') : [];
+    });
+    page = parseInt(p.get('page'), 10) || 1;
+  }
+
+  function writeUrl() {
+    var p = new URLSearchParams();
+    FILTER_KEYS.forEach(function (k) { if (state[k].length) p.set(k, state[k].join(',')); });
+    if (page > 1) p.set('page', page);
+    var qs = p.toString();
+    var url = location.pathname + location.search + (qs ? '#' + qs : '');
+    history.replaceState({}, '', url);
+  }
+
+  function toggleFilter(key, val) {
+    var i = state[key].indexOf(val);
+    if (i === -1) state[key].push(val); else state[key].splice(i, 1);
+    page = 1;
+    writeUrl();
+    render();
+  }
+
+  function clearFilters() {
+    FILTER_KEYS.forEach(function (k) { state[k] = []; });
+    page = 1;
+    writeUrl();
+    render();
+  }
+
+  function matches(p) {
+    for (var i = 0; i < FILTER_KEYS.length; i++) {
+      var k = FILTER_KEYS[i];
+      if (state[k].length && state[k].indexOf(p[k]) === -1) return false;
+    }
+    return true;
+  }
+
+  function renderFilterGroup(key, options) {
+    var counts = {};
+    DATA.forEach(function (p) { if (p[key]) counts[p[key]] = (counts[p[key]] || 0) + 1; });
+    var rows = options.map(function (o) {
+      var checked = state[key].indexOf(o) !== -1 ? 'checked' : '';
+      var count = counts[o] || 0;
+      return '<label class="epd-filter-option">' +
+        '<input type="checkbox" ' + checked + ' data-key="' + key + '" data-val="' + o.replace(/"/g, '&quot;') + '" class="epd-filter-input">' +
+        o + '<span class="epd-count">' + count + '</span></label>';
+    }).join('');
+    var isCollapsed = collapsed[key] ? ' epd-collapsed' : '';
+    return '<div class="epd-filter-group' + isCollapsed + '" data-group="' + key + '">' +
+      '<h3 data-toggle-group="' + key + '">' + (LABELS[key] || key) + '<span class="epd-chevron">&#9660;</span></h3>' +
+      '<div class="epd-filter-options">' + rows + '</div></div>';
+  }
+
+  function activeChips() {
+    var chips = [];
+    FILTER_KEYS.forEach(function (key) {
+      state[key].forEach(function (val) {
+        chips.push('<span class="epd-chip">' + val +
+          '<span class="epd-x" data-chip-key="' + key + '" data-chip-val="' + val.replace(/"/g, '&quot;') + '">×</span></span>');
+      });
+    });
+    if (!chips.length) return '';
+    return '<div class="epd-active-chips">' + chips.join('') + '</div>';
+  }
+
+  function card(p) {
+    var tags = '<span class="epd-tag">' + p.year + '</span>';
+    if (FILTER_KEYS.indexOf('grant_type') !== -1 && p.grant_type) {
+      tags += '<span class="epd-tag">' + p.grant_type + '</span>';
+    } else if (p.domain) {
+      tags += '<span class="epd-tag">' + p.domain + '</span>';
+    }
+    return '<div class="epd-card">' +
+      '<span class="epd-acronym">' + p.acronym + '</span>' +
+      '<h4>' + p.title + '</h4>' +
+      '<div class="epd-meta">' +
+        '<strong>' + p.researcher + '</strong><br>' +
+        stripHost(p.host) + (p.country ? ', ' + p.country : '') +
+      '</div>' +
+      '<div class="epd-tags">' + tags + '</div>' +
+      '<div class="epd-links"><a href="' + p.cordis + '" target="_blank" rel="noopener">View on CORDIS</a></div>' +
+      '</div>';
+  }
+
+  function pagination(totalPages) {
+    if (totalPages <= 1) return '';
+    var btns = [];
+    btns.push('<button class="epd-page-btn epd-page-arrow" id="epd-prev"' + (page <= 1 ? ' disabled' : '') + ' aria-label="Previous page">&larr;</button>');
+    btns.push('<span class="epd-page-status">Page ' + page + ' of ' + totalPages + '</span>');
+    btns.push('<button class="epd-page-btn epd-page-arrow" id="epd-next"' + (page >= totalPages ? ' disabled' : '') + ' aria-label="Next page">&rarr;</button>');
+    return '<div class="epd-pagination">' + btns.join('') + '</div>';
+  }
+
+  function render() {
+    var results = DATA.filter(matches);
+    var totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
+    if (page > totalPages) page = totalPages;
+    var pageResults = results.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+    var hasActive = FILTER_KEYS.some(function (k) { return state[k].length; });
+
+    var filterGroups = FILTER_KEYS.map(function (k) { return renderFilterGroup(k, TAXONOMIES[k]); }).join('');
+
+    document.getElementById('epd-app').innerHTML =
+      '<div class="epd-layout">' +
+        '<aside class="epd-filters">' +
+          '<div class="epd-filters-scroll">' + filterGroups + '</div>' +
+          '<button class="epd-clear-filters' + (hasActive ? ' epd-active' : '') + '" id="epd-clear">Clear all filters</button>' +
+        '</aside>' +
+        '<main style="flex:1">' +
+          '<div class="epd-results-header">' +
+            '<div class="epd-results-count">' + results.length + ' project' + (results.length === 1 ? '' : 's') + '</div>' +
+          '</div>' +
+          activeChips() +
+          (pageResults.length ? '<div class="epd-results-grid">' + pageResults.map(card).join('') + '</div>' : '<div class="epd-no-results">No projects match the selected filters.</div>') +
+          pagination(totalPages) +
+        '</main>' +
+      '</div>';
+
+    document.querySelectorAll('.epd-filter-input').forEach(function (input) {
+      input.addEventListener('change', function () { toggleFilter(input.dataset.key, input.dataset.val); });
+    });
+    document.querySelectorAll('[data-toggle-group]').forEach(function (h3) {
+      h3.addEventListener('click', function () { toggleGroup(h3.dataset.toggleGroup); });
+    });
+    document.querySelectorAll('.epd-x').forEach(function (x) {
+      x.addEventListener('click', function () { toggleFilter(x.dataset.chipKey, x.dataset.chipVal); });
+    });
+    var clearBtn = document.getElementById('epd-clear');
+    if (clearBtn) clearBtn.addEventListener('click', clearFilters);
+
+    var prevBtn = document.getElementById('epd-prev');
+    if (prevBtn) prevBtn.addEventListener('click', function () { page--; writeUrl(); render(); window.scrollTo({top: 0, behavior: 'smooth'}); });
+    var nextBtn = document.getElementById('epd-next');
+    if (nextBtn) nextBtn.addEventListener('click', function () { page++; writeUrl(); render(); window.scrollTo({top: 0, behavior: 'smooth'}); });
+  }
+
+  window.addEventListener('popstate', function () { if (DATA.length) { parseUrl(); render(); } });
+
+  var appEl = document.getElementById('epd-app');
+  // Leave the server-rendered cards in place until the dataset loads and render() swaps them.
+  fetch(DATA_URL)
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (json) {
+      DATA = json;
+      buildTaxonomies();
+      parseUrl();
+      render();
+    })
+    .catch(function () {
+      appEl.innerHTML = '<div class="epd-no-results">Could not load the project data — please refresh the page.</div>';
+    });
+})();
+</script>

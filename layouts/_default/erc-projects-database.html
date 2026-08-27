@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $data := index .Site.Data "erc_projects" }}
+{{ $projectsJSON := resources.FromString "erc-projects-database/data.json" ($data.projects | jsonify) | fingerprint }}
 
 {{ $years := slice }}
 {{ $schemes := slice }}
@@ -10,324 +11,74 @@
 {{ $years = $years | uniq | sort }}
 {{ $schemes = $schemes | uniq | sort }}
 
-{{ $dataset := dict
-  "@context" "https://schema.org"
-  "@type" "Dataset"
-  "name" .Title
-  "description" .Params.description
-  "url" .Permalink
-  "creator" (dict "@type" "Person" "name" "Dr. Pranoti Kshirsagar" "url" "https://pranoti.thesciencetalk.com/about/")
-  "temporalCoverage" (printf "%s/%s" (index $years 0) (index $years (sub (len $years) 1)))
-  "variableMeasured" (slice "Acronym" "Project Title" "Researcher" "Host Institution" "Country" "Grant Type" "Domain" "Call Year")
-  "keywords" (delimit (append "European Research Council" "ERC grants" $schemes) ", ")
-  "isAccessibleForFree" true
-  "distribution" (dict "@type" "DataDownload" "encodingFormat" "text/html" "contentUrl" .Permalink)
+{{ $graph := slice
+  (dict
+    "@type" "Dataset"
+    "name" .Title
+    "description" .Params.description
+    "url" .Permalink
+    "creator" (dict "@type" "Person" "name" "Dr. Pranoti Kshirsagar" "url" "https://pranoti.thesciencetalk.com/about/")
+    "temporalCoverage" (printf "%s/%s" (index $years 0) (index $years (sub (len $years) 1)))
+    "variableMeasured" (slice "Acronym" "Project Title" "Researcher" "Host Institution" "Country" "Grant Type" "Domain" "Call Year")
+    "keywords" (delimit (.Params.keywords | default (append (slice "European Research Council" "ERC grants") $schemes)) ", ")
+    "isAccessibleForFree" true
+    "distribution" (dict "@type" "DataDownload" "encodingFormat" "text/html" "contentUrl" .Permalink)
+  )
+  (dict
+    "@type" "CollectionPage"
+    "name" .Title
+    "description" .Params.description
+    "url" .Permalink
+    "isPartOf" (dict "@type" "WebSite" "name" .Site.Title "url" .Site.BaseURL)
+    "about" (dict "@type" "Thing" "name" "European Research Council funding")
+  )
+  (dict
+    "@type" "BreadcrumbList"
+    "itemListElement" (slice
+      (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL)
+      (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink)
+    )
+  )
 }}
-<script type="application/ld+json">{{ jsonify (dict "indent" "  ") $dataset | safeJS }}</script>
+<script type="application/ld+json">{{ jsonify (dict "indent" "  ") (dict "@context" "https://schema.org" "@graph" $graph) | safeJS }}</script>
 
 <div id="epd-root">
 
 <header class="epd-page-head">
   <h1>{{ .Title }}</h1>
   {{ with .Params.lede }}<p class="epd-lede">{{ . }}</p>{{ end }}
+  <p class="epd-note">The 2025 Advanced Grants are not yet in this database. Those grant agreements have not been signed, so the projects have not appeared in the European Commission's dashboard. For the full list, see the ERC's <a href="https://erc.europa.eu/system/files/2026-06/erc-2025-adg-results-all-domains.pdf" target="_blank" rel="noopener">2025 Advanced Grant results (PDF)</a>.</p>
 </header>
 
-<div id="epd-app"></div>
+<nav class="epd-scheme-nav" aria-label="Browse by grant scheme">
+  <a href="/erc-projects-database/starting-grants/">Starting Grants</a>
+  <a href="/erc-projects-database/consolidator-grants/">Consolidator Grants</a>
+  <a href="/erc-projects-database/advanced-grants/">Advanced Grants</a>
+  <a href="/erc-projects-database/synergy-grants/">Synergy Grants</a>
+</nav>
+
+{{ with .Content }}<div class="epd-prose">{{ . }}</div>{{ end }}
+
+<div id="epd-app">
+  {{/* Server-rendered first page so crawlers and no-JS visitors get real content and links.
+       JS replaces this whole block with the interactive grid once the dataset loads. */}}
+  <div class="epd-results-grid">
+    {{ range first 24 $data.projects }}
+    <div class="epd-card">
+      <span class="epd-acronym">{{ .acronym }}</span>
+      <h4>{{ .title }}</h4>
+      <div class="epd-meta"><strong>{{ .researcher }}</strong><br>{{ replaceRE "\\s*\\[[^\\]]*\\]\\s*$" "" .host }}{{ with .country }}, {{ . }}{{ end }}</div>
+      <div class="epd-tags"><span class="epd-tag">{{ .year }}</span><span class="epd-tag">{{ .grant_type }}</span></div>
+      <div class="epd-links"><a href="{{ .cordis }}" target="_blank" rel="noopener">View on CORDIS</a></div>
+    </div>
+    {{ end }}
+  </div>
+  <p class="epd-ssr-more">Showing 24 of {{ len $data.projects }} projects. Turn on JavaScript to filter by call year, grant scheme, and research domain.</p>
+</div>
 
 </div>
 
-<script id="epd-data" type="application/json">
-{{ $data.projects | jsonify | safeJS }}
-</script>
-
-<style>
-#epd-root {
-  --epd-container: 1200px;
-  font-family: var(--font-body);
-  color: var(--ink);
-  background: var(--paper);
-  padding: 140px 24px 80px;
-  min-height: 100vh;
-}
-#epd-root, #epd-root * { box-sizing: border-box; }
-
-#epd-root .epd-page-head { max-width: var(--epd-container); margin: 0 auto 32px; }
-#epd-root .epd-page-head h1 { font-family: var(--font-display); font-weight: 600; font-size: 2rem; margin-bottom: 8px; color: var(--ink); }
-#epd-root .epd-lede { font-size: 1rem; color: var(--ink-soft); max-width: 640px; }
-
-#epd-root .epd-layout { max-width: var(--epd-container); margin: 0 auto; display: flex; gap: 32px; align-items: flex-start; }
-
-#epd-root .epd-filters {
-  width: 250px; flex-shrink: 0; position: sticky; top: 116px;
-  max-height: calc(100vh - 136px); display: flex; flex-direction: column;
-}
-#epd-root .epd-filters-scroll { overflow-y: auto; flex: 1; min-height: 0; padding-right: 4px; }
-#epd-root .epd-filter-group { margin-bottom: 22px; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 16px; }
-#epd-root .epd-filter-group:last-child { margin-bottom: 0; border-bottom: none; }
-#epd-root .epd-filter-group h3 {
-  font-family: var(--font-display); font-weight: 600; font-size: 0.72rem;
-  text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft);
-  margin: 0 0 10px; display: flex; align-items: center; justify-content: space-between;
-  cursor: pointer; user-select: none;
-}
-#epd-root .epd-filter-group h3 .epd-chevron { font-size: 0.6rem; color: var(--ink-soft); transition: transform .15s; }
-#epd-root .epd-filter-group.epd-collapsed h3 .epd-chevron { transform: rotate(-90deg); }
-#epd-root .epd-filter-group.epd-collapsed .epd-filter-options { display: none; }
-#epd-root .epd-filter-option {
-  display: flex; align-items: center; gap: 8px; font-size: 0.88rem;
-  padding: 4px 0; cursor: pointer; color: var(--ink);
-}
-#epd-root .epd-filter-option input { accent-color: var(--accent); }
-#epd-root .epd-filter-option .epd-count { margin-left: auto; color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.72rem; }
-
-#epd-root .epd-clear-filters {
-  background: none; border: 1px solid var(--ink); border-radius: 6px;
-  padding: 9px 14px; font-family: var(--font-display); font-size: 0.75rem;
-  letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; width: 100%;
-  color: var(--ink); transition: background 0.15s, color 0.15s, border-color 0.15s;
-  flex-shrink: 0; margin-top: 16px;
-}
-#epd-root .epd-clear-filters:hover { background: var(--ink); color: var(--white); }
-#epd-root .epd-clear-filters.epd-active {
-  background: var(--accent); border-color: var(--accent); color: var(--white);
-  font-weight: 600;
-}
-
-#epd-root .epd-results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
-#epd-root .epd-results-count { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-soft); }
-
-#epd-root .epd-active-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-#epd-root .epd-chip {
-  background: var(--ink); color: var(--white); font-family: var(--font-display);
-  font-size: 0.7rem; letter-spacing: 0.03em; padding: 5px 10px; border-radius: 999px;
-  display: flex; align-items: center; gap: 6px;
-}
-#epd-root .epd-chip .epd-x { cursor: pointer; color: #ffb3a3; font-weight: 700; }
-
-#epd-root .epd-results-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-}
-@media (max-width: 960px) { #epd-root .epd-results-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px) { #epd-root .epd-results-grid { grid-template-columns: 1fr; } }
-
-#epd-root .epd-card {
-  border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 20px;
-  background: var(--white); transition: border-color 0.15s, box-shadow 0.15s;
-  display: flex; flex-direction: column;
-}
-#epd-root .epd-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-#epd-root .epd-card .epd-acronym {
-  font-family: var(--font-display); font-size: 0.7rem; text-transform: uppercase;
-  letter-spacing: 0.06em; color: var(--accent-text); font-weight: 700; margin-bottom: 6px; display: block;
-}
-#epd-root .epd-card h4 { font-family: var(--font-body); font-weight: 600; font-size: 1rem; margin: 0 0 10px; line-height: 1.35; color: var(--ink); }
-#epd-root .epd-card .epd-meta { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 12px; }
-#epd-root .epd-card .epd-meta strong { color: var(--ink); font-weight: 600; }
-#epd-root .epd-card .epd-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-#epd-root .epd-tag {
-  font-family: var(--font-mono); font-size: 0.68rem; background: var(--paper);
-  color: var(--ink-soft); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.08);
-}
-#epd-root .epd-card .epd-links { margin-top: auto; font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.03em; }
-#epd-root .epd-card .epd-links a { color: var(--accent-text); text-decoration: none; }
-#epd-root .epd-card .epd-links a:hover { text-decoration: underline; }
-
-#epd-root .epd-no-results { color: var(--ink-soft); font-size: 0.9rem; padding: 40px 0; }
-
-#epd-root .epd-pagination {
-  display: flex; align-items: center; justify-content: center; gap: 16px;
-  margin-top: 28px; flex-wrap: wrap;
-}
-#epd-root .epd-page-btn {
-  border: 1px solid rgba(0,0,0,0.15); background: var(--white); color: var(--ink);
-  font-family: var(--font-mono); font-size: 0.82rem; padding: 6px 12px;
-  border-radius: 6px; cursor: pointer;
-}
-#epd-root .epd-page-btn:hover:not(:disabled) { border-color: var(--accent); }
-#epd-root .epd-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-#epd-root .epd-page-arrow { font-size: 1rem; padding: 6px 16px; }
-#epd-root .epd-page-status { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-soft); }
-
-@media (max-width: 860px) {
-  #epd-root .epd-layout { flex-direction: column; }
-  #epd-root .epd-filters { width: 100%; position: static; }
-}
-</style>
-
-<script>
-(function () {
-  var DATA = JSON.parse(document.getElementById('epd-data').textContent);
-  var PAGE_SIZE = 9;
-
-  function stripHost(h) {
-    return (h || '').replace(/\s*\[[^\]]*\]\s*$/, '');
-  }
-
-  var TAXONOMIES = { year: [], grant_type: [], domain: [] };
-  var FACET_COUNTS = { grant_type: {}, domain: {} };
-  function addUnique(list, val) { if (val && list.indexOf(val) === -1) list.push(val); }
-  DATA.forEach(function (p) {
-    addUnique(TAXONOMIES.year, p.year);
-    addUnique(TAXONOMIES.grant_type, p.grant_type);
-    addUnique(TAXONOMIES.domain, p.domain);
-    if (p.grant_type) FACET_COUNTS.grant_type[p.grant_type] = (FACET_COUNTS.grant_type[p.grant_type] || 0) + 1;
-    if (p.domain) FACET_COUNTS.domain[p.domain] = (FACET_COUNTS.domain[p.domain] || 0) + 1;
-  });
-  TAXONOMIES.year.sort().reverse();
-  TAXONOMIES.grant_type.sort(function (a, b) { return FACET_COUNTS.grant_type[b] - FACET_COUNTS.grant_type[a]; });
-  TAXONOMIES.domain.sort(function (a, b) { return FACET_COUNTS.domain[b] - FACET_COUNTS.domain[a]; });
-
-  var FILTER_KEYS = ['year', 'grant_type', 'domain'];
-  var LABELS = { year: 'Call Year', grant_type: 'Grant Scheme', domain: 'Domain' };
-  var state = { year: [], grant_type: [], domain: [] };
-  var page = 1;
-  var collapsed = {};
-
-  function toggleGroup(key) { collapsed[key] = !collapsed[key]; render(); }
-
-  function parseUrl() {
-    var p = new URLSearchParams(location.hash.replace(/^#/, ''));
-    FILTER_KEYS.forEach(function (k) {
-      var v = p.get(k);
-      state[k] = v ? v.split(',') : [];
-    });
-    page = parseInt(p.get('page'), 10) || 1;
-  }
-
-  function writeUrl() {
-    var p = new URLSearchParams();
-    FILTER_KEYS.forEach(function (k) { if (state[k].length) p.set(k, state[k].join(',')); });
-    if (page > 1) p.set('page', page);
-    var qs = p.toString();
-    var url = location.pathname + location.search + (qs ? '#' + qs : '');
-    history.replaceState({}, '', url);
-  }
-
-  function toggleFilter(key, val) {
-    var i = state[key].indexOf(val);
-    if (i === -1) state[key].push(val); else state[key].splice(i, 1);
-    page = 1;
-    writeUrl();
-    render();
-  }
-
-  function clearFilters() {
-    FILTER_KEYS.forEach(function (k) { state[k] = []; });
-    page = 1;
-    writeUrl();
-    render();
-  }
-
-  function matches(p) {
-    for (var i = 0; i < FILTER_KEYS.length; i++) {
-      var k = FILTER_KEYS[i];
-      if (state[k].length && state[k].indexOf(p[k]) === -1) return false;
-    }
-    return true;
-  }
-
-  function renderFilterGroup(key, options) {
-    var counts = {};
-    DATA.forEach(function (p) { if (p[key]) counts[p[key]] = (counts[p[key]] || 0) + 1; });
-    var rows = options.map(function (o) {
-      var checked = state[key].indexOf(o) !== -1 ? 'checked' : '';
-      var count = counts[o] || 0;
-      return '<label class="epd-filter-option">' +
-        '<input type="checkbox" ' + checked + ' data-key="' + key + '" data-val="' + o.replace(/"/g, '&quot;') + '" class="epd-filter-input">' +
-        o + '<span class="epd-count">' + count + '</span></label>';
-    }).join('');
-    var isCollapsed = collapsed[key] ? ' epd-collapsed' : '';
-    return '<div class="epd-filter-group' + isCollapsed + '" data-group="' + key + '">' +
-      '<h3 data-toggle-group="' + key + '">' + LABELS[key] + '<span class="epd-chevron">&#9660;</span></h3>' +
-      '<div class="epd-filter-options">' + rows + '</div></div>';
-  }
-
-  function activeChips() {
-    var chips = [];
-    FILTER_KEYS.forEach(function (key) {
-      state[key].forEach(function (val) {
-        chips.push('<span class="epd-chip">' + val +
-          '<span class="epd-x" data-chip-key="' + key + '" data-chip-val="' + val.replace(/"/g, '&quot;') + '">×</span></span>');
-      });
-    });
-    if (!chips.length) return '';
-    return '<div class="epd-active-chips">' + chips.join('') + '</div>';
-  }
-
-  function card(p) {
-    return '<div class="epd-card">' +
-      '<span class="epd-acronym">' + p.acronym + '</span>' +
-      '<h4>' + p.title + '</h4>' +
-      '<div class="epd-meta">' +
-        '<strong>' + p.researcher + '</strong><br>' +
-        stripHost(p.host) + (p.country ? ', ' + p.country : '') +
-      '</div>' +
-      '<div class="epd-tags">' +
-        '<span class="epd-tag">' + p.year + '</span>' +
-        '<span class="epd-tag">' + p.grant_type + '</span>' +
-      '</div>' +
-      '<div class="epd-links"><a href="' + p.cordis + '" target="_blank" rel="noopener">View on CORDIS</a></div>' +
-      '</div>';
-  }
-
-  function pagination(totalPages) {
-    if (totalPages <= 1) return '';
-    var btns = [];
-    btns.push('<button class="epd-page-btn epd-page-arrow" id="epd-prev"' + (page <= 1 ? ' disabled' : '') + ' aria-label="Previous page">&larr;</button>');
-    btns.push('<span class="epd-page-status">Page ' + page + ' of ' + totalPages + '</span>');
-    btns.push('<button class="epd-page-btn epd-page-arrow" id="epd-next"' + (page >= totalPages ? ' disabled' : '') + ' aria-label="Next page">&rarr;</button>');
-    return '<div class="epd-pagination">' + btns.join('') + '</div>';
-  }
-
-  function render() {
-    var results = DATA.filter(matches);
-    var totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
-    if (page > totalPages) page = totalPages;
-    var pageResults = results.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
-    var hasActive = FILTER_KEYS.some(function (k) { return state[k].length; });
-
-    document.getElementById('epd-app').innerHTML =
-      '<div class="epd-layout">' +
-        '<aside class="epd-filters">' +
-          '<div class="epd-filters-scroll">' +
-            renderFilterGroup('year', TAXONOMIES.year) +
-            renderFilterGroup('grant_type', TAXONOMIES.grant_type) +
-            renderFilterGroup('domain', TAXONOMIES.domain) +
-          '</div>' +
-          '<button class="epd-clear-filters' + (hasActive ? ' epd-active' : '') + '" id="epd-clear">Clear all filters</button>' +
-        '</aside>' +
-        '<main style="flex:1">' +
-          '<div class="epd-results-header">' +
-            '<div class="epd-results-count">' + results.length + ' project' + (results.length === 1 ? '' : 's') + '</div>' +
-          '</div>' +
-          activeChips() +
-          (pageResults.length ? '<div class="epd-results-grid">' + pageResults.map(card).join('') + '</div>' : '<div class="epd-no-results">No projects match the selected filters.</div>') +
-          pagination(totalPages) +
-        '</main>' +
-      '</div>';
-
-    document.querySelectorAll('.epd-filter-input').forEach(function (input) {
-      input.addEventListener('change', function () { toggleFilter(input.dataset.key, input.dataset.val); });
-    });
-    document.querySelectorAll('[data-toggle-group]').forEach(function (h3) {
-      h3.addEventListener('click', function () { toggleGroup(h3.dataset.toggleGroup); });
-    });
-    document.querySelectorAll('.epd-x').forEach(function (x) {
-      x.addEventListener('click', function () { toggleFilter(x.dataset.chipKey, x.dataset.chipVal); });
-    });
-    var clearBtn = document.getElementById('epd-clear');
-    if (clearBtn) clearBtn.addEventListener('click', clearFilters);
-
-    var prevBtn = document.getElementById('epd-prev');
-    if (prevBtn) prevBtn.addEventListener('click', function () { page--; writeUrl(); render(); window.scrollTo({top: 0, behavior: 'smooth'}); });
-    var nextBtn = document.getElementById('epd-next');
-    if (nextBtn) nextBtn.addEventListener('click', function () { page++; writeUrl(); render(); window.scrollTo({top: 0, behavior: 'smooth'}); });
-  }
-
-  window.addEventListener('popstate', function () { parseUrl(); render(); });
-
-  parseUrl();
-  render();
-})();
-</script>
+{{ partial "epd/styles.html" . }}
+<script>window.EPD_CONFIG = { dataUrl: {{ $projectsJSON.RelPermalink | jsonify | safeJS }}, filterKeys: ["year", "grant_type", "domain"] };</script>
+{{ partial "epd/app.html" . }}
 {{ end }}

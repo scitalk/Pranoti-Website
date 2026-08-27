@@ -9,7 +9,7 @@
   {{ with .Params.keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
   <meta name="robots" content="{{ .Params.robots | default "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" }}">
-  <meta property="og:type" content="{{ if eq .Layout "digital-content-hub" }}website{{ else if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:type" content="{{ if or (eq .Layout "digital-content-hub") (eq .Layout "erc-scheme") }}website{{ else if .IsPage }}article{{ else }}website{{ end }}">
   <meta property="og:site_name" content="{{ .Site.Title }}">
   <meta property="og:title" content="{{ .Title }}">
   <meta property="og:description" content="{{ $desc }}">

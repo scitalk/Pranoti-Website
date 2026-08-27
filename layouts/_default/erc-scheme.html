@@ -1,0 +1,111 @@
+{{ define "main" }}
+{{ $data := index .Site.Data "erc_projects" }}
+{{ $scheme := .Params.scheme }}
+{{ $slug := .Params.scheme_slug }}
+{{ $projects := where $data.projects "grant_type" $scheme }}
+{{ $schemeJSON := resources.FromString (printf "erc-projects-database/%s.json" $slug) ($projects | jsonify) | fingerprint }}
+
+{{ $years := slice }}
+{{ range $projects }}{{ if .year }}{{ $years = $years | append .year }}{{ end }}{{ end }}
+{{ $years = $years | uniq | sort }}
+
+{{ $stats := index .Site.Data.erc_scheme_stats $scheme }}
+
+{{ $graph := slice
+  (dict
+    "@type" "Dataset"
+    "name" .Title
+    "description" .Params.description
+    "url" .Permalink
+    "creator" (dict "@type" "Person" "name" "Dr. Pranoti Kshirsagar" "url" "https://pranoti.thesciencetalk.com/about/")
+    "temporalCoverage" (printf "%s/%s" (index $years 0) (index $years (sub (len $years) 1)))
+    "variableMeasured" (slice "Acronym" "Project Title" "Researcher" "Host Institution" "Country" "Domain" "Call Year")
+    "keywords" (delimit (.Params.keywords | default (slice "European Research Council" $scheme (printf "ERC %s recipients" .Params.scheme_short))) ", ")
+    "isAccessibleForFree" true
+    "isPartOf" (dict "@type" "Dataset" "name" "ERC Projects Database" "url" (printf "%serc-projects-database/" .Site.BaseURL))
+  )
+  (dict
+    "@type" "CollectionPage"
+    "name" .Title
+    "description" .Params.description
+    "url" .Permalink
+    "isPartOf" (dict "@type" "WebSite" "name" .Site.Title "url" .Site.BaseURL)
+    "about" (dict "@type" "Thing" "name" (printf "ERC %s" $scheme))
+  )
+  (dict
+    "@type" "BreadcrumbList"
+    "itemListElement" (slice
+      (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL)
+      (dict "@type" "ListItem" "position" 2 "name" "ERC Projects Database" "item" (printf "%serc-projects-database/" .Site.BaseURL))
+      (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink)
+    )
+  )
+}}
+<script type="application/ld+json">{{ jsonify (dict "indent" "  ") (dict "@context" "https://schema.org" "@graph" $graph) | safeJS }}</script>
+
+<div id="epd-root">
+
+<header class="epd-page-head">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.lede }}<p class="epd-lede">{{ . }}</p>{{ end }}
+</header>
+
+<nav class="epd-scheme-nav" aria-label="Browse by grant scheme">
+  <a href="/erc-projects-database/">All schemes</a>
+  {{ if ne $slug "starting-grants" }}<a href="/erc-projects-database/starting-grants/">Starting Grants</a>{{ end }}
+  {{ if ne $slug "consolidator-grants" }}<a href="/erc-projects-database/consolidator-grants/">Consolidator Grants</a>{{ end }}
+  {{ if ne $slug "advanced-grants" }}<a href="/erc-projects-database/advanced-grants/">Advanced Grants</a>{{ end }}
+  {{ if ne $slug "synergy-grants" }}<a href="/erc-projects-database/synergy-grants/">Synergy Grants</a>{{ end }}
+</nav>
+
+{{ with .Content }}<div class="epd-prose">{{ . }}</div>{{ end }}
+
+{{ with $stats }}
+<div class="epd-stats">
+  <table>
+    <caption>Funded projects vs submitted proposals, by call year. Success rate = funded ÷ submitted. Figures compiled by The Science Talk from the ERC's Facts &amp; Figures and results releases on erc.europa.eu; each year links to its source. Selection-stage figures may differ slightly from later signed-grant counts.</caption>
+    <thead>
+      <tr><th>Call year</th><th>Funded</th><th>Submitted</th><th>Success rate</th><th>Source</th></tr>
+    </thead>
+    <tbody>
+      {{ range (sort . "year" "desc") }}
+      <tr>
+        <td>{{ .year }}</td>
+        <td>{{ .funded }}</td>
+        <td>{{ .submitted }}</td>
+        <td>{{ printf "%.1f%%" (mul (div (float .funded) (float .submitted)) 100) }}</td>
+        <td><a href="{{ .source_url }}" target="_blank" rel="noopener">ERC</a></td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>
+{{ end }}
+
+<div class="epd-cta">
+  <h2>Applying for an {{ .Params.scheme_short }} yourself?</h2>
+  <p>The {{ .Params.product_name }} collects every official ERC document, template, and guidance page you need for the application — verified links from erc.europa.eu only, organised section by section.</p>
+  <a class="epd-cta-btn" href="{{ .Params.product_url }}" onclick="gtag('event', 'select_item', {'item_list_id': 'erc_scheme_page', 'item_list_name': '{{ .Title }}', 'items': [{'item_name': '{{ .Params.product_name }}'}]})">See the kit — €{{ .Params.price }} →</a>
+</div>
+
+<div id="epd-app">
+  <div class="epd-results-grid">
+    {{ range first 24 $projects }}
+    <div class="epd-card">
+      <span class="epd-acronym">{{ .acronym }}</span>
+      <h4>{{ .title }}</h4>
+      <div class="epd-meta"><strong>{{ .researcher }}</strong><br>{{ replaceRE "\\s*\\[[^\\]]*\\]\\s*$" "" .host }}{{ with .country }}, {{ . }}{{ end }}</div>
+      <div class="epd-tags"><span class="epd-tag">{{ .year }}</span><span class="epd-tag">{{ .domain }}</span></div>
+      <div class="epd-links"><a href="{{ .cordis }}" target="_blank" rel="noopener">View on CORDIS</a></div>
+    </div>
+    {{ end }}
+  </div>
+  <p class="epd-ssr-more">Showing 24 of {{ len $projects }} {{ $scheme }}. Turn on JavaScript to filter by call year and research domain.</p>
+</div>
+
+</div>
+
+{{ partial "epd/styles.html" . }}
+<script>window.EPD_CONFIG = { dataUrl: {{ $schemeJSON.RelPermalink | jsonify | safeJS }}, filterKeys: ["year", "domain"] };</script>
+{{ partial "epd/app.html" . }}
+{{ end }}
