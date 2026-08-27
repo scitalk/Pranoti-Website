@@ -1,0 +1,154 @@
+<style>
+#epd-root {
+  --epd-container: 1200px;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  padding: 140px 24px 80px;
+  min-height: 100vh;
+}
+#epd-root, #epd-root * { box-sizing: border-box; }
+
+#epd-root .epd-page-head { max-width: var(--epd-container); margin: 0 auto 32px; }
+#epd-root .epd-page-head h1 { font-family: var(--font-display); font-weight: 600; font-size: 2rem; margin-bottom: 8px; color: var(--ink); }
+#epd-root .epd-lede { font-size: 1rem; color: var(--ink-soft); max-width: 640px; }
+#epd-root .epd-note { font-size: 0.85rem; color: var(--ink-soft); max-width: 640px; margin-top: 12px; padding: 10px 14px; border-left: 3px solid var(--accent); background: var(--paper); }
+#epd-root .epd-note a { color: var(--accent-text); }
+
+#epd-root .epd-prose { max-width: 680px; margin: 0 auto 40px; }
+#epd-root .epd-prose p { font-size: 0.98rem; line-height: 1.7; color: var(--ink); margin-bottom: 16px; }
+#epd-root .epd-prose h2, #epd-root .epd-prose h3 {
+  font-family: var(--font-display); font-weight: 600; color: var(--ink);
+  font-size: 1.15rem; margin: 28px 0 12px;
+}
+#epd-root .epd-prose a { color: var(--accent-text); }
+
+#epd-root .epd-stats { max-width: 680px; margin: 0 auto 44px; }
+#epd-root .epd-stats table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+#epd-root .epd-stats th, #epd-root .epd-stats td { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(0,0,0,0.1); }
+#epd-root .epd-stats th { font-family: var(--font-display); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); }
+#epd-root .epd-stats td { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink); }
+#epd-root .epd-stats td:first-child { font-family: var(--font-body); }
+#epd-root .epd-stats a { color: var(--accent-text); }
+#epd-root .epd-stats caption { caption-side: bottom; font-size: 0.78rem; color: var(--ink-soft); text-align: left; margin-top: 10px; line-height: 1.5; }
+
+#epd-root .epd-cta {
+  max-width: 680px; margin: 0 auto 44px; padding: 24px;
+  border: 1px solid var(--accent); border-radius: 10px; background: var(--white);
+}
+#epd-root .epd-cta h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; margin: 0 0 8px; color: var(--ink); }
+#epd-root .epd-cta p { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.6; margin: 0 0 16px; }
+#epd-root .epd-cta a.epd-cta-btn {
+  display: inline-block; background: var(--accent); color: var(--white);
+  font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 0.04em;
+  text-transform: uppercase; text-decoration: none; padding: 11px 20px; border-radius: 7px;
+}
+#epd-root .epd-cta a.epd-cta-btn:hover { opacity: 0.9; }
+
+#epd-root .epd-scheme-nav { max-width: var(--epd-container); margin: 0 auto 36px; display: flex; flex-wrap: wrap; gap: 10px; }
+#epd-root .epd-scheme-nav a {
+  font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.03em;
+  text-transform: uppercase; text-decoration: none; color: var(--ink);
+  border: 1px solid rgba(0,0,0,0.15); border-radius: 999px; padding: 7px 14px;
+}
+#epd-root .epd-scheme-nav a:hover { border-color: var(--accent); color: var(--accent-text); }
+
+#epd-root .epd-layout { max-width: var(--epd-container); margin: 0 auto; display: flex; gap: 32px; align-items: flex-start; }
+
+#epd-root .epd-filters {
+  width: 250px; flex-shrink: 0; position: sticky; top: 116px;
+  max-height: calc(100vh - 136px); display: flex; flex-direction: column;
+}
+#epd-root .epd-filters-scroll { overflow-y: auto; flex: 1; min-height: 0; padding-right: 4px; }
+#epd-root .epd-filter-group { margin-bottom: 22px; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 16px; }
+#epd-root .epd-filter-group:last-child { margin-bottom: 0; border-bottom: none; }
+#epd-root .epd-filter-group h3 {
+  font-family: var(--font-display); font-weight: 600; font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft);
+  margin: 0 0 10px; display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer; user-select: none;
+}
+#epd-root .epd-filter-group h3 .epd-chevron { font-size: 0.6rem; color: var(--ink-soft); transition: transform .15s; }
+#epd-root .epd-filter-group.epd-collapsed h3 .epd-chevron { transform: rotate(-90deg); }
+#epd-root .epd-filter-group.epd-collapsed .epd-filter-options { display: none; }
+#epd-root .epd-filter-option {
+  display: flex; align-items: center; gap: 8px; font-size: 0.88rem;
+  padding: 4px 0; cursor: pointer; color: var(--ink);
+}
+#epd-root .epd-filter-option input { accent-color: var(--accent); }
+#epd-root .epd-filter-option .epd-count { margin-left: auto; color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.72rem; }
+
+#epd-root .epd-clear-filters {
+  background: none; border: 1px solid var(--ink); border-radius: 6px;
+  padding: 9px 14px; font-family: var(--font-display); font-size: 0.75rem;
+  letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; width: 100%;
+  color: var(--ink); transition: background 0.15s, color 0.15s, border-color 0.15s;
+  flex-shrink: 0; margin-top: 16px;
+}
+#epd-root .epd-clear-filters:hover { background: var(--ink); color: var(--white); }
+#epd-root .epd-clear-filters.epd-active {
+  background: var(--accent); border-color: var(--accent); color: var(--white);
+  font-weight: 600;
+}
+
+#epd-root .epd-results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+#epd-root .epd-results-count { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-soft); }
+
+#epd-root .epd-active-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+#epd-root .epd-chip {
+  background: var(--ink); color: var(--white); font-family: var(--font-display);
+  font-size: 0.7rem; letter-spacing: 0.03em; padding: 5px 10px; border-radius: 999px;
+  display: flex; align-items: center; gap: 6px;
+}
+#epd-root .epd-chip .epd-x { cursor: pointer; color: #ffb3a3; font-weight: 700; }
+
+#epd-root .epd-results-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+@media (max-width: 960px) { #epd-root .epd-results-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { #epd-root .epd-results-grid { grid-template-columns: 1fr; } }
+
+#epd-root .epd-card {
+  border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 20px;
+  background: var(--white); transition: border-color 0.15s, box-shadow 0.15s;
+  display: flex; flex-direction: column;
+}
+#epd-root .epd-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+#epd-root .epd-card .epd-acronym {
+  font-family: var(--font-display); font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--accent-text); font-weight: 700; margin-bottom: 6px; display: block;
+}
+#epd-root .epd-card h4 { font-family: var(--font-body); font-weight: 600; font-size: 1rem; margin: 0 0 10px; line-height: 1.35; color: var(--ink); }
+#epd-root .epd-card .epd-meta { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 12px; }
+#epd-root .epd-card .epd-meta strong { color: var(--ink); font-weight: 600; }
+#epd-root .epd-card .epd-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+#epd-root .epd-tag {
+  font-family: var(--font-mono); font-size: 0.68rem; background: var(--paper);
+  color: var(--ink-soft); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(0,0,0,0.08);
+}
+#epd-root .epd-card .epd-links { margin-top: auto; font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.03em; }
+#epd-root .epd-card .epd-links a { color: var(--accent-text); text-decoration: none; }
+#epd-root .epd-card .epd-links a:hover { text-decoration: underline; }
+
+#epd-root .epd-no-results, #epd-root .epd-loading { color: var(--ink-soft); font-size: 0.9rem; padding: 40px 0; }
+#epd-root .epd-ssr-more { color: var(--ink-soft); font-size: 0.82rem; margin-top: 20px; }
+
+#epd-root .epd-pagination {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  margin-top: 28px; flex-wrap: wrap;
+}
+#epd-root .epd-page-btn {
+  border: 1px solid rgba(0,0,0,0.15); background: var(--white); color: var(--ink);
+  font-family: var(--font-mono); font-size: 0.82rem; padding: 6px 12px;
+  border-radius: 6px; cursor: pointer;
+}
+#epd-root .epd-page-btn:hover:not(:disabled) { border-color: var(--accent); }
+#epd-root .epd-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+#epd-root .epd-page-arrow { font-size: 1rem; padding: 6px 16px; }
+#epd-root .epd-page-status { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-soft); }
+
+@media (max-width: 860px) {
+  #epd-root .epd-layout { flex-direction: column; }
+  #epd-root .epd-filters { width: 100%; position: static; }
+}
+</style>

@@ -1,0 +1,48 @@
+{
+  "_note": "ERC calls: funded projects vs submitted proposals per call year. Compiled by The Science Talk from the ERC's own Facts & Figures / results announcements on erc.europa.eu (see source_url per row). Figures reflect grants awarded at selection and may differ slightly from later signed-grant counts in the EC dashboard.",
+  "Starting Grants": [
+    {"year": "2016", "funded": 390, "submitted": 2935, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2016_stg_statistics.pdf"},
+    {"year": "2017", "funded": 406, "submitted": 3085, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2017_stg_statistics.pdf"},
+    {"year": "2018", "funded": 403, "submitted": 3170, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2018_stg_statistics.pdf"},
+    {"year": "2019", "funded": 408, "submitted": 3106, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2019_stg_statistics.pdf"},
+    {"year": "2020", "funded": 436, "submitted": 3272, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2020_stg_statistics.pdf"},
+    {"year": "2021", "funded": 397, "submitted": 4056, "source_url": "https://erc.europa.eu/news/applications-erc-starting-grants-2021-facts-and-figures"},
+    {"year": "2022", "funded": 408, "submitted": 2932, "source_url": "https://erc.europa.eu/news/applications-erc-starting-grants-2022-facts-and-figures"},
+    {"year": "2023", "funded": 400, "submitted": 2696, "source_url": "https://erc.europa.eu/news-events/news/applications-erc-starting-grants-2023-facts-and-figures"},
+    {"year": "2024", "funded": 494, "submitted": 3474, "source_url": "https://erc.europa.eu/news-events/news/starting-grants-2024-applications-facts-and-figures"},
+    {"year": "2025", "funded": 478, "submitted": 3928, "source_url": "https://erc.europa.eu/news-events/news/starting-grants-2025-applications-facts-and-figures"}
+  ],
+  "Consolidator Grants": [
+    {"year": "2016", "funded": 314, "submitted": 2274, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2016_cog_statistics.pdf"},
+    {"year": "2017", "funded": 329, "submitted": 2538, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2017_cog_statistics.pdf"},
+    {"year": "2018", "funded": 291, "submitted": 2389, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2018_cog_statistics.pdf"},
+    {"year": "2019", "funded": 301, "submitted": 2453, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2019_cog_statistics.pdf"},
+    {"year": "2020", "funded": 327, "submitted": 2506, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2020_cog_statistics.pdf"},
+    {"year": "2021", "funded": 318, "submitted": 2652, "source_url": "https://erc.europa.eu/news-events/news/erc-2021-consolidator-grants-results"},
+    {"year": "2022", "funded": 321, "submitted": 2222, "source_url": "https://erc.europa.eu/news-events/news/erc-2022-consolidator-grants-results"},
+    {"year": "2023", "funded": 308, "submitted": 2130, "source_url": "https://erc.europa.eu/news-events/news/applications-erc-consolidator-grants-2023-facts-and-figures"},
+    {"year": "2024", "funded": 328, "submitted": 2313, "source_url": "https://erc.europa.eu/news-events/news/consolidator-grants-2024-facts-figures"},
+    {"year": "2025", "funded": 349, "submitted": 3121, "source_url": "https://erc.europa.eu/news-events/news/consolidator-grants-2025-examples-projects"}
+  ],
+  "Advanced Grants": [
+    {"year": "2016", "funded": 231, "submitted": 2404, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2016_adg_statistics.pdf"},
+    {"year": "2017", "funded": 269, "submitted": 2167, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2017_adg_statistics.pdf"},
+    {"year": "2018", "funded": 222, "submitted": 2052, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2018_adg_statistics.pdf"},
+    {"year": "2019", "funded": 185, "submitted": 1881, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2019_adg_statistics.pdf"},
+    {"year": "2020", "funded": 209, "submitted": 2678, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2020_adg_statistics.pdf"},
+    {"year": "2021", "funded": 253, "submitted": 1735, "source_url": "https://erc.europa.eu/news-events/news/erc-2021-advanced-grants-results"},
+    {"year": "2022", "funded": 218, "submitted": 1647, "source_url": "https://erc.europa.eu/news-events/news/erc-2022-advanced-grants-results"},
+    {"year": "2023", "funded": 255, "submitted": 1829, "source_url": "https://erc.europa.eu/news-events/news/applications-erc-advanced-grants-2023-facts-and-figures"},
+    {"year": "2024", "funded": 281, "submitted": 2534, "source_url": "https://erc.europa.eu/news-events/news/applications-erc-advanced-grants-2024-facts-and-figures"},
+    {"year": "2025", "funded": 319, "submitted": 3329, "source_url": "https://erc.europa.eu/news-events/news/applications-erc-advanced-grants-2025-facts-and-figures"}
+  ],
+  "Synergy Grants": [
+    {"year": "2018", "funded": 27, "submitted": 295, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2018_syg_statistics.pdf"},
+    {"year": "2019", "funded": 37, "submitted": 441, "source_url": "https://erc.europa.eu/sites/default/files/document/file/erc_2019_syg_statistics.pdf"},
+    {"year": "2020", "funded": 34, "submitted": 440, "source_url": "https://erc.europa.eu/news/erc-2020-synergy-grants-results"},
+    {"year": "2022", "funded": 29, "submitted": 358, "source_url": "https://erc.europa.eu/news/erc-2022-synergy-grants-results"},
+    {"year": "2023", "funded": 37, "submitted": 395, "source_url": "https://erc.europa.eu/news-events/news/erc-2023-synergy-grants-results"},
+    {"year": "2024", "funded": 57, "submitted": 548, "source_url": "https://erc.europa.eu/news-events/news/synergy-grants-2024-examples-projects"},
+    {"year": "2025", "funded": 66, "submitted": 712, "source_url": "https://erc.europa.eu/news-events/news/erc-2025-synergy-grants-results"}
+  ]
+}
