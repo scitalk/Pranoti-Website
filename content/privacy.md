@@ -27,31 +27,30 @@ When you open a page, your browser necessarily transmits data that GitHub record
 - **Transfer outside the EU:** GitHub processes data in the USA. Transfers are covered by the EU Standard Contractual Clauses and GitHub's certification under the EU–US Data Privacy Framework.
 - **Retention:** determined by GitHub; see the [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).
 
-## 3. Cookies and analytics
+## 3. Analytics
 
-This site sets **no cookies and runs no analytics until you consent.** When you first visit, a banner asks you to accept or reject analytics cookies. If you reject, or simply ignore the banner, only strictly necessary storage is used.
+This site uses Google Analytics 4 (measurement ID `G-JLGZLS20VW`), a service of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland, to produce aggregated statistics about how the site is used — which pages are read, how visitors arrive, and which content is worth developing further. The set-up is configured to keep the data to a minimum:
 
-### Consent record (strictly necessary)
+- Advertising features, remarketing, and data sharing with other Google products are switched off.
+- Google Analytics truncates IP addresses before storage and does not log or store full IP addresses.
+- The data is used only in aggregate. It is not combined with other information to identify you and is not used to make decisions about individual visitors.
 
-Your choice is stored in your browser's local storage under the key `pk_consent`, so you are not asked again on every page. This is not a cookie sent to a server and holds no identifier.
+Google Analytics processes the pages you view, approximate location derived from a truncated IP address, referral source, and device and browser characteristics.
 
-- **Legal basis:** § 25(2)(2) TDDDG — strictly necessary to provide the service you requested; Art. 6(1)(c) GDPR for documenting consent.
-- **Retention:** 12 months, after which you are asked again.
+### Cookies
 
-### Google Analytics 4 (consent only)
+Google Analytics sets two first-party cookies, `_ga` and `_ga_JLGZLS20VW`, which tell one browser apart from another so repeat visits are not double-counted. They hold a randomly generated identifier, not your name or email. Full details are in the [Cookie Policy](/cookies/).
 
-If you accept, this site uses Google Analytics 4 (measurement ID `G-JLGZLS20VW`), a service of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland.
+### Your choice
 
-Google Analytics sets cookies and processes a truncated IP address, the pages you view, approximate location derived from IP, referral source, and device and browser characteristics, in order to produce aggregated statistics about how the site is used.
+Analytics runs by default. You can **turn it off at any time** through the [cookie settings](/cookies/). When you turn it off, the cookies above are deleted and no further analytics data is collected from your device. Turning it off does not affect how the site works. Your choice is remembered in your browser's local storage under the key `pk_consent`; this is not sent to any server and holds no identifier.
 
-- **Purpose:** understanding which content is useful, and improving the site.
-- **Legal basis:** your consent, under Art. 6(1)(a) GDPR and § 25(1) TDDDG. You may withdraw consent at any time with effect for the future — see [Cookie Policy](/cookies/).
-- **IP anonymisation:** GA4 truncates IP addresses before storage by default and does not log or store full IP addresses.
+You may also object to this processing under Art. 21 GDPR — see section 10.
+
+- **Legal basis:** Art. 6(1)(f) GDPR — our legitimate interest in understanding how the site is used and improving it. We have weighed this interest against your interests and rights, taking account of the limited, aggregated nature of the data and the safeguards above.
 - **Transfer outside the EU:** data may be transferred to Google LLC in the USA. Google LLC is certified under the EU–US Data Privacy Framework, and Standard Contractual Clauses apply in addition.
 - **Retention:** event-level data is retained for a maximum of 14 months.
 - **More information:** [Google Privacy Policy](https://policies.google.com/privacy).
-
-Full details of every cookie are in the [Cookie Policy](/cookies/).
 
 ## 4. Google Fonts
 
@@ -119,4 +118,4 @@ https://www.baden-wuerttemberg.datenschutz.de/
 
 This policy is updated when the services used on this site change or the legal position develops. The current version always applies.
 
-*Last updated: 28 July 2026*
+*Last updated: 27 August 2026*

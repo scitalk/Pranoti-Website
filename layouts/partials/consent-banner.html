@@ -3,16 +3,16 @@
 <div class="consent-banner" id="consent-banner" role="dialog" aria-modal="false" aria-labelledby="consent-title" aria-describedby="consent-body" hidden>
   <div class="consent-inner">
     <div class="consent-text">
-      <h2 id="consent-title">Cookies</h2>
+      <h2 id="consent-title">Analytics settings</h2>
       <p id="consent-body">
-        This site uses Google Analytics to understand which articles are worth writing more of.
-        Nothing is loaded unless you accept. Rejecting keeps the site fully usable.
+        This site uses Google Analytics to see which articles are read. IP addresses are
+        truncated and the data is only ever used in aggregate.
         See the <a href="/cookies/">Cookie Policy</a> and <a href="/privacy/">Privacy Policy</a>.
       </p>
     </div>
     <div class="consent-actions">
-      <button type="button" class="consent-btn consent-btn-reject" data-consent="denied">Reject</button>
-      <button type="button" class="consent-btn consent-btn-accept" data-consent="granted">Accept analytics</button>
+      <button type="button" class="consent-btn consent-btn-reject" data-consent="denied">Turn off analytics</button>
+      <button type="button" class="consent-btn consent-btn-accept" data-consent="granted">Keep analytics on</button>
     </div>
   </div>
 </div>
@@ -29,15 +29,15 @@
   function gtag() { dataLayer.push(arguments); }
   window.gtag = gtag;
 
-  // Consent Mode v2: everything denied until the visitor says otherwise.
+  // Consent Mode v2: advertising storage stays denied; analytics runs unless the
+  // visitor turns it off (opt-out).
   gtag('consent', 'default', {
     ad_storage: 'denied',
     ad_user_data: 'denied',
     ad_personalization: 'denied',
-    analytics_storage: 'denied',
+    analytics_storage: 'granted',
     functionality_storage: 'granted',
-    security_storage: 'granted',
-    wait_for_update: 500
+    security_storage: 'granted'
   });
 
   function stored() {
@@ -62,16 +62,34 @@
     gtag('config', GA_ID, { anonymize_ip: true });
   }
 
+  function clearGaCookies() {
+    var host = location.hostname.replace(/^www\./, '');
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.split('=')[0].trim();
+      if (name === '_ga' || name.indexOf('_ga_') === 0) {
+        document.cookie = name + '=; Max-Age=0; path=/; domain=.' + host;
+        document.cookie = name + '=; Max-Age=0; path=/';
+      }
+    });
+  }
+
   function apply(status) {
     gtag('consent', 'update', { analytics_storage: status });
     if (status === 'granted') loadAnalytics();
+    if (status === 'denied') clearGaCookies();
   }
 
   function showBanner() { banner.hidden = false; }
   function hideBanner() { banner.hidden = true; }
 
+  function persist(status, implicit) {
+    try {
+      localStorage.setItem(KEY, JSON.stringify({ status: status, ts: Date.now(), implicit: !!implicit }));
+    } catch (e) {}
+  }
+
   function record(status) {
-    try { localStorage.setItem(KEY, JSON.stringify({ status: status, ts: Date.now() })); } catch (e) {}
+    persist(status, false);
     apply(status);
     hideBanner();
   }
@@ -90,10 +108,15 @@
   });
 
   var choice = stored();
-  if (choice) {
-    apply(choice);
+  if (choice === 'denied') {
+    apply('denied');
+  } else if (choice === 'granted') {
+    apply('granted');
   } else {
-    showBanner();
+    // No choice yet: analytics runs by default. No banner is shown; the opt-out
+    // lives on the Cookie Policy page (the [data-consent-reopen] button below).
+    apply('granted');
+    persist('granted', true);
   }
 })();
 </script>

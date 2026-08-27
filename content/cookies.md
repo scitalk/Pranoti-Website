@@ -10,25 +10,11 @@ This page lists every cookie and similar storage technology used on pranoti.thes
 
 ## The short version
 
-**Nothing that requires consent is loaded until you give it.** Analytics are switched off by default. If you dismiss the banner without choosing, analytics stay off.
+This site uses two Google Analytics cookies to count how pages are read. They carry a random identifier, never your name or email, and the data is only used in aggregate. **You can turn analytics off at any time** — use the button further down this page. Advertising and cross-site tracking cookies are never used.
 
-## What the law requires
+## Analytics cookies
 
-Under § 25(1) TDDDG (implementing Art. 5(3) of the ePrivacy Directive), storing information on your device — or reading information already stored there — requires your prior consent. The only exception, in § 25(2), is storage that is strictly necessary to provide a service you explicitly requested. Analytics cookies are not strictly necessary, so they are only set if you accept.
-
-## Strictly necessary storage
-
-Used without consent, because the site cannot work correctly without it.
-
-| Name | Type | Provider | Purpose | Duration |
-|---|---|---|---|---|
-| `pk_consent` | Local storage | This website (first party) | Records whether you accepted or rejected analytics, so the banner is not shown again on every page | 12 months |
-
-This entry contains only the value `granted` or `denied` and a timestamp. It holds no identifier and is never transmitted to a server.
-
-## Analytics cookies — set only with your consent
-
-Set only after you click "Accept analytics".
+Analytics runs by default. If you turn it off, these cookies are deleted and no further analytics data is collected from your device.
 
 | Name | Type | Provider | Purpose | Duration |
 |---|---|---|---|---|
@@ -37,15 +23,19 @@ Set only after you click "Accept analytics".
 
 These allow Google Analytics 4 to produce aggregated statistics on which pages are read, how visitors arrive, and which content is worth writing more of. Section 3 of the [Privacy Policy](/privacy/) sets out the legal basis, the transfer to the USA, and retention periods.
 
-## Changing or withdrawing your choice
+## Your preference
 
-You can change your decision at any time, with effect for the future:
+Your on/off choice is saved in your browser's local storage under the key `pk_consent` — the value `granted` or `denied` and a timestamp, nothing else. It is never sent to a server and holds no identifier, and is kept for 12 months.
+
+## Changing your choice
+
+You can turn analytics on or off at any time, with effect for the future:
 
 <p>
   <button type="button" class="consent-reopen" data-consent-reopen>Change cookie settings</button>
 </p>
 
-Withdrawing consent is as easy as giving it, and does not affect the lawfulness of processing that took place beforehand.
+Turning analytics off takes effect immediately and deletes the analytics cookies. It does not affect data already collected before that point.
 
 ## Deleting cookies in your browser
 
@@ -60,10 +50,10 @@ Blocking all cookies may affect how other websites function.
 
 ## Google's own opt-out
 
-Independently of the banner, Google offers a browser add-on that prevents Google Analytics from collecting data on any site: [tools.google.com/dlpage/gaoptout](https://tools.google.com/dlpage/gaoptout).
+Independently of the setting above, Google offers a browser add-on that prevents Google Analytics from collecting data on any site: [tools.google.com/dlpage/gaoptout](https://tools.google.com/dlpage/gaoptout).
 
 ## Fonts
 
 This site loads typefaces from Google Fonts. This sets no cookies, but does transmit your IP address to Google. See section 4 of the [Privacy Policy](/privacy/).
 
-*Last updated: 28 July 2026*
+*Last updated: 27 August 2026*
