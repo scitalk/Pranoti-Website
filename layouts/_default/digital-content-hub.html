@@ -234,6 +234,17 @@
 
 #df-root .df-no-results { color: var(--ink-soft); font-size: 0.9rem; padding: 40px 0; }
 
+#df-root .df-pager { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 32px; }
+#df-root .df-page-info { font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-soft); }
+#df-root .df-page-btn {
+  background: none; border: 1px solid var(--ink); border-radius: 6px;
+  padding: 8px 16px; font-family: var(--font-display); font-size: 0.75rem;
+  letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; color: var(--ink);
+  transition: background 0.15s, color 0.15s;
+}
+#df-root .df-page-btn:hover:not(:disabled) { background: var(--ink); color: var(--white); }
+#df-root .df-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
 @media (max-width: 860px) {
   #df-root .df-layout { flex-direction: column; }
   #df-root .df-filters { width: 100%; position: static; }
@@ -270,6 +281,8 @@
   var state = { series: [], year: [], type: [] };
   var query = '';
   var collapsed = {};
+  var page = 1;
+  var PAGE_SIZE = 24;
 
   function toggleGroup(key) { collapsed[key] = !collapsed[key]; render(); }
 
@@ -295,11 +308,12 @@
   function toggleFilter(key, val) {
     var i = state[key].indexOf(val);
     if (i === -1) state[key].push(val); else state[key].splice(i, 1);
+    page = 1;
     writeUrl(true);
     render();
   }
 
-  function clearFilters() { FILTER_KEYS.forEach(function (k) { state[k] = []; }); query = ''; writeUrl(true); render(); }
+  function clearFilters() { FILTER_KEYS.forEach(function (k) { state[k] = []; }); query = ''; page = 1; writeUrl(true); render(); }
 
   function matches(e) {
     for (var i = 0; i < FILTER_KEYS.length; i++) {
@@ -395,6 +409,20 @@
     });
     var hasActive = FILTER_KEYS.some(function (k) { return state[k].length; }) || !!query;
 
+    var totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
+    if (page > totalPages) page = totalPages;
+    if (page < 1) page = 1;
+    var pageStart = (page - 1) * PAGE_SIZE;
+    var pageResults = results.slice(pageStart, pageStart + PAGE_SIZE);
+    var pager = '';
+    if (totalPages > 1) {
+      pager = '<div class="df-pager">' +
+        '<button class="df-page-btn" id="df-prev"' + (page === 1 ? ' disabled' : '') + '>Previous</button>' +
+        '<span class="df-page-info">Page ' + page + ' of ' + totalPages + '</span>' +
+        '<button class="df-page-btn" id="df-next"' + (page === totalPages ? ' disabled' : '') + '>Next</button>' +
+        '</div>';
+    }
+
     document.getElementById('df-app').innerHTML =
       '<div class="df-layout">' +
         '<aside class="df-filters">' +
@@ -411,7 +439,7 @@
             '<div class="df-search"><input type="text" id="df-search-input" placeholder="Search titles, guests, topics…" value="' + query.replace(/"/g, '&quot;') + '"></div>' +
           '</div>' +
           activeChips() +
-          (results.length ? '<div class="df-results-grid">' + results.map(card).join('') + '</div>' : '<div class="df-no-results">No results match the selected filters.</div>') +
+          (results.length ? '<div class="df-results-grid">' + pageResults.map(card).join('') + '</div>' + pager : '<div class="df-no-results">No results match the selected filters.</div>') +
         '</main>' +
       '</div>';
 
@@ -424,11 +452,15 @@
     document.querySelectorAll('.df-x').forEach(function (x) {
       x.addEventListener('click', function () { toggleFilter(x.dataset.chipKey, x.dataset.chipVal); });
     });
+    var prevBtn = document.getElementById('df-prev');
+    if (prevBtn) prevBtn.addEventListener('click', function () { page--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    var nextBtn = document.getElementById('df-next');
+    if (nextBtn) nextBtn.addEventListener('click', function () { page++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     var clearBtn = document.getElementById('df-clear');
     if (clearBtn) clearBtn.addEventListener('click', clearFilters);
     var searchInput = document.getElementById('df-search-input');
     if (searchInput) {
-      searchInput.addEventListener('input', function () { query = searchInput.value; writeUrl(true); render(); });
+      searchInput.addEventListener('input', function () { query = searchInput.value; page = 1; writeUrl(true); render(); });
       searchInput.focus();
       searchInput.setSelectionRange(query.length, query.length);
     }
