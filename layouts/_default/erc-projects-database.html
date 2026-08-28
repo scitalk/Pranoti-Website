@@ -43,14 +43,18 @@
 <script type="application/ld+json">{{ jsonify (dict "indent" "  ") (dict "@context" "https://schema.org" "@graph" $graph) | safeJS }}</script>
 
 <div id="epd-root">
+<div class="epd-inner">
 
-<header class="epd-page-head">
-  <h1>{{ .Title }}</h1>
-  {{ with .Params.lede }}<p class="epd-lede">{{ . }}</p>{{ end }}
-  <p class="epd-note">The 2025 Advanced Grants are not yet in this database. Those grant agreements have not been signed, so the projects have not appeared in the European Commission's dashboard. For the full list, see the ERC's <a href="https://erc.europa.eu/system/files/2026-06/erc-2025-adg-results-all-domains.pdf" target="_blank" rel="noopener">2025 Advanced Grant results (PDF)</a>.</p>
-</header>
-
-{{ with .Content }}<div class="epd-prose">{{ . }}</div>{{ end }}
+<div class="epd-hero">
+  <header class="epd-page-head epd-hero-text">
+    <p class="epd-eyebrow">European Research Council (ERC)</p>
+    <h1>Projects Database</h1>
+    {{ with .Params.lede }}<p class="epd-lede">{{ . }}</p>{{ end }}
+  </header>
+  <div class="epd-hero-media">
+    <img src="/images/products/ERC-kits_product_page_image.jpg" alt="ERC resource kits" width="1200" height="630">
+  </div>
+</div>
 
 <div id="epd-app">
   {{/* Server-rendered first page so crawlers and no-JS visitors get real content and links.
@@ -69,7 +73,8 @@
   <p class="epd-ssr-more">Showing 24 of {{ len $data.projects }} projects. Turn on JavaScript to filter by call year, grant scheme, and research domain.</p>
 </div>
 
-</div>
+</div><!-- /.epd-inner -->
+</div><!-- /#epd-root -->
 
 {{ partial "epd/styles.html" . }}
 <script>window.EPD_CONFIG = { dataUrl: {{ $projectsJSON.RelPermalink | jsonify | safeJS }}, filterKeys: ["year", "grant_type", "domain"] };</script>
