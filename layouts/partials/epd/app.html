@@ -6,6 +6,14 @@
   var PAGE_SIZE = 24; // matches the server-rendered first page
 
   var LABELS = { year: 'Call Year', grant_type: 'Grant Scheme', domain: 'Domain' };
+  // Display-only relabelling of scheme names; underlying data values are unchanged.
+  var VALUE_LABELS = {
+    'Starting Grants': 'Starting Grant',
+    'Consolidator Grants': 'Consolidator Grant',
+    'Advanced Grants': 'Advanced Grant',
+    'Synergy Grants': 'Synergy Grant'
+  };
+  function valueLabel(v) { return VALUE_LABELS[v] || v; }
   var DATA = [];
 
   function stripHost(h) {
@@ -89,7 +97,7 @@
       var count = counts[o] || 0;
       return '<label class="epd-filter-option">' +
         '<input type="checkbox" ' + checked + ' data-key="' + key + '" data-val="' + o.replace(/"/g, '&quot;') + '" class="epd-filter-input">' +
-        o + '<span class="epd-count">' + count + '</span></label>';
+        (key === 'grant_type' ? valueLabel(o) : o) + '<span class="epd-count">' + count + '</span></label>';
     }).join('');
     var isCollapsed = collapsed[key] ? ' epd-collapsed' : '';
     return '<div class="epd-filter-group' + isCollapsed + '" data-group="' + key + '">' +
@@ -101,7 +109,7 @@
     var chips = [];
     FILTER_KEYS.forEach(function (key) {
       state[key].forEach(function (val) {
-        chips.push('<span class="epd-chip">' + val +
+        chips.push('<span class="epd-chip">' + (key === 'grant_type' ? valueLabel(val) : val) +
           '<span class="epd-x" data-chip-key="' + key + '" data-chip-val="' + val.replace(/"/g, '&quot;') + '">×</span></span>');
       });
     });
@@ -112,7 +120,7 @@
   function card(p) {
     var tags = '<span class="epd-tag">' + p.year + '</span>';
     if (FILTER_KEYS.indexOf('grant_type') !== -1 && p.grant_type) {
-      tags += '<span class="epd-tag">' + p.grant_type + '</span>';
+      tags += '<span class="epd-tag">' + valueLabel(p.grant_type) + '</span>';
     } else if (p.domain) {
       tags += '<span class="epd-tag">' + p.domain + '</span>';
     }
@@ -146,20 +154,26 @@
 
     var filterGroups = FILTER_KEYS.map(function (k) { return renderFilterGroup(k, TAXONOMIES[k]); }).join('');
 
+    // Shown only when 2025 and Advanced Grants are both in the active filter set.
+    var adgNote = (state.year.indexOf('2025') !== -1 && state.grant_type.indexOf('Advanced Grants') !== -1)
+      ? '<p class="epd-note">The 2025 Advanced Grants are not yet in this database. Those grant agreements have not been signed, so the projects have not appeared in the European Commission\'s dashboard. For the full list, see the ERC\'s <a href="https://erc.europa.eu/system/files/2026-06/erc-2025-adg-results-all-domains.pdf" target="_blank" rel="noopener">2025 Advanced Grant results (PDF)</a>.</p>'
+      : '';
+
     document.getElementById('epd-app').innerHTML =
       '<div class="epd-layout">' +
         '<aside class="epd-filters">' +
           '<div class="epd-filters-scroll">' + filterGroups + '</div>' +
           '<button class="epd-clear-filters' + (hasActive ? ' epd-active' : '') + '" id="epd-clear">Clear all filters</button>' +
         '</aside>' +
-        '<main style="flex:1">' +
+        '<div class="epd-results-col" style="flex:1">' +
+          adgNote +
           '<div class="epd-results-header">' +
             '<div class="epd-results-count">' + results.length + ' project' + (results.length === 1 ? '' : 's') + '</div>' +
           '</div>' +
           activeChips() +
           (pageResults.length ? '<div class="epd-results-grid">' + pageResults.map(card).join('') + '</div>' : '<div class="epd-no-results">No projects match the selected filters.</div>') +
           pagination(totalPages) +
-        '</main>' +
+        '</div>' +
       '</div>';
 
     document.querySelectorAll('.epd-filter-input').forEach(function (input) {
