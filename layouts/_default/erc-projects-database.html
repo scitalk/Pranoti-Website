@@ -48,11 +48,30 @@
 <div class="epd-hero">
   <header class="epd-page-head epd-hero-text">
     <p class="epd-eyebrow">European Research Council (ERC)</p>
-    <h1>Projects Database</h1>
+    <h1><a href="{{ .RelPermalink }}" id="epd-hero-reset">Projects Database</a></h1>
     {{ with .Params.lede }}<p class="epd-lede">{{ . }}</p>{{ end }}
   </header>
   <div class="epd-hero-media">
     <img src="/images/products/ERC-kits_product_page_image.jpg" alt="ERC resource kits" width="1200" height="630">
+  </div>
+</div>
+
+<div class="epd-credstrip">
+  <div class="epd-credstrip-item">
+    <span class="epd-credstrip-num">&euro;21,485M</span>
+    <span class="epd-credstrip-label">EU contribution</span>
+  </div>
+  <div class="epd-credstrip-item">
+    <span class="epd-credstrip-num">11,907</span>
+    <span class="epd-credstrip-label">Projects funded</span>
+  </div>
+  <div class="epd-credstrip-item">
+    <span class="epd-credstrip-num">35</span>
+    <span class="epd-credstrip-label">Countries</span>
+  </div>
+  <div class="epd-credstrip-item">
+    <span class="epd-credstrip-num">943</span>
+    <span class="epd-credstrip-label">Host institutions</span>
   </div>
 </div>
 
@@ -64,7 +83,8 @@
     <div class="epd-card">
       <span class="epd-acronym">{{ .acronym }}</span>
       <h4>{{ .title }}</h4>
-      <div class="epd-meta"><strong>{{ .researcher }}</strong><br>{{ replaceRE "\\s*\\[[^\\]]*\\]\\s*$" "" .host }}{{ with .country }}, {{ . }}{{ end }}</div>
+      {{ $hn := slice }}{{ range split (replaceRE "\\s*\\[[^\\]]*\\]" "" .host) "," }}{{ $t := trim . " " }}{{ if and $t (ne $t "Unknown Name") }}{{ $hn = $hn | append $t }}{{ end }}{{ end }}
+      <div class="epd-meta"><strong>{{ .researcher }}</strong><br>{{ delimit (uniq $hn) ", " }}{{ with .country }}, {{ . }}{{ end }}</div>
       <div class="epd-tags"><span class="epd-tag">{{ .year }}</span><span class="epd-tag">{{ .grant_type }}</span></div>
       <div class="epd-links"><a href="{{ .cordis }}" target="_blank" rel="noopener">View on CORDIS</a></div>
     </div>
