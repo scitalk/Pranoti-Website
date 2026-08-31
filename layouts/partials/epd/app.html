@@ -17,7 +17,17 @@
   var DATA = [];
 
   function stripHost(h) {
-    return (h || '').replace(/\s*\[[^\]]*\]\s*$/, '');
+    // Host field may list several institutions for multi-PI (Synergy) grants, each
+    // tagged "[id,CC]". Drop the tags, the "Unknown Name" placeholder, and repeats.
+    var parts = (h || '').replace(/\s*\[[^\]]*\]/g, '').split(',');
+    var seen = {}, out = [];
+    parts.forEach(function (p) {
+      var n = p.trim();
+      if (!n || n === 'Unknown Name' || seen[n]) return;
+      seen[n] = true;
+      out.push(n);
+    });
+    return out.join(', ');
   }
 
   var TAXONOMIES = {};
@@ -195,6 +205,15 @@
   }
 
   window.addEventListener('popstate', function () { if (DATA.length) { parseUrl(); render(); } });
+
+  // Clicking the hero title clears every active filter and returns to page 1.
+  var heroReset = document.getElementById('epd-hero-reset');
+  if (heroReset) heroReset.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (DATA.length) { clearFilters(); }
+    else { history.replaceState({}, '', location.pathname); }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   var appEl = document.getElementById('epd-app');
   // Leave the server-rendered cards in place until the dataset loads and render() swaps them.
