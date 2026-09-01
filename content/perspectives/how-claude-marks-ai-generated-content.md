@@ -3,7 +3,7 @@ title: "Claude Will Watermark Its Own Output: What Anthropic's Marking Plan Mean
 date: 2026-08-11
 lastmod: 2026-08-11
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 hero_light: true
 description: "Anthropic published its plan to mark AI-generated content under the EU Code of Practice: embedded text watermarks and C2PA metadata. Here is what it covers, what it misses, and why it does not replace your own disclosure duty."
 keywords: ["Claude watermark AI content", "how Claude marks AI-generated content", "C2PA Claude", "Anthropic Article 50 marking", "machine-readable marking AI Act", "AI watermark detection limitations"]
@@ -102,4 +102,4 @@ Anthropic wrote this Code of Practice commitment as engineering work, not as a s
 The article also confirms the shape of the split that we described when we signed. Providers build the plumbing. Deployers tell the audience. The plumbing will not do the telling for you, and this article says so clearly.
 
 ---
-*Want more guides like this? Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

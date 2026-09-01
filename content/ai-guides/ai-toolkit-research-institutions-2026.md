@@ -122,4 +122,4 @@ The five tools above are not a fixed setup. They are options mapped to jobs. The
 Most institutions will use three or four of these tools, each in its own lane. The goal is a stack where no tool does a job that another tool does better, and where staff log and maintain the connections between them.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

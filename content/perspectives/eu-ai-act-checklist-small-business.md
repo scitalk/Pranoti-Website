@@ -4,7 +4,7 @@ date: 2026-07-31
 lastmod: 2026-08-18
 draft: false
 description: "A practical EU AI Act checklist for small business — the six articles that actually apply, what each demands, and links to the full guide on each one."
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 keywords: ["EU AI Act checklist small business", "EU AI Act for small teams", "EU AI Act SME guide", "EU AI Act compliance checklist", "EU AI Act agency compliance", "EU AI Act articles explained", "AI Act small business obligations", "EU AI Act SME compliance framework"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
@@ -91,11 +91,11 @@ Run the [7-element test](/ai-guides/eu-ai-act-ai-system-definition-7-element-tes
 
 Bookmark this page instead of any single article. The Act's obligations phase in over several years, and which of these six matters most to you will shift as your team, tools, and deadlines change. Revisit this page every quarter, or whenever you adopt a new AI tool or take on a new type of client work.
 
-If you need to work out which of these six apply to your team, or you have read one and want to talk through what it means for your setup, [get in touch →](/contact/)
+If you need to work out which of these six apply to your team, or you have read one and want to talk through what it means for your setup, [get in touch →](https://thesciencetalk.com/contact-us/)
 
 ## Related reading on The Science Talk
 
 See also [EU AI Act Article 4: What AI Literacy Requirements Mean for European Research Institutes](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/) on The Science Talk. This piece gives background on how these obligations reach ordinary organizations, not just AI developers, from the research-institute angle.
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

@@ -4,7 +4,7 @@ date: 2026-08-02
 lastmod: 2026-08-02
 slug: "eu-ai-act-article-63-sme-quality-management-simplification"
 draft: true
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "The 2026 Omnibus quietly widened Article 63 from microenterprises to all SMEs and start-ups — a simplified quality management system for high-risk AI. Here's who qualifies and what it does not cover."
 keywords: ["EU AI Act Article 63", "SME simplified quality management system AI Act", "AI Act microenterprise derogation", "Article 17 quality management system SME", "EU AI Act SME simplification 2026", "AI Act Digital Omnibus SME relief", "simplified technical documentation Annex IV"]
 author: "Pranoti Kshirsagar"
@@ -116,4 +116,4 @@ If your AI use is heading toward high-risk classification, pair this with [Artic
 This guide pairs with [The AI Act Omnibus Delay: Relief or a Trap for Small Teams?](/perspectives/eu-ai-act-omnibus-delay-relief-or-trap/), which explains why you must use the extra runway rather than bank it.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

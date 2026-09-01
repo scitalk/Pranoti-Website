@@ -4,7 +4,7 @@ date: 2026-07-23
 lastmod: 2026-08-02
 slug: "eu-ai-act-sme-support-article-62"
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "Article 62 of the EU AI Act gives SMEs and start-ups real support — priority sandbox access, free training, a direct advice channel and reduced fees. Here's how to claim it."
 keywords: ["EU AI Act Article 62 SME support", "AI Act support for start-ups", "AI regulatory sandbox priority access", "reduced conformity assessment fees SME", "AI Act small mid-caps", "EU AI Act SME compliance help", "AI Office information platform"]
 author: "Pranoti Kshirsagar"
@@ -91,4 +91,4 @@ If any of your AI use heads toward high-risk classification, plan around the san
 This guide pairs with [EU Just Solved Your AI Compliance Problem: Inside the JRC Scientific Research Report](https://thesciencetalk.com/news/eu-ai-compliance-jrc-report-2025/), a look at another strand of official EU support for organizations that navigate AI compliance.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

@@ -167,4 +167,4 @@ Security with AI tools is not about avoiding them. It is about knowing what you 
 - [How to Connect Your Self-Hosted WordPress Site to Claude Desktop via MCP](https://thesciencetalk.com/news/blog-perspectives/connect-wordpress-claude-desktop-mcp-guide/), covering application password setup for WordPress MCP
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

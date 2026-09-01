@@ -112,7 +112,7 @@ But it requires the same care you bring when you grant SSH access to a contracto
 
 **Claude with tool access is not a chat interface. It is a process that runs as you. Treat it with the same care.**
 
-If you work through this issue at your organization or in your own setup, [get in touch →](/contact/)
+If you work through this issue at your organization or in your own setup, [get in touch →](https://thesciencetalk.com/contact-us/)
 
 ## If you found this useful
 
@@ -121,4 +121,4 @@ If you work through this issue at your organization or in your own setup, [get i
 - [Model Context Protocol for Non-Developers: A Practical Primer](/ai-guides/model-context-protocol-non-developers/) — what MCP actually is, and what it means when you connect it to your tools
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

@@ -114,4 +114,4 @@ Each of these is a new conversation with Claude Cowork, where you describe the f
 This same pattern, Claude reading and writing to a live Google Sheet, also works without you building an app at all. See [how to use Claude to analyze survey data in Google Sheets](https://thesciencetalk.com/ai-academy/claude-google-sheets-survey-data-analysis/) for a lighter-weight example, if a full deployed app is more than your use case needs.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

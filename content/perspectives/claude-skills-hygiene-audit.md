@@ -81,4 +81,4 @@ A hygiene audit framework does not prevent environmental change. It ensures your
 
 ---
 
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

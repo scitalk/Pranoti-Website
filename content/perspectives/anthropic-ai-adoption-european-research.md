@@ -85,7 +85,7 @@ The product is strong. The question is whether your institution is ready to do w
 
 ---
 
-If you navigate AI vendor decisions at a European research institution and want a structured way to think through procurement readiness, [get in touch →](/contact/)
+If you navigate AI vendor decisions at a European research institution and want a structured way to think through procurement readiness, [get in touch →](https://thesciencetalk.com/contact-us/)
 
 ## Related reading on The Science Talk
 
@@ -102,4 +102,4 @@ This piece accompanies [The Knowledge Work Automation Gap in European Research](
 - [EU AI Act, Article 50 (Transparency requirements), Regulation (EU) 2024/1689, EUR-Lex](https://eur-lex.europa.eu/eli/reg/2024/1689/oj): vendor compliance obligations
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

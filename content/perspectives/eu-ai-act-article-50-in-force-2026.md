@@ -3,7 +3,7 @@ title: "EU AI Act Article 50 Is Now in Force: What Changed on 2 August 2026"
 date: 2026-07-31
 lastmod: 2026-08-18
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "Article 50 is now in force. What changed under the EU AI Act on 2 August 2026, what's been delayed, and the grace period small teams keep confusing with their own deadline."
 keywords: ["EU AI Act Article 50 deadline", "AI Act August 2 2026", "what changes AI Act August 2026", "Article 50 enforcement date", "is Article 50 in force", "AI Act high-risk delay vs Article 50"]
 author: "Pranoti Kshirsagar"
@@ -68,4 +68,4 @@ This article is a deadline recap, not a new rulebook. The [full guide](/ai-guide
 See the [EU AI Act checklist for small business](/perspectives/eu-ai-act-checklist-small-business/) to learn how Article 50 fits alongside the other five articles that apply to ordinary teams.
 
 ---
-*Want more guides like this? Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

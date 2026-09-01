@@ -3,7 +3,7 @@ title: "The Science Talk Signs the EU Code of Practice on Transparency of AI-Gen
 date: 2026-08-06
 lastmod: 2026-08-06
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 hero_light: true
 description: "The Science Talk has signed the European Commission's Code of Practice on Transparency of AI-generated Content under Section 2, ahead of the EU AI Act's August 2026 transparency obligations."
 keywords: ["Code of Practice AI transparency", "EU AI Act transparency obligations", "AI-generated content labeling", "AI Act Section 2 deployers", "The Science Talk AI compliance"]

@@ -4,7 +4,7 @@ date: 2026-07-20
 lastmod: 2026-07-19
 slug: "eu-ai-act-compliance-starter-kit-small-teams"
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "A 5-step EU AI Act compliance starter kit for small teams: check scope, rule out prohibited uses, classify risk, meet transparency duties, and handle literacy and records."
 keywords: ["EU AI Act compliance starter kit", "AI Act compliance small teams", "EU AI Act checklist SME", "how to comply with the EU AI Act", "AI Act risk classification", "AI Act transparency Article 50", "EU AI Act deadlines 2027"]
 author: "Pranoti Kshirsagar"
@@ -92,4 +92,4 @@ Knowing which of your systems sit where is the whole point. It turns an intimida
 This guide complements [EU AI Act Article 4: What AI Literacy Requirements Mean for European Research Institutes](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/), a closer look at the literacy duty referenced in Step 5.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

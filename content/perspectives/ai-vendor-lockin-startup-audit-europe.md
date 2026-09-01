@@ -96,7 +96,7 @@ The EU report ends with a stark warning. Without decisive action, Europe risks b
 
 The good news is that these decisions reverse easily early and cost heavily late. A dependency baked into your data model in month three becomes a migration project in month eighteen. **Audit the stack now, while the architecture is still fluid.**
 
-If you work through this for your product or organization, [get in touch →](/contact/)
+If you work through this for your product or organization, [get in touch →](https://thesciencetalk.com/contact-us/)
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

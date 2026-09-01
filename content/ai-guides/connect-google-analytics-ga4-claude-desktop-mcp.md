@@ -259,4 +259,4 @@ The OAuth client JSON file must be a **Desktop app** type. Web app or service ac
 
 ---
 
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

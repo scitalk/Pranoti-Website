@@ -3,7 +3,7 @@ title: "The EU AI Act: The Complete Guide for Small Teams"
 date: 2026-07-24
 lastmod: 2026-07-24
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "Every EU AI Act obligation that applies to small teams and agencies — organised by audience and article, with current 2026–2028 deadlines and links to full guides."
 keywords: ["EU AI Act complete guide", "EU AI Act small teams", "EU AI Act for agencies", "EU AI Act articles explained", "EU AI Act compliance guide 2026", "AI Act checklist SME", "EU AI Act deadlines"]
 author: "Pranoti Kshirsagar"
@@ -109,4 +109,4 @@ The AI Act's small-team obligations come down to five questions, in order. Does 
 Every guide above answers one of those five questions. Start with the [system definition test](/ai-guides/eu-ai-act-ai-system-definition-7-element-test/) first. Then work down the list that applies to you.
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

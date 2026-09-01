@@ -209,4 +209,4 @@ This guide accompanies the [complete GA4 MCP setup guide on The Science Talk](ht
 
 ---
 
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

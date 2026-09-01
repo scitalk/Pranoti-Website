@@ -5,7 +5,7 @@ lastmod: 2026-07-31
 slug: "eu-ai-act-prohibited-practices-article-5"
 draft: false
 description: "EU AI Act Article 5 bans are already live — workplace emotion recognition, dark-pattern design, face-scraping, biometric profiling. Run the checklist."
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 keywords: ["EU AI Act prohibited AI practices", "banned AI Article 5", "EU AI Act Article 5", "HR emotion recognition software ban EU", "employee sentiment analysis AI Act illegal", "dark pattern AI law EU", "biometric categorisation AI Act", "AI Act compliance checklist SME"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
@@ -106,4 +106,4 @@ This pairs with the rest of the small-team AI Act cluster. [Article 4](/perspect
 See also [EU AI Act Article 4: What AI Literacy Requirements Mean for European Research Institutes](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/) on The Science Talk, useful background on how the Act's obligations reach ordinary organizations, not just AI developers.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*
