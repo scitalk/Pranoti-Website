@@ -20,7 +20,7 @@ faq:
   - question: "Who is eligible for the Claude Team plan for scientists?"
     answer: "Principal investigators or equivalent at accredited universities and nonprofit research institutes. You apply, confirm your institutional affiliation, and describe your research. Anthropic reviews most applications in five to seven business days."
   - question: "Where is my research data stored if I use Claude?"
-    answer: "Every conversation, uploaded file, and unpublished dataset goes to Anthropic servers in the United States, and a copy stays there. Anthropic does not train on this data, but no setting changes where it is stored. The only way to keep data on your campus is to run models locally."
+    answer: "Anthropic states that commercial data is stored in the United States, and that traffic may be routed through data centres in the US, Europe, Asia or Australia. On the Team plan your institution is the data controller and Anthropic is only the data processor, under a Data Processing Addendum that includes EU Standard Contractual Clauses. Anthropic does not train on Team data by default. The Team plan has no EU data-residency option: US-only processing and custom retention windows are Enterprise-only features. For data that must stay in the EU, access Claude through AWS Bedrock or Google Vertex AI in a European region."
   - question: "Should European researchers use the Claude scientist plan?"
     answer: "Yes, it is worth trying for a free year. Keep unpublished work, grant drafts, and proprietary data out of Claude, and ask your IT administrator where uploaded data goes before you use it for institutional work."
 sidebar_links:
@@ -38,7 +38,7 @@ sidebar_links:
 > - The plan for scientists is the current Team tier with a promotional year added. It is not a new product for research.
 > - Anthropic wants principal investigators first. Their use becomes the argument for an institutional contract later.
 > - When you apply, you give Anthropic a qualified lead and a demand signal by field, even if you never pay.
-> - Every file you upload goes to Anthropic servers in the United States. No setting changes this.
+> - Anthropic stores commercial data in the United States. The Team plan has no EU data-residency option.
 > - The plan is worth it. Keep unpublished work out of Claude, and ask your IT administrator first.
 
 Last week Anthropic announced a [Claude Team plan for scientists](https://claude.com/programs/team-plan-for-scientists). It gives 10,000 seats. Standard seats are free. Premium seats cost 15 euros a month for the first 12 months, against a normal price of about 90 euros. You apply, confirm your institutional affiliation, and describe your research. Anthropic reviews most applications in five to seven business days.
@@ -67,11 +67,11 @@ I will say it plainly. This is a promotion campaign. The value to Anthropic is m
 
 ## Claude research data privacy in Europe
 
-Anthropic states that Claude does not train on your conversations, uploaded files, or research data. It also states that admins can set data retention rules. Both facts are true. Neither is the main point. The major AI tools stopped training on paid-tier data some time ago.
+On the Team plan your institution is the [data controller and Anthropic is only the data processor](https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team), under a [Data Processing Addendum](https://privacy.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa) that includes EU Standard Contractual Clauses. Anthropic [does not train its models on Team and Enterprise data by default](https://support.claude.com/en/articles/16634237); the exception is a chat where someone submits thumbs up or down feedback, which a Team owner can switch off. Configurable data-retention windows are an [Enterprise feature](https://privacy.claude.com/en/articles/10440198-configure-custom-data-retention-controls-for-enterprise-plans), not a Team one. These facts are true. None of them is the main point. The major AI tools stopped training on paid-tier data some time ago.
 
-The real issue for Europe is location. Every conversation, every uploaded file, and every unpublished dataset that you put into Claude is on Anthropic servers in the United States. A copy stays there. No setting changes this, because Anthropic sells models, not cloud infrastructure. To keep your data on your own campus, you must run the models locally on institutional servers.
+The real issue for Europe is location. Anthropic states that [commercial data is stored in the United States](https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers), and that traffic may be routed through data centres in the US, Europe, Asia or Australia. Anthropic groups the Team plan with Enterprise and the API as a commercial plan: its [commercial data policies](https://privacy.claude.com/en/collections/10663361-commercial-customers) are labelled "API, Console, Team & Enterprise plans," and the [server-location and retention rules](https://privacy.claude.com/en/collections/10672411-data-handling-retention) sit under that same heading. The Team plan has no data-residency setting. US-only processing is an Enterprise option, and neither tier lets you choose EU storage. You cannot run Claude on your own servers either, because Anthropic does not release its models for local deployment.
 
-For data residency you must use Microsoft, Google, or AWS, and the cost increases with the level of protection you want. This is the same sovereignty question that the [EU CADA framework](/perspectives/eu-cada-cloud-sovereignty-tiers/) now tries to formalize. Most European research institutions already run Microsoft 365 or Google Workspace. They already hold the contracts and already know how to do local data processing. Those routes are further ahead.
+For EU data residency you must access Claude through AWS Bedrock or Google Vertex AI in a European region, and the cost increases with the level of protection you want. This is the same sovereignty question that the [EU CADA framework](/perspectives/eu-cada-cloud-sovereignty-tiers/) now tries to formalize. Most European research institutions already run Microsoft 365 or Google Workspace. They already hold the contracts and already know how to do local data processing. Those routes are further ahead.
 
 ## Three things to do if you weigh this
 
@@ -97,7 +97,7 @@ Principal investigators or equivalent at accredited universities and nonprofit r
 
 ### Where is my research data stored if I use Claude?
 
-Every conversation, uploaded file, and unpublished dataset goes to Anthropic servers in the United States, and a copy stays there. Anthropic does not train on this data, but no setting changes where it is stored. The only way to keep data on your campus is to run models locally.
+Anthropic states that [commercial data is stored in the United States](https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers), and that traffic may be routed through data centres in the US, Europe, Asia or Australia. On the Team plan your institution is the [data controller and Anthropic is only the data processor](https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team), under a [Data Processing Addendum](https://privacy.claude.com/en/articles/7996862-how-do-i-view-and-sign-your-data-processing-addendum-dpa) that includes EU Standard Contractual Clauses. Anthropic [does not train on Team data by default](https://support.claude.com/en/articles/16634237). The Team plan has no EU data-residency option: US-only processing and [custom retention windows](https://privacy.claude.com/en/articles/10440198-configure-custom-data-retention-controls-for-enterprise-plans) are Enterprise-only features. For data that must stay in the EU, access Claude through AWS Bedrock or Google Vertex AI in a European region.
 
 ### Should European researchers use the Claude scientist plan?
 
