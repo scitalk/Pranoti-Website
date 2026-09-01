@@ -3,7 +3,7 @@ title: "EU AI Act Article 25: When You Become the AI 'Provider'"
 date: 2026-07-21
 lastmod: 2026-07-19
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "Under Article 25 of the EU AI Act, agencies can become the legal 'provider' of an AI system — and inherit every obligation. Here's how the flip happens."
 keywords: ["EU AI Act Article 25 provider obligations", "when does a deployer become a provider", "substantial modification AI Act", "AI value chain responsibilities", "accidental AI provider agency", "EU AI Act compliance agencies", "Article 25 high-risk AI system"]
 author: "Pranoti Kshirsagar"
@@ -82,11 +82,11 @@ None of this requires a legal department. It requires you to read your own work 
 
 Article 25 is not an edge case buried in the Act for hyperscalers to worry about. It describes with precision what agencies and small teams do every single week: brand things, adapt things, repurpose things. The risk is not that the law is unreasonable. The flip from user to provider happens silently, through ordinary work, and you only discover it when someone asks for the technical file you never had.
 
-If you integrate AI tools into client work and you are not sure which side of Article 25 you sit on, that uncertainty is itself the finding. [Get in touch →](/contact/) and we can map it before it maps you.
+If you integrate AI tools into client work and you are not sure which side of Article 25 you sit on, that uncertainty is itself the finding. [Get in touch →](https://thesciencetalk.com/contact-us/) and we can map it before it maps you.
 
 ## Related reading on The Science Talk
 
 This piece pairs with the [Article 4 AI-literacy explainer on The Science Talk](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/), which gives useful background on how the Act's obligations reach ordinary organizations, not just AI developers.
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

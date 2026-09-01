@@ -74,4 +74,4 @@ What island are you building?
 This piece accompanies the [full story of how RealScientists Nano made the move from Twitter to Bluesky](https://thesciencetalk.com/news/realscientists-nano-is-now-under-the-microscope-on-bluesky/). It covers the practical and strategic reasons behind the transition, and what the transition means for the Under the Microscope community.
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

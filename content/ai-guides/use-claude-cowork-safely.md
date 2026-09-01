@@ -142,4 +142,4 @@ Good starting tasks for Cowork in Manually Approve mode:
 For a broader view of securing your Claude Desktop setup, see the [MCP Security Checklist for Claude Desktop Users](/ai-guides/mcp-security-checklist-claude-desktop/).
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

@@ -3,7 +3,7 @@ title: "The AI Act Omnibus Delay: Relief or a Trap for Small Teams?"
 date: 2026-07-24
 lastmod: 2026-08-02
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "The EU AI Act's high-risk rules were pushed to 2027 and 2028 by the Digital Omnibus. Here's why teams that stop preparing now are making a mistake."
 keywords: ["AI Act Omnibus delay", "EU AI Act high-risk rules 2027", "Digital Omnibus on AI", "AI Act deadline postponed", "AI Act simplification 2026", "AI Act compliance timeline"]
 author: "Pranoti Kshirsagar"
@@ -72,11 +72,11 @@ The delay is a genuine gift if you use it to build rather than to relax. Do the 
 
 The Digital Omnibus bought small teams real time. It did not buy permission to stop thinking about the Act until the new dates arrive. Treat 2027 and 2028 as the deadline for being *audited*. Treat the months between now and then as the only realistically calm window you will get to build toward it properly.
 
-If you want to work out what the Omnibus changes mean for your specific systems, do that mapping before the calm window closes. [Get in touch →](/contact/)
+If you want to work out what the Omnibus changes mean for your specific systems, do that mapping before the calm window closes. [Get in touch →](https://thesciencetalk.com/contact-us/)
 
 ## Related reading on The Science Talk
 
 This piece pairs with [ERC Reverses Resubmission Rule Changes After Community Feedback](https://thesciencetalk.com/services/grants-fundraising/erc-reverses-resubmission-rule-changes-after-community-feedback/) for a sense of how EU processes revise rules mid-stream. It also pairs with the EPRS's own tracked timeline for the Act, [AI Act Implementation Timeline (At a Glance)](https://www.europarl.europa.eu/RegData/etudes/ATAG/2025/772906/EPRS_ATA(2025)772906_EN.pdf), for the pre-Omnibus statutory baseline this piece updates.
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

@@ -4,7 +4,7 @@ date: 2026-07-22
 lastmod: 2026-08-18
 slug: "gpai-code-of-practice-provider-vs-deployer"
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "Does the GPAI Code of Practice apply to you? It binds general-purpose AI model providers, not deployers — here's the test and what to ask your AI vendor."
 keywords: ["GPAI Code of Practice apply to me", "GPAI provider vs deployer", "am I a GPAI provider EU AI Act", "GPAI Code of Practice", "AI Act Article 53", "AI Act Article 55 systemic risk", "GPAI vendor due diligence"]
 author: "Pranoti Kshirsagar"
@@ -104,4 +104,4 @@ You can now correctly classify your organization as a GPAI provider or downstrea
 See also [EU AI Act Article 4: What AI Literacy Requirements Mean for European Research Institutes](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/) on The Science Talk. It covers the parallel Article 4 AI-literacy provision, which reaches research institutes whether they are a GPAI provider or deployer. Note that the July 2026 Digital Omnibus simplified the company-level requirement after that piece was written.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

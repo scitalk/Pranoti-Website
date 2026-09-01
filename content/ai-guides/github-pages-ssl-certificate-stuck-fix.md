@@ -141,4 +141,4 @@ This result is not a sign anything is broken. That endpoint requires an authenti
 You can now diagnose whether a GitHub Pages HTTPS failure is a DNS problem or a stuck retry queue. You can force a fix in minutes rather than wait out GitHub's stated 24-hour window. The same delete-and-recreate approach applies any time you must re-provision a working custom domain's certificate, for example after a domain transfer, a DNS provider migration, or a similar disruption to the record GitHub last validated against.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

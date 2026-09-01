@@ -59,7 +59,7 @@ None of this requires spending beyond what the Act already requires. It requires
 
 Regulation as a feature is not a slogan for avoiding the real cost of compliance. It is a bet that in a market where AI-content trust is scarce, the teams that turn mandatory disclosure into a genuinely clear signal will earn more belief than the teams that treat it as fine print. That belief is worth more than the paperwork cost it took to earn.
 
-If you are weighing how to present your AI-integrated work transparently without turning it into a liability disclaimer, get that balance right early. [Get in touch →](/contact/)
+If you are weighing how to present your AI-integrated work transparently without turning it into a liability disclaimer, get that balance right early. [Get in touch →](https://thesciencetalk.com/contact-us/)
 
 ## If you found this useful
 
@@ -68,4 +68,4 @@ If you are weighing how to present your AI-integrated work transparently without
 - [GPAI Code of Practice: Provider vs. Deployer, Explained](/ai-guides/gpai-code-of-practice-provider-vs-deployer/) — where documentation duties originate for model providers
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

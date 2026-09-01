@@ -4,7 +4,7 @@ date: 2026-07-17
 lastmod: 2026-08-02
 slug: "eu-ai-act-ai-system-register-template"
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "Build an EU AI Act system register in 30 minutes, and find out whether you owe an official Article 71 EU database filing — free spreadsheet template included."
 keywords: ["AI system register EU AI Act", "AI inventory template SME", "Article 71 EU AI database", "shadow AI inventory", "provider vs deployer register", "EU AI Act compliance template", "AI Act Article 49 registration"]
 author: "Pranoti Kshirsagar"
@@ -96,4 +96,4 @@ You now have full visibility into your organization's AI footprint, tracked in o
 Revisit the register every quarter. Treat the Article 71 self-test as a five-minute check each time rather than a one-off decision.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

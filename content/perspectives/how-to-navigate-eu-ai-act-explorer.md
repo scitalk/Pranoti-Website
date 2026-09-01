@@ -2,7 +2,7 @@
 title: "How to Navigate the EU AI Act Explorer"
 date: 2026-08-17
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "A guide to the EU AI Act Explorer: how Articles, Recitals, and Annexes connect, using Article 50's transparency rules as the example."
 keywords: ["EU AI Act Explorer", "how to navigate EU AI Act Explorer", "EU AI Act articles vs recitals", "EU AI Act annexes explained", "Article 50 EU AI Act", "EU AI Act Regulation 2024/1689"]
 author: "Pranoti Kshirsagar"
@@ -21,7 +21,7 @@ sidebar_links:
 
 The EU AI Act can feel like one more thing to track. New updates arrive. You read long documents. You search the internet for answers. Compliance can feel like this:
 
-![Compliance confusion when tracking EU AI Act updates](/images/perspectives/eu-ai-act-confused-ryan-gosling.gif)
+![Compliance confusion when tracking EU AI Act updates](/images/ai-guides_perspectives/eu-ai-act-confused-ryan-gosling.gif)
 
 This article helps you through that process. The most important resource is the [EU AI Act Explorer](https://ai-act-service-desk.ec.europa.eu/en/ai-act-explorer), built by the European Commission. This article uses Article 50 as the example. Article 50 became enforceable on 2 August 2026. See [Article 50 Is Now in Force](/perspectives/eu-ai-act-article-50-in-force-2026/) for what that date changed.
 
@@ -33,7 +33,7 @@ Regulation (EU) 2024/1689, the EU AI Act, is not one document. It has three part
 - **Recitals (the "why"):** the numbered paragraphs before the Articles. Recitals explain the reason for an Article and give context for it. A Recital does not create an obligation by itself.
 - **Annexes (the "how"):** technical detail. Annexes list classification criteria, documentation items, and data fields. An Article points to an Annex when the detail is too long for the Article itself.
 
-![EU AI Act Explorer: what, why, how](/images/perspectives/eu-ai-act-explorer-what-why-how.jpg)
+![EU AI Act Explorer: what, why, how](/images/ai-guides_perspectives/eu-ai-act-explorer-what-why-how.jpg)
 
 Not every Article has a matching Annex. A link between an Article and an Annex exists only when the Article names that Annex. Always check the Article text. Do not assume a link exists.
 
@@ -83,4 +83,4 @@ The general rule: an Annex attaches only to the Article that names it. Article 5
 For the operational changes when Article 50 became enforceable on 2 August 2026, see [Article 50 Is Now in Force](/perspectives/eu-ai-act-article-50-in-force-2026/). For disclosure placement templates and the EU's official AI-content icon set, see the [full disclosure guide](/ai-guides/ai-generated-content-disclosure-eu-ai-act/).
 
 ---
-*Want more guides like this? Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

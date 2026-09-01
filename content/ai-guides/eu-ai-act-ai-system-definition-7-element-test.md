@@ -4,7 +4,7 @@ date: 2026-07-19
 lastmod: 2026-08-18
 slug: "eu-ai-act-ai-system-definition-7-element-test"
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "The European Commission's official 7-element test for what counts as an 'AI system' under EU AI Act Article 3(1) — worked examples and a self-assessment checklist."
 keywords: ["EU AI Act AI system definition", "Article 3(1) AI Act", "AI system definition test", "does the EU AI Act apply to my tool", "EU AI Act scope research tools", "AI Act applicability checklist", "what counts as an AI system EU"]
 author: "Pranoti Kshirsagar"
@@ -146,4 +146,4 @@ This checklist resolves three situations quickly:
 - [EU AI Act Article 4: What AI Literacy Requirements Mean for European Research Institutes](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/): covers the parallel Article 4 AI-literacy provision, which the July 2026 Digital Omnibus simplified at company level. Note that the piece describes the original, stricter wording.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

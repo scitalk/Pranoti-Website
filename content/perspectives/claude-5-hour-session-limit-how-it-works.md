@@ -95,4 +95,4 @@ For researchers, consultants, and knowledge workers who rely on Claude as a prim
 The system is more predictable than it appears. Once you know the rolling window, the peak-hour window, and the conversation-length effect, you can plan your AI-assisted work the same way you would plan any capacity-constrained resource. Session by session, that planning compounds.
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

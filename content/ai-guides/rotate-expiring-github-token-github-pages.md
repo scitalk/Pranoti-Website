@@ -167,4 +167,4 @@ You have a working replacement token, a verified deploy, and a cleanly revoked o
 Turn it into a routine. Rotate a week before expiry, test with an empty commit, then revoke. Set the reminder once, and a task that used to feel risky becomes a two-minute habit.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

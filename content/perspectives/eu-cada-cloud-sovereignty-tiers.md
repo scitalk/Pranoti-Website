@@ -78,7 +78,7 @@ None of these steps needs a formal assessment process to start. An inventory map
 
 CADA's sovereignty tier framework is new. The market problem it addresses has built up for a decade. Three US hyperscalers account for more than 70% of EU cloud infrastructure, and the EU's own provider share has not recovered in four years. The four assurance levels do not restrict trade. They form a classification system designed to make cloud sovereignty a measurable, procurable, and eventually enforceable standard. Organisations that start mapping their position now will enter the formal assessment process with a documented baseline rather than a blank sheet.
 
-If you are working through cloud strategy or procurement decisions at your organisation, [get in touch →](/contact/)
+If you are working through cloud strategy or procurement decisions at your organisation, [get in touch →](https://thesciencetalk.com/contact-us/)
 
 ## If you found this useful
 
@@ -87,4 +87,4 @@ If you are working through cloud strategy or procurement decisions at your organ
 - ["The Infrastructure Gap Slowing Claude Adoption in European Research"](/perspectives/anthropic-ai-adoption-european-research/) — how procurement barriers and infrastructure constraints shape AI adoption decisions across European organisations
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

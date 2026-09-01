@@ -4,7 +4,7 @@ date: 2026-05-15
 lastmod: 2026-07-13
 slug: "ai-generated-content-disclosure-eu-ai-act"
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "AI-generated content disclosures become mandatory under EU AI Act Article 50 from August 2026. This guide covers where, when, and how to add compliant labels to your content — including the EU's official AI-content icons."
 keywords: ["AI-generated content disclosure EU AI Act", "Article 50 AI Act transparency", "AI disclaimer blog post", "EU AI Act content creators", "AI Act compliance 2026", "EU AI Act freelancer", "AI content label requirement", "EU AI content icon", "AI generated content label icon"]
 author: "Pranoti Kshirsagar"
@@ -148,4 +148,4 @@ Take three actions now. Identify which of your regular content types fall within
 This guide accompanies the [EU AI Act Article 4 explainer on The Science Talk](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/), which covers the AI literacy obligations that research institutes must meet. It gives useful context for science communicators who work in institutional settings.
 
 ---
-*Want more guides like this? Browse all [AI guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

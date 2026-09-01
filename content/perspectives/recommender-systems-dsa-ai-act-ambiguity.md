@@ -3,7 +3,7 @@ title: "Recommender Systems: Even EU Regulators Don't Agree Which Law Applies"
 date: 2026-07-26
 lastmod: 2026-07-19
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "The European Commission's own DSA review admits recommender systems sit ambiguously between the DSA and the AI Act. Here's what that means for teams building one."
 keywords: ["recommender systems DSA AI Act", "which law applies recommender system EU", "DSA AI Act overlap", "recommender system compliance Europe", "algorithmic recommender EU regulation", "DSA Article 33 review"]
 author: "Pranoti Kshirsagar"
@@ -64,7 +64,7 @@ The Commission's own report is, in a sense, a gift here. It is an official admis
 
 Outsiders write most regulatory-uncertainty pieces by speculating about gaps. This piece is different. The regulator that wrote both laws names the gap. You may build a recommender system and assume someone has already settled which EU law governs it cleanly. The Commission's own words say otherwise. Plan accordingly.
 
-If you want a second opinion on where your recommender system sits across the DSA and the AI Act, that is exactly the kind of dual-framework mapping worth doing before an audit forces the question. [Get in touch →](/contact/)
+If you want a second opinion on where your recommender system sits across the DSA and the AI Act, that is exactly the kind of dual-framework mapping worth doing before an audit forces the question. [Get in touch →](https://thesciencetalk.com/contact-us/)
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

@@ -3,7 +3,7 @@ title: "EU AI Act Article 4: What Creator Agencies and Small Teams Owe"
 date: 2026-07-28
 lastmod: 2026-08-18
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "The Digital Omnibus simplified Article 4's AI literacy rule on 27 July 2026. What creator agencies and small teams actually owe now, and why the exposure never came from Article 4 anyway."
 keywords: ["EU AI Act Article 4", "AI literacy obligation", "creator agency compliance", "EU AI Act small teams", "freelancer AI Act", "AI Act deployer obligations", "EU AI Act SME"]
 author: "Pranoti Kshirsagar"
@@ -100,11 +100,11 @@ None of this requires new headcount or a formal AI governance function. Article 
 
 ---
 
-If you are building this for your team, [get in touch →](/contact/)
+If you are building this for your team, [get in touch →](https://thesciencetalk.com/contact-us/)
 
 ## Related reading on The Science Talk
 
 This piece pairs with [EU AI Act Article 4: What AI Literacy Requirements Mean for European Research Institutes](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/). It covers the same obligation, applied to a different kind of organisation, with more detail on documentation practices that transfer directly to a small agency.
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

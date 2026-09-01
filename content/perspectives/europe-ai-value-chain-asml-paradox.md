@@ -115,7 +115,7 @@ None of these recover the hardware gap. But they show where European organizatio
 
 The EC report is refreshingly honest about where Europe stands. The data is not ambiguous. It remains to be seen whether the investment commitments will match the structural reality, or whether Europe will continue to lead in regulation while it falls further behind in every layer of the stack that regulation aims to govern.
 
-If your organization is navigating this landscape, building an AI strategy while it manages EU regulatory obligations and non-EU provider dependency, [get in touch](/contact/).
+If your organization is navigating this landscape, building an AI strategy while it manages EU regulatory obligations and non-EU provider dependency, [get in touch](https://thesciencetalk.com/contact-us/).
 
 ## If you found this useful
 
@@ -125,4 +125,4 @@ If your organization is navigating this landscape, building an AI strategy while
 
 ---
 
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

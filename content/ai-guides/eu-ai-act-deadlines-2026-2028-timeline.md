@@ -4,7 +4,7 @@ date: 2026-07-25
 lastmod: 2026-08-18
 slug: "eu-ai-act-deadlines-2026-2028-timeline"
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "The EU AI Act's high-risk deadlines were pushed back in 2026 — here is the current, officially confirmed timeline through 2028 and which date applies to you."
 keywords: ["EU AI Act deadlines 2026 2028", "EU AI Act timeline delayed", "AI Act high-risk deadline December 2027", "EU AI Act simplification 2026", "EU AI Act compliance calendar", "AI Act deadline pushed back", "when does EU AI Act high-risk apply"]
 author: "Pranoti Kshirsagar"
@@ -91,4 +91,4 @@ You can now state, with a source you can point to, which AI Act deadline applies
 This guide accompanies [EU AI Act Article 4: What AI Literacy Requirements Mean for European Research Institutes](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/) on The Science Talk. Note that the Article 4 AI-literacy duty (applicable since 2 February 2025) *was* changed by the 2026 simplification package covered here: the Omnibus simplified the company-level requirement and shifted the leading role to the Commission and Member States.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

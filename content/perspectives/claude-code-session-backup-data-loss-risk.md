@@ -67,4 +67,4 @@ I wish that I had set up this system on day one, not after I nearly lost data th
 This piece accompanies the [full Claude Code context window breakdown on The Science Talk](https://thesciencetalk.com/ai-academy/claude-code-context-window-explained/) — useful background on how Claude Code manages what it keeps in view during a session, which shapes why local session data matters so much in the first place.
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

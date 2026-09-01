@@ -3,7 +3,7 @@ title: "The EU AI Act: Everything Digital Creators Need to Know"
 date: 2026-07-15
 lastmod: 2026-07-15
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "The EU AI Act isn't just a labeling rule. Here's what digital content creators need to know about risk tiers, red lines, and Article 50 before August 2026."
 keywords: ["EU AI Act content creators", "Article 50 AI Act", "AI Act risk tiers", "AI-generated content disclosure", "EU AI Act deadline 2026", "AI Act digital creators", "Article 5 AI Act manipulative techniques"]
 author: "Pranoti Kshirsagar"
@@ -91,7 +91,7 @@ Three practices separate creators who will be fine in August from creators who w
 
 ---
 
-If you are mapping your own content workflow against this, [get in touch →](/contact/)
+If you are mapping your own content workflow against this, [get in touch →](https://thesciencetalk.com/contact-us/)
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

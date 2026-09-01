@@ -4,7 +4,7 @@ date: 2026-07-18
 lastmod: 2026-07-18
 slug: "eu-ai-act-high-risk-hiring-ai-annex-iii-test"
 draft: false
-featured_image: "/images/ai-guides/eu-ai-act.webp"
+featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 description: "Run this 3-step EU AI Act test to check if your recruitment or HR software counts as high-risk hiring AI under Annex III, before 2 December 2027."
 keywords: ["EU AI Act high-risk hiring AI", "Annex III employment", "AI Act recruitment compliance", "high-risk AI recruitment tool test", "Article 6 AI Act classification", "AI Act HR compliance small agency", "AI hiring tool compliance 2027"]
 author: "Pranoti Kshirsagar"
@@ -139,4 +139,4 @@ Yes. Buying or licensing a third-party recruitment tool makes you a deployer, no
 This guide accompanies the [EU AI Act Article 4 post on The Science Talk](https://thesciencetalk.com/news/eu-ai-act-article-4-ai-literacy-research-institutes/), background on the AI literacy duty that applies to anyone who uses these tools, including HR staff and recruiters.
 
 ---
-*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](/contact/)*
+*Want more guides like this? Browse all [AI Guides](/ai-guides/) or [get in touch →](https://thesciencetalk.com/contact-us/)*

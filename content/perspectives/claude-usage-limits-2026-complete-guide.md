@@ -111,4 +111,4 @@ The mechanics are more predictable than they first appear: a rolling window, a s
 For the full mechanics deep-dive, including the rolling-window edge cases, see [Claude's 5-Hour Session Limit: How It Actually Works](/perspectives/claude-5-hour-session-limit-how-it-works/). For tactics that stretch any plan further, see [7 Strategic Tips for AI Power Users](/perspectives/claude-5-hour-limit-strategic-tips/).
 
 ---
-*Browse all [Perspectives](/perspectives/) or [get in touch →](/contact/)*
+*Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*
