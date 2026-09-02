@@ -48,84 +48,141 @@
 
 <section class="pod-page">
 
+  {{/* Latest episode: "Engineering Living Materials for Sustainable Buildings with Anna Sandak".
+       Update this Spotify episode id when a newer episode is published. */}}
+  {{ $embedId := "6LR4teThqBiPYjiuxCfPpO" }}
+
   <header class="pod-hero">
     <div class="pod-hero-inner">
-      <span class="pod-hero-tag">Under the Microscope Podcast</span>
-      <h1>Under the Microscope: A Materials Science and Nanoscience Podcast — Every Episode in One Place</h1>
-      <p class="pod-hero-sub">
-        <strong>Under the Microscope</strong> is a materials science and nanoscience podcast hosted by
-        <a href="/about/">Dr. Pranoti Kshirsagar</a>, featuring researchers from universities and research institutes
-        across the world talking about their work, their careers, and the science behind the headlines.
-        Below is the full catalogue &mdash; {{ $totalEpisodes }} published episodes, short clips and specials across
-        {{ len $data.seasons }} seasons, recorded between 2019 and 2026. Search by guest name, university, or topic,
-        or browse season-by-season.
-      </p>
-      <div class="pod-hero-ctas">
-        <a href="https://open.spotify.com/show/" class="pod-hero-btn pod-hero-btn--solid" target="_blank" rel="noopener">Listen on Spotify →</a>
-        <a href="/portfolio/" class="pod-hero-btn pod-hero-btn--outline">See my portfolio</a>
+
+      <div class="pod-hero-art">
+        <img src="/images/podcasts/UTM_podcast-art_2026-Sept.png" alt="Under the Microscope podcast cover art" width="420" height="420" loading="eager">
       </div>
+
+      <div class="pod-hero-text">
+        <h1>Under the Microscope podcast</h1>
+        <p class="pod-hero-sub">
+          Conversations with researchers working at the micron scale and below, hosted by
+          <a href="/about/">Dr. Pranoti Kshirsagar</a>.
+        </p>
+
+        <div class="pod-hero-platforms" role="list" aria-label="Listen on">
+          <a role="listitem" href="https://open.spotify.com/show/0joF8aDQP7VavEgsRdnCIA" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.59 14.44a.75.75 0 0 1-1.03.25c-2.82-1.72-6.37-2.11-10.56-1.16a.75.75 0 1 1-.33-1.46c4.58-1.04 8.52-.59 11.67 1.34.36.22.47.68.25 1.03Zm1.22-2.72a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.8c4.36-1.32 9.78-.68 13.49 1.6.44.27.58.85.31 1.29Zm.11-2.83C14.17 8.78 7.9 8.57 4.2 9.69a1.12 1.12 0 1 1-.65-2.15c4.25-1.29 11.17-1.04 15.57 1.57a1.12 1.12 0 1 1-1.15 1.93Z"/></svg>
+          </a>
+          <a role="listitem" href="https://podcasts.apple.com/us/podcast/under-the-microscope/id1642471340" target="_blank" rel="noopener" aria-label="Apple Podcasts" title="Apple Podcasts">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 0 0-5 18.66v-2.45a7.75 7.75 0 1 1 10 0v2.45A10 10 0 0 0 12 2Zm0 4a6 6 0 0 0-3 11.19v-2.7a3.75 3.75 0 1 1 6 0v2.7A6 6 0 0 0 12 6Zm0 4.5a2.25 2.25 0 0 0-1.13 4.2c.2.12.32.34.3.57l-.42 4.36A1.26 1.26 0 0 0 12 25a1.26 1.26 0 0 0 1.27-1.37l-.42-4.36c-.02-.23.1-.45.3-.57A2.25 2.25 0 0 0 12 10.5Z"/></svg>
+          </a>
+          <a role="listitem" href="https://music.amazon.de/podcasts/9251a03b-f804-447d-bbf0-cbbdb94edfd7/under-the-microscope" target="_blank" rel="noopener" aria-label="Amazon Music" title="Amazon Music">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 15h2V7H3v8Zm4 3h2V4H7v14Zm4-2h2V9h-2v7Zm4 3h2V6h-2v13Zm4-4h2v-5h-2v5Z"/></svg>
+          </a>
+          <a role="listitem" href="https://www.youtube.com/playlist?list=PLqPLZC_4JkxRVwmEmudyWmkhdgGeeP9lb" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M23 12s0-3.2-.41-4.74a2.5 2.5 0 0 0-1.77-1.77C19.28 5.08 12 5.08 12 5.08s-7.28 0-8.82.41a2.5 2.5 0 0 0-1.77 1.77C1 8.8 1 12 1 12s0 3.2.41 4.74a2.5 2.5 0 0 0 1.77 1.77c1.54.41 8.82.41 8.82.41s7.28 0 8.82-.41a2.5 2.5 0 0 0 1.77-1.77C23 15.2 23 12 23 12ZM9.75 15.02V8.98L15.5 12l-5.75 3.02Z"/></svg>
+          </a>
+          <a role="listitem" href="https://www.youtube.com/playlist?list=PLqPLZC_4JkxQk5hQImJ4D2KoGvzwh3b5r" target="_blank" rel="noopener" aria-label="YouTube Music" title="YouTube Music">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm-2 4.2v7.6L16.5 12 10 8.2Z"/></svg>
+          </a>
+          <a role="listitem" href="https://goodpods.com/podcasts/under-the-microscope-357028" target="_blank" rel="noopener" aria-label="Goodpods" title="Goodpods">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 3a7 7 0 0 0-7 7v4a3 3 0 0 0 3 3h1v-8H7v-3a5 5 0 0 1 10 0v3h-2v8h1a3 3 0 0 0 3-3v-4a7 7 0 0 0-7-7Z"/></svg>
+          </a>
+          <a role="listitem" href="https://castbox.fm/channel/id5084290?utm_source=podcaster&amp;utm_medium=dlink&amp;utm_campaign=c_5084290&amp;utm_content=Under%20the%20Microscope-CastBox_FM&amp;country=us" target="_blank" rel="noopener" aria-label="Castbox" title="Castbox">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.3 6.5 3.6-6.5 3.6-6.5-3.6L12 4.3Zm-1 13.4-4.5-2.5v-4.6l4.5 2.5v4.6Z"/></svg>
+          </a>
+          <a role="listitem" href="https://anchor.fm/s/7d43fb84/podcast/rss" target="_blank" rel="noopener" aria-label="RSS feed" title="RSS feed">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6.18 15.64a2.18 2.18 0 1 1 0 4.36 2.18 2.18 0 0 1 0-4.36ZM4 4.44v3.06a12.5 12.5 0 0 1 12.5 12.5h3.06A15.56 15.56 0 0 0 4 4.44Zm0 5.83v3.06a6.67 6.67 0 0 1 6.67 6.67h3.06A9.73 9.73 0 0 0 4 10.27Z"/></svg>
+          </a>
+        </div>
+
+        {{ if $embedId }}
+        <div class="pod-hero-player">
+          <iframe title="Latest episode" src="https://open.spotify.com/embed/episode/{{ $embedId }}?theme=0"
+            width="100%" height="152" frameborder="0" loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        {{ end }}
+
+        <p class="pod-hero-meta">{{ $totalEpisodes }} episodes &middot; {{ len $data.seasons }} seasons &middot; 2019&ndash;2026</p>
+      </div>
+
     </div>
   </header>
 
   <section class="pod-host">
     <div class="pod-host-inner">
-      <h2>About the host</h2>
-      <p>I'm a materials scientist by training — PhD from Tübingen, work at the interface of materials science and life sciences — and when I started my undergrad in metallurgical and materials engineering, most people I told thought I meant meteorology. Physics has <em>Cosmos</em>. Biology has Attenborough. Materials and nanoscience — the field behind almost everything else — had almost no public voice. So in 2019, I built one.</p>
-      <p>The entry requirement for a guest isn't a materials-science degree — it's that their research happens at the micron scale or below, which has brought biochemists, physicists, and biologists onto the show alongside materials scientists. And the format is deliberately human-first: I ask about the person behind the research, not just the research, because that's what actually makes science land with people.</p>
-      <p>I run the whole thing myself — concept, questions, editorial line, even on sponsored episodes — self-funded since day one. 226 episodes and 132 guests in, listener feedback changed the format once already: in 2022 I added video, because people wanted to see the scientists they were hearing from.</p>
+      <h2>About Under the Microscope</h2>
+      <p><strong>Under the Microscope is the flagship podcast of The Science Talk</strong>, bringing the people and ideas shaping materials science and nanoscience to a wider audience.</p>
+      <p>Produced and hosted by <strong>Dr. Pranoti Kshirsagar</strong>, with a PhD materials and nanoscience and over a 15 years of experience in research and innovation, the podcast puts scientists&mdash;not just their discoveries&mdash;at the centre of the conversation.</p>
+      <p>Each episode features a leading scientist working in materials science or nanoscience. Through in-depth, accessible conversations, we explore their research, groundbreaking discoveries, the challenges behind their work, and the stories that shaped their scientific journey.</p>
+      <p>The goal is simple: <strong>to make exceptional science visible, understandable, and connected to the people behind it.</strong></p>
+      <p><em>Under the Microscope</em> is independently produced and self-funded by Dr. Pranoti Kshirsagar.</p>
     </div>
   </section>
 
-  <div class="pod-toolbar">
-    <div class="pod-toolbar-inner">
-      <input type="text" id="pod-search" placeholder="Search by guest name, university, or topic…" aria-label="Search podcast episodes">
-      <span id="pod-search-count" class="pod-search-count"></span>
-    </div>
-    <nav class="pod-season-jump" aria-label="Jump to season">
-      {{ range $data.seasons }}
-      <a href="#season-{{ .season_num }}">{{ .season }} ({{ .year_label }})</a>
-      {{ end }}
-    </nav>
-  </div>
+  {{/* Card data comes from data/digital_content_hub.json — title, guest_name, affiliation, image_src. */}}
+  {{ $dch := index .Site.Data "digital_content_hub" }}
+  {{ $utm := slice }}
+  {{ $seen := slice }}
+  {{ range $dch.years }}{{ range .episodes }}
+    {{ if and (eq .series "Under the Microscope") .guest_name (ne .guest_name "Pranoti") (not (in $seen .title)) }}
+      {{ $seen = $seen | append .title }}
+      {{ $utm = $utm | append . }}
+    {{ end }}
+  {{ end }}{{ end }}
+  {{ $latest := first 32 (sort $utm "publicationDate" "desc") }}
+
+  {{/* Branded card art that exists on disk but is not yet linked from image_src in the JSON.
+       Keyed by DCH episode_number. */}}
+  {{ $artByNum := dict
+    "230" "/digital-content-hub/images/S7E2_Anna-Musial_QuanTour.png"
+    "229" "/digital-content-hub/images/S7E1_Nika-Akopian.png"
+    "228" "/digital-content-hub/images/S6E17_Wolfgang-Loffler.png"
+    "227" "/digital-content-hub/images/S6E16_Brian-Gerardot.png"
+    "225" "/digital-content-hub/images/S6E12_Emmanuele.png"
+    "223" "/digital-content-hub/images/S6E9_Mete-Atature.png"
+    "222" "/digital-content-hub/images/S6E8_Pascale-Senellart.png"
+    "221" "/digital-content-hub/images/S6E7_Carlos-Solanas.png"
+    "219" "/digital-content-hub/images/S6E5_Rinaldo-Trotta.png"
+    "218" "/digital-content-hub/images/S6E4_Armando-Rastelli.png"
+    "217" "/digital-content-hub/images/S6E3_Tobias-Heindel.png"
+    "215" "/digital-content-hub/images/S6E1_Doris-Reiter.png"
+  }}
 
   <div class="pod-body">
-    {{ range $data.seasons }}
-    <section class="pod-season" id="season-{{ .season_num }}">
-      <h2>{{ .season }} <span class="pod-season-year">({{ .year_label }})</span></h2>
-      <div class="pod-grid">
-        {{ range $ep := .episodes }}
-        <article class="pod-card{{ if $ep.is_short }} pod-card--short{{ end }}{{ if $ep.is_ai_summary }} pod-card--notebooklm{{ end }}" data-search="{{ lower $ep.name }} {{ lower $ep.affiliation }} {{ lower $ep.description }} {{ lower $ep.short_title }}">
-          <div class="pod-card-top">
-            {{ if $ep.is_short }}
-            <span class="pod-ep-num pod-ep-num--short">{{ if $ep.ep_overall }}Ep. {{ $ep.ep_overall }}{{ else }}Episode{{ end }}</span>
-            {{ else if $ep.is_special }}
-            <span class="pod-ep-num pod-ep-num--special">{{ if $ep.ep_overall }}Ep. {{ $ep.ep_overall }}{{ else }}Special{{ end }}</span>
-            {{ else if $ep.ep_overall }}
-            <span class="pod-ep-num">Ep. {{ $ep.ep_overall }}</span>
-            {{ else if not $ep.is_ai_summary }}
-            <span class="pod-ep-num">Episode</span>
-            {{ end }}
-            {{ if $ep.pub_date }}<span class="pod-ep-date">{{ $ep.pub_date }}</span>{{ end }}
+    <div class="pod-carousel">
+      <div class="pod-carousel-head">
+        <h2>Latest episodes</h2>
+        <div class="pod-carousel-nav">
+          <button type="button" class="pod-arrow" data-dir="-1" aria-label="Scroll left">&#8249;</button>
+          <button type="button" class="pod-arrow" data-dir="1" aria-label="Scroll right">&#8250;</button>
+        </div>
+      </div>
+      <div class="pod-row" id="pod-row">
+        {{ range $ep := $latest }}
+        {{ $epLink := $ep.youtube }}
+        {{ if not $epLink }}{{ $epLink = $ep.spotify }}{{ end }}
+        {{ $epImg := $ep.image_src }}
+        {{ if or (not $epImg) (in $epImg "Pranoti_UTM") }}{{ $epImg = index $artByNum (printf "%v" $ep.episode_number) }}{{ end }}
+        {{ if not $epImg }}{{ $epImg = "/images/podcasts/UTM_podcast-art_2026-Sept.png" }}{{ end }}
+        {{ $aff := $ep.affiliation }}
+        {{ if or (eq $aff "[Affiliation not listed in sheet]") (hasPrefix $aff "[Affiliation") }}{{ $aff = "" }}{{ end }}
+        <article class="pod-card">
+          <a class="pod-card-art" href="{{ $epLink }}"{{ if $epLink }} target="_blank" rel="noopener"{{ end }}>
+            <img src="{{ $epImg }}" alt="{{ $ep.guest_name }} on Under the Microscope podcast" width="300" height="300" loading="lazy">
+          </a>
+          <div class="pod-card-body">
+            <h3 class="pod-card-name">
+              {{ if $epLink }}<a href="{{ $epLink }}" target="_blank" rel="noopener">{{ $ep.title }}</a>{{ else }}{{ $ep.title }}{{ end }}
+            </h3>
+            <p class="pod-card-guest">{{ $ep.guest_name }}</p>
+            {{ with $aff }}<p class="pod-card-aff">{{ . }}</p>{{ end }}
           </div>
-          <h3 class="pod-card-name">{{ $ep.name }}</h3>
-          {{ if $ep.affiliation }}<p class="pod-card-affiliation">{{ $ep.affiliation }}</p>{{ end }}
-          {{ if and $ep.short_title (or $ep.is_short $ep.is_ai_summary $ep.is_special) }}
-          <p class="pod-card-subtitle">{{ $ep.short_title }}</p>
-          {{ end }}
-          {{ if $ep.description }}<p class="pod-card-description">{{ $ep.description }}</p>{{ end }}
-          <div class="pod-card-links">
-            {{ if $ep.tst_url }}<a href="{{ $ep.tst_url }}" target="_blank" rel="noopener">Read episode →</a>{{ end }}
-            {{ if $ep.youtube }}<a href="{{ $ep.youtube }}" target="_blank" rel="noopener">YouTube</a>{{ end }}
-            {{ if $ep.spotify }}<a href="{{ $ep.spotify }}" target="_blank" rel="noopener">Spotify</a>{{ end }}
-          </div>
-          {{ if $ep.is_ai_summary }}
-          <span class="pod-card-notebooklm">NotebookLM</span>
-          {{ end }}
         </article>
         {{ end }}
       </div>
-    </section>
-    {{ end }}
+      <div class="pod-carousel-foot">
+        <a href="https://pranoti.thesciencetalk.com/digital-content-hub/#series=Under+the+Microscope" target="_blank" rel="noopener" class="pod-all-btn">List of all episodes &rarr;</a>
+      </div>
+    </div>
   </div>
 
   <section class="pod-cta">
@@ -140,18 +197,23 @@
 
 <style>
 .pod-page { font-family: 'Inter', sans-serif; }
-.pod-hero { background: #1B2B4B; color: #fff; padding: 4rem 2rem 3.25rem; }
-.pod-hero-inner { max-width: 820px; margin: 0 auto; }
-.pod-hero-tag { display: inline-block; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.72rem; font-weight: 600; color: #FF5757; margin-bottom: 1rem; }
-.pod-hero h1 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.9rem, 4vw, 2.9rem); line-height: 1.15; margin: 0 0 1rem; color: #fff; }
-.pod-hero-sub { font-size: 1.05rem; line-height: 1.65; color: #cdd6e6; margin: 0 0 1.75rem; }
-.pod-hero-sub a { color: #FF9A9A; }
-.pod-hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-.pod-hero-btn { display: inline-block; padding: 0.7rem 1.35rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.15s; }
-.pod-hero-btn--solid { background: #FF5757; color: #fff; }
-.pod-hero-btn--solid:hover { background: #e64545; }
-.pod-hero-btn--outline { border: 1px solid rgba(255,255,255,0.4); color: #fff; }
-.pod-hero-btn--outline:hover { background: rgba(255,255,255,0.1); }
+.pod-hero { background: #0b0b0b; color: #fff; padding: 4.5rem 2rem 4rem; }
+.pod-hero-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 420px) 1fr; gap: 3.5rem; align-items: center; }
+
+.pod-hero-art { border-radius: 18px; overflow: hidden; }
+.pod-hero-art img { display: block; width: 100%; height: auto; }
+
+.pod-hero-text { min-width: 0; }
+.pod-hero h1 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2rem, 4.4vw, 3.1rem); line-height: 1.12; margin: 0 0 1rem; color: #fff; }
+.pod-hero-sub { font-size: 1.05rem; line-height: 1.6; color: #b9b9b9; margin: 0 0 1.6rem; max-width: 34em; }
+.pod-hero-sub a { color: #fff; text-decoration: underline; }
+.pod-hero-platforms { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; color: #fff; margin: 0 0 2rem; }
+.pod-hero-platforms a { color: #fff; display: block; opacity: 0.85; transition: opacity 0.15s; }
+.pod-hero-platforms a:hover { opacity: 1; }
+.pod-hero-platforms svg { display: block; }
+.pod-hero-player { max-width: 480px; margin: 0 0 1.4rem; }
+.pod-hero-player iframe { border-radius: 12px; display: block; background: #fff; }
+.pod-hero-meta { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: #7d7d7d; margin: 0; }
 
 .pod-host { background: #fafafa; border-bottom: 1px solid #e5e5e5; padding: 3rem 2rem; }
 .pod-host-inner { max-width: 720px; margin: 0 auto; }
@@ -159,69 +221,59 @@
 .pod-host p { font-size: 1.02rem; line-height: 1.7; color: #333; margin: 0 0 1rem; }
 .pod-host p:last-child { margin-bottom: 0; }
 
-.pod-toolbar { position: sticky; top: 0; z-index: 5; background: #fff; border-bottom: 1px solid #e5e5e5; padding: 1rem 2rem; }
-.pod-toolbar-inner { max-width: 820px; margin: 0 auto 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
-#pod-search { flex: 1; padding: 0.65rem 0.9rem; border-radius: 8px; border: 1px solid #ccc; font-size: 0.95rem; }
-.pod-search-count { font-size: 0.85rem; color: #666; white-space: nowrap; }
-.pod-season-jump { max-width: 820px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; }
-.pod-season-jump a { font-size: 0.82rem; color: #1B2B4B; text-decoration: none; font-weight: 600; }
-.pod-season-jump a:hover { text-decoration: underline; }
-
 .pod-body { max-width: 1080px; margin: 0 auto; padding: 2.5rem 2rem; }
-.pod-season { margin-bottom: 2.75rem; scroll-margin-top: 6.5rem; }
-.pod-season h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: #1B2B4B; margin: 0 0 1.25rem; }
-.pod-season-year { font-weight: 400; color: #888; font-size: 1rem; }
-.pod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-.pod-card { position: relative; border: 1px solid #e5e5e5; border-radius: 10px; padding: 1rem 1.1rem; background: #fafafa; }
-.pod-card-top { display: flex; justify-content: space-between; font-size: 0.78rem; color: #888; font-weight: 600; margin-bottom: 0.4rem; }
-.pod-ep-num--short { color: #FF5757; }
-.pod-ep-num--special { color: #2f8f6f; }
-.pod-card--short { background: #fff9f9; border-color: #ffd9d9; }
-.pod-card--notebooklm { padding-bottom: 2.2rem; }
-.pod-card-notebooklm { position: absolute; left: 1.1rem; bottom: 0.8rem; font-size: 0.72rem; font-weight: 700; color: #7a6bd6; background: #f1eefc; border: 1px solid #d9d0f7; border-radius: 5px; padding: 0.15rem 0.5rem; }
-.pod-card-subtitle { font-size: 0.88rem; font-weight: 600; color: #333; margin: 0 0 0.35rem; line-height: 1.35; }
-.pod-ep-date { color: #999; font-weight: 400; }
-.pod-card-name { font-size: 1.02rem; font-weight: 700; margin: 0 0 0.2rem; color: #1B2B4B; }
-.pod-card-affiliation { font-size: 0.85rem; color: #666; margin: 0 0 0.6rem; }
-.pod-card-description { font-size: 0.85rem; color: #444; line-height: 1.5; margin: 0 0 0.7rem; }
-.pod-card-links { display: flex; flex-wrap: wrap; gap: 0.7rem; font-size: 0.85rem; }
-.pod-card-links a { color: #1B2B4B; font-weight: 600; text-decoration: none; }
-.pod-card-links a:hover { color: #FF5757; }
-.pod-card-links a:hover { text-decoration: underline; }
+.pod-carousel-head { display: flex; align-items: center; justify-content: space-between; margin: 0 0 1.25rem; }
+.pod-carousel-head h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: #1B2B4B; margin: 0; }
+.pod-carousel-nav { display: flex; gap: 0.5rem; }
+.pod-arrow { width: 2.1rem; height: 2.1rem; border-radius: 50%; border: 1px solid #ccc; background: #fff; color: #1B2B4B; font-size: 1.1rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+.pod-arrow:hover { background: #f0f0f0; }
+.pod-row { display: flex; gap: 1.5rem; overflow-x: auto; padding: 0.25rem 0 1rem; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+.pod-carousel-foot { margin-top: 1.5rem; }
+.pod-all-btn { display: inline-block; padding: 0.7rem 1.35rem; border-radius: 8px; border: 1px solid #1B2B4B; color: #1B2B4B; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.15s; }
+.pod-all-btn:hover { background: #1B2B4B; color: #fff; }
+.pod-row::-webkit-scrollbar { height: 8px; }
+.pod-row::-webkit-scrollbar-thumb { background: #d0d0d0; border-radius: 4px; }
+.pod-card { position: relative; display: flex; flex-direction: column; flex: 0 0 calc((100% - 3rem) / 3); border: 1px solid #e0e0e0; border-radius: 14px; overflow: hidden; background: #fff; scroll-snap-align: start; }
+.pod-card-art { display: block; background: #eee; aspect-ratio: 1 / 1; }
+.pod-card-art img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.25s ease; }
+.pod-card-art:hover img { transform: scale(1.03); }
+.pod-card-body { padding: 1rem 1.1rem 1.2rem; }
+.pod-card-name { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.4rem; line-height: 1.3; color: #1B2B4B; }
+.pod-card-name a { color: inherit; text-decoration: none; }
+.pod-card-name a:hover { color: #FF5757; text-decoration: underline; }
+.pod-card-guest { font-size: 0.92rem; font-weight: 600; color: #333; margin: 0 0 0.15rem; }
+.pod-card-aff { font-size: 0.82rem; color: #777; margin: 0; line-height: 1.4; }
 .pod-card[hidden] { display: none; }
 
 .pod-cta { background: #1B2B4B; color: #fff; padding: 3.25rem 2rem; text-align: center; }
 .pod-cta-inner { max-width: 620px; margin: 0 auto; }
 .pod-cta h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; margin: 0 0 0.75rem; color: #fff; }
 .pod-cta p { color: #cdd6e6; line-height: 1.6; margin: 0 0 1.5rem; }
+.pod-cta .pod-hero-btn--solid { display: inline-block; background: #FF5757; color: #fff; padding: 0.7rem 1.35rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+.pod-cta .pod-hero-btn--solid:hover { background: #e64545; }
 
+@media (max-width: 860px) {
+  .pod-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .pod-hero-art { max-width: 300px; }
+  .pod-card { flex: 0 0 calc((100% - 1.5rem) / 2); }
+}
 @media (max-width: 640px) {
-  .pod-hero { padding: 2.75rem 1.25rem 2.25rem; }
-  .pod-toolbar, .pod-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .pod-hero { padding: 2.75rem 1.25rem 2.5rem; }
+  .pod-hero-platforms { gap: 1.1rem; }
+  .pod-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .pod-card { flex: 0 0 78%; }
 }
 </style>
 
 <script>
 (function () {
-  var input = document.getElementById('pod-search');
-  var countEl = document.getElementById('pod-search-count');
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.pod-card'));
-  var seasons = Array.prototype.slice.call(document.querySelectorAll('.pod-season'));
-  if (!input) return;
-
-  input.addEventListener('input', function () {
-    var q = input.value.trim().toLowerCase();
-    var visible = 0;
-    cards.forEach(function (card) {
-      var match = !q || card.getAttribute('data-search').indexOf(q) !== -1;
-      card.hidden = !match;
-      if (match) visible++;
+  var row = document.getElementById('pod-row');
+  if (!row) return;
+  var arrows = document.querySelectorAll('.pod-arrow');
+  Array.prototype.forEach.call(arrows, function (btn) {
+    btn.addEventListener('click', function () {
+      row.scrollBy({ left: row.clientWidth * parseInt(btn.getAttribute('data-dir'), 10), behavior: 'smooth' });
     });
-    seasons.forEach(function (season) {
-      var anyVisible = season.querySelectorAll('.pod-card:not([hidden])').length > 0;
-      season.hidden = q && !anyVisible;
-    });
-    countEl.textContent = q ? (visible + ' episode' + (visible === 1 ? '' : 's') + ' found') : '';
   });
 })();
 </script>
