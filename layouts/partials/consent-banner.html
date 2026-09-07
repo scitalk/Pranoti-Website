@@ -21,7 +21,7 @@
 (function () {
   var KEY = 'pk_consent';
   var MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000; // re-ask after 12 months
-  var GA_ID = {{ $gaId | jsonify }};
+  var GA_ID = {{ $gaId }};
   var banner = document.getElementById('consent-banner');
   var loaded = false;
 
