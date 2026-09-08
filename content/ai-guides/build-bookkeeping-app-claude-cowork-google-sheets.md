@@ -1,7 +1,7 @@
 ---
 title: "How to Build a Custom Bookkeeping App with Claude Cowork"
 date: 2026-07-20
-lastmod: 2026-07-20
+lastmod: 2026-09-08
 slug: "build-bookkeeping-app-claude-cowork-google-sheets"
 draft: false
 description: "Build a free, custom bookkeeping app with Claude Cowork, Next.js and Google Sheets as the database — replace paid software without hiring a developer."
@@ -20,20 +20,22 @@ sidebar_links:
     url: "/ai-guides/event-registration-automation-stripe-make-mailerlite/"
 ---
 
+*Last reviewed and updated on 8 September 2026. Note: Anthropic positions Claude Code as its tool for coding and Claude Cowork for cross-app knowledge work. This walkthrough uses Cowork with a connected project folder; you can run the same build in Claude Code if you prefer a coding-focused environment.*
+
 Most paid bookkeeping tools charge a monthly fee for features a freelancer rarely uses. Examples are multi-user accounts, invoicing modules, and integrations you will never touch. This guide shows you how to build a bookkeeping app with Claude Cowork instead. The app is free and custom. It uses Next.js and Google Sheets as the database, deploys on Vercel, and locks behind a PIN so only you can use it. You do not need to be a developer. You need a few free accounts, an hour of focused setup, and Claude Cowork to do the actual coding.
 
 The pattern here is not limited to bookkeeping. When you understand how to build a custom app with Claude Cowork that reads and writes to a real Google Sheet, you can apply the same approach to time tracking, inventory logs, client CRMs, or any workflow currently trapped in a spreadsheet that needs a proper interface.
 
 ## What you need before starting
 
-- **Claude Cowork** — Claude's conversational build environment, used for the whole build described here
+- **Claude Cowork** with a connected local project folder, used for the whole build described here (Claude Code works equally well if you prefer)
 - A **free GitHub account** for version control and deployment triggers
 - A **free Vercel account** (Hobby plan — no card required) for hosting and secret storage
 - A **Google Cloud project** with the Google Sheets API enabled, for OAuth credentials
 - An existing or new **Google Sheet** to act as your database
 - Basic comfort running terminal commands. You will not write code by hand, but you will run the commands Claude Cowork gives you.
 
-> This guide uses Next.js with the App Router and TypeScript. The underlying pattern (Sheets as database, OAuth for secure access, Vercel for hosting) works with any framework Claude Cowork supports.
+> This guide uses Next.js with the App Router and TypeScript. The underlying pattern (Sheets as database, OAuth for secure access, Vercel for hosting) is framework-agnostic.
 
 ## Step 1: Set up your accounts and API credentials
 
@@ -51,7 +53,7 @@ Before you write any code, set up the Google Sheet that will act as your databas
 
 ## Step 3: Build your bookkeeping app with Claude Cowork
 
-Open your project folder in Claude Cowork. Describe the app in plain language: a PIN-gated form that takes an amount, a vendor, and a category from your sheet's category tab, then saves the entry as a new row. Claude Cowork will build a Next.js project with TypeScript, create the folder structure, and write the components.
+Connect your project folder in Claude Cowork. Describe the app in plain language: a PIN-gated form that takes an amount, a vendor, and a category from your sheet's category tab, then saves the entry as a new row. Claude Cowork will build a Next.js project with TypeScript, create the folder structure, and write the components.
 
 Ask Claude Cowork to break the flow into clear steps instead of one long form. For example, use an amount/vendor screen, then a category picker, then a confirm-and-save screen. This keeps each screen focused and makes the app faster to use on a phone, which matters if you log expenses while away from your desk.
 

@@ -1,7 +1,7 @@
 ---
 title: "Claude's 5-Hour Limit: 7 Strategic Tips for AI Power Users"
 date: 2026-05-05
-lastmod: 2026-07-23
+lastmod: 2026-09-08
 draft: false
 category: "perspectives"
 pillar: "AI Adoption"
@@ -48,6 +48,8 @@ sidebar_product:
   footnote: "Instant PDF delivery"
 ---
 
+*Last reviewed and updated on 8 September 2026 against Anthropic's official documentation. Current position: paid plans (Pro, Max, Team, Enterprise) now enforce a weekly usage limit, a separate cap for Opus and one for all models, alongside the 5-hour rolling window. In Claude Code, `/model` switches model and saves it as your default for new sessions; press `s` in the picker to switch for the current session only. MCP tool definitions load lazily by default, so idle connectors carry less context cost than they used to.*
+
 The 5-hour limit is a session budget, not a wall. Here is how I work with it strategically in my own Claude sessions.
 
 I used to burn through my Claude quota by late morning and spend the rest of the day waiting. The turning point came when I stopped treating the 5-hour window as a constraint to fight and started to treat it like a resource to manage. These are the tactics I use now: model selection, batching work, compact commands in Claude Code, knowing when to start fresh, prioritizing by tokens left, connector hygiene, and building approval gates into my skills.
@@ -70,7 +72,7 @@ This applies to any repetitive workflow. Weekly funding roundups, case study upd
 
 When I work in Claude Code and the session starts to feel sluggish, with slower responses and vaguer answers, this usually signals context rot. The conversation history has filled the window with old instructions, redundant file reads, and prior task debris.
 
-Two commands fix this. `/compact` compresses the conversation history into a summary, keeping the essential context while it clears the noise. `/clear` wipes everything and starts fresh when I switch to an unrelated task. Both recover tokens immediately. Long Claude Code sessions without compaction waste tokens by re-reading dead context on every turn.
+Two commands fix this. `/compact` compresses the conversation history into a summary, keeping the essential context while it clears the noise. `/clear` wipes everything and starts fresh when I switch to an unrelated task. Both recover tokens immediately. Claude Code also auto-compacts on its own as the context window fills, but running `/compact` deliberately at a natural break gives a cleaner summary. Note that `/compact` is itself a large request because it re-reads the conversation it summarises, so when I want a genuine fresh start rather than continuity, `/clear` is the cheaper move. Long Claude Code sessions without compaction waste tokens by re-reading dead context on every turn.
 
 For more on managing Claude Code's context window effectively, see [this breakdown of what each category means](https://thesciencetalk.com/ai-academy/claude-code-context-window-explained/). Anthropic's official [cost management documentation](https://code.claude.com/docs/en/costs) covers additional strategies for enterprise teams that track token consumption.
 
@@ -82,17 +84,17 @@ Now I assess whether this is a small correction, or whether I am about to spend 
 
 ## Prioritize tasks based on tokens remaining
 
-I check my session usage throughout the day, either with `/cost` in Claude Code or by monitoring the progress bar on claude.ai. When I reach 60% of my session limit, I do not start a complex automation build. I save high-token tasks (MCP skill creation, deep research with multiple web searches, long document analysis) for fresh sessions when I have the full budget available.
+I check my session usage throughout the day, either with `/usage` (or its alias `/cost`) in Claude Code or in Settings → Usage on claude.ai, which shows both the session and the weekly bars with their reset times. When I reach 60% of my session limit, I do not start a complex automation build. I save high-token tasks (MCP skill creation, deep research with multiple web searches, long document analysis) for fresh sessions when I have the full budget available.
 
 Low-token tasks, such as formatting fixes, quick WordPress drafts, and single-question clarifications, go at the end of sessions when my quota is nearly spent. This prioritization prevents the frustrating scenario where Claude cuts off mid-task because I ran out of tokens halfway through something important.
 
 ## Turn off unnecessary connectors
 
-Every MCP connector you have active loads its tool schema into Claude's context window on every message. Even if you do not use Google Calendar or Gmail in a particular session, their tool definitions sit there and consume tokens.
+Claude Code now defers MCP tool definitions by default: only the tool names and each server's instructions load up front, and the full schema for a tool enters context the first time Claude uses it. That lowers the cost of an idle connector, but it does not make it free, and native connectors on claude.ai still load their definitions. Even if you do not use Google Calendar or Gmail in a particular session, that overhead sits there and consumes tokens.
 
 Before I start work, I audit which connectors I will actually need for that session and turn off the rest. When I write blog posts, I keep WordPress MCP and web search active and disable everything else. When I analyze grant data, Google Sheets MCP stays on and the rest go off.
 
-I have not confirmed whether Anthropic's native connectors (the ones built into claude.ai, not MCPs) carry the same token overhead, but the principle holds. Unused tools in your active session waste context space. According to [Anthropic's usage guidance](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work), tools and connectors are token-intensive, so managing them helps both maximize your context window and optimize your usage limits. Connector hygiene is one of the simplest ways to recover tokens without changing how you work.
+Unused tools in your active session waste context space. Anthropic's [usage guidance](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work) is explicit that "tools and connectors are token-intensive," and recommends temporarily disabling web search, Research, and MCP connectors from your "Search and tools" settings when a conversation does not need them. Managing them helps both maximize your context window and optimize your usage limits. Connector hygiene is one of the simplest ways to recover tokens without changing how you work.
 
 ## Build approval gates into your skills
 
@@ -100,7 +102,7 @@ This one tactic saved me more tokens than any other. I used to start a Claude Co
 
 ```
 If you are a Haiku model: stop immediately. Tell the user:  
-"⚠️ This skill requires Claude Sonnet or higher. You are currently on Haiku. Please run `/config`, switch to Sonnet, and re-run the skill."
+"⚠️ This skill requires Claude Sonnet or higher. You are currently on Haiku. Please run `/model`, switch to Sonnet, and re-run the skill."
 ```
 
 The same logic applies to connectors. If a skill needs Google Drive access and the connector is not enabled, the skill stops before it wastes tokens and tells me which connector to activate. These approval gates do not prevent me from doing the work. They prevent me from wasting my session budget on predictable failures.
