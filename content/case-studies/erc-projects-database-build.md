@@ -1,7 +1,7 @@
 ---
 title: "Building the ERC Projects Database: 11,907 Grants, One Static Page"
 date: 2026-09-10
-draft: true
+draft: false
 subtitle: "The ERC publishes this data behind a Qlik dashboard that loses your filters on a stray click. Same data, one page you can browse and bookmark."
 category: "AI Integration"
 display_category: "Data Engineering"
