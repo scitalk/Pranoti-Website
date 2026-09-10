@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
   {{- $personSchema := dict "@context" "https://schema.org" "@type" "Person" "name" "Pranoti Kshirsagar" "url" .Site.BaseURL "jobTitle" "Science Communication Expert" "worksFor" (dict "@type" "Organization" "name" "The Science Talk" "url" "https://thesciencetalk.com") "sameAs" (slice .Site.Params.linkedin .Site.Params.twitter) -}}
   <script type="application/ld+json">{{ $personSchema | jsonify | safeJS }}</script>
+{{ partial "schema-site.html" . }}
 </head>
 <body>
   {{ partial "header.html" . }}

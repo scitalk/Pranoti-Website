@@ -13,7 +13,7 @@ Articles in [Perspectives](/perspectives/), [AI Guides](/ai-guides/) and [Case S
 
 Specifically:
 
-- **Editorial responsibility.** I hold editorial responsibility for all content published on this site.
+- **Editorial responsibility.** I, Dr. Pranoti Kshirsagar, hold editorial responsibility for all content published on this site. The Science Talk is the trading name of my sole proprietorship, not a separate legal person. Contact details are on the [Imprint](/imprint/).
 - **Claims and sources.** Factual claims — particularly about regulation, funding programmes and tool behaviour — are verified against primary sources, and those sources are linked so you can check them yourself.
 - **Workflows and results.** Case studies describe automations I have actually built and run. Numbers reported in them come from real runs, not estimates.
 - **Images.** Where an image is AI-generated, it is labelled as such in the caption or alt text.
@@ -21,7 +21,7 @@ Specifically:
 
 ## Why this page exists
 
-**Article 50(4) of the EU AI Act** (Regulation (EU) 2024/1689), which applies from **2 August 2026**, requires deployers of AI systems that generate or manipulate text published to inform the public on matters of public interest to disclose that the text was artificially generated or manipulated.
+**Article 50(4) of the EU AI Act** (Regulation (EU) 2024/1689), which has applied since **2 August 2026**, requires deployers of AI systems that generate or manipulate text published to inform the public on matters of public interest to disclose that the text was artificially generated or manipulated.
 
 That obligation **does not apply where the AI-generated content has undergone a process of human review or editorial control and a natural or legal person holds editorial responsibility** for the publication. That is the case for every article here.
 
@@ -29,7 +29,7 @@ This page is therefore published voluntarily rather than because a disclosure is
 
 ## Code of Practice on Transparency of AI-Generated Content
 
-The Science Talk has signed the European Commission's **Code of Practice on Transparency of AI-generated Content**, under **Section 2, as a deployer of generative AI systems** — ahead of the Article 50 obligations becoming legally binding on 2 August 2026. Signing commits us to marking AI-generated content appropriately and disclosing its use where it matters, consistently rather than only when required. Read more in [The Science Talk Signs the EU Code of Practice on Transparency of AI-Generated Content](/perspectives/the-science-talk-signs-eu-code-of-practice-ai-transparency/).
+I have signed, as The Science Talk, the European Commission's **Code of Practice on Transparency of AI-generated Content**, under **Section 2, as a deployer of generative AI systems** — signed ahead of the Article 50 obligations becoming legally binding on 2 August 2026. Signing commits me to marking AI-generated content appropriately and disclosing its use where it matters, consistently rather than only when required. Read more in [The Science Talk Signs the EU Code of Practice on Transparency of AI-Generated Content](/perspectives/the-science-talk-signs-eu-code-of-practice-ai-transparency/).
 
 ## What is not used
 
@@ -40,7 +40,8 @@ The Science Talk has signed the European Commission's **Code of Practice on Tran
 ## Sources
 
 - [Regulation (EU) 2024/1689 (EU AI Act), Article 50](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)
+- [Regulation (EU) 2026/1744 (the AI Omnibus)](https://eur-lex.europa.eu/eli/reg/2026/1744/oj) — amends the AI Act, including Article 50(7) on codes of practice
 - [European Commission — Transparency obligations under Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act)
 - [European Commission — Guidelines on Transparency of AI-Generated Content](https://digital-strategy.ec.europa.eu/en/policies/guidelines-transparency-ai-generated-content)
 
-*Last updated: 28 July 2026*
+*Last updated: 10 September 2026*
