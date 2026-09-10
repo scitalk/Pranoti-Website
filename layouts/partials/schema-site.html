@@ -1,0 +1,33 @@
+{{/* Sitewide identity. Included from every baseof and from the standalone product
+     layouts. The full Person node lives on /about/ and shares this @id, so the two
+     merge into a single entity rather than competing. */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ .Site.BaseURL }}about/#person",
+      "name": "Pranoti Kshirsagar",
+      "url": "{{ .Site.BaseURL }}about/"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ .Site.BaseURL }}#website",
+      "name": {{ .Site.Title | jsonify | safeJS }},
+      "url": {{ .Site.BaseURL | jsonify | safeJS }},
+      "inLanguage": "en-GB",
+      "publisher": { "@id": "{{ .Site.BaseURL }}about/#person" },
+      "copyrightHolder": { "@id": "{{ .Site.BaseURL }}about/#person" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ .Site.BaseURL }}search/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>

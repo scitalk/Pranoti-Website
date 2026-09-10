@@ -34,6 +34,7 @@
   {{ $csCss := resources.Get "css/case-study.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $csCss.RelPermalink }}">
   {{ end }}
+{{ partial "schema-site.html" . }}
 </head>
 <body>
   {{ if eq .Kind "section" }}{{ partial "header.html" . }}{{ end }}

@@ -200,6 +200,7 @@ body { font-family: var(--ff-b); background: var(--bg); color: var(--fg); font-s
   },
   "offers": {
     "@type": "Offer",
+    "seller": { "@type": "Person", "@id": "https://pranoti.thesciencetalk.com/about/#person", "name": "Pranoti Kshirsagar" },
     "price": "17.00",
     "priceCurrency": "EUR",
     "availability": "https://schema.org/InStock",
@@ -207,6 +208,7 @@ body { font-family: var(--ff-b); background: var(--bg); color: var(--fg); font-s
   }
 }
 </script>
+{{ partial "schema-site.html" . }}
 </head>
 <body>
 

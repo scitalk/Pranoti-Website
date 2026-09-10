@@ -9,14 +9,10 @@
   "description": {{ .Params.description | jsonify | safeJS }},
   "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
-  "author": {
-    "@type": "Person",
-    "name": "Pranoti Kshirsagar",
-    "url": "{{ .Site.BaseURL }}",
-    "jobTitle": "AI Literacy and EU AI Act Specialist",
-    "sameAs": ["https://www.linkedin.com/in/pranoti-kshirsagar/"]
-  },
-  "publisher": { "@type": "Person", "name": "Pranoti Kshirsagar", "url": "{{ .Site.BaseURL }}" },
+  "author": { "@type": "Person", "@id": "{{ .Site.BaseURL }}about/#person", "name": "Pranoti Kshirsagar" },
+  "publisher": { "@type": "Person", "@id": "{{ .Site.BaseURL }}about/#person", "name": "Pranoti Kshirsagar" },
+  "reviewedBy": { "@type": "Person", "@id": "{{ .Site.BaseURL }}about/#person", "name": "Pranoti Kshirsagar" },
+  "publishingPrinciples": "{{ .Site.BaseURL }}ai-disclosure/",
   "mainEntityOfPage": { "@id": "{{ .Permalink }}" },
   "url": "{{ .Permalink }}"{{ with .Params.keywords }},
   "keywords": {{ . | jsonify | safeJS }}{{ end }}
