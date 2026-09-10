@@ -1,6 +1,8 @@
 baseURL = 'https://pranoti.thesciencetalk.com/'
 languageCode = 'en-gb'
 title = 'Pranoti Kshirsagar'
+# Render content dated in the future (e.g. upcoming events on /portfolio/events/).
+buildFuture = true
 # theme = '' # No theme needed - using custom layouts
 
 [params]
