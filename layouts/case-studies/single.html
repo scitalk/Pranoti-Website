@@ -99,23 +99,27 @@
       </div>
     </div>
 
+    {{ with .Params.outcomes }}
     <div class="layout-col">
       <div class="sec-label">04 · What Claude can now do</div>
       <div class="card outcomes-grid stretch-card">
-        {{ range .Params.outcomes }}
+        {{ range . }}
         <div class="outcome"><span class="outcome-chk">✓</span><p>{{ . | markdownify }}</p></div>
         {{ end }}
       </div>
     </div>
+    {{ end }}
   </div>
 
+  {{ with .Params.reflection }}
   <div class="layout-row-1col">
     <div class="sec-label">05 · What I'd do differently</div>
     <div class="insight">
       <div class="card-lbl">Honest reflection</div>
-      <p>{{ .Params.reflection | markdownify }}</p>
+      <p>{{ . | markdownify }}</p>
     </div>
   </div>
+  {{ end }}
 
   {{ with .Params.related_tst_posts }}
   <div class="layout-row-1col">

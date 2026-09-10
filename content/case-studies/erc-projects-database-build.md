@@ -45,23 +45,18 @@ blockers:
   - issue_title: "Duplicate rows that were not duplicates"
     issue_desc: "11,953 rows but only 11,907 unique CORDIS IDs. The 46 extras were continuation rows — a multi-host project stored as a primary row plus one row per extra institution, with `-` in acronym, dates and contribution. A first dedupe kept the wrong twin and wrote `-` into 46 money fields."
     solution: "**Dedupe on CORDIS ID and keep the row that carries the amount**, then split the packed host field on every `[id,CC]` tag rather than the trailing one. That parse returned **943 distinct institutions, matching the ERC dashboard exactly**."
-outcomes:
-  - "**Every filtered view has its own URL.** Tick 2024, Starting Grant, Life Sciences and the address bar becomes that search — bookmark it, send it, open it in six months on the same set. Qlik holds no selection in its URL, so there is nothing there to save."
-  - "**One indexed URL at 43 KB** with 24 crawlable projects in the source and `Dataset`, `CollectionPage` and `BreadcrumbList` schema. The Dataset rich result passes in Search Console."
-  - "**A credibility strip that reconciles to the data beneath it** — €21,485M, 11,907 projects, 35 countries, 943 host institutions — every figure computed from the served file rather than copied off the dashboard."
-  - "**Refreshing the database is one file.** The 1 September update added start date, end date and EU contribution per project and normalised 600 malformed fields, and shipped in a single commit."
 architecture:
   - ["Data source", "**EC R&I Dashboard**, Qlik Sense, filtered by call year only — 11,953 rows × 18 columns, exported 26 Aug and re-exported 1 Sep 2026"]
   - ["Cleaning", "**46 continuation rows removed** on CORDIS ID; 2,870 `-` placeholders treated as empty; 12 of 18 columns kept, abstracts and panel codes dropped"]
   - ["Build", "**Hugo server-renders 24 cards**, emits the dataset as a fingerprinted JSON resource, and injects the Dataset, CollectionPage and Breadcrumb schema"]
   - ["Interactive layer", "**Vanilla JS, no framework** — fetch once, filter 11,907 objects in memory, render 24 cards, write the filter state into the URL"]
   - ["Deploy", "**Push to `main` → GitHub Actions → `gh-pages` → Cloudflare**, live in about 30 seconds and verified by fetching the deployed HTML"]
-reflection: "This was never about getting the data — the Commission publishes all of it and the export took minutes. The real work was deciding what to leave out, six of eighteen columns and every abstract, so that what remained could be read at a glance. And every expensive mistake here was a confidence mistake rather than a skill one: the page that rendered beautifully while shipping 4 MB, the dedupe that matched on row count while writing `-` into 46 money fields."
+reflection: "The CSV-to-`data.json` conversion needed **a dedicated cleaning step to identify and remove export artefacts, built in from the start** rather than run as an afterthought. The first pass carried the export's problems straight through — 46 continuation rows that double-counted €133M, 83 fields with line breaks mid-title, hundreds more with doubled spaces, and `-` used as a null that a naive dedupe then picked over the real value — and every one was caught later, by asking for a second look, not by the conversion itself. Next time the artefact scan is step one: dedupe on the stable ID, treat `-` as empty, normalise whitespace, and reconcile counts against the source before anything reaches the site."
 cta_text: "Open the database, filter by your scheme, and bookmark the view — the resource kit for that scheme is one click from the hero."
 guide_url: "https://pranoti.thesciencetalk.com/erc-projects-database/"
 related_tst_posts:
-  - title: "ERC Guidelines on AI in Grant Proposal Evaluation — The Science Talk"
-    url: "https://thesciencetalk.com/services/grants-fundraising/erc-ai-grant-proposal-evaluation-guidelines/"
-  - title: "How I Used GenAI to Support €1M Grant Proposals — The Science Talk"
-    url: "https://thesciencetalk.com/news/ai-tools-for-proposal-writing/"
+  - title: "ERC 2027 Work Programme: Everything Scientists Need to Know — The Science Talk"
+    url: "https://thesciencetalk.com/news/erc-2027-work-programme-changes/"
+  - title: "European Research Institutes & AI Update — The Science Talk"
+    url: "https://thesciencetalk.com/news/ai-integration-european-research-institutes-2026/"
 ---
