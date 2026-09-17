@@ -3,6 +3,12 @@ languageCode = 'en-gb'
 title = 'Pranoti Kshirsagar'
 # Render content dated in the future (e.g. upcoming events on /portfolio/events/).
 buildFuture = true
+# Last-modified comes from front matter or the last git commit, never from `date`
+# (event pages carry the event date in `date`, which may be in the future).
+enableGitInfo = true
+
+[frontmatter]
+  lastmod = ['lastmod', ':git', ':fileModTime']
 # theme = '' # No theme needed - using custom layouts
 
 [params]

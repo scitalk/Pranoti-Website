@@ -85,11 +85,14 @@
 
 </article>
 
-{{- $vSchema := dict "@context" "https://schema.org" "@type" "VideoObject" "name" .Title "description" (or .Params.description .Site.Params.description) "uploadDate" (.Date.Format "2006-01-02") "url" .Permalink -}}
+{{- $vSchema := dict "@context" "https://schema.org" "@type" "VideoObject" "name" .Title "description" (or .Params.description .Site.Params.description) "uploadDate" (.Date.Format "2006-01-02T15:04:05-07:00") "url" .Permalink -}}
 {{- $yturl := .Params.youtube_url -}}
 {{- if and (not $yturl) .Params.youtube_urls -}}{{- $yturl = index .Params.youtube_urls 0 -}}{{- end -}}
-{{- with $yturl -}}{{- $vSchema = merge $vSchema (dict "embedUrl" (printf "https://www.youtube.com/embed/%s" (index (split . "/") (sub (len (split . "/")) 1)))) -}}{{- end -}}
-{{- with .Params.thumbnail -}}{{- $vSchema = merge $vSchema (dict "thumbnailUrl" .) -}}{{- end -}}
+{{- with $yturl -}}
+{{- $ytid := index (split . "/") (sub (len (split . "/")) 1) -}}
+{{- $vSchema = merge $vSchema (dict "embedUrl" (printf "https://www.youtube.com/embed/%s" $ytid) "thumbnailUrl" (printf "https://img.youtube.com/vi/%s/hqdefault.jpg" $ytid)) -}}
+{{- end -}}
+{{- with .Params.thumbnail -}}{{- $vSchema = merge $vSchema (dict "thumbnailUrl" (. | absURL)) -}}{{- end -}}
 <script type="application/ld+json">{{ $vSchema | jsonify | safeJS }}</script>
 
 <style>

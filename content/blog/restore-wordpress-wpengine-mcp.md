@@ -1,7 +1,7 @@
 ---
 title: "I Restored a Single WordPress Page from a WP Engine Backup Using Claude and MCP — Here's Exactly How"
 date: 2026-03-19
-draft: false
+draft: true
 author: "Pranoti Kshirsagar"
 category: "automation"
 tags: ["WordPress", "WP Engine", "WordPress MCP", "AI Integration", "Automation"]
