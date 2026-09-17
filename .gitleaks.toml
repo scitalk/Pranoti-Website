@@ -1,0 +1,18 @@
+[extend]
+useDefault = true
+
+[[rules]]
+id = "basic-auth-header"
+description = "HTTP Basic auth header"
+regex = '''(?i)basic\s+[A-Za-z0-9+/]{16,}={0,2}'''
+
+[[rules]]
+id = "wp-application-password"
+description = "WordPress application password"
+regex = '''\b[A-Za-z0-9]{4}(?: [A-Za-z0-9]{4}){5}\b'''
+entropy = 3.5
+
+# Known placeholder examples in published guides (not real secrets)
+[[allowlists]]
+regexes = ['''sk-live-abc123youractualkey''', '''username:application-password''']
+paths = ['''^public/''']

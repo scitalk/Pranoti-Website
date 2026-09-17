@@ -11,3 +11,9 @@ static/case-studies/*.html
 static/reports/
 tools/.venv/
 tools/__pycache__/
+
+# Claude work notes and session logs (can contain credentials)
+session-log-*.md
+seo-crosslinking-*.md
+*.env
+.env*
