@@ -72,8 +72,11 @@
 
 </article>
 
-{{- $sSchema := dict "@context" "https://schema.org" "@type" "VideoObject" "name" .Title "description" (or .Params.description .Site.Params.description) "uploadDate" (.Date.Format "2006-01-02") "url" .Permalink -}}
-{{- with .Params.youtube_urls -}}{{- $sSchema = merge $sSchema (dict "embedUrl" (printf "https://www.youtube.com/embed/%s" (index (split (index . 0) "/") (sub (len (split (index . 0) "/")) 1)))) -}}{{- end -}}
+{{- $sSchema := dict "@context" "https://schema.org" "@type" "VideoObject" "name" .Title "description" (or .Params.description .Site.Params.description) "uploadDate" (.Date.Format "2006-01-02T15:04:05-07:00") "url" .Permalink -}}
+{{- with .Params.youtube_urls -}}
+{{- $ytid := index (split (index . 0) "/") (sub (len (split (index . 0) "/")) 1) -}}
+{{- $sSchema = merge $sSchema (dict "embedUrl" (printf "https://www.youtube.com/embed/%s" $ytid) "thumbnailUrl" (printf "https://img.youtube.com/vi/%s/hqdefault.jpg" $ytid)) -}}
+{{- end -}}
 <script type="application/ld+json">{{ $sSchema | jsonify | safeJS }}</script>
 
 <style>

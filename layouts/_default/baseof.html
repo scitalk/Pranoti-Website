@@ -8,7 +8,11 @@
   <meta name="description" content="{{ $desc }}">
   {{ with .Params.keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
+  {{- if in (slice "taxonomy" "term") .Kind }}
+  <meta name="robots" content="noindex, follow">
+  {{- else }}
   <meta name="robots" content="{{ .Params.robots | default "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" }}">
+  {{- end }}
   <meta property="og:type" content="{{ if or (eq .Layout "digital-content-hub") (eq .Layout "erc-scheme") }}website{{ else if .IsPage }}article{{ else }}website{{ end }}">
   <meta property="og:site_name" content="{{ .Site.Title }}">
   <meta property="og:title" content="{{ .Title }}">

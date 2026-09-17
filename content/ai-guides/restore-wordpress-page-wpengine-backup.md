@@ -2,6 +2,7 @@
 title: "How to Restore a Single WordPress Page from a WP Engine Backup"
 date: 2026-03-19
 lastmod: 2026-04-02
+aliases: ["/blog/restore-wordpress-page-wpengine-backup-mcp/"]
 draft: false
 description: "WordPress has no native single-page restore. Here is the exact workflow to extract one page from a WP Engine database dump and push it back via the REST API — without touching the rest of your site."
 keywords: ["WordPress restore single page", "WP Engine backup", "WordPress REST API", "restore WordPress page", "wp_posts database", "Claude AI WordPress", "WordPress MCP"]

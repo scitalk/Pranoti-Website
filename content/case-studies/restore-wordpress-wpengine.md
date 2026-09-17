@@ -59,7 +59,7 @@ architecture:
   - ["Verify in WordPress admin", "Confirm the page is live, check slug and publish status, and publish if restored as draft."]
 reflection: "The WordPress MCP made the write-back trivially easy — no auth setup, no curl, just a Claude tool call. The harder part was the SQL extraction. I'd write a short script to pull the target page row out of the dump automatically rather than feeding the whole file to Claude. The MCP approach is now my default for any WordPress content recovery; the days of manual REST API fiddling are behind me."
 cta_text: "Read the full write-up — how this happened, why MCP changed everything, and what you need to replicate it."
-guide_url: "https://pranoti.thesciencetalk.com/blog/restore-wordpress-page-wpengine-backup-mcp/"
+guide_url: "https://pranoti.thesciencetalk.com/ai-guides/restore-wordpress-page-wpengine-backup/"
 related_tst_posts:
   - title: "How to Restore a Single WordPress Page from a WP Engine Backup — full post on The Science Talk"
     url: "https://thesciencetalk.com/ai-academy/restore-wordpress-page-wpengine-backup/"
