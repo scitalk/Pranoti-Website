@@ -48,17 +48,10 @@
 <div class="epd-hero">
   <header class="epd-page-head epd-hero-text">
     <p class="epd-eyebrow">Interactive database</p>
-    <h1><a href="{{ .RelPermalink }}" id="epd-hero-reset">ERC funded projects</a></h1>
+    <h1><a href="{{ .RelPermalink }}" id="epd-hero-reset">ERC Funded Projects</a></h1>
     {{ with .Params.lede }}<p class="epd-lede">{{ . }}</p>{{ end }}
-    <p class="epd-hero-cta">All official resources for ERC applicants available:
-      <a href="/products/erc-starting-grant-resource-kit/?utm_source=pranoti_site&utm_medium=erc_projects_database&utm_campaign=erc_stg_2027" onclick="gtag('event', 'purchase_intent', {'item_name': 'ERC Starting Grant 2027 Resource Kit', 'location': 'erc_projects_database_hero'})">ERC Starting Grant 2027</a>
-      and
-      <a href="/products/erc-consolidator-grant-resource-kit/?utm_source=pranoti_site&utm_medium=erc_projects_database&utm_campaign=erc_cog_2027" onclick="gtag('event', 'purchase_intent', {'item_name': 'ERC Consolidator Grant 2027 Resource Kit', 'location': 'erc_projects_database_hero'})">ERC Consolidator Grant 2027</a>
-    </p>
+    <p class="epd-support">This page is created independently by Dr. Pranoti Kshirsagar and follows pay-as-you-go model. If you'd like to help, please go ahead and <a href="https://ko-fi.com/pranoti" target="_blank" rel="noopener">buy-me-a-coffee</a>. Your support is appreciated.🧡</p>
   </header>
-  <div class="epd-hero-media">
-    <img src="/images/ERC%20project%20database.png" alt="ERC projects database" width="1200" height="630">
-  </div>
 </div>
 
 <div class="epd-credstrip">
@@ -80,6 +73,17 @@
   </div>
 </div>
 
+<div class="epd-cta epd-kits">
+  <div>
+    <h2>ERC Resource kits</h2>
+    <p>All official &amp; verified resources in one pdf</p>
+  </div>
+  <div class="epd-kits-btns">
+    <a class="epd-cta-btn" href="/products/erc-starting-grant-resource-kit/?utm_source=pranoti_site&utm_medium=erc_projects_database&utm_campaign=erc_stg_2027" onclick="gtag('event', 'purchase_intent', {'item_name': 'ERC Starting Grant 2027 Resource Kit', 'location': 'erc_projects_database_kits'})">ERC Starting Grant 2027</a>
+    <a class="epd-cta-btn" href="/products/erc-consolidator-grant-resource-kit/?utm_source=pranoti_site&utm_medium=erc_projects_database&utm_campaign=erc_cog_2027" onclick="gtag('event', 'purchase_intent', {'item_name': 'ERC Consolidator Grant 2027 Resource Kit', 'location': 'erc_projects_database_kits'})">ERC Consolidator Grant 2027</a>
+  </div>
+</div>
+
 <div id="epd-app">
   {{/* Server-rendered first page so crawlers and no-JS visitors get real content and links.
        JS replaces this whole block with the interactive grid once the dataset loads. */}}
@@ -97,6 +101,36 @@
   </div>
   <p class="epd-ssr-more">Showing 24 of {{ len $data.projects }} projects. Turn on JavaScript to filter by call year, grant scheme, and research domain.</p>
 </div>
+
+<section class="epd-faq">
+  <h2>FAQ</h2>
+  <details>
+    <summary>How can I filter the projects?</summary>
+    <p>Filter by call year, grant scheme and domain.</p>
+  </details>
+  <details>
+    <summary>What does each project card show?</summary>
+    <p>Each project card shows the scientist's name, host institution, country, project title, acronym, and a CORDIS link to read more.</p>
+  </details>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How can I filter the projects?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Filter by call year, grant scheme and domain." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does each project card show?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Each project card shows the scientist's name, host institution, country, project title, acronym, and a CORDIS link to read more." }
+    }
+  ]
+}
+</script>
 
 </div><!-- /.epd-inner -->
 </div><!-- /#epd-root -->
