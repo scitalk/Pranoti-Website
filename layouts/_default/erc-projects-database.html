@@ -22,6 +22,7 @@
     "variableMeasured" (slice "Acronym" "Project Title" "Researcher" "Host Institution" "Country" "Grant Type" "Domain" "Call Year")
     "keywords" (delimit (.Params.keywords | default (append (slice "European Research Council" "ERC grants") $schemes)) ", ")
     "isAccessibleForFree" true
+    "license" "https://creativecommons.org/licenses/by/4.0/"
     "distribution" (dict "@type" "DataDownload" "encodingFormat" "text/html" "contentUrl" .Permalink)
   )
   (dict
