@@ -14,6 +14,43 @@
     'Synergy Grants': 'Synergy Grant'
   };
   function valueLabel(v) { return VALUE_LABELS[v] || v; }
+
+  // The data file stores only the Call code (ERC-2025-STG) and the Panel code
+  // (LS1 - ... , or SYG-LS ... for Synergy). Call year, grant scheme and domain
+  // are derived from those two, so there is one source of truth per project.
+  var SCHEME_BY_CODE = {
+    STG: 'Starting Grants',
+    COG: 'Consolidator Grants',
+    ADG: 'Advanced Grants',
+    POC: 'Proof of Concept',
+    SYG: 'Synergy Grants'
+  };
+  var DOMAIN_BY_CODE = {
+    LS: 'Life Sciences (LS)',
+    PE: 'Physical sciences & engineering (PE)',
+    SH: 'Social sciences & humanities (SH)'
+  };
+  // Full panel names for the pill's hover text, from data/erc_panels.json, so the
+  // 69-character names are not repeated 12,133 times in the project data.
+  var PANEL_NAMES = {{ site.Data.erc_panels | jsonify | safeJS }};
+  function derive(p) {
+    var call = (p.call || '').split('-');           // ERC | 2025 | STG
+    var panel = p.panel || '';
+    var dkey = panel.indexOf('SYG-') === 0 ? panel.substr(4, 2) : panel.substr(0, 2);
+    p.year = call[1] || '';
+    p.grant_type = SCHEME_BY_CODE[call[2]] || '';
+    p.domain = DOMAIN_BY_CODE[dkey] || '';
+    // The data file stores the panel code only (LS1, PE8, SYG-LS). Synergy panels
+    // carry no number, so their pill shows the domain alone: LS, PE, SH.
+    p.panel_code = panel.indexOf('SYG-') === 0 ? dkey : panel;
+    p.panel_name = PANEL_NAMES[panel] || panel;
+    // One lowercased blob per project, built once, so a keystroke is a plain
+    // substring scan rather than a re-lowercase of every field.
+    p._s = (p.title + ' ' + p.acronym + ' ' + p.researcher + ' ' + p.host + ' ' +
+            p.country + ' ' + p.panel_code + ' ' + p.call).toLowerCase();
+    return p;
+  }
+
   var DATA = [];
 
   function stripHost(h) {
@@ -55,6 +92,14 @@
   FILTER_KEYS.forEach(function (k) { state[k] = []; });
   var page = 1;
   var collapsed = {};
+  var query = '';        // raw text in the search box
+  var queryTerms = [];   // lowercased words, all of which must match
+  var focusSearch = false; // re-focus the box after a re-render
+
+  function setQuery(v) {
+    query = v;
+    queryTerms = v.toLowerCase().split(/\s+/).filter(Boolean);
+  }
 
   function toggleGroup(key) { collapsed[key] = !collapsed[key]; render(); }
 
@@ -64,12 +109,14 @@
       var v = p.get(k);
       state[k] = v ? v.split(',') : [];
     });
+    setQuery(p.get('q') || '');
     page = parseInt(p.get('page'), 10) || 1;
   }
 
   function writeUrl() {
     var p = new URLSearchParams();
     FILTER_KEYS.forEach(function (k) { if (state[k].length) p.set(k, state[k].join(',')); });
+    if (query) p.set('q', query);
     if (page > 1) p.set('page', page);
     var qs = p.toString();
     var url = location.pathname + location.search + (qs ? '#' + qs : '');
@@ -86,9 +133,17 @@
 
   function clearFilters() {
     FILTER_KEYS.forEach(function (k) { state[k] = []; });
+    setQuery('');
     page = 1;
     writeUrl();
     render();
+  }
+
+  function matchesQuery(p) {
+    for (var i = 0; i < queryTerms.length; i++) {
+      if (p._s.indexOf(queryTerms[i]) === -1) return false;
+    }
+    return true;
   }
 
   function matches(p) {
@@ -96,12 +151,12 @@
       var k = FILTER_KEYS[i];
       if (state[k].length && state[k].indexOf(p[k]) === -1) return false;
     }
-    return true;
+    return matchesQuery(p);
   }
 
-  function renderFilterGroup(key, options) {
+  function renderFilterGroup(key, options, pool) {
     var counts = {};
-    DATA.forEach(function (p) { if (p[key]) counts[p[key]] = (counts[p[key]] || 0) + 1; });
+    pool.forEach(function (p) { if (p[key]) counts[p[key]] = (counts[p[key]] || 0) + 1; });
     var rows = options.map(function (o) {
       var checked = state[key].indexOf(o) !== -1 ? 'checked' : '';
       var count = counts[o] || 0;
@@ -115,8 +170,22 @@
       '<div class="epd-filter-options">' + rows + '</div></div>';
   }
 
+  function searchBox() {
+    return '<div class="epd-searchbox">' +
+      '<label class="epd-sr-only" for="epd-search">Search projects</label>' +
+      '<input type="search" id="epd-search" class="epd-search-input" autocomplete="off" ' +
+        'placeholder="Search title, researcher, institution\u2026" value="' +
+        query.replace(/"/g, '&quot;') + '">' +
+      (query ? '<button type="button" class="epd-search-clear" id="epd-search-clear" aria-label="Clear search">&times;</button>' : '') +
+      '</div>';
+  }
+
   function activeChips() {
     var chips = [];
+    if (query) {
+      chips.push('<span class="epd-chip">\u201c' + query.replace(/</g, '&lt;') +
+        '\u201d<span class="epd-x" data-chip-search="1">\u00d7</span></span>');
+    }
     FILTER_KEYS.forEach(function (key) {
       state[key].forEach(function (val) {
         chips.push('<span class="epd-chip">' + (key === 'grant_type' ? valueLabel(val) : val) +
@@ -133,6 +202,9 @@
       tags += '<span class="epd-tag">' + valueLabel(p.grant_type) + '</span>';
     } else if (p.domain) {
       tags += '<span class="epd-tag">' + p.domain + '</span>';
+    }
+    if (p.panel_code) {
+      tags += '<span class="epd-tag epd-tag-panel" title="' + p.panel_name + '">' + p.panel_code + '</span>';
     }
     return '<div class="epd-card">' +
       '<span class="epd-acronym">' + p.acronym + '</span>' +
@@ -160,9 +232,12 @@
     var totalPages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
     if (page > totalPages) page = totalPages;
     var pageResults = results.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
-    var hasActive = FILTER_KEYS.some(function (k) { return state[k].length; });
+    var hasActive = !!query || FILTER_KEYS.some(function (k) { return state[k].length; });
 
-    var filterGroups = FILTER_KEYS.map(function (k) { return renderFilterGroup(k, TAXONOMIES[k]); }).join('');
+    // Facet counts reflect the search, so a count never promises more than the
+    // search can deliver. They ignore the other facets, as they did before.
+    var pool = queryTerms.length ? DATA.filter(matchesQuery) : DATA;
+    var filterGroups = FILTER_KEYS.map(function (k) { return renderFilterGroup(k, TAXONOMIES[k], pool); }).join('');
 
     // Shown only when 2025 and Advanced Grants are both in the active filter set.
     var adgNote = (state.year.indexOf('2025') !== -1 && state.grant_type.indexOf('Advanced Grants') !== -1)
@@ -172,6 +247,7 @@
     document.getElementById('epd-app').innerHTML =
       '<div class="epd-layout">' +
         '<aside class="epd-filters">' +
+          searchBox() +
           '<div class="epd-filters-scroll">' + filterGroups + '</div>' +
           '<button class="epd-clear-filters' + (hasActive ? ' epd-active' : '') + '" id="epd-clear">Clear all filters</button>' +
         '</aside>' +
@@ -181,7 +257,11 @@
             '<div class="epd-results-count">' + results.length + ' project' + (results.length === 1 ? '' : 's') + '</div>' +
           '</div>' +
           activeChips() +
-          (pageResults.length ? '<div class="epd-results-grid">' + pageResults.map(card).join('') + '</div>' : '<div class="epd-no-results">No projects match the selected filters.</div>') +
+          (pageResults.length ? '<div class="epd-results-grid">' + pageResults.map(card).join('') + '</div>' : '<div class="epd-no-results">' +
+            (query ? 'No projects match \u201c' + query.replace(/</g, '&lt;') + '\u201d' +
+                     (FILTER_KEYS.some(function (k) { return state[k].length; }) ? ' with the selected filters.' : '. Try a researcher name, an institution or a word from the project title.')
+                   : 'No projects match the selected filters.') +
+            '</div>') +
           pagination(totalPages) +
         '</div>' +
       '</div>';
@@ -193,7 +273,32 @@
       h3.addEventListener('click', function () { toggleGroup(h3.dataset.toggleGroup); });
     });
     document.querySelectorAll('.epd-x').forEach(function (x) {
-      x.addEventListener('click', function () { toggleFilter(x.dataset.chipKey, x.dataset.chipVal); });
+      x.addEventListener('click', function () {
+        if (x.dataset.chipSearch) { setQuery(''); page = 1; writeUrl(); render(); return; }
+        toggleFilter(x.dataset.chipKey, x.dataset.chipVal);
+      });
+    });
+
+    var searchEl = document.getElementById('epd-search');
+    if (searchEl) {
+      searchEl.addEventListener('input', function () {
+        setQuery(searchEl.value);
+        page = 1;
+        focusSearch = true;
+        writeUrl();
+        render();
+      });
+      // render() replaces the whole block, so focus and caret are restored by hand.
+      if (focusSearch) {
+        focusSearch = false;
+        searchEl.focus();
+        var end = searchEl.value.length;
+        try { searchEl.setSelectionRange(end, end); } catch (e) {}
+      }
+    }
+    var searchClear = document.getElementById('epd-search-clear');
+    if (searchClear) searchClear.addEventListener('click', function () {
+      setQuery(''); page = 1; focusSearch = true; writeUrl(); render();
     });
     var clearBtn = document.getElementById('epd-clear');
     if (clearBtn) clearBtn.addEventListener('click', clearFilters);
@@ -220,7 +325,7 @@
   fetch(DATA_URL)
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function (json) {
-      DATA = json;
+      DATA = json.map(derive);
       buildTaxonomies();
       parseUrl();
       render();

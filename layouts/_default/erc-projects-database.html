@@ -1,10 +1,14 @@
 {{ define "main" }}
 {{ $data := index .Site.Data "erc_projects" }}
+{{/* year, grant_type and domain are derived from the stored Call and Panel codes. */}}
+{{ $projects := slice }}
+{{ range $data.projects }}{{ $projects = $projects | append (partial "epd/derive.html" .) }}{{ end }}
+{{/* The published file stays lean: call + panel only, with the browser deriving the rest. */}}
 {{ $projectsJSON := resources.FromString "erc-projects-database/data.json" ($data.projects | jsonify) | fingerprint }}
 
 {{ $years := slice }}
 {{ $schemes := slice }}
-{{ range $data.projects }}
+{{ range $projects }}
   {{ if .year }}{{ $years = $years | append .year }}{{ end }}
   {{ if .grant_type }}{{ $schemes = $schemes | append .grant_type }}{{ end }}
 {{ end }}
@@ -57,11 +61,11 @@
 
 <div class="epd-credstrip">
   <div class="epd-credstrip-item">
-    <span class="epd-credstrip-num">&euro;21,485M</span>
+    <span class="epd-credstrip-num">&euro;22,062M</span>
     <span class="epd-credstrip-label">EU contribution</span>
   </div>
   <div class="epd-credstrip-item">
-    <span class="epd-credstrip-num">11,907</span>
+    <span class="epd-credstrip-num">12,133</span>
     <span class="epd-credstrip-label">Projects funded</span>
   </div>
   <div class="epd-credstrip-item">
@@ -89,25 +93,25 @@
   {{/* Server-rendered first page so crawlers and no-JS visitors get real content and links.
        JS replaces this whole block with the interactive grid once the dataset loads. */}}
   <div class="epd-results-grid">
-    {{ range first 24 $data.projects }}
+    {{ range first 24 $projects }}
     <div class="epd-card">
       <span class="epd-acronym">{{ .acronym }}</span>
       <h4>{{ .title }}</h4>
       {{ $hn := slice }}{{ range split (replaceRE "\\s*\\[[^\\]]*\\]" "" .host) "," }}{{ $t := trim . " " }}{{ if and $t (ne $t "Unknown Name") }}{{ $hn = $hn | append $t }}{{ end }}{{ end }}
       <div class="epd-meta"><strong>{{ .researcher }}</strong><br>{{ delimit (uniq $hn) ", " }}{{ with .country }}, {{ . }}{{ end }}</div>
-      <div class="epd-tags"><span class="epd-tag">{{ .year }}</span><span class="epd-tag">{{ .grant_type }}</span></div>
+      <div class="epd-tags"><span class="epd-tag">{{ .year }}</span><span class="epd-tag">{{ .grant_type }}</span><span class="epd-tag epd-tag-panel" title="{{ .panel_name }}">{{ .panel_code }}</span></div>
       <div class="epd-links"><a href="{{ .cordis }}" target="_blank" rel="noopener">View on CORDIS</a></div>
     </div>
     {{ end }}
   </div>
-  <p class="epd-ssr-more">Showing 24 of {{ len $data.projects }} projects. Turn on JavaScript to filter by call year, grant scheme, and research domain.</p>
+  <p class="epd-ssr-more">Showing 24 of {{ len $projects }} projects. Turn on JavaScript to search and to filter by call year, grant scheme, and research domain.</p>
 </div>
 
 <section class="epd-faq">
   <h2>FAQ</h2>
   <details>
     <summary>How can I filter the projects?</summary>
-    <p>Filter by call year, grant scheme and domain.</p>
+    <p>Search by project title, acronym, researcher name, host institution, country or panel code, and filter by call year, grant scheme and domain. Search and filters work together.</p>
   </details>
   <details>
     <summary>What does each project card show?</summary>
@@ -122,7 +126,7 @@
     {
       "@type": "Question",
       "name": "How can I filter the projects?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Filter by call year, grant scheme and domain." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Search by project title, acronym, researcher name, host institution, country or panel code, and filter by call year, grant scheme and domain. Search and filters work together." }
     },
     {
       "@type": "Question",
@@ -132,6 +136,30 @@
   ]
 }
 </script>
+
+<section class="epd-faq epd-updatelog">
+  <h2>Change log</h2>
+  <h3>21 September 2026</h3>
+  <ul>
+    <li>Dataset refreshed from a new ERC dashboard export. The database now holds <strong>12,133 projects</strong>, up from 11,907.</li>
+    <li>Total EU contribution shown in the summary strip updated to <strong>&euro;22,062M</strong>, from &euro;21,485M.</li>
+    <li>226 projects added, almost all 2025 calls and Advanced Grants. No projects were removed.</li>
+    <li>Project titles cleaned: stray line breaks and double spaces removed from 540 titles, so cards now read on a single clean line.</li>
+    <li>Host institution names cleaned: internal institution ID codes no longer appear in the multi-institution listings on Synergy Grant cards.</li>
+    <li><strong>Added a search box</strong> above the filters, searching project title, acronym, researcher name, host institution, country, panel code and call code.
+      <ul>
+        <li>Typing more than one word returns projects matching <strong>every</strong> word, not any of them. Searching <em>cancer biology</em> returns 9 projects, not the 567 that mention either word.</li>
+        <li>The words do not have to sit together or be in the same field. <em>cancer biology</em> also finds a project whose title says biology at an institute with cancer in its name.</li>
+        <li>Search and filters work together: a search narrows whatever filters are already ticked, and the counts beside each filter drop to match.</li>
+        <li>Matching is on part-words, so <em>plank</em> will not find <em>Planck</em>, but <em>Planck</em> finds every Max Planck project.</li>
+        <li>Your search is added to the page address, so a set of results can be bookmarked or sent to someone.</li>
+        <li>Abstracts are not searched. Only the fields listed above.</li>
+      </ul>
+    </li>
+    <li>Project cards now carry a third tag with the ERC evaluation panel — LS1, PE8, SH3, and LS, PE or SH for Synergy Grants. Hover it to see the full panel name.</li>
+    <li>The call year and grant scheme filters now read the ERC call code on each project (ERC-2025-STG gives 2025 and Starting Grant), and the domain filter reads the evaluation panel. Filter options are built from the projects themselves, so a new call year appears on its own once it is funded.</li>
+  </ul>
+</section>
 
 </div><!-- /.epd-inner -->
 </div><!-- /#epd-root -->

@@ -120,6 +120,56 @@ onclick="gtag('event', 'purchase_intent', {'item_name': 'PRODUCT NAME', 'locatio
 
 ---
 
+## ERC Projects Database — data rules
+
+Page: `/erc-projects-database/`. Data: `data/erc_projects.json`, rendered by `layouts/_default/erc-projects-database.html` with `layouts/partials/epd/` (`derive.html`, `app.html`, `styles.html`). The four scheme pages under `content/erc-projects-database/` use `layouts/_default/erc-scheme.html` and are still `draft: true`.
+
+### Stored fields vs derived fields
+
+The data file stores **11 fields only**: `acronym`, `title`, `researcher`, `host`, `country`, `call`, `panel`, `start_date`, `end_date`, `eu_contribution`, `cordis`.
+
+**Do not add `year`, `grant_type` or `domain` to the data file.** All three are derived at render time from `call` and `panel`, in two places that must stay in step:
+- `layouts/partials/epd/derive.html` — for Hugo (server-rendered cards, scheme pages, facet lists)
+- the `derive()` function in `layouts/partials/epd/app.html` — for the browser
+
+| Derived | From | Rule |
+|---|---|---|
+| `year` | `call` | `ERC-2025-STG` → `2025` |
+| `grant_type` | `call` | STG / COG / ADG / POC / SYG → Starting / Consolidator / Advanced / Proof of Concept / Synergy Grants |
+| `domain` | `panel` | `LS…` → Life Sciences, `PE…` → Physical sciences & engineering, `SH…` → Social sciences & humanities |
+
+### `data/erc_panels.json` must be regenerated with the projects file
+
+`panel` stores the **code only** (`LS4`, `PE10`, `SYG-LS`). Full panel names live in `data/erc_panels.json`, a 31-entry code→name lookup, read by `derive.html` and injected into the page JS as `PANEL_NAMES`. This keeps 69-character panel names out of 12,000+ records and saves ~445 KB raw / ~22 KB gzipped.
+
+**The two files are coupled.** If a refreshed export introduces a panel code that isn't in the lookup, those cards render the bare code with no hover text — it fails silently, it does not error. Domain sorting is unaffected (it reads the `LS`/`PE`/`SH` prefix, not the lookup). **Always regenerate `erc_panels.json` from the same export as `erc_projects.json`**, by collecting each distinct panel string from the source.
+
+### Panel pill on project cards
+
+Cards show three tags: year, scheme, panel code. Synergy panels carry no number (`SYG-LS Life Sciences`), so their pill shows the domain alone — `LS`, `PE`, `SH`, **not** `SSH` and not `SYG-LS`.
+
+### Rebuilding from an ERC export
+
+- **Duplicate rule:** a row is a duplicate only when *every* field matches exactly, AND not OR. On the Sept 2026 export this found **0** duplicates in 13,269 raw rows. Reused acronyms are legitimate (286 acronyms are shared by different projects, some within the same call) — never dedupe on acronym. `CORDIS Link` is the only safe key.
+- **Exception rule (separate from duplicates):** multi-institution projects ship a second "partner" row with blank Acronym, Project Title, Panel, Region, dates and contribution, sharing a Project Number with the real row. Drop those (47 in the Sept 2026 export). They are *not* duplicates.
+- **Coverage:** call years 2016 onward; 2015 is excluded. The facets are built from the data, so new call years appear automatically — no hardcoded year list exists.
+- Strip the `[PIC,CC]` tags from `Host Institution(s)`, including the ones **inside** multi-institution strings, not just the trailing one.
+- Collapse whitespace in titles (the export embeds line breaks and double spaces).
+
+### Known data defect, left as-exported
+
+~74 projects have a `Country` that contradicts their host institution's country code (e.g. host `King's College London [.,UK]`, country `Spain`). Region agrees with Country in every testable case; only the host *name* disagrees. Two CORDIS spot-checks showed the country was right and the host name wrong. The export contains no correction, so **this is left as the ERC publishes it** — do not "fix" it without new source data.
+
+### Summary strip figures are hardcoded
+
+The four numbers in `layouts/_default/erc-projects-database.html` (EU contribution, projects funded, countries, host institutions) are **not** computed from the data. Update them by hand whenever the dataset is refreshed, or the page will state a count its own filters contradict. Host institutions is **943**, taken from the ERC's own Qlik dashboard — a name-based count of the JSON gives 953; stick with 943.
+
+### Change log
+
+The page carries a "Change log" section after the FAQ. Add a dated entry there for any change a visitor would notice, and keep it to front-end effects, not data-pipeline detail.
+
+---
+
 ## Known Hugo gotchas
 
 ### Don't use `.IsMenuCurrent` for nav active-states

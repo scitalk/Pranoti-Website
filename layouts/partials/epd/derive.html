@@ -1,0 +1,29 @@
+{{/* Adds year, grant_type and domain to a project, derived from its Call and Panel codes.
+     The data file stores only `call` (ERC-2025-STG) and `panel` (LS1 - ... / SYG-LS ...);
+     these three values are computed here so the facets have a single source of truth.
+     Returns the project unchanged plus the three derived keys. */}}
+{{ $p := . }}
+{{ $parts := split $p.call "-" }}
+{{ $year := index $parts 1 }}
+{{ $code := index $parts 2 }}
+{{ $schemes := dict
+  "STG" "Starting Grants"
+  "COG" "Consolidator Grants"
+  "ADG" "Advanced Grants"
+  "POC" "Proof of Concept"
+  "SYG" "Synergy Grants" }}
+{{ $domains := dict
+  "LS" "Life Sciences (LS)"
+  "PE" "Physical sciences & engineering (PE)"
+  "SH" "Social sciences & humanities (SH)" }}
+{{ $dkey := cond (hasPrefix $p.panel "SYG-") (substr $p.panel 4 2) (substr $p.panel 0 2) }}
+{{/* The data file stores the panel code only (LS1, PE8, SYG-LS). Synergy panels
+     carry no number, so their pill shows the domain alone: LS, PE, SH. The full
+     panel name for the hover text comes from data/erc_panels.json. */}}
+{{ $pcode := cond (hasPrefix $p.panel "SYG-") $dkey $p.panel }}
+{{ return merge $p (dict
+  "year" $year
+  "grant_type" (index $schemes $code)
+  "domain" (index $domains $dkey)
+  "panel_code" $pcode
+  "panel_name" (index site.Data.erc_panels $p.panel)) }}

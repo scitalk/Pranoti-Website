@@ -1,6 +1,6 @@
 ---
 title: "ERC Projects Database"
-description: "Search 11,953 ERC grant recipients, 2016–2025: every European Research Council Starting, Consolidator, Advanced, Synergy and Proof of Concept project, filterable by call year, scheme and research domain, each linked to CORDIS."
+description: "Search 12,133 ERC grant recipients, 2016–2025: every European Research Council Starting, Consolidator, Advanced, Synergy and Proof of Concept project, filterable by call year, scheme and research domain, each linked to CORDIS."
 keywords:
   - "ERC grant recipients"
   - "ERC funded projects database"
