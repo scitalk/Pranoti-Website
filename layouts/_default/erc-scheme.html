@@ -2,7 +2,10 @@
 {{ $data := index .Site.Data "erc_projects" }}
 {{ $scheme := .Params.scheme }}
 {{ $slug := .Params.scheme_slug }}
-{{ $projects := where $data.projects "grant_type" $scheme }}
+{{/* year, grant_type and domain are derived from the stored Call and Panel codes. */}}
+{{ $all := slice }}
+{{ range $data.projects }}{{ $all = $all | append (partial "epd/derive.html" .) }}{{ end }}
+{{ $projects := where $all "grant_type" $scheme }}
 {{ $schemeJSON := resources.FromString (printf "erc-projects-database/%s.json" $slug) ($projects | jsonify) | fingerprint }}
 
 {{ $years := slice }}
@@ -44,6 +47,9 @@
 <script type="application/ld+json">{{ jsonify (dict "indent" "  ") (dict "@context" "https://schema.org" "@graph" $graph) | safeJS }}</script>
 
 <div id="epd-root">
+<div class="epd-inner">
+
+<div class="epd-reading">
 
 <header class="epd-page-head">
   <h1>{{ .Title }}</h1>
@@ -88,6 +94,8 @@
   <a class="epd-cta-btn" href="{{ .Params.product_url }}" onclick="gtag('event', 'select_item', {'item_list_id': 'erc_scheme_page', 'item_list_name': '{{ .Title }}', 'items': [{'item_name': '{{ .Params.product_name }}'}]})">See the kit — €{{ .Params.price }} →</a>
 </div>
 
+</div><!-- /.epd-reading -->
+
 <div id="epd-app">
   <div class="epd-results-grid">
     {{ range first 24 $projects }}
@@ -95,7 +103,7 @@
       <span class="epd-acronym">{{ .acronym }}</span>
       <h4>{{ .title }}</h4>
       <div class="epd-meta"><strong>{{ .researcher }}</strong><br>{{ replaceRE "\\s*\\[[^\\]]*\\]\\s*$" "" .host }}{{ with .country }}, {{ . }}{{ end }}</div>
-      <div class="epd-tags"><span class="epd-tag">{{ .year }}</span><span class="epd-tag">{{ .domain }}</span></div>
+      <div class="epd-tags"><span class="epd-tag">{{ .year }}</span><span class="epd-tag">{{ .domain }}</span><span class="epd-tag epd-tag-panel" title="{{ .panel_name }}">{{ .panel_code }}</span></div>
       <div class="epd-links"><a href="{{ .cordis }}" target="_blank" rel="noopener">View on CORDIS</a></div>
     </div>
     {{ end }}
@@ -103,7 +111,8 @@
   <p class="epd-ssr-more">Showing 24 of {{ len $projects }} {{ $scheme }}. Turn on JavaScript to filter by call year and research domain.</p>
 </div>
 
-</div>
+</div><!-- /.epd-inner -->
+</div><!-- /#epd-root -->
 
 {{ partial "epd/styles.html" . }}
 <script>window.EPD_CONFIG = { dataUrl: {{ $schemeJSON.RelPermalink | jsonify | safeJS }}, filterKeys: ["year", "domain"] };</script>
