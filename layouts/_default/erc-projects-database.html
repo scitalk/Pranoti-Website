@@ -139,13 +139,8 @@
 
 <section class="epd-faq epd-updatelog">
   <h2>Change log</h2>
-  <h3>21 September 2026</h3>
+  <h3>22 September 2026</h3>
   <ul>
-    <li>Dataset refreshed from a new ERC dashboard export. The database now holds <strong>12,133 projects</strong>, up from 11,907.</li>
-    <li>Total EU contribution shown in the summary strip updated to <strong>&euro;22,062M</strong>, from &euro;21,485M.</li>
-    <li>226 projects added, almost all 2025 calls and Advanced Grants. No projects were removed.</li>
-    <li>Project titles cleaned: stray line breaks and double spaces removed from 540 titles, so cards now read on a single clean line.</li>
-    <li>Host institution names cleaned: internal institution ID codes no longer appear in the multi-institution listings on Synergy Grant cards.</li>
     <li><strong>Added a search box</strong> above the results, searching project title, acronym, researcher name, host institution, country, panel code and call code.
       <ul>
         <li>Typing more than one word returns projects matching <strong>every</strong> word, not any of them. Searching <em>cancer biology</em> returns 9 projects, not the 567 that mention either word.</li>
@@ -153,9 +148,21 @@
         <li>Search and filters work together: a search narrows whatever filters are already ticked, and the counts beside each filter drop to match.</li>
         <li>Matching is on part-words, so <em>plank</em> will not find <em>Planck</em>, but <em>Planck</em> finds every Max Planck project.</li>
         <li>Your search is added to the page address, so a set of results can be bookmarked or sent to someone.</li>
+        <li>Countries are searched by full name, so <em>Germany</em> works and <em>DE</em> does not.</li>
+        <li>Panel codes match exactly: searching <em>PE1</em> returns the 320 PE1 projects, not the PE10 and PE11 ones as well.</li>
+        <li>Synergy Grant panels carry no number, so a numbered panel search never returns them.</li>
         <li>Abstracts are not searched. Only the fields listed above.</li>
       </ul>
     </li>
+  </ul>
+
+  <h3>21 September 2026</h3>
+  <ul>
+    <li>Dataset refreshed from a new ERC dashboard export. The database now holds <strong>12,133 projects</strong>, up from 11,907.</li>
+    <li>Total EU contribution shown in the summary strip updated to <strong>&euro;22,062M</strong>, from &euro;21,485M.</li>
+    <li>226 projects added, almost all 2025 calls and Advanced Grants. No projects were removed.</li>
+    <li>Project titles cleaned: stray line breaks and double spaces removed from 540 titles, so cards now read on a single clean line.</li>
+    <li>Host institution names cleaned: internal institution ID codes no longer appear in the multi-institution listings on Synergy Grant cards.</li>
     <li>Project cards now carry a third tag with the ERC evaluation panel — LS1, PE8, SH3, and LS, PE or SH for Synergy Grants. Hover it to see the full panel name.</li>
     <li>The call year and grant scheme filters now read the ERC call code on each project (ERC-2025-STG gives 2025 and Starting Grant), and the domain filter reads the evaluation panel. Filter options are built from the projects themselves, so a new call year appears on its own once it is funded.</li>
   </ul>
