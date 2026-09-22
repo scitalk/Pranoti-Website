@@ -115,30 +115,6 @@
     </div>
   </header>
 
-  <!-- Stats bar -->
-  <div class="about-stats-bar">
-    <div class="about-container">
-      <div class="about-stats-grid">
-        <div class="about-stat">
-          <span class="about-stat-num">15+</span>
-          <span class="about-stat-label">Years at the research–communication interface</span>
-        </div>
-        <div class="about-stat">
-          <span class="about-stat-num">500+</span>
-          <span class="about-stat-label">Researchers trained internationally</span>
-        </div>
-        <div class="about-stat">
-          <span class="about-stat-num">€32M+</span>
-          <span class="about-stat-label">European grant budgets supported</span>
-        </div>
-        <div class="about-stat">
-          <span class="about-stat-num">249</span>
-          <span class="about-stat-label">Podcast episodes, 1M+ views</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Bio section -->
   <section class="about-bio-section">
     <div class="about-container">
@@ -183,77 +159,96 @@
     </div>
   </section>
 
-  <!-- What I do -->
-  <section class="about-services-section">
-    <div class="about-container">
-      <h2 class="about-section-heading">What I do</h2>
-      <div class="about-services-grid">
+  <!-- Resumé -->
+  <section class="resume-page">
+    <div class="resume-container">
 
-        <div class="about-service-card">
-          <h3>AI Integration &amp; Automation</h3>
-          <p>Building AI-powered operational workflows for businesses, research organisations, and EIC-funded companies — proposal pipelines, content systems, training infrastructure — using Claude API and Make. Focused on durable, institution-grade implementation, not one-off experiments.</p>
-          <a href="/ai-guides/" class="about-service-link">Read AI guides →</a>
-        </div>
+      <header class="resume-header">
+        <h2>Resumé</h2>
+      </header>
 
-        <div class="about-service-card">
-          <h3>Training &amp; Keynotes</h3>
-          <p>Workshops and keynote sessions for researchers at all career stages — personal branding, science communication strategy, AI for scientists. Delivered at DTU Denmark, University of Sheffield, NTU Singapore, EPFL/ETH Zurich doctoral school, Max Planck Institute, and more.</p>
-          <a href="/portfolio/events/" class="about-service-link">See past talks →</a>
-        </div>
+      <div class="resume-body">
 
-      </div>
-      <p class="about-services-footnote">Also available on request: science communication and dissemination work packages for Horizon Europe proposals — see <a href="https://thesciencetalk.com" target="_blank" rel="noopener">The Science Talk</a> for that service.</p>
-    </div>
-  </section>
-
-  <!-- The Science Talk -->
-  <section class="about-tst-section">
-    <div class="about-container">
-      <div class="about-tst-inner">
-        <div class="about-tst-text">
-          <span class="about-tst-label">Founded 2018</span>
-          <h2>The Science Talk</h2>
-          <p>I founded and run <a href="https://thesciencetalk.com" target="_blank" rel="noopener">The Science Talk</a> — a science communication platform for the European research community. It hosts <a href="https://thesciencetalk.com/under-the-microscope/" target="_blank" rel="noopener"><strong>Under the Microscope</strong></a>, a podcast exploring materials science and nanotechnology with 249 episodes, 130+ scientist guests, and over 1 million views across 20+ countries.</p>
-          <p>The Science Talk is also where I publish analysis on AI in research, EIC funding trends, and science communication strategy — all written from inside the research ecosystem, not outside it.</p>
-          <a href="https://thesciencetalk.com" target="_blank" rel="noopener" class="about-tst-btn">Visit The Science Talk →</a>
-        </div>
-        <div class="about-tst-stats">
-          <div class="about-tst-stat">
-            <span class="about-tst-num">249</span>
-            <span class="about-tst-lbl">Episodes</span>
+        <h3>Work Experience</h3>
+        {{ $positions := slice
+          (dict "title" "Founder & Communications Lead" "org" "The Science Talk (Mannheim, Germany / Remote)" "dates" "Jan 2018 – Present")
+          (dict "title" "Product Marketing Manager, Transnational Services" "org" "mobile.de, Adevinta Group" "dates" "Jan 2023 – Jun 2024")
+          (dict "title" "Senior Strategic Marketing Manager" "org" "Springer Nature Group" "dates" "Nov 2021 – Jan 2023")
+          (dict "title" "(senior) Product Manager Nanoscience & Tech" "org" "Springer Nature Group" "dates" "Mar 2019 – Nov 2021")
+          (dict "title" "Research Associate" "org" "NMI Natural and Medical Science Institute (Reutlingen, Germany)" "dates" "Apr 2015 – Feb 2019")
+        }}
+        {{ range $positions }}
+        <div class="resume-position">
+          <div class="resume-position-meta">
+            <span class="resume-position-title">{{ .title }}</span>
+            <em class="resume-position-dates">{{ .dates }}</em>
           </div>
-          <div class="about-tst-stat">
-            <span class="about-tst-num">130+</span>
-            <span class="about-tst-lbl">Scientist guests</span>
-          </div>
-          <div class="about-tst-stat">
-            <span class="about-tst-num">1M+</span>
-            <span class="about-tst-lbl">Views</span>
-          </div>
-          <div class="about-tst-stat">
-            <span class="about-tst-num">20+</span>
-            <span class="about-tst-lbl">Countries</span>
-          </div>
+          <div class="resume-position-org"><em>{{ .org }}</em></div>
         </div>
-      </div>
-    </div>
-  </section>
+        {{ end }}
+        <hr>
 
-  <!-- Institutions -->
-  <section class="about-institutions-section">
-    <div class="about-container">
-      <h2 class="about-section-heading about-section-heading--center">Spoken and trained at</h2>
-      <div class="about-institutions-list">
-        <span>DTU Denmark</span>
-        <span>University of Sheffield</span>
-        <span>NTU Singapore</span>
-        <span>EPFL / ETH Zurich Doctoral School</span>
-        <span>Max Planck Institute</span>
-        <span>Helmholtz Research Institute</span>
-        <span>NWO</span>
-        <span>Thoughtworks</span>
-        <span>IAPS</span>
-        <span>Young European Scientist Meeting</span>
+        <h3>Education</h3>
+        <p><strong>PhD:</strong> Applied Physics, University of Tuebingen (2015 – 2018). The work was mainly done at the Natural and Medical Sciences Institute (NMI) at the University of Tuebingen.</p>
+        <p><strong>Masters Degree (M. Sc.):</strong> Materials Science, University of Stuttgart (2012 fall – 2015 spring)</p>
+        <p><strong>Bachelors Degree (B. Tech.):</strong> Metallurgical and Materials Science Engineering, Visvesvaraya National Institute of Technology (VNIT), Nagpur, India. (2008–2012)</p>
+        <hr>
+
+        <h3>PhD Thesis</h3>
+        <p>Title: Carbon-Based Transparent Microelectrodes for Simultaneous opto- and electro-physiology</p>
+        <p>Institution: Natural &amp; Medical Science Institute (Reutlingen, Germany) at the University of Tuebingen</p>
+
+        <h3>Master Thesis</h3>
+        <p>Title: Twisted Bilayer Graphene</p>
+        <p>Institution: Solid State Nanophysics group at the Max Planck Institute for Solid State Research, Germany</p>
+
+        <h3>Bachelor Thesis</h3>
+        <p>Title: Wear Behavior of Mechanically Alloyed Al/Mg/SiO2 Metal Matrix Composites</p>
+        <p>Institution: Visvesvaraya National Institute of Technology, India</p>
+        <hr>
+
+        <h3>Publications</h3>
+        <ul class="resume-pubs">
+          <li>Mierzejewski M, Steins H, Kshirsagar P and Jones PD, <em>J. Neural Eng.</em> 17 052001, <a href="https://doi.org/10.1088/1741-2552/abb3b4" rel="noreferrer" target="_blank">10.1088/1741-2552/abb3b4</a> (2020)</li>
+          <li>Kshirsagar P, Burkhardt C, Mierzejewski M, Chassé T, Fleischer M and Jones PD, Conference Abstract: MEA Meeting 2018 | 11th International Meeting on Substrate Integrated Microelectrode Arrays, <a href="https://doi.org/10.3389/conf.fncel.2018.38.00036" rel="noreferrer" target="_blank">10.3389/conf.fncel.2018.38.00036</a> (2019)</li>
+          <li>Kshirsagar P, Dickreuter S, Mierzejewski M, Burkhardt CJ, Chassé T, Fleischer M, Jones PD, <em>Adv. Mater. Technol.</em> 4, 1800318, <a href="https://doi.org/10.1002/admt.201800318" rel="noreferrer" target="_blank">10.1002/admt.201800318</a> (2019)</li>
+          <li>Mierzejewski M, Kshirsagar P, Kraushaar U, Heusel G, Samba R and Jones PD, Conference Abstract: MEA Meeting 2018 | 11th International Meeting on Substrate Integrated Microelectrode Arrays, <a href="https://doi.org/10.3389/conf.fncel.2018.38.00027" rel="noreferrer" target="_blank">10.3389/conf.fncel.2018.38.00027</a> (2019)</li>
+          <li>Kshirsagar P, Martina M, Jones PD, Buckenmaier S, Kraushaar U, Chassé T, Fleischer M, Burkhardt CJ, <em>J. Micromech. Microeng.</em> 28 075007, <a href="https://doi.org/10.1088/1361-6439/aab9f0" rel="noreferrer" target="_blank">10.1088/1361-6439/aab9f0</a> (2018)</li>
+        </ul>
+        <hr>
+
+        <h3>Research Experience</h3>
+        {{ $research := slice
+          (dict "title" "Student Research Assistant (HiWi)" "org" "Solid State Nanophysics Group – Max Planck Institute for Solid State Research, Stuttgart" "dates" "Oct 2013 – March 2015" "task" "Production and Characterization of graphene")
+          (dict "title" "Student Research Assistant (HiWi)" "org" "University of Stuttgart – Institute for Materials Science" "dates" "Nov 2012 – Sept 2013" "task" "Thin film deposition of AlN-Eu2O3 for photoluminescence studies")
+          (dict "title" "Summer internship" "org" "Leibniz Institute for New Materials, Saarbruecken, Germany" "dates" "May 2011 – July 2011" "task" "Metal polymer hybrid adhesive system")
+          (dict "title" "Winter internship" "org" "Indian Institute of Technology, Kanpur, India" "dates" "Dec 2010" "task" "Introduction to transmission electron microscope (TEM)")
+          (dict "title" "Winter internship" "org" "FACOR Steels and Alloys Ltd. Nagpur, India" "dates" "Dec 2009" "task" "Investigation of the influence of heat treatment on the microstructures and mechanical properties of various steel alloys")
+        }}
+        {{ range $research }}
+        <div class="resume-position">
+          <div class="resume-position-meta">
+            <span class="resume-position-title">{{ .title }}</span>
+            <em class="resume-position-dates">{{ .dates }}</em>
+          </div>
+          <div class="resume-position-org"><em>{{ .org }}</em></div>
+          <p class="resume-indent"><em>Task: {{ .task }}</em></p>
+        </div>
+        {{ end }}
+        <hr>
+
+        <h3>Organization Experience</h3>
+        <p><strong>Content Writer</strong> (<a href="https://twitter.com/NMI_DE" target="_blank">Twitter</a>) for <a href="http://nmi.de/" rel="noreferrer" target="_blank">NMI</a> Natural and Medical Sciences Institute, Reutlingen.</p>
+        <p><strong>PhD Seminar Chair</strong>, <em>2nd PhD seminar of 2017</em> at <a href="http://nmi.de/" rel="noreferrer" target="_blank">NMI</a> Natural and Medical Sciences Institute, Reutlingen.</p>
+        <p><strong>Content Writer</strong> (<a href="https://www.facebook.com/MEA.Meeting/?ref=bookmarks" rel="noreferrer" target="_blank">Facebook</a>) for <a href="http://www.nmi.de/meameeting" rel="noreferrer" target="_blank">MEA Meeting 2018</a></p>
+        <p><strong>Content writer</strong> (<a href="https://twitter.com/iscientistconf" target="_blank">Twitter</a>, Facebook) for <a href="https://www.iscientist.de/" rel="noreferrer" target="_blank">I, Scientist 2018</a></p>
+        <p><strong>Training School Co-organiser</strong> of <a href="http://cost-nanospectroscopy.eu/training-raman.html" rel="noreferrer" target="_blank">Training School on Raman and Correlative Surface Analytics on Carbon Nanomaterials</a> which took place at NMI Reutlingen on Oct 5–7 2016</p>
+        <hr>
+
+        <h3>Training and Workshops</h3>
+        <p><a href="https://year2017.iscientist.de/program/workshops/" rel="noreferrer" target="_blank">Leadership and Diversity (one day) workshop by Dr. Neela Enke</a> during the I, Scientist conference in May 2017 in Berlin</p>
+        <p>Conflict Management and Communication training organized by <a href="https://en.lise-meitner-gesellschaft.org/events" rel="noreferrer" target="_blank">Lise-Meitner Society</a> in Jan 2018 in Berlin</p>
+
       </div>
     </div>
   </section>
@@ -263,26 +258,12 @@
       "Site" .Site
       "featuredOnly" true
       "limit" 6
-      "heading" "What people say"
+      "heading" "Testimonials"
       "subheading" "A selection from researchers, professors, and institutions I've worked with. See the full set on the testimonials page."
   ) }}
   <div class="about-container" style="text-align:center; margin: -1rem auto 2.5rem;">
     <a href="/testimonials/" class="about-service-link">Read all testimonials →</a>
   </div>
-
-  <!-- CTA -->
-  <section class="about-cta-section">
-    <div class="about-container">
-      <div class="about-cta-inner">
-        <h2>Let's work together</h2>
-        <p>I work with European research institutions, EIC-funded companies, and Horizon Europe consortia on science communication, AI integration, and grant dissemination. If that sounds like your situation, I'd like to hear from you.</p>
-        <div class="about-cta-btns">
-          <a href="https://thesciencetalk.com/contact-us/" class="about-btn-solid">Book a call →</a>
-          <a href="https://www.linkedin.com/in/pranoti-kshirsagar/" target="_blank" rel="noopener" class="about-btn-outline">Connect on LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </div>
 
@@ -290,6 +271,37 @@
 /* ─── Base ─────────────────────────────────────────────── */
 .about-page { font-family: 'Inter', sans-serif; }
 .about-container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+
+/* ─── Resumé ───────────────────────────────────────────── */
+.resume-page { font-family: 'Inter', sans-serif; padding: 3rem 2rem 4rem; background: #fff; }
+.resume-container { max-width: 760px; margin: 0 auto; }
+.resume-header { text-align: center; margin-bottom: 2.5rem; }
+.resume-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 3.8vw, 2.6rem);
+  font-weight: 600;
+  color: #1c1c1c;
+  margin: 0;
+}
+.resume-body h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.28rem;
+  font-weight: 600;
+  color: #1c1c1c;
+  margin: 1.75rem 0 .75rem;
+}
+.resume-body h3:first-child { margin-top: 0; }
+.resume-body p { font-size: 1.05rem; line-height: 1.7; color: #333; margin: 0 0 .6rem; }
+.resume-body p.resume-indent { padding-left: 1.75rem; }
+.resume-body a { color: #2A6048; }
+.resume-pubs { padding-left: 1.25rem; margin: 0; }
+.resume-pubs li { font-size: 1.05rem; line-height: 1.7; color: #333; margin: 0 0 .6rem; }
+.resume-position { margin: 0 0 1.1rem; }
+.resume-body .resume-position-title { font-weight: 400; font-size: 1.1rem; color: #1c1c1c; line-height: 1.4; }
+.resume-position-org { font-size: 1.05rem; color: #333; }
+.resume-position-meta { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .25rem 1rem; font-size: 1.05rem; color: #333; }
+.resume-position-dates { margin-left: auto; white-space: nowrap; }
+.resume-body hr { border: none; border-top: 1px solid rgba(0,0,0,.1); margin: 1.75rem 0; }
 
 /* ─── Hero ─────────────────────────────────────────────── */
 .about-hero {
@@ -303,7 +315,7 @@
   background: rgba(107,183,152,.2);
   color: #7BBDA0;
   font-family: 'Montserrat', sans-serif;
-  font-size: .68rem;
+  font-size: .75rem;
   font-weight: 600;
   letter-spacing: .09em;
   text-transform: uppercase;
@@ -313,27 +325,27 @@
 }
 .about-hero h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(2.2rem, 4.4vw, 3.1rem);
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: .5rem;
   color: #fff;
 }
 .about-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: rgba(255,255,255,.7);
   margin-bottom: .5rem;
   font-weight: 400;
 }
 .about-location {
-  font-size: .85rem;
+  font-size: .95rem;
   color: rgba(255,255,255,.75);
   margin-bottom: 1.5rem;
 }
 .about-hero-links { display: flex; flex-wrap: wrap; gap: .6rem; }
 .about-link-pill {
   font-family: 'Montserrat', sans-serif;
-  font-size: .78rem;
+  font-size: .86rem;
   font-weight: 600;
   color: rgba(255,255,255,.75);
   border: 1px solid rgba(255,255,255,.2);
@@ -350,33 +362,6 @@
 }
 .about-link-cta:hover { background: #1A3828; border-color: #1A3828; color: #fff; }
 
-/* ─── Stats bar ────────────────────────────────────────── */
-.about-stats-bar {
-  background: #1A3828;
-  padding: 1.75rem 2rem;
-}
-.about-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  text-align: center;
-}
-.about-stat { color: #fff; }
-.about-stat-num {
-  display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #7BBDA0;
-  line-height: 1.1;
-  margin-bottom: .3rem;
-}
-.about-stat-label {
-  font-size: .78rem;
-  color: rgba(255,255,255,.6);
-  line-height: 1.4;
-}
-
 /* ─── Bio section ───────────────────────────────────────── */
 .about-bio-section {
   background: #F8F4ED;
@@ -390,7 +375,7 @@
 }
 .about-section-heading {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #1A3828;
   text-transform: uppercase;
@@ -399,9 +384,8 @@
   padding-bottom: .5rem;
   border-bottom: 2px solid #E6F4ED;
 }
-.about-section-heading--center { text-align: center; }
 .about-bio-main p {
-  font-size: 1.06rem;
+  font-size: 1.15rem;
   color: #444;
   line-height: 1.85;
   margin-bottom: 1.1rem;
@@ -421,7 +405,7 @@
 }
 .about-cred-heading {
   font-family: 'Montserrat', sans-serif;
-  font-size: .72rem;
+  font-size: .8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .08em;
@@ -439,227 +423,20 @@
   display: flex;
   gap: .6rem;
   align-items: flex-start;
-  font-size: .9rem;
+  font-size: 1rem;
   color: #333;
   line-height: 1.5;
 }
-.about-cred-list em { font-size: .82rem; color: #888; font-style: normal; }
-
-/* ─── Services ─────────────────────────────────────────── */
-.about-services-section {
-  background: #fff;
-  padding: 4rem 2rem;
-}
-.about-services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: .5rem;
-}
-.about-services-footnote {
-  font-size: .85rem;
-  color: #888;
-  margin-top: 1.5rem;
-  text-align: center;
-}
-.about-services-footnote a { color: #2A6048; font-weight: 600; text-decoration: none; }
-.about-services-footnote a:hover { text-decoration: underline; }
-.about-service-card {
-  background: #F8F4ED;
-  border-radius: 10px;
-  padding: 1.75rem;
-  border-top: 3px solid #E6F4ED;
-  transition: border-color .2s;
-}
-.about-service-card:hover { border-top-color: #2A6048; }
-.about-service-card h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .95rem;
-  font-weight: 700;
-  color: #1A3828;
-  margin-bottom: .75rem;
-}
-.about-service-card p {
-  font-size: .9rem;
-  color: #555;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-.about-service-link {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .78rem;
-  font-weight: 600;
-  color: #2A6048;
-  text-decoration: none;
-}
-.about-service-link:hover { text-decoration: underline; }
-
-/* ─── The Science Talk ──────────────────────────────────── */
-.about-tst-section {
-  background: #1A3828;
-  color: #fff;
-  padding: 4rem 2rem;
-}
-.about-tst-inner {
-  display: grid;
-  grid-template-columns: 1fr 260px;
-  gap: 3rem;
-  align-items: center;
-}
-.about-tst-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .68rem;
-  font-weight: 600;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  color: #7BBDA0;
-  display: block;
-  margin-bottom: .6rem;
-}
-.about-tst-text h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 1rem;
-}
-.about-tst-text p {
-  font-size: .98rem;
-  color: rgba(255,255,255,.75);
-  line-height: 1.75;
-  margin-bottom: .9rem;
-}
-.about-tst-text a { color: #7BBDA0; font-weight: 600; text-decoration: none; }
-.about-tst-text a:hover { text-decoration: underline; }
-.about-tst-btn {
-  display: inline-block;
-  margin-top: .5rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: .82rem;
-  font-weight: 700;
-  color: #1A3828 !important;
-  background: #7BBDA0;
-  padding: .6rem 1.25rem;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background .2s;
-}
-.about-tst-btn:hover { background: #5EA88A; }
-.about-tst-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-.about-tst-stat {
-  background: rgba(255,255,255,.07);
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-}
-.about-tst-num {
-  display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #7BBDA0;
-  margin-bottom: .25rem;
-}
-.about-tst-lbl {
-  font-size: .72rem;
-  color: rgba(255,255,255,.75);
-  text-transform: uppercase;
-  letter-spacing: .05em;
-}
-
-/* ─── Institutions ──────────────────────────────────────── */
-.about-institutions-section {
-  background: #F8F4ED;
-  padding: 3.5rem 2rem;
-}
-.about-institutions-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-.about-institutions-list span {
-  font-size: .85rem;
-  color: #444;
-  background: #fff;
-  border: 1px solid #E0DDD8;
-  padding: .45rem 1rem;
-  border-radius: 20px;
-  font-weight: 500;
-}
-
-/* ─── CTA ───────────────────────────────────────────────── */
-.about-cta-section {
-  background: #fff;
-  padding: 4.5rem 2rem;
-}
-.about-cta-inner {
-  max-width: 620px;
-  margin: 0 auto;
-  text-align: center;
-}
-.about-cta-inner h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #1c1c1c;
-  margin-bottom: 1rem;
-}
-.about-cta-inner p {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.75;
-  margin-bottom: 1.75rem;
-}
-.about-cta-btns { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
-.about-btn-solid {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .88rem;
-  font-weight: 700;
-  color: #fff;
-  background: #2A6048;
-  padding: .7rem 1.5rem;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background .2s;
-}
-.about-btn-solid:hover { background: #1A3828; }
-.about-btn-outline {
-  font-family: 'Montserrat', sans-serif;
-  font-size: .88rem;
-  font-weight: 700;
-  color: #1A3828;
-  border: 1.5px solid #1A3828;
-  padding: .7rem 1.5rem;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all .2s;
-}
-.about-btn-outline:hover { background: #1A3828; color: #fff; }
+.about-cred-list em { font-size: .9rem; color: #888; font-style: normal; }
 
 /* ─── Responsive ────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
   .about-bio-layout { grid-template-columns: 1fr; }
   .about-cred-card { position: static; }
-  .about-services-grid { grid-template-columns: 1fr; }
-  .about-tst-inner { grid-template-columns: 1fr; }
-  .about-tst-stats { grid-template-columns: repeat(4, 1fr); }
 }
 @media (max-width: 600px) {
   .about-hero { padding: 3rem 1.25rem 2.5rem; }
-  .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .about-bio-section,
-  .about-services-section,
-  .about-tst-section,
-  .about-institutions-section,
-  .about-cta-section { padding: 2.5rem 1.25rem; }
-  .about-tst-stats { grid-template-columns: repeat(2, 1fr); }
+  .about-bio-section { padding: 2.5rem 1.25rem; }
   .about-container { padding: 0 1.25rem; }
 }
 </style>
