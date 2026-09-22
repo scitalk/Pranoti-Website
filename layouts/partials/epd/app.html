@@ -247,12 +247,12 @@
     document.getElementById('epd-app').innerHTML =
       '<div class="epd-layout">' +
         '<aside class="epd-filters">' +
-          searchBox() +
           '<div class="epd-filters-scroll">' + filterGroups + '</div>' +
           '<button class="epd-clear-filters' + (hasActive ? ' epd-active' : '') + '" id="epd-clear">Clear all filters</button>' +
         '</aside>' +
         '<div class="epd-results-col" style="flex:1">' +
           adgNote +
+          searchBox() +
           '<div class="epd-results-header">' +
             '<div class="epd-results-count">' + results.length + ' project' + (results.length === 1 ? '' : 's') + '</div>' +
           '</div>' +
