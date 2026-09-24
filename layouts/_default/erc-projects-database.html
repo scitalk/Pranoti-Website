@@ -54,39 +54,37 @@
   <header class="epd-page-head epd-hero-text">
     <p class="epd-eyebrow">Interactive database</p>
     <h1><a href="{{ .RelPermalink }}" id="epd-hero-reset">ERC Funded Projects</a></h1>
+
     {{ with .Params.lede }}<p class="epd-lede">{{ . }}</p>{{ end }}
-    <p class="epd-support">This page is created independently by Dr. Pranoti Kshirsagar and follows pay-as-you-go model. You can support this project by <a href="https://ko-fi.com/pranoti" target="_blank" rel="noopener">buying-me-a-coffee</a>. Thank you in advance!🧡</p>
+
+    <div class="epd-credstrip">
+      <div class="epd-credstrip-item">
+        <span class="epd-credstrip-num">&euro;22B</span>
+        <span class="epd-credstrip-label">EU contribution</span>
+      </div>
+      <div class="epd-credstrip-item">
+        <span class="epd-credstrip-num">12,133</span>
+        <span class="epd-credstrip-label">Projects funded</span>
+      </div>
+      <div class="epd-credstrip-item">
+        <span class="epd-credstrip-num">35</span>
+        <span class="epd-credstrip-label">Countries</span>
+      </div>
+      <div class="epd-credstrip-item">
+        <span class="epd-credstrip-num">943</span>
+        <span class="epd-credstrip-label">Host institutions</span>
+      </div>
+    </div>
+
   </header>
 </div>
 
-<div class="epd-credstrip">
-  <div class="epd-credstrip-item">
-    <span class="epd-credstrip-num">&euro;22,062M</span>
-    <span class="epd-credstrip-label">EU contribution</span>
-  </div>
-  <div class="epd-credstrip-item">
-    <span class="epd-credstrip-num">12,133</span>
-    <span class="epd-credstrip-label">Projects funded</span>
-  </div>
-  <div class="epd-credstrip-item">
-    <span class="epd-credstrip-num">35</span>
-    <span class="epd-credstrip-label">Countries</span>
-  </div>
-  <div class="epd-credstrip-item">
-    <span class="epd-credstrip-num">943</span>
-    <span class="epd-credstrip-label">Host institutions</span>
-  </div>
-</div>
-
-<div class="epd-cta epd-kits">
-  <div>
-    <h2>ERC Resource kits</h2>
-    <p>All official &amp; verified resources in one pdf</p>
-  </div>
-  <div class="epd-kits-btns">
-    <a class="epd-cta-btn" href="/products/erc-starting-grant-resource-kit/?utm_source=pranoti_site&utm_medium=erc_projects_database&utm_campaign=erc_stg_2027" onclick="gtag('event', 'purchase_intent', {'item_name': 'ERC Starting Grant 2027 Resource Kit', 'location': 'erc_projects_database_kits'})">ERC Starting Grant 2027</a>
-    <a class="epd-cta-btn" href="/products/erc-consolidator-grant-resource-kit/?utm_source=pranoti_site&utm_medium=erc_projects_database&utm_campaign=erc_cog_2027" onclick="gtag('event', 'purchase_intent', {'item_name': 'ERC Consolidator Grant 2027 Resource Kit', 'location': 'erc_projects_database_kits'})">ERC Consolidator Grant 2027</a>
-  </div>
+<div class="epd-support">
+  <h3>Support the ERC Projects Database</h3>
+  <p>This ERC Projects Database was independently created and is maintained by Dr. Pranoti Kshirsagar. It has received no funding or sponsorship.</p>
+  <p>If you find the database useful, you can support its continued maintenance and development by buying me a coffee on Ko-fi. Contributions start at &euro;5 &mdash; every coffee counts.</p>
+  <p>Thank you for supporting independent science communication and making this resource possible.</p>
+  <p><a href="https://ko-fi.com/pranoti" target="_blank" rel="noopener">Support the project on Ko-fi</a></p>
 </div>
 
 <div id="epd-app">
@@ -105,6 +103,17 @@
     {{ end }}
   </div>
   <p class="epd-ssr-more">Showing 24 of {{ len $projects }} projects. Turn on JavaScript to search and to filter by call year, grant scheme, and research domain.</p>
+</div>
+
+<div class="epd-cta epd-kits">
+  <div>
+    <h2>Applying for ERC 2027 calls?</h2>
+    <p>Get all official resources in one pdf.</p>
+  </div>
+  <div class="epd-kits-btns">
+    <a class="epd-cta-btn" href="/products/erc-starting-grant-resource-kit/?utm_source=pranoti_site&utm_medium=erc_projects_database&utm_campaign=erc_stg_2027" onclick="gtag('event', 'purchase_intent', {'item_name': 'ERC Starting Grant 2027 Resource Kit', 'location': 'erc_projects_database_kits'})">ERC Starting Grant 2027</a>
+    <a class="epd-cta-btn" href="/products/erc-consolidator-grant-resource-kit/?utm_source=pranoti_site&utm_medium=erc_projects_database&utm_campaign=erc_cog_2027" onclick="gtag('event', 'purchase_intent', {'item_name': 'ERC Consolidator Grant 2027 Resource Kit', 'location': 'erc_projects_database_kits'})">ERC Consolidator Grant 2027</a>
+  </div>
 </div>
 
 <section class="epd-faq">
@@ -139,6 +148,14 @@
 
 <section class="epd-faq epd-updatelog">
   <h2>Change log</h2>
+  <h3>24 September 2026</h3>
+  <ul>
+    <li>Page layout reworked: the summary strip (EU contribution, projects funded, countries, host institutions) moved into the hero, directly under the intro copy, and the EU contribution figure is now shown rounded as &euro;22B.</li>
+    <li>The support/funding note was rewritten and expanded, and moved out of the hero to sit as its own full-width section directly below it.</li>
+    <li>The ERC Resource kits promo moved to sit between the results grid and the FAQ, with updated copy ("Applying for ERC 2027 calls? Get all official resources in one pdf.").</li>
+    <li>Removed the divider lines between individual FAQ questions; added a divider between the results grid and the resource kits promo, and between the hero and the search/filter area.</li>
+  </ul>
+
   <h3>22 September 2026</h3>
   <ul>
     <li><strong>Added a search box</strong> above the results, searching project title, acronym, researcher name, host institution, country, panel code and call code.
