@@ -1,7 +1,7 @@
 ---
 title: "Claude Skills Hygiene Audit: The Productivity Hack You're Missing"
 date: 2026-04-28
-lastmod: 2026-04-28
+lastmod: 2026-09-24
 draft: false
 description: "Claude skills degrade silently as models and connectors evolve. Without a hygiene audit, your automation library becomes unreliable — here's why you need one."
 keywords: ["Claude skills hygiene audit", "Claude skills maintenance", "skill regression automation", "Claude workflow degradation", "automation library audit", "Claude skills framework", "environmental change Claude", "Claude skills reliability"]
@@ -25,19 +25,19 @@ This gap, between when you write a skill and when it stops working, is the probl
 
 ## Skill regression: the psychology concept that explains why your Claude skills break
 
-Skill regression in psychology means the loss of previously acquired skills and abilities. Environmental changes often trigger this loss. For individuals with ADHD, skill regression is often context-dependent. This context-dependence means the ability to execute an acquired skill can vary with the situation. The same mechanism applies to Claude automation.
+Skill regression in psychology means the loss of previously acquired skills and abilities. Environmental changes often trigger this loss. The same mechanism applies to Claude automation.
 
 Your skills were built in a specific technical environment: specific Claude models, specific connector schemas, specific MCP server URLs, and specific tool behaviors. That environment changes constantly. When it changes, skills do not break loudly. They degrade silently. They produce output that looks right but is not right.
 
 ## The environment your skills were built for no longer exists
 
-Between October 2025 and April 2026, Anthropic shipped Claude Sonnet 4.5, Claude Opus 4.6, Claude Sonnet 4.6, and Claude Opus 4.7. Claude Sonnet 4 and Opus 4 were deprecated on April 14, 2026 and retired June 15, 2026. Extended thinking changed from budget_tokens to adaptive mode. The output_format parameter was deprecated in favor of output_config.format.
+Between October 2025 and April 2026, Anthropic shipped Claude Haiku 4.5, Claude Opus 4.5, Claude Opus 4.6, Claude Sonnet 4.6, and Claude Opus 4.7. Claude Sonnet 4 and Opus 4 were deprecated on April 14, 2026 and retired June 15, 2026. Manual budget_tokens thinking was deprecated on the Claude 4.6 models, and Claude 4.7 and later reject it with an error. The output_format parameter moved to output_config.format.
 
-Every one of these changes broke skills silently. Consider a skill written in December 2025 for Sonnet 4.5 that used assistant prefilling to control output structure. This skill can fail on Sonnet 4.6 without an error message that makes the cause obvious. The skill invokes. Claude processes the request. The output is wrong. You debug the skill logic, find nothing, and assume the model hallucinates.
+Any of these changes can break a skill. Consider a skill written in December 2025 for Sonnet 4.5 that used assistant prefilling to control output structure. Starting with the Claude 4.6 models, [Anthropic no longer supports prefilled responses](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices#migrating-away-from-prefilled-responses). The same skill fails on Sonnet 4.6. You debug the skill logic, find nothing, and assume the model hallucinates.
 
 The model does not hallucinate. The skill is written for an environment that no longer exists.
 
-This is not unique to Claude models. Google Drive connectors were updated to read Google Sheets natively in early 2026. Skills that routed sheet-reading tasks through the Google Sheets MCP suddenly had two pathways to the same data, with different schemas. MCP server URLs change. Connector authentication flows get revised. Tool parameter names shift between versions.
+This is not unique to Claude models. [Claude's Google Drive connector can now read Google Sheets](https://support.claude.com/en/articles/10166901-use-google-workspace-connectors). Skills that routed sheet-reading tasks through the Google Sheets MCP suddenly had two pathways to the same data. MCP server URLs change. Connector authentication flows get revised. Tool parameter names shift between versions.
 
 Your skills encode assumptions about all of these dependencies. When the dependencies change and your skills do not, the gap compounds.
 
@@ -45,7 +45,7 @@ Your skills encode assumptions about all of these dependencies. When the depende
 
 I caught the first failure by accident. A skill that drafted LinkedIn posts from research notes started to insert placeholder text where brand-specific terminology needed to appear. The skill file was unchanged. The underlying logic was sound. But a connector update shifted how certain metadata fields were labeled. The skill's reference to the old field name returned null. The post still generated, but it generated badly.
 
-The second failure was worse. A WordPress publishing skill worked flawlessly for three months. Then it started to set draft posts to "published" status without the approval gate I built in. The skill logic was correct. The API call was correct. But WordPress updated its REST API schema. The status field now required explicit confirmation in a way it did not require before. The skill ran. The post went live. I discovered the problem two hours later when a client pointed it out.
+The second failure was worse. A WordPress publishing skill worked flawlessly for three months. Then it started to set draft posts to "published" status without the approval gate I built in. The skill logic had not changed. But the WordPress connector passed the post status straight through to WordPress, with nothing forcing it to stay draft. The skill ran. The post went live. I discovered the problem two hours later when a client pointed it out.
 
 Claude did not surface an error for either failure. Both produced output that looked structurally correct but was functionally wrong. A systematic hygiene audit can catch failures like these. I was not running one at the time.
 
@@ -55,7 +55,7 @@ Skill degradation stays invisible until it produces a consequence you notice. If
 
 Builders miss it for another reason: skills fail gracefully. A skill written with good error handling will not crash when a dependency changes. Instead, it substitutes a default value, skips a step, or produces partial output. From the user's view, the skill ran successfully. From the accuracy view, the output is wrong.
 
-Most automation builders treat skills like code: write once, run forever. Because of this habit, no scheduled checkpoint exists where these silent failures can surface. Code in a CI/CD pipeline gets tested on every commit. Skills get tested only when someone notices the output is wrong.
+Many builders treat a skill as finished once it works. Because of this habit, no scheduled checkpoint exists where these silent failures can surface. Code in a CI/CD pipeline gets tested on every commit. Skills get tested only when someone notices the output is wrong.
 
 ## The hygiene audit framework that catches regression early
 
@@ -63,19 +63,19 @@ The fix is not to stop the environment from changing. Claude will keep shipping 
 
 A hygiene audit has three components: environmental change detection, regression testing, and documentation.
 
-**Environmental change detection** means you monitor the ecosystem your skills depend on. Did Claude release a new model since your last audit? Did any connected service update its API? Did any MCP server change its URL or tool schema? Run this check quarterly, because environmental changes happen slower than skill edits but faster than most builders assume.
+**Environmental change detection** means you monitor the ecosystem your skills depend on. Did Claude release a new model since your last audit? Did any connected service update its API? Did any MCP server change its URL or tool schema? Run this check every two weeks if you're using skills daily. Environmental changes happen slower than skill edits, but faster than most builders assume.
 
 **Regression testing** means you run every active skill against a known-good baseline to confirm it still produces the expected output. The question is not "does it run without errors." That bar is too low. The question is "does it produce the same result it produced when first written, or did the output drift?" This test surfaces the silent failures that error logs miss.
 
 **Documentation** means you log every environmental change and every skill update in a registry that connects the two. When a skill begins to fail three months after a model update, the change log tells you which update to investigate. Without that record, you debug in the dark.
 
-The [Claude Skills Registry](/perspectives/claude-skills-registry-and-audit/) I detailed last week provides the infrastructure for this. The registry tracks which skills exist, when they were last tested, and what dependencies they touch. The hygiene audit builds on that foundation by adding the environmental monitoring layer and the regression test protocol.
+The [Claude Skills Registry](/perspectives/claude-skills-registry-and-audit/) provides the infrastructure for this. The registry tracks which skills exist and when they were last tested. Each skill file lists the tools and connectors it depends on. The hygiene audit builds on that foundation by adding the environmental monitoring layer and the regression test protocol.
 
 Together, they prevent the failure mode I hit repeatedly before I formalized this process. Before, I discovered a skill was broken only when it produced output I was not able to use. This happened in a context where I did not have time to debug it, with no record of when the skill last worked or what changed in the meantime.
 
 ---
 
-The right time to implement a hygiene audit framework is before your first skill fails in production. The second-best time is now. Environmental change does not slow down. Claude shipped four major model updates between October 2025 and April 2026. Opus 4.8 followed in May 2026, and Sonnet 5 followed in June 2026. MCP connectors keep multiplying. Native tool capabilities keep expanding. Every change is an opportunity for skill regression.
+The right time to implement a hygiene audit framework is before your first skill fails in production. The second-best time is now. Environmental change does not slow down. Claude shipped five major model updates between October 2025 and April 2026. Opus 4.8 followed in May 2026, Fable 5 and Sonnet 5 in June, Opus 5 in July, and Fable 5.1 and Opus 5.5 in September 2026. MCP connectors keep multiplying. Native tool capabilities keep expanding. Every change is an opportunity for skill regression.
 
 A hygiene audit framework does not prevent environmental change. It ensures your skills adapt to it before the gap between "what the skill was built for" and "what the skill runs in" becomes a productivity drain. Otherwise, you notice this drain only after the damage is done.
 
