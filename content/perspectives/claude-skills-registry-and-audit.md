@@ -1,9 +1,9 @@
 ---
-title: "Claude Skills Registry: Why Your Automation Library Needs One"
+title: "Claude Skills Registry and Audit: Stop Losing Track of Your Skills"
 date: 2026-04-26
-lastmod: 2026-04-26
+lastmod: 2026-09-25
 draft: false
-description: "A Claude skills registry prevents skill sprawl before it starts. Here's how I audit my automation library — and the pattern that makes it work."
+description: "A registry gives you one list of every Claude skill and a log of each change. See how I set it up and how the 14-day audit works."
 keywords: ["Claude skills registry", "Claude skills audit", "automation library maintenance", "Claude skills management", "Claude workflow governance", "Claude automation tracking", "AI workflow governance"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
@@ -32,83 +32,86 @@ sidebar_product:
   footnote: "Instant PDF delivery. Lifetime access."
 ---
 
-For about six months, I built Claude skills. What started as a handful of reusable workflows grew into a library of over twenty skills. These skills encode complete, repeatable processes across every surface I use Claude on. At some point this year, I stopped knowing exactly what I had. Some skills worked perfectly. Others were quietly broken. A few were replaced by better versions but never deleted.
+For about six months, I made Claude skills. I started with a few reusable workflows. The library grew to more than twenty skills. These skills hold complete, repeatable processes for each surface where I use Claude. At some point this year, I did not know exactly what I had. Some skills worked well. Others were broken, and I did not see it. A few skills had better new versions, but I did not delete the old skills.
 
-This gap, between what I *thought* my Claude skills registry contained and what it actually contained, is the problem this post covers.
+This post covers the gap between what I thought my Claude skills registry contained and what it contained.
 
-## What a Claude skill actually is
+## What a Claude skill is
 
-I use "skill" broadly: a custom Markdown instruction file that encodes a multi-step workflow as an invocable prompt. The registry covers skills across every Claude surface I use: **claude.ai**, the **Claude iPhone app**, **Claude Desktop**, **Claude Code**, and **Cowork**. Each surface has its own invocation pattern, but the underlying principle stays the same. A skill is a standing operating procedure written in plain text. Claude loads it on demand to run a defined sequence consistently.
+I use "skill" in a broad sense. A skill is a custom Markdown instruction file. It holds a multi-step workflow as a prompt that you can start when needed. The registry covers skills on each Claude surface that I use: **claude.ai**, the **Claude iPhone app**, **Claude Desktop**, **Claude Code**, and **Cowork**. Each surface has its own way to start a skill, but the principle is the same. A skill is a standing operating procedure in plain text. Claude loads it on demand and runs the defined sequence in the same way each time.
 
-This method is distinct from MCP servers, native connectors, or Claude's built-in capabilities. The benefit is consistency. Complex workflows run the same way every time, without me rewriting the logic or remembering every step. (The [Google Sheets integration comparison](/perspectives/google-sheets-claude-integration-comparison-2026/) I published last week is a good example. Without a skill, the workflow takes fifteen inconsistent minutes. With a skill, it takes five consistent minutes.)
+A skill is different from an MCP server, a native connector, or a built-in Claude capability. The benefit is consistency. A complex workflow runs in the same way each time. I do not rewrite the logic, and I do not need to remember each step. The [Google Sheets integration comparison](/perspectives/google-sheets-claude-integration-comparison-2026/) that I published last week is an example. Without a skill, the workflow takes fifteen minutes, and the results differ. With a skill, it takes five minutes, and the results are the same.
 
-The problem is that skills accumulate across multiple surfaces at the same time. Unlike code in a version-controlled repository with CI checks, skill files live in folders and across apps that are easy to ignore until something goes wrong.
+The problem is that skills collect across many surfaces at the same time. Code in a version-controlled repository has CI checks. Skill files do not. They stay in folders and apps, and it is easy to ignore them until something fails.
 
-## What skill sprawl actually looks like
+## Pain Points: Outdated, duplicated and orphaned skills
 
-I discovered three failure modes in my own library during my first proper audit.
+In my first full audit, I found three failure modes in my library.
 
-**Outdated skills** are the most common. A skill I wrote to publish posts to my WordPress site assumed a specific plugin configuration that I later changed. The skill still ran, but it produced slightly wrong output that I had to fix manually. I caught it by accident, weeks after the underlying change. At volume, these errors can compound silently.
+**Outdated skills** are the most common. I wrote a skill to publish posts to my WordPress site. It assumed a specific plugin configuration. Later, I changed the configuration. The skill still ran, but the output was slightly wrong, and I corrected it by hand. I found the problem by chance, weeks after the change. At high volume, these errors can grow without a warning.
 
-**Duplicate skills** emerge under time pressure. I had two separate skills for creating LinkedIn posts: one from an early iteration, one from a month later when I refined the approach. Both were still active. The outputs were inconsistent, and the reason was not obvious until I mapped what each skill actually did against the real workflow.
+**Duplicate skills** appear when time is short. I had two skills to create LinkedIn posts. One came from an early version. The other came a month later, when I improved the method. Both skills were active. The outputs were different. The cause was not clear until I compared what each skill did with the real workflow.
 
-**Orphaned skills** are skills that no longer correspond to an active workflow. I had one built for a webinar format I stopped running. The file was still there. It still appeared in the skills list. It occasionally confused me when I scanned for the right tool. This skill was dead weight with a misleading name.
+**Orphaned skills** are skills that no longer match an active workflow. I made one for a webinar format that I stopped. The file stayed. It still showed in the skills list. It sometimes confused me when I looked for the correct tool. The skill was dead weight with a misleading name.
 
-None of these problems are catastrophic individually. Together, they mean that a library built to save time becomes a source of friction and unpredictable output.
+None of these problems is a disaster alone. Together, they change a library that saves time into a source of friction and unpredictable output.
 
-## The Claude skills registry pattern
+## The Solution: Claude Skills Registry
 
-The fix is simple in concept: maintain a registry.
+The fix is simple: keep a registry.
 
-A registry is a single source of truth for every skill in your library. Mine lives in a Google Sheet with two tabs. The **Skills Registry** tab has one row per skill and tracks status, version, last tested date, and a one-line description. The **Change Log** tab has one row per change event, appended automatically each time a skill is modified.
+A registry is a single source of truth for each skill in your library. Mine is one Google Sheet with two tabs.
 
-The feature that makes the registry useful is the auto-trigger. Each skill file has a short instruction at the bottom: when someone edits this file, prompt Pranoti to log the change. The prompt surfaces immediately after the edit:
+- **Skills Registry tab:** one row for each skill. The columns are the skill name, slug, status (active or archived), last test date, and a one-line description of what the skill does. I also track the version.
+- **Change Log tab:** one row for each change. A row is added each time I change a skill.
+
+The auto-trigger makes the registry useful. Each skill file has a short instruction at the bottom. The instruction tells Claude to ask Pranoti to log the change when someone edits the file. The prompt appears immediately after the edit:
 
 > "Skill updated. Want me to log this change to the Skills Registry? Reply yes to log it now, or skip to do it later."
 
-This takes thirty seconds. Over six months, the change log becomes a genuine record of when each skill was last touched, what changed, and why. The Skills Registry tab answers the question I kept failing to answer from memory: *What do I currently have, and is any of it broken?*
+The task takes thirty seconds. After six months, the change log is a true record. It shows when I last changed each skill, what changed, and why. The Skills Registry tab answers the question that I could not answer from memory: what skills do I have, and is any of them broken?
 
-## How to run a skills audit
+## How to do a skills audit
 
-I run mine every 14 days. This cadence is deliberate. Claude connectors, MCP integrations, and third-party platforms change fast enough that a quarterly review can miss breakage that compounds quietly for months. Fortnightly reviews catch drift early, before it affects output. The process has three parts.
+I do an audit every 14 days. I chose this interval on purpose. Claude connectors, MCP integrations, and third-party platforms change fast. A quarterly review can miss a fault that grows for months. A review every two weeks finds drift early, before it changes the output. The audit has three parts.
 
-**Part one: inventory check.** Compare the registry against the actual skill files on disk. If a skill exists on disk but is missing from the registry, add it or delete it. If a registry entry points to a file that no longer exists, archive the entry. This check takes about fifteen minutes and surfaces orphaned skills immediately.
+**Part one: inventory.** Compare the registry with the skill files on disk. If a skill is on disk but not in the registry, add it or delete it. If a registry entry points to a file that does not exist, archive the entry. This part takes about fifteen minutes. It finds orphaned skills immediately.
 
-**Part two: recency filter.** Flag any skill that was not used since the last review. This does not mean automatic deletion, because some skills are seasonal or surface-specific. But it triggers a check: is this workflow still active? If the process the skill supported was replaced or retired, archive the skill and note the reason in the log.
+**Part two: recency filter.** Flag each skill that you did not use since the last review. Do not delete it automatically, because some skills are seasonal or belong to one surface. Instead, examine the skill. Ask: is this workflow still active? If a new process replaced the workflow, or you retired it, archive the skill. Write the reason in the log.
 
-**Part three: end-to-end test.** For each active skill, run it once against a realistic test case and verify the output. This test is where outdated skills surface: skills that were correct when written but drifted from the current state of the tools or workflows they depend on. Skills that touch external systems like WordPress, Google Sheets, or MailerLite need an end-to-end test on every surface they run from. What works in Claude Desktop can behave differently in claude.ai or the iPhone app. You must test the skill directly. Reading the skill file alone is not enough.
+**Part three: end-to-end test.** Run each active skill one time with a realistic test case. Make sure that the output is correct. This test finds outdated skills. These skills were correct when you wrote them, but they no longer match the current tools or workflows. Skills that touch external systems, such as WordPress, Google Sheets, or MailerLite, need an end-to-end test on each surface where they run. A skill that works in Claude Desktop can work differently in claude.ai or the iPhone app. You must test the skill directly. It is not enough to read the skill file.
 
-The audit generates a short action list: skills to update, skills to archive, skills to merge. On a library of twenty-plus skills, the first audit takes two to three hours. Subsequent fortnightly audits take thirty to forty-five minutes once the registry is current.
+The audit gives a short action list: skills to update, skills to archive, and skills to merge. For a library of twenty or more skills, the first audit takes two to three hours. After the registry is current, each audit takes thirty to forty-five minutes.
 
-## What the registry reveals about how you work
+## Governance insights from your "Skills Registry"
 
-The most useful thing the registry gives me is not the audit process itself. It is the visibility.
+The audit process is not the most useful part of the registry. The visibility is.
 
-When I look at the Change Log over several months, I can see which skills I iterate on frequently (high value, actively evolving) and which I did not touch since they were written (either perfectly stable or unused). I can see where I duplicated effort and built parallel tools for the same job. I can identify the skills that underpin my most critical workflows. These skills must be treated as infrastructure, not casually edited, with a test run before and after any modification.
+When I look at the Change Log over several months, I can see which skills I change often. These skills have high value and are in active development. I can also see which skills I did not touch since I wrote them. Those skills are very stable or unused. I can see where I did the same work twice and made parallel tools for one job. I can find the skills that support my most critical workflows. Treat these skills as infrastructure. Do not edit them casually. Run a test before and after each change.
 
-This process is governance, not overhead. Every organization that builds internal tools learns this lesson eventually: **a tool you cannot inventory is a tool you cannot trust.** The registry makes the difference between a skills *library* (managed, auditable, trustworthy) and a skills *folder* (a pile of Markdown files of uncertain provenance and unknown status).
+This process is governance, not overhead. Each organization that makes internal tools learns this lesson: **a tool that you cannot inventory is a tool that you cannot trust.** The registry is the difference between a skills *library* and a skills *folder*. A library is managed, auditable, and trustworthy. A folder is a pile of Markdown files with unknown origin and unknown status.
 
-For consultants and knowledge workers who build serious automation across Claude surfaces, the principle is the same as for any software asset. The skills you rely on most need the most rigorous maintenance, not the least. This applies especially to skills that run across claude.ai, Claude Desktop, Cowork, and the iPhone app at the same time.
+Consultants and knowledge workers who make serious automation across Claude surfaces face the same principle as for any software asset. The skills that you use most need the most careful maintenance. This is very true for skills that run on claude.ai, Claude Desktop, Cowork, and the iPhone app at the same time.
 
 ## When to start
 
-The right time to start a registry is when you write your second skill. The second-best time is now.
+The best time to start a registry is when you write your second skill. The second-best time is now.
 
-If you have more than five skills and no registry, your first audit will be uncomfortable. You will find things that are wrong or outdated that you assumed worked. That discomfort is the point. It is better to find it in a scheduled review than in the middle of a client deliverable.
+If you have more than five skills and no registry, your first audit will be uncomfortable. You will find faults and old content in skills that you thought worked. That discomfort is the purpose. It is better to find the faults in a scheduled review than in the middle of a client deliverable.
 
-**Start with a simple spreadsheet.** Two tabs: Registry and Change Log. Five columns in the Registry: skill name, slug, status (active/archived), last tested date, and a one-line description of what the skill does. You can add version tracking and dependency mapping later.
+**Start with a simple spreadsheet.** Make two tabs: Registry and Change Log. Give the Registry tab five columns: skill name, slug, status, last test date, and a one-line description of the skill. The status is active or archived. Later, you can add version tracking and dependency mapping.
 
-**Embed the auto-log prompt in every skill file.** A single line at the end of each Markdown file is enough: "When this skill is edited, prompt the user to log the change to the Skills Registry." This converts maintenance from a separate task into a natural part of the edit workflow.
+**Put the auto-log prompt in each skill file.** One line at the end of each Markdown file is enough: "When this skill is edited, prompt the user to log the change to the Skills Registry." This makes maintenance a natural part of the edit workflow. It is not a separate task.
 
-**Run your first audit within the next two weeks. Then set a fortnightly reminder.** The first audit is always the most revealing. The corrections it generates make every subsequent review faster and less surprising. A 14-day cadence is the right interval when connectors, integrations, and Claude capabilities evolve as fast as they currently do. Quarterly is too slow. Things break silently in the gap.
+**Do your first audit in the next two weeks. Then set a reminder for every 14 days.** The first audit shows the most. The corrections make each later review faster and less surprising. A 14-day interval is correct when connectors, integrations, and Claude capabilities change as fast as they change now. A quarterly interval is too slow. Faults grow without a warning in the gap.
 
-The goal is not a perfect registry from day one. It is a registry that makes your automation library, across every Claude surface you use, more reliable than it was without one. Its value compounds with every review cycle.
+The goal is not a perfect registry on day one. The goal is a registry that makes your automation library more reliable than it was without one, across each Claude surface that you use. Its value grows with each review cycle.
 
 ---
 
 ## Related reading on The Science Talk
 
-This post sits alongside the broader analysis on The Science Talk: [The Knowledge Work Automation Gap in European Research](https://thesciencetalk.com/ai-academy/knowledge-work-automation-european-research/). That analysis covers why European knowledge workers underuse automation tooling, and what the implementation gap actually looks like in practice.
+This post is next to the wider analysis on The Science Talk: [The Knowledge Work Automation Gap in European Research](https://thesciencetalk.com/ai-academy/knowledge-work-automation-european-research/). That analysis explains why European knowledge workers use automation tools too little, and what the implementation gap looks like in practice.
 
 ---
 *Browse all [Perspectives](/perspectives/) or [get in touch →](https://thesciencetalk.com/contact-us/)*
