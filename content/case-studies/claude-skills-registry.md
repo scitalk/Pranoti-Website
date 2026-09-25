@@ -4,8 +4,8 @@ date: 2026-04-26
 lastmod: 2026-09-25
 draft: false
 layout: "longform"
-subtitle: "A central inventory of Claude skills, with versions and change history, for individuals and teams on Team and Enterprise plans."
-description: "A Claude skills registry gives teams a central inventory of their skills, versions and changes. See how it ends skills chaos on Team and Enterprise plans."
+subtitle: "A central inventory of Claude skills, with versions and change history, for individuals and teams on Pro, Team and Enterprise plans."
+description: "A Claude skills registry gives teams a central inventory of their skills, versions and changes. See how it ends skills chaos on Pro, Team and Enterprise plans."
 slug: "claude-skills-registry"
 keywords: ["Claude skills registry", "Claude skills management", "Claude Team plan skills", "Claude Enterprise skills governance", "AI workflow governance", "skills change log"]
 category: "AI Integration"
@@ -29,7 +29,7 @@ tech_stack:
 
 ## Executive Summary
 
-Claude skills change recurring tasks into consistent, repeatable workflows, from content production to analytics reports. When a skills library grows, the skills spread across claude.ai, local repositories, and temporary folders from Claude Code sessions. An update in one environment does not go to the other environments ([Anthropic: "Custom Skills do not sync across surfaces"](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#cross-surface-availability)). Thus, it is difficult to know which version is current, which skills work, and which skills to retire.
+Claude skills change recurring tasks into consistent, repeatable workflows, from content production to analytics reports. When a skills library grows, the skills spread across claude.ai, local repositories, and temporary folders from Claude Code sessions. [An update in one environment does not go to the other environments](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#cross-surface-availability). Thus, it is difficult to know which version is current, which skills work, and which skills to retire.
 
 This case study shows a Claude skills registry that solves this problem. A central registry tracks all Claude skills in use. In this case study, Google Sheets is the example registry tool. A dedicated Claude skill keeps the registry accurate. The registry records each change at the time of the edit, after automatic controls and an explicit approval. The result is one trusted source of truth, a full change history, and a lower operational load.
 
@@ -41,17 +41,17 @@ A skill is a set of structured instructions that tells Claude to do a task the s
 
 Without a central record, these answers are difficult to find, for three reasons:
 
-- **Fragmented storage.** Skills are on claude.ai, in local repositories, and in temporary folders from Claude Code sessions in the desktop app. Each environment keeps skills in a different location ([Anthropic: Cross-surface availability](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#cross-surface-availability)).
-- **Version inconsistency.** An update in one environment does not show in the other environments. The version on Anthropic servers and the version in the local file system can be different, with no warning ([Anthropic: "Manage and upload Skills separately for each surface"](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#cross-surface-availability)).
-- **Token inefficiency.** Each active skill adds to the context that Claude loads at the start of each session ([Anthropic: Level 1 metadata, "always loaded"](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#level-1-metadata-always-loaded)). Orphaned and outdated skills add to this overhead, but they give no value.
+- **Fragmented storage.** Skills are on claude.ai, in local repositories, and in temporary folders from Claude Code sessions in the desktop app. [Each environment keeps skills in a different location](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#cross-surface-availability).
+- **Version inconsistency.** [An update in one environment does not show in the other environments](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#cross-surface-availability). The version on Anthropic servers and the version in the local file system can be different, with no warning.
+- **Token inefficiency.** [Each active skill adds to the context that Claude loads at the start of each session](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#level-1-metadata-always-loaded). Orphaned and outdated skills add to this overhead, but they give no value.
 
-The result is repeated manual work. People open folders, compare files, and find the correct version before they can start the real work. This problem is larger on Claude Team and Enterprise plans, where multiple users make and share skills in the same organization. On claude.ai, custom skills belong to each user, and administrators cannot manage them centrally ([Anthropic: Sharing scope](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#sharing-scope)).
+The result is repeated manual work. People open folders, compare files, and find the correct version before they can start the real work. This problem is larger on Claude Team and Enterprise plans, where multiple users make and share skills in the same organization. On claude.ai, [custom skills belong to each user, and administrators cannot manage them centrally](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#sharing-scope).
 
 ---
 
 ## Solution: Skills Registry
 
-A skills registry is a central inventory of all skills in use, independent of the environment where someone made them. For each skill, the registry records the purpose, current version, status, dependencies, and change history. The registry does not replace the skill files. It controls them. It gives individuals and teams one reliable reference for what exists, what is current, and what to retire.
+A skills registry is a central inventory of all skills in use, independent of the environment where someone made them. For each skill, the registry records the purpose, current version, status, dependencies, and change history. The registry does not replace the skill files. It controls them. It gives individuals and teams one reliable reference for what exists, what is current, and what to retire. Anthropic also recommends [an internal registry for each skill, with purpose, owner, version, dependencies, and evaluation status](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise#naming-and-cataloging).
 
 The solution has two parts. The first part is the registry. The registry can use any shared tool, for example a spreadsheet, a database, or SharePoint. This example uses Google Sheets. The second part is a dedicated Claude skill that keeps the registry accurate when skills change.
 
@@ -100,7 +100,18 @@ Without a registry, people must remember the status of their tools and examine i
 
 ### Commercial impact
 
-Each active skill adds an overhead to each session, even when nobody uses it ([Anthropic: Level 1 metadata, "always loaded"](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#level-1-metadata-always-loaded)). The registry shows outdated, duplicate, and orphaned skills, so a team can retire them. This decreases the overhead in all future sessions. Also, each time Claude uses a duplicate skill, Claude loads its full instructions ([Anthropic: Level 2 instructions, "loaded when triggered"](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#level-2-instructions-loaded-when-triggered)). This is important for teams on a Claude Team or Enterprise plan. A clean library gives more usable capacity from the same licenses and a clearer return on AI investment.
+[Each active skill adds an overhead to each session, even when nobody uses it](https://code.claude.com/docs/en/skills). The registry shows outdated, duplicate, and orphaned skills, so a team can retire them. This decreases the overhead in all future sessions. Also, [each time Claude uses a duplicate skill, Claude loads its full instructions](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#level-2-instructions-loaded-when-triggered). Anthropic also advises that teams [consolidate overlapping skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise#using-evaluations-for-lifecycle-decisions) when the skills conflict. This is the author's view, not an Anthropic claim: a clean skills library helps you get more out of your Anthropic subscription, whether it is Pro, Team or Enterprise.
+
+## Sources
+
+1. [Anthropic, Agent Skills overview: Cross-surface availability](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#cross-surface-availability)
+2. [Anthropic, Agent Skills overview: Why use Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#why-use-skills)
+3. [Anthropic, Agent Skills overview: Level 1: Metadata (always loaded)](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#level-1-metadata-always-loaded)
+4. [Anthropic, Agent Skills overview: Sharing scope](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#sharing-scope)
+5. [Anthropic, Skills for enterprise: Naming and cataloging](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise#naming-and-cataloging)
+6. [Anthropic, Claude Code documentation: Extend Claude with skills](https://code.claude.com/docs/en/skills)
+7. [Anthropic, Agent Skills overview: Level 2: Instructions (loaded when triggered)](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview#level-2-instructions-loaded-when-triggered)
+8. [Anthropic, Skills for enterprise: Using evaluations for lifecycle decisions](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise#using-evaluations-for-lifecycle-decisions)
 
 ---
 

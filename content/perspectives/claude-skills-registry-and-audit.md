@@ -69,7 +69,7 @@ The auto-trigger makes the registry useful. Each skill file has a short instruct
 
 > "Skill updated. Want me to log this change to the Skills Registry? Reply yes to log it now, or skip to do it later."
 
-The task takes thirty seconds. After six months, the change log is a true record. It shows when I last changed each skill, what changed, and why. The Skills Registry tab answers the question that I could not answer from memory: what skills do I have, and is any of them broken?
+The task takes thirty seconds. After six months, the change log is a true record. The Skills Registry tab answers the question that I could not answer from memory: what skills do I have, and is any of them broken?
 
 ## How to do a skills audit
 
@@ -103,7 +103,7 @@ If you have more than five skills and no registry, your first audit will be unco
 
 **Put the auto-log prompt in each skill file.** One line at the end of each Markdown file is enough: "When this skill is edited, prompt the user to log the change to the Skills Registry." This makes maintenance a natural part of the edit workflow. It is not a separate task.
 
-**Do your first audit in the next two weeks. Then set a reminder for every 14 days.** The first audit shows the most. The corrections make each later review faster and less surprising. A 14-day interval is correct when connectors, integrations, and Claude capabilities change as fast as they change now. A quarterly interval is too slow. Faults grow without a warning in the gap.
+**Do your first audit in the next two weeks. Then set a reminder for every 14 days.** The first audit shows the most. The corrections make each later review faster and less surprising.
 
 The goal is not a perfect registry on day one. The goal is a registry that makes your automation library more reliable than it was without one, across each Claude surface that you use. Its value grows with each review cycle.
 
