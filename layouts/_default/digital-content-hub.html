@@ -37,6 +37,10 @@
     {{ end }}
   {{ end }}
 {{ end }}
+{{ $epCount := 0 }}{{ $seriesSeen := slice }}{{ $yearList := slice }}
+{{ range $years }}{{ $yearList = $yearList | append (string .year) }}{{ range .episodes }}{{ $epCount = add $epCount 1 }}{{ $sn := .series }}{{ if eq $sn "The Science Talk Videos" }}{{ $sn = "The Science Talk" }}{{ else if eq $sn "Grants & fundraising dissemination guidance" }}{{ $sn = "Grants & Fundraising" }}{{ end }}{{ $seriesSeen = $seriesSeen | append $sn }}{{ end }}{{ end }}
+{{ range $articles }}{{ $yearList = $yearList | append (.Date.Format "2006") }}{{ end }}
+{{ $yearList = sort (uniq $yearList) }}
 {{ $total := add (add (add (add (add (len $utm) (len $utmBonus)) (add (len $s42) (len $iow))) (len $listenUp)) (len $mfs)) (len $tst) }}
 
 {{/* JSON-LD: CollectionPage wrapping a PodcastSeries + ItemList per video series, all counts from len() over the data — never hardcoded */}}
@@ -82,15 +86,85 @@
   "mainEntity" (append (slice $podcastSeries $tstSeries) $itemLists)
 }}
 <script type="application/ld+json">{{ jsonify (dict "indent" "  ") $collectionPage | safeJS }}</script>
+{{/* FAQ: single source for the visible section and the FAQPage markup. Mirrors the ERC database FAQ. */}}
+{{ $faq := slice
+  (dict "q" "How can I search and filter the content?" "a" "Search by title, guest name, summary or topic tag. Every word you type must match, in any order. Filter by format, series and year. Search and filters work together.")
+  (dict "q" "What does each card show?" "a" "Each card shows the series, title, year and format. Podcast and video cards add the guest and links to Spotify or YouTube. Article cards add the reading time and a link to the full article.")
+}}
+{{ $faqQs := slice }}{{ range $faq }}{{ $faqQs = $faqQs | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}{{ end }}
+<script type="application/ld+json">{{ jsonify (dict "indent" "  ") (dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $faqQs) | safeJS }}</script>
+<script type="application/ld+json">{{ jsonify (dict "indent" "  ") (dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" (slice (dict "@type" "ListItem" "position" 1 "name" "Home" "item" .Site.BaseURL) (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink))) | safeJS }}</script>
 
 <div id="df-root">
 
 <header class="df-page-head">
-  <h1>Digital Content Hub</h1>
+  <h1><a href="{{ .RelPermalink }}" id="df-hero-reset">Digital Content Hub</a></h1>
+  <div class="df-credstrip">
+    <div class="df-credstrip-item"><span class="df-credstrip-num">{{ $epCount }}</span><span class="df-credstrip-label">Episodes &amp; videos</span></div>
+    <div class="df-credstrip-item"><span class="df-credstrip-num">{{ len $articles }}</span><span class="df-credstrip-label">Articles</span></div>
+    <div class="df-credstrip-item"><span class="df-credstrip-num">{{ len (uniq $seriesSeen) }}</span><span class="df-credstrip-label">Series</span></div>
+    <div class="df-credstrip-item"><span class="df-credstrip-num">{{ index $yearList 0 }}&ndash;{{ index $yearList (sub (len $yearList) 1) }}</span><span class="df-credstrip-label">Years covered</span></div>
+  </div>
   <p class="df-lede">All podcasts, videos, AI guides, and perspectives by Dr. Pranoti Kshirsagar &mdash; filter by series, format, year, or topic to find what you need.</p>
 </header>
 
-<div id="df-app"></div>
+<div id="df-app">
+  {{/* Server-rendered first page so crawlers and no-JS visitors get real content and links.
+       Same order as the JS default (newest publicationDate first). JS replaces this block on load. */}}
+  {{ $all := slice }}
+  {{ range $years }}{{ $y := .year }}{{ range .episodes }}{{ $all = $all | append (dict "d" (.publicationDate | default "") "year" $y "series" .series "bonus" .bonus "title" .title "guest" .guest_name "summary" .summary "type" .type "spotify" .spotify "youtube" .youtube) }}{{ end }}{{ end }}
+  {{ range $articles }}{{ $all = $all | append (dict "d" (.Date.Format "2006-01-02") "year" (.Date.Format "2006") "section" .Section "title" .Title "summary" .Params.description "reading_time" .Params.reading_time "permalink" .RelPermalink) }}{{ end }}
+  {{ $all = sort $all "d" "desc" }}
+  <div class="df-results-grid">
+    {{ range first 24 $all }}
+    <div class="df-card">
+      {{ if .permalink }}
+      <span class="df-series-tag">{{ if eq .section "ai-guides" }}AI Guide{{ else }}Perspective{{ end }}</span>
+      <h4>{{ .title }}</h4>
+      <div class="df-meta"><span class="df-tag">{{ .year }}</span><span class="df-tag">Articles</span>{{ with .reading_time }}<span class="df-tag">{{ . }}</span>{{ end }}</div>
+      {{ with .summary }}<div class="df-summary">{{ . }}</div>{{ end }}
+      <div class="df-links"><a href="{{ .permalink }}">Read article</a></div>
+      {{ else }}
+      <span class="df-series-tag">{{ $sn := .series }}{{ if eq $sn "The Science Talk Videos" }}{{ $sn = "The Science Talk" }}{{ else if eq $sn "Grants & fundraising dissemination guidance" }}{{ $sn = "Grants & Fundraising" }}{{ end }}{{ $sn }}{{ if .bonus }} — Bonus{{ end }}</span>
+      <h4>{{ .title }}</h4>
+      {{ with .guest }}<div class="df-guest">{{ . }}</div>{{ end }}
+      <div class="df-meta"><span class="df-tag">{{ .year }}</span>{{ range .type }}<span class="df-tag df-type-{{ . }}">{{ . }}</span>{{ end }}</div>
+      {{ with .summary }}<div class="df-summary">{{ . }}</div>{{ end }}
+      <div class="df-links">{{ with .spotify }}<a href="{{ . }}" target="_blank" rel="noopener">Listen on Spotify</a>{{ end }}{{ with .youtube }}<a href="{{ . }}" target="_blank" rel="noopener">Watch on YouTube</a>{{ end }}</div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+  <p class="df-ssr-more">Showing 24 of {{ len $all }} items. Turn on JavaScript to search and to filter by format, series, and year.</p>
+</div>
+
+<section class="df-faq">
+  <h2>FAQ</h2>
+  {{ range $faq }}
+  <details>
+    <summary>{{ .q }}</summary>
+    <p>{{ .a }}</p>
+  </details>
+  {{ end }}
+</section>
+
+<section class="df-faq df-updatelog">
+  <h2>Change log</h2>
+  <h3>25 September 2026</h3>
+  <ul>
+    <li>Your search now shows as a pill next to the filter pills. Click its &times; to clear the search.</li>
+    <li>A &times; inside the search box also clears the search.</li>
+    <li>Search now matches every word you type, in any order, and also looks at article topic tags.</li>
+    <li>The &ldquo;Text&rdquo; format is now called &ldquo;Articles&rdquo;. Old links that filter on &ldquo;text&rdquo; still work.</li>
+    <li>Clicking the page title clears all filters and the search.</li>
+    <li>Added a summary strip under the page title: episodes and videos, articles, series, and years covered.</li>
+    <li>Filter counts now follow your search, so each count matches what you get when you tick it.</li>
+    <li>The page number is kept in the link, so a shared or refreshed link opens on the same page.</li>
+    <li>When nothing matches a search, the page repeats your search and suggests what to try.</li>
+    <li>The search box no longer grabs the cursor when the page loads or when you click a filter.</li>
+    <li>Added an FAQ and this change log.</li>
+  </ul>
+</section>
 
 </div>
 
@@ -128,7 +202,7 @@
     "summary": {{ .Params.description | jsonify | safeJS }},
     "tags": {{ .Params.tags | jsonify | safeJS }},
     "reading_time": {{ .Params.reading_time | jsonify | safeJS }},
-    "type": {{ slice "text" | jsonify | safeJS }},
+    "type": {{ slice "articles" | jsonify | safeJS }},
     "permalink": {{ .RelPermalink | jsonify | safeJS }},
     "publicationDate": {{ .Date.Format "2006-01-02" | jsonify | safeJS }},
     "kind": "article"
@@ -148,7 +222,7 @@
 }
 #df-root, #df-root * { box-sizing: border-box; }
 
-#df-root .df-page-head { max-width: var(--df-container); margin: 0 auto 32px; }
+#df-root .df-page-head { max-width: var(--df-container); margin: 0 auto 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(0,0,0,0.1); }
 #df-root .df-page-head h1 { font-family: var(--font-display); font-weight: 600; font-size: 2rem; margin-bottom: 8px; color: var(--ink); }
 #df-root .df-lede { font-size: 1rem; color: var(--ink-soft); max-width: 640px; }
 
@@ -193,7 +267,23 @@
 
 #df-root .df-results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
 #df-root .df-results-count { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-soft); }
-#df-root .df-search { flex: 1; max-width: 320px; }
+#df-root .df-search { position: relative; margin-bottom: 18px; }
+#df-root .df-search input { padding-right: 30px; }
+#df-root .df-search-clear {
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  border: 0; background: none; cursor: pointer; font-size: 1.1rem; line-height: 1;
+  color: var(--ink-soft); padding: 4px 7px;
+}
+#df-root .df-search-clear:hover { color: #ff5757; }
+#df-root .df-credstrip { display: grid; grid-template-columns: repeat(4, 1fr); text-align: left; margin: 16px 0 20px; padding: 14px 0; max-width: 560px; }
+#df-root .df-credstrip-item { padding: 0 0.6rem; }
+#df-root .df-credstrip-num { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(1.1rem, 1.8vw, 1.4rem); line-height: 1; color: #444; }
+#df-root .df-credstrip-label { display: block; margin-top: 0.4rem; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
+@media (max-width: 640px) { #df-root .df-credstrip { grid-template-columns: repeat(2, 1fr); gap: 2rem 1rem; } }
+#df-root .df-page-head h1 a { color: inherit; text-decoration: none; }
+#df-root .df-updatelog h3 { font-size: 0.95rem; font-weight: 600; margin: 4px 0 10px; color: var(--ink); }
+#df-root .df-updatelog ul { margin: 0; padding-left: 20px; }
+#df-root .df-updatelog li { color: var(--ink-soft); line-height: 1.6; margin-bottom: 8px; }
 #df-root .df-search input {
   width: 100%; padding: 0.55rem 0.85rem; border: 1px solid rgba(0,0,0,0.15);
   border-radius: 6px; font-family: var(--font-body); font-size: 0.9rem;
@@ -208,6 +298,11 @@
 }
 #df-root .df-chip .df-x { cursor: pointer; color: #ffb3a3; font-weight: 700; }
 
+#df-root .df-faq { max-width: var(--df-container); margin: 48px auto 0; padding-top: 32px; border-top: 1px solid rgba(0,0,0,0.1); }
+#df-root .df-faq h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; margin: 0 0 12px; color: var(--ink); }
+#df-root .df-faq details { padding: 14px 0; }
+#df-root .df-faq summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+#df-root .df-faq details p { margin: 10px 0 0; color: var(--ink-soft); line-height: 1.6; }
 #df-root .df-results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
 
 #df-root .df-card {
@@ -282,6 +377,7 @@
   var query = '';
   var collapsed = {};
   var page = 1;
+  var focusSearch = false;
   var PAGE_SIZE = 24;
 
   function toggleGroup(key) { collapsed[key] = !collapsed[key]; render(); }
@@ -290,15 +386,17 @@
     var p = new URLSearchParams(location.hash.replace(/^#/, ''));
     FILTER_KEYS.forEach(function (k) {
       var v = p.get(k);
-      state[k] = v ? v.split(',') : [];
+      state[k] = v ? v.split(',').map(function (x) { return k === 'type' && x === 'text' ? 'articles' : x; }) : [];
     });
     query = p.get('q') || '';
+    page = parseInt(p.get('page'), 10) || 1;
   }
 
   function writeUrl(push) {
     var p = new URLSearchParams();
     FILTER_KEYS.forEach(function (k) { if (state[k].length) p.set(k, state[k].join(',')); });
     if (query) p.set('q', query);
+    if (page > 1) p.set('page', page);
     var qs = p.toString();
     var url = location.pathname + location.search + (qs ? '#' + qs : '');
     if (push) history.replaceState({}, '', url);
@@ -327,16 +425,26 @@
       var val = k === 'year' ? String(e.year) : normalizeSeries(e.series);
       if (state[k].indexOf(val) === -1) return false;
     }
+    return matchesQuery(e);
+  }
+
+  function matchesQuery(e) {
     if (query) {
-      var hay = ((e.title || '') + ' ' + (e.guest_name || '') + ' ' + (e.summary || '')).toLowerCase();
-      if (hay.indexOf(query.toLowerCase()) === -1) return false;
+      // Every word must match somewhere, in any order (same approach as the ERC database).
+      var hay = ((e.title || '') + ' ' + (e.guest_name || '') + ' ' + (e.summary || '') + ' ' +
+                 (e.tags || []).join(' ')).toLowerCase();
+      var terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+      for (var i = 0; i < terms.length; i++) { if (hay.indexOf(terms[i]) === -1) return false; }
     }
     return true;
   }
 
   function renderFilterGroup(key, options) {
     var counts = {};
-    DATA.forEach(function (e) {
+    // Counts reflect the search, so a count never promises more than the search can deliver.
+    // They ignore the other filters, as on the ERC database.
+    var pool = query ? DATA.filter(matchesQuery) : DATA;
+    pool.forEach(function (e) {
       if (key === 'type') {
         (e.type || []).forEach(function (t) { counts[t] = (counts[t] || 0) + 1; });
         return;
@@ -365,6 +473,8 @@
           '<span class="df-x" data-chip-key="' + key + '" data-chip-val="' + val.replace(/"/g, '&quot;') + '">×</span></span>');
       });
     });
+    if (query) chips.push('<span class="df-chip">\u201c' + query.replace(/</g, '&lt;') + '\u201d' +
+      '<span class="df-x" data-chip-key="q">×</span></span>');
     if (!chips.length) return '';
     return '<div class="df-active-chips">' + chips.join('') + '</div>';
   }
@@ -379,7 +489,7 @@
         '<h4>' + e.title + '</h4>' +
         '<div class="df-meta">' +
           '<span class="df-tag">' + e.year + '</span>' +
-          '<span class="df-tag">Text</span>' +
+          '<span class="df-tag">Articles</span>' +
           (e.reading_time ? '<span class="df-tag">' + e.reading_time + '</span>' : '') +
           tagChips +
         '</div>' +
@@ -434,12 +544,18 @@
           '<button class="df-clear-filters' + (hasActive ? ' df-active' : '') + '" id="df-clear">Clear all filters</button>' +
         '</aside>' +
         '<main style="flex:1">' +
+          '<div class="df-search"><input type="text" id="df-search-input" placeholder="Search titles, guests, topics…" value="' + query.replace(/"/g, '&quot;') + '">' +
+              (query ? '<button type="button" class="df-search-clear" id="df-search-clear" aria-label="Clear search">&times;</button>' : '') +
+          '</div>' +
           '<div class="df-results-header">' +
             '<div class="df-results-count">' + results.length + ' result' + (results.length === 1 ? '' : 's') + '</div>' +
-            '<div class="df-search"><input type="text" id="df-search-input" placeholder="Search titles, guests, topics…" value="' + query.replace(/"/g, '&quot;') + '"></div>' +
           '</div>' +
           activeChips() +
-          (results.length ? '<div class="df-results-grid">' + pageResults.map(card).join('') + '</div>' + pager : '<div class="df-no-results">No results match the selected filters.</div>') +
+          (results.length ? '<div class="df-results-grid">' + pageResults.map(card).join('') + '</div>' + pager : '<div class="df-no-results">' +
+            (query ? 'No results match \u201c' + query.replace(/</g, '&lt;') + '\u201d' +
+                     (FILTER_KEYS.some(function (k) { return state[k].length; }) ? ' with the selected filters.' : '. Try a guest name, a topic or a word from the title.')
+                   : 'No results match the selected filters.') +
+            '</div>') +
         '</main>' +
       '</div>';
 
@@ -450,23 +566,39 @@
       h3.addEventListener('click', function () { toggleGroup(h3.dataset.toggleGroup); });
     });
     document.querySelectorAll('.df-x').forEach(function (x) {
-      x.addEventListener('click', function () { toggleFilter(x.dataset.chipKey, x.dataset.chipVal); });
+      x.addEventListener('click', function () {
+        if (x.dataset.chipKey === 'q') { query = ''; page = 1; writeUrl(true); render(); return; }
+        toggleFilter(x.dataset.chipKey, x.dataset.chipVal); });
     });
     var prevBtn = document.getElementById('df-prev');
-    if (prevBtn) prevBtn.addEventListener('click', function () { page--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    if (prevBtn) prevBtn.addEventListener('click', function () { page--; writeUrl(true); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     var nextBtn = document.getElementById('df-next');
-    if (nextBtn) nextBtn.addEventListener('click', function () { page++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { page++; writeUrl(true); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     var clearBtn = document.getElementById('df-clear');
     if (clearBtn) clearBtn.addEventListener('click', clearFilters);
     var searchInput = document.getElementById('df-search-input');
     if (searchInput) {
-      searchInput.addEventListener('input', function () { query = searchInput.value; page = 1; writeUrl(true); render(); });
-      searchInput.focus();
-      searchInput.setSelectionRange(query.length, query.length);
+      searchInput.addEventListener('input', function () { query = searchInput.value; page = 1; focusSearch = true; writeUrl(true); render(); });
+      // render() replaces the whole block, so focus and caret are restored by hand, only while typing.
+      if (focusSearch) {
+        focusSearch = false;
+        searchInput.focus();
+        searchInput.setSelectionRange(query.length, query.length);
+      }
     }
+    var searchClear = document.getElementById('df-search-clear');
+    if (searchClear) searchClear.addEventListener('click', function () { query = ''; page = 1; focusSearch = true; writeUrl(true); render(); });
   }
 
   window.addEventListener('popstate', function () { parseUrl(); render(); });
+
+  // Clicking the page title clears every active filter and the search, and returns to page 1.
+  var heroReset = document.getElementById('df-hero-reset');
+  if (heroReset) heroReset.addEventListener('click', function (e) {
+    e.preventDefault();
+    clearFilters();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   parseUrl();
   render();
