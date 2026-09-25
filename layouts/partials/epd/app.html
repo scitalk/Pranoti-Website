@@ -247,11 +247,6 @@
     var pool = queryTerms.length ? DATA.filter(matchesQuery) : DATA;
     var filterGroups = FILTER_KEYS.map(function (k) { return renderFilterGroup(k, TAXONOMIES[k], pool); }).join('');
 
-    // Shown only when 2025 and Advanced Grants are both in the active filter set.
-    var adgNote = (state.year.indexOf('2025') !== -1 && state.grant_type.indexOf('Advanced Grants') !== -1)
-      ? '<p class="epd-note">The 2025 Advanced Grants are not yet in this database. Those grant agreements have not been signed, so the projects have not appeared in the European Commission\'s dashboard. For the full list, see the ERC\'s <a href="https://erc.europa.eu/system/files/2026-06/erc-2025-adg-results-all-domains.pdf" target="_blank" rel="noopener">2025 Advanced Grant results (PDF)</a>.</p>'
-      : '';
-
     document.getElementById('epd-app').innerHTML =
       '<div class="epd-layout">' +
         '<aside class="epd-filters">' +
@@ -259,7 +254,6 @@
           '<button class="epd-clear-filters' + (hasActive ? ' epd-active' : '') + '" id="epd-clear">Clear all filters</button>' +
         '</aside>' +
         '<div class="epd-results-col" style="flex:1">' +
-          adgNote +
           searchBox() +
           '<div class="epd-results-header">' +
             '<div class="epd-results-count">' + results.length + ' project' + (results.length === 1 ? '' : 's') + '</div>' +
