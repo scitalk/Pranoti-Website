@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Claude Models on Pranoti Kshirsagar</title><link>https://pranoti.thesciencetalk.com/tags/claude-models/</link><description>Recent content in Claude Models on Pranoti Kshirsagar</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Sat, 03 Oct 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://pranoti.thesciencetalk.com/tags/claude-models/index.xml" rel="self" type="application/rss+xml"/><item><title>Claude Models Compared: Knowledge Cutoff, Pricing and Plans</title><link>https://pranoti.thesciencetalk.com/ai-guides/claude-models-knowledge-cutoff-plans-guide/</link><pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate><guid>https://pranoti.thesciencetalk.com/ai-guides/claude-models-knowledge-cutoff-plans-guide/</guid><description>&lt;p>This guide compares the Claude models in the chat model menu: Fable, Opus, Sonnet and Haiku, plus the older versions under &amp;ldquo;More models&amp;rdquo;. It covers each model&amp;rsquo;s knowledge cutoff, strengths and pricing, the Effort setting, and the differences between the Free, Pro, Max, Team and Enterprise plans.&lt;/p>
+&lt;p>Every fact here comes from Anthropic&amp;rsquo;s own documentation, linked at the end. Figures are correct as of 3 October 2026.&lt;/p>
+&lt;h2 id="which-claude-model-should-i-use">Which Claude model should I use?&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Sonnet 5.5&lt;/strong> for most everyday chat: writing, editing, analysis.&lt;/li>
+&lt;li>&lt;strong>Opus 5.5&lt;/strong> for hard reasoning and long back-and-forth work.&lt;/li>
+&lt;li>&lt;strong>Fable 5.1&lt;/strong> for long tasks with many steps, or dense source material.&lt;/li>
+&lt;li>&lt;strong>Haiku 4.5&lt;/strong> for quick lookups and short summaries.&lt;/li>
+&lt;li>Leave effort on &lt;strong>Default&lt;/strong> until you have a reason to change it.&lt;/li>
+&lt;/ul>
+&lt;h2 id="current-claude-models-compared">Current Claude models compared&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>&lt;/th>
+ &lt;th>Fable 5.1&lt;/th>
+ &lt;th>Opus 5.5&lt;/th>
+ &lt;th>Sonnet 5.5&lt;/th>
+ &lt;th>Haiku 4.5&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Anthropic&amp;rsquo;s description&lt;/td>
+ &lt;td>For demanding reasoning and long-horizon agentic work&lt;/td>
+ &lt;td>For long-running agentic coding and knowledge work&lt;/td>
+ &lt;td>The best combination of speed and intelligence&lt;/td>
+ &lt;td>The fastest model with near-frontier intelligence&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Speed&lt;/td>
+ &lt;td>Slower&lt;/td>
+ &lt;td>Moderate&lt;/td>
+ &lt;td>Fast&lt;/td>
+ &lt;td>Fastest&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Reliable knowledge cutoff&lt;/td>
+ &lt;td>Jun 2026&lt;/td>
+ &lt;td>Jun 2026&lt;/td>
+ &lt;td>Jun 2026&lt;/td>
+ &lt;td>Feb 2025&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Context window&lt;/td>
+ &lt;td>1M tokens&lt;/td>
+ &lt;td>1M tokens&lt;/td>
+ &lt;td>1M tokens&lt;/td>
+ &lt;td>200K tokens&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>API price (input / output per million tokens)&lt;/td>
+ &lt;td>$10 / $50&lt;/td>
+ &lt;td>$4 / $20&lt;/td>
+ &lt;td>$2 / $10&lt;/td>
+ &lt;td>$1 / $5&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>Anthropic&amp;rsquo;s Claude Academy gives this task guidance:&lt;/p></description></item></channel></rss>
