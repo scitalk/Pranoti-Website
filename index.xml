@@ -10,55 +10,7 @@
 &lt;li>Leave effort on &lt;strong>Default&lt;/strong> until you have a reason to change it.&lt;/li>
 &lt;/ul>
 &lt;h2 id="current-claude-models-compared">Current Claude models compared&lt;/h2>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>&lt;/th>
- &lt;th>Fable 5.1&lt;/th>
- &lt;th>Opus 5.5&lt;/th>
- &lt;th>Sonnet 5.5&lt;/th>
- &lt;th>Haiku 4.5&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Anthropic&amp;rsquo;s description&lt;/td>
- &lt;td>For demanding reasoning and long-horizon agentic work&lt;/td>
- &lt;td>For long-running agentic coding and knowledge work&lt;/td>
- &lt;td>The best combination of speed and intelligence&lt;/td>
- &lt;td>The fastest model with near-frontier intelligence&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Speed&lt;/td>
- &lt;td>Slower&lt;/td>
- &lt;td>Moderate&lt;/td>
- &lt;td>Fast&lt;/td>
- &lt;td>Fastest&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Reliable knowledge cutoff&lt;/td>
- &lt;td>Jun 2026&lt;/td>
- &lt;td>Jun 2026&lt;/td>
- &lt;td>Jun 2026&lt;/td>
- &lt;td>Feb 2025&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Context window&lt;/td>
- &lt;td>1M tokens&lt;/td>
- &lt;td>1M tokens&lt;/td>
- &lt;td>1M tokens&lt;/td>
- &lt;td>200K tokens&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>API price (input / output per million tokens)&lt;/td>
- &lt;td>$10 / $50&lt;/td>
- &lt;td>$4 / $20&lt;/td>
- &lt;td>$2 / $10&lt;/td>
- &lt;td>$1 / $5&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;p>Anthropic&amp;rsquo;s Claude Academy gives this task guidance:&lt;/p></description></item><item><title>The ERC Projects Database: A Research Tool for ERC Proposal Writers</title><link>https://pranoti.thesciencetalk.com/case-studies/erc-projects-database-build/</link><pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate><guid>https://pranoti.thesciencetalk.com/case-studies/erc-projects-database-build/</guid><description>&lt;p>&lt;em>Last reviewed and updated on 25 September 2026.&lt;/em>&lt;/p>
+&lt;p>&lt;strong>Fable 5.1&lt;/strong>&lt;/p></description></item><item><title>The ERC Projects Database: A Research Tool for ERC Proposal Writers</title><link>https://pranoti.thesciencetalk.com/case-studies/erc-projects-database-build/</link><pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate><guid>https://pranoti.thesciencetalk.com/case-studies/erc-projects-database-build/</guid><description>&lt;p>&lt;em>Last reviewed and updated on 25 September 2026.&lt;/em>&lt;/p>
 &lt;p>&lt;strong>Date:&lt;/strong> September 2026&lt;br>
 &lt;strong>Domain Focus:&lt;/strong> Scientific Research Funding &amp;amp; Impact Management&lt;br>
 &lt;strong>Services:&lt;/strong> Data cleaning, information design, web development, technical SEO&lt;br>
