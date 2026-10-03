@@ -32,13 +32,37 @@ Every fact here comes from Anthropic's own documentation, linked at the end. Fig
 
 ## Current Claude models compared
 
-| | Fable 5.1 | Opus 5.5 | Sonnet 5.5 | Haiku 4.5 |
-|---|---|---|---|---|
-| Anthropic's description | For demanding reasoning and long-horizon agentic work | For long-running agentic coding and knowledge work | The best combination of speed and intelligence | The fastest model with near-frontier intelligence |
-| Speed | Slower | Moderate | Fast | Fastest |
-| Reliable knowledge cutoff | Jun 2026 | Jun 2026 | Jun 2026 | Feb 2025 |
-| Context window | 1M tokens | 1M tokens | 1M tokens | 200K tokens |
-| API price (input / output per million tokens) | $10 / $50 | $4 / $20 | $2 / $10 | $1 / $5 |
+**Fable 5.1**
+
+- Anthropic's description: For demanding reasoning and long-horizon agentic work
+- Speed: Slower
+- Reliable knowledge cutoff: Jun 2026
+- Context window: 1M tokens
+- API price (input / output per million tokens): $10 / $50
+
+**Opus 5.5**
+
+- Anthropic's description: For long-running agentic coding and knowledge work
+- Speed: Moderate
+- Reliable knowledge cutoff: Jun 2026
+- Context window: 1M tokens
+- API price (input / output per million tokens): $4 / $20
+
+**Sonnet 5.5**
+
+- Anthropic's description: The best combination of speed and intelligence
+- Speed: Fast
+- Reliable knowledge cutoff: Jun 2026
+- Context window: 1M tokens
+- API price (input / output per million tokens): $2 / $10
+
+**Haiku 4.5**
+
+- Anthropic's description: The fastest model with near-frontier intelligence
+- Speed: Fastest
+- Reliable knowledge cutoff: Feb 2025
+- Context window: 200K tokens
+- API price (input / output per million tokens): $1 / $5
 
 Anthropic's Claude Academy gives this task guidance:
 
@@ -51,16 +75,14 @@ Anthropic's Claude Academy gives this task guidance:
 
 The reliable knowledge cutoff is the date through which a model's knowledge is "most extensive and reliable". Anything after that date, the model does not know from training.
 
-| Model | Status | Reliable knowledge cutoff |
-|---|---|---|
-| Fable 5.1, Opus 5.5, Sonnet 5.5 | Current | Jun 2026 |
-| Opus 5 | Legacy | May 2026 |
-| Fable 5, Sonnet 5, Opus 4.8, Opus 4.7 | Legacy | Jan 2026 |
-| Sonnet 4.6 | Legacy | Aug 2025 |
-| Opus 4.6, Opus 4.5 | Legacy | May 2025 |
-| Haiku 4.5 | Current | Feb 2025 |
+- **Fable 5.1, Opus 5.5, Sonnet 5.5** (Current): Jun 2026
+- **Opus 5** (Legacy): May 2026
+- **Fable 5, Sonnet 5, Opus 4.8, Opus 4.7** (Legacy): Jan 2026
+- **Sonnet 4.6** (Legacy): Aug 2025
+- **Opus 4.6, Opus 4.5** (Legacy): May 2025
+- **Haiku 4.5** (Current): Feb 2025
 
-Two things follow from this table.
+Two things follow from this list.
 
 **Even the newest models are behind.** In October 2026, a June 2026 cutoff is four months old. Haiku 4.5 is more than a year and a half behind. For anything recent (prices, laws, product releases, news), make Claude check a live source.
 
@@ -85,12 +107,10 @@ Models are eventually retired "to ensure capacity for new model releases". On th
 
 Click the model name next to the send button, then **Effort**. Each model marks its recommended level as Default.
 
-| Effort | Anthropic's guidance |
-|---|---|
-| Low, Medium | "Work well for routine tasks and stretch your usage further" |
-| High | The best overall balance of quality and speed |
-| Extra high | Long-running coding and agentic tasks. Available on Opus 4.7 and newer |
-| Max | The most thorough option, for the deepest reasoning |
+- **Low, Medium:** "Work well for routine tasks and stretch your usage further"
+- **High:** The best overall balance of quality and speed
+- **Extra high:** Long-running coding and agentic tasks. Available on Opus 4.7 and newer
+- **Max:** The most thorough option, for the deepest reasoning
 
 Higher effort means more thinking, and thinking uses tokens. That is why low effort makes your allowance last longer. Haiku 4.5 does not support the effort setting.
 
@@ -98,17 +118,29 @@ Higher effort means more thinking, and thinking uses tokens. That is why low eff
 
 There are two kinds of price, and they are easy to mix up.
 
-**API prices** are per million tokens (see the model table above). Fable costs five times more per token than Sonnet. A bigger model does not necessarily use more tokens; each token costs more. This matters to you directly on Enterprise, which charges usage at API rates.
+**API prices** are per million tokens (see the model list above). Fable costs five times more per token than Sonnet. A bigger model does not necessarily use more tokens; each token costs more. This matters to you directly on Enterprise, which charges usage at API rates.
 
 **Plan prices** are what you pay for the Claude app:
 
-| Plan | Price (USD) | What changes |
-|---|---|---|
-| Free | $0 | Chat on web, desktop and mobile. Web search, file creation, memory, [connectors](/ai-guides/model-context-protocol-non-developers/), up to 5 projects. Sonnet and Haiku only |
-| Pro | $20/month, or $17/month billed annually ($200 up front) | At least 5x more usage per 5-hour session than Free. Adds Opus, Claude Code, Claude in Chrome, Research, unlimited projects |
-| Max | From $100/month | Choose 5x or 20x more usage per 5-hour session than Pro. Higher output limits, priority access at high traffic times |
-| Team | Standard seat $25/month ($20 billed annually). Premium seat $125/month ($100 billed annually) | Single sign-on (SSO), admin controls for connectors. Standard seats get more usage than Pro; premium seats get 5x more than standard |
-| Enterprise | US$20/seat/month billed annually, plus usage at API rates | Role-based access with fine-grained permissions, SCIM, audit logs, compliance API, custom data retention controls |
+**Free: $0**
+
+Chat on web, desktop and mobile. Web search, file creation, memory, [connectors](/ai-guides/model-context-protocol-non-developers/), up to 5 projects. Sonnet and Haiku only.
+
+**Pro: $20/month, or $17/month billed annually ($200 up front)**
+
+At least 5x more usage per 5-hour session than Free. Adds Opus, Claude Code, Claude in Chrome, Research, Projects (Free is limited to 5).
+
+**Max: From $100/month**
+
+Choose 5x or 20x more usage per 5-hour session than Pro. Higher output limits, priority access at high traffic times.
+
+**Team: Standard seat $25/month ($20 billed annually). Premium seat $125/month ($100 billed annually)**
+
+Single sign-on (SSO), admin controls for connectors. Standard seats get more usage than Pro; premium seats get 5x more than standard.
+
+**Enterprise: US$20/seat/month billed annually, plus usage at API rates**
+
+Role-based access with fine-grained permissions, SCIM, audit logs, compliance API, custom data retention controls.
 
 Fable access differs by plan. Free has none. Pro gets it through "usage credits". Max gets it within "50% of weekly limits", as do Team premium seats. Enterprise includes it.
 
