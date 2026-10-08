@@ -116,7 +116,7 @@
   {{/* Server-rendered first page so crawlers and no-JS visitors get real content and links.
        Same order as the JS default (newest publicationDate first). JS replaces this block on load. */}}
   {{ $all := slice }}
-  {{ range $years }}{{ $y := .year }}{{ range .episodes }}{{ $all = $all | append (dict "d" (.publicationDate | default "") "year" $y "series" .series "bonus" .bonus "title" .title "guest" .guest_name "summary" .summary "type" .type "spotify" .spotify "youtube" .youtube) }}{{ end }}{{ end }}
+  {{ range $years }}{{ $y := .year }}{{ range .episodes }}{{ $all = $all | append (dict "d" (.publicationDate | default "") "year" $y "series" .series "bonus" .bonus "also_series" .also_series "title" .title "guest" .guest_name "summary" .summary "type" .type "spotify" .spotify "youtube" .youtube) }}{{ end }}{{ end }}
   {{ range $articles }}{{ $all = $all | append (dict "d" (.Date.Format "2006-01-02") "year" (.Date.Format "2006") "section" .Section "title" .Title "summary" .Params.description "reading_time" .Params.reading_time "permalink" .RelPermalink) }}{{ end }}
   {{ $all = sort $all "d" "desc" }}
   <div class="df-results-grid">
@@ -129,7 +129,7 @@
       {{ with .summary }}<div class="df-summary">{{ . }}</div>{{ end }}
       <div class="df-links"><a href="{{ .permalink }}">Read article</a></div>
       {{ else }}
-      <span class="df-series-tag">{{ $sn := .series }}{{ if eq $sn "The Science Talk Videos" }}{{ $sn = "The Science Talk" }}{{ else if eq $sn "Grants & fundraising dissemination guidance" }}{{ $sn = "Grants & Fundraising" }}{{ end }}{{ $sn }}{{ if .bonus }} — Bonus{{ end }}</span>
+      <span class="df-series-tag">{{ $sn := .series }}{{ if eq $sn "The Science Talk Videos" }}{{ $sn = "The Science Talk" }}{{ else if eq $sn "Grants & fundraising dissemination guidance" }}{{ $sn = "Grants & Fundraising" }}{{ end }}{{ $sn }}{{ range .also_series }} · {{ . }}{{ end }}{{ if .bonus }} — Bonus{{ end }}</span>
       <h4>{{ .title }}</h4>
       {{ with .guest }}<div class="df-guest">{{ . }}</div>{{ end }}
       <div class="df-meta"><span class="df-tag">{{ .year }}</span>{{ range .type }}<span class="df-tag df-type-{{ . }}">{{ . }}</span>{{ end }}</div>
@@ -182,6 +182,7 @@
     {
       "year": {{ $year | jsonify | safeJS }},
       "series": {{ .series | jsonify | safeJS }},
+      "also_series": {{ .also_series | default slice | jsonify | safeJS }},
       "bonus": {{ .bonus | jsonify | safeJS }},
       "title": {{ .title | jsonify | safeJS }},
       "guest_name": {{ .guest_name | jsonify | safeJS }},
@@ -358,6 +359,11 @@
 (function () {
   var DATA = JSON.parse(document.getElementById('df-data').textContent);
 
+  // Primary series plus any also_series; 'Articles' is not a series facet.
+  function seriesOf(e) {
+    return [e.series].concat(e.also_series || []).filter(function (s) { return s && s !== 'Articles'; }).map(normalizeSeries);
+  }
+
   function normalizeSeries(s) {
     if (s === 'The Science Talk Videos') return 'The Science Talk';
     if (s === 'Grants & fundraising dissemination guidance') return 'Grants & Fundraising';
@@ -370,10 +376,10 @@
   var seriesCounts = {};
   function addUnique(list, val) { if (val && list.indexOf(val) === -1) list.push(val); }
   DATA.forEach(function (e) {
-    if (e.series !== 'Articles') addUnique(TAXONOMIES.series, normalizeSeries(e.series));
+    seriesOf(e).forEach(function (s) { addUnique(TAXONOMIES.series, s); });
     addUnique(TAXONOMIES.year, String(e.year));
     (e.type || []).forEach(function (t) { addUnique(TAXONOMIES.type, t); });
-    if (e.series) seriesCounts[normalizeSeries(e.series)] = (seriesCounts[normalizeSeries(e.series)] || 0) + 1;
+    seriesOf(e).forEach(function (s) { seriesCounts[s] = (seriesCounts[s] || 0) + 1; });
   });
   TAXONOMIES.year.sort().reverse();
   TAXONOMIES.series.sort(function (a, b) { return seriesCounts[b] - seriesCounts[a]; });
@@ -430,8 +436,8 @@
         if (!state[k].some(function (v) { return types.indexOf(v) !== -1; })) return false;
         continue;
       }
-      var val = k === 'year' ? String(e.year) : normalizeSeries(e.series);
-      if (state[k].indexOf(val) === -1) return false;
+      var vals = k === 'year' ? [String(e.year)] : seriesOf(e);
+      if (!vals.some(function (v) { return state[k].indexOf(v) !== -1; })) return false;
     }
     return matchesQuery(e);
   }
@@ -457,8 +463,7 @@
         (e.type || []).forEach(function (t) { counts[t] = (counts[t] || 0) + 1; });
         return;
       }
-      var v = key === 'year' ? String(e.year) : normalizeSeries(e.series);
-      if (v) counts[v] = (counts[v] || 0) + 1;
+      (key === 'year' ? [String(e.year)] : seriesOf(e)).forEach(function (v) { counts[v] = (counts[v] || 0) + 1; });
     });
     var rows = options.map(function (o) {
       var checked = state[key].indexOf(o) !== -1 ? 'checked' : '';
@@ -509,7 +514,7 @@
     if (e.spotify) links += '<a href="' + e.spotify + '" target="_blank" rel="noopener">Listen on Spotify</a>';
     if (e.youtube) links += '<a href="' + e.youtube + '" target="_blank" rel="noopener">Watch on YouTube</a>';
     return '<div class="df-card">' +
-      '<span class="df-series-tag">' + normalizeSeries(e.series) + (e.bonus ? ' — Bonus' : '') + '</span>' +
+      '<span class="df-series-tag">' + seriesOf(e).join(' · ') + (e.bonus ? ' — Bonus' : '') + '</span>' +
       '<h4>' + e.title + '</h4>' +
       (e.guest_name ? '<div class="df-guest">' + e.guest_name + '</div>' : '') +
       '<div class="df-meta">' +
