@@ -1,7 +1,7 @@
 ---
 title: "Claude Models Compared: Knowledge Cutoff, Pricing and Plans"
 date: 2026-10-03
-lastmod: 2026-10-03
+lastmod: 2026-10-08
 draft: false
 description: "Claude models compared: knowledge cutoff, strengths and pricing for Fable, Opus, Sonnet and Haiku, plus Free, Pro, Max, Team and Enterprise plans."
 keywords: ["Claude models", "Claude knowledge cutoff", "Claude Opus vs Sonnet", "Claude Fable", "Claude effort level", "Claude Pro vs Max", "Claude Enterprise pricing", "which Claude model"]
@@ -20,17 +20,21 @@ sidebar_links:
 
 This guide compares the Claude models in the chat model menu: Fable, Opus, Sonnet and Haiku, plus the older versions under "More models". It covers each model's knowledge cutoff, strengths and pricing, the Effort setting, and the differences between the Free, Pro, Max, Team and Enterprise plans.
 
-Every fact here comes from Anthropic's own documentation, linked at the end. Figures are correct as of 3 October 2026.
+Every fact here comes from Anthropic's own documentation, linked at the end. Figures are correct as of 8 October 2026.
 
 ## Which Claude model should I use?
 
 - **Sonnet 5.5** for most everyday chat: writing, editing, analysis.
 - **Opus 5.5** for hard reasoning and long back-and-forth work.
 - **Fable 5.1** for long tasks with many steps, or dense source material.
-- **Haiku 4.5** for quick lookups and short summaries.
+- **Haiku 5.5** for quick lookups and short summaries.
 - Leave effort on **Default** until you have a reason to change it.
 
 ## Current Claude models compared
+
+![Anthropic's comparison table of Claude Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5: latency, pricing, API ID, thinking, default effort, context window, max output and knowledge cutoff](/images/ai-guides_perspectives/Claude_Models_2026-10-08%20at%2010.39.11.png)
+
+*Source: [Anthropic, Models overview](https://platform.claude.com/docs/en/models/overview), 8 October 2026.*
 
 **Fable 5.1**
 
@@ -56,13 +60,13 @@ Every fact here comes from Anthropic's own documentation, linked at the end. Fig
 - Context window: 1M tokens
 - API price (input / output per million tokens): $2 / $10
 
-**Haiku 4.5**
+**Haiku 5.5**
 
-- Anthropic's description: The fastest model with near-frontier intelligence
+- Anthropic's description: For high-volume, latency-sensitive tasks such as classification, extraction, and routing
 - Speed: Fastest
-- Reliable knowledge cutoff: Feb 2025
-- Context window: 200K tokens
-- API price (input / output per million tokens): $1 / $5
+- Reliable knowledge cutoff: Jun 2026
+- Context window: 1M tokens
+- API price (input / output per million tokens): from $0.10 / from $0.50
 
 Anthropic's Claude Academy gives this task guidance:
 
@@ -75,18 +79,18 @@ Anthropic's Claude Academy gives this task guidance:
 
 The reliable knowledge cutoff is the date through which a model's knowledge is "most extensive and reliable". Anything after that date, the model does not know from training.
 
-- **Fable 5.1, Opus 5.5, Sonnet 5.5** (Current): Jun 2026
+- **Fable 5.1, Opus 5.5, Sonnet 5.5, Haiku 5.5** (Current): Jun 2026
 - **Opus 5** (Legacy): May 2026
 - **Fable 5, Sonnet 5, Opus 4.8, Opus 4.7** (Legacy): Jan 2026
 - **Sonnet 4.6** (Legacy): Aug 2025
 - **Opus 4.6, Opus 4.5** (Legacy): May 2025
-- **Haiku 4.5** (Current): Feb 2025
+- **Haiku 4.5** (Legacy): Feb 2025
 
 Two things follow from this list.
 
-**Even the newest models are behind.** In October 2026, a June 2026 cutoff is four months old. Haiku 4.5 is more than a year and a half behind. For anything recent (prices, laws, product releases, news), make Claude check a live source.
+**Even the newest models are behind.** In October 2026, a June 2026 cutoff is four months old. Legacy Haiku 4.5 is more than a year and a half behind. For anything recent (prices, laws, product releases, news), make Claude check a live source.
 
-**The same cutoff does not mean the same model.** Fable, Opus and Sonnet share a June 2026 cutoff. The difference is how well they reason with what they know, how fast they answer, and what they cost to run.
+**The same cutoff does not mean the same model.** Fable, Opus, Sonnet and Haiku share a June 2026 cutoff. The difference is how well they reason with what they know, how fast they answer, and what they cost to run.
 
 You do not need any extension for live information. Anthropic's help centre says: "There's no web search toggle. Claude searches the web when it helps." Claude in Chrome is a separate browser extension that lets Claude read, click and navigate websites with you. It is not required for search. If you let Claude act in your browser or files, read [how to use Claude Cowork safely](/ai-guides/use-claude-cowork-safely/).
 
@@ -112,7 +116,7 @@ Click the model name next to the send button, then **Effort**. Each model marks 
 - **Extra high:** Long-running coding and agentic tasks. Available on Opus 4.7 and newer
 - **Max:** The most thorough option, for the deepest reasoning
 
-Higher effort means more thinking, and thinking uses tokens. That is why low effort makes your allowance last longer. Haiku 4.5 does not support the effort setting.
+Higher effort means more thinking, and thinking uses tokens. That is why low effort makes your allowance last longer. Haiku 5.5 supports effort (default: medium on the API). Legacy Haiku 4.5 does not.
 
 ## Claude pricing: Free vs Pro vs Max vs Team vs Enterprise
 
@@ -158,7 +162,7 @@ Prices exclude tax, and Anthropic states that prices and plans "are subject to c
 
 ### What is the knowledge cutoff of the latest Claude models?
 
-Claude Fable 5.1, Opus 5.5 and Sonnet 5.5 have a reliable knowledge cutoff of June 2026. Claude Haiku 4.5 has a reliable knowledge cutoff of February 2025. Source: Anthropic's models overview.
+Claude Fable 5.1, Opus 5.5, Sonnet 5.5 and Haiku 5.5 have a reliable knowledge cutoff of June 2026. The legacy Claude Haiku 4.5 has a reliable knowledge cutoff of February 2025. Source: Anthropic's models overview.
 
 ### Which Claude model should I use?
 
