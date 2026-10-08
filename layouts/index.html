@@ -3,138 +3,156 @@
 <section class="home-page">
 
   <!-- Hero -->
-  <header class="home-hero">
+  <header class="home-hero-boxed">
     <div class="container narrow">
-      <span class="home-eyebrow">Pranoti Kshirsagar</span>
-
-      <div class="home-paths">
-        <div class="home-path-card">
-          <span class="home-path-label">AI Integration &amp; Automation</span>
-          <p>Consulting for businesses, research institutions, and EIC-funded companies — practical AI workflows and EU AI Act compliance, built from real implementation.</p>
-          <div class="home-path-ctas">
-            <a href="#browse-by-topic" class="home-path-btn primary">Explore the work →</a>
-            <a href="https://thesciencetalk.com/contact-us/" class="home-path-btn">Book a consultation</a>
-          </div>
-        </div>
-        <div class="home-path-card">
-          <span class="home-path-label">Speaking &amp; Training</span>
-          <p>Personal branding, science communication, and LinkedIn training for scientists — keynotes, workshops, and panels delivered across Europe.</p>
-          <div class="home-path-ctas">
-            <a href="/portfolio/events/" class="home-path-btn primary">See past talks →</a>
-            <a href="https://thesciencetalk.com/contact-us/" class="home-path-btn">Book a session</a>
-          </div>
-        </div>
-      </div>
+      <h1 class="home-boxed-title">Dr. Pranoti Kshirsagar</h1>
     </div>
   </header>
+
+  <!-- Latest post -->
+  {{ $posts := where (where .Site.RegularPages "Section" "in" (slice "ai-guides" "perspectives" "case-studies")) "Date" "le" now }}
+  {{ $posts = where $posts "Draft" false }}
+  {{ with index (sort $posts "Date" "desc") 0 }}
+  <section class="home-latest">
+    <div class="container">
+      <p class="home-latest-label">Latest post</p>
+      <a href="{{ .RelPermalink }}" class="home-latest-card">
+        {{ with .Params.featured_image }}<img src="{{ . }}" alt="" class="home-latest-img">{{ end }}
+        <div class="home-latest-text">
+          <h2 class="home-latest-title">{{ .Title }}</h2>
+          {{ with or .Params.subtitle .Description }}<p class="home-latest-desc">{{ . }}</p>{{ end }}
+          <p class="home-latest-meta">{{ .Date.Format "Jan 2" }} · {{ or .Params.author "Pranoti Kshirsagar" }}</p>
+        </div>
+      </a>
+      <div class="home-latest-links">
+        <a href="/ai-guides/">All AI Guides →</a>
+        <a href="/perspectives/">All Perspectives →</a>
+        <a href="/digital-content-hub/">Digital Content Hub →</a>
+      </div>
+    </div>
+  </section>
+  {{ end }}
 
   <div class="home-body">
     <div class="container narrow">
 
-      <!-- Browse by topic -->
-      {{ $guides := where .Site.RegularPages "Section" "ai-guides" }}
-      {{ $persp := where .Site.RegularPages "Section" "perspectives" }}
-      {{ $all := (where .Site.RegularPages "Section" "in" (slice "ai-guides" "perspectives")).ByDate.Reverse }}
-
-      {{ if $all }}
-      <section class="home-section" id="browse-by-topic">
-        <div class="home-section-header">
-          <h2>Browse by topic</h2>
-          <span class="home-section-count">{{ len $all }} guides &amp; perspectives</span>
+      <!-- Services -->
+      <section class="home-services">
+        <div class="home-services-intro">
+          <span class="home-services-eyebrow">Services</span>
+          <h2>From complex ideas to real impact.</h2>
         </div>
+        <p class="home-services-lead">Strategic thinking, creative execution, and technical delivery — combined to help research and science-driven organisations communicate clearly and adopt AI that works.</p>
 
-        {{ $pillarOrder := slice "EU AI Act & Compliance" "AI Adoption" }}
-        {{ $present := slice }}
-        {{ range $all }}
-          {{ with .Params.pillar }}
-            {{ if not (in $present .) }}{{ $present = $present | append . }}{{ end }}
-          {{ end }}
-        {{ end }}
-        {{ $orderedPillars := slice }}
-        {{ range $pillarOrder }}
-          {{ if in $present . }}{{ $orderedPillars = $orderedPillars | append . }}{{ end }}
-        {{ end }}
-
-        {{ $products := (where .Site.RegularPages "Section" "products").ByDate.Reverse }}
-
-        {{ range $orderedPillars }}
-        {{ $pillar := . }}
-        {{ $slug := $pillar | urlize }}
-        {{ $posts := where $all "Params.pillar" $pillar }}
-        {{ if $posts }}
-        <div class="home-topic-row">
-          <div class="home-topic-row-header">
-            <h3 class="pillar-row-title pillar-tag--{{ $slug }}">{{ $pillar }}</h3>
-            <div class="home-topic-row-nav">
-              <button class="home-carousel-btn" data-dir="-1" aria-label="Previous">‹</button>
-              <button class="home-carousel-btn" data-dir="1" aria-label="Next">›</button>
-            </div>
+        <div class="home-services-grid">
+          <div class="home-services-col">
+            <h3>Strategy &amp; Consulting</h3>
+            <ul>
+              <li>AI adoption strategy for research institutes</li>
+              <li>EU AI Act compliance &amp; governance</li>
+              <li>Communication &amp; dissemination strategy</li>
+              <li>Audience &amp; stakeholder mapping</li>
+              <li>Grant outreach (ERC, Horizon Europe)</li>
+            </ul>
           </div>
-          <div class="home-topic-carousel">
-            <div class="home-topic-track">
-              {{ range $posts }}
-              <article class="home-topic-card pillar-card--{{ $slug }}">
-                <a href="{{ .Permalink }}" class="home-topic-link">
-                  <div class="home-topic-meta">
-                    <span class="home-topic-format {{ if eq .Section "perspectives" }}perspective{{ end }}">{{ if eq .Section "perspectives" }}Perspective{{ else }}Guide{{ end }}</span>
-                    <time>{{ .Date.Format "02 Jan 2006" }}</time>
-                  </div>
-                  <h3>{{ .Title }}</h3>
-                  {{ with .Params.description }}<p class="home-topic-desc">{{ . }}</p>{{ end }}
-                </a>
-              </article>
-              {{ end }}
-            </div>
-          </div>
-        </div>
-        {{ end }}
 
-        {{ if and (eq $pillar "EU AI Act & Compliance") $products }}
-        <div class="home-topic-row">
-          <div class="home-topic-row-header">
-            <h3 class="pillar-row-title pillar-row-title--products">Digital Guides</h3>
-            <div class="home-topic-row-nav">
-              <button class="home-carousel-btn" data-dir="-1" aria-label="Previous">‹</button>
-              <button class="home-carousel-btn" data-dir="1" aria-label="Next">›</button>
-            </div>
+          <div class="home-services-col">
+            <h3>AI &amp; Automation</h3>
+            <ul>
+              <li>Workflow automation &amp; integration</li>
+              <li>Custom GPT / Claude assistants</li>
+              <li>Data analysis &amp; dashboards</li>
+              <li>Knowledge management systems</li>
+              <li>AI guides &amp; documentation</li>
+            </ul>
           </div>
-          <div class="home-topic-carousel">
-            <div class="home-topic-track">
-              {{ range $products }}
-              <article class="home-topic-card">
-                <a href="{{ .Params.url | default .Permalink }}" class="home-topic-link">
-                  <div class="home-topic-meta">
-                    <span class="home-topic-format product">Digital Guide</span>
-                  </div>
-                  <h3>{{ .Title }}</h3>
-                  {{ with .Params.description }}<p class="home-topic-desc">{{ . }}</p>{{ end }}
-                </a>
-              </article>
-              {{ end }}
-            </div>
-          </div>
-        </div>
-        {{ end }}
-        {{ end }}
 
-        <div class="home-topic-links">
-          <a href="/ai-guides/">All AI Guides →</a>
-          <a href="/perspectives/">All Perspectives →</a>
-          <a href="/digital-content-hub/">Digital Content Hub →</a>
+          <div class="home-services-col">
+            <h3>Science Communication</h3>
+            <ul>
+              <li>Storytelling &amp; messaging</li>
+              <li>Press &amp; media materials</li>
+              <li>Impact reporting</li>
+              <li>Case studies</li>
+              <li>LinkedIn &amp; personal branding for scientists</li>
+            </ul>
+          </div>
+
+          <div class="home-services-col">
+            <h3>Video &amp; Podcast</h3>
+            <ul>
+              <li>Video production</li>
+              <li>Short-form video (Reels, Shorts, TikTok)</li>
+              <li>Podcast production &amp; hosting</li>
+              <li>Interview series (e.g. QuanTour)</li>
+              <li>Editing, post-production &amp; distribution</li>
+            </ul>
+          </div>
+
+          <div class="home-services-col">
+            <h3>Training &amp; Events</h3>
+            <ul>
+              <li>Science communication workshops</li>
+              <li>SciCommAI training</li>
+              <li>Speaking &amp; keynotes</li>
+              <li>Event concept &amp; moderation</li>
+              <li>Team masterclasses</li>
+            </ul>
+          </div>
+
         </div>
       </section>
-      {{ end }}
 
-      <!-- Speaking & Training -->
-      <section class="home-speaking-strip">
-        <div class="home-speaking-text">
-          <span class="home-speaking-label">Speaking &amp; Training</span>
-          <h2>Personal branding &amp; science communication for scientists</h2>
-          <p>Workshops and keynotes on personal branding, effective science communication, and using LinkedIn as a scientist — delivered at DTU Denmark, University of Sheffield, NTU Singapore, EPFL/ETH Zurich, Max Planck Institute, and more. Open to paid corporate and institutional bookings.</p>
+      <!-- Tech stack -->
+      <section class="home-services">
+        <div class="home-services-intro">
+          <span class="home-services-eyebrow">Tech Stack</span>
+          <h2>The tools behind the work.</h2>
         </div>
-        <div class="home-speaking-links">
-          <a href="/portfolio/events/" class="home-work-link">See past talks →</a>
-          <a href="https://thesciencetalk.com/contact-us/" class="home-work-link primary">Book a session →</a>
+
+        <div class="home-services-grid">
+          <div class="home-services-col">
+            <h3>AI &amp; Data</h3>
+            <ul>
+              <li>Anthropic API / Claude</li>
+              <li>Model Context Protocol (MCP)</li>
+              <li>Custom GPTs / Claude Projects</li>
+              <li>Python</li>
+              <li>JSON / YAML data pipelines</li>
+            </ul>
+          </div>
+
+          <div class="home-services-col">
+            <h3>Web &amp; Publishing</h3>
+            <ul>
+              <li>Hugo static sites</li>
+              <li>HTML / CSS / JavaScript</li>
+              <li>GitHub Pages / GitHub Actions</li>
+              <li>Cloudflare (DNS / CDN)</li>
+            </ul>
+          </div>
+
+          <div class="home-services-col">
+            <h3>Audio &amp; Video Editing</h3>
+            <ul>
+              <li>Adobe Premiere Pro CC</li>
+              <li>Descript</li>
+              <li>Riverside</li>
+              <li>CapCut</li>
+              <li>Camtasia</li>
+              <li>iMovie</li>
+            </ul>
+          </div>
+
+          <div class="home-services-col">
+            <h3>Analytics &amp; Tracking</h3>
+            <ul>
+              <li>GA4</li>
+              <li>Microsoft Clarity</li>
+              <li>Event &amp; conversion tracking</li>
+              <li>UTM campaign attribution</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -176,6 +194,60 @@
 
 <style>
 .home-page { font-family: 'Inter', sans-serif; }
+
+/* Boxed title hero */
+.home-hero-boxed { background: #f0f0ee; min-height: 420px; display: flex; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
+.home-boxed-title {
+  font-family: 'Ubuntu', sans-serif;
+  display: inline-block;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: #1c1c1c;
+  border: 10px solid #1c1c1c;
+  padding: .35rem .75rem;
+  margin: 0;
+}
+
+/* Latest post */
+.home-latest { padding: 3rem 2rem; background: #fff; }
+.home-latest .container { max-width: 1280px; margin: 0 auto; }
+.home-latest-card { display: flex; align-items: center; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid #e5e5e5; text-decoration: none; color: inherit; }
+.home-latest-img { flex: 1 1 50%; width: 50%; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px; }
+.home-latest-text { flex: 1 1 50%; text-align: center; }
+.home-latest-title { font-size: clamp(1.6rem, 3vw, 2.2rem); color: #1c1c1c; margin: 0 0 .75rem; }
+.home-latest-desc { font-size: 1.05rem; color: #333; margin: 0 0 1rem; }
+.home-latest-meta { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: #777; margin: 0; }
+.home-latest-label { font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #2A6048; margin: 0 0 1.25rem; }
+.home-latest-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem 2.5rem; margin-top: 1.75rem; }
+.home-latest-links a { font-weight: 600; color: #2A6048; text-decoration: none; }
+.home-latest-links a:hover { text-decoration: underline; }
+.home-latest-card:hover .home-latest-title { text-decoration: underline; }
+@media (max-width: 700px) {
+  .home-latest-card { flex-direction: column; gap: 1.5rem; }
+  .home-latest-img { width: 100%; }
+}
+
+/* About */
+.home-about { padding: 4.5rem 2rem 5rem; background: #fff; }
+.home-about-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  text-align: center;
+  color: #1c1c1c;
+  margin: 0 0 3rem;
+}
+.home-about-body { display: flex; gap: 3rem; align-items: flex-start; flex-wrap: wrap; }
+.home-about-photo { width: 320px; max-width: 100%; height: auto; object-fit: cover; flex-shrink: 0; }
+.home-about-text { flex: 1 1 360px; }
+.home-about-text p { font-size: 1rem; line-height: 1.75; color: #333; margin: 0 0 1.5rem; }
+.home-about-text a { color: #2A6048; }
+@media (max-width: 700px) {
+  .home-about-body { flex-direction: column; }
+  .home-about-photo { width: 100%; }
+}
 
 /* Hero */
 .home-hero { background: var(--ink, #1c1c1c); color: #fff; padding: 4.5rem 2rem 3.5rem; text-align: center; }
@@ -329,33 +401,60 @@
 .home-topic-links a { font-size: .85rem; font-weight: 600; color: #2A6048; text-decoration: none; }
 .home-topic-links a:hover { text-decoration: underline; }
 
-/* Speaking strip */
-.home-speaking-strip {
-  background: #1A3828;
-  color: #fff;
-  border-radius: 12px;
-  padding: 2.5rem;
-  margin-bottom: 3.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.home-speaking-text { flex: 1 1 420px; }
-.home-speaking-label {
+/* Services */
+.home-services { margin-bottom: 3.5rem; }
+.home-services-intro { border-top: 3px solid var(--p-int, #2A6048); padding-top: 1rem; margin-bottom: 1.25rem; }
+.home-services-eyebrow {
   font-family: 'Montserrat', sans-serif;
   font-size: .68rem;
   font-weight: 700;
-  letter-spacing: .09em;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: #7BBDA0;
+  color: var(--p-int, #2A6048);
   display: block;
-  margin-bottom: .6rem;
+  margin-bottom: .75rem;
 }
-.home-speaking-text h2 { font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 0 0 .75rem; color: #fff; }
-.home-speaking-text p { font-size: .9rem; color: rgba(255,255,255,.75); line-height: 1.65; margin: 0; }
-.home-speaking-links { display: flex; gap: .6rem; flex-wrap: wrap; }
+.home-services-intro h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  margin: 0;
+  color: #1c1c1c;
+}
+.home-services-lead { font-size: .95rem; color: #555; line-height: 1.65; max-width: 620px; margin: 0 0 2.25rem; }
+.home-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem 2.5rem; }
+.home-services-col h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin: 0 0 1rem;
+}
+.home-services-col ul { list-style: none; margin: 0; padding: 0; }
+.home-services-col li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: .88rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: .7rem;
+}
+.home-services-col li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  top: -.05rem;
+  color: var(--p-int, #2A6048);
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .home-services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .home-services-grid { grid-template-columns: 1fr; }
+}
 
 /* Reused card grid (products) */
 .home-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
@@ -435,7 +534,6 @@
   .home-grid { grid-template-columns: 1fr; }
   .home-body { padding: 2.5rem 1.25rem 4rem; }
   .container.narrow { padding: 0 1.25rem; }
-  .home-speaking-strip { padding: 1.75rem; }
 }
 </style>
 
