@@ -2,7 +2,7 @@
     <nav>
         <div class="container nav-container">
             <div class="nav-brand">
-                <a href="/" class="brand-name">PRANOTI KSHIRSAGAR, PhD</a>
+                {{ if not (or .IsHome (eq .Layout "about")) }}<a href="/" class="brand-name">DR. PRANOTI KSHIRSAGAR</a>{{ end }}
                 {{ $path := .RelPermalink }}
                 <ul class="nav-menu" id="nav-menu">
                     {{ range .Site.Menus.main }}

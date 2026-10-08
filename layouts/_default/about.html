@@ -97,67 +97,29 @@
 <div class="about-page">
 
   <!-- Hero -->
-  <header class="about-hero">
-    <div class="about-container">
-      <div class="about-hero-inner">
-        <div class="about-hero-text">
-          <span class="about-tag">About</span>
-          <h1>Dr. Pranoti Kshirsagar</h1>
-          <p class="about-subtitle">AI Integration &amp; Science Communication Consultant</p>
-          <p class="about-location">Mannheim, Germany &nbsp;·&nbsp; she/her</p>
-          <div class="about-hero-links">
-            <a href="https://www.linkedin.com/in/pranoti-kshirsagar/" target="_blank" rel="noopener" class="about-link-pill">LinkedIn</a>
-            <a href="https://thesciencetalk.com" target="_blank" rel="noopener" class="about-link-pill">The Science Talk</a>
-            <a href="https://thesciencetalk.com/contact-us/" class="about-link-pill about-link-cta">Work with me →</a>
-          </div>
-        </div>
-      </div>
+  <header class="home-hero-boxed">
+    <div class="container narrow">
+      <h1 class="home-boxed-title">Dr. Pranoti Kshirsagar</h1>
     </div>
   </header>
 
-  <!-- Bio section -->
-  <section class="about-bio-section">
-    <div class="about-container">
-      <div class="about-bio-layout">
-
-        <div class="about-bio-main">
-          <h2 class="about-section-heading">The background</h2>
-
+  <!-- About -->
+  <section class="home-about">
+    <div class="container narrow">
+      <h2 class="home-about-title">About Pranoti</h2>
+      <div class="home-about-body">
+        <img src="/images/About_Pranoti.jpeg" alt="Pranoti Kshirsagar" class="home-about-photo">
+        <div class="home-about-text">
           <p>I'm a materials scientist by training — PhD from the University of Tübingen, research on graphene-based transparent electrodes at the Natural and Medical Sciences Institute — who spent several years at the intersection of deep-tech science and commercial product strategy at Springer Nature, before making a full pivot into science communication consulting.</p>
-
           <p>In 2018, I founded <a href="https://thesciencetalk.com" target="_blank" rel="noopener"><strong>The Science Talk</strong></a>, a science communication platform built around the conviction that researchers deserve better tools for talking about their work. Over the past seven years, I've grown it from a side project into a business with four product lines, an official <strong>EIC partnership</strong>, and a podcast that has reached scientists in 20+ countries.</p>
-
           <p>Since late 2025, I've been adding a second specialisation: <strong>AI integration and automation</strong>. Not as a generalist tool coach, but with a specific focus on the operational infrastructure that research organisations need to work efficiently — proposal workflows, communication pipelines, content systems — built with Claude API and Make.</p>
-
           <p>I work in English and German, hold a Mini-MBA in Marketing from Marketing Week, and have been recognised with the IOP Award for <em>Innovative Public Engagement across UK and Europe</em>.</p>
         </div>
-
-        <aside class="about-bio-sidebar">
-          <div class="about-cred-card">
-            <h3 class="about-cred-heading">Credentials</h3>
-            <ul class="about-cred-list">
-              <li>
-                <span>PhD (Dr. rer. nat.) Applied Physics<br><em>University of Tübingen</em></span>
-              </li>
-              <li>
-                <span>Mini-MBA Marketing<br><em>Marketing Week with Mark Ritson</em></span>
-              </li>
-              <li>
-                <span>IOP Award<br><em>Innovative Public Engagement, UK &amp; Europe</em></span>
-              </li>
-              <li>
-                <span>Official EIC Partner<br><em>Business Acceleration Services</em></span>
-              </li>
-              <li>
-                <span>KreaSocTech Grant<br><em>2025 &amp; 2026</em></span>
-              </li>
-            </ul>
-          </div>
-        </aside>
-
       </div>
     </div>
   </section>
+
+  <hr class="about-resume-divider">
 
   <!-- Resumé -->
   <section class="resume-page">
@@ -271,6 +233,46 @@
 /* ─── Base ─────────────────────────────────────────────── */
 .about-page { font-family: 'Inter', sans-serif; }
 .about-container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+
+/* ─── Hero + About (from homepage) ─── */
+/* Boxed title hero */
+.home-hero-boxed { background: #f0f0ee; min-height: 420px; display: flex; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
+.home-boxed-title {
+  font-family: 'Ubuntu', sans-serif;
+  display: inline-block;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: #1c1c1c;
+  border: 10px solid #1c1c1c;
+  padding: .35rem .75rem;
+  margin: 0;
+}
+
+/* About */
+.home-about { padding: 4.5rem 2rem 5rem; background: #fff; }
+.home-about-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  text-align: center;
+  color: #1c1c1c;
+  margin: 0 0 3rem;
+}
+.home-about-body { display: flex; gap: 3rem; align-items: flex-start; flex-wrap: wrap; }
+.home-about-photo { width: 320px; max-width: 100%; height: auto; object-fit: cover; flex-shrink: 0; }
+.home-about-text { flex: 1 1 360px; }
+.home-about-text p { font-size: 1rem; line-height: 1.75; color: #333; margin: 0 0 1.5rem; }
+.home-about-text a { color: #2A6048; }
+@media (max-width: 700px) {
+  .home-about-body { flex-direction: column; }
+  .home-about-photo { width: 100%; }
+}
+.container.narrow { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+@media (max-width: 640px) { .container.narrow { padding: 0 1.25rem; } }
+
+.about-resume-divider { max-width: 900px; margin: 0 auto; border: none; border-top: 1px solid rgba(0,0,0,.15); }
 
 /* ─── Resumé ───────────────────────────────────────────── */
 .resume-page { font-family: 'Inter', sans-serif; padding: 3rem 2rem 4rem; background: #fff; }
