@@ -1,5 +1,5 @@
 ---
-title: "The ERC Projects Database: A Research Tool for ERC Proposal Writers"
+title: "ERC Projects Database: Research Tool for Scientists and Research Offices"
 date: 2026-09-10
 lastmod: 2026-09-25
 draft: false
