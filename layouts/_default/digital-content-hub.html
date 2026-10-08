@@ -227,11 +227,11 @@
 }
 #df-root, #df-root * { box-sizing: border-box; }
 
-#df-root .df-page-head { max-width: var(--df-container); margin: 0 auto 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
-#df-root .df-hero-text { flex: 1 1 auto; min-width: 0; }
+#df-root .df-page-head { max-width: var(--df-container); margin: 0 auto 32px; padding: 40px; background: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: flex-start; gap: 56px; }
+#df-root .df-hero-text { flex: 0 1 auto; min-width: 0; }
 #df-root .df-hero-sub { font-size: 0.95rem; font-weight: 600; color: var(--ink-soft); margin: 0 0 4px; }
 #df-root .df-hero-img { flex: 0 0 auto; width: 240px; height: auto; border-radius: 8px; object-fit: cover; }
-@media (max-width: 640px) { #df-root .df-page-head { flex-direction: column-reverse; align-items: flex-start; } #df-root .df-hero-img { width: 160px; } }
+@media (max-width: 640px) { #df-root .df-page-head { flex-direction: column-reverse; align-items: flex-start; padding: 24px; gap: 24px; } #df-root .df-hero-img { width: 160px; } }
 #df-root .df-page-head h1 { font-family: var(--font-display); font-weight: 600; font-size: 2rem; margin-bottom: 8px; color: var(--ink); }
 #df-root .df-lede { font-size: 1rem; color: var(--ink-soft); max-width: 640px; }
 
