@@ -9,7 +9,7 @@ description: "Build an EU AI Act system register in 30 minutes, and find out whe
 keywords: ["AI system register EU AI Act", "AI inventory template SME", "Article 71 EU AI database", "shadow AI inventory", "provider vs deployer register", "EU AI Act compliance template", "AI Act Article 49 registration"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["EU AI Act", "AI governance", "AI Act compliance", "SME", "AI inventory"]
+tags: ["EU AI Act", "AI governance", "AI compliance", "SME", "AI inventory"]
 category: "ai-integration-guides"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

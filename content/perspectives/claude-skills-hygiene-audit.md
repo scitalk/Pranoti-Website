@@ -7,7 +7,7 @@ description: "Claude skills degrade silently as models and connectors evolve. Wi
 keywords: ["Claude skills hygiene audit", "Claude skills maintenance", "skill regression automation", "Claude workflow degradation", "automation library audit", "Claude skills framework", "environmental change Claude", "Claude skills reliability"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["Claude skills", "automation", "workflow maintenance", "skill regression", "productivity", "knowledge-work"]
+tags: ["Claude skills", "automation", "AI workflow", "AI productivity", "knowledge work"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

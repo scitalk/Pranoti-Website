@@ -7,7 +7,7 @@ description: "A registry gives you one list of every Claude skill and a log of e
 keywords: ["Claude skills registry", "Claude skills audit", "automation library maintenance", "Claude skills management", "Claude workflow governance", "Claude automation tracking", "AI workflow governance"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["Claude Code", "Claude Desktop", "automation", "skills", "workflow", "knowledge-work"]
+tags: ["Claude Code", "Claude Desktop", "automation", "Claude skills", "AI workflow", "knowledge work"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

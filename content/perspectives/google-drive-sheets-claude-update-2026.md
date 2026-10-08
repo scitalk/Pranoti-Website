@@ -7,7 +7,7 @@ description: "Anthropic's Google Drive connector reads Sheets in Claude — usef
 keywords: ["Google Drive Claude Sheets support", "Claude Google Sheets integration 2026", "MCP Google Sheets vs Google Drive connector", "Claude read-only Sheets access", "Google Sheets automation Claude", "bidirectional Sheets integration Claude"]
 author: "Pranoti Kshirsagar"
 reading_time: "4 min"
-tags: ["Google Sheets", "Claude integration", "MCP", "automation", "connectors"]
+tags: ["Google Sheets", "AI integration", "MCP", "automation", "connectors"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

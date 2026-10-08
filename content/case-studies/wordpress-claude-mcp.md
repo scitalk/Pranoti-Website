@@ -1,5 +1,6 @@
 ---
 title: "Claude and WordPress Connected via MCP — Managing Posts Without Leaving Chat"
+tags: ["MCP", "WordPress", "WordPress automation", "Claude"]
 date: 2026-04-03
 subtitle: "How to stop context-switching between your WordPress dashboard and Claude, and manage your entire content workflow through conversation"
 category: "AI Automation and Integration"

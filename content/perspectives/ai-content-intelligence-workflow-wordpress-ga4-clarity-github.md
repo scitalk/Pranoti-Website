@@ -7,7 +7,7 @@ description: "I connect Clarity, two GA4 properties, and GSC into Claude via MCP
 keywords: ["AI content intelligence workflow", "Microsoft Clarity Claude AI", "Google Analytics MCP", "WordPress analytics AI", "GitHub Pages content strategy", "content analytics synthesis", "GA4 Claude MCP"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["Microsoft Clarity", "Google Analytics", "MCP", "content strategy", "AI workflow", "Claude AI"]
+tags: ["Microsoft Clarity", "Google Analytics", "MCP", "content strategy", "AI workflow", "Claude"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

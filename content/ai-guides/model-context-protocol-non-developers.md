@@ -8,7 +8,7 @@ description: "MCP lets Claude connect to your tools — Google Sheets, files, Wo
 keywords: ["Model Context Protocol for non-developers", "what is MCP", "Claude Desktop extensions", "MCP without coding", "AI tools for researchers", "MCP server setup", "AI integration without code"]
 author: "Pranoti Kshirsagar"
 reading_time: "4 min"
-tags: ["Claude Desktop", "MCP", "Model Context Protocol", "AI tools", "research workflows"]
+tags: ["Claude Desktop", "MCP", "AI tools", "research workflows"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

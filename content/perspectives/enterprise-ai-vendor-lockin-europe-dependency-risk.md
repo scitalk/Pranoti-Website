@@ -7,7 +7,7 @@ description: "Europe's AI adoption is deepening software dependency concentratio
 keywords: ["enterprise AI vendor lock-in Europe", "enterprise AI dependency audit", "compounding AI vendor lock-in", "cloud concentration risk enterprise", "AI governance gap enterprise", "AI governance gap", "hyperscaler dependency Europe"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
-tags: ["AI strategy", "enterprise risk", "AI governance", "enterprise compliance", "vendor lock-in"]
+tags: ["AI strategy", "enterprise risk", "AI governance", "AI compliance", "vendor lock-in"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

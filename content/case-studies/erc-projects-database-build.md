@@ -1,5 +1,6 @@
 ---
 title: "ERC Projects Database: Research Tool for Scientists and Research Offices"
+tags: ["ERC", "grant strategy", "research tools", "Database"]
 date: 2026-09-10
 lastmod: 2026-09-25
 draft: false

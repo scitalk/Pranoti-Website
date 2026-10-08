@@ -8,7 +8,7 @@ description: "The Digital Omnibus simplified Article 4's AI literacy rule on 27 
 keywords: ["EU AI Act Article 4", "AI literacy obligation", "creator agency compliance", "EU AI Act small teams", "freelancer AI Act", "AI Act deployer obligations", "EU AI Act SME"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["EU AI Act", "AI literacy", "creator agencies", "AI regulation", "small teams"]
+tags: ["EU AI Act", "AI literacy", "content creators", "AI regulation", "SME"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

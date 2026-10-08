@@ -1,5 +1,6 @@
 ---
 title: "Restoring a Single WordPress Page from a WP Engine Backup — Without Touching the Rest of the Site"
+tags: ["WordPress", "WP Engine", "data backup"]
 date: 2026-04-03
 aliases:
   - "/portfolio/ai-automation-integration/restore-wordpress-wpengine/"

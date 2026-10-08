@@ -9,7 +9,7 @@ description: "AI-generated content disclosures become mandatory under EU AI Act 
 keywords: ["AI-generated content disclosure EU AI Act", "Article 50 AI Act transparency", "AI disclaimer blog post", "EU AI Act content creators", "AI Act compliance 2026", "EU AI Act freelancer", "AI content label requirement", "EU AI content icon", "AI generated content label icon"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["EU AI Act", "AI transparency", "AI Act compliance", "content creators", "science communication"]
+tags: ["EU AI Act", "AI transparency", "AI compliance", "content creators", "science communication"]
 category: "ai-integration-guides"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

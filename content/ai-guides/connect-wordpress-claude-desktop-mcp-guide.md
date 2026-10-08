@@ -7,7 +7,7 @@ description: "Step-by-step guide to connecting any self-hosted WordPress site to
 keywords: ["Claude Desktop", "WordPress MCP", "Model Context Protocol", "Claude WordPress integration", "AI content management", "self-hosted WordPress", "claudeus-wp-mcp"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["Claude Desktop", "WordPress", "MCP", "AI Integration", "Automation"]
+tags: ["Claude Desktop", "WordPress", "MCP", "AI integration", "automation"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

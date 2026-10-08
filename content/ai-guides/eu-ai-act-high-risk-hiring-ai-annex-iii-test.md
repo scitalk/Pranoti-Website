@@ -9,7 +9,7 @@ description: "Run this 3-step EU AI Act test to check if your recruitment or HR 
 keywords: ["EU AI Act high-risk hiring AI", "Annex III employment", "AI Act recruitment compliance", "high-risk AI recruitment tool test", "Article 6 AI Act classification", "AI Act HR compliance small agency", "AI hiring tool compliance 2027"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["EU AI Act", "Annex III", "AI hiring", "HR compliance", "high-risk AI"]
+tags: ["EU AI Act", "AI hiring", "HR compliance", "high-risk AI"]
 category: "ai-integration-guides"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

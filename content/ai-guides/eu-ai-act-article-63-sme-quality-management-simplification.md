@@ -9,7 +9,7 @@ description: "The 2026 Omnibus quietly widened Article 63 from microenterprises 
 keywords: ["EU AI Act Article 63", "SME simplified quality management system AI Act", "AI Act microenterprise derogation", "Article 17 quality management system SME", "EU AI Act SME simplification 2026", "AI Act Digital Omnibus SME relief", "simplified technical documentation Annex IV"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["EU AI Act", "Article 63", "SME support", "high-risk AI", "quality management"]
+tags: ["EU AI Act", "Article 63", "SME", "high-risk AI", "quality management"]
 category: "ai-integration-guides"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

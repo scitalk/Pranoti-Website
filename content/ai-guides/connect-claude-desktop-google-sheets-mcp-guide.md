@@ -7,7 +7,7 @@ description: "Learn how to connect Claude Desktop to Google Sheets using the Mod
 keywords: ["Claude Desktop", "Google Sheets", "MCP", "Model Context Protocol", "AI integration", "automation", "mcp-google-sheets", "OAuth 2.0", "uvx"]
 author: "Pranoti Kshirsagar"
 reading_time: "3 min"
-tags: ["Claude Desktop", "MCP", "Google Sheets", "AI Integration", "Automation"]
+tags: ["Claude Desktop", "MCP", "Google Sheets", "AI integration", "automation"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

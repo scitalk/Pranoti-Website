@@ -1,5 +1,6 @@
 ---
 title: "Analysing 5 Years of ERC Grant Data with Claude AI"
+tags: ["ERC", "data analysis", "grant strategy", "Claude"]
 date: 2026-04-04
 subtitle: "Turning 5 years of public ERC funding data (822 grants) into interactive dashboards in 15 minutes using Claude AI and Google Sheets MCP."
 category: "AI Integration"
