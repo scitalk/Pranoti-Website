@@ -8,7 +8,7 @@
 */}}
 {{ $data := index .Site.Data "digital_content_hub" }}
 {{ $years := $data.years }}
-{{ $articles := where .Site.RegularPages "Section" "in" (slice "ai-guides" "perspectives") }}
+{{ $articles := where .Site.RegularPages "Section" "in" (slice "ai-guides" "perspectives" "case-studies") }}
 
 {{ $utm := slice }}
 {{ $utmBonus := slice }}
@@ -98,14 +98,18 @@
 <div id="df-root">
 
 <header class="df-page-head">
-  <h1><a href="{{ .RelPermalink }}" id="df-hero-reset">Digital Content Hub</a></h1>
+  <div class="df-hero-text">
+  <p class="df-hero-sub">Dr. Pranoti Kshirsagar</p>
+  <h1><a href="{{ .RelPermalink }}" id="df-hero-reset">Digital Content Portfolio</a></h1>
   <div class="df-credstrip">
     <div class="df-credstrip-item"><span class="df-credstrip-num">{{ $epCount }}</span><span class="df-credstrip-label">Episodes &amp; videos</span></div>
     <div class="df-credstrip-item"><span class="df-credstrip-num">{{ len $articles }}</span><span class="df-credstrip-label">Articles</span></div>
     <div class="df-credstrip-item"><span class="df-credstrip-num">{{ len (uniq $seriesSeen) }}</span><span class="df-credstrip-label">Series</span></div>
     <div class="df-credstrip-item"><span class="df-credstrip-num">{{ index $yearList 0 }}&ndash;{{ index $yearList (sub (len $yearList) 1) }}</span><span class="df-credstrip-label">Years covered</span></div>
   </div>
-  <p class="df-lede">All podcasts, videos, AI guides, and perspectives by Dr. Pranoti Kshirsagar &mdash; filter by series, format, year, or topic to find what you need.</p>
+  <p class="df-lede">All podcasts, videos, AI guides, perspectives, and case studies by Dr. Pranoti Kshirsagar &mdash; filter by series, format, year, or topic to find what you need.</p>
+  </div>
+  <img class="df-hero-img" src="/images/Pranoti_Kshirsagar_with_microphone.jpg" alt="Dr. Pranoti Kshirsagar with a microphone" width="800" height="1200">
 </header>
 
 <div id="df-app">
@@ -119,7 +123,7 @@
     {{ range first 24 $all }}
     <div class="df-card">
       {{ if .permalink }}
-      <span class="df-series-tag">{{ if eq .section "ai-guides" }}AI Guide{{ else }}Perspective{{ end }}</span>
+      <span class="df-series-tag">{{ if eq .section "ai-guides" }}AI Guide{{ else if eq .section "case-studies" }}Case Study{{ else }}Perspective{{ end }}</span>
       <h4>{{ .title }}</h4>
       <div class="df-meta"><span class="df-tag">{{ .year }}</span><span class="df-tag">Articles</span>{{ with .reading_time }}<span class="df-tag">{{ . }}</span>{{ end }}</div>
       {{ with .summary }}<div class="df-summary">{{ . }}</div>{{ end }}
@@ -195,7 +199,7 @@
 {{- range $articles -}}
   ,{
     "year": {{ .Date.Format "2006" | jsonify | safeJS }},
-    "series": {{ "Articles" | jsonify | safeJS }},
+    "series": {{ cond (in .Title "ERC") "Grants & fundraising dissemination guidance" "Articles" | jsonify | safeJS }},
     "section": {{ .Section | jsonify | safeJS }},
     "bonus": false,
     "title": {{ .Title | jsonify | safeJS }},
@@ -222,7 +226,11 @@
 }
 #df-root, #df-root * { box-sizing: border-box; }
 
-#df-root .df-page-head { max-width: var(--df-container); margin: 0 auto 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(0,0,0,0.1); }
+#df-root .df-page-head { max-width: var(--df-container); margin: 0 auto 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+#df-root .df-hero-text { flex: 1 1 auto; min-width: 0; }
+#df-root .df-hero-sub { font-size: 0.95rem; font-weight: 600; color: var(--ink-soft); margin: 0 0 4px; }
+#df-root .df-hero-img { flex: 0 0 auto; width: 240px; height: auto; border-radius: 8px; object-fit: cover; }
+@media (max-width: 640px) { #df-root .df-page-head { flex-direction: column-reverse; align-items: flex-start; } #df-root .df-hero-img { width: 160px; } }
 #df-root .df-page-head h1 { font-family: var(--font-display); font-weight: 600; font-size: 2rem; margin-bottom: 8px; color: var(--ink); }
 #df-root .df-lede { font-size: 1rem; color: var(--ink-soft); max-width: 640px; }
 
@@ -362,7 +370,7 @@
   var seriesCounts = {};
   function addUnique(list, val) { if (val && list.indexOf(val) === -1) list.push(val); }
   DATA.forEach(function (e) {
-    addUnique(TAXONOMIES.series, normalizeSeries(e.series));
+    if (e.series !== 'Articles') addUnique(TAXONOMIES.series, normalizeSeries(e.series));
     addUnique(TAXONOMIES.year, String(e.year));
     (e.type || []).forEach(function (t) { addUnique(TAXONOMIES.type, t); });
     if (e.series) seriesCounts[normalizeSeries(e.series)] = (seriesCounts[normalizeSeries(e.series)] || 0) + 1;
@@ -479,7 +487,7 @@
     return '<div class="df-active-chips">' + chips.join('') + '</div>';
   }
 
-  var SECTION_LABELS = { 'ai-guides': 'AI Guide', 'perspectives': 'Perspective' };
+  var SECTION_LABELS = { 'ai-guides': 'AI Guide', 'perspectives': 'Perspective', 'case-studies': 'Case Study' };
 
   function card(e) {
     if (e.kind === 'article') {
