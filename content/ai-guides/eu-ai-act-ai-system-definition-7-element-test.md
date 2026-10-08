@@ -9,7 +9,7 @@ description: "The European Commission's official 7-element test for what counts 
 keywords: ["EU AI Act AI system definition", "Article 3(1) AI Act", "AI system definition test", "does the EU AI Act apply to my tool", "EU AI Act scope research tools", "AI Act applicability checklist", "what counts as an AI system EU"]
 author: "Pranoti Kshirsagar"
 reading_time: "10 min"
-tags: ["EU AI Act", "AI regulation", "AI Act compliance", "research tools", "AI governance"]
+tags: ["EU AI Act", "AI regulation", "AI compliance", "research tools", "AI governance"]
 category: "ai-integration-guides"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

@@ -7,7 +7,7 @@ description: "For three call years the UK records almost zero ERC grants, and Sw
 keywords: ["ERC funding data", "Horizon Europe association", "UK Horizon Europe", "Switzerland Horizon Europe", "ERC funded institutions", "European research funding", "research policy Europe"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["ERC", "research policy", "Horizon Europe", "data analysis", "European research"]
+tags: ["ERC", "research policy", "Horizon Europe", "data analysis"]
 category: "perspectives"
 pillar: "Research Strategy"
 sidebar_links:

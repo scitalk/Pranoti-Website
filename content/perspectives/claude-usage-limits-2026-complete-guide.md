@@ -7,7 +7,7 @@ description: "How Claude's usage limits work in 2026: the 5-hour rolling window,
 keywords: ["Claude usage limits 2026", "Claude Pro vs Max limits", "Claude 5-hour session limit", "Claude Free vs Pro vs Max", "Claude Code usage limits", "Claude extra usage cost", "Claude plan comparison"]
 author: "Pranoti Kshirsagar"
 reading_time: "9 min"
-tags: ["claude-pro", "claude-max", "usage-limits", "claude-tips", "ai-productivity"]
+tags: ["Claude plans", "token management", "claude-tips", "AI productivity"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

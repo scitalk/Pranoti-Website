@@ -8,7 +8,7 @@ description: "A practical MCP security checklist for anyone using Claude Desktop
 keywords: ["MCP security checklist Claude Desktop", "MCP credential storage", "Claude Desktop MCP trust", "secure MCP server installation", "macOS Keychain Claude secrets", "MCP subprocess credential scoping", "MCP security professionals"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["MCP", "Claude Desktop", "security", "credentials", "AI tool access"]
+tags: ["MCP", "Claude Desktop", "security", "AI tool access"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

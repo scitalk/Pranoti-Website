@@ -7,7 +7,7 @@ description: "Learn how to install Claude Desktop and connect your first MCP ser
 keywords: ["Claude Desktop MCP setup", "MCP server", "Model Context Protocol", "install MCP server", "AI automation setup", "claude_desktop_config.json", "Claude Desktop beginners"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["Claude Desktop", "MCP", "Model Context Protocol", "AI setup", "automation"]
+tags: ["Claude Desktop", "MCP", "AI setup", "automation"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

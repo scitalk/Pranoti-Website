@@ -7,7 +7,7 @@ description: "Claude models compared: knowledge cutoff, strengths and pricing fo
 keywords: ["Claude models", "Claude knowledge cutoff", "Claude Opus vs Sonnet", "Claude Fable", "Claude effort level", "Claude Pro vs Max", "Claude Enterprise pricing", "which Claude model"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
-tags: ["Claude", "Claude models", "AI adoption", "pricing", "knowledge cutoff"]
+tags: ["Claude", "Claude models", "AI adoption", "Claude plans", "knowledge cutoff"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 featured_image: "/images/ai-guides_perspectives/ai-for-scientists.jpg"

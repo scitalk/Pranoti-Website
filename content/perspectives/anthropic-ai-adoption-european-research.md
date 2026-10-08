@@ -7,7 +7,7 @@ description: "European research institutions struggle to adopt Claude — here's
 keywords: ["Anthropic European research institutions", "Claude AI procurement gap", "Microsoft 365 higher education Europe", "AI vendor adoption European universities", "GÉANT procurement consortium", "EU AI Act AI vendor compliance", "AI adoption barriers research institutions"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["Claude adoption", "European research", "procurement", "Claude AI", "Microsoft 365", "EU AI Act"]
+tags: ["AI adoption", "procurement", "Claude", "Microsoft 365", "EU AI Act"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

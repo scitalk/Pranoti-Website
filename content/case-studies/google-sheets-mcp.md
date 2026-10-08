@@ -1,5 +1,6 @@
 ---
 title: "Custom Claude Integration for Google Workspace: Google Sheets MCP"
+tags: ["MCP", "Google Sheets MCP", "Google Sheets", "AI integration"]
 date: 2026-04-03
 subtitle: "Eliminate constant CSV downloads and copy-paste friction to Claude reading, writing, and creating Google Sheets autonomously."
 category: "AI Integration"

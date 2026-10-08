@@ -7,7 +7,7 @@ description: "Claude offers two Google Sheets connections: the native Drive conn
 keywords: ["Claude Google Sheets comparison 2026", "Google Drive connector vs MCP Sheets", "Claude Sheets integration decision guide", "read-only vs bidirectional Sheets Claude", "Google Sheets automation MCP", "Claude native connector limitations"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["Google Sheets", "MCP", "Claude integration", "comparison", "decision framework"]
+tags: ["Google Sheets", "MCP", "AI integration", "decision-making"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

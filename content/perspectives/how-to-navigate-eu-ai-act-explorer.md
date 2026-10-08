@@ -7,7 +7,7 @@ description: "A guide to the EU AI Act Explorer: how Articles, Recitals, and Ann
 keywords: ["EU AI Act Explorer", "how to navigate EU AI Act Explorer", "EU AI Act articles vs recitals", "EU AI Act annexes explained", "Article 50 EU AI Act", "EU AI Act Regulation 2024/1689"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["EU AI Act", "Article 50", "AI transparency", "compliance"]
+tags: ["EU AI Act", "Article 50", "AI transparency", "AI compliance"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

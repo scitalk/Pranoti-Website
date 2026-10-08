@@ -7,7 +7,7 @@ description: "How Claude's 5-hour session window really works, what Anthropic do
 keywords: ["how Claude session limit works", "Claude 5-hour session window mechanics", "Claude peak hours Europe", "Claude session window explained", "Claude context reset", "Claude usage window", "knowledge worker AI productivity"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["claude-pro", "usage-limits", "ai-productivity", "claude-tips", "knowledge-work"]
+tags: ["Claude plans", "token management", "AI productivity", "claude-tips", "knowledge work"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

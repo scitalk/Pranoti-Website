@@ -7,7 +7,7 @@ description: "European research institutes have AI strategies but no AI workflow
 keywords: ["AI integration European research", "EU AI Act research organisations", "knowledge work automation research", "AI implementation gap", "research institute AI strategy", "AI literacy compliance", "Fraunhofer AI knowledge work"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["AI strategy", "EU AI Act", "research organisations", "knowledge work automation", "implementation"]
+tags: ["AI strategy", "EU AI Act", "knowledge work", "AI integration"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

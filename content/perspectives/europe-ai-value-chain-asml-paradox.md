@@ -7,7 +7,7 @@ description: "The EC's own data shows Europe holds 80-90% of semiconductor equip
 keywords: ["Europe AI value chain position", "AI value chain explained", "ASML paradox AI", "EU semiconductor equipment market share", "Europe AI industrial strategy", "InvestAI EU funding", "China DUV lithography ASML"]
 author: "Pranoti Kshirsagar"
 reading_time: "9 min"
-tags: ["EU AI strategy", "ASML", "AI value chain", "EU tech sovereignty", "InvestAI"]
+tags: ["EU AI strategy", "ASML", "AI value chain", "EU tech", "InvestAI"]
 category: "perspectives"
 sidebar_links:
   - title: "EU CADA Sovereignty Tiers: What the Four Cloud Levels Mean"

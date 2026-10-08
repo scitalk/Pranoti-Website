@@ -7,7 +7,7 @@ description: "Turn five years of public ERC funding data into interactive dashbo
 keywords: ["ERC grant data analysis", "Claude AI Google Sheets", "ERC funded institutions dashboard", "Horizon Europe data", "Google Sheets MCP data analysis", "CORDIS data download", "ERC grant strategy"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["ERC", "Claude AI", "Google Sheets MCP", "data analysis", "grant strategy"]
+tags: ["ERC", "Claude", "Google Sheets MCP", "data analysis", "grant strategy"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

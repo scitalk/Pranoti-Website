@@ -7,7 +7,7 @@ description: "Scientists and professionals keep searching for the next Twitter â
 keywords: ["scientists online community after Twitter", "platform fatigue researchers", "science Twitter alternative", "owning your audience", "Bluesky scientists", "digital presence researchers", "island-driven community"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
-tags: ["science communication", "platform migration", "digital presence", "thought leadership", "online community"]
+tags: ["science communication", "platform migration", "thought leadership", "online community"]
 category: "perspectives"
 sidebar_author_bio: false
 sidebar_links:

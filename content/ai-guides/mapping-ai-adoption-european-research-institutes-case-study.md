@@ -7,7 +7,7 @@ description: "A documented case study on using AI-assisted deep research to map 
 keywords: ["AI adoption European research institutes", "deep research AI methodology", "EU AI Act Article 4 compliance", "Helmholtz AI strategy", "CERN AI strategy 2025", "Fraunhofer knowledge work automation", "AI integration research organisations"]
 author: "Pranoti Kshirsagar"
 reading_time: "9 min"
-tags: ["AI adoption", "deep research", "EU AI Act", "European research", "AI strategy"]
+tags: ["AI adoption", "deep research", "EU AI Act", "AI strategy"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

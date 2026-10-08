@@ -7,7 +7,7 @@ description: "Claude Code MCP tool access runs with your full user permissions. 
 keywords: ["Claude Code MCP security", "Claude Code credential security", "MCP server credential exposure", "Claude tool access permissions", "AI agent security solopreneur", "macOS Keychain Claude secrets", "Claude Code runs as you"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["Claude Code", "MCP", "security", "credentials", "AI tool access"]
+tags: ["Claude Code", "MCP", "security", "AI tool access"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

@@ -1,5 +1,6 @@
 ---
 title: "Claude Skills Registry: AI Governance for Companies"
+tags: ["Claude skills", "AI governance", "AI inventory", "AI workflow"]
 date: 2026-04-26
 lastmod: 2026-09-25
 draft: false

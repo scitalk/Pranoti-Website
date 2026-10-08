@@ -7,7 +7,7 @@ description: "The EU's CADA creates four cloud sovereignty tiers for procurement
 keywords: ["EU CADA sovereignty tiers", "CADA Cloud and AI Development Act", "cloud sovereignty tiers Europe", "EU sovereign cloud compliance 2026", "sovereignty risk assessment cloud EU", "EU cloud procurement public sector", "CADA four levels explained"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["CADA", "cloud compliance", "procurement", "EU tech sovereignty", "sovereign cloud"]
+tags: ["CADA", "cloud compliance", "procurement", "EU tech", "digital sovereignty"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

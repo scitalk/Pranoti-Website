@@ -7,7 +7,7 @@ description: "Export ten years of ERC award data from the European Commission's 
 keywords: ["ERC grant data analysis", "Claude Desktop file upload", "ERC funded institutions", "Horizon Europe data analysis", "EC R&I dashboard export", "CORDIS data", "ERC grant strategy", "xlsx analysis Claude"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
-tags: ["ERC", "Claude AI", "data analysis", "grant strategy", "Horizon Europe"]
+tags: ["ERC", "Claude", "data analysis", "grant strategy", "Horizon Europe"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

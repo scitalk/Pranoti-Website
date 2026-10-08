@@ -8,7 +8,7 @@ featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 keywords: ["EU AI Act checklist small business", "EU AI Act for small teams", "EU AI Act SME guide", "EU AI Act compliance checklist", "EU AI Act agency compliance", "EU AI Act articles explained", "AI Act small business obligations", "EU AI Act SME compliance framework"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["EU AI Act", "SME compliance", "AI regulation", "small business", "compliance checklist"]
+tags: ["EU AI Act", "SME", "AI regulation", "AI compliance"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

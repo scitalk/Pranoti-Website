@@ -15,12 +15,7 @@ keywords:
   - Claude session tips
   - Claude productivity
   - Claude usage efficiency
-tags:
-  - claude-tips
-  - AI-productivity
-  - token-management
-  - power-users
-  - workflow-optimisation
+tags: ["claude-tips", "AI productivity", "token management", "power-users", "AI workflow"]
 reading_time: 4
 sidebar_links:
   - title: "Claude's 5-Hour Session Limit: How It Actually Works"

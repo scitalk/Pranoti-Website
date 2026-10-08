@@ -8,7 +8,7 @@ description: "Every EU AI Act obligation that applies to small teams and agencie
 keywords: ["EU AI Act complete guide", "EU AI Act small teams", "EU AI Act for agencies", "EU AI Act articles explained", "EU AI Act compliance guide 2026", "AI Act checklist SME", "EU AI Act deadlines"]
 author: "Pranoti Kshirsagar"
 reading_time: "10 min"
-tags: ["EU AI Act", "AI regulation", "AI compliance", "AI governance", "small business"]
+tags: ["EU AI Act", "AI regulation", "AI compliance", "AI governance", "SME"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

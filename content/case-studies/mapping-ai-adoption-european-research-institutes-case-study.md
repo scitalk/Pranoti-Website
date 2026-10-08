@@ -1,5 +1,6 @@
 ---
 title: "Mapping AI Adoption Across European Research Institutes: A Deep Research Case Study"
+tags: ["AI adoption", "deep research", "AI strategy", "EU AI Act"]
 date: 2026-04-05
 lastmod: 2026-04-05
 draft: false

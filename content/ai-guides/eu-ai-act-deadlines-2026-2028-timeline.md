@@ -9,7 +9,7 @@ description: "The EU AI Act's high-risk deadlines were pushed back in 2026 — h
 keywords: ["EU AI Act deadlines 2026 2028", "EU AI Act timeline delayed", "AI Act high-risk deadline December 2027", "EU AI Act simplification 2026", "EU AI Act compliance calendar", "AI Act deadline pushed back", "when does EU AI Act high-risk apply"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["EU AI Act", "AI Act compliance", "AI regulation", "AI governance"]
+tags: ["EU AI Act", "AI compliance", "AI regulation", "AI governance"]
 category: "ai-integration-guides"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

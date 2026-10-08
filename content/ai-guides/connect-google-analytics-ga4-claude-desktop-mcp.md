@@ -8,7 +8,7 @@ description: "Connect your GA4 property to Claude Desktop using the Google Analy
 keywords: ["connect Google Analytics GA4 Claude Desktop MCP", "Google Analytics MCP server", "GA4 MCP setup", "Claude Desktop MCP configuration", "analytics-mcp pipx", "GA4 Claude integration", "monitor website performance Claude", "google-analytics-mcp install"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["google-analytics", "MCP", "claude-desktop", "GA4", "website-analytics"]
+tags: ["Google Analytics", "MCP", "Claude Desktop"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:
