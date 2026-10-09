@@ -8,7 +8,7 @@ description: "A single end-of-session prompt that captures breakthroughs, decisi
 keywords: ["Claude session tracking", "AI conversation notes", "prompt engineering workflow", "knowledge capture AI", "session insights prompt", "AI productivity hack", "conversation memory prompt"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["AI productivity", "prompts", "knowledge work", "AI workflow"]
+tags: ["AI productivity", "claude-tips", "knowledge work", "AI workflow"]
 pillar: "AI Adoption"
 related_posts: [
   "/ai-guides/claude-code-context-window-breakdown-guide/",

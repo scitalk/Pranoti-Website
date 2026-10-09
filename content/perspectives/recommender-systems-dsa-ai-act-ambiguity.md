@@ -8,7 +8,7 @@ description: "The European Commission's own DSA review admits recommender system
 keywords: ["recommender systems DSA AI Act", "which law applies recommender system EU", "DSA AI Act overlap", "recommender system compliance Europe", "algorithmic recommender EU regulation", "DSA Article 33 review"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
-tags: ["DSA", "EU AI Act", "recommender systems", "regulatory overlap", "algorithmic transparency"]
+tags: ["AI regulation", "EU AI Act", "AI transparency"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

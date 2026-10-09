@@ -10,7 +10,7 @@ location: "Berlin, Germany"
 role: "Moderator"
 event_type: "Public Event"
 thumbnail: "/images/speaking/2024-04-14_QuanTour-Kick-Off.jpg"
-tags: ["Moderator", "Public Event"]
+tags: ["Host", "Public Event"]
 ---
 
 The kick-off launched QuanTour's 12-month journey: one quantum light source, 12 laboratories, 12 European countries. Pranoti moderated the event as the project's science communication lead.

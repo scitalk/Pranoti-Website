@@ -11,7 +11,7 @@ role: "Speaker"
 event_type: "Event"
 thumbnail: "/images/portfolio/05/Karriere_Quantum_July-2025-1.png"
 read_more_url: "https://www.goethe.de/prj/lqs/en/ktn.html?wt_sc=karrierequantum"
-tags: ["Speaker", "Event"]
+tags: ["Speaker", "Public Event"]
 ---
 
 Part of the Quantum Career Camp (Karriere Quantum), a Junge Tüftler & Goethe Institute programme bringing European teenagers aged 16–18 together to explore quantum physics. Pranoti joined a Q&A session sharing her professional journey into quantum physics and studying and working in Germany.

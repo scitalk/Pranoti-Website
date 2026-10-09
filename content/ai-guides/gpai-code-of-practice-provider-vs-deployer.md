@@ -9,7 +9,7 @@ description: "Does the GPAI Code of Practice apply to you? It binds general-purp
 keywords: ["GPAI Code of Practice apply to me", "GPAI provider vs deployer", "am I a GPAI provider EU AI Act", "GPAI Code of Practice", "AI Act Article 53", "AI Act Article 55 systemic risk", "GPAI vendor due diligence"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["EU AI Act", "GPAI", "AI regulation", "AI vendor due diligence", "AI governance"]
+tags: ["EU AI Act", "AI regulation", "procurement", "AI governance"]
 category: "ai-integration-guides"
 pillar: "EU AI Act & Compliance"
 sidebar_author_bio: true

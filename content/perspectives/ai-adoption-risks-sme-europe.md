@@ -7,7 +7,7 @@ description: "SMEs are adopting AI without mapping dependencies. Here's what ven
 keywords: ["AI adoption risks SME Europe", "vendor lock-in SME", "EU AI Act SME compliance 2026", "NIS2 small business scope", "cloud dependency European SME", "EU AI Act SME checklist", "AI tools procurement strategy"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["AI strategy", "SME", "NIS2 compliance", "vendor lock-in", "EU AI Act"]
+tags: ["AI strategy", "SME", "security", "vendor lock-in", "EU AI Act"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

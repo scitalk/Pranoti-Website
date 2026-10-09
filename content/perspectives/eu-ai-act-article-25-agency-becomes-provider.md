@@ -8,7 +8,7 @@ description: "Under Article 25 of the EU AI Act, agencies can become the legal '
 keywords: ["EU AI Act Article 25 provider obligations", "when does a deployer become a provider", "substantial modification AI Act", "AI value chain responsibilities", "accidental AI provider agency", "EU AI Act compliance agencies", "Article 25 high-risk AI system"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["EU AI Act", "Article 25", "AI provider", "content creators", "AI value chain"]
+tags: ["EU AI Act", "content creators", "AI value chain"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

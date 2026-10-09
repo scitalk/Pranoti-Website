@@ -7,7 +7,7 @@ description: "AI transparency rules under the EU AI Act are treated as a burden.
 keywords: ["AI transparency competitive advantage", "EU AI Act Article 50 disclosure", "AI Act as a feature", "trust AI products Europe", "AI documentation advantage", "regulatory compliance as differentiator"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["EU AI Act", "AI transparency", "trust", "positive framing", "AI strategy"]
+tags: ["EU AI Act", "AI transparency", "AI strategy"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

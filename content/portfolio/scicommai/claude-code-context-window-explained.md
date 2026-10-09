@@ -7,5 +7,5 @@ category: "scicommai"
 description: "A practical guide to reading the Claude Code context window live breakdown — what each section means, how context is consumed, and how to manage limits effectively."
 post_url: "https://thesciencetalk.com/ai-academy/claude-code-context-window-explained/"
 thumbnail: "/images/scicommai/Claude-code-context-window.png"
-tags: ["Claude Code", "AI tools", "How-To"]
+tags: ["Claude Code", "AI tools"]
 ---

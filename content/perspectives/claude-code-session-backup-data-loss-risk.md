@@ -7,7 +7,7 @@ description: "Claude's data export doesn't include Claude Code sessions — a re
 keywords: ["claude code session backup", "claude code data loss", "claude data export", "claude code session recovery", "claude code history", "local backup automation", "macOS automation", "claude code power users"]
 author: "Pranoti Kshirsagar"
 reading_time: "4 min"
-tags: ["Claude Code", "data backup", "macOS automation", "AI workflow", "digital sovereignty"]
+tags: ["Claude Code", "data backup", "automation", "AI workflow", "digital sovereignty"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

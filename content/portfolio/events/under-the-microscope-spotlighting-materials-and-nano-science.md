@@ -11,5 +11,5 @@ location: "Autonomous University of Madrid, Spain"
 role: "Speaker"
 event_type: "Seminar"
 thumbnail: "/images/portfolio/06/UAM.png"
-tags: ["Speaker", "Seminar"]
+tags: ["Speaker", "Special Seminar"]
 ---

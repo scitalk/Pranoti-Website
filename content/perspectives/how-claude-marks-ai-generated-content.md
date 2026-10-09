@@ -9,7 +9,7 @@ description: "Anthropic published its plan to mark AI-generated content under th
 keywords: ["Claude watermark AI content", "how Claude marks AI-generated content", "C2PA Claude", "Anthropic Article 50 marking", "machine-readable marking AI Act", "AI watermark detection limitations"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["EU AI Act", "Article 50", "AI transparency", "watermarking", "C2PA", "Claude"]
+tags: ["EU AI Act", "Article 50", "AI transparency", "Claude"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

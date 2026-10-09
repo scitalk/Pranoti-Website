@@ -7,5 +7,5 @@ category: "scicommai"
 description: "Complete guide to NotebookLM for EU researchers: AI-powered research synthesis, compliance, flashcards, and data tables for scientists across Europe."
 post_url: "https://thesciencetalk.com/news/notebooklm-features-guide/"
 thumbnail: "/images/scicommai/NotebookLM_studio_overview.png"
-tags: ["NotebookLM", "AI tools", "EU compliance"]
+tags: ["NotebookLM", "AI tools", "AI compliance"]
 ---

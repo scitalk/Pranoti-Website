@@ -8,7 +8,7 @@ description: "Five AI tools — NotebookLM, Claude, ChatGPT, Gemini, and Napkin.
 keywords: ["AI toolkit for research institutions", "NotebookLM for researchers", "Claude Design research", "Gemini Deep Research", "AI tools for grant writers", "Napkin.ai diagrams", "AI knowledge work research organisations"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["NotebookLM", "Claude", "Gemini", "ChatGPT", "Napkin.ai"]
+tags: ["NotebookLM", "Claude", "AI tools"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

@@ -8,7 +8,7 @@ description: "The EU AI Act's high-risk rules were pushed to 2027 and 2028 by th
 keywords: ["AI Act Omnibus delay", "EU AI Act high-risk rules 2027", "Digital Omnibus on AI", "AI Act deadline postponed", "AI Act simplification 2026", "AI Act compliance timeline"]
 author: "Pranoti Kshirsagar"
 reading_time: "9 min"
-tags: ["EU AI Act", "Digital Omnibus", "AI compliance", "high-risk AI", "regulatory timeline"]
+tags: ["EU AI Act", "AI regulation", "AI compliance", "high-risk AI"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

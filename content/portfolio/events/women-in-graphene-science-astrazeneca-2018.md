@@ -11,5 +11,5 @@ location: "Mölndal, Sweden (near Gothenburg)"
 role: "Attendee"
 event_type: "Workshop"
 event_website: "https://graphene-flagship.eu/materials/news/women-in-graphene-and-science-workshop-at-astrazeneca"
-tags: ["Attendee", "Workshop"]
+tags: ["Workshop"]
 ---

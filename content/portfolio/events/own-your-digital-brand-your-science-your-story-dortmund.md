@@ -12,5 +12,5 @@ role: "Keynote Speaker"
 event_type: "Keynote"
 thumbnail: "/images/portfolio/09/Oct-2024_TU-Dortmund.png"
 read_more_url: "https://graduateschool.physik.tu-dortmund.de/details-veranstaltungen/own-your-digital-brand-your-science-your-story-45475/"
-tags: ["Keynote Speaker", "Keynote"]
+tags: ["Keynote Speaker"]
 ---

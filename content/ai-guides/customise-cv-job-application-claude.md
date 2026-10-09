@@ -7,7 +7,7 @@ description: "Use Claude to systematically customise your CV for each job, match
 keywords: ["customise CV job application", "Claude job search automation", "ATS-friendly resume", "job application workflow", "CV strategy", "resume matching keywords"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
-tags: ["Claude", "job search", "CV customisation", "career automation", "AI workflow"]
+tags: ["Claude", "automation", "AI workflow"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

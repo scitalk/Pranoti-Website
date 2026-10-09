@@ -9,7 +9,7 @@ description: "Article 62 of the EU AI Act gives SMEs and start-ups real support 
 keywords: ["EU AI Act Article 62 SME support", "AI Act support for start-ups", "AI regulatory sandbox priority access", "reduced conformity assessment fees SME", "AI Act small mid-caps", "EU AI Act SME compliance help", "AI Office information platform"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["EU AI Act", "Article 62", "SME", "regulatory sandbox", "startups"]
+tags: ["EU AI Act", "SME", "startups"]
 category: "ai-integration-guides"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

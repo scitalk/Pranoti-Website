@@ -9,5 +9,5 @@ client: "The Science Talk"
 location: "Online"
 role: "Organiser/Speaker"
 event_type: "Guidance Session"
-tags: ["Organiser", "Speaker", "Guidance Session"]
+tags: ["Organiser", "Speaker", "ERC"]
 ---

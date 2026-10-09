@@ -8,7 +8,7 @@ description: "Install and run n8n locally on your Mac using Node.js or Docker. M
 keywords: ["run n8n locally on Mac", "install n8n Mac", "n8n Docker macOS setup", "n8n Node.js install", "n8n Cloud migration", "n8n Claude integration", "workflow automation self-hosted"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["n8n", "automation", "Docker", "Node.js", "self-hosting"]
+tags: ["automation"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

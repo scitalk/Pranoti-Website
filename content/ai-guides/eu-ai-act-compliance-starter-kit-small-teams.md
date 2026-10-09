@@ -9,7 +9,7 @@ description: "A 5-step EU AI Act compliance starter kit for small teams: check s
 keywords: ["EU AI Act compliance starter kit", "AI Act compliance small teams", "EU AI Act checklist SME", "how to comply with the EU AI Act", "AI Act risk classification", "AI Act transparency Article 50", "EU AI Act deadlines 2027"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
-tags: ["EU AI Act", "AI compliance", "SME", "risk classification", "AI governance"]
+tags: ["EU AI Act", "AI compliance", "SME", "high-risk AI", "AI governance"]
 category: "ai-integration-guides"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

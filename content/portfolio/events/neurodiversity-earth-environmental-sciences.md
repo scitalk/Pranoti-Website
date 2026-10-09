@@ -10,7 +10,7 @@ location: "NH Noordwijk Conference Centre Leeuwenhorst, Noordwijkerhout, Netherl
 role: "Panelist"
 event_type: "Conference"
 read_more_url: "https://nwonac.nl/programme-items/workshop-neurodiversity-in-the-earth-and-environmental-sciences-awareness-to-action"
-tags: ["Panelist", "Conference"]
+tags: ["Speaker", "Conference"]
 ---
 
 A panel discussion at the NWO NAC 2026 conference, addressing neurodiversity awareness and advocacy within the Earth and Environmental Sciences community — sharing personal experience alongside two other panelists and a moderator, in front of an audience of Masters students through professors.

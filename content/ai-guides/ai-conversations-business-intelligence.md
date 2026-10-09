@@ -8,7 +8,7 @@ description: "Your Claude sessions contain business decisions, untested assumpti
 keywords: ["AI business intelligence", "Claude ROI tracking", "decision log AI", "business assumptions AI", "AI conversation value", "strategic decision tracking", "AI workflow ROI"]
 author: "Pranoti Kshirsagar"
 reading_time: "8 min"
-tags: ["business-strategy", "decision-making", "knowledge work"]
+tags: ["AI strategy", "decision-making", "knowledge work"]
 pillar: "AI Adoption"
 related_posts: [
   "/ai-guides/ai-content-workflow-billion-euro-industry/",
