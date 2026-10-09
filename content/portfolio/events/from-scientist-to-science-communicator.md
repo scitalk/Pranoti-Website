@@ -9,6 +9,6 @@ client: "ThoughtWorks"
 location: "Pune, India"
 role: "Speaker"
 event_type: "Talk"
-thumbnail: "/images/portfolio/04/6.png"
+thumbnail: "/images/portfolio/6.png"
 tags: ["Speaker", "Talk"]
 ---

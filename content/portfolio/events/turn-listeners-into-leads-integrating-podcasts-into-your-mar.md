@@ -9,7 +9,7 @@ client: "Zeeks – Art for Geeks"
 location: "Online"
 role: "Speaker"
 event_type: "Fireside Chat"
-thumbnail: "/images/portfolio/03/Fireside-chat.png"
+thumbnail: "/images/portfolio/Fireside-chat.png"
 read_more_url: "https://www.zeeks-artforgeeks.com/event-details/turn-listeners-into-leads-integrating-podcasts-into-your-marketing-funnel"
 tags: ["Speaker", "Fireside Chat"]
 ---

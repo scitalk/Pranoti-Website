@@ -10,6 +10,6 @@ client: "University of Groningen"
 location: "Groningen, Netherlands"
 role: "Speaker"
 event_type: "Special Seminar"
-thumbnail: "/images/portfolio/04/11.png"
+thumbnail: "/images/portfolio/11.png"
 tags: ["Speaker", "Special Seminar"]
 ---

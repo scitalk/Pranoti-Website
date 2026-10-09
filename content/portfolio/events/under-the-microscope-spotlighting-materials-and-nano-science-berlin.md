@@ -10,6 +10,6 @@ client: "Bundesanstalt für Materialforschung (BAM)"
 location: "Berlin, Germany"
 role: "Speaker"
 event_type: "Colloquium"
-thumbnail: "/images/portfolio/05/Events_website.png"
+thumbnail: "/images/portfolio/Events_website.png"
 tags: ["Speaker", "Talk"]
 ---

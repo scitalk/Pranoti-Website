@@ -9,7 +9,7 @@ client: "EPFL"
 location: "Beatenberg, Switzerland"
 role: "Trainer"
 event_type: "Summer School"
-thumbnail: "/images/portfolio/06/Beyond-the-Lab-1.png"
+thumbnail: "/images/portfolio/Beyond-the-Lab-1.png"
 read_more_url: "https://beyondthelab2024.epfl.ch/"
 tags: ["Trainer", "Training"]
 ---
