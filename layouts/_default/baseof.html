@@ -8,7 +8,7 @@
   <meta name="description" content="{{ $desc }}">
   {{ with .Params.keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
   <link rel="canonical" href="{{ .Permalink }}">
-  {{- if in (slice "taxonomy" "term") .Kind }}
+  {{- if or (in (slice "taxonomy" "term") .Kind) (hasPrefix .RelPermalink "/portfolio/podcast/") }}
   <meta name="robots" content="noindex, follow">
   {{- else }}
   <meta name="robots" content="{{ .Params.robots | default "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" }}">
