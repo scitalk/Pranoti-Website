@@ -9,7 +9,7 @@ client: "iCANX"
 location: "Davos, Switzerland"
 role: "Speaker"
 event_type: "Summit"
-thumbnail: "/images/portfolio/06/iCANX.png"
+thumbnail: "/images/portfolio/iCANX.png"
 read_more_url: "https://icanx.org/"
 tags: ["Speaker", "Summit"]
 ---

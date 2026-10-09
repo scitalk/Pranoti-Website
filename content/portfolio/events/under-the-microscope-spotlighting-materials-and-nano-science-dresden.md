@@ -10,6 +10,6 @@ client: "DPG Spring Meeting"
 location: "Dresden, Germany"
 role: "Speaker"
 event_type: "Conference"
-thumbnail: "/images/portfolio/05/Events_website-8.png"
+thumbnail: "/images/portfolio/Events_website-8.png"
 tags: ["Speaker", "Conference"]
 ---

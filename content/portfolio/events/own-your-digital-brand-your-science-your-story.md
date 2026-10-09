@@ -10,7 +10,7 @@ client: "POWERS at NTU Singapore"
 location: "Online"
 role: "Speaker"
 event_type: "Webinar"
-thumbnail: "/images/portfolio/05/POWERS_NTU-1.png"
+thumbnail: "/images/portfolio/POWERS_NTU-1.png"
 read_more_url: "https://www.ntu.edu.sg/women/powers"
 tags: ["Speaker", "Webinar"]
 ---

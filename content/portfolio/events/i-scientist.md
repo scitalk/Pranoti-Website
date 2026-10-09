@@ -9,6 +9,6 @@ client: "I, Scientist Conference"
 location: "Online"
 role: "Speaker"
 event_type: "Conference"
-thumbnail: "/images/portfolio/05/2020.png"
+thumbnail: "/images/portfolio/2020.png"
 tags: ["Speaker", "Conference"]
 ---

@@ -9,7 +9,7 @@ client: "IAPS"
 location: "Online"
 role: "Trainer"
 event_type: "Conference"
-thumbnail: "/images/portfolio/05/Events_website-1.png"
+thumbnail: "/images/portfolio/Events_website-1.png"
 read_more_url: "https://iaps.info/2023/"
 tags: ["Trainer", "Conference"]
 ---

@@ -9,7 +9,7 @@ client: "NWO"
 location: "Utrecht, Netherlands"
 role: "Trainer"
 event_type: "Conference"
-thumbnail: "/images/portfolio/04/10.png"
+thumbnail: "/images/portfolio/10.png"
 read_more_url: "https://www.nwo.nl/en/meetings/insight-out-event-for-women-in-stem"
 tags: ["Trainer", "Conference"]
 ---

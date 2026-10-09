@@ -10,7 +10,7 @@ client: "The Science Talk"
 location: "Online"
 role: "Trainer"
 event_type: "Webinar"
-thumbnail: "/images/portfolio/03/Twitter-webinar-March-2025.png"
+thumbnail: "/images/portfolio/Twitter-webinar-March-2025.png"
 read_more_url: "https://thesciencetalk.com/twitter-x-data-webinar/"
 tags: ["Trainer", "Webinar"]
 ---

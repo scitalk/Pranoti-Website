@@ -10,6 +10,6 @@ client: "UAM Madrid"
 location: "Autonomous University of Madrid, Spain"
 role: "Speaker"
 event_type: "Seminar"
-thumbnail: "/images/portfolio/06/UAM.png"
+thumbnail: "/images/portfolio/UAM.png"
 tags: ["Speaker", "Special Seminar"]
 ---

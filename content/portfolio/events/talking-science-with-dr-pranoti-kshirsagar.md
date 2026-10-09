@@ -9,6 +9,6 @@ client: "University of Hyderabad"
 location: "University of Hyderabad, India"
 role: "Speaker"
 event_type: "Talk"
-thumbnail: "/images/portfolio/04/3.png"
+thumbnail: "/images/portfolio/3.png"
 tags: ["Speaker", "Talk"]
 ---

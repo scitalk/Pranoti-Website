@@ -9,7 +9,7 @@ client: "National Chemical Laboratory (NCL)"
 location: "Pune, India"
 role: "Speaker"
 event_type: "Talk"
-thumbnail: "/images/portfolio/04/NCL_Jan-2024.png"
+thumbnail: "/images/portfolio/NCL_Jan-2024.png"
 read_more_url: "https://www.linkedin.com/posts/ncl-scilogy-70307b229_phdcareerexploration-limitlesspossibilities-activity-7154531334604926976-xMtp"
 tags: ["Speaker", "Talk"]
 ---

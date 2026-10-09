@@ -9,7 +9,7 @@ client: "Junge Tüftler & Goethe Institute"
 location: "Hybrid"
 role: "Speaker"
 event_type: "Event"
-thumbnail: "/images/portfolio/05/Karriere_Quantum_July-2025-1.png"
+thumbnail: "/images/portfolio/Karriere_Quantum_July-2025-1.png"
 read_more_url: "https://www.goethe.de/prj/lqs/en/ktn.html?wt_sc=karrierequantum"
 tags: ["Speaker", "Public Event"]
 ---
