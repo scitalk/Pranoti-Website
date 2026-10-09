@@ -62,5 +62,5 @@ architecture:
   - ["One-time browser auth flow", "token saved automatically, no repeat login needed"]
 reflection: "Start with OAuth from day one — even without org policy restrictions, it's more portable and avoids the security risk of stored JSON key files. Treat Claude Desktop and claude.ai as completely separate systems from the start — different configs, different MCP connections, nothing shared. Always use absolute paths in Claude Desktop configs; 'uvx' alone is a silent failure waiting to happen."
 cta_text: "Full step-by-step walkthrough published at thesciencetalk.com · More case studies at pranoti.thesciencetalk.com"
-guide_url: "https://pranoti.thesciencetalk.com/ai-integration-guides/connect-claude-desktop-google-sheets-mcp-guide/index.html"
+guide_url: "/ai-guides/connect-claude-desktop-google-sheets-mcp-guide/"
 ---

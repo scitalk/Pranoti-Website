@@ -49,4 +49,4 @@ Whether you're building an outreach campaign from scratch or contributing to a l
 
 It's not about being everywhere. It's about showing up with purpose and making your work accessible, relatable, and memorable.
 
-> If you're planning an outreach initiative or looking to integrate podcasting or strategic content into your next proposal or project, [get in touch](https://pranoti.thesciencetalk.com/contact/).
+> If you're planning an outreach initiative or looking to integrate podcasting or strategic content into your next proposal or project, get in touch.

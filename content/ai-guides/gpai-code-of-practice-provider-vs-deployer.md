@@ -15,9 +15,9 @@ pillar: "EU AI Act & Compliance"
 sidebar_author_bio: true
 sidebar_links:
   - title: "The Infrastructure Gap Slowing Claude Adoption in European Research"
-    url: "/ai-guides/anthropic-ai-adoption-european-research/"
+    url: "/perspectives/anthropic-ai-adoption-european-research/"
   - title: "AI Vendor Lock-In: The Startup Audit You Should Run Before Scale"
-    url: "/ai-guides/ai-vendor-lockin-startup-audit-europe/"
+    url: "/perspectives/ai-vendor-lockin-startup-audit-europe/"
   - title: "EU AI Act AI System Definition: The Official 7-Element Test"
     url: "/ai-guides/eu-ai-act-ai-system-definition-7-element-test/"
 ---

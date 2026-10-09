@@ -18,7 +18,7 @@ sidebar_links:
   - title: "Mapping AI Adoption Across European Research Institutes: A Deep Research Case Study"
     url: "/ai-guides/mapping-ai-adoption-european-research-institutes-case-study/"
   - title: "AI Adoption Risks Every European SME Should Know About"
-    url: "/ai-guides/ai-adoption-risks-sme-europe/"
+    url: "/perspectives/ai-adoption-risks-sme-europe/"
 ---
 
 The EU AI Act only applies to systems that meet the legal definition of an "AI system" in **Article 3(1)** of Regulation (EU) 2024/1689. Before anyone can discuss risk categories, prohibited practices, or compliance obligations, one gateway question comes first: does the tool in front of you qualify. This guide explains the European Commission's official 7-element test. The Commission published the test as [Guidelines on the definition of an AI system](https://ai-act-service-desk.ec.europa.eu/sites/default/files/2025-08/commission_guidelines_on_the_definition_of_an_artificial_intelligence_system_established_by_regulation_eu_20241689_ai_actenglish_nf2skcqfrtjdfggjavcodopcwz4_112455.PDF), reference **C(2025) 5053 final**, dated 29 July 2025. This guide turns the test into a checklist you can run against your own tools.
