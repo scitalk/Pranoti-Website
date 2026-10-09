@@ -7,7 +7,7 @@ description: "Personal branding workshop delivered at EPFL and ETH Zurich."
 thumbnail: "/images/trainings/Branding_2024_Jun_27_Beyond_the Lab_EPFL_ETH.jpg"
 client: ""
 affiliation: "EPFL / ETH Zurich"
-tags: ["personal branding", "workshop"]
+tags: ["personal branding", "Workshop"]
 category: "trainings"
 ---
 

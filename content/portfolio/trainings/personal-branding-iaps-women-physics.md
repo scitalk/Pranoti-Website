@@ -7,7 +7,7 @@ description: "Personal branding workshop for women in physics at IAPS."
 thumbnail: "/images/trainings/Branding_2023_Aug_19_IAPS_Women in Physics.jpg"
 client: ""
 affiliation: "IAPS — International Association of Physics Students"
-tags: ["personal branding", "women in stem", "workshop"]
+tags: ["personal branding", "women in stem", "Workshop"]
 category: "trainings"
 ---
 

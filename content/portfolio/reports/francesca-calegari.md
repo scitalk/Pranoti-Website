@@ -10,5 +10,5 @@ thumbnail: "https://design.canva.ai/_QTBl1pS7cJjKpc"
 pdf_url: "/reports/engagement/francesca-calegari.pdf"
 canva_url: "https://www.canva.com/d/ZtDuqYkEX6vAEHo"
 pages: 1
-tags: ["Engagement Report", "Podcast"]
+tags: ["Engagement Report", "podcast"]
 ---

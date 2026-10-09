@@ -4,7 +4,7 @@ date: 2026-03-19
 draft: true
 author: "Pranoti Kshirsagar"
 category: "automation"
-tags: ["WordPress", "WP Engine", "WordPress MCP", "AI Integration", "Automation"]
+tags: ["WordPress", "WP Engine", "WordPress MCP", "AI Integration", "automation"]
 description: "WordPress doesn't let you restore a single page from a full-site backup. Here's the exact workflow I used — Claude reads the SQL dump, finds the right row, and writes it back via WordPress MCP. No full restore. No data loss."
 slug: "restore-wordpress-page-wpengine-backup-mcp"
 ---
