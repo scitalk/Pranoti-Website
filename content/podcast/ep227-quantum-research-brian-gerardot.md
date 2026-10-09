@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "Quantum Research, Emerging Technologies, and the QuanTour Project with Brian Gerardot"
 slug: "brian-geradot-quantum-devices"
 episode_number: 227

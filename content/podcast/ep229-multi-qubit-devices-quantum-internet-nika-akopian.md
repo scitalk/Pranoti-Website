@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "Multi-Qubit Devices and Quantum Internet with Nika Akopian"
 slug: "multi-qubit-devices-and-quantum-internet-with-nika-akopian"
 episode_number: 229

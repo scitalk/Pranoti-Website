@@ -116,7 +116,7 @@
   {{/* Server-rendered first page so crawlers and no-JS visitors get real content and links.
        Same order as the JS default (newest publicationDate first). JS replaces this block on load. */}}
   {{ $all := slice }}
-  {{ range $years }}{{ $y := .year }}{{ range .episodes }}{{ $all = $all | append (dict "d" (.publicationDate | default "") "year" $y "series" .series "bonus" .bonus "also_series" .also_series "title" .title "guest" .guest_name "summary" .summary "type" .type "spotify" .spotify "youtube" .youtube) }}{{ end }}{{ end }}
+  {{ range $years }}{{ $y := .year }}{{ range .episodes }}{{ $all = $all | append (dict "d" (.publicationDate | default "") "year" $y "series" .series "bonus" .bonus "also_series" .also_series "title" .title "guest" .guest_name "summary" .summary "type" .type "spotify" .spotify "youtube" .youtube "episode_page" .episode_page) }}{{ end }}{{ end }}
   {{ range $articles }}{{ $all = $all | append (dict "d" (.Date.Format "2006-01-02") "year" (.Date.Format "2006") "section" .Section "title" .Title "summary" .Params.description "reading_time" .Params.reading_time "permalink" .RelPermalink) }}{{ end }}
   {{ $all = sort $all "d" "desc" }}
   <div class="df-results-grid">
@@ -134,7 +134,7 @@
       {{ with .guest }}<div class="df-guest">{{ . }}</div>{{ end }}
       <div class="df-meta"><span class="df-tag">{{ .year }}</span>{{ range .type }}<span class="df-tag df-type-{{ . }}">{{ . }}</span>{{ end }}</div>
       {{ with .summary }}<div class="df-summary">{{ . }}</div>{{ end }}
-      <div class="df-links">{{ with .spotify }}<a href="{{ . }}" target="_blank" rel="noopener">Listen on Spotify</a>{{ end }}{{ with .youtube }}<a href="{{ . }}" target="_blank" rel="noopener">Watch on YouTube</a>{{ end }}</div>
+      <div class="df-links">{{ with .episode_page }}<a href="{{ . }}">Episode page</a>{{ end }}{{ with .spotify }}<a href="{{ . }}" target="_blank" rel="noopener">Listen on Spotify</a>{{ end }}{{ with .youtube }}<a href="{{ . }}" target="_blank" rel="noopener">Watch on YouTube</a>{{ end }}</div>
       {{ end }}
     </div>
     {{ end }}
@@ -192,6 +192,7 @@
       "type": {{ .type | jsonify | safeJS }},
       "spotify": {{ .spotify | jsonify | safeJS }},
       "youtube": {{ .youtube | jsonify | safeJS }},
+      "episode_page": {{ .episode_page | jsonify | safeJS }},
       "publicationDate": {{ .publicationDate | jsonify | safeJS }},
       "kind": "episode"
     }
@@ -511,6 +512,7 @@
         '</div>';
     }
     var links = '';
+    if (e.episode_page) links += '<a href="' + e.episode_page + '">Episode page</a>';
     if (e.spotify) links += '<a href="' + e.spotify + '" target="_blank" rel="noopener">Listen on Spotify</a>';
     if (e.youtube) links += '<a href="' + e.youtube + '" target="_blank" rel="noopener">Watch on YouTube</a>';
     return '<div class="df-card">' +
