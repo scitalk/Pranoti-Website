@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "Site-Controlled Quantum Dots ft. Emanuele Pelucchi"
 slug: "site-controlled-quantum-dots-emanuele-pelucchi"
 episode_number: 225

@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "3D Sculpting with NanoFrazor: Precision at the Nanoscale"
 slug: "nanofrazor-high-precision-nanoscale-lithography"
 episode_number: 226

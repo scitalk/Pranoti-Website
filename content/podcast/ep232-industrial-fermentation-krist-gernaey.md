@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "Industrial Fermentation: Biofuels, Bioreactors, Microorganisms"
 slug: "industrial-fermentation-krist-gernaey"
 episode_number: 232
