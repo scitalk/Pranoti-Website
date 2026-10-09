@@ -7,7 +7,7 @@ description: "Personal branding workshop delivered to researchers and academics.
 thumbnail: "/images/trainings/Branding_2024_Oct_10_TU_Dortmund.png"
 client: "Doris Reiter"
 affiliation: "TU Dortmund"
-tags: ["personal branding", "workshop"]
+tags: ["personal branding", "Workshop"]
 category: "trainings"
 ---
 

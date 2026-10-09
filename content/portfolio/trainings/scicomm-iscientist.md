@@ -7,7 +7,7 @@ description: "Science communication workshop delivered at IScientist conference.
 thumbnail: "/images/trainings/SciComm_2020_Oct_10_IScientist.jpg"
 client: ""
 affiliation: "IScientist Conference"
-tags: ["science communication", "workshop"]
+tags: ["science communication", "Workshop"]
 category: "trainings"
 ---
 

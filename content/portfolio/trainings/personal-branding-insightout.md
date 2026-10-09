@@ -7,7 +7,7 @@ description: "Personal branding workshop delivered at InSightOut."
 thumbnail: "/images/trainings/Branding_2023_Nov_16_InSightOut.jpg"
 client: ""
 affiliation: "InSightOut"
-tags: ["personal branding", "workshop"]
+tags: ["personal branding", "Workshop"]
 category: "trainings"
 ---
 

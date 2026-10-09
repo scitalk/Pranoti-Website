@@ -7,7 +7,7 @@ description: "Workshop on building a scientific personal brand, delivered at DTU
 thumbnail: "/images/trainings/Branding_2025_Dec_10_DTU.jpg"
 client: "Krist V. Gernaey"
 affiliation: "Denmark Technical University (DTU)"
-tags: ["personal branding", "workshop"]
+tags: ["personal branding", "Workshop"]
 category: "trainings"
 ---
 
