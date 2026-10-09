@@ -1,4 +1,5 @@
 ---
+aliases: ["/portfolio/podcast/elisa-riedo/"]
 draft: false
 title: "3D Sculpting with NanoFrazor: Precision at the Nanoscale"
 slug: "nanofrazor-high-precision-nanoscale-lithography"

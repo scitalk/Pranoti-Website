@@ -1,4 +1,5 @@
 ---
+aliases: ["/portfolio/podcast/brian-gerardot/"]
 draft: false
 title: "Quantum Research, Emerging Technologies, and the QuanTour Project with Brian Gerardot"
 slug: "brian-geradot-quantum-devices"

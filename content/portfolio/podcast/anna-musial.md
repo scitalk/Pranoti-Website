@@ -1,4 +1,7 @@
 ---
+external_url: "/podcast/taming-the-invisible-quantum-dots-and-quantum-cryptography/"
+build:
+  render: never
 title: "Taming the Invisible in the Quantum World"
 date: 2025-03-06
 display_date: "06.03.2025"

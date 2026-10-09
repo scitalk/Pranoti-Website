@@ -1,4 +1,7 @@
 ---
+external_url: "/podcast/nanofrazor-high-precision-nanoscale-lithography/"
+build:
+  render: never
 title: "Precision at the Nanoscale: 3D Sculpting with NanoFrazor"
 date: 2024-11-06
 display_date: "06.11.2024"

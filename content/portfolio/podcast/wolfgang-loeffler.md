@@ -1,4 +1,7 @@
 ---
+external_url: "/podcast/quantum-light-single-photons-quantour-wolfgang-loeffler/"
+build:
+  render: never
 title: "Quantum Light, Human Vision & Single Photons"
 date: 2024-12-12
 display_date: "12.12.2024"

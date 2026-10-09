@@ -1,4 +1,5 @@
 ---
+aliases: ["/portfolio/podcast/francesca-calegari/"]
 draft: false
 title: "Ultra-Fast Light Pulses & Electron Dynamics with Francesca Calegari"
 slug: "ultra-fast-light-pulses-electron-dynamics-francesca-calegari"

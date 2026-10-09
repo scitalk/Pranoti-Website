@@ -1,4 +1,7 @@
 ---
+external_url: "/podcast/ultra-fast-light-pulses-electron-dynamics-francesca-calegari/"
+build:
+  render: never
 title: "Ultra-Fast Light Pulses & Electron Dynamics"
 date: 2024-10-10
 display_date: "10.10.2024"

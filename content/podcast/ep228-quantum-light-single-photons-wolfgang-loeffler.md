@@ -1,4 +1,5 @@
 ---
+aliases: ["/portfolio/podcast/wolfgang-loeffler/"]
 draft: false
 title: "Quantum Light, Human Vision & Single Photons with Wolfgang Löffler"
 slug: "quantum-light-single-photons-quantour-wolfgang-loeffler"
