@@ -1,4 +1,7 @@
 ---
+external_url: "/podcast/graphene-strainstronics-prague-to-production/"
+build:
+  render: never
 title: "Graphene Strainstronics: Prague to Production"
 date: 2025-05-05
 display_date: "05.05.2025"

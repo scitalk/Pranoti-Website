@@ -1,4 +1,5 @@
 ---
+aliases: ["/portfolio/podcast/humeyra-caglayan/"]
 draft: false
 title: "High Speed 3D Microscopy: Real-Time Cell Imaging Breakthrough"
 slug: "3d-microscopy-snapshot-imaging"

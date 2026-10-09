@@ -1,4 +1,7 @@
 ---
+external_url: "/podcast/industrial-fermentation-krist-gernaey/"
+build:
+  render: never
 title: "Industrial Fermentation: Biofuels, Bioreactors, Microorganisms"
 date: 2025-05-15
 display_date: "15.05.2025"

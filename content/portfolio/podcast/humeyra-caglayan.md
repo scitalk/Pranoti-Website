@@ -1,4 +1,7 @@
 ---
+external_url: "/podcast/3d-microscopy-snapshot-imaging/"
+build:
+  render: never
 title: "High Speed 3D Microscopy: Real-Time Cell Imaging Breakthrough"
 date: 2025-06-03
 display_date: "03.06.2025"

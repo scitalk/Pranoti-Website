@@ -1,4 +1,7 @@
 ---
+external_url: "/podcast/brian-geradot-quantum-devices/"
+build:
+  render: never
 title: "Atomic Architects: Designing the Future of Quantum"
 date: 2024-11-21
 display_date: "21.11.2024"

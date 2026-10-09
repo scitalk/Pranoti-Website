@@ -1,4 +1,5 @@
 ---
+aliases: ["/portfolio/podcast/anna-musial/"]
 draft: false
 title: "Taming the Invisible in the Quantum World"
 slug: "taming-the-invisible-quantum-dots-and-quantum-cryptography"

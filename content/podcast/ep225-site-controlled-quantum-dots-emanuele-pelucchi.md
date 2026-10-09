@@ -1,4 +1,5 @@
 ---
+aliases: ["/portfolio/podcast/emanuele-pelucchi/"]
 draft: false
 title: "Site-Controlled Quantum Dots ft. Emanuele Pelucchi"
 slug: "site-controlled-quantum-dots-emanuele-pelucchi"

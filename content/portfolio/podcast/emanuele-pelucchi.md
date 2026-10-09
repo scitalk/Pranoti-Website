@@ -1,4 +1,7 @@
 ---
+external_url: "/podcast/site-controlled-quantum-dots-emanuele-pelucchi/"
+build:
+  render: never
 title: "Site-Controlled Quantum Dots"
 date: 2024-10-24
 display_date: "24.10.2024"

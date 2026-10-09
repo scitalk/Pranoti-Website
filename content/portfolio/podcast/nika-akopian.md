@@ -1,4 +1,7 @@
 ---
+external_url: "/podcast/multi-qubit-devices-and-quantum-internet-with-nika-akopian/"
+build:
+  render: never
 title: "Multi-Qubit Devices and Quantum Internet"
 date: 2025-01-16
 display_date: "16.01.2025"

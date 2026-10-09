@@ -1,4 +1,5 @@
 ---
+aliases: ["/portfolio/podcast/krist-v-gerneay/"]
 draft: false
 title: "Industrial Fermentation: Biofuels, Bioreactors, Microorganisms"
 slug: "industrial-fermentation-krist-gernaey"
