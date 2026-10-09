@@ -7,5 +7,5 @@ category: "newsletter"
 display_category: "Newsletter"
 description: "74 newsletters sent to The Science Talk mailing list since 2022 — AI, science communication, and research strategy."
 external_url: "/newsletter-archive/"
-tags: ["Newsletter", "Writing"]
+tags: []
 ---

@@ -8,7 +8,7 @@ description: "Learn why your Claude Desktop MCP stopped working on May 1st, diag
 keywords: ["Claude Desktop MCP stopped working", "MCP Google Analytics connector", "MCP version pinning", "uvx @latest updates", "Claude MCP debugging", "MCP refresh token scope", "third-party package auto-update"]
 author: "Pranoti Kshirsagar"
 reading_time: "~12 min"
-tags: ["Claude Desktop", "MCP", "Google Analytics", "debugging", "version pinning", "OAuth"]
+tags: ["Claude Desktop", "MCP", "Google Analytics", "debugging"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

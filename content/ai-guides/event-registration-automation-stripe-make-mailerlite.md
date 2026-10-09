@@ -7,7 +7,7 @@ description: "Build a fully automated event registration workflow using Stripe, 
 keywords: ["event registration automation", "Stripe Make.com MailerLite", "automate webinar registration", "Make.com Stripe webhook", "MailerLite automation trigger", "no-code event workflow"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["Stripe", "Make.com", "MailerLite", "automation", "event registration"]
+tags: ["Stripe", "Make.com", "MailerLite", "automation"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

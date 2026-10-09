@@ -8,7 +8,7 @@ description: "Rotate an expiring GitHub personal access token without breaking y
 keywords: ["rotate GitHub personal access token", "expiring GitHub token", "GitHub Pages deploy", "macOS Keychain git credential", "gh CLI re-authenticate", "GitHub Actions GITHUB_TOKEN", "fine-grained personal access token"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["GitHub", "GitHub Pages", "personal access token", "macOS Keychain", "Hugo"]
+tags: ["GitHub Pages", "Hugo"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

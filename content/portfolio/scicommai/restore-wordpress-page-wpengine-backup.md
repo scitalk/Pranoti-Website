@@ -7,5 +7,5 @@ category: "scicommai"
 description: "How to recover a single WordPress page from a WP Engine backup using Claude AI and the WordPress MCP — without triggering a full site restore that wipes everything else."
 post_url: "https://thesciencetalk.com/ai-academy/restore-wordpress-page-wpengine-backup/"
 thumbnail: "https://thesciencetalk.com/wp-content/uploads/2026/03/Restore_wordpress_using-Claude.png"
-tags: ["WordPress", "Claude AI", "MCP", "AI tools"]
+tags: ["WordPress", "Claude", "MCP", "AI tools"]
 ---

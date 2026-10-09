@@ -8,7 +8,7 @@ description: "WordPress has no native single-page restore. Here is the exact wor
 keywords: ["WordPress restore single page", "WP Engine backup", "WordPress REST API", "restore WordPress page", "wp_posts database", "Claude AI WordPress", "WordPress MCP"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["WordPress", "WP Engine", "REST API", "MCP", "Database"]
+tags: ["WordPress", "WP Engine", "MCP", "Database"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

@@ -7,5 +7,5 @@ category: "scicommai"
 description: "An overview of NotebookLM's cinematic video feature — what it produces, how it compares to audio overviews, and whether it's worth using for science communication."
 post_url: "https://thesciencetalk.com/news/notebooklm-cinematic-video-overviews-2026/"
 thumbnail: "/images/scicommai/NotebookLM_cinematic-video-overview.png"
-tags: ["NotebookLM", "AI tools", "Video"]
+tags: ["NotebookLM", "AI tools"]
 ---

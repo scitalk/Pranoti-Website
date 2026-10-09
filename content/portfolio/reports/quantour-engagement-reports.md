@@ -10,7 +10,7 @@ thumbnail: "https://design.canva.ai/QHTURlVCYrWdZ44"
 pdf_url: "/reports/engagement/quantour-engagement-reports.pdf"
 canva_url: "https://www.canva.com/d/SOtBh41AcU8bgll"
 pages: 6
-tags: ["Engagement Report", "EU Project"]
+tags: ["Engagement Report"]
 ---
 
 Five engagement reports issued across the QuanTour project lifecycle, tracking reach, audience growth and press coverage from 25,000 views at Issue #1 to over 1,000,000 at Issue #5.

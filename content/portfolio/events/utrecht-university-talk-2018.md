@@ -10,5 +10,5 @@ client: "Utrecht University"
 location: "Utrecht, Netherlands"
 role: "Speaker"
 event_type: "Invited Talk"
-tags: ["Speaker", "Invited Talk"]
+tags: ["Speaker", "Talk"]
 ---

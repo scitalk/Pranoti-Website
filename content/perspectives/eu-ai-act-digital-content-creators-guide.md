@@ -8,7 +8,7 @@ description: "The EU AI Act isn't just a labeling rule. Here's what digital cont
 keywords: ["EU AI Act content creators", "Article 50 AI Act", "AI Act risk tiers", "AI-generated content disclosure", "EU AI Act deadline 2026", "AI Act digital creators", "Article 5 AI Act manipulative techniques"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["EU AI Act", "content creators", "AI transparency", "AI regulation", "digital marketing"]
+tags: ["EU AI Act", "content creators", "AI transparency", "AI regulation"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

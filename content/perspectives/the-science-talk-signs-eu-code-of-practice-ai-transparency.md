@@ -9,7 +9,7 @@ description: "The Science Talk has signed the European Commission's Code of Prac
 keywords: ["Code of Practice AI transparency", "EU AI Act transparency obligations", "AI-generated content labeling", "AI Act Section 2 deployers", "The Science Talk AI compliance"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["EU AI Act", "AI transparency", "Code of Practice", "AI compliance", "The Science Talk"]
+tags: ["EU AI Act", "AI transparency", "AI compliance", "The Science Talk"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

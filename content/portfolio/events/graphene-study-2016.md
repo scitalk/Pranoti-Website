@@ -12,5 +12,5 @@ role: "Poster"
 event_type: "Winter School"
 read_more_url: "https://pranoti.thesciencetalk.com/events/2016-01_Graphene-Study-2016_Poster-Abstract_PK.pdf"
 event_website: "https://graphene-flagship.eu/events/graphene-study-2016/"
-tags: ["Poster", "Winter School"]
+tags: ["Poster", "Training"]
 ---

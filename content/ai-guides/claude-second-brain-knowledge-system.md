@@ -8,7 +8,7 @@ description: "Turn scattered AI conversations into organised, searchable knowled
 keywords: ["second brain AI", "Claude knowledge management", "AI conversation organisation", "personal knowledge system", "research notes Claude", "knowledge capture workflow", "AI session organisation"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["knowledge work", "AI productivity", "research", "AI workflow"]
+tags: ["knowledge work", "AI productivity", "research tools", "AI workflow"]
 pillar: "AI Adoption"
 related_posts: [
   "/ai-guides/claude-code-context-window-breakdown-guide/",

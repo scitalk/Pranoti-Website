@@ -7,7 +7,7 @@ description: "Learn what each category in Claude Code's context window breakdown
 keywords: ["Claude Code context window", "context window breakdown", "MCP tools deferred", "Claude Desktop token management", "context window categories", "Claude Code session management", "token budget optimisation"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["Claude Code", "Claude Desktop", "context management", "MCP", "token management"]
+tags: ["Claude Code", "Claude Desktop", "token management", "MCP"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

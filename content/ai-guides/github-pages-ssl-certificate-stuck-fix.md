@@ -8,7 +8,7 @@ description: "Your GitHub Pages SSL certificate can get stuck retrying for hours
 keywords: ["github pages ssl certificate stuck", "certificate request error github pages", "github pages https not working", "cloudflare dns github pages", "force renew github pages certificate", "github pages dns check successful no https", "letsencrypt caa record github pages"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["GitHub Pages", "SSL/TLS", "Cloudflare", "DNS", "Hugo"]
+tags: ["GitHub Pages", "Hugo"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

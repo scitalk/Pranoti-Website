@@ -8,7 +8,7 @@ description: "Article 50 is now in force. What changed under the EU AI Act on 2 
 keywords: ["EU AI Act Article 50 deadline", "AI Act August 2 2026", "what changes AI Act August 2026", "Article 50 enforcement date", "is Article 50 in force", "AI Act high-risk delay vs Article 50"]
 author: "Pranoti Kshirsagar"
 reading_time: "4 min"
-tags: ["EU AI Act", "Article 50", "AI transparency", "compliance deadline"]
+tags: ["EU AI Act", "Article 50", "AI transparency", "AI compliance"]
 category: "perspectives"
 pillar: "EU AI Act & Compliance"
 aliases:

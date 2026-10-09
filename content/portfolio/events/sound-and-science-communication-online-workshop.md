@@ -10,5 +10,5 @@ location: "Online"
 role: "Contributor"
 event_type: "Workshop"
 thumbnail: "/images/portfolio/03/Science-Sound_March18.png"
-tags: ["Contributor", "Workshop"]
+tags: ["Workshop"]
 ---

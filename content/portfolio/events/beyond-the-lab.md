@@ -11,7 +11,7 @@ role: "Trainer"
 event_type: "Summer School"
 thumbnail: "/images/portfolio/06/Beyond-the-Lab-1.png"
 read_more_url: "https://beyondthelab2024.epfl.ch/"
-tags: ["Trainer", "Summer School"]
+tags: ["Trainer", "Training"]
 ---
 
 A customised Personal Branding for Scientists workshop delivered at EPFL's "Beyond the Lab" summer school in Beatenberg, Switzerland, for early-career researchers exploring careers beyond academia.

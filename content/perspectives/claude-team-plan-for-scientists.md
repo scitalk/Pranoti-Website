@@ -9,7 +9,7 @@ author: "Pranoti Kshirsagar"
 featured_image: "/images/ai-guides_perspectives/ai-for-scientists.jpg"
 hero_light: true
 reading_time: "6 min"
-tags: ["AI adoption", "Anthropic", "data management", "AI procurement"]
+tags: ["AI adoption", "Claude", "procurement"]
 category: "perspectives"
 pillar: "AI Adoption"
 faq:

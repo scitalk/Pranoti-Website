@@ -8,7 +8,7 @@ description: "Claude Cowork gives Claude direct access to your files, browser, a
 keywords: ["Claude Cowork safety", "Claude Cowork permissions", "Claude Desktop computer use", "skip all approvals mode Claude", "Claude agentic AI setup", "Claude Chrome extension safety", "prompt injection Claude Cowork", "scheduled tasks Claude Desktop"]
 author: "Pranoti Kshirsagar"
 reading_time: "5 min"
-tags: ["Claude Cowork", "Claude Desktop", "agentic AI", "AI safety", "computer use"]
+tags: ["Claude Cowork", "Claude Desktop", "security"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

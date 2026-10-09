@@ -8,7 +8,7 @@ description: "How to build an AI content workflow with approval gates and MCP in
 keywords: ["AI content workflow", "approval gates", "MCP WordPress integration", "Claude Desktop automation", "content accuracy", "editorial workflow automation", "research communication", "batch content operations"]
 author: "Pranoti Kshirsagar"
 reading_time: "15 min"
-tags: ["Claude Desktop", "MCP", "WordPress automation", "content workflow", "approval gates", "editorial systems"]
+tags: ["Claude Desktop", "MCP", "WordPress automation", "AI workflow"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

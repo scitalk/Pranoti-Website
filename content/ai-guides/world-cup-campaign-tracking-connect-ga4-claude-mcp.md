@@ -8,7 +8,7 @@ description: "Connect GA4 to Claude via MCP and track World Cup campaign perform
 keywords: ["connect GA4 to Claude via MCP", "GA4 MCP integration", "Google Analytics MCP server", "Claude GA4 dashboard", "real-time campaign tracking", "automate Google Analytics reporting", "World Cup campaign analytics"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["Google Analytics", "MCP", "campaign tracking", "Claude Desktop"]
+tags: ["Google Analytics", "MCP", "Claude Desktop"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

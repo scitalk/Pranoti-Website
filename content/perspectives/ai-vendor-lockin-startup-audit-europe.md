@@ -7,7 +7,7 @@ description: "Startups building on AI are recreating enterprise lock-in patterns
 keywords: ["AI vendor lock-in startups Europe", "startup AI stack audit", "AI stack portability", "startup AI vendor evaluation", "open-source AI startup strategy", "cloud dependency startup", "AI interoperability compliance"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["AI strategy", "startups", "vendor lock-in", "AI stack audit"]
+tags: ["AI strategy", "startups", "vendor lock-in"]
 category: "perspectives"
 pillar: "AI Adoption"
 sidebar_links:

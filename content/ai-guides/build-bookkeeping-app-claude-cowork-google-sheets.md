@@ -8,7 +8,7 @@ description: "Build a free, custom bookkeeping app with Claude Cowork, Next.js a
 keywords: ["build a bookkeeping app with Claude Cowork", "build a custom app with Claude", "no-code app with AI", "Google Sheets as a database", "Claude Cowork Next.js tutorial", "free bookkeeping app freelancers", "Vercel Next.js deployment", "freelancer bookkeeping tool"]
 author: "Pranoti Kshirsagar"
 reading_time: "7 min"
-tags: ["Claude Cowork", "Next.js", "Google Sheets", "Vercel", "freelancer tools"]
+tags: ["Claude Cowork", "Google Sheets", "AI productivity"]
 category: "ai-integration-guides"
 pillar: "AI Adoption"
 sidebar_links:

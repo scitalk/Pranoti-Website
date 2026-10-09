@@ -9,7 +9,7 @@ featured_image: "/images/ai-guides_perspectives/eu-ai-act.webp"
 keywords: ["EU AI Act prohibited AI practices", "banned AI Article 5", "EU AI Act Article 5", "HR emotion recognition software ban EU", "employee sentiment analysis AI Act illegal", "dark pattern AI law EU", "biometric categorisation AI Act", "AI Act compliance checklist SME"]
 author: "Pranoti Kshirsagar"
 reading_time: "6 min"
-tags: ["EU AI Act", "Article 5", "AI regulation", "prohibited practices", "workplace AI"]
+tags: ["EU AI Act", "AI regulation"]
 category: "ai-integration-guides"
 pillar: "EU AI Act & Compliance"
 sidebar_links:

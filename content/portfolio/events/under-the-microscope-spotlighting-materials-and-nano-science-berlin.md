@@ -11,5 +11,5 @@ location: "Berlin, Germany"
 role: "Speaker"
 event_type: "Colloquium"
 thumbnail: "/images/portfolio/05/Events_website.png"
-tags: ["Speaker", "Colloquium"]
+tags: ["Speaker", "Talk"]
 ---
