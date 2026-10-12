@@ -1,7 +1,8 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {{- range .Pages }}
-  {{- if and (not (in (slice "taxonomy" "term") .Kind)) (ne .Sitemap.Disable true) }}
+  {{- $noindex := or (hasPrefix .RelPermalink "/portfolio/podcast/") (in (lower (.Params.robots | default "")) "noindex") }}
+  {{- if and (not (in (slice "taxonomy" "term") .Kind)) (ne .Sitemap.Disable true) .Permalink (not $noindex) }}
   <url>
     <loc>{{ .Permalink }}</loc>
     {{- if not .Lastmod.IsZero }}
