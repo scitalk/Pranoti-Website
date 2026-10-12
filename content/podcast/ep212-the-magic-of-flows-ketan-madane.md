@@ -1,0 +1,27 @@
+---
+draft: false
+title: "the MAGIC of Flows ft. Ketan Madane"
+slug: "the-magic-of-flows-ketan-madane"
+episode_number: 212
+date: 2023-11-10
+guest_name: "Ketan Madane"
+guest_institution: "Univeristy of Limerick, Ireland"
+youtube_url: "https://youtu.be/0OK080uDsbQ"
+spotify_url: "https://open.spotify.com/episode/5SntOCAd72HcCk7Q6kg4UH?si=wG5pP4F_QsC8-0NhBfpLtg"
+episode_image: "/digital-content-hub/images/Ketan%20212.jpg"
+description: "the MAGIC of Flows: Ketan Madane on the Under the Microscope podcast, episode 212."
+---
+
+## the MAGIC of Flows ft. Ketan Madane
+
+## In Other Words
+
+First demonstration (paper in Chemical Engineering Journal) of augmenting a standard stirred-tank crystalliser with an external fluidic loop, T-junction, then fluidic oscillator, then vortex diode (whose cavitation shockwaves also break crystals), to directly control paracetamol particle-size distribution, cutting mean size ~150 to 100 µm with a repeatable, narrow spread.
+
+## Key Takeaways
+
+- PhD student at University of Limerick designing 'MAGIC' (modular, agile, intensified, continuous) processes using fluidic devices with no moving parts, fluidic oscillators (Coandă effect) and vortex diodes.
+- Uses CFD (Navier–Stokes) to predict and optimise flow, mixing and residence-time distribution before manufacturing a device, 'time-travelling in fluidic devices'.
+- Mechanical-engineering background; found industrial CFD work more monotonous than research.
+- Values endless curiosity, challenging established ideas (the stirred tank), and how science benefits society.
+- Three wishes: bridging mechanisms between interdisciplinary fields, unrestricted access to computational/experimental tools (a supercomputer), and sustainable research funding and recognition.

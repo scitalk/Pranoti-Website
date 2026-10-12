@@ -42,6 +42,25 @@
       {{/* ── RIGHT: SIDEBAR ── */}}
       <aside class="ep-sidebar">
 
+        {{/* Guest card */}}
+        {{ if .Params.guest_name }}
+        <div class="ep-sidebar-card ep-guest-card">
+          {{ $guestImg := or .Params.guest_image .Params.featured_image }}
+          {{ with $guestImg }}
+          <img src="{{ . }}" alt="{{ $.Params.guest_name }}" class="ep-guest-photo">
+          {{ end }}
+          <p class="ep-sidebar-label">About the Guest</p>
+          {{ with .Params.guest_name }}<strong class="ep-guest-name">{{ . }}</strong>{{ end }}
+          {{ with .Params.guest_title }}<span class="ep-guest-role">{{ . }}</span>{{ end }}
+          {{ with .Params.guest_institution }}<span class="ep-guest-institution">{{ . }}</span>{{ end }}
+          {{ with .Params.guest_country }}<span class="ep-guest-country">{{ . }}</span>{{ end }}
+          {{ with .Params.guest_bio }}<p class="ep-guest-bio">{{ . }}</p>{{ end }}
+          {{ with .Params.guest_website }}
+          <a href="{{ . }}" target="_blank" rel="noopener" class="ep-guest-link">View Profile →</a>
+          {{ end }}
+        </div>
+        {{ end }}
+
         {{/* Listen card */}}
         {{ if or .Params.spotify_url .Params.youtube_url }}
         <div class="ep-sidebar-card ep-listen-card">
@@ -59,25 +78,6 @@
             <span>YouTube</span>
             <svg class="ep-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
-          {{ end }}
-        </div>
-        {{ end }}
-
-        {{/* Guest card */}}
-        {{ if .Params.guest_name }}
-        <div class="ep-sidebar-card ep-guest-card">
-          {{ $guestImg := or .Params.guest_image .Params.featured_image }}
-          {{ with $guestImg }}
-          <img src="{{ . }}" alt="{{ $.Params.guest_name }}" class="ep-guest-photo">
-          {{ end }}
-          <p class="ep-sidebar-label">About the Guest</p>
-          {{ with .Params.guest_name }}<strong class="ep-guest-name">{{ . }}</strong>{{ end }}
-          {{ with .Params.guest_title }}<span class="ep-guest-role">{{ . }}</span>{{ end }}
-          {{ with .Params.guest_institution }}<span class="ep-guest-institution">{{ . }}</span>{{ end }}
-          {{ with .Params.guest_country }}<span class="ep-guest-country">{{ . }}</span>{{ end }}
-          {{ with .Params.guest_bio }}<p class="ep-guest-bio">{{ . }}</p>{{ end }}
-          {{ with .Params.guest_website }}
-          <a href="{{ . }}" target="_blank" rel="noopener" class="ep-guest-link">View Profile →</a>
           {{ end }}
         </div>
         {{ end }}
@@ -196,6 +196,8 @@
    TWO-COLUMN LAYOUT
 ───────────────────────────────────────── */
 .ep-layout { padding: 3rem 2.5rem 4rem; }
+/* Global main padding (fixed-nav offset) must not apply to this inner column */
+body .ep-page main.ep-main { padding-top: 0; }
 .ep-layout-inner {
   max-width: 1100px;
   margin: 0 auto;
