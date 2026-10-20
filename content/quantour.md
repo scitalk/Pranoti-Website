@@ -28,7 +28,7 @@ summary: >-
 
 summary_2: >-
   I joined as communication lead and ran the campaign end to end across 21 months: strategy,
-  a 14-episode podcast series, the social channels, press coordination across 12 institutions,
+  a 12-episode podcast series, the social channels, press coordination across 12 institutions,
   live events, and the engagement reporting the consortium used for funder reporting. The
   project went on to win the Institute of Physics Lise Meitner Medal and Prize — one of only
   three named recipients.
@@ -284,7 +284,7 @@ activities:
   - title: "Communication strategy and coaching"
     body: "Built the campaign strategy from scratch with the organisers: audience definition, core narrative, channel and format selection. Coached Doris Reiter and Tobias Heindel on sustainable communication practice and on working with digital platforms they had not used before."
   - title: "Under the Microscope podcast series"
-    body: "A 14-episode series — the two organisers plus all 12 QuanTour Heroes. Roughly 30 minutes each, covering the research, the career path behind it, the project each scientist is proudest of, and three wishes for improving the research experience. The organisers described the result as \"a kind of lecture series on quantum science, accessible to everyone.\""
+    body: "A 12-episode series featuring QuanTour partners, 45 to 60 minutes each, covering the research, the career path behind it, the project each scientist is proudest of, and three wishes for improving the research experience. The organisers described the result as \"a kind of lecture series on quantum science, accessible to everyone.\""
   - title: "Social media campaign"
     body: "Instagram-first storytelling following the source itself as the protagonist, from zero to 4,800+ followers over the tour. Video, shorts and stills produced at lab handovers and public events."
   - title: "Press and media relations"
