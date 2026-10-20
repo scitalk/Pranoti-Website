@@ -217,7 +217,7 @@ Then, once live, open GA4 Realtime and confirm your own visit appears. Search Co
 - Provider: Cloudflare
 - Record: `pranoti` CNAME → `scitalk.github.io`
 - HTTPS enforced via GitHub Pages SSL cert
-- Anti-spoofing: `pranoti` has a null SPF record (`v=spf1 -all`) and null MX (`0 .`), rejecting any mail claiming to be from this subdomain
+- Anti-spoofing: `pranoti` has **no** SPF or MX record. It can't: a CNAME can't share its name with other records. Spoofed `@pranoti.thesciencetalk.com` mail is covered by the apex DMARC `p=quarantine`, which applies to subdomains when no `sp=` tag is set (RFC 7489 §6.3). Do not add SPF/MX records to `pranoti`.
 - **`pranoti` must stay DNS only (grey cloud), NOT proxied.** Confirm with `dig +short pranoti.thesciencetalk.com`: it should return the `scitalk.github.io` CNAME and GitHub IPs (185.199.x.x), not Cloudflare IPs (104.21.x / 172.67.x).
 
 ### Incident: site down 2026-10-19 to 2026-10-20 (HTTP 526)
