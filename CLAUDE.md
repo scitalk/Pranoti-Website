@@ -218,7 +218,19 @@ Then, once live, open GA4 Realtime and confirm your own visit appears. Search Co
 - Record: `pranoti` CNAME → `scitalk.github.io`
 - HTTPS enforced via GitHub Pages SSL cert
 - Anti-spoofing: `pranoti` has a null SPF record (`v=spf1 -all`) and null MX (`0 .`), rejecting any mail claiming to be from this subdomain
-- Proxied through Cloudflare (confirmed via A record resolving to Cloudflare IP ranges, not GitHub Pages IPs directly)
+- **`pranoti` must stay DNS only (grey cloud), NOT proxied.** Confirm with `dig +short pranoti.thesciencetalk.com`: it should return the `scitalk.github.io` CNAME and GitHub IPs (185.199.x.x), not Cloudflare IPs (104.21.x / 172.67.x).
+
+### Incident: site down 2026-10-19 to 2026-10-20 (HTTP 526)
+
+On 2026-08-04 a Claude session had `pranoti` switched to Cloudflare-proxied (orange cloud) to add HSTS and security headers, claiming Cloudflare "auto-renews certs". That was wrong: Cloudflare renews only its own edge certificate, not GitHub Pages' Let's Encrypt certificate behind it. GitHub's certificate (valid 21 Jul to 19 Oct 2026) was never renewed, and Cloudflare's Full (strict) mode returned 526 to every visitor once it expired.
+
+**Fixed 2026-10-20:** set `pranoti` to DNS only, removed and re-added the custom domain in GitHub → Settings → Pages. GitHub issued a new certificate within ~15 minutes (valid to 18 Jan 2027).
+
+**What is proven vs not:** proven that the certificate did not renew while proxied and was issued immediately once DNS pointed to GitHub. GitHub's docs say records not pointing to GitHub Pages "may prevent the HTTPS certificate from generating"; they do not describe renewal or mention Cloudflare. Confirm the next renewal happens on its own before ~18 Jan 2027.
+
+**Trade-off accepted:** no Cloudflare HSTS or security headers on `pranoti`. Do not re-enable the proxy to get them back.
+
+**Check:** `echo | openssl s_client -connect pranoti.thesciencetalk.com:443 -servername pranoti.thesciencetalk.com 2>/dev/null | openssl x509 -noout -enddate`
 
 ---
 

@@ -2,7 +2,7 @@
 title: "How to Build a Communication Strategy for Your Research Project"
 date: 2026-10-20
 lastmod: 2026-10-20
-draft: true
+draft: false
 description: "How to build a communication strategy for your research project: audience, key messages, brand and platforms first, then consistent execution."
 keywords: ["how to build a communication strategy for a research project", "research project communication strategy", "communication plan for research projects", "science communication strategy", "research dissemination strategy", "outreach strategy for research projects", "key messaging framework research", "EU project communication and dissemination", "QuanTour"]
 featured_image: "/images/ai-guides_perspectives/strategic-communication-framework.jpeg"
