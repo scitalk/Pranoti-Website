@@ -1,0 +1,67 @@
+{{ define "main" }}
+{{ $data := index .Site.Data "realsci_nano_tweets" }}
+<section class="container rsn-tweets">
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.description }}
+        <p class="description">{{ . }}</p>
+        {{ end }}
+        {{ with .Content }}<div class="rsn-intro">{{ . }}</div>{{ end }}
+    </header>
+
+    <div class="rsn-layout">
+    <nav class="rsn-nav" id="rsn-nav" aria-label="Curators by year">
+        <ul>
+            {{ range $data.years }}
+            <li><a href="#y{{ .year }}">{{ .year }}</a>
+                <ul>
+                    {{ range .guests }}
+                    <li><a href="#g{{ .n }}">{{ .nav }}</a></li>
+                    {{ end }}
+                </ul>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
+
+    <div class="rsn-content">
+    {{ range $data.years }}
+    <section class="rsn-year">
+        <h2 id="y{{ .year }}">{{ .year }}</h2>
+        {{ range .guests }}
+        <section class="rsn-guest">
+            <h3 id="g{{ .n }}">{{ .name }}</h3>
+            <p class="rsn-meta">{{ with .handle }}@{{ . }} · {{ end }}{{ .start }} to {{ .end }} · {{ len .tweets }} posts</p>
+            {{ range .tweets }}
+            <article class="rsn-tweet">
+                <p class="rsn-tweet-meta">{{ .date }} · {{ .type }}{{ if ne .label "Takeover" }} · {{ .label }}{{ end }}</p>
+                <p class="rsn-text">{{ .text }}</p>
+            </article>
+            {{ end }}
+            <p class="rsn-top"><a href="#rsn-nav">Back to curator list</a></p>
+        </section>
+        {{ end }}
+    </section>
+    {{ end }}
+    </div>
+    </div>
+</section>
+
+<style>
+.rsn-layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+.rsn-nav { position: sticky; top: 112px; max-height: calc(100vh - 128px); overflow-y: auto; font-size: 0.9rem; }
+.rsn-content h2, .rsn-content h3 { scroll-margin-top: 112px; }
+.rsn-year h2 { margin-top: 0; }
+@media (max-width: 800px) {
+  .rsn-layout { grid-template-columns: 1fr; }
+  .rsn-nav { position: static; max-height: 50vh; }
+}
+.rsn-nav ul { list-style: disc; padding-left: 1.5rem; }
+.rsn-nav ul ul { list-style: circle; }
+.rsn-guest { margin-top: 2.5rem; }
+.rsn-meta, .rsn-tweet-meta { color: var(--ink-soft); font-size: 0.875rem; margin: 0.25rem 0; }
+.rsn-tweet { border-bottom: 1px solid rgba(0,0,0,0.08); padding: 0.75rem 0; }
+.rsn-text { white-space: pre-line; overflow-wrap: anywhere; margin: 0.25rem 0 0; }
+.rsn-top { font-size: 0.875rem; }
+</style>
+{{ end }}

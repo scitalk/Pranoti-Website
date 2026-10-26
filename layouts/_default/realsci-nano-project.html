@@ -1,0 +1,123 @@
+{{ define "main" }}
+{{ $data := index .Site.Data "realsci_nano_tweets" }}
+{{ $pod := index .Site.Data "podcast_episodes" }}
+
+{{/* Podcast episodes keyed by lowercased guest name, for curator cross-links */}}
+{{ $eps := dict }}
+{{ $epCount := 0 }}
+{{ range $pod.seasons }}
+  {{ range .episodes }}
+    {{ $epCount = add $epCount 1 }}
+    {{ $eps = merge $eps (dict (lower .name) .) }}
+  {{ end }}
+{{ end }}
+
+{{ $takeovers := 0 }}
+{{ $posts := 0 }}
+{{ range $data.years }}
+  {{ $takeovers = add $takeovers (len .guests) }}
+  {{ range .guests }}{{ $posts = add $posts (len .tweets) }}{{ end }}
+{{ end }}
+{{ $first := index $data.years 0 }}
+{{ $last := index $data.years (sub (len $data.years) 1) }}
+
+<div class="rsnp">
+  <section class="rsnp-hero">
+    <div class="container rsnp-hero-grid">
+      <div>
+        <h1>{{ .Title }}</h1>
+        <p class="rsnp-pill">The complete archive ({{ $first.year }} to {{ $last.year }})</p>
+      </div>
+      <svg class="rsnp-mark" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="2" opacity=".6"/>
+        <path d="M52 30h14v8h-4v26l10 6-4 7-12-7V38h-4z M38 90h44v6H38z M50 84a16 16 0 0 0 26-12h6a22 22 0 0 1-32 18z" fill="currentColor"/>
+      </svg>
+      <dl class="rsnp-stats">
+        <div><dt>Takeovers</dt><dd>{{ $takeovers }}</dd></div>
+        <div><dt>Posts archived</dt><dd>{{ lang.FormatNumber 0 $posts }}</dd></div>
+        <div><dt>Podcast episodes</dt><dd>{{ $epCount }}</dd></div>
+        <div><dt>Years on Twitter</dt><dd>{{ $first.year }}–{{ $last.year }}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="rsnp-band">
+    <div class="container rsnp-band-grid">
+      <div>
+        <h2>Two-way communication between expert scientists and their audience</h2>
+        <p>Each week, a materials or nanoscientist ran the account and talked directly with its followers: answering questions, taking feedback, and opening up their research in real time.</p>
+        <p class="rsnp-actions">
+          <a class="rsnp-btn rsnp-btn-solid" href="#curators">Explore the archive</a>
+          <a class="rsnp-btn" href="/materials-science-nanoscience-podcast-episodes/">Listen to the podcast</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rsnp-cards container" id="about">
+    <h2>About the project</h2>
+    <p>RealSci_Nano was a rotation curation account. Each week, a new materials or nanoscientist took over the account and shared their research, their life in the lab, and their questions. It ran alongside the Under the Microscope podcast, and many curators were also podcast guests.</p>
+    <p>In 2024 I closed shop on Twitter/X and moved to Bluesky, so the podcast and the rotation account now sit under one name: Under the Microscope.</p>
+
+    <h2>Timeline</h2>
+    <ul class="rsnp-grid">
+      {{ range $data.years }}
+      {{ $n := 0 }}{{ range .guests }}{{ $n = add $n (len .tweets) }}{{ end }}
+      <li class="rsnp-card">
+        <p class="rsnp-name">{{ .year }}</p>
+        <p class="rsnp-meta">{{ len .guests }} curators · {{ lang.FormatNumber 0 $n }} posts</p>
+        {{ if eq .year "2019" }}<p class="rsnp-meta">First curator: {{ (index .guests 0).name }}, {{ (index .guests 0).start }}</p>{{ end }}
+        {{ if eq .year "2022" }}<p class="rsnp-meta">Close to a million impressions</p>{{ end }}
+        {{ if eq .year "2024" }}<p class="rsnp-meta">Moved to Bluesky as Under the Microscope</p>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+
+    <h2 id="curators">Explore further</h2>
+    <ul class="rsnp-grid">
+      <li class="rsnp-card"><a class="rsnp-name" href="/realsci-nano-tweets/">Tweet archive</a><p class="rsnp-meta">Every post, by year and curator.</p></li>
+      <li class="rsnp-card"><a class="rsnp-name" href="/materials-science-nanoscience-podcast-episodes/">Podcast catalogue</a><p class="rsnp-meta">All {{ $epCount }} Under the Microscope episodes.</p></li>
+      <li class="rsnp-card"><a class="rsnp-name" href="https://thesciencetalk.com/news/realscientists-nano-is-now-under-the-microscope-on-bluesky/">The move to Bluesky</a><p class="rsnp-meta">Why RealSci_Nano became Under the Microscope.</p></li>
+      <li class="rsnp-card"><a class="rsnp-name" href="/newsletter-archive/2023-02-15-top-12-tweets-of-2022/">Top 12 tweets of 2022</a><p class="rsnp-meta">The most popular posts from the busiest year for reach.</p></li>
+      <li class="rsnp-card"><a class="rsnp-name" href="/perspectives/stop-searching-for-the-next-twitter/">Stop chasing platforms</a><p class="rsnp-meta">What running RealSci_Nano taught me about owning your audience.</p></li>
+    </ul>
+  </section>
+</div>
+
+<style>
+.rsnp { --rs-bg: #ffffff; --rs-panel: #f7f7f7; --rs-line: #e4e4e4; --rs-glow: #ff5757; --rs-text: #1c1c1c; --rs-soft: #6f6f6f; background: var(--rs-bg); color: var(--rs-text); }
+.rsnp a { color: inherit; }
+.rsnp h1, .rsnp h2, .rsnp h3 { color: var(--rs-text); font-family: var(--font-display); }
+.rsnp-hero { padding: 3rem 0; background: radial-gradient(circle at 55% 40%, #fafafa 0, var(--rs-bg) 60%); }
+.rsnp-hero-grid { display: grid; grid-template-columns: 1.2fr auto 1fr; gap: 2rem; align-items: center; }
+.rsnp-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 1rem; }
+.rsnp-pill { display: inline-block; border: 1px solid var(--rs-glow); color: var(--rs-glow); border-radius: 999px; padding: .35rem .9rem; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; margin: 0; }
+.rsnp-mark { width: 120px; color: var(--rs-glow); }
+.rsnp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin: 0; }
+.rsnp-stats div { border: 1px solid var(--rs-line); border-radius: 8px; padding: .75rem; text-align: center; background: var(--rs-panel); }
+.rsnp-stats dd { order: -1; font-size: 1.6rem; font-weight: 700; margin: 0; }
+.rsnp-stats div { display: flex; flex-direction: column; }
+.rsnp-stats dt { color: var(--rs-soft); font-size: .8rem; }
+.rsnp-band { background: var(--rs-panel); padding: 2.5rem 0; border-top: 1px solid var(--rs-line); border-bottom: 1px solid var(--rs-line); }
+.rsnp-band-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: center; }
+.rsnp-band h2 { margin-top: 0; font-size: 1.5rem; }
+.rsnp-band p { color: var(--rs-soft); }
+.rsnp-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.rsnp-btn { border: 1px solid var(--rs-line); border-radius: 6px; padding: .5rem 1rem; text-decoration: none; color: var(--rs-text) !important; }
+.rsnp-btn-solid { background: var(--rs-glow); border-color: var(--rs-glow); color: #ffffff !important; }
+.rsnp-pod { display: block; background: var(--rs-bg); border: 1px solid var(--rs-line); border-radius: 10px; padding: 1rem; text-decoration: none; color: var(--rs-glow) !important; }
+.rsnp-pod span { display: block; color: var(--rs-text); font-weight: 600; margin-bottom: .5rem; }
+.rsnp-cards { padding: 2.5rem 1rem 3rem; }
+.rsnp-year { margin: 2rem 0 .75rem; }
+.rsnp-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.rsnp-card { background: var(--rs-panel); border: 1px solid var(--rs-line); border-radius: 8px; padding: 1rem; }
+.rsnp-name { font-weight: 700; margin: 0 0 .25rem; }
+.rsnp-meta { color: var(--rs-soft); font-size: .85rem; margin: 0; }
+.rsnp-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: .75rem 0 0; }
+.rsnp-tags a { font-size: .75rem; border: 1px solid var(--rs-line); color: var(--rs-text) !important; background: var(--rs-bg); border-radius: 999px; padding: .15rem .6rem; text-decoration: none; }
+@media (max-width: 900px) {
+  .rsnp-hero-grid, .rsnp-band-grid { grid-template-columns: 1fr; }
+  .rsnp-mark { display: none; }
+}
+</style>
+{{ end }}
