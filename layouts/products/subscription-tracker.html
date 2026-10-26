@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://pranoti.thesciencetalk.com/products/subscription-tracker/">
+<meta name="description" content="{{ .Description }}">
+<title>Renewals · Every recurring payment, in one clear record</title>
+<style>
+  :root {
+    --night: #0d0b1f; --night-2: #17143a; --ink: #15131f; --muted: #5d5a6d; --paper: #fbfaf7; --line: #e8e5ee;
+    --violet: #7c5cff; --coral: #ff6b5b; --amber: #ffb547; --teal: #18c7a5; --sky: #3d8bff; --pink: #ff5fa8;
+    --max: 1180px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- nav ---------- */
+  nav { position: absolute; inset: 0 0 auto; z-index: 5; }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; color: #fff; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 750; font-size: 20px; letter-spacing: -.02em; }
+  .links { display: flex; gap: 30px; font-size: 15px; color: rgba(255,255,255,.72); }
+  .links a:hover { color: #fff; }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; background: var(--night); color: #fff; padding: 150px 0 0; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: -20% -10% auto; height: 120%;
+    background:
+      radial-gradient(40% 50% at 18% 30%, rgba(124,92,255,.55), transparent 70%),
+      radial-gradient(35% 45% at 85% 20%, rgba(255,107,91,.45), transparent 70%),
+      radial-gradient(40% 40% at 60% 75%, rgba(24,199,165,.35), transparent 70%);
+    filter: blur(20px); }
+  .hero::after { content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size: 56px 56px; mask-image: linear-gradient(#000, transparent 75%); }
+  .hero .wrap { position: relative; z-index: 1; text-align: center; }
+  .pill { display: inline-flex; gap: 8px; align-items: center; padding: 7px 14px; border-radius: 999px; font-size: 14px; font-weight: 600;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); backdrop-filter: blur(8px); }
+  .pill b { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 12px var(--teal); }
+  h1 { font-size: clamp(42px, 7vw, 84px); line-height: .98; letter-spacing: -.045em; margin: 26px auto 22px; max-width: 13ch; font-weight: 800; }
+  h1 .grad { background: linear-gradient(92deg, #b8a6ff 0%, #ff8fb8 45%, #ffc070 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lede { font-size: clamp(18px, 2.2vw, 22px); color: rgba(255,255,255,.74); max-width: 48ch; margin: 0 auto; }
+
+  .stage { position: relative; margin: 64px auto 0; max-width: 1060px; perspective: 1800px; }
+  .screen { border-radius: 18px 18px 0 0; overflow: hidden; border: 1px solid rgba(255,255,255,.14); border-bottom: 0;
+    box-shadow: 0 -10px 80px rgba(124,92,255,.35), 0 40px 120px rgba(0,0,0,.6); transform: rotateX(8deg); transform-origin: bottom; background: #fff; }
+  .screen .bar { display: flex; gap: 7px; align-items: center; padding: 12px 14px; background: #f3f0fb; border-bottom: 1px solid var(--line); }
+  .screen .url { margin: 0 auto; font-size: 12px; color: var(--muted); background: #fff; padding: 3px 40px; border-radius: 6px; }
+  .screen .bar i { width: 11px; height: 11px; border-radius: 50%; }
+  .screen .bar i:nth-child(1){background:#ff5f57} .screen .bar i:nth-child(2){background:#febc2e} .screen .bar i:nth-child(3){background:#28c840}
+
+  .chip { position: absolute; z-index: 2; display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 14px;
+    background: rgba(255,255,255,.96); color: var(--ink); font-size: 14px; line-height: 1.3; box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    animation: float 6s ease-in-out infinite; }
+  .chip small { display: block; color: var(--muted); font-size: 12px; }
+  .chip .dot { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 15px; flex: none; }
+  .chip.c1 { left: -40px; top: 330px; } .chip.c1 .dot { background: var(--coral); }
+  .chip.c2 { right: -36px; top: 210px; animation-delay: -2s; } .chip.c2 .dot { background: var(--violet); }
+  .chip.c3 { left: 40px; bottom: 60px; animation-delay: -4s; } .chip.c3 .dot { background: var(--teal); }
+  @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
+
+  /* ---------- marquee ---------- */
+  .marquee { background: var(--violet); color: #fff; overflow: hidden; padding: 18px 0; transform: rotate(-1.2deg); margin: -10px -20px 0; position: relative; z-index: 3; }
+  .track { display: flex; gap: 40px; width: max-content; animation: slide 38s linear infinite; font-weight: 700; font-size: 20px; letter-spacing: -.01em; white-space: nowrap; }
+  .track span::after { content: "✦"; margin-left: 40px; opacity: .6; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+
+  /* ---------- sections ---------- */
+  section { padding: 110px 0; }
+  .kicker { display: inline-block; font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 6px 12px; border-radius: 8px; }
+  h2 { font-size: clamp(32px, 4.6vw, 54px); line-height: 1.03; letter-spacing: -.035em; margin: 16px 0 18px; max-width: 18ch; font-weight: 800; }
+  .sub { color: var(--muted); max-width: 52ch; margin: 0; font-size: 18px; }
+  .center { text-align: center; } .center h2, .center .sub { margin-left: auto; margin-right: auto; }
+
+  .who { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 56px; }
+  .who div { border-radius: 22px; padding: 28px 24px; color: #fff; min-height: 190px; display: flex; flex-direction: column; justify-content: space-between; }
+  .who h3 { margin: 0; font-size: 22px; letter-spacing: -.02em; }
+  .who p { margin: 0; font-size: 15px; opacity: .88; }
+  .who .e { font-size: 34px; }
+  .w1 { background: linear-gradient(150deg, #7c5cff, #5a3de0); }
+  .w2 { background: linear-gradient(150deg, #ff7a6b, #f0466f); }
+  .w3 { background: linear-gradient(150deg, #20d2ad, #0f9e8f); }
+  .w4 { background: linear-gradient(150deg, #ffbf5a, #ff8a3d); }
+
+  /* pillars as bento */
+  .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; margin-top: 56px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 26px; overflow: hidden; position: relative; }
+  .card .txt { padding: 30px 30px 0; }
+  .card h3 { font-size: 24px; letter-spacing: -.025em; margin: 14px 0 8px; }
+  .card p { margin: 0; color: var(--muted); font-size: 16px; }
+  .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; padding: 6px 10px; border-radius: 999px; }
+  .b-history { grid-column: span 4; background: linear-gradient(160deg, #f3efff, #fff 60%); }
+  .b-price { grid-column: span 2; background: linear-gradient(160deg, #fff0ee, #fff 60%); }
+  .b-next { grid-column: span 3; background: linear-gradient(160deg, #e9fbf6, #fff 60%); }
+  .b-all { grid-column: span 3; background: linear-gradient(160deg, #fff6e6, #fff 60%); }
+  .card .shot { margin: 26px 0 0 30px; border-radius: 14px 0 0 0; border: 1px solid var(--line); border-right: 0; border-bottom: 0; box-shadow: 0 20px 50px rgba(30,20,80,.12); }
+
+  .timeline { list-style: none; padding: 0; margin: 26px 30px 30px; display: grid; gap: 14px; }
+  .timeline li { display: flex; gap: 14px; align-items: center; font-size: 15px; }
+  .timeline i { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+  .timeline em { font-style: normal; color: var(--muted); font-size: 13px; width: 70px; flex: none; }
+
+  .bars { display: flex; align-items: flex-end; gap: 10px; height: 150px; margin: 26px 30px 30px; }
+  .bars span { flex: 1; border-radius: 8px 8px 3px 3px; background: #ffd3cd; position: relative; }
+  .bars span.up { background: var(--coral); }
+  .bars span.up::after { content: attr(data-l); position: absolute; top: -26px; left: 50%; transform: translateX(-50%); font-size: 12px; font-weight: 800; color: var(--coral); white-space: nowrap; }
+
+  /* dark split */
+  .dark { background: var(--night); color: #fff; position: relative; overflow: hidden; }
+  .dark::before { content: ""; position: absolute; width: 700px; height: 700px; right: -200px; top: -200px; background: radial-gradient(closest-side, rgba(255,95,168,.35), transparent); }
+  .dark::after { content: ""; position: absolute; width: 600px; height: 600px; left: -200px; bottom: -250px; background: radial-gradient(closest-side, rgba(61,139,255,.35), transparent); }
+  .dark .wrap { position: relative; z-index: 1; }
+  .dark .sub { color: rgba(255,255,255,.7); }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .phones { display: flex; justify-content: center; gap: 24px; }
+  .phone { width: 250px; border-radius: 42px; padding: 10px; background: #000; box-shadow: 0 40px 90px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.12); }
+  .phone img { border-radius: 33px; }
+  .phone.tilt-l { transform: rotate(-5deg) translateY(30px); }
+  .phone.tilt-r { transform: rotate(5deg); }
+  .checks { list-style: none; padding: 0; margin: 30px 0 0; display: grid; gap: 14px; }
+  .checks li { display: flex; gap: 12px; align-items: center; font-size: 17px; }
+  .checks b { width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; font-size: 14px; flex: none; }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .stat { border-radius: 26px; padding: 36px; }
+  .stat .n { font-size: clamp(34px, 4vw, 48px); font-weight: 800; letter-spacing: -.035em; line-height: 1; }
+  .stat p { margin: 12px 0 0; font-size: 16px; }
+  .s1 { background: #efeaff; color: #3d25b8; } .s2 { background: #e2f8f2; color: #0b6e5c; } .s3 { background: #fff1dc; color: #9a4d00; }
+
+  /* closing */
+  .closing { background: linear-gradient(120deg, #7c5cff, #ff5fa8 55%, #ffb547); color: #fff; border-radius: 34px; padding: 90px 40px; text-align: center; position: relative; overflow: hidden; }
+  .closing h2 { margin: 0 auto 16px; max-width: 16ch; }
+  .closing p { margin: 0 auto; max-width: 46ch; font-size: 19px; opacity: .92; }
+  .closing::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.18) 1.5px, transparent 1.5px); background-size: 22px 22px; mask-image: radial-gradient(circle at 50% 120%, #000, transparent 70%); }
+
+  .maker { padding: 0 0 80px; }
+  .maker-card { text-align: center; border: 1px solid var(--line); background: #fff; border-radius: 28px; padding: 56px 32px; }
+  .maker-card h2 { margin: 16px auto 12px; max-width: 22ch; }
+  .maker-card p { color: var(--muted); margin: 0 auto 24px; max-width: 46ch; font-size: 18px; }
+  .maker-link { display: inline-block; font-weight: 700; color: #5a3de0; border-bottom: 2px solid #c9bcff; padding-bottom: 2px; }
+  footer { padding: 40px 0; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  @media (max-width: 960px) {
+    .links { display: none; }
+    .chip.c1 { left: 8px; top: 40px; } .chip.c2 { right: 8px; top: 150px; } .chip.c3 { display: none; }
+    .who { grid-template-columns: 1fr 1fr; }
+    .bento { grid-template-columns: 1fr; }
+    .b-history, .b-price, .b-next, .b-all { grid-column: auto; }
+    .split { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    section { padding: 80px 0; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 16px; }
+    .hero { padding-top: 120px; }
+    .chip { font-size: 12px; padding: 9px 11px; } .chip .dot { width: 28px; height: 28px; }
+    .chip.c1 { top: 18px; left: 4px; } .chip.c2 { top: auto; bottom: 18px; right: 4px; }
+    .screen { transform: none; }
+    .who { grid-template-columns: 1fr; }
+    .who div { min-height: 0; gap: 18px; }
+    .split > * { min-width: 0; }
+    .phone { width: 44vw; max-width: 190px; border-radius: 28px; padding: 7px; } .phone img { border-radius: 22px; }
+    .phones { gap: 10px; }
+    .closing { padding: 64px 24px; border-radius: 26px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .chip, .track { animation: none; } }
+  /* product tour */
+  .tour { display: grid; grid-template-columns: 340px 1fr; gap: 36px; margin-top: 56px; align-items: start; }
+  .tabs { display: grid; gap: 10px; }
+  .tabs button { all: unset; cursor: pointer; display: flex; gap: 16px; padding: 18px 20px; border-radius: 18px; border: 1px solid var(--line); background: #fff; transition: .2s; }
+  .tabs button:hover { border-color: var(--c); }
+  .tabs .n { font-weight: 800; font-size: 14px; color: var(--c); padding-top: 2px; }
+  .tabs b { display: block; font-size: 18px; letter-spacing: -.01em; }
+  .tabs small { display: block; color: var(--muted); font-size: 14px; line-height: 1.45; margin-top: 4px; max-height: 0; overflow: hidden; transition: max-height .3s; }
+  .tabs button[aria-selected="true"] { background: color-mix(in srgb, var(--c) 10%, #fff); border-color: var(--c); box-shadow: 0 10px 30px color-mix(in srgb, var(--c) 25%, transparent); }
+  .tabs button[aria-selected="true"] small { max-height: 90px; }
+  .viewer { position: relative; }
+  .viewer .glow { position: absolute; inset: 8% -4% -6% 6%; border-radius: 40px; background: linear-gradient(120deg, #7c5cff, #ff5fa8 55%, #ffb547); filter: blur(50px); opacity: .35; }
+  .frame { position: relative; border-radius: 18px; overflow: hidden; background: #fff; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(30,20,80,.18); }
+  .frame .bar { display: flex; gap: 7px; align-items: center; padding: 12px 14px; background: #f3f0fb; border-bottom: 1px solid var(--line); }
+  .frame .bar i { width: 11px; height: 11px; border-radius: 50%; }
+  .frame .bar i:nth-child(1){background:#ff5f57} .frame .bar i:nth-child(2){background:#febc2e} .frame .bar i:nth-child(3){background:#28c840}
+  .frame .url { margin: 0 auto; font-size: 12px; color: var(--muted); background: #fff; padding: 3px 40px; border-radius: 6px; }
+  .frame img { display: none; width: 100%; aspect-ratio: 1280 / 800; object-fit: cover; object-position: top; }
+  .frame img.on { display: block; animation: fadein .35s ease; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(6px); } }
+  .extra { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-top: 40px; }
+  .extra .card { grid-column: auto; }
+  @media (max-width: 960px) { .tour { grid-template-columns: 1fr; } .extra { grid-template-columns: 1fr; } .tabs small { max-height: none; } .tabs button:not([aria-selected="true"]) small { display: none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">
+      <svg width="32" height="32" aria-hidden="true" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="#6d4cff"/><g fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7.8 13.2A8.6 8.6 0 0 1 22.6 9.9"/><path d="M23 5.9l-.3 4.2-4.1-.4"/><path d="M24.2 18.8A8.6 8.6 0 0 1 9.4 22.1"/><path d="M9 26.1l.3-4.2 4.1.4"/></g><text x="16" y="20" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-weight="800" font-size="11" fill="#fff">€</text></svg>
+      Renewals
+    </span>
+    <div class="links">
+            <a href="#views">Features</a>
+      <a href="#mobile">Mobile</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Every recurring payment. <span class="grad">One clear record.</span></h1>
+    <p class="lede">See what you pay for, how each price has changed, and what's coming next. Streaming, software, insurance, phone, rent: all in one place.</p>
+    <div class="stage">
+      <div class="chip c1"><span class="dot">↑</span><div><b>Price up +12%</b><small>Fibrenet Home Wifi · €40.00 → €44.99</small></div></div>
+      <div class="chip c2"><span class="dot">9</span><div><b>Next: Lumen Design Suite</b><small>9 Nov · €65.44</small></div></div>
+      <div class="chip c3"><span class="dot">✓</span><div><b>€2,547.89 a year</b><small>12 active subscriptions</small></div></div>
+      <div class="screen">
+        <div class="bar"><i></i><i></i><i></i><span class="url">Renewals</span></div>
+        <img src="/products/subscription-tracker/img/dash-full.png" alt="Renewals dashboard: recent changes, the next 30 days, monthly and yearly totals, and a chart of payments per month">
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Streaming</span><span>Software</span><span>Health insurance</span><span>Mobile plan</span><span>Home internet</span><span>Gym</span><span>Cloud storage</span><span>Domains</span><span>Rent</span><span>Newsletters</span><span>Music</span><span>VPN</span>
+    <span>Streaming</span><span>Software</span><span>Health insurance</span><span>Mobile plan</span><span>Home internet</span><span>Gym</span><span>Cloud storage</span><span>Domains</span><span>Rent</span><span>Newsletters</span><span>Music</span><span>VPN</span>
+  </div>
+</div>
+
+<section id="views">
+  <div class="wrap center">
+        <h2>If it renews, it belongs here.</h2>
+    <p class="sub">Anyone with recurring payments gets the same clarity, whether that's two streaming services or forty business tools.</p>
+    <div style="text-align:left"><div class="tour">
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-i="0" style="--c:#7c5cff"><span class="n">01</span><span><b>Dashboard</b><small>Recent changes, the next 30 days, monthly and yearly totals, and spending per month.</small></span></button>
+        <button role="tab" aria-selected="false" data-i="1" style="--c:#ff5fa8"><span class="n">02</span><span><b>Subscriptions</b><small>Every subscription with its status, price and billing cycle. Open one to see its whole history.</small></span></button>
+        <button role="tab" aria-selected="false" data-i="2" style="--c:#18c7a5"><span class="n">03</span><span><b>Calendar</b><small>Each renewal on its day, month by month, with paid charges ticked off.</small></span></button>
+        <button role="tab" aria-selected="false" data-i="3" style="--c:#ff6b5b"><span class="n">04</span><span><b>Payments</b><small>Every payment with net, VAT and gross, filtered by year or subscription, exportable to CSV.</small></span></button>
+        <button role="tab" aria-selected="false" data-i="4" style="--c:#ffb547"><span class="n">05</span><span><b>Vendors</b><small>Who you pay, for which service, and how much in total.</small></span></button>
+      </div>
+      <div class="viewer">
+        <div class="glow"></div>
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span class="url">Renewals</span></div>
+          <img data-i="0" class="on" src="/products/subscription-tracker/img/dash-full.png" alt="Dashboard: recent changes, next 30 days, totals and chart">
+          <img data-i="1" src="/products/subscription-tracker/img/subscriptions.png" alt="List of subscriptions with status, price and billing" loading="lazy">
+          <img data-i="2" src="/products/subscription-tracker/img/calendar.png" alt="Calendar of renewals for the month" loading="lazy">
+          <img data-i="3" src="/products/subscription-tracker/img/payments.png" alt="Payments table with net, VAT and gross" loading="lazy">
+          <img data-i="4" src="/products/subscription-tracker/img/vendors.png" alt="Vendors with country, VAT ID, subscriptions and total paid" loading="lazy">
+        </div>
+      </div>
+    </div></div>
+</div>
+  </div>
+</section>
+
+<section id="features" style="padding-top:0">
+  <div class="wrap">
+    
+    
+
+    <div class="extra" style="margin-top:0">
+      <div class="card b-history">
+        <div class="txt">
+          <span class="tag" style="background:#e6dfff;color:#4a2fd0">◷ Inside every subscription</span>
+          <h3>Its whole story, on one page.</h3>
+          <p>When it started, paused, ended or came back, each price it has had, and every payment with its invoice number.</p>
+        </div>
+        <img class="shot" src="/products/subscription-tracker/img/desktop-detail.png" alt="A subscription's history timeline and payment list" loading="lazy">
+      </div>
+      <div class="card b-price">
+        <div class="txt">
+          <span class="tag" style="background:#ffdcd7;color:#d8402f">↗ Price changes</span>
+          <h3>See how prices move.</h3>
+          <p>Old price, new price and the % change, worked out from what you actually paid.</p>
+        </div>
+        <div class="bars">
+          <span style="height:42%"></span><span style="height:42%"></span><span style="height:42%"></span>
+          <span class="up" data-l="+12%" style="height:56%"></span><span style="height:56%"></span>
+          <span class="up" data-l="+25%" style="height:78%"></span><span style="height:78%"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mobile" class="dark">
+  <div class="wrap split">
+    <div>
+      <span class="kicker" style="background:rgba(255,95,168,.18);color:#ff8cc2">On any screen</span>
+      <h2>Check what's due, wherever you are.</h2>
+      <p class="sub">The same clear view on your phone: recent changes, upcoming charges and the full story of each subscription.</p>
+      <ul class="checks">
+        <li><b style="background:var(--teal)">✓</b>Switch net, VAT or gross in one tap</li>
+        <li><b style="background:var(--violet)">✓</b>Each subscription's timeline, made for a small screen</li>
+        <li><b style="background:var(--coral)">✓</b>Your data stays on your device, with no bank login</li>
+      </ul>
+    </div>
+    <div class="phones">
+      <div class="phone tilt-l"><img src="/products/subscription-tracker/img/phone-dashboard.png" alt="Dashboard on a phone"></div>
+      <div class="phone tilt-r"><img src="/products/subscription-tracker/img/phone-detail.png" alt="Subscription detail on a phone"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat s1"><div class="n">6 billing cycles</div><p>Once, daily, weekly, twice a month, monthly and yearly, every 1 to 120 periods.</p></div>
+      <div class="stat s2"><div class="n">Net · VAT · Gross</div><p>Every amount split, with the VAT rate kept for each price period.</p></div>
+      <div class="stat s3"><div class="n">100% local</div><p>Runs on your own machine. No bank connection, no tracking.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="closing">
+      <h2>Know where your money goes, month after month.</h2>
+      <p>Your subscriptions, payments and vendors, in one clear record.</p>
+    </div>
+  </div>
+</section>
+
+<section class="maker">
+  <div class="wrap">
+    <div class="maker-card">
+      <span class="kicker" style="background:#efeaff;color:#5a3de0">The maker</span>
+      <h2>Renewals is created by Dr.&nbsp;Pranoti Kshirsagar.</h2>
+      <p>From her own pain point to a working product: research, design and build, end to end.</p>
+      <a class="maker-link" href="/about/">About Pranoti →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Renewals</span>
+    <span>Screenshots show made-up demo data.</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var tabs = document.querySelectorAll('.tabs button'), imgs = document.querySelectorAll('.frame img'), i = 0, timer;
+    function show(n) { i = n; tabs.forEach(function (t) { t.setAttribute('aria-selected', t.dataset.i == n); });
+      imgs.forEach(function (im) { im.classList.toggle('on', im.dataset.i == n); }); }
+    function auto() { timer = setInterval(function () { show((i + 1) % tabs.length); }, 5000); }
+    tabs.forEach(function (t) { t.addEventListener('click', function () { clearInterval(timer); show(+t.dataset.i); }); });
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) auto();
+  })();
+</script>
+{{ partial "consent-banner.html" . }}
+</body>
+</html>
