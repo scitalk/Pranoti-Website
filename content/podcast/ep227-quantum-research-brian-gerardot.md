@@ -30,6 +30,15 @@ wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/brian-ger
 
 Prof. Brian Gerardot from Heriot-Watt University studies quantum devices and materials—including quantum dots, 2D materials, and silicon carbide. His curiosity-driven research on Moire patterns and optical manipulation of magnetism is shaping the future of quantum technologies.
 
+## In this episode
+
+- How Brian's group designs and makes quantum devices from quantum dots and 2D materials, to study single electrons and photons and how they interact
+- What 2D semiconductors are, and how twisting two atomic sheets creates moiré patterns that trap electrons
+- Why curiosity-driven research ends up in technology, from the heterostructures in every phone to possible new kinds of transistor
+- His path from materials science at Purdue and growing quantum dots at UC Santa Barbara to quantum optics at Heriot-Watt University in Scotland
+- The result he picked: making a non-magnetic material magnetic just by changing how many electrons sit in the moiré pattern, and reading it out with light
+- His three wishes: a Eureka moment for every PhD student, more technicians and engineers in the lab, and a fairer reward system for papers and grants
+
 {{< split image="https://thesciencetalk.com/wp-content/uploads/2025/01/227_Brian_Gerardot.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

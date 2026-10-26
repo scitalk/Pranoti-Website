@@ -18,6 +18,15 @@ aliases: ["/podcast/hot-single-photons-for-quantum-communications-quantour-carlo
 
 An experiment born of a mistake at the end of his postdoc with Pascale Senellart: exciting a semiconductor quantum dot with two close pulses to create a vacuum-and-single-photon entangled |00>+|11> state; a year of pandemic-era analysis confirmed it, and with more pulses the emitted light state follows the Fibonacci sequence and golden ratio.
 
+## In this episode
+
+- What "hot" single photons are: light emitted at room temperature, and why photons from samples cooled close to absolute zero are cleaner
+- Why defects in hexagonal boron nitride can emit single photons without a cryostat, and how Carlos's team creates them
+- A European project to send room-temperature single photons 700 metres through the air for secure communication
+- His path from Madrid, via Pascale Senellart's group in Paris and 2D materials in Würzburg and Oldenburg, back to a tenure track at the Autonomous University of Madrid
+- The experiment he is proudest of: two quick laser pulses that made a quantum dot emit an entangled state of photons and vacuum, with a surprising link to the Fibonacci sequence
+- His wishes: less bureaucracy, unlimited funding and a good coffee machine for the lab
+
 ## Key Takeaways
 
 - Tenure-track researcher at the Autonomous University of Madrid working on 'hot' (room-temperature) single photons from defects in hexagonal boron nitride, alongside continued work on semiconductor quantum dots.

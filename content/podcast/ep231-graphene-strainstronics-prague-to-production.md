@@ -30,6 +30,14 @@ wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/graphene-
 
 Dr. Martin Rejhon is advancing fundamental graphene research at Charles University Prague—particularly epitaxial graphene on silicon carbide. His work on strain-engineered graphene opens scalable pathways toward future optoelectronics and advanced electronic devices.
 
+## In this episode
+
+- How Martin's group at Charles University grows graphene by heating silicon carbide until the silicon leaves and the carbon left behind forms layers
+- Why three-layer graphene can stack in two ways, ABA and ABC, explained with slices of bread and playing cards, and why ABC is his favourite
+- Why his group controls the stacking order with strain rather than twisting, and why a method that works on a whole wafer matters for industry
+- How Raman spectroscopy and atomic force microscopy tell the stacking orders apart
+- The Nano Scientific Forum Europe coming to Prague in September 2026
+
 {{< split image="https://thesciencetalk.com/wp-content/uploads/2025/05/S7E3_Martin-Rejhon_Podcast-artwork-1024x1024.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

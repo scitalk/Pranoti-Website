@@ -30,6 +30,15 @@ wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/multi-qub
 
 Prof. Nika Akopian from DTU is pioneering multi-qubit devices with photonic interfaces—a key technology in advancing quantum computing and the quantum internet. His research on crystal phase control at the atomic layer is solving scalability challenges in quantum dot applications.
 
+## In this episode
+
+- What a multi-qubit device with a photonic interface is, and why it matters for a future quantum internet
+- What a qubit is, and why quantum information travels in a single photon that cannot be copied
+- Why making several identical quantum dots in a row has been so hard for 30 years, and how crystal phase quantum dots, made from one material with different atomic arrangements, could solve it
+- How in situ electron microscopy lets collaborators in Paris and Lund watch nanowires grow atom by atom
+- Nika's path from Technion in Haifa via Delft and Eindhoven to the Technical University of Denmark, and why quantum dots are called artificial atoms
+- Why the freedom to create keeps him in science, and his wishes: more funding, less bureaucracy and successful projects
+
 {{< split image="https://thesciencetalk.com/wp-content/uploads/2025/01/Doris-Reiter.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

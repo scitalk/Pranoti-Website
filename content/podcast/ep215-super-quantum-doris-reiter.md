@@ -18,6 +18,15 @@ aliases: ["/podcast/super-quantum-doris-reiter/"]
 
 The 'SUPER' scheme (Swing-Up of quantum Emitter Population): using two red-detuned laser pulses, like two too-short ladders you jump between, to excite a quantum dot and get clean single photons for provably secure quantum key distribution; labs tried it immediately and it worked.
 
+## In this episode
+
+- What a theoretical physicist does: modelling, with the rules of quantum mechanics, how electrons in solids behave when light hits them
+- Why theorists and experimentalists have to learn each other's language, and when a simulation needs a supercomputer
+- How Doris went from a physics diploma to a permanent position at TU Dortmund, and why theory suited her better than the lab
+- The project she picked: SUPER, a new way to excite a quantum emitter so it releases single photons for secure communication, explained with ladders and a diving tower
+- Why physics feels like folk dancing: a common ground with people anywhere in the world
+- Her three wishes: a professorship, permanent positions for talented colleagues, and a new puzzle to fascinate her
+
 ## Key Takeaways
 
 - Theoretical physicist and group leader at TU Dortmund, modelling how nanoscale quantum dots interact with light, using simulations, code (Python, C++, Fortran) and supercomputers.

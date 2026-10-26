@@ -30,6 +30,14 @@ wp_canonical: "https://thesciencetalk.com/3d-microscopy-snapshot-imaging"
 
 What if we could capture stunning 3D images of living cells, tissues—or even a tiny zebrafish brain—in real time, without staining, freezing, or harming them? Prof. Humeyra Caglayan's research on snapshot 3D microscopy makes this possible.
 
+## In this episode
+
+- What the 3D Microscopy project aims for: 3D images of living cells and organisms in a single snapshot, without killing the sample
+- Why the team images zebrafish, which share about 70% of their genes with humans, and why brain activity needs faster images than one every 1.5 seconds
+- How meta optics extend the depth of focus from a few microns to 300 to 500 microns, by mimicking the way we tilt our heads to see in 3D
+- The team behind it at Tampere University: optics, image reconstruction software and biomedical partners
+- Where the project stands after two years, and the next step: bringing the microscope to pathologists and operating rooms
+
 {{< split image="https://thesciencetalk.com/wp-content/uploads/2025/06/233_Humeyr_S7E5-scaled.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

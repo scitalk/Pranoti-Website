@@ -30,6 +30,15 @@ wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/quantum-l
 
 Prof. Wolfgang Löffler from Leiden University explores the interaction between light and matter at the quantum level—with a surprising application: can humans consciously perceive a single photon?
 
+## In this episode
+
+- What Wolfgang's group at the Leiden Institute of Physics studies: how light and matter interact at the quantum level, using single photons and quantum dots
+- Whether humans can consciously see a single photon, and why his group is testing it with cognitive neuroscientists
+- Why his group works with the same kind of quantum dots as the QuanTour source, and why teaming up with other groups for samples gives the best devices
+- His path along the Rhine from Ludwigshafen and Karlsruhe to Leiden, where helium was first liquefied
+- The experiment he picked: turning single photons back into classical, laser-like light using a beam splitter and a few mirrors
+- Why teaching and outreach matter to him, and his wishes: more time, secure funding, and more and better single photons
+
 {{< split image="https://thesciencetalk.com/wp-content/uploads/2025/01/228_Wolfgang_Loffler.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

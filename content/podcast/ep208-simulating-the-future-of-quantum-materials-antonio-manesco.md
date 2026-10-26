@@ -18,6 +18,15 @@ aliases: ["/podcast/simulating-the-future-of-quantum-materials-antonio-manesco/"
 
 A just-posted arXiv paper proposing the basic building block of a fermionic quantum computer, a device built from superconductors and semiconductors that behaves like interacting electrons, so simulating many-electron systems avoids the qubit–electron mismatch.
 
+## In this episode
+
+- What a theoretical physicist in nanoelectronics does all day: Python code, and calculations sent off to a computer cluster
+- How cutting ceramic superconductor samples as an undergraduate in São Paulo pushed Antonio towards theory, and how he moved from Brazil to TU Delft
+- What topological insulators are, and why the metallic edge between two kinds of insulator is so good at moving electrons
+- The project he picked: a building block for a fermionic quantum computer, made from superconductors and semiconductors, that behaves more like electrons than qubits do
+- Why he enjoys the freedom to choose his own problems, and teaching students
+- His three wishes: stable careers for postdocs, an end to geographical bias in academia, and real open science, including shared code and data
+
 {{< split image="/digital-content-hub/images/Antonio%20208.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

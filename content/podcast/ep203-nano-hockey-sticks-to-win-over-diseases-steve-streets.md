@@ -212,6 +212,15 @@ aliases: ["/podcast/nano-hockey-sticks-to-win-over-diseases-steve-streets/"]
 
 Making tiny non-spherical block-copolymer 'sticks' (nanofibers via crystallisation-driven self-assembly) functionalised to bind DNA on their surface, the first non-spherical 'micelleplex', as gene-delivery vehicles, tested by making brain-cancer cells glow with firefly luciferase.
 
+## In this episode
+
+- Why everything at the nanoscale wants to be a sphere, and how Steve makes polymer nanofibres, or tiny sticks, instead
+- The difference between top-down and bottom-up nanomaterials, explained with stone and clay
+- His path from a most improved student award and a job testing soil for pesticides to a PhD on sugar-based anti-cancer compounds in Bristol, then a move to the University of Victoria
+- Why getting medicines to the right place in the body, such as the brain, is so hard
+- The project he is proudest of: nanofibres that carry DNA on the outside, like hair caught in a hairbrush, tested by making brain cancer cells glow
+- His three wishes: a less wasteful funding system, a public that understands chemistry better, and a better quality of life for scientists in academia
+
 {{< split image="/digital-content-hub/images/203_steven%20Streets.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

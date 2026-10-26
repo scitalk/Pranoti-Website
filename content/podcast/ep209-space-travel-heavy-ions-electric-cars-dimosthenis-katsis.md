@@ -18,6 +18,15 @@ aliases: ["/podcast/space-travel-heavy-ions-electric-cars-dimosthenis-katsis/"]
 
 An Army Research Lab project using radioactive tritium to make copper-doped zinc-sulphide tubes glow green, coupled to cylindrical solar cells, creating tiny undetectable 20-year 'tritium batteries' for long-life field sensors.
 
+## In this episode
+
+- How a consortium of companies shares research on silicon carbide and gallium nitride electronics for electric cars, chargers and aircraft
+- Why hybrid electric aircraft can fly with a turbine the size of a watermelon
+- How racing the slowest solar car in a coast-to-coast competition at Virginia Tech started Dimos's career in power electronics
+- Why material science, down to the polymer poured over a battery pack, is what makes electric vehicles safe
+- Testing electronics for Blue Origin by firing heavy ions at them to mimic space weather, and his quirkiest project: tritium-powered batteries designed to last 20 years
+- His wishes: forward-thinking funding for the places hit hardest by climate change, and a better relationship between scientists and everyone else
+
 {{< split image="/digital-content-hub/images/Dimos%20209.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

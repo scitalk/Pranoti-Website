@@ -18,6 +18,15 @@ aliases: ["/podcast/molecular-puzzles-in-chemical-bathtubs-chris-brewer/"]
 
 His graduate project designing ruthenium precursor molecules for photo-assisted chemical vapour deposition, building the IR-based apparatus himself and working out the full stepwise light-driven decomposition pathway and quantum yield to screen candidates for his collaborator.
 
+## In this episode
+
+- How Chris moved from making molecules to surface science, now depositing tin sulfide and iron sulfide from a chemical bath at UT Dallas
+- Why depositing materials onto organic layers could matter for flexible electronics
+- How volunteering at a science museum in Tampa from age 14 started his path, and the Harry Potter themed potions class he created at the University of Florida
+- The project he is proudest of: working out, step by step, how ruthenium molecules break apart under light, to design better precursors for metal films
+- Why he once ran his reactions on the roof of the chemistry building, and how curiosity keeps research exciting
+- His three wishes: access to any instrument, machine shop skills to build custom setups, and robots to take over routine lab work
+
 {{< split image="/digital-content-hub/images/Chris%20211.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

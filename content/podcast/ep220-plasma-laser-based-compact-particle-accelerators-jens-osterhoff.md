@@ -18,6 +18,15 @@ aliases: ["/podcast/plasma-laser-based-compact-particle-accelerators-jens-osterh
 
 FLASHForward', the plasma-based accelerator project he created, proposed, got funded and ran for ~10 years at DESY: doubling a 1 GeV beam's energy in ~10 cm of plasma while preserving beam quality, and the first study of plasma acceleration at MHz repetition rates.
 
+## In this episode
+
+- How Jens's team shrinks particle accelerators from hundreds of metres to a few centimetres using high-intensity lasers and plasmas
+- What compact accelerators could make possible: mobile cancer therapy, smaller X-ray lasers and more affordable particle colliders
+- Why machine learning matters for running these accelerators, and how a national lab and a startup work together
+- His path from Würzburg via Texas and Munich to DESY in Hamburg, and now the BELLA Center at Lawrence Berkeley National Laboratory
+- The project he is proudest of: FLASHForward at DESY, which doubled a beam's energy in a few centimetres of plasma while keeping its quality, and tested plasma acceleration at very high repetition rates
+- The dream of an endoscopic particle accelerator for treating tumours, and his three wishes: money, time and wisdom
+
 {{< split image="/digital-content-hub/images/S6E6_Jens_2024.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

@@ -18,6 +18,15 @@ aliases: ["/podcast/superpowers-of-ferroelectrics-ipek-efe/"]
 
 Her current work growing self-healing Aurivillius ferroelectric thin films: using in-situ second-harmonic generation to watch polarization during growth (revealing a two-step behaviour), then engineering bismuth ferrite into the fatigue-free framework to get a net, non-degrading polarization.
 
+## In this episode
+
+- What ferroelectric materials are, explained by comparison with fridge magnets
+- Why the same ceramic can respond to pressure, heat and light, and what that means for sensors
+- How a summer internship at CERN on bismuth ferrite took Ipek from Sabancı University in Istanbul to a PhD at ETH Zurich
+- Why ferroelectrics wear out after millions of uses, and how "self-healing" Aurivillius crystals avoid this fatigue
+- How shining a laser on a film while it grows let her team watch its polarisation change for the first time
+- Her three wishes: more talk between scientific fields, more science communication with the public, and time for side projects driven by curiosity
+
 {{< split image="/digital-content-hub/images/205_Ipek%20Efe.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

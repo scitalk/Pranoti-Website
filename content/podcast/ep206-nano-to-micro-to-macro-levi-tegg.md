@@ -18,6 +18,15 @@ aliases: ["/podcast/nano-to-micro-to-macro-levi-tegg/"]
 
 His PhD on conductive perovskite-like metal oxides, including a neutron-powder-diffraction 'cake baking' experiment (samples dropped into a furnace in the neutron beam) that showed the synthesis completes in 15–20 seconds, not the ~8 hours the literature claimed.
 
+## In this episode
+
+- Why Levi studies ice with an atom probe microscope, as a route to 3D atomic maps of proteins and DNA
+- What makes the atom probe different from SEM and TEM: atomic scale, natively 3D, and it tells you which atom is which
+- How a six-week summer project on a transmission electron microscope led to a physics PhD and a role at the University of Sydney's microscopy centre
+- The experiment he picked: watching a metal oxide form in a neutron beam in 15 to 20 seconds, not the eight hours the literature suggested
+- Why the collaborative side of science is what he enjoys most beyond research
+- His three wishes: more ongoing jobs in Australian academia, more varied funding, and a barista for the microscopy facility
+
 {{< split image="/digital-content-hub/images/Levi%20206.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

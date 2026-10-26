@@ -18,6 +18,15 @@ aliases: ["/podcast/crystals-comics-calculations-chemistry-amber-lim/"]
 
 Her last published paper on the two temperature-dependent polymorphs of IrIn3: the cheap DFT chemical-pressure method hinted that atoms vibrate into void spaces in the high-temperature structure, and phonon calculations then predicted the phase-transition temperature at ~400 °C vs the experimental 350 °C.
 
+## In this episode
+
+- What intermetallic crystals are, and why crystals made only of metals can form such complicated structures
+- Why Amber's group studies metallic bonding and leaves organic compounds aside
+- How a high school research programme in Texas and a few exploding samples in an undergraduate lab turned her from experiments to computational chemistry at the University of Wisconsin-Madison
+- The project she picked: predicting the temperature at which iridium indium 3 switches between two crystal structures, close to the value measured in experiments
+- Why the people, from comic artists to D&D players, are her favourite part of science, and how she uses comics to explain her research
+- Her three wishes: learning computer science and good documentation earlier, finding mentors outside her group sooner, and research funding that keeps up with inflation
+
 {{< split image="/digital-content-hub/images/214_Amber_Lim.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

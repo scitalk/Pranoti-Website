@@ -18,6 +18,15 @@ aliases: ["/podcast/the-magic-of-flows-ketan-madane/"]
 
 First demonstration (paper in Chemical Engineering Journal) of augmenting a standard stirred-tank crystalliser with an external fluidic loop, T-junction, then fluidic oscillator, then vortex diode (whose cavitation shockwaves also break crystals), to directly control paracetamol particle-size distribution, cutting mean size ~150 to 100 µm with a repeatable, narrow spread.
 
+## In this episode
+
+- What "MAGIC" processes are: modular, agile, intensified and continuous alternatives to mixing chemicals in a stirred tank, and how even the shape of a pipe changes the flow
+- How a fluidic oscillator, first invented in the 1960s for fluid-based computers, makes a jet swing back and forth with no moving parts, thanks to the Coanda effect
+- How a vortex diode creates bubbles whose shockwaves can break crystals, as an alternative to milling
+- The project Ketan is proudest of: adding these devices to a stirred tank to make paracetamol crystals smaller, more even and more repeatable
+- His path from mechanical engineering and industry in India, via CSIR National Chemical Laboratory in Pune, to a PhD at the University of Limerick
+- His three wishes: better bridges between disciplines, a supercomputer, and sustainable research funding and recognition
+
 {{< split image="/digital-content-hub/images/Ketan%20212.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

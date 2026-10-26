@@ -30,6 +30,15 @@ wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/taming-th
 
 Prof. Anna Musiał is the final QuanTour Hero on Under the Microscope. Her research at Wroclaw University of Science and Technology focuses on quantum dots that are invisible to the naked eye and operate in the infrared spectrum—critical for next-generation quantum communication.
 
+## In this episode
+
+- What "taming the invisible" means: quantum dots too small to see that emit infrared light you can't see either
+- How Anna's lab tests telecom-wavelength quantum dots grown by collaborators across Europe, to check whether they really emit single, identical or entangled photons
+- How a sarcastic high school physics teacher and a set of Feynman lectures led her to physics in Wrocław, a postdoc at TU Berlin and back to Wrocław University of Science and Technology
+- The project she picked: FI-SEQUR, a Polish-German project with companies that built a single photon source delivered straight into a standard telecom fibre
+- Why an experimental physicist also has to be an electrician, a plumber and a diplomat
+- Her three wishes: fairer ways to evaluate scientists than journal points, more time for research than other duties, and room for high-risk research
+
 {{< split image="https://thesciencetalk.com/wp-content/uploads/2025/03/Podcast-Art_S7E2_AnnaQuanTour-1024x1024.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

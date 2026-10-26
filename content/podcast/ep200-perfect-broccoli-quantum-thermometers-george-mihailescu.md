@@ -18,6 +18,15 @@ aliases: ["/podcast/perfect-broccoli-quantum-thermometers-george-mihailescu/"]
 
 Using a quantum system itself as a thermometer to measure a quantum sample's temperature with maximum precision, his first PhD project, tested on graphene, twisted bilayer graphene and metals, giving a robust, well-defined thermometric response.
 
+## In this episode
+
+- How George moved from a physics with biomedical sciences degree to a PhD in quantum technologies at University College Dublin
+- What a quantum battery is, and why one won't be in your phone any time soon
+- Why an Irish startup wants to build quantum computers on CMOS, the chip technology already inside phones and laptops
+- How quantum computing could speed up training AI models such as ChatGPT
+- His first PhD project: using a quantum system as a thermometer for quantum samples such as graphene and metals, and why precise temperatures matter for quantum devices
+- His three wishes: more time, PhD stipends you can live on in Ireland, and a better laptop keyboard
+
 {{< split image="/digital-content-hub/images/George.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

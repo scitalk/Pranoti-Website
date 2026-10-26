@@ -30,6 +30,15 @@ wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/nanofrazo
 
 Prof. Elisa Riedo from NYU is pioneering [NanoFrazor](https://nanofrazor.com/) technology — enabling precise 3D sculpting at the atomic level. From diamond-like graphene layers to at-home STI testing, her work spans materials science and health diagnostics.
 
+## In this episode
+
+- What Elisa's lab at New York University studies: the mechanical and electrical properties of nanoscale materials, from graphene to polymers
+- How pressing two layers of graphene together can turn them into a single layer of diamond, harder than bulk diamond
+- How thermal scanning probe lithography works, a heated tip about 5 nanometres wide that sculpts 3D nanostructures like a pen, and how it grew from an abandoned IBM memory project into the NanoFrazor
+- Her path from a small town near Milan, inspired by a book of Albert Einstein's letters, to Georgia Tech and NYU
+- The project she is excited about now: microchips whose transistors each detect a different pathogen, for affordable tests at home, and the startup she co-founded
+- Why teamwork is what keeps her in science, and her three wishes: fewer emails and video calls, more face-to-face contact, and a slower pace
+
 {{< split image="https://thesciencetalk.com/wp-content/uploads/2024/11/S6E15_Elisa-1-1024x1024.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

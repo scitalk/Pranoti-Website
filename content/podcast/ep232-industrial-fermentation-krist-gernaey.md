@@ -29,6 +29,15 @@ wp_canonical: "https://thesciencetalk.com/podcast/industrial-fermentation-krist-
 
 Industrial fermentation underpins the production of biofuels, detergent enzymes, and industrial proteins at scale. Prof. Krist Gernaey from DTU brings his expertise to demystify this complex world—from the biology of microorganisms to the engineering challenges of bioreactor scale-up.
 
+## In this episode
+
+- What industrial fermentation is: using microorganisms in bioreactors of up to hundreds of cubic metres to make enzymes, biofuels and proteins
+- How a process is scaled up from a small lab experiment to production, and why biologists and process engineers have to work together
+- How enthusiastic professors at Ghent University drew Krist into science, and his path from lab work on microbes to mathematical modelling, via Montreal and Lund, to a professorship at the Technical University of Denmark
+- What balancing a scientific career with raising a family really looks like
+- The projects he picked: BioPro, an industry and academia project that led to around ten startups, and a new enzyme-free sensor that uses nanomaterials to measure glucose in fermentations
+- His three wishes: less time spent applying for funding, starting on fermentation earlier, and 30-hour days
+
 {{< split image="https://thesciencetalk.com/wp-content/uploads/2025/05/232_KristDTU_S7E4-scaled.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

@@ -18,6 +18,15 @@ aliases: ["/podcast/high-efficiency-quantum-photon-sources-quandela-quantour-pas
 
 Two projects: (1) the 2008 technique to optically locate a randomly-placed quantum dot and etch a cavity pillar exactly around it, a turning point that made devices controllable; and (2) realising a quantum dot can emit 'half a photon' (a superposition of one photon and no photon) via coherent control, explaining years of strange fluctuating detector signals.
 
+## In this episode
+
+- How Pascale's group places a quantum dot exactly between two mirrors so it sends its photons in one direction
+- Why identical photons matter for quantum computing, and how her team made them 99.5% identical
+- How that lab work became Quandela, the company she co-founded, and its quantum computer on the cloud
+- Chains of entangled photons for error correction, and fundamental work on what heat means at the quantum level
+- Her path from teenage internships at a radio astronomy station to École Polytechnique and C2N in Paris, and why she sees engineering as just as noble as fundamental science
+- The surprise she is proudest of: a quantum dot that emits one photon and no photon at the same time, and her three wishes: a slower pace for science, more trust between politicians and scientists, and less gender bias
+
 ## Key Takeaways
 
 - Research director at CNRS (C2N, Paris-Saclay), Ecole Polytechnique lecturer, French Presidential Science Council and Academy of Science member, and co-founder of Quandela, she loves marrying fundamental science and industry.

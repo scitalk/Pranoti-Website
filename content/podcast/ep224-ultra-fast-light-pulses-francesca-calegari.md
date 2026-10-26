@@ -29,6 +29,15 @@ wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/ultra-fas
 
 Prof. Francesca Calegari at the University of Hamburg and DESY studies ultra-fast light pulses and attosecond technology—allowing scientists to observe rapid electron dynamics in real time. Her work is opening new possibilities for materials science and quantum research.
 
+## In this episode
+
+- Why matter is never still, and how attosecond light pulses let Francesca watch electrons, the fastest movers in a molecule
+- How high-order harmonic generation turns a laser into attosecond pulses, and how a flash photography trick turns them into electron movies
+- Why experimentalists and theorists work together to turn the signals into a molecular movie
+- Her path from a microscope her mother gave her, via Politecnico di Milano and an ERC Starting Grant, to the University of Hamburg and DESY
+- The work she is proudest of: the first attosecond studies of electron motion in amino acids, despite the sceptics, and the shortest ultraviolet pulses used for measurements
+- Her roles beyond research, and her three wishes: funding that leaves room for open research, more diversity in science, and more time in the lab
+
 {{< split image="https://thesciencetalk.com/wp-content/uploads/2024/10/S6E10_Francesca_01-1024x1024.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

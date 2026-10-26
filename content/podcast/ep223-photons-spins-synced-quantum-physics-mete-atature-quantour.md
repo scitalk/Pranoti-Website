@@ -18,6 +18,15 @@ aliases: ["/podcast/photons-spins-synced-quantum-physics-mete-atature-quantour/"
 
 Demonstrating that a single photon from a semiconductor quantum dot can be quadrature-squeezed, its electric-field noise dropping below vacuum, 'below the level of nothingness', a property textbooks said was too hard to observe.
 
+## In this episode
+
+- How Mete's group studies light and matter one photon and one electron spin at a time, to build quantum networks and quantum sensors
+- How a quantum dot can entangle a photon with an electron spin, and why quantum repeaters, not amplifiers, are needed to carry that entanglement over long distances
+- Why no single material does it all: quantum dots for photons, diamond for long-lived spins, and hexagonal boron nitride that works at almost any temperature
+- How nanodiamond sensors inside living cells and worms can report temperature, magnetic fields and pH from the inside
+- His path from Bilkent University in Turkey via Boston and ETH Zurich to Cambridge, and the result he picked: showing that a single photon's electric field can be quieter than vacuum
+- His three wishes: keep working with great teams, find unallocated time to think, and steady baseline funding
+
 ## Key Takeaways
 
 - Professor at University of Cambridge studying light–matter interaction at the quantum level in semiconductors, diamond and 2D materials, for quantum networks and quantum sensors.

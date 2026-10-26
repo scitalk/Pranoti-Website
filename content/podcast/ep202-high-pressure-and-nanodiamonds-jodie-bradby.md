@@ -100,6 +100,15 @@ aliases: ["/podcast/high-pressure-and-nanodiamonds-jodie-bradby/"]
 
 Discovering a new hexagonal form of diamond ('Lonsdaleite', predicted ~58% harder than normal diamond) made at room temperature just by squeezing, a career-changing moment.
 
+## In this episode
+
+- What high-pressure physics is: squeezing materials into new crystal structures, the way the Earth makes diamonds
+- Why silicon can take 13 different structures, and how a new form could help solar cells absorb more of the sun's light
+- How a diamond anvil cell squeezes a speck of dust between two diamonds, and what it looks like when silicon turns into a metal
+- How a PhD spent poking silicon with one diamond led Jodie into high-pressure physics, and why she slices recovered samples for the electron microscope
+- The discovery she is proudest of: hexagonal diamond, predicted to be harder than regular diamond, made at room temperature
+- Her three wishes: more women in physics, a less wasteful grant system, and an end to judging research by journal impact factors
+
 {{< split image="/digital-content-hub/images/Jodie.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

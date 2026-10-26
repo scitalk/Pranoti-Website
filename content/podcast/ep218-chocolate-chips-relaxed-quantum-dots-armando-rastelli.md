@@ -18,6 +18,15 @@ aliases: ["/podcast/chocolate-chips-relaxed-quantum-dots-armando-rastelli/"]
 
 Figuring out during his postdoc how to make quantum dots without strain, overturning the assumption that stress is the driving force for dot formation; he grew the sample overnight and saw the proof of a new kind of 'golden dot' at 6 a.m., and 20 years later strain-free dots are taking over the field.
 
+## In this episode
+
+- What epitaxial quantum dots are, explained with a chocolate chip in a five-kilometre muffin, and how they differ from the colloidal dots in TV screens
+- Why these dots matter for secure communication, and how rings around the source steer single photons in one direction
+- How Armando went from taking gadgets apart as a child and detecting cosmic particles under a mountain to a professorship at Johannes Kepler University Linz
+- The project he is proudest of: quantum dots grown without strain, first seen at 6am after a night in the lab and now taking over the field 20 years later
+- How he once peeled graphene off graphite with sticky tape, and threw it away
+- Quantum Science Austria, QuanTour's travelling light source, and his one wish: less bureaucracy in science
+
 ## Key Takeaways
 
 - Professor at Johannes Kepler University Linz making epitaxial quantum dots (~50 nm wide, ~7 nm tall), 'chocolate chips in a 5-km muffin', for optoelectronic and quantum-light applications.

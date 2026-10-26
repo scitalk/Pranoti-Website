@@ -18,6 +18,15 @@ aliases: ["/podcast/nanoscience-revolusionizing-green-chemistry-julio-terra/"]
 
 A not-yet-published project (from his master's) showing catalytic chemistry runs very differently inside nanoscale mesoporous 'straws', e.g. hydrogen formed and consumed in the same confined nanosphere so it can't escape.
 
+## In this episode
+
+- What green chemistry means, and why small changes to a catalyst can make a whole chemical process greener
+- Why the pharmaceutical industry produces around 90% waste for 10% product, and how Julio made a rose fragrance and amines in fewer steps
+- What heterogeneous catalysis is, explained with salt and sand in water
+- His path from an agricultural university near his village in Brazil, via Toronto and McGill, to a postdoc at EPFL
+- How trapping reactions inside tiny pores changes the chemistry, explained with The Little Prince, and how this kept hydrogen in place long enough to use it
+- His three wishes for science: more LGBTQ people, more women and more BIPOC people
+
 {{< split image="/digital-content-hub/images/Julio.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 

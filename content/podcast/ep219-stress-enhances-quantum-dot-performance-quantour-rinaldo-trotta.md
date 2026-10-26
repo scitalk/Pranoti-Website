@@ -18,6 +18,15 @@ aliases: ["/podcast/stress-enhances-quantum-dot-performance-quantour-rinaldo-tro
 
 Discovering that because every quantum dot is slightly asymmetric, you need two (later three) independent strains, one to rotate, one to make it symmetric, applied locally, so any quantum dot can be tuned to emit polarisation-entangled photon pairs.
 
+## In this episode
+
+- Why Rinaldo's group puts quantum dots under stress, and electric and magnetic fields, to make them emit pairs of entangled photons
+- What entanglement is, explained with two dice that always land on the same number
+- How entanglement swapping could carry secure quantum communication beyond 100 km, and one day around the globe
+- His path from Sapienza University of Rome, via Dresden and Linz, back to Rome with an ERC Starting Grant, building a lab from empty rooms twice
+- The discovery he is proudest of: using two stresses, one to rotate and one to make symmetric, so any quantum dot can be tuned to emit entangled photons
+- Teaching quantum science to international students, and his wishes: less bureaucracy, more time in the lab and permanent positions for young researchers
+
 ## Key Takeaways
 
 - Professor at Sapienza University of Rome; deliberately stresses epitaxial quantum dots with strain, electric and magnetic fields to force them to emit entangled photons for long-distance secure quantum communication.

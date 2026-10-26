@@ -18,6 +18,15 @@ aliases: ["/podcast/faster-phones-thanks-to-spintronics-sofia-ferreira-teixeira/
 
 Her first undergrad internship/thesis simulating thermoelectric devices for cars, pushed by her supervisor to publish it despite thinking 'this is just undergrad work'; it was rejected, then published, and still gets cited, teaching her never to underestimate herself.
 
+## In this episode
+
+- What spintronics is: using the spin of electrons, not just their charge, to build faster and more energy-efficient devices
+- Why chips are hitting a limit on size and speed, and why the energy used by electronics matters
+- How a summer school in physics, then an undergraduate internship in Porto on thermoelectrics for cars, led Sofia to topological insulators, magnetic materials and a postdoc at CIC nanoGUNE in the Basque Country
+- The project she picked: her first paper, written as an undergraduate, and what it taught her about rejection and believing in her own work
+- Why she loves the international, team side of science and the "adrenaline for the mind" when a result finally clicks
+- Her three wishes: more diverse and empathetic science, less pressure to publish or perish, and easier access to instruments and materials
+
 {{< split image="/digital-content-hub/images/213_Sofia%20Ferreira%20Teixeira.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
