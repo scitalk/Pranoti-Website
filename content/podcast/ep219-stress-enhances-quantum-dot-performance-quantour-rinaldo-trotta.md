@@ -14,10 +14,6 @@ spotify_url: "https://open.spotify.com/episode/7FWlPNJsMI5AP40dE8n1cZ?si=ybhpBLR
 description: "Rinaldo works at Sapienza University of Rome, one of the largest universities in Europe located in the capital of Italy. He leads the Nanophotonics group, specializing in entangled photons. In the podcast, Rinaldo explains his exciting work in the field of nanophotonics."
 aliases: ["/podcast/stress-enhances-quantum-dot-performance-quantour-rinaldo-trotta/"]
 ---
-## In Other Words
-
-Discovering that because every quantum dot is slightly asymmetric, you need two (later three) independent strains, one to rotate, one to make it symmetric, applied locally, so any quantum dot can be tuned to emit polarisation-entangled photon pairs.
-
 ## In this episode
 
 - Why Rinaldo's group puts quantum dots under stress, and electric and magnetic fields, to make them emit pairs of entangled photons

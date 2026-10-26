@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/Ketan%20212.jpg"
 description: "the MAGIC of Flows: Ketan Madane on the Under the Microscope podcast, episode 212."
 aliases: ["/podcast/the-magic-of-flows-ketan-madane/"]
 ---
-## In Other Words
-
-First demonstration (paper in Chemical Engineering Journal) of augmenting a standard stirred-tank crystalliser with an external fluidic loop, T-junction, then fluidic oscillator, then vortex diode (whose cavitation shockwaves also break crystals), to directly control paracetamol particle-size distribution, cutting mean size ~150 to 100 µm with a repeatable, narrow spread.
-
 ## In this episode
 
 - What "MAGIC" processes are: modular, agile, intensified and continuous alternatives to mixing chemicals in a stirred tank, and how even the shape of a pipe changes the flow

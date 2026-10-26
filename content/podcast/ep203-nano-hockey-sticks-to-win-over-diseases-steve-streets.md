@@ -208,10 +208,6 @@ takeover:
         - text: "@ChemicalScience Hmm... great question! 😅 I feel like he's maybe the nucleolus? Or maybe a cancer protein like telomerase?😁"
 aliases: ["/podcast/nano-hockey-sticks-to-win-over-diseases-steve-streets/"]
 ---
-## In Other Words
-
-Making tiny non-spherical block-copolymer 'sticks' (nanofibers via crystallisation-driven self-assembly) functionalised to bind DNA on their surface, the first non-spherical 'micelleplex', as gene-delivery vehicles, tested by making brain-cancer cells glow with firefly luciferase.
-
 ## In this episode
 
 - Why everything at the nanoscale wants to be a sphere, and how Steve makes polymer nanofibres, or tiny sticks, instead

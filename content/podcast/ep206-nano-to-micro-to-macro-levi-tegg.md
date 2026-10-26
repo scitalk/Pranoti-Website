@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/Levi%20206.jpg"
 description: "Nano to Micro to Macro: Levi Tegg on the Under the Microscope podcast, episode 206."
 aliases: ["/podcast/nano-to-micro-to-macro-levi-tegg/"]
 ---
-## In Other Words
-
-His PhD on conductive perovskite-like metal oxides, including a neutron-powder-diffraction 'cake baking' experiment (samples dropped into a furnace in the neutron beam) that showed the synthesis completes in 15–20 seconds, not the ~8 hours the literature claimed.
-
 ## In this episode
 
 - Why Levi studies ice with an atom probe microscope, as a route to 3D atomic maps of proteins and DNA

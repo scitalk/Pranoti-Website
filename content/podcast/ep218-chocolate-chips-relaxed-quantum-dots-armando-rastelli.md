@@ -14,10 +14,6 @@ spotify_url: "https://open.spotify.com/episode/1WlfWglXVsOmO39oVdUx4A?si=XLCCyFB
 description: "Armando works at Johannes Kepler University (JKU) in Linz, Austria. His lab serves as the first stop for the quantum light source. At JKU, Armando heads the semiconductor physics division. In Austria, numerous groups are dedicated to quantum communication, converging under initiatives like Quantum Science Austria. Beyond quantum physics, Austria boasts stunning mountains, and Linz is situated along the majestic River Danube."
 aliases: ["/podcast/chocolate-chips-relaxed-quantum-dots-armando-rastelli/"]
 ---
-## In Other Words
-
-Figuring out during his postdoc how to make quantum dots without strain, overturning the assumption that stress is the driving force for dot formation; he grew the sample overnight and saw the proof of a new kind of 'golden dot' at 6 a.m., and 20 years later strain-free dots are taking over the field.
-
 ## In this episode
 
 - What epitaxial quantum dots are, explained with a chocolate chip in a five-kilometre muffin, and how they differ from the colloidal dots in TV screens

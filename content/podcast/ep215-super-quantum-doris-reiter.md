@@ -14,10 +14,6 @@ spotify_url: "https://open.spotify.com/episode/5AyHb676TAniPi1jrIiOh7?si=5TevPCQ
 description: "Doris is a theoretical physicist and works at TU Dortmund University in Germany, where she leads the group “Theory of solid-state nanostructures for quantum technologies”. With her group, she proposes new experiments for quantum control or explains theoretically what is observed in measurements. Doris is active in the German Physical Society (DPG) and its working group AGyouLeaP and organized several lecture formats, including Semiconductors for Breakfast, and now QuanTour."
 aliases: ["/podcast/super-quantum-doris-reiter/"]
 ---
-## In Other Words
-
-The 'SUPER' scheme (Swing-Up of quantum Emitter Population): using two red-detuned laser pulses, like two too-short ladders you jump between, to excite a quantum dot and get clean single photons for provably secure quantum key distribution; labs tried it immediately and it worked.
-
 ## In this episode
 
 - What a theoretical physicist does: modelling, with the rules of quantum mechanics, how electrons in solids behave when light hits them

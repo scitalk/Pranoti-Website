@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/Chris%20211.jpg"
 description: "Molecular Puzzles in Chemical Bathtubs: Chris Brewer on the Under the Microscope podcast, episode 211."
 aliases: ["/podcast/molecular-puzzles-in-chemical-bathtubs-chris-brewer/"]
 ---
-## In Other Words
-
-His graduate project designing ruthenium precursor molecules for photo-assisted chemical vapour deposition, building the IR-based apparatus himself and working out the full stepwise light-driven decomposition pathway and quantum yield to screen candidates for his collaborator.
-
 ## In this episode
 
 - How Chris moved from making molecules to surface science, now depositing tin sulfide and iron sulfide from a chemical bath at UT Dallas

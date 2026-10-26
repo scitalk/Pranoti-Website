@@ -96,10 +96,6 @@ takeover:
           images: ["/images/podcasts/takeover/jodie-bradby/Fub7XvvaUAIEud0.webp", "/images/podcasts/takeover/jodie-bradby/Fub7Xv6aAAE53ce.webp", "/images/podcasts/takeover/jodie-bradby/Fub7XwtaAAAnwja.webp", "/images/podcasts/takeover/jodie-bradby/Fub7Xw4aAAA1lBX.webp"]
 aliases: ["/podcast/high-pressure-and-nanodiamonds-jodie-bradby/"]
 ---
-## In Other Words
-
-Discovering a new hexagonal form of diamond ('Lonsdaleite', predicted ~58% harder than normal diamond) made at room temperature just by squeezing, a career-changing moment.
-
 ## In this episode
 
 - What high-pressure physics is: squeezing materials into new crystal structures, the way the Earth makes diamonds

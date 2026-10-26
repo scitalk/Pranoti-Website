@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/Antonio%20208.jpg"
 description: "Simulating the Future of Quantum Materials: Antonio Manesco on the Under the Microscope podcast, episode 208."
 aliases: ["/podcast/simulating-the-future-of-quantum-materials-antonio-manesco/"]
 ---
-## In Other Words
-
-A just-posted arXiv paper proposing the basic building block of a fermionic quantum computer, a device built from superconductors and semiconductors that behaves like interacting electrons, so simulating many-electron systems avoids the qubit–electron mismatch.
-
 ## In this episode
 
 - What a theoretical physicist in nanoelectronics does all day: Python code, and calculations sent off to a computer cluster

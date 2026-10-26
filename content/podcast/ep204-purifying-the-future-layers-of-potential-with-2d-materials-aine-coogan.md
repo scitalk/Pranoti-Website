@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/Aine%20204.jpg"
 description: "Purifying the Future: Layers of Potential with 2D materials: Aine Coogan on the Under the Microscope podcast, episode 204."
 aliases: ["/podcast/purifying-the-future-layers-of-potential-with-2d-materials-aine-coogan/"]
 ---
-## In Other Words
-
-A ~2-year project (paper just out in J. Mater. Chem. A) on 2D-material membrane filters that block wastewater dyes down to 2–3 nm, made reusable by adding copper/aluminium layered double hydroxides that photocatalytically destroy the trapped dye under a cheap €5 LED plus a little hydrogen peroxide.
-
 ## In this episode
 
 - How thin 2D materials are, and why Aine works with layered double hydroxides, a family she can tailor to different uses

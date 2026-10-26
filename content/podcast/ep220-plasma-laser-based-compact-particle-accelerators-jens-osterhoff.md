@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/S6E6_Jens_2024.jpg"
 description: "Jens is Deputy Director at the BELLA Center, Berkeley Lab, working on laser-based particle acceleration, miniaturized accelerators with potential applications in medical treatment and industrial processes."
 aliases: ["/podcast/plasma-laser-based-compact-particle-accelerators-jens-osterhoff/"]
 ---
-## In Other Words
-
-FLASHForward', the plasma-based accelerator project he created, proposed, got funded and ran for ~10 years at DESY: doubling a 1 GeV beam's energy in ~10 cm of plasma while preserving beam quality, and the first study of plasma acceleration at MHz repetition rates.
-
 ## In this episode
 
 - How Jens's team shrinks particle accelerators from hundreds of metres to a few centimetres using high-intensity lasers and plasmas

@@ -14,10 +14,6 @@ spotify_url: "https://open.spotify.com/episode/4GXOsLLpH6KodDDJDH0eIr?si=G0saby2
 description: "Pascale’s lab, “Optics of Semiconductor Nanostructures”, is located at Université Paris-Saclay. She and her team delve into the fundamental aspects of light-matter interaction, advancing towards optoelectronic devices. In the podcast, Pascale explains her exciting work in the field of quantum computing."
 aliases: ["/podcast/high-efficiency-quantum-photon-sources-quandela-quantour-pascale-senellart-mardon/"]
 ---
-## In Other Words
-
-Two projects: (1) the 2008 technique to optically locate a randomly-placed quantum dot and etch a cavity pillar exactly around it, a turning point that made devices controllable; and (2) realising a quantum dot can emit 'half a photon' (a superposition of one photon and no photon) via coherent control, explaining years of strange fluctuating detector signals.
-
 ## In this episode
 
 - How Pascale's group places a quantum dot exactly between two mirrors so it sends its photons in one direction

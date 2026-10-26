@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/213_Sofia%20Ferreira%20Teixeira.jpg"
 description: "Faster phones, thanks to SPINTRONICS: Sofia Ferreira Teixeira on the Under the Microscope podcast, episode 213."
 aliases: ["/podcast/faster-phones-thanks-to-spintronics-sofia-ferreira-teixeira/"]
 ---
-## In Other Words
-
-Her first undergrad internship/thesis simulating thermoelectric devices for cars, pushed by her supervisor to publish it despite thinking 'this is just undergrad work'; it was rejected, then published, and still gets cited, teaching her never to underestimate herself.
-
 ## In this episode
 
 - What spintronics is: using the spin of electrons, not just their charge, to build faster and more energy-efficient devices

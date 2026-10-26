@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/205_Ipek%20Efe.jpg"
 description: "Superpowers of Ferroelectrics: Ipek Efe on the Under the Microscope podcast, episode 205."
 aliases: ["/podcast/superpowers-of-ferroelectrics-ipek-efe/"]
 ---
-## In Other Words
-
-Her current work growing self-healing Aurivillius ferroelectric thin films: using in-situ second-harmonic generation to watch polarization during growth (revealing a two-step behaviour), then engineering bismuth ferrite into the fatigue-free framework to get a net, non-degrading polarization.
-
 ## In this episode
 
 - What ferroelectric materials are, explained by comparison with fridge magnets

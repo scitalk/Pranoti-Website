@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/Julio.jpg"
 description: "Nanoscience revolusionizing Green Chemistry?: Julio Terra on the Under the Microscope podcast, episode 201."
 aliases: ["/podcast/nanoscience-revolusionizing-green-chemistry-julio-terra/"]
 ---
-## In Other Words
-
-A not-yet-published project (from his master's) showing catalytic chemistry runs very differently inside nanoscale mesoporous 'straws', e.g. hydrogen formed and consumed in the same confined nanosphere so it can't escape.
-
 ## In this episode
 
 - What green chemistry means, and why small changes to a catalyst can make a whole chemical process greener

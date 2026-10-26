@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/George.jpg"
 description: "Perfect Broccoli & Quantum Thermometers: George Mihailescu on the Under the Microscope podcast, episode 200."
 aliases: ["/podcast/perfect-broccoli-quantum-thermometers-george-mihailescu/"]
 ---
-## In Other Words
-
-Using a quantum system itself as a thermometer to measure a quantum sample's temperature with maximum precision, his first PhD project, tested on graphene, twisted bilayer graphene and metals, giving a robust, well-defined thermometric response.
-
 ## In this episode
 
 - How George moved from a physics with biomedical sciences degree to a PhD in quantum technologies at University College Dublin

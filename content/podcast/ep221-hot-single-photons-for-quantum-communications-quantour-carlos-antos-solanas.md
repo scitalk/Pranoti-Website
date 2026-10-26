@@ -14,10 +14,6 @@ spotify_url: "https://open.spotify.com/episode/7bLMmutTW1PCDtNmAUargV?si=G2p35XY
 description: "Carlos and his lab are situated at the Universidad Autónoma de Madrid, ranked as the top university in Spain in 2022. Specializing in experimental quantum photonics, this young group aspires to expand the frontiers of knowledge in the field. In the podcast, Carlos explains his exciting work in the field of hot single photons."
 aliases: ["/podcast/hot-single-photons-for-quantum-communications-quantour-carlos-antos-solanas/"]
 ---
-## In Other Words
-
-An experiment born of a mistake at the end of his postdoc with Pascale Senellart: exciting a semiconductor quantum dot with two close pulses to create a vacuum-and-single-photon entangled |00>+|11> state; a year of pandemic-era analysis confirmed it, and with more pulses the emitted light state follows the Fibonacci sequence and golden ratio.
-
 ## In this episode
 
 - What "hot" single photons are: light emitted at room temperature, and why photons from samples cooled close to absolute zero are cleaner

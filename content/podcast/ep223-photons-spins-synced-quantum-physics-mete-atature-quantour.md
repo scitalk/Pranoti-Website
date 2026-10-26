@@ -14,10 +14,6 @@ spotify_url: "https://open.spotify.com/episode/4n7b8ZfkAGGiiGc7J5Vfye?si=XJYzFSr
 description: "Mete is the head of the Cavendish Laboratory in Cambridge. He leads the “Quantum Optical Materials and Systems” group, which boasts broad research interests spanning quantum dots, color centers in diamond, and atomically thin layered materials. In the podcast, Mete explains his exciting research in the field of quantum sensing, networks and communications."
 aliases: ["/podcast/photons-spins-synced-quantum-physics-mete-atature-quantour/"]
 ---
-## In Other Words
-
-Demonstrating that a single photon from a semiconductor quantum dot can be quadrature-squeezed, its electric-field noise dropping below vacuum, 'below the level of nothingness', a property textbooks said was too hard to observe.
-
 ## In this episode
 
 - How Mete's group studies light and matter one photon and one electron spin at a time, to build quantum networks and quantum sensors

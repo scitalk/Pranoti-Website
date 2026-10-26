@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/Dimos%20209.jpg"
 description: "Space Travel, Heavy Ions, Electric Cars: Dimosthenis Katsis on the Under the Microscope podcast, episode 209."
 aliases: ["/podcast/space-travel-heavy-ions-electric-cars-dimosthenis-katsis/"]
 ---
-## In Other Words
-
-An Army Research Lab project using radioactive tritium to make copper-doped zinc-sulphide tubes glow green, coupled to cylindrical solar cells, creating tiny undetectable 20-year 'tritium batteries' for long-life field sensors.
-
 ## In this episode
 
 - How a consortium of companies shares research on silicon carbide and gallium nitride electronics for electric cars, chargers and aircraft

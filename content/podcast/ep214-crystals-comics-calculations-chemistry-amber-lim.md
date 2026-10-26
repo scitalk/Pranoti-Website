@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/214_Amber_Lim.jpg"
 description: "Amber is a PhD researcher at the University of Wisconsin-Madison specializing in computational chemistry, predicting the crystal structures of intermetallic compounds to help design new materials."
 aliases: ["/podcast/crystals-comics-calculations-chemistry-amber-lim/"]
 ---
-## In Other Words
-
-Her last published paper on the two temperature-dependent polymorphs of IrIn3: the cheap DFT chemical-pressure method hinted that atoms vibrate into void spaces in the high-temperature structure, and phonon calculations then predicted the phase-transition temperature at ~400 °C vs the experimental 350 °C.
-
 ## In this episode
 
 - What intermetallic crystals are, and why crystals made only of metals can form such complicated structures

@@ -14,10 +14,6 @@ episode_image: "/digital-content-hub/images/Anastasiia%20207.jpg"
 description: "How to extend battery life of ELECTRIC VEHICLES: Anastasiia Mikheenkova on the Under the Microscope podcast, episode 207."
 aliases: ["/podcast/how-to-extend-battery-life-of-electric-vehicles-anastasiia-mikheenkova/"]
 ---
-## In Other Words
-
-A recently finalised multi-technique study (XAS, RIXS, TEM; ~12 authors) of how the redox activity of different transition metals and oxygen inside commercial Li-ion cells changes as the cells age.
-
 ## In this episode
 
 - How Anastasiia ages electric car batteries in the lab, then takes the cells apart to see what changed
