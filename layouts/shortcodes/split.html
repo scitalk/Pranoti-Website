@@ -1,0 +1,11 @@
+{{/* Two-column block for podcast episodes: markdown text beside an image with "Listen on" below it.
+     Usage: {{< split image="/path.jpg" side="right" >}} markdown {{< /split >}}  (side = image side; optional bg="#hex" sets a background; overlap="true" puts an offset pink block behind the image) */}}
+<div class="epa-split{{ if eq (.Get "side") "left" }} epa-split-left{{ end }}{{ if .Get "overlap" }} epa-split-overlap{{ end }}"{{ with .Get "bg" }} style="background:{{ . | safeCSS }};box-shadow:0 0 0 100vmax {{ . | safeCSS }};clip-path:inset(0 -100vmax);padding:1.5rem 0;"{{ end }}>
+  <div class="epa-split-text">
+    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+  </div>
+  <div class="epa-split-media">
+    {{ with .Get "image" }}<img src="{{ . }}" alt="{{ $.Page.Title }}" loading="lazy">{{ end }}
+    {{ partial "podcast-listen.html" .Page }}
+  </div>
+</div>

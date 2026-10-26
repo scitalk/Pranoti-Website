@@ -1,5 +1,5 @@
 ---
-external_url: "/podcast/multi-qubit-devices-and-quantum-internet-with-nika-akopian/"
+external_url: "/under-the-microscope/multi-qubit-devices-and-quantum-internet/"
 build:
   render: never
 title: "Multi-Qubit Devices and Quantum Internet"
@@ -13,7 +13,7 @@ client: "Nika Akopian"
 job_title: "Professor"
 affiliation: "Technical University of Denmark (DTU)"
 thumbnail: "/images/portfolio/01/Doris-Reiter.png"
-episode_url: "/podcast/multi-qubit-devices-and-quantum-internet-with-nika-akopian/"
+episode_url: "/under-the-microscope/multi-qubit-devices-and-quantum-internet/"
 tags: ["podcast", "S7"]
 spotify_url: "https://open.spotify.com/embed/episode/5MAiI2HeqqYn0WRudwnsqb"
 ---

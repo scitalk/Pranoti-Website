@@ -1,11 +1,13 @@
 ---
-aliases: ["/portfolio/podcast/anna-musial/"]
+aliases: ["/portfolio/podcast/anna-musial/", "/podcast/taming-the-invisible-quantum-dots-and-quantum-cryptography/"]
 draft: false
 title: "Taming the Invisible in the Quantum World"
 slug: "taming-the-invisible-quantum-dots-and-quantum-cryptography"
+url: "/under-the-microscope/taming-the-invisible-quantum-dots-and-quantum-cryptography/"
 episode_number: 230
 season: "S7"
 date: 2025-03-06
+layout: "article"
 guest_name: "Prof. Anna Musiał"
 guest_title: "Professor"
 guest_institution: "Wroclaw University of Science and Technology"
@@ -23,11 +25,12 @@ country: ["poland"]
 research_culture: ["international-collaboration", "women-in-stem"]
 episode_topics: ["quantum-dots", "quantum-cryptography", "single-photon-sources", "fiber-optics"]
 project: "QuanTour"
-wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope-podcast/taming-the-invisible-quantum-dots-and-quantum-cryptography/"
+wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/taming-the-invisible-quantum-dots-and-quantum-cryptography/"
 ---
 
 Prof. Anna Musiał is the final QuanTour Hero on Under the Microscope. Her research at Wroclaw University of Science and Technology focuses on quantum dots that are invisible to the naked eye and operate in the infrared spectrum—critical for next-generation quantum communication.
 
+{{< split image="https://thesciencetalk.com/wp-content/uploads/2025/03/Podcast-Art_S7E2_AnnaQuanTour-1024x1024.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
 **🔬 Taming the Invisible** — Quantum dots are nanoscale and operate in infrared, making them invisible but crucial for quantum communication technologies.
@@ -39,8 +42,15 @@ Prof. Anna Musiał is the final QuanTour Hero on Under the Microscope. Her resea
 **🔗 From Materials to Applications** — The FI-SEQUR project demonstrated fiber-coupled single-photon sources, paving the way for scalable quantum networking.
 
 **🚀 Optimising Quantum Emitters** — Improving InGaAs/GaAs quantum dots for high-performance emission in the telecom O-band.
+{{< /split >}}
+
+{{< youtube MVkOnro3gyw >}}
 
 ## Collaborators & Industry Partners
 
 - [PicoQuant](https://www.picoquant.com/) — Quantum Optics & Single Photon Technologies
 - [FIBRAIN](https://www.fibrain.com/) — Photonics & Fiber Optics Solutions
+
+## About the guest
+
+Anna Musiał is a Professor at Wrocław University of Science and Technology in Poland, studying light emitted by nanostructures whose properties differ completely from bulk crystals. She worked on the Fi-SEQUR project, a seven-partner collaboration with TU Berlin that produced a ready-to-use single-photon source at telecom wavelengths. She was a postdoc in Stephan Reitzenstein's group at TU Berlin before returning to Wrocław in 2017.

@@ -1,5 +1,5 @@
 ---
-external_url: "/podcast/ultra-fast-light-pulses-electron-dynamics-francesca-calegari/"
+external_url: "/under-the-microscope/ultra-fast-light-pulses-electron-dynamics/"
 build:
   render: never
 title: "Ultra-Fast Light Pulses & Electron Dynamics"
@@ -13,7 +13,7 @@ client: "Francesca Calegari"
 job_title: "Professor"
 affiliation: "DESY, Hamburg Universität"
 thumbnail: "/images/portfolio/01/224_Francesca_Calegari.png"
-episode_url: "/podcast/ultra-fast-light-pulses-electron-dynamics-francesca-calegari/"
+episode_url: "/under-the-microscope/ultra-fast-light-pulses-electron-dynamics/"
 tags: ["podcast", "S6"]
 spotify_url: "https://open.spotify.com/embed/episode/6S2PY64OACEqk0iPPckL8y"
 ---

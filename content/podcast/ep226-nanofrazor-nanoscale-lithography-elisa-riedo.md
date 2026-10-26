@@ -1,11 +1,13 @@
 ---
-aliases: ["/portfolio/podcast/elisa-riedo/"]
+aliases: ["/portfolio/podcast/elisa-riedo/", "/podcast/nanofrazor-high-precision-nanoscale-lithography/"]
 draft: false
 title: "3D Sculpting with NanoFrazor: Precision at the Nanoscale"
 slug: "nanofrazor-high-precision-nanoscale-lithography"
+url: "/under-the-microscope/nanofrazor-high-precision-nanoscale-lithography/"
 episode_number: 226
 season: "S6"
 date: 2024-11-06
+layout: "article"
 guest_name: "Prof. Elisa Riedo"
 guest_title: "Professor"
 guest_institution: "New York University (NYU)"
@@ -23,11 +25,12 @@ country: ["usa"]
 research_culture: ["industry-academia", "women-in-stem", "startup"]
 episode_topics: ["nanofrazor", "3d-sculpting", "graphene", "health-diagnostics", "lithography"]
 sponsor: "Heidelberg Instruments Nano"
-wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope-podcast/nanofrazor-high-precision-nanoscale-lithography/"
+wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/nanofrazor-high-precision-nanoscale-lithography/"
 ---
 
 Prof. Elisa Riedo from NYU is pioneering [NanoFrazor](https://nanofrazor.com/) technology — enabling precise 3D sculpting at the atomic level. From diamond-like graphene layers to at-home STI testing, her work spans materials science and health diagnostics.
 
+{{< split image="https://thesciencetalk.com/wp-content/uploads/2024/11/S6E15_Elisa-1-1024x1024.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
 **🔬 Revolutionary NanoFrazor Technology** — Enables precise 3D sculpting at the nanoscale, opening new applications in materials science and electronics.
@@ -39,3 +42,10 @@ Prof. Elisa Riedo from NYU is pioneering [NanoFrazor](https://nanofrazor.com/) t
 **🧬 At-Home STI Testing with Glaucus Technology** — Her startup aims to make affordable, at-home STI testing accessible to everyone.
 
 **🤝 The Power of Collaboration** — Teamwork and collective creativity fuel the scientific breakthroughs in her lab.
+{{< /split >}}
+
+{{< youtube S6k9Bw0XmxI >}}
+
+## About the guest
+
+Elisa Riedo is a Professor in the Department of Chemical Engineering at New York University, where she researches nanoscale materials and thermal scanning probe lithography, which creates 3D nanostructures with a heated tip, the technology behind the NanoFrazor. Before NYU, she was a professor at Georgia Tech for 13 years.

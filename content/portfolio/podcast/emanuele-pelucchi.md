@@ -1,5 +1,5 @@
 ---
-external_url: "/podcast/site-controlled-quantum-dots-emanuele-pelucchi/"
+external_url: "/under-the-microscope/site-controlled-quantum-dots/"
 build:
   render: never
 title: "Site-Controlled Quantum Dots"
@@ -13,7 +13,7 @@ client: "Emanuele Pelucchi"
 job_title: "Professor"
 affiliation: "Tyndall National Institute, University College Cork"
 thumbnail: "/images/portfolio/01/225_Emanuele_Pelucchi.png"
-episode_url: "/podcast/site-controlled-quantum-dots-emanuele-pelucchi/"
+episode_url: "/under-the-microscope/site-controlled-quantum-dots/"
 tags: ["podcast", "S6"]
 spotify_url: "https://open.spotify.com/embed/episode/6W1sLcIvrT67ScCXFw15kc"
 ---

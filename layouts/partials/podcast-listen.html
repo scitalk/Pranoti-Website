@@ -1,0 +1,26 @@
+{{/* "Listen on" row for podcast episodes. Context: the episode page. */}}
+{{ if or .Params.spotify_url .Params.apple_podcasts_url .Params.youtube_music_url .Params.youtube_url }}
+<div class="epa-listen">
+  <span class="epa-listen-label">Listen on</span>
+  {{ with .Params.spotify_url }}
+  <a href="{{ . }}" target="_blank" rel="noopener" class="epa-listen-btn epa-listen-spotify" aria-label="Listen on Spotify">
+    <img src="/images/logos/podcast-platforms/spotify.png" alt="" width="44" height="44">
+  </a>
+  {{ end }}
+  {{ with .Params.apple_podcasts_url }}
+  <a href="{{ . }}" target="_blank" rel="noopener" class="epa-listen-btn epa-listen-apple" aria-label="Listen on Apple Podcasts">
+    <img src="/images/logos/podcast-platforms/apple-podcasts.svg" alt="" width="44" height="44">
+  </a>
+  {{ end }}
+  {{ with .Params.youtube_music_url }}
+  <a href="{{ . }}" target="_blank" rel="noopener" class="epa-listen-btn epa-listen-ytmusic" aria-label="Listen on YouTube Music">
+    <img src="/images/logos/podcast-platforms/youtube-music.svg" alt="" width="44" height="44">
+  </a>
+  {{ end }}
+  {{ with .Params.youtube_url }}
+  <a href="{{ . }}" target="_blank" rel="noopener" class="epa-listen-btn epa-listen-youtube" aria-label="Watch on YouTube">
+    <img src="/images/logos/podcast-platforms/youtube.png" alt="" width="132" height="29">
+  </a>
+  {{ end }}
+</div>
+{{ end }}

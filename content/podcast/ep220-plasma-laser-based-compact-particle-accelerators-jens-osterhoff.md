@@ -1,23 +1,24 @@
 ---
 draft: false
 title: "Plasma & laser based compact particle accelerators ft. Jens Osterhoff"
-slug: "plasma-laser-based-compact-particle-accelerators-jens-osterhoff"
+slug: "plasma-laser-based-compact-particle-accelerators"
+url: "/under-the-microscope/plasma-laser-based-compact-particle-accelerators/"
 episode_number: 220
 date: 2024-07-20
+layout: "article"
 guest_name: "Jens Osterhoff"
 guest_institution: "Deputy Director, BELLA Center, Lawrence Berkeley National Laboratory"
 youtube_url: "https://youtu.be/tXXueCEZVqw"
 spotify_url: "https://open.spotify.com/episode/65WXqmCxwXQ2u8Cd9OxymW?si=HIWsUzKRTH22RQfXN62ZrA"
 episode_image: "/digital-content-hub/images/S6E6_Jens_2024.jpg"
 description: "Jens is Deputy Director at the BELLA Center, Berkeley Lab, working on laser-based particle acceleration, miniaturized accelerators with potential applications in medical treatment and industrial processes."
+aliases: ["/podcast/plasma-laser-based-compact-particle-accelerators-jens-osterhoff/"]
 ---
-
-## Plasma & laser based compact particle accelerators ft. Jens Osterhoff
-
 ## In Other Words
 
 FLASHForward', the plasma-based accelerator project he created, proposed, got funded and ran for ~10 years at DESY: doubling a 1 GeV beam's energy in ~10 cm of plasma while preserving beam quality, and the first study of plasma acceleration at MHz repetition rates.
 
+{{< split image="/digital-content-hub/images/S6E6_Jens_2024.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
 - Deputy director of the BELLA Center at Lawrence Berkeley National Lab, shrinking kilometre-scale particle accelerators to centimetres using high-intensity lasers and plasmas, 1 GeV in ~3 cm vs ~100–300 m conventionally.
@@ -25,3 +26,10 @@ FLASHForward', the plasma-based accelerator project he created, proposed, got fu
 - Machine learning is central for stabilising and optimising these compact accelerators; ~50 groups worldwide work on plasma acceleration, with Berkeley among the strongest.
 - Academia–industry partnership works because national labs provide the expensive infrastructure and companies provide product focus.
 - Three wishes: 'money, time and wisdom', more time (esp. work/family balance), more funding, and the foresight to pick the right, realistic projects.
+{{< /split >}}
+
+{{< youtube tXXueCEZVqw >}}
+
+## About the guest
+
+Jens Osterhoff is a Senior Scientist and Deputy Director of the BELLA Center at Lawrence Berkeley National Laboratory in the USA, where his team works on making large particle accelerators very small. He previously worked at DESY in Hamburg, Germany.

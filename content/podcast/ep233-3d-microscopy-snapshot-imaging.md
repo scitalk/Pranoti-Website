@@ -1,11 +1,13 @@
 ---
-aliases: ["/portfolio/podcast/humeyra-caglayan/"]
+aliases: ["/portfolio/podcast/humeyra-caglayan/", "/podcast/3d-microscopy-snapshot-imaging/"]
 draft: false
 title: "High Speed 3D Microscopy: Real-Time Cell Imaging Breakthrough"
 slug: "3d-microscopy-snapshot-imaging"
+url: "/under-the-microscope/3d-microscopy-snapshot-imaging/"
 episode_number: 233
 season: "S7"
 date: 2025-06-03
+layout: "article"
 guest_name: "Prof. Humeyra Caglayan"
 guest_title: "Professor"
 guest_institution: "Tampere University / TU Eindhoven"
@@ -28,6 +30,7 @@ wp_canonical: "https://thesciencetalk.com/3d-microscopy-snapshot-imaging"
 
 What if we could capture stunning 3D images of living cells, tissues—or even a tiny zebrafish brain—in real time, without staining, freezing, or harming them? Prof. Humeyra Caglayan's research on snapshot 3D microscopy makes this possible.
 
+{{< split image="https://thesciencetalk.com/wp-content/uploads/2025/06/233_Humeyr_S7E5-scaled.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
 **🔬 Snapshot 3D Microscopy: A New Paradigm** — Traditional imaging sacrifices speed for resolution in live biological systems. Snapshot 3D microscopy removes this trade-off, enabling high-resolution volumetric images in milliseconds.
@@ -37,6 +40,9 @@ What if we could capture stunning 3D images of living cells, tissues—or even a
 **⚡ Real-Time Imaging for Real-World Applications** — From neuronal activity in zebrafish to surgical diagnostics, this technology opens new doors for both research and clinical use.
 
 **🤝 Interdisciplinary Innovation** — Success here lies in collaboration between optical physicists, imaging software developers, and biomedical scientists.
+{{< /split >}}
+
+{{< youtube 8FB-27hsaKA >}}
 
 ## Project Partners
 
@@ -50,3 +56,7 @@ What if we could capture stunning 3D images of living cells, tissues—or even a
 
 - "Flat lens for snapshot 3D microscopy" — [Nanophotonics, 2023](https://www.degruyterbrill.com/document/doi/10.1515/nanoph-2023-0321/html)
 - "A practical guide to scanning light-field microscopy with digital adaptive optics" — [Nat Protoc 17, 2022](https://doi.org/10.1038/s41596-022-00703-9)
+
+## About the guest
+
+Humeyra Caglayan is a Professor at Eindhoven University of Technology in the Netherlands and Tampere University in Finland. She leads the 3D Microscopy project, funded by the Jane and Aatos Erkko Foundation, which develops high-speed volumetric microscopy to image living cells in three dimensions.

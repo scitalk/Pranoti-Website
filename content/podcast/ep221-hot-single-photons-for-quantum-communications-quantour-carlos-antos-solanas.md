@@ -1,19 +1,19 @@
 ---
 draft: false
 title: "Hot Single Photons for Quantum Communications, QuanTour ft. Carlos Antós Solanas"
-slug: "hot-single-photons-for-quantum-communications-quantour-carlos-antos-solanas"
+slug: "hot-single-photons-for-quantum-communications-quantour"
+url: "/under-the-microscope/hot-single-photons-for-quantum-communications-quantour/"
 episode_number: 221
 date: 2024-07-30
+layout: "article"
 guest_name: "Carlos Antós Solanas"
 guest_institution: "Universidad Autónoma de Madrid"
 guest_country: "Spain"
 youtube_url: "https://youtu.be/Jtp48ChGNyA"
 spotify_url: "https://open.spotify.com/episode/7bLMmutTW1PCDtNmAUargV?si=G2p35XYlSc6CKtVX-DPOKw"
 description: "Carlos and his lab are situated at the Universidad Autónoma de Madrid, ranked as the top university in Spain in 2022. Specializing in experimental quantum photonics, this young group aspires to expand the frontiers of knowledge in the field. In the podcast, Carlos explains his exciting work in the field of hot single photons."
+aliases: ["/podcast/hot-single-photons-for-quantum-communications-quantour-carlos-antos-solanas/"]
 ---
-
-## Hot Single Photons for Quantum Communications, QuanTour ft. Carlos Antós Solanas
-
 ## In Other Words
 
 An experiment born of a mistake at the end of his postdoc with Pascale Senellart: exciting a semiconductor quantum dot with two close pulses to create a vacuum-and-single-photon entangled |00>+|11> state; a year of pandemic-era analysis confirmed it, and with more pulses the emitted light state follows the Fibonacci sequence and golden ratio.
@@ -25,3 +25,9 @@ An experiment born of a mistake at the end of his postdoc with Pascale Senellart
 - hBN is currently the front-runner room-temperature single-photon material; defects can be placed deterministically by electron irradiation of flakes.
 - Advice he passes on: change material platform (a calculated risk) between PhD and postdoc, and build broad international experience and networks before setting up a group.
 - Leads a QuantERA project (COMPHORT, with Tobias Heindel) targeting 700 m free-space quantum key distribution with hot single photons by 2027; wishes for less bureaucracy, more funding, and a good coffee machine.
+
+{{< youtube Jtp48ChGNyA >}}
+
+## About the guest
+
+Carlos Antós Solanas is a Professor at the Autonomous University of Madrid in Spain, where he researches hot single photons for quantum communication, especially in hexagonal boron nitride at room temperature. After his PhD in Madrid, he was a postdoc in Pascale Senellart's group, supported by a Marie Curie fellowship (2015 to 2019), then worked on 2D materials with Christian Schneider in Würzburg and Oldenburg (2020 to 2022), before returning to Madrid through the Atracción de Talento programme.

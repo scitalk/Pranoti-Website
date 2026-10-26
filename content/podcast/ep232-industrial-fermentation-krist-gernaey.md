@@ -1,11 +1,13 @@
 ---
-aliases: ["/portfolio/podcast/krist-v-gerneay/"]
+aliases: ["/portfolio/podcast/krist-v-gerneay/", "/podcast/industrial-fermentation-krist-gernaey/"]
 draft: false
 title: "Industrial Fermentation: Biofuels, Bioreactors, Microorganisms"
-slug: "industrial-fermentation-krist-gernaey"
+slug: "industrial-fermentation"
+url: "/under-the-microscope/industrial-fermentation/"
 episode_number: 232
 season: "S7"
 date: 2025-05-15
+layout: "article"
 guest_name: "Prof. Krist V. Gernaey"
 guest_title: "Professor"
 guest_institution: "Technical University of Denmark (DTU)"
@@ -27,6 +29,7 @@ wp_canonical: "https://thesciencetalk.com/podcast/industrial-fermentation-krist-
 
 Industrial fermentation underpins the production of biofuels, detergent enzymes, and industrial proteins at scale. Prof. Krist Gernaey from DTU brings his expertise to demystify this complex world—from the biology of microorganisms to the engineering challenges of bioreactor scale-up.
 
+{{< split image="https://thesciencetalk.com/wp-content/uploads/2025/05/232_KristDTU_S7E4-scaled.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
 **⚗️ Industrial Fermentation at Scale** — Unlike domestic fermentation, industrial processes run in substantial bioreactors, producing biofuels, enzymes, and proteins economically.
@@ -38,3 +41,10 @@ Industrial fermentation underpins the production of biofuels, detergent enzymes,
 **🔬 The Journey from Lab to Industry** — Translating fermentation technology from breakthrough to viable industrial process requires interdisciplinary collaboration and engineering ingenuity.
 
 **🇩🇰 Life at DTU** — Prof. Gernaey's work at DTU showcases the dynamic, collaborative nature of modern biotechnology research.
+{{< /split >}}
+
+{{< youtube obihbtvzCss >}}
+
+## About the guest
+
+Krist V. Gernaey is Professor in industrial fermentation technology and Head of PROSYS at the Technical University of Denmark. His work covers mathematical modelling, mixing and mass transfer, scale-up and real-time process sensors. Through the BIOPRO industry–academia project, his research ideas were tested at pilot and full scale, contributing to up to ten startups, including Bioscavenge, which he co-founded.

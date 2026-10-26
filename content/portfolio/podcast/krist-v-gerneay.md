@@ -1,5 +1,5 @@
 ---
-external_url: "/podcast/industrial-fermentation-krist-gernaey/"
+external_url: "/under-the-microscope/industrial-fermentation/"
 build:
   render: never
 title: "Industrial Fermentation: Biofuels, Bioreactors, Microorganisms"
@@ -13,7 +13,7 @@ client: "Krist V. Gernaey"
 job_title: "Professor"
 affiliation: "Technical University of Denmark (DTU)"
 thumbnail: "/images/portfolio/05/S7E4_KristDTU.png"
-episode_url: "/podcast/industrial-fermentation-krist-gernaey/"
+episode_url: "/under-the-microscope/industrial-fermentation/"
 tags: ["podcast", "S7"]
 spotify_url: "https://open.spotify.com/embed/episode/1XOlKQksRk7hGE3DBmcRO8"
 ---

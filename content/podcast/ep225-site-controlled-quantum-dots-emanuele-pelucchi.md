@@ -1,11 +1,13 @@
 ---
-aliases: ["/portfolio/podcast/emanuele-pelucchi/"]
+aliases: ["/portfolio/podcast/emanuele-pelucchi/", "/podcast/site-controlled-quantum-dots-emanuele-pelucchi/"]
 draft: false
 title: "Site-Controlled Quantum Dots ft. Emanuele Pelucchi"
-slug: "site-controlled-quantum-dots-emanuele-pelucchi"
+slug: "site-controlled-quantum-dots"
+url: "/under-the-microscope/site-controlled-quantum-dots/"
 episode_number: 225
 season: "S6"
 date: 2024-10-24
+layout: "article"
 guest_name: "Emanuele Pelucchi"
 guest_title: "Group Leader"
 guest_institution: "Tyndall National Institute"
@@ -23,11 +25,12 @@ country: ["ireland"]
 research_culture: ["international-collaboration", "fundamental-research"]
 episode_topics: ["site-controlled-quantum-dots", "epitaxy", "quantum-light-sources", "scaling-quantum-tech"]
 project: "QuanTour"
-wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope-podcast/site-controlled-quantum-dots-emanuele-pelucchi/"
+wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/site-controlled-quantum-dots-emanuele-pelucchi/"
 ---
 
 Emanuele Pelucchi at Tyndall National Institute is revolutionising quantum computing and cryptography through site-controlled quantum dots and epitaxy. The QuanTour project, funded by the German Physical Society, showcases these advancements across European labs.
 
+{{< split image="https://thesciencetalk.com/wp-content/uploads/2024/10/S6E11_Emanuele_01-1024x1024.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
 **🔬 Site-Controlled Quantum Dots** — More precise control over quantum systems makes them ideal for quantum computing and cryptography applications.
@@ -39,8 +42,15 @@ Emanuele Pelucchi at Tyndall National Institute is revolutionising quantum compu
 **🌍 The QuanTour Project** — An outreach initiative funded by the German Physical Society, bringing quantum light sources to labs across Europe.
 
 **🎓 Collaboration in Science** — Collaboration across labs and institutions is essential to advancing quantum research at the frontier.
+{{< /split >}}
+
+{{< youtube nIkOBfUGycg >}}
 
 ## Further Reading
 
 - [Decomposition, diffusion, and growth rate anisotropies in self-limited seeded nanostructures](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.83.205409)
 - [Self-limiting evolution of seeded quantum wires and dots on patterned substrates](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.108.256102)
+
+## About the guest
+
+Emanuele Pelucchi leads the Epitaxy and Physics of Nanostructures group at Tyndall National Institute–University College Cork in Ireland, developing site-controlled quantum dots grown in pyramidal holes at known positions on a chip. He studied electronic engineering at the Polytechnic of Milan, did his PhD in surface science in Trieste and Bremen, and was a postdoc at EPFL before joining Tyndall with Science Foundation Ireland funding.

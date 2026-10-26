@@ -1,5 +1,5 @@
 ---
-external_url: "/podcast/brian-geradot-quantum-devices/"
+external_url: "/under-the-microscope/quantum-devices/"
 build:
   render: never
 title: "Atomic Architects: Designing the Future of Quantum"
@@ -13,7 +13,7 @@ client: "Brian Gerardot"
 job_title: "Professor"
 affiliation: "Heriot-Watt University"
 thumbnail: "/images/portfolio/01/227_Brian_Gerardot.png"
-episode_url: "/podcast/brian-geradot-quantum-devices/"
+episode_url: "/under-the-microscope/quantum-devices/"
 tags: ["podcast", "S6"]
 spotify_url: "https://open.spotify.com/embed/episode/6vLLgU6sqWo4ZcIwT7mQWr"
 ---

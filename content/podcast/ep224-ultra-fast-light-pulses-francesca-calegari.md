@@ -1,11 +1,13 @@
 ---
-aliases: ["/portfolio/podcast/francesca-calegari/"]
+aliases: ["/portfolio/podcast/francesca-calegari/", "/podcast/ultra-fast-light-pulses-electron-dynamics-francesca-calegari/"]
 draft: false
 title: "Ultra-Fast Light Pulses & Electron Dynamics with Francesca Calegari"
-slug: "ultra-fast-light-pulses-electron-dynamics-francesca-calegari"
+slug: "ultra-fast-light-pulses-electron-dynamics"
+url: "/under-the-microscope/ultra-fast-light-pulses-electron-dynamics/"
 episode_number: 224
 season: "S6"
 date: 2024-10-10
+layout: "article"
 guest_name: "Prof. Francesca Calegari"
 guest_title: "Professor"
 guest_institution: "University of Hamburg / DESY"
@@ -22,11 +24,12 @@ career_stage: ["principal-investigator"]
 country: ["germany"]
 research_culture: ["women-in-stem", "funding", "diversity-in-science"]
 episode_topics: ["attosecond-science", "ultra-fast-spectroscopy", "electron-dynamics", "light-matter-interactions", "research-funding"]
-wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope-podcast/ultra-fast-light-pulses-electron-dynamics-francesca-calegari/"
+wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/ultra-fast-light-pulses-electron-dynamics-francesca-calegari/"
 ---
 
 Prof. Francesca Calegari at the University of Hamburg and DESY studies ultra-fast light pulses and attosecond technology—allowing scientists to observe rapid electron dynamics in real time. Her work is opening new possibilities for materials science and quantum research.
 
+{{< split image="https://thesciencetalk.com/wp-content/uploads/2024/10/S6E10_Francesca_01-1024x1024.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
 **✨ Understanding Attosecond Technology** — Attosecond pulses allow scientists to capture the rapid movements of electrons, offering insight into dynamic processes within matter previously impossible to observe.
@@ -38,3 +41,10 @@ Prof. Francesca Calegari at the University of Hamburg and DESY studies ultra-fas
 **🌍 Diversity in Science** — Diverse perspectives enrich research and foster innovation. Francesca reflects on the challenges of being a woman in academia and the importance of mentoring the next generation.
 
 **💡 Challenges of Research Funding** — Restrictive funding models can limit the freedom to explore uncharted scientific territories—why flexible support for fundamental research matters.
+{{< /split >}}
+
+{{< youtube dmaA6mwSJXI >}}
+
+## About the guest
+
+Francesca Calegari is Professor of Physics at Universität Hamburg and Lead Scientist at DESY in Germany. She studies how electrons move inside molecules using attosecond light pulses, and her team was the first to record an "electron movie" in a biochemically complex molecule, the amino acid phenylalanine.

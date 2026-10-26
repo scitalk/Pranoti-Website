@@ -1,23 +1,24 @@
 ---
 draft: false
 title: "Molecular Puzzles in Chemical Bathtubs ft. Chris Brewer"
-slug: "molecular-puzzles-in-chemical-bathtubs-chris-brewer"
+slug: "molecular-puzzles-in-chemical-bathtubs"
+url: "/under-the-microscope/molecular-puzzles-in-chemical-bathtubs/"
 episode_number: 211
 date: 2023-10-21
+layout: "article"
 guest_name: "Chris Brewer"
 guest_institution: "University of Texas at Dallas"
 youtube_url: "https://youtu.be/9xbINFXp3Lc"
 spotify_url: "https://open.spotify.com/episode/0Y5SMCgYxzyPBy3YCbVZyZ?si=k0HQ8tC9TO-AoGIPve1cXw"
 episode_image: "/digital-content-hub/images/Chris%20211.jpg"
 description: "Molecular Puzzles in Chemical Bathtubs: Chris Brewer on the Under the Microscope podcast, episode 211."
+aliases: ["/podcast/molecular-puzzles-in-chemical-bathtubs-chris-brewer/"]
 ---
-
-## Molecular Puzzles in Chemical Bathtubs ft. Chris Brewer
-
 ## In Other Words
 
 His graduate project designing ruthenium precursor molecules for photo-assisted chemical vapour deposition, building the IR-based apparatus himself and working out the full stepwise light-driven decomposition pathway and quantum yield to screen candidates for his collaborator.
 
+{{< split image="/digital-content-hub/images/Chris%20211.jpg" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
 - Postdoc at UT Dallas who moved from organic synthesis to surface science, now doing chemical bath deposition of tin/iron sulfide onto self-assembled monolayers as a proof-of-concept for area-selective, patternable deposition toward flexible electronics.
@@ -25,3 +26,10 @@ His graduate project designing ruthenium precursor molecules for photo-assisted 
 - Knowing what you don't want to do (sugar chemistry) is a valuable outcome of trying a field.
 - Loves the puzzle-solving and daily variety; a reaction that only worked in direct Florida sunlight meant running it on the building roof.
 - Three wishes: access to any characterisation tool, machine-shop skills to build custom setups, and lab robotics so he can focus on analysis and idea exploration.
+{{< /split >}}
+
+{{< youtube 9xbINFXp3Lc >}}
+
+## About the guest
+
+Chris Brewer is a Research Associate (Postdoc) at the University of Texas at Dallas, developing chemical bath deposition methods for tin sulfides and iron sulfides on organic surfaces. During his PhD in Chemistry at the University of Florida, he designed ruthenium precursors for photoassisted chemical vapour deposition. He studied Chemistry and Biochemistry at Florida State University and has a background as a science educator.

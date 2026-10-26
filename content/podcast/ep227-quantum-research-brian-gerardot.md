@@ -1,11 +1,13 @@
 ---
-aliases: ["/portfolio/podcast/brian-gerardot/"]
+aliases: ["/portfolio/podcast/brian-gerardot/", "/podcast/brian-geradot-quantum-devices/"]
 draft: false
 title: "Quantum Research, Emerging Technologies, and the QuanTour Project with Brian Gerardot"
-slug: "brian-geradot-quantum-devices"
+slug: "quantum-devices"
+url: "/under-the-microscope/quantum-devices/"
 episode_number: 227
 season: "S6"
 date: 2024-11-21
+layout: "article"
 guest_name: "Prof. Brian Gerardot"
 guest_title: "Professor"
 guest_institution: "Heriot-Watt University"
@@ -23,11 +25,12 @@ country: ["united-kingdom"]
 research_culture: ["curiosity-driven", "international-collaboration", "mentorship"]
 episode_topics: ["quantum-devices", "moire-patterns", "magnetism", "2d-materials", "silicon-carbide"]
 project: "QuanTour"
-wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope-podcast/brian-geradot-quantum-devices/"
+wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/brian-geradot-quantum-devices/"
 ---
 
 Prof. Brian Gerardot from Heriot-Watt University studies quantum devices and materials—including quantum dots, 2D materials, and silicon carbide. His curiosity-driven research on Moire patterns and optical manipulation of magnetism is shaping the future of quantum technologies.
 
+{{< split image="https://thesciencetalk.com/wp-content/uploads/2025/01/227_Brian_Gerardot.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
 **⚛️ Quantum Device Engineering** — Developing quantum devices using materials like quantum dots, 2D materials, and silicon carbide to advance our understanding of quantum interactions.
@@ -39,3 +42,10 @@ Prof. Brian Gerardot from Heriot-Watt University studies quantum devices and mat
 **🎓 Collaboration and Mentorship** — Working with an international, diverse group of students and researchers fosters innovation and creativity.
 
 **✨ Curiosity-Driven Research** — How fundamental science drives unexpected discoveries, from material interactions to real-world technologies.
+{{< /split >}}
+
+{{< youtube 6GbR_X6_yJQ >}}
+
+## About the guest
+
+Brian Gerardot is a Professor at Heriot-Watt University in Scotland, where his group designs and studies quantum devices made from semiconductor materials, engineering single electrons and photons and the interactions between them. A recent project used a moiré superlattice to show that electrons self-arrange into Wigner crystals, and that magnetism can arise from non-magnetic materials. He studied Materials Engineering at Purdue University and did his PhD at UC Santa Barbara.

@@ -1,11 +1,13 @@
 ---
-aliases: ["/portfolio/podcast/nika-akopian/"]
+aliases: ["/portfolio/podcast/nika-akopian/", "/podcast/multi-qubit-devices-and-quantum-internet-with-nika-akopian/"]
 draft: false
 title: "Multi-Qubit Devices and Quantum Internet with Nika Akopian"
-slug: "multi-qubit-devices-and-quantum-internet-with-nika-akopian"
+slug: "multi-qubit-devices-and-quantum-internet"
+url: "/under-the-microscope/multi-qubit-devices-and-quantum-internet/"
 episode_number: 229
 season: "S7"
 date: 2025-01-16
+layout: "article"
 guest_name: "Prof. Nika Akopian"
 guest_title: "Professor"
 guest_institution: "Technical University of Denmark (DTU)"
@@ -23,11 +25,12 @@ country: ["denmark"]
 research_culture: ["international-collaboration", "fundamental-research"]
 episode_topics: ["multi-qubit-devices", "quantum-internet", "crystal-phase-quantum-dots", "photonic-interfaces"]
 project: "QuanTour"
-wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope-podcast/multi-qubit-devices-and-quantum-internet-with-nika-akopian/"
+wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/multi-qubit-devices-and-quantum-internet-with-nika-akopian/"
 ---
 
 Prof. Nika Akopian from DTU is pioneering multi-qubit devices with photonic interfaces—a key technology in advancing quantum computing and the quantum internet. His research on crystal phase control at the atomic layer is solving scalability challenges in quantum dot applications.
 
+{{< split image="https://thesciencetalk.com/wp-content/uploads/2025/01/Doris-Reiter.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
 **⚛️ Multi-Qubit Device Innovation** — Pioneering the development of multi-qubit devices with photonic interfaces, enabling breakthroughs in quantum networks and quantum internet technology.
@@ -39,3 +42,10 @@ Prof. Nika Akopian from DTU is pioneering multi-qubit devices with photonic inte
 **🤝 Global Collaboration** — Collaborative work with the University of Paris-Saclay and Lund University pushes the boundaries of nanotechnology and quantum science.
 
 **🎓 From Theory to Technology** — Fundamental research on artificial atoms (quantum dots) leads to practical applications in scalable quantum systems and secure communication.
+{{< /split >}}
+
+{{< youtube riHrD3jkFgc >}}
+
+## About the guest
+
+Nika Akopian is an Associate Professor and Group Leader of Quantum Networks at DTU, the Technical University of Denmark, and leads the MultiQubit project, building a solid-state platform for multi-qubit devices with a photonic interface. Nika's path ran from entanglement research at the Technion through crystal-phase quantum dots in Delft and Eindhoven to DTU.

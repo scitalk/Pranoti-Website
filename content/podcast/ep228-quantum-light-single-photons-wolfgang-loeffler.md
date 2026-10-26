@@ -1,11 +1,13 @@
 ---
-aliases: ["/portfolio/podcast/wolfgang-loeffler/"]
+aliases: ["/portfolio/podcast/wolfgang-loeffler/", "/podcast/quantum-light-single-photons-quantour-wolfgang-loeffler/"]
 draft: false
 title: "Quantum Light, Human Vision & Single Photons with Wolfgang Löffler"
-slug: "quantum-light-single-photons-quantour-wolfgang-loeffler"
+slug: "quantum-light-single-photons-quantour"
+url: "/under-the-microscope/quantum-light-single-photons-quantour/"
 episode_number: 228
 season: "S6"
 date: 2024-12-12
+layout: "article"
 guest_name: "Prof. Wolfgang Löffler"
 guest_title: "Professor"
 guest_institution: "Leiden Institute of Physics, Leiden University"
@@ -23,11 +25,12 @@ country: ["netherlands"]
 research_culture: ["fundamental-research", "interdisciplinary", "international-collaboration"]
 episode_topics: ["quantum-light", "single-photons", "human-vision", "quantum-dots", "spectroscopy"]
 project: "QuanTour"
-wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope-podcast/quantum-light-single-photons-quantour-wolfgang-loeffler/"
+wp_canonical: "https://thesciencetalk.com/podcast/under-the-microscope/quantum-light-single-photons-quantour-wolfgang-loeffler/"
 ---
 
 Prof. Wolfgang Löffler from Leiden University explores the interaction between light and matter at the quantum level—with a surprising application: can humans consciously perceive a single photon?
 
+{{< split image="https://thesciencetalk.com/wp-content/uploads/2025/01/228_Wolfgang_Loffler.png" side="right" bg="#fffafc" >}}
 ## Key Takeaways
 
 **🔬 Quantum Light and Matter Interactions** — Exploring fundamental light-matter interactions and their implications for future quantum technologies.
@@ -39,3 +42,10 @@ Prof. Wolfgang Löffler from Leiden University explores the interaction between 
 **🌍 The QuanTour Project** — A collaborative initiative showcasing quantum light sources and cutting-edge technologies across European labs.
 
 **🎓 Collaboration in Science** — Teamwork and international partnerships are essential to achieving groundbreaking results in fundamental research.
+{{< /split >}}
+
+{{< youtube ak9WHrumboI >}}
+
+## About the guest
+
+Wolfgang Löffler is a Professor at the Leiden Institute of Physics in the Netherlands, researching light and matter at the quantum level with single and entangled photons and quantum dots, with applications from quantum networks to microscopy and the limits of human vision. He studied physics and did his PhD in Karlsruhe, Germany, before moving to Leiden as a postdoc.
