@@ -2,6 +2,7 @@
 title: "Renewals: From Idea to Ready-to-Use Product, Owning the Full Product Lifecycle"
 tags: ["Product Management", "Claude Code", "MVP", "Product Design"]
 date: 2026-10-26
+aliases: ["/case-studies/renewals-subscription-tracker/"]
 draft: false
 layout: "longform"
 subtitle: "One clear record of every recurring payment: what it costs, how the price changed, and what renews next."
