@@ -23,24 +23,28 @@
   <!-- Google Analytics is loaded by partials/consent-banner.html, only after consent. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Ubuntu: site-wide heading font (h1–h6 override in main.css). -->
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
   {{ if eq .Kind "section" }}
   <!-- List page: load main.css for nav + global styles -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   {{ $mainCss := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $mainCss.RelPermalink }}">
   {{ else }}
-  <!-- Single page: Inter + DM Mono only — main.css excluded to prevent conflicts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Single page: site nav needs main.css; case-study.css loads AFTER so it wins on conflicts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  {{ $mainCss := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $mainCss.RelPermalink }}">
   {{ $csCss := resources.Get "css/case-study.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $csCss.RelPermalink }}">
   {{ end }}
 {{ partial "schema-site.html" . }}
 </head>
 <body>
-  {{ if eq .Kind "section" }}{{ partial "header.html" . }}{{ end }}
+  {{ partial "header.html" . }}
   <main id="main-content">{{ block "main" . }}{{ end }}</main>
-  {{ if eq .Kind "section" }}{{ partial "footer.html" . }}{{ end }}
-  {{ if eq .Kind "section" }}<script src="/js/main.js"></script>{{ end }}
+  {{ partial "footer.html" . }}
+  <script src="/js/main.js"></script>
   {{ partial "consent-banner.html" . }}
 
 </body>

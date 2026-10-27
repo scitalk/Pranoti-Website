@@ -21,7 +21,7 @@ tech_stack:
 | **Role** | Solo Product Lead & Builder (Market Discovery, Schema Architecture, UX, Execution, GTM) |
 | **Status** | Launched, Functional & Publicly Accessible |
 | **Date** | October 2026 |
-| **Domain** | Personal & Business Finance, Recurring Liability Management |
+| **Domain** | Personal & Business Finance |
 | **Stack** | Python, SQLite, JavaScript, Claude Code |
 | **Live Product** | [Renewals Product Page & Live Demo](https://pranoti.thesciencetalk.com/products/subscription-tracker/) |
 
@@ -151,7 +151,7 @@ The application was built as a clean, low-latency interface structured around fi
 * **End-to-End Execution:** Owned the full product lifecycle from zero-to-one: discovered an unaddressed market need, designed the data model, managed the scope, built the application, and deployed a live public release.
 * **Immediate Operational ROI:** Transitioned from manual spreadsheet synthesis to automated, single-pane portfolio visibility across recurring commitments.
 * **Actionable Price Visibility:** Automatically exposed unnotified vendor price increases upon data ingestion, directly informing supplier renegotiations and cancellations.
-* **Ready-to-Use Artifact:** Shipped a production-grade application and complete product showcase live at [Renewals Product Page](https://pranoti.thesciencetalk.com/products/subscription-tracker/).
+* **Ready-to-Use Product:** Shipped a production-grade application and complete product showcase live at [Renewals Product Page](https://pranoti.thesciencetalk.com/products/subscription-tracker/).
 
 ---
 
