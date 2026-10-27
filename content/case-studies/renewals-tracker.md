@@ -1,13 +1,13 @@
 ---
-title: "Renewals: From Idea to Ready-to-Use Product, Owning the Full Product Lifecycle"
+title: "Renewals: Launching a New Product from Gap to Market"
 tags: ["Product Management", "Claude Code", "MVP", "Product Design"]
 date: 2026-10-26
 aliases: ["/case-studies/renewals-subscription-tracker/"]
 draft: false
 layout: "longform"
-subtitle: "One clear record of every recurring payment: what it costs, how the price changed, and what renews next."
+subtitle: "Conceiving, architecting, and shipping a zero-to-one financial management tool to a live, testable release."
 category: "Product Build"
-display_category: "Product Management"
+display_category: "0-to-1 Product Management"
 tech_stack:
   - "Python"
   - "SQLite"
@@ -15,124 +15,153 @@ tech_stack:
   - "Claude Code"
 ---
 
-**Date:** October 2026\
-**Domain Focus:** Personal and business finance, recurring payments\
-**Services:** Product discovery, data modelling, product design, scope management\
-**Tools:** Python, SQLite, JavaScript, Claude Code\
-**Live page:** [https://pranoti.thesciencetalk.com/products/subscription-tracker/](https://pranoti.thesciencetalk.com/products/subscription-tracker/)
+| Metadata | Details |
+| --- | --- |
+| **Product Initiative** | New Product Development (Zero-to-One) |
+| **Role** | Solo Product Lead & Builder (Market Discovery, Schema Architecture, UX, Execution, GTM) |
+| **Status** | Launched, Functional & Publicly Accessible |
+| **Date** | October 2026 |
+| **Domain** | Personal & Business Finance, Recurring Liability Management |
+| **Stack** | Python, SQLite, JavaScript, Claude Code |
+| **Live Product** | [Renewals Product Page & Live Demo](https://pranoti.thesciencetalk.com/products/subscription-tracker/) |
 
 ---
 
 ## Executive Summary
 
-I pay for many things on repeat: software, streaming, insurance, phone, internet, gym, rent. Each one has its own vendor, price history, VAT rate and renewal cycle. The information to manage them existed, but it was scattered across PDF invoices, Excel sheets, Google Sheets and my own notes.
+Managing recurring liabilities across SaaS, digital tools, telecommunications, insurance, and professional services is an operational blind spot for modern professionals and small business operators. While transaction records exist, they are scattered across vendor portals, PDF invoices, and disconnected spreadsheets, obscuring true historical expenditure and impending liabilities.
 
-I wanted one overview. When I looked for an app to give me that, none fit. So I took the idea through the full product lifecycle myself: define the problem, design the data model, build the product, set the scope, and launch it.
+I initiated, scoped, architected, and shipped **Renewals**, an original, standalone product built to resolve this fragmentation. Rather than building another notification reminder, I identified an underserved market segment needing high-fidelity financial auditability, modeled an append-only relational schema, enforced strict MVP scope boundaries, and deployed a live, functional product that anyone can test.
 
-The result is Renewals, a working product that I use. It shows every recurring commitment in one place, with its full history, its price changes and the charges that come next.
+This case study demonstrates my approach to **full-lifecycle product ownership**: discovering unaddressed market whitespace, formulating product strategy, designing data foundations, managing scope trade-offs, and driving technical execution from blank canvas to a publicly available release.
 
----
-
-## Challenge: Recurring Costs With No Single View
-
-Every subscription is different:
-
-- **Different vendors.** Each one bills in its own way, with its own invoices.
-- **Different renewal cycles.** Monthly, yearly, every two weeks, or one-off.
-- **Different VAT.** Net, VAT and gross amounts do not follow one rule.
-- **Prices that change.** A plan that cost one amount three years ago costs another today, often without a clear notice.
-- **Different deadlines.** Each contract has its own renewal date and its own cancellation terms.
-
-I needed answers to practical questions. What renews in the next 30 days? What has each subscription cost me over time? When did the price go up? When did I start or cancel something? What do I pay per month and per year, in total?
-
-The answers were somewhere in my files, but in pieces. To answer one question, I had to open several sources and combine them by hand. Nothing showed a subscription's whole life in one place.
-
-### The wrong assumption: "Surely there is an app for this"
-
-My first assumption was that this problem was already solved. It could not be the first time someone wanted a clear overview of their subscriptions.
-
-There are many subscription apps. The ones I checked, such as the open-source tool Wallos and the app Renewly, focus on due dates and reminders. None gave me what I needed: the full history of each commitment, its real price changes, net, VAT and gross, and business and private costs side by side.
-
-That assumption was wrong. Thus, I built the product myself.
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                       FULL PRODUCT LIFECYCLE MAP                        │
+├─────────────────┬──────────────────┬──────────────────┬─────────────────┤
+│   1. DISCOVERY  │   2. STRATEGY    │   3. EXECUTION   │    4. LAUNCH    │
+│                 │                  │                  │                 │
+│ • User Friction │ • Value Prop     │ • Normalized DB  │ • Zero-Bloat    │
+│ • Competitor    │ • Strict Scope   │ • Local-First UX │   MVP Cut       │
+│   Teardowns     │   Guardrails     │ • Audit Quality  │ • Public Web    │
+│ • Market Gap    │ • Core Metrics   │   Protocols      │   Deployment    │
+└─────────────────┴──────────────────┴──────────────────┴─────────────────┘
+```
 
 ---
 
-## Solution: A Product Built Around the Record, Not the Reminder
+## Phase 1: Opportunity Discovery & Market Gap Analysis
 
-Renewals keeps one record per recurring commitment and shows it from different angles. The solution has five parts: problem definition, data model, build, data quality rules, and scope control.
+### 1. The Operational Problem
 
-### 1. Problem definition
+Managing 15 to 40 recurring commitments across dual personal and business profiles creates five systemic friction points:
 
-Before I built anything, I defined what the product must do. It must answer three questions for every recurring payment:
+* **Asynchronous billing cycles:** Irregular intervals (monthly, quarterly, biennial, bespoke multi-year).
+* **Tax attribution friction:** Inconsistent handling of Net, Gross, and local VAT rates across cross-border vendors.
+* **Undetected price creep:** Periodic contract indexations and silent tier upgrades executed without transparent notifications.
+* **Dynamic contract lifecycles:** Services shifting between active, paused, negotiated, and discontinued states.
+* **Renewal trap exposure:** Notice-period deadlines buried in contractual fine print.
 
-- **What has it cost?** Every payment, in net, VAT and gross.
-- **How did it change?** Every start, price change, pause and cancellation.
-- **What is next?** The upcoming charges, in a list and in a calendar.
+The critical user insight was behavioral: users do not struggle to remember *when* to pay; they struggle to audit *what has changed*, *what was spent historically*, and *how tax impacts overall cash flow*.
 
-This definition decided every later choice. Features that did not help answer these questions stayed out.
+### 2. Competitive Teardown & The "Off-the-Shelf" Fallacy
 
-### 2. Data model
+To validate the hypothesis that a new, custom product was required, I conducted a competitive teardown of available market tools, auditing open-source utilities (such as Wallos) and consumer subscription apps (such as Renewly).
 
-The data model is the core of the product. A simple list of subscriptions with one price cannot show history. Thus, I designed five connected parts:
+| Feature / Capability | Existing Market Solutions | Renewals (The New Product Opportunity) |
+| --- | --- | --- |
+| **Primary Value Metric** | Event push notifications ("Due in 3 days") | Auditable financial system of record |
+| **Historical Price Mutability** | Overwrites current price; destroys past baseline | Append-only price periods with change deltas |
+| **Tax Audit Readiness** | Single aggregate transaction value | Explicit itemization: Net, Gross, and VAT rates |
+| **Contract State Lineage** | Binary toggle (Active / Inactive) | Full lifecycle logs (Started, Paused, Resumed, Ended) |
+| **Data Privacy** | Cloud hosting / third-party bank linking | Local-first, zero-exposure architectural model |
 
-- **Vendors.** Who I pay, with country, VAT ID and website.
-- **Subscriptions.** What I pay for, with a category.
-- **Price periods.** One entry for each price. A price change adds a new period. Old periods are never edited, so the history stays complete.
-- **Status history.** Started, paused, resumed, discontinued and restarted, each with a date.
-- **Payments.** What was actually charged, with net, VAT and invoice number.
-
-With this model, the product can calculate future charges from the price periods and renewal cycles. It can also show the real price change from one period to the next.
-
-### 3. Build
-
-The product is a local web app. It runs on my computer, makes no internet calls, and keeps all financial data on the machine. It has five views:
-
-- **Dashboard.** Recent changes, the next 30 days, monthly and yearly totals, and a spending chart.
-- **Subscriptions.** Each commitment with its full timeline: price periods, status changes and payments.
-- **Calendar.** Upcoming charges by date.
-- **Payments.** Every payment in net, VAT and gross, with export to CSV.
-- **Vendors.** Who I pay, for which service, and how much in total.
-
-### 4. Data quality rules
-
-A record is only useful when it is correct. When the sources disagreed, I set clear rules:
-
-- **One source of truth.** The invoice decides what was charged. Other sources fill gaps only where no invoice exists.
-- **No silent fixes.** Each discrepancy was listed for review, not corrected without a record.
-- **Reversible steps.** A backup was made before every change to the data, so each step could be undone.
-
-### 5. Scope control
-
-When the product worked, new questions came quickly. Can it run on my phone? Can someone else use it? Each one meant logins, hosting, data protection work for financial data, or third-party installs.
-
-I froze the MVP. It does the job it was designed for. More features would have added risk and maintenance without a change to the core value.
+**Market Verdict:** Incumbent solutions optimized almost exclusively for **surface-level calendar alerts**, entirely ignoring **contract auditability and cost variance**. This validated the white space for a purpose-built system centered on **data fidelity**.
 
 ---
 
-## Impact
+## Phase 2: Product Strategy & Scope Definition
 
-### Clarity in one place
+A frequent pitfall in zero-to-one product development is premature feature bloat. To ensure delivery velocity and defensible product architecture, I established clear operational guardrails.
 
-I open one dashboard and see what changed recently, what renews in the next 30 days, and what I pay per month and per year. I click any subscription and see its full story.
+### The Three-Question Product North Star
 
-### Price changes made visible
+Every potential feature was benchmarked against three mandatory operational questions. If an idea did not answer one of them, it was eliminated:
 
-Because each price period is stored, price rises are clear. Some of them I did not notice before, because no single source showed them.
+1. **What has it actually cost?** Complete financial audit per commitment, broken down by Net, VAT, and Gross.
+2. **How has the commitment evolved?** Full visibility into status changes, pause states, and price adjustments over time.
+3. **What is committed next?** Clear runway of upcoming obligations displayed in chronological and calendar views.
 
-### A complete history
+### Scope Discipline & MVP Containment
 
-Every start, pause and cancellation has a date. I know what I stopped, when, and what it cost while it ran.
+Once the core product worked locally, common expansion requests emerged: mobile native wrappers, multi-user authentication, and hosted cloud instances.
 
-### Full lifecycle ownership
+I executed a formal **MVP Scope Freeze**. Migrating to a hosted multi-tenant cloud at this stage would introduce authentication overhead, recurring infrastructure expenses, and security liabilities for sensitive financial data without advancing the core product value. Delivering a robust, dependable tool that solved the primary problem took precedence over feature sprawl.
 
-The product went from a personal pain point to a product in daily use: problem definition, data model, build, data quality, scope and launch, with one owner.
+---
+
+## Phase 3: Data Architecture & System Design
+
+A product's user experience is strictly constrained by its data model. A flat list of subscriptions cannot capture price variations or discontinuous contract states without data corruption. I engineered a normalized relational schema around five interdependent entities:
+
+```
+┌──────────────┐       1:N       ┌──────────────────┐
+│   Vendors    ├────────────────►│  Subscriptions   │
+└──────────────┘                 └────────┬─────────┘
+                                          │
+                  ┌───────────────────────┼───────────────────────┐
+                  │ 1:N                   │ 1:N                   │ 1:N
+                  ▼                       ▼                       ▼
+       ┌────────────────────┐  ┌────────────────────┐  ┌────────────────────┐
+       │   Price Periods    │  │   Status History   │  │  Actual Payments   │
+       │ (Append-Only Logs) │  │  (Auditable State) │  │ (Reconciled Invs)  │
+       └────────────────────┘  └────────────────────┘  └────────────────────┘
+```
+
+* **Vendors:** Entity-level attributes (Legal name, tax jurisdiction, VAT ID, web portal).
+* **Subscriptions:** Commitment profiles tied to functional cost centers.
+* **Price Periods (Append-Only):** Rather than updating existing pricing cells, rate adjustments spawn a new chronological record. This immutable design protects historical baselines and automatically surfaces real price creep.
+* **Status History:** Event-driven state machine logging explicit dates for `Started`, `Paused`, `Resumed`, `Discontinued`, and `Restarted`.
+* **Actual Payments:** Reconciled cash outflows tied directly to invoice references, tracking separate Net, VAT, and Gross amounts.
+
+### Data Governance Protocols
+
+To ensure the interface displayed credible figures rather than speculative calculations, I established explicit data ingestion standards:
+
+* **Invoices as Single Source of Truth:** Reconciled tax invoices take precedence over credit card aggregations or informal notes.
+* **Zero Silent Overwrites:** Data discrepancies were logged for deliberate resolution rather than patched silently in background routines.
+* **Reversible State Migrations:** Strict backup checkpoints preceded all bulk schema modifications to prevent corruption.
+
+---
+
+## Phase 4: Product Delivery & UX Execution
+
+The application was built as a clean, low-latency interface structured around five purpose-built views:
+
+1. **Executive Dashboard:** At-a-glance visibility into near-term commitments (30-day runway), annualized projections, recent contract state adjustments, and category distribution charts.
+2. **Subscription Inspector:** Unified temporal audit trails for any contract, rendering price jumps, status history, and payments on a single screen.
+3. **Forecasting Calendar:** Forward-looking scheduling matrix pinpointing upcoming renewal charges by exact date.
+4. **Reconciled Ledger:** Comprehensive payment history with clean CSV export capabilities for seamless bookkeeping.
+5. **Vendor Directory:** Aggregated spend mapped by legal vendor entity to evaluate overall supplier concentration.
+
+---
+
+## Product Outcomes & Core Competencies
+
+* **End-to-End Execution:** Owned the full product lifecycle from zero-to-one: discovered an unaddressed market need, designed the data model, managed the scope, built the application, and deployed a live public release.
+* **Immediate Operational ROI:** Transitioned from manual spreadsheet synthesis to automated, single-pane portfolio visibility across recurring commitments.
+* **Actionable Price Visibility:** Automatically exposed unnotified vendor price increases upon data ingestion, directly informing supplier renegotiations and cancellations.
+* **Ready-to-Use Artifact:** Shipped a production-grade application and complete product showcase live at [Renewals Product Page](https://pranoti.thesciencetalk.com/products/subscription-tracker/).
 
 ---
 
 ## Work With Me
 
-Many teams have a clear pain point and scattered data, but no product that connects them. Good products start with the right problem definition and a clear scope, not with features.
+Most organizations suffer from the same underlying challenge: **critical operational data exists in silos, but actionable decision-making tools are missing.**
 
-My name is Dr. Pranoti Kshirsagar. I take ideas from problem to working product: I define what it must do, design how it holds the data, and decide what stays out.
+Building successful software doesn't start with code or sprawling backlogs; it starts with **problem framing, robust data foundations, and disciplined scope management.**
 
-**Get in touch:** [https://thesciencetalk.com/contact-us/](https://thesciencetalk.com/contact-us/)
+I am **Dr. Pranoti Kshirsagar**. I translate complex, unstructured business problems into intuitive, technically sound, and functional digital products.
+
+* **Portfolio:** [pranoti.thesciencetalk.com](https://pranoti.thesciencetalk.com/)
+* **Get in touch:** [Connect via The Science Talk](https://thesciencetalk.com/contact-us/)
