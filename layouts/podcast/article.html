@@ -4,11 +4,11 @@
 <article class="epa-page">
   <div class="epa-inner">
 
-    <nav class="epa-crumbs" aria-label="Breadcrumb">
-      <span>Podcast</span> <span>/</span>
-      <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> <span>/</span>
+    {{/* div, not nav: the site CSS turns every <nav> into the fixed top bar */}}
+    <div class="epa-crumbs" role="navigation" aria-label="Breadcrumb">
+      <a href="/materials-science-nanoscience-podcast-episodes/">Under the Microscope</a> <span>/</span>
       <span>{{ .Title }}</span>
-    </nav>
+    </div>
 
     <h1 class="epa-title">{{ .Title }}</h1>
     <p class="epa-byline">
@@ -21,10 +21,10 @@
 
     {{ partial "podcast-listen.html" . }}
 
-    <nav class="epa-prevnext">
+    <div class="epa-prevnext" role="navigation" aria-label="More episodes">
       {{ with .PrevInSection }}<a href="{{ .RelPermalink }}" class="epa-prev">← {{ .Title }}</a>{{ end }}
       {{ with .NextInSection }}<a href="{{ .RelPermalink }}" class="epa-next">{{ .Title }} →</a>{{ end }}
-    </nav>
+    </div>
 
   </div>
 </article>
