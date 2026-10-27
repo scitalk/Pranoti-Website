@@ -24,6 +24,8 @@ Rebecca Pittkowski makes new materials to act as catalysts for making hydrogen a
 
 Rebecca Pittkowski was a postdoctoral researcher at the University of Copenhagen when we recorded this episode in 2022. She now leads the [Nanoparticles in Electrocatalysis group](https://chem.ku.dk/research_sections/nanochem/pittkowski-group/) as an assistant professor in the Department of Chemistry at the University of Copenhagen. Her group makes metal and oxide nanoparticles for water electrolysis and fuel cells, and studies them with synchrotron X-ray techniques.
 
+Rebecca Pittkowski curated the Real Scientists Nano Twitter account (@RealSci_Nano) from October 3 to October 8 2022. [Read all of Rebecca's tweets from that week](/realsci-nano-tweets/#g99).
+
 {{< split image="/images/podcasts/ep194/194_Rebecca_Pittkowski.jpg" side="right" bg="#fffafc" >}}
 ## Key highlights in this episode
 

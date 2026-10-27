@@ -38,3 +38,5 @@ aliases: ["/podcast/molecular-puzzles-in-chemical-bathtubs-chris-brewer/"]
 ## About the guest
 
 Chris Brewer is a Research Associate (Postdoc) at the University of Texas at Dallas, developing chemical bath deposition methods for tin sulfides and iron sulfides on organic surfaces. During his PhD in Chemistry at the University of Florida, he designed ruthenium precursors for photoassisted chemical vapour deposition. He studied Chemistry and Biochemistry at Florida State University and has a background as a science educator.
+
+Chris Brewer curated the Real Scientists Nano Twitter account (@RealSci_Nano) from October 23 to October 30 2023. [Read all of Chris's tweets from that week](/realsci-nano-tweets/#g116).

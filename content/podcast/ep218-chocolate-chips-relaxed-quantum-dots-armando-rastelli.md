@@ -36,3 +36,5 @@ aliases: ["/podcast/chocolate-chips-relaxed-quantum-dots-armando-rastelli/"]
 ## About the guest
 
 Armando Rastelli is a Professor at the Institute of Semiconductor and Solid State Physics at Johannes Kepler University Linz in Austria, where his group works on semiconductor quantum dots.
+
+Armando Rastelli curated the Real Scientists Nano Twitter account (@RealSci_Nano) from May 6 to May 10 2024. [Read all of Armando's tweets from that week](/realsci-nano-tweets/#g123).

@@ -38,3 +38,5 @@ aliases: ["/podcast/faster-phones-thanks-to-spintronics-sofia-ferreira-teixeira/
 ## About the guest
 
 Sofia Ferreira Teixeira is a Postdoctoral Researcher at CIC nanoGUNE in Spain, working on spintronics, using electron spin to make faster, more energy-efficient electronics, and on characterising new layered magnetic materials. Sofia did a Bachelor in Physics at the University of Porto, with research internships at IFIMUP on thermoelectric materials.
+
+Sofia Ferreira Teixeira curated the Real Scientists Nano Twitter account (@RealSci_Nano) from November 27 to December 4 2023. [Read all of Sofia's tweets from that week](/realsci-nano-tweets/#g118).

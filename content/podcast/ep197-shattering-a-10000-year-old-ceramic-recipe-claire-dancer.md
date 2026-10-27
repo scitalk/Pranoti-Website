@@ -24,6 +24,8 @@ Claire Dancer says ceramics get overlooked because people think they are brittle
 
 Claire Dancer is a Reader at WMG, University of Warwick, in the UK, where she has led a ceramic processing group since 2013. She grew up near Cardiff, studied natural sciences and materials science at Cambridge, and did her PhD at Oxford on magnesium diboride, a superconductor. Postdocs on ceramic armour and on metamaterials followed. According to her [Warwick profile](https://warwick.ac.uk/wie/getinvolved/membersandfellows/fellows-about/foundation/), she also leads outreach and engagement for the UK Metamaterials Network.
 
+Claire Dancer curated the Real Scientists Nano Twitter account (@RealSci_Nano) from December 5 to December 12 2022. [Read all of Claire's tweets from that week](/realsci-nano-tweets/#g102).
+
 {{< split image="/images/podcasts/ep197/197_Claire_Dancer.jpg" side="right" bg="#fffafc" >}}
 ## Key highlights in this episode
 

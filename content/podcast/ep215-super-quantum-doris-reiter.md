@@ -36,3 +36,5 @@ aliases: ["/podcast/super-quantum-doris-reiter/"]
 ## About the guest
 
 Doris Reiter is a Professor at TU Dortmund University in Germany. A theoretical physicist by training, she works on SUPER, a scheme for generating single photons from quantum dots.
+
+Doris Reiter curated the Real Scientists Nano Twitter account (@RealSci_Nano) from March 11 to March 17 2024. [Read all of Doris's tweets from that week](/realsci-nano-tweets/#g120).

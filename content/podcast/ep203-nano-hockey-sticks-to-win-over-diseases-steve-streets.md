@@ -232,3 +232,5 @@ aliases: ["/podcast/nano-hockey-sticks-to-win-over-diseases-steve-streets/"]
 ## About the guest
 
 Steve Streets is a Postdoctoral Research Associate at the University of Victoria in Canada, where he works on precision nanomaterials: making non-spherical nanomaterials to find out how changing their shape affects their properties and their interactions with biology.
+
+Steve Streets curated the Real Scientists Nano Twitter account (@RealSci_Nano) from May 1 to May 10 2023. [Read all of Steve's tweets from that week](/realsci-nano-tweets/#g108).

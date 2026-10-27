@@ -38,3 +38,5 @@ aliases: ["/podcast/nano-to-micro-to-macro-levi-tegg/"]
 ## About the guest
 
 Levi Tegg is a Research Associate at The University of Sydney in Australia, where he uses advanced microscopes to study the atomic-scale structure of materials, from frozen water in the atom probe to metal oxides and nanoporous metals. He completed his PhD in physics at The University of Newcastle in 2020, studying conductive metal oxide nanoparticles for plasmonics.
+
+Levi Tegg curated the Real Scientists Nano Twitter account (@RealSci_Nano) from July 30 to August 7 2023. [Read all of Levi's tweets from that week](/realsci-nano-tweets/#g111).

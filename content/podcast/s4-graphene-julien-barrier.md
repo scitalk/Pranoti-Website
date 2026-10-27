@@ -24,6 +24,8 @@ Julien Barrier works in mesoscopic transport, a branch of physics at the interse
 
 Julien Barrier is an experimental physicist who trained in chemical physics at ESPCI Paris and did his master's project at the SLAC National Accelerator Laboratory. He moved to the University of Manchester for his PhD in 2018, and at the time of recording in 2022 he held an EPSRC postdoctoral fellowship there. He was first author of the 2020 *Nature Communications* paper on [Brown-Zak fermions in graphene superlattices](https://www.manchester.ac.uk/discover/news/manchester-group-discovers-radically-different-physics-in-graphene-superlattices/).
 
+Julien Barrier curated the Real Scientists Nano Twitter account (@RealSci_Nano) from August 8 to August 15 2022. [Read all of Julien's tweets from that week](/realsci-nano-tweets/#g98).
+
 {{< split image="/images/podcasts/s4-graphene-julien-barrier/193_Julien_Barrier.webp" side="right" bg="#fffafc" >}}
 ## Key highlights in this episode
 

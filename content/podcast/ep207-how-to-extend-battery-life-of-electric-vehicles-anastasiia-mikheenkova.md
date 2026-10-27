@@ -38,3 +38,5 @@ aliases: ["/podcast/how-to-extend-battery-life-of-electric-vehicles-anastasiia-m
 ## About the guest
 
 Anastasiia Mikheenkova is a PhD student at Uppsala University in Sweden, where she studies why lithium-ion cells in electric vehicles degrade, focusing on the positive electrode from the macro to the nano level. She studied nanotechnology at Samara Aerospace University and completed the MaMaSELF Erasmus Mundus master's, with degrees from Rennes and Torino.
+
+Anastasiia Mikheenkova curated the Real Scientists Nano Twitter account (@RealSci_Nano) from August 13 to August 22 2023. [Read all of Anastasiia's tweets from that week](/realsci-nano-tweets/#g112).

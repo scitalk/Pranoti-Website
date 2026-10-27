@@ -24,6 +24,8 @@ Jose Ocaña-Pujol works on optical metamaterials, materials whose properties com
 
 Jose Luis Ocaña-Pujol was a PhD student at ETH Zurich in Switzerland when we recorded this episode in 2022. He studied nanoscience at the Autonomous University of Barcelona, then took a master's in Science for Energy and Sustainability in Amsterdam, which included research at AMOLF and a part-time job in energy analysis. His 2022 paper with colleagues at ETH Zurich, [*Strain-Driven Thermal and Optical Instability in Silver/Amorphous-Silicon Hyperbolic Metamaterials*](https://doi.org/10.1002/adom.202201749), was published in *Advanced Optical Materials*.
 
+Jose L Ocana-Pujol curated the Real Scientists Nano Twitter account (@RealSci_Nano) from October 30 to November 7 2022. [Read all of Jose's tweets from that week](/realsci-nano-tweets/#g100).
+
 {{< split image="/images/podcasts/ep195/195_Jose-Ocana-Pujol.jpg" side="right" bg="#fffafc" >}}
 ## Key highlights in this episode
 

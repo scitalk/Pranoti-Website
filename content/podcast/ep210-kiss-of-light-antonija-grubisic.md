@@ -24,6 +24,8 @@ Antonija Grubisic-Cabo first came on Under the Microscope in 2020 as a postdoc i
 
 Antonija Grubisic-Cabo is an assistant professor at the [Zernike Institute for Advanced Materials, University of Groningen](https://www.rug.nl/staff/a.grubisic-cabo/?lang=en), where she leads research on 2D and quantum materials using ARPES and time-resolved ARPES. Since this episode she has received the [2025 Minerva Prize](https://www.rug.nl/research/zernike/news/newsitems/202511-minerva-agc?lang=en) from the Dutch Physical Society and the Dutch Physics Council for her work on quantum and two-dimensional materials.
 
+Antonija Grubisic-Cabo curated the Real Scientists Nano Twitter account (@RealSci_Nano) from October 16 to October 23 2023. [Read all of Antonija's tweets from that week](/realsci-nano-tweets/#g115).
+
 {{< split image="/images/podcasts/ep210/210_Antonija-Grubisic-Cabo.jpg" side="right" bg="#fffafc" >}}
 ## Key highlights in this episode
 

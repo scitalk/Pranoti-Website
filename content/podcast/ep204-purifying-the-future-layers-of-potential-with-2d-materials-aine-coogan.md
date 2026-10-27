@@ -38,3 +38,5 @@ aliases: ["/podcast/purifying-the-future-layers-of-potential-with-2d-materials-a
 ## About the guest
 
 Aine Coogan is a Materials Chemistry PhD Researcher at Trinity College Dublin in Ireland, where she synthesises 2D nanomaterials for water purification by nanofiltration and for chiral biomedical applications. Her group added photocatalytic copper aluminium layered double hydroxides to boron nitride membranes so the filters can be reused rather than discarded. She holds a Bachelor's in Nanoscience, Physics and Chemistry of Advanced Materials from Trinity.
+
+Aine Coogan curated the Real Scientists Nano Twitter account (@RealSci_Nano) from June 26 to July 10 2023. [Read all of Aine's tweets from that week](/realsci-nano-tweets/#g109).

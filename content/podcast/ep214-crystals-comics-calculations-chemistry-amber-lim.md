@@ -38,3 +38,5 @@ aliases: ["/podcast/crystals-comics-calculations-chemistry-amber-lim/"]
 ## About the guest
 
 Amber Lim is a Graduate Research Assistant at the University of Wisconsin–Madison, using first-principles calculations to understand the structure and stability of intermetallic crystals, towards predicting and designing new materials. Her work showed how entropy stabilises the high-temperature polymorph of IrIn3. She is also certified to teach K-12 science in Texas.
+
+Amber Lim curated the Real Scientists Nano Twitter account (@RealSci_Nano) from December 18 to December 26 2023. [Read all of Amber's tweets from that week](/realsci-nano-tweets/#g119).

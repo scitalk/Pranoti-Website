@@ -24,6 +24,8 @@ Andy Sode Anker's group makes new functional materials, takes them to synchrotro
 
 Andy Sode Anker was a PhD student in materials chemistry at the University of Copenhagen when we recorded this episode in late 2022. He grew up on the Danish island of Bornholm and worked closely with the university's Department of Computer Science. He has since moved to the [Technical University of Denmark](https://orbit.dtu.dk/en/persons/andy-sode-anker/), where he continues to develop machine learning methods for analysing X-ray scattering data from nanomaterials.
 
+Andy Sode Anker curated the Real Scientists Nano Twitter account (@RealSci_Nano) from November 28 to December 4 2022. [Read all of Andy's tweets from that week](/realsci-nano-tweets/#g101).
+
 {{< split image="/images/podcasts/ep196/196_Andy-Sode-Anke.jpg" side="right" bg="#fffafc" >}}
 ## Key highlights in this episode
 

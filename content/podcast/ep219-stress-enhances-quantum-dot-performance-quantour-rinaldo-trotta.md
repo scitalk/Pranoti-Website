@@ -36,3 +36,5 @@ aliases: ["/podcast/stress-enhances-quantum-dot-performance-quantour-rinaldo-tro
 ## About the guest
 
 Rinaldo Trotta is a Professor at Sapienza University of Rome in Italy, where his research on semiconductor nanostructures sits at the interface between semiconductor physics and quantum optics. Before returning to Rome, he worked in Linz, Austria.
+
+Rinaldo Trotta curated the Real Scientists Nano Twitter account (@RealSci_Nano) from May 27 to June 3 2024. [Read all of Rinaldo's tweets from that week](/realsci-nano-tweets/#g124).

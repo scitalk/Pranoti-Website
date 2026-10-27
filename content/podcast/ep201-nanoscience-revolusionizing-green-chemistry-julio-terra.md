@@ -39,3 +39,5 @@ aliases: ["/podcast/nanoscience-revolusionizing-green-chemistry-julio-terra/"]
 ## About the guest
 
 Julio Terra is a Post-doctoral Associate at EPFL in Switzerland, where he designs nanostructures with controlled composition, size and shape to make catalysts for green chemistry. In his PhD at McGill University, he trapped a catalyst inside hollow silica shells to study confined chemistry. He obtained his BSc and MSc in Chemistry in Brazil, with exchanges at the University of Toronto and McGill.
+
+Julio Terra curated the Real Scientists Nano Twitter account (@RealSci_Nano) from April 2 to April 11 2023. [Read all of Julio's tweets from that week](/realsci-nano-tweets/#g106).

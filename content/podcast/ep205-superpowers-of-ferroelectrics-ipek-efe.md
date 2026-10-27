@@ -38,3 +38,5 @@ aliases: ["/podcast/superpowers-of-ferroelectrics-ipek-efe/"]
 ## About the guest
 
 Ipek Efe is a PhD Student at ETH Zurich in Switzerland, where she develops ferroelectric thin films with novel properties. Her doctoral project focuses on Aurivillius ferroelectrics, a family of crystals that self-heal electrostatically, and on engineering their growth to achieve a net polarisation. She holds a BSc in Materials Science and Nanoengineering from Sabanci University, Istanbul, and an MSc in Materials Science from ETH Zurich.
+
+Ipek Efe curated the Real Scientists Nano Twitter account (@RealSci_Nano) from July 10 to July 17 2023. [Read all of Ipek's tweets from that week](/realsci-nano-tweets/#g110).

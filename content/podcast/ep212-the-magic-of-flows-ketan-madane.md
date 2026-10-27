@@ -38,3 +38,5 @@ aliases: ["/podcast/the-magic-of-flows-ketan-madane/"]
 ## About the guest
 
 Ketan Madane is a PhD Student at the University of Limerick in Ireland, designing fluidic devices with no moving parts, such as fluidic oscillators and vortex diodes, for modular, intensified and continuous processes like antisolvent crystallisation. He trained in mechanical engineering in India and worked in industry and as a lecturer before his master's in thermal engineering at Walchand College of Engineering.
+
+Ketan Madane curated the Real Scientists Nano Twitter account (@RealSci_Nano) from November 12 to November 20 2023. [Read all of Ketan's tweets from that week](/realsci-nano-tweets/#g117).

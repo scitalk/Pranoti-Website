@@ -120,3 +120,5 @@ aliases: ["/podcast/high-pressure-and-nanodiamonds-jodie-bradby/"]
 ## About the guest
 
 Jodie Bradby is a Professor at The Australian National University, where she studies how materials change when squeezed to high pressure in a diamond anvil cell. She found how to make lonsdaleite, a new type of diamond, at room temperature. She studied Applied Physics at RMIT, did her PhD at ANU, became a full professor in 2018, and was President of the Australian Institute of Physics in 2020–21.
+
+Jodie Bradby curated the Real Scientists Nano Twitter account (@RealSci_Nano) from April 16 to April 24 2023. [Read all of Jodie's tweets from that week](/realsci-nano-tweets/#g107).

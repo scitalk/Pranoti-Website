@@ -38,3 +38,5 @@ aliases: ["/podcast/plasma-laser-based-compact-particle-accelerators-jens-osterh
 ## About the guest
 
 Jens Osterhoff is a Senior Scientist and Deputy Director of the BELLA Center at Lawrence Berkeley National Laboratory in the USA, where his team works on making large particle accelerators very small. He previously worked at DESY in Hamburg, Germany.
+
+Jens Osterhoff curated the Real Scientists Nano Twitter account (@RealSci_Nano) from July 21 to July 23 2024. [Read all of Jens's tweets from that week](/realsci-nano-tweets/#g125).

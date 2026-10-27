@@ -39,3 +39,5 @@ aliases: ["/podcast/perfect-broccoli-quantum-thermometers-george-mihailescu/"]
 ## About the guest
 
 George Mihailescu is a PhD Researcher at University College Dublin in Ireland, studying miniaturised technologies and how to control them for sensing and computation. His first PhD project uses an impurity or qubit as a thermometer for quantum environments, where temperature fluctuations can destroy fragile quantum states. He holds a Bachelor's in Physics and Biomedical Sciences and a Master's in Applied Mathematics and Theoretical Physics from UCD.
+
+George Mihailescu curated the Real Scientists Nano Twitter account (@RealSci_Nano) from March 19 to March 27 2023. [Read all of George's tweets from that week](/realsci-nano-tweets/#g105).

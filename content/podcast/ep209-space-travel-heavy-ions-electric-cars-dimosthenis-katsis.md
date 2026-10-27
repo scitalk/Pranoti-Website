@@ -38,3 +38,5 @@ aliases: ["/podcast/space-travel-heavy-ions-electric-cars-dimosthenis-katsis/"]
 ## About the guest
 
 Dimosthenis Katsis is Director of Power Electronics at PowerAmerica, developing electric vehicle technology using wide bandgap power semiconductors. His career has run from solar car racing to hybrid army vehicles, nuclear energy consulting and rocket building, and back to electric vehicles.
+
+Dimosthenis Katsis curated the Real Scientists Nano Twitter account (@RealSci_Nano) from October 9 to October 12 2023. [Read all of Dimosthenis's tweets from that week](/realsci-nano-tweets/#g114).

@@ -38,3 +38,5 @@ aliases: ["/podcast/simulating-the-future-of-quantum-materials-antonio-manesco/"
 ## About the guest
 
 Antonio Manesco is a Postdoc Researcher at Delft University of Technology in the Netherlands, working on mesoscopic and nano electronics: how electrons behave in low-dimensional devices. He holds a bachelor's in Engineering Physics and a PhD from Brazil, from the University of São Paulo.
+
+Antonio Manesco curated the Real Scientists Nano Twitter account (@RealSci_Nano) from October 1 to October 9 2023. [Read all of Antonio's tweets from that week](/realsci-nano-tweets/#g113).

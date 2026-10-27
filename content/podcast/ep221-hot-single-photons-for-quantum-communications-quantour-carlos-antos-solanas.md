@@ -36,3 +36,5 @@ aliases: ["/podcast/hot-single-photons-for-quantum-communications-quantour-carlo
 ## About the guest
 
 Carlos Antós Solanas is a Professor at the Autonomous University of Madrid in Spain, where he researches hot single photons for quantum communication, especially in hexagonal boron nitride at room temperature. After his PhD in Madrid, he was a postdoc in Pascale Senellart's group, supported by a Marie Curie fellowship (2015 to 2019), then worked on 2D materials with Christian Schneider in Würzburg and Oldenburg (2020 to 2022), before returning to Madrid through the Atracción de Talento programme.
+
+Carlos Antós Solanas curated the Real Scientists Nano Twitter account (@RealSci_Nano) from August 5 to August 13 2024. [Read all of Carlos's tweets from that week](/realsci-nano-tweets/#g126).

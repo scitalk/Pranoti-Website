@@ -24,6 +24,8 @@ Manchester is known for making graphene by peeling one layer off a graphite crys
 
 Ashok Keerthi is a chemist in the Department of Chemistry at the University of Manchester, where he held a Presidential Fellowship at the time of this 2022 recording, a research-focused route equivalent to assistant professor. He studied up to his master's in India, did a PhD in synthetic organic chemistry at the National University of Singapore, and was a postdoc at the Max Planck Institute for Polymer Research in Germany. His group studies [molecular transport through capillaries made with atomic-scale precision](https://research.manchester.ac.uk/en/publications/molecular-transport-through-capillaries-made-with-atomic-scale-pr/) and also makes graphene nanoribbons from the bottom up.
 
+Ashok Keerthi curated the Real Scientists Nano Twitter account (@RealSci_Nano) from December 12 to December 20 2022. [Read all of Ashok's tweets from that week](/realsci-nano-tweets/#g103).
+
 {{< split image="/images/podcasts/ep198/198_Ashok_Keerthi.jpg" side="right" bg="#fffafc" >}}
 ## Key highlights in this episode
 

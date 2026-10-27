@@ -24,6 +24,8 @@ Jessica Henty-Ridilla studies the cytoskeleton, which she describes as the bones
 
 Jessica Henty-Ridilla was an assistant professor at SUNY Upstate Medical University in Syracuse, New York, when we recorded this episode in 2022. Her [faculty profile](https://www.upstate.edu/cdb/education/faculty.php?empID=ridillaj) now lists her as an associate professor in Biochemistry and Molecular Biology, and in 2024 her lab received a [$2.2 million grant renewal](https://www.upstate.edu/news/articles/2024/2024-08-22-lab.php) to continue its protein research. Her lab combines cell biology, genetics, advanced microscopy and test-tube reconstitution of the cytoskeleton.
 
+Jessica Henty-Ridilla curated the Real Scientists Nano Twitter account (@RealSci_Nano) from July 11 to July 18 2022. [Read all of Jessica's tweets from that week](/realsci-nano-tweets/#g96).
+
 {{< split image="/images/podcasts/s4-jessica-henty-ridilla-neurodegenerative-diseases/191_Jessica_Henty-Ridilla.webp" side="right" bg="#fffafc" >}}
 ## Key highlights in this episode
 

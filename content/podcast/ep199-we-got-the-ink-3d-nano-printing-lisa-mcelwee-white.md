@@ -24,6 +24,8 @@ Lisa McElwee-White's group makes precursors, the "ink" used to deposit thin film
 
 Lisa McElwee-White is the Crow Professor of Chemistry at the University of Florida and was chair of its chemistry department when we recorded this episode. She studied at the University of Kansas, did her PhD at Caltech and a postdoc at Stanford, where she joined the faculty before moving to Florida. Her [research group](https://lmwhite.chem.ufl.edu/sample-page/) develops precursor compounds for making thin films and nanostructures. She has since been [elected president-elect of the American Chemical Society](https://news.clas.ufl.edu/uf-chemist-elected-acs-president/), serving as president in 2028.
 
+Lisa McElwee-White curated the Real Scientists Nano Twitter account (@RealSci_Nano) from February 20 to February 26 2023. [Read all of Lisa's tweets from that week](/realsci-nano-tweets/#g104).
+
 {{< split image="/images/podcasts/ep199/199_Lisa-McElwee-White.jpg" side="right" bg="#fffafc" >}}
 ## Key highlights in this episode
 
