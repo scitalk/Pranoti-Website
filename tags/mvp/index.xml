@@ -1,8 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MVP on Pranoti Kshirsagar</title><link>https://pranoti.thesciencetalk.com/tags/mvp/</link><description>Recent content in MVP on Pranoti Kshirsagar</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Mon, 26 Oct 2026 19:44:41 +0100</lastBuildDate><atom:link href="https://pranoti.thesciencetalk.com/tags/mvp/index.xml" rel="self" type="application/rss+xml"/><item><title>Renewals: From Idea to Ready-to-Use Product, Owning the Full Product Lifecycle</title><link>https://pranoti.thesciencetalk.com/case-studies/renewals-tracker/</link><pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate><guid>https://pranoti.thesciencetalk.com/case-studies/renewals-tracker/</guid><description>&lt;p>&lt;strong>Date:&lt;/strong> October 2026&lt;br>
-&lt;strong>Domain Focus:&lt;/strong> Personal and business finance, recurring payments&lt;br>
-&lt;strong>Services:&lt;/strong> Product discovery, data modelling, product design, scope management&lt;br>
-&lt;strong>Tools:&lt;/strong> Python, SQLite, JavaScript, Claude Code&lt;br>
-&lt;strong>Live page:&lt;/strong> &lt;a href="https://pranoti.thesciencetalk.com/products/subscription-tracker/">https://pranoti.thesciencetalk.com/products/subscription-tracker/&lt;/a>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MVP on Pranoti Kshirsagar</title><link>https://pranoti.thesciencetalk.com/tags/mvp/</link><description>Recent content in MVP on Pranoti Kshirsagar</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Tue, 27 Oct 2026 16:33:07 +0100</lastBuildDate><atom:link href="https://pranoti.thesciencetalk.com/tags/mvp/index.xml" rel="self" type="application/rss+xml"/><item><title>Renewals: Launching a New Product from Gap to Market</title><link>https://pranoti.thesciencetalk.com/case-studies/renewals-tracker/</link><pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate><guid>https://pranoti.thesciencetalk.com/case-studies/renewals-tracker/</guid><description>&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Metadata&lt;/th>
+ &lt;th>Details&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>&lt;strong>Product Initiative&lt;/strong>&lt;/td>
+ &lt;td>New Product Development (Zero-to-One)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Role&lt;/strong>&lt;/td>
+ &lt;td>Solo Product Lead &amp;amp; Builder (Market Discovery, Schema Architecture, UX, Execution, GTM)&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Status&lt;/strong>&lt;/td>
+ &lt;td>Launched, Functional &amp;amp; Publicly Accessible&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Date&lt;/strong>&lt;/td>
+ &lt;td>October 2026&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Domain&lt;/strong>&lt;/td>
+ &lt;td>Personal &amp;amp; Business Finance, Recurring Liability Management&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Stack&lt;/strong>&lt;/td>
+ &lt;td>Python, SQLite, JavaScript, Claude Code&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&lt;strong>Live Product&lt;/strong>&lt;/td>
+ &lt;td>&lt;a href="https://pranoti.thesciencetalk.com/products/subscription-tracker/">Renewals Product Page &amp;amp; Live Demo&lt;/a>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
 &lt;hr>
 &lt;h2 id="executive-summary">Executive Summary&lt;/h2>
-&lt;p>I pay for many things on repeat: software, streaming, insurance, phone, internet, gym, rent. Each one has its own vendor, price history, VAT rate and renewal cycle. The information to manage them existed, but it was scattered across PDF invoices, Excel sheets, Google Sheets and my own notes.&lt;/p></description></item></channel></rss>
+&lt;p>Managing recurring liabilities across SaaS, digital tools, telecommunications, insurance, and professional services is an operational blind spot for modern professionals and small business operators. While transaction records exist, they are scattered across vendor portals, PDF invoices, and disconnected spreadsheets, obscuring true historical expenditure and impending liabilities.&lt;/p></description></item></channel></rss>
