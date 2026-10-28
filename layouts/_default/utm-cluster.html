@@ -1,14 +1,16 @@
 {{ define "main" }}
 <style>
-.utmc{max-width:860px;margin:0 auto;padding:3rem 16px 4rem;font-family:Inter,sans-serif;color:#222}
-.utmc h1,.utmc h2{font-family:Ubuntu,sans-serif}
+.utmc{max-width:calc(1080px + 4rem);box-sizing:border-box;margin:0 auto;padding:3rem 2rem 4rem;font-family:var(--font-body);color:#333}
+.utmc a{color: inherit; text-decoration: underline; text-underline-offset: 3px; transition: color 0.15s;}
+.utmc a:hover{color: #ff5757;}
+.utmc h1,.utmc h2{font-family:'Ubuntu',sans-serif;font-weight:700;letter-spacing:-0.01em;color:#1B2B4B}
 .utmc .crumb{font-size:.85rem;color:#666;margin-bottom:1rem}
-.utmc .crumb a{color:#666}
-.utmc h1{font-size:2.1rem;line-height:1.2;margin:.2rem 0 1rem}
-.utmc .intro{font-size:1.1rem;line-height:1.7}
-.utmc h2{font-size:1.4rem;margin:2.5rem 0 1rem;border-bottom:2px solid #eee;padding-bottom:.4rem}
+.utmc .crumb a{color:#666;text-decoration:none}
+.utmc h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.2;margin:.2rem 0 1rem}
+.utmc .intro,.utmc li{font-size:1.05rem;line-height:1.8;color:#4a4844}
+.utmc h2{font-size:clamp(1.3rem,2.2vw,1.65rem);margin:2.75rem 0 .85rem}
 .utmc ul{padding-left:1.2rem;margin:0}
-.utmc li{margin:.6rem 0;line-height:1.5}
+.utmc li{margin:.6rem 0}
 .utmc li a{font-weight:600}
 .utmc li .g{color:#666;font-size:.92rem}
 </style>

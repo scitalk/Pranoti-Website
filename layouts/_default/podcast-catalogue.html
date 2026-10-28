@@ -61,10 +61,8 @@
 
       <div class="pod-hero-text">
         <h1>Under the Microscope podcast</h1>
-        <p class="pod-hero-sub">
-          Conversations with researchers working at the micron scale and below, hosted by
-          <a href="/about/">Dr. Pranoti Kshirsagar</a>.
-        </p>
+        <p class="pod-hero-sub">Spotlighting materials science and nanoscience</p>
+        <p class="pod-hero-sub">Hosted by <a href="/about/">Dr. Pranoti Kshirsagar</a></p>
 
         <div class="pod-hero-platforms" role="list" aria-label="Listen on">
           <a role="listitem" href="https://open.spotify.com/show/0joF8aDQP7VavEgsRdnCIA" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
@@ -93,14 +91,11 @@
           </a>
         </div>
 
-        {{ if $embedId }}
-        <div class="pod-hero-player">
-          <iframe title="Latest episode" src="https://open.spotify.com/embed/episode/{{ $embedId }}?theme=0"
-            width="100%" height="152" frameborder="0" loading="lazy"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-        </div>
-        {{ end }}
 
+        <div class="pod-hero-ctas">
+          <a href="#latest-episodes" class="pod-hero-cta pod-hero-cta--ghost">Latest episodes</a>
+          <a href="#work-with-us" class="pod-hero-cta pod-hero-cta--solid">Work with us</a>
+        </div>
         <p class="pod-hero-meta">{{ $totalEpisodes }} episodes &middot; {{ len $data.seasons }} seasons &middot; 2019&ndash;2026</p>
       </div>
 
@@ -110,13 +105,40 @@
   <section class="pod-host">
     <div class="pod-host-inner">
       <h2>About Under the Microscope</h2>
-      <p><strong>Under the Microscope is the flagship podcast of The Science Talk</strong>, bringing the people and ideas shaping materials science and nanoscience to a wider audience.</p>
-      <p>Produced and hosted by <strong>Dr. Pranoti Kshirsagar</strong>, with a PhD materials and nanoscience and over a 15 years of experience in research and innovation, the podcast puts scientists&mdash;not just their discoveries&mdash;at the centre of the conversation.</p>
-      <p>Each episode features a leading scientist working in materials science or nanoscience. Through in-depth, accessible conversations, we explore their research, groundbreaking discoveries, the challenges behind their work, and the stories that shaped their scientific journey.</p>
-      <p>The goal is simple: <strong>to make exceptional science visible, understandable, and connected to the people behind it.</strong></p>
-      <p><em>Under the Microscope</em> is independently produced and self-funded by Dr. Pranoti Kshirsagar.</p>
+      <p>Under the Microscope is the <strong>flagship podcast of The Science Talk</strong>. Here, we explore the fascinating world of <strong>materials and nanoscience</strong>. Join us as we delve into groundbreaking research, innovative discoveries, and the inspiring stories of scientists making waves in this field.</p>
+      <p>Hosted by <strong>Pranoti Kshirsagar</strong>, with a <strong>PhD in Materials and Nanoscience</strong> and <strong>15 years of experience in research and innovation</strong>, Under the Microscope is dedicated to bringing the incredible work of materials and nanoscientists to the forefront. Our episodes highlight the brilliance and passion of these scientists, providing them a platform to share their insights with a wider audience.</p>
+      <p><em>Under the Microscope is independently produced and hosted by Dr. Pranoti Kshirsagar.</em></p>
     </div>
   </section>
+
+  {{/* Browse by topic: links to the topic cluster pages, with live episode counts */}}
+  {{ $podPages := where site.RegularPages "Section" "podcast" }}
+  {{ $topics := slice }}
+  {{ range where site.RegularPages "Params.groups" "!=" nil }}
+    {{ $n := 0 }}
+    {{ range .Params.groups }}{{ range .episodes }}{{ if where $podPages "File.ContentBaseName" .file }}{{ $n = add $n (.parts | default 1) }}{{ end }}{{ end }}{{ end }}
+    {{ $topics = $topics | append (dict "title" .Params.short_title "url" .RelPermalink "n" $n) }}
+  {{ end }}
+  {{ with $topics }}
+  <section class="pod-topics" aria-labelledby="pod-topics-h">
+    <div class="pod-topics-inner">
+      <h2 id="pod-topics-h">Browse by topic</h2>
+      <ul>
+        {{ range sort . "n" "desc" }}<li><a href="{{ .url }}">{{ .title }}</a> <span>({{ .n }} episodes)</span></li>{{ end }}
+      </ul>
+    </div>
+  </section>
+  <style>
+  .pod-topics { background: #fafafa; padding: 3rem 2rem; }
+  .pod-topics-inner { max-width: 1080px; margin: 0 auto; }
+  .pod-topics h2 { font-family: 'Ubuntu', sans-serif; font-size: clamp(1.3rem, 2.2vw, 1.65rem); font-weight: 700; letter-spacing: -0.01em; color: #1B2B4B; margin: 0 0 1.1rem; }
+  .pod-topics ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: .6rem 2rem; }
+  .pod-topics a { font-weight: 600; color: inherit; text-decoration: underline; text-underline-offset: 3px; transition: color 0.15s; }
+  .pod-topics a:hover { color: #ff5757; }
+  .pod-topics span { color: #6f6f6f; font-size: .92rem; white-space: nowrap; }
+  .pod-topics li { font-size: 1.05rem; line-height: 1.8; color: #4a4844; }
+  </style>
+  {{ end }}
 
   {{/* Card data comes from data/digital_content_hub.json — title, guest_name, affiliation, image_src. */}}
   {{ $dch := index .Site.Data "digital_content_hub" }}
@@ -129,6 +151,15 @@
     {{ end }}
   {{ end }}{{ end }}
   {{ $latest := first 32 (sort $utm "publicationDate" "desc") }}
+
+  {{/* Map Spotify episode ids and YouTube video ids to this site's episode pages */}}
+  {{ $pageByKey := dict }}
+  {{ range $p := where site.RegularPages "Section" "podcast" }}
+    {{ if hasPrefix $p.RelPermalink "/under-the-microscope/" }}
+    {{ with $p.Params.spotify_url }}{{ $pageByKey = merge $pageByKey (dict (replaceRE `^.*/episode/([A-Za-z0-9]+).*$` "$1" .) $p.RelPermalink) }}{{ end }}
+    {{ with $p.Params.youtube_url }}{{ $pageByKey = merge $pageByKey (dict (replaceRE `^.*(?:youtu\.be/|[?&]v=)([A-Za-z0-9_-]{11}).*$` "$1" .) $p.RelPermalink) }}{{ end }}
+    {{ end }}
+  {{ end }}
 
   {{/* Branded card art that exists on disk but is not yet linked from image_src in the JSON.
        Keyed by DCH episode_number. */}}
@@ -148,7 +179,7 @@
   }}
 
   <div class="pod-body">
-    <div class="pod-carousel">
+    <div class="pod-carousel" id="latest-episodes">
       <div class="pod-carousel-head">
         <h2>Latest episodes</h2>
         <div class="pod-carousel-nav">
@@ -160,18 +191,23 @@
         {{ range $ep := $latest }}
         {{ $epLink := $ep.youtube }}
         {{ if not $epLink }}{{ $epLink = $ep.spotify }}{{ end }}
+        {{ $epPage := "" }}
+        {{ with $ep.spotify }}{{ with index $pageByKey (replaceRE `^.*/episode/([A-Za-z0-9]+).*$` "$1" .) }}{{ $epPage = . }}{{ end }}{{ end }}
+        {{ if not $epPage }}{{ with $ep.youtube }}{{ with index $pageByKey (replaceRE `^.*(?:youtu\.be/|[?&]v=)([A-Za-z0-9_-]{11}).*$` "$1" .) }}{{ $epPage = . }}{{ end }}{{ end }}{{ end }}
+        {{ $ext := true }}
+        {{ with $epPage }}{{ $epLink = . }}{{ $ext = false }}{{ end }}
         {{ $epImg := $ep.image_src }}
         {{ if or (not $epImg) (in $epImg "Pranoti_UTM") }}{{ $epImg = index $artByNum (printf "%v" $ep.episode_number) }}{{ end }}
         {{ if not $epImg }}{{ $epImg = "/images/podcasts/UTM_podcast-art_2026-Sept.png" }}{{ end }}
         {{ $aff := $ep.affiliation }}
         {{ if or (eq $aff "[Affiliation not listed in sheet]") (hasPrefix $aff "[Affiliation") }}{{ $aff = "" }}{{ end }}
         <article class="pod-card">
-          <a class="pod-card-art" href="{{ $epLink }}"{{ if $epLink }} target="_blank" rel="noopener"{{ end }}>
+          <a class="pod-card-art" href="{{ $epLink }}"{{ if and $epLink $ext }} target="_blank" rel="noopener"{{ end }}>
             <img src="{{ $epImg }}" alt="{{ $ep.guest_name }} on Under the Microscope podcast" width="300" height="300" loading="lazy">
           </a>
           <div class="pod-card-body">
             <h3 class="pod-card-name">
-              {{ if $epLink }}<a href="{{ $epLink }}" target="_blank" rel="noopener">{{ $ep.title }}</a>{{ else }}{{ $ep.title }}{{ end }}
+              {{ if $epLink }}<a href="{{ $epLink }}"{{ if $ext }} target="_blank" rel="noopener"{{ end }}>{{ $ep.title }}</a>{{ else }}{{ $ep.title }}{{ end }}
             </h3>
             <p class="pod-card-guest">{{ $ep.guest_name }}</p>
             {{ with $aff }}<p class="pod-card-aff">{{ . }}</p>{{ end }}
@@ -185,10 +221,10 @@
     </div>
   </div>
 
-  <section class="pod-cta">
+  <section class="pod-cta" id="work-with-us">
     <div class="pod-cta-inner">
       <h2>Want to be a guest, or work with the podcast?</h2>
-      <p>I work with researchers, research institutions, and EIC/Horizon Europe-funded companies on science communication, podcast production, and grant dissemination.</p>
+      <p>We work with scientists, research institutions, and companies on science communication, dissemination, and marketing.</p>
       <a href="https://thesciencetalk.com/contact-us/" class="pod-hero-btn pod-hero-btn--solid">Get in touch →</a>
     </div>
   </section>
@@ -198,7 +234,7 @@
 <style>
 .pod-page { font-family: 'Inter', sans-serif; }
 .pod-hero { background: #0b0b0b; color: #fff; padding: 4.5rem 2rem 4rem; }
-.pod-hero-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 420px) 1fr; gap: 3.5rem; align-items: center; }
+.pod-hero-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 420px) 1fr; gap: 3.5rem; align-items: start; }
 
 .pod-hero-art { border-radius: 18px; overflow: hidden; }
 .pod-hero-art img { display: block; width: 100%; height: auto; }
@@ -207,6 +243,7 @@
 .pod-hero h1 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2rem, 4.4vw, 3.1rem); line-height: 1.12; margin: 0 0 1rem; color: #fff; }
 .pod-hero-sub { font-size: 1.05rem; line-height: 1.6; color: #b9b9b9; margin: 0 0 1.6rem; max-width: 34em; }
 .pod-hero-sub a { color: #fff; text-decoration: underline; }
+.pod-hero-sub:has(+ .pod-hero-sub) { margin-bottom: 0.35rem; }
 .pod-hero-platforms { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; color: #fff; margin: 0 0 2rem; }
 .pod-hero-platforms a { color: #fff; display: block; opacity: 0.85; transition: opacity 0.15s; }
 .pod-hero-platforms a:hover { opacity: 1; }
@@ -215,20 +252,20 @@
 .pod-hero-player iframe { border-radius: 12px; display: block; background: #fff; }
 .pod-hero-meta { font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; color: #7d7d7d; margin: 0; }
 
-.pod-host { background: #fafafa; border-bottom: 1px solid #e5e5e5; padding: 3rem 2rem; }
-.pod-host-inner { max-width: 720px; margin: 0 auto; }
-.pod-host h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.5rem; color: #1B2B4B; margin: 0 0 1.1rem; }
-.pod-host p { font-size: 1.02rem; line-height: 1.7; color: #333; margin: 0 0 1rem; }
+.pod-host { background: #fff; padding: 3rem 2rem; }
+.pod-host-inner { max-width: 1080px; margin: 0 auto; }
+.pod-host h2 { font-family: 'Ubuntu', sans-serif; font-size: clamp(1.3rem, 2.2vw, 1.65rem); font-weight: 700; letter-spacing: -0.01em; color: #1B2B4B; margin: 0 0 1.1rem; }
+.pod-host p { font-size: 1.05rem; line-height: 1.8; color: #4a4844; margin: 0 0 1.4rem; }
 .pod-host p:last-child { margin-bottom: 0; }
 
-.pod-body { max-width: 1080px; margin: 0 auto; padding: 2.5rem 2rem; }
+.pod-body { max-width: calc(1080px + 4rem); margin: 0 auto; padding: 2.5rem 2rem; box-sizing: border-box; }
 .pod-carousel-head { display: flex; align-items: center; justify-content: space-between; margin: 0 0 1.25rem; }
-.pod-carousel-head h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.4rem; color: #1B2B4B; margin: 0; }
+.pod-carousel-head h2 { font-family: 'Ubuntu', sans-serif; font-size: clamp(1.3rem, 2.2vw, 1.65rem); font-weight: 700; letter-spacing: -0.01em; color: #1B2B4B; margin: 0; }
 .pod-carousel-nav { display: flex; gap: 0.5rem; }
 .pod-arrow { width: 2.1rem; height: 2.1rem; border-radius: 50%; border: 1px solid #ccc; background: #fff; color: #1B2B4B; font-size: 1.1rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
 .pod-arrow:hover { background: #f0f0f0; }
 .pod-row { display: flex; gap: 1.5rem; overflow-x: auto; padding: 0.25rem 0 1rem; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
-.pod-carousel-foot { margin-top: 1.5rem; }
+.pod-carousel-foot { margin-top: 1.5rem; text-align: center; }
 .pod-all-btn { display: inline-block; padding: 0.7rem 1.35rem; border-radius: 8px; border: 1px solid #1B2B4B; color: #1B2B4B; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.15s; }
 .pod-all-btn:hover { background: #1B2B4B; color: #fff; }
 .pod-row::-webkit-scrollbar { height: 8px; }
@@ -246,11 +283,20 @@
 .pod-card[hidden] { display: none; }
 
 .pod-cta { background: #1B2B4B; color: #fff; padding: 3.25rem 2rem; text-align: center; }
-.pod-cta-inner { max-width: 620px; margin: 0 auto; }
-.pod-cta h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; margin: 0 0 0.75rem; color: #fff; }
-.pod-cta p { color: #cdd6e6; line-height: 1.6; margin: 0 0 1.5rem; }
+.pod-cta-inner { width: fit-content; max-width: 1080px; margin: 0 auto; }
+.pod-cta h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; margin: 0 0 0.75rem; color: #fff; white-space: nowrap; }
+@media (max-width: 860px) { .pod-cta h2 { white-space: normal; } }
+.pod-cta p { color: #cdd6e6; line-height: 1.6; margin: 0 0 1.5rem; width: 0; min-width: 100%; }
 .pod-cta .pod-hero-btn--solid { display: inline-block; background: #FF5757; color: #fff; padding: 0.7rem 1.35rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
 .pod-cta .pod-hero-btn--solid:hover { background: #e64545; }
+.pod-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0 0 1.4rem; }
+.pod-hero-cta { display: inline-block; padding: 0.7rem 1.35rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: background 0.15s, color 0.15s; }
+.pod-hero-cta--solid { background: #FF5757; color: #fff; border: 1px solid #FF5757; }
+.pod-hero-cta--solid:hover { background: #e64545; border-color: #e64545; }
+.pod-hero-cta--ghost { color: #fff; border: 1px solid rgba(255,255,255,0.6); }
+.pod-hero-cta--ghost:hover { background: #fff; color: #0b0b0b; }
+html { scroll-behavior: smooth; }
+#latest-episodes, #work-with-us { scroll-margin-top: 140px; }
 
 @media (max-width: 860px) {
   .pod-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
