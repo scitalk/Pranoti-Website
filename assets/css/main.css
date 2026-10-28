@@ -17,8 +17,8 @@
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-/* Default indent for content lists (the reset above removes it). Zero specificity: any section rule wins. */
-:where(main) :where(ul:not([class]), ol:not([class])) { padding-left: 1.75rem; }
+/* Default indent for content lists (the reset above removes it). Low specificity: beats any `*` reset, any section rule still wins. */
+main :where(ul:not([class]), ol:not([class])) { padding-left: 1.75rem; }
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 html { font-size: 16px; scroll-behavior: smooth; }
 body { font-family: var(--font-body); background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
