@@ -27,12 +27,12 @@
     {{ range where site.RegularPages "Params.groups" "!=" nil }}
       {{ $cluster := . }}
       {{ range .Params.groups }}
-        {{ if in .episodes $me }}
+        {{ if in (apply .episodes "index" "." "file") $me }}
         <div class="epa-cluster">
           <p class="epa-cluster-label">Part of <a href="{{ $cluster.RelPermalink }}">{{ $cluster.Params.short_title }}</a> · {{ .name }}</p>
           <ul>
           {{ $n := 0 }}
-          {{ range .episodes }}{{ if and (ne . $me) (lt $n 3) }}{{ with index (where $all "File.ContentBaseName" .) 0 }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ $n = add $n 1 }}{{ end }}{{ end }}{{ end }}
+          {{ range .episodes }}{{ if and (ne .file $me) (lt $n 3) }}{{ with index (where $all "File.ContentBaseName" .file) 0 }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ $n = add $n 1 }}{{ end }}{{ end }}{{ end }}
           </ul>
           <a class="epa-cluster-all" href="{{ $cluster.RelPermalink }}">All {{ $cluster.Params.short_title }} episodes →</a>
         </div>

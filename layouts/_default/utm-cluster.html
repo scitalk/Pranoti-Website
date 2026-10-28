@@ -1,29 +1,32 @@
 {{ define "main" }}
 <style>
-.utmc{max-width:1080px;margin:0 auto;padding:2rem 16px 4rem;font-family:Inter,sans-serif;color:#222}
+.utmc{max-width:860px;margin:0 auto;padding:2rem 16px 4rem;font-family:Inter,sans-serif;color:#222}
 .utmc h1,.utmc h2{font-family:Ubuntu,sans-serif}
 .utmc .crumb{font-size:.85rem;color:#666;margin-bottom:1rem}
 .utmc .crumb a{color:#666}
 .utmc h1{font-size:2.1rem;line-height:1.2;margin:.2rem 0 1rem}
-.utmc .intro{font-size:1.1rem;line-height:1.7;max-width:760px}
+.utmc .intro{font-size:1.1rem;line-height:1.7}
 .utmc h2{font-size:1.4rem;margin:2.5rem 0 1rem;border-bottom:2px solid #eee;padding-bottom:.4rem}
-.utmc .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem}
-.utmc .card{border:1px solid #e5e5e5;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#fff}
-.utmc .card:hover{box-shadow:0 4px 14px rgba(0,0,0,.08)}
-.utmc .card img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#f2f2f2}
-.utmc .card .b{padding:.8rem 1rem 1rem}
-.utmc .card .t{font-weight:600;line-height:1.35;margin-bottom:.35rem}
-.utmc .card .g{font-size:.85rem;color:#555}
-.utmc .card .d{font-size:.85rem;color:#666;margin-top:.5rem;line-height:1.45}
+.utmc ul{padding-left:1.2rem;margin:0}
+.utmc li{margin:.6rem 0;line-height:1.5}
+.utmc li a{font-weight:600}
+.utmc li .g{color:#666;font-size:.92rem}
 </style>
 
-{{/* Resolve each group's episode files to pages, newest first. */}}
+{{/* Resolve each group's episode files to live pages, newest first. "parts" = episodes recorded with that guest. */}}
 {{ $all := where site.RegularPages "Section" "podcast" }}
 {{ $groups := slice }}
 {{ $eps := slice }}
+{{ $total := 0 }}
 {{ range .Params.groups }}
   {{ $ps := slice }}
-  {{ range .episodes }}{{ with index (where $all "File.ContentBaseName" .) 0 }}{{ $ps = $ps | append . }}{{ end }}{{ end }}
+  {{ range .episodes }}
+    {{ $parts := .parts | default 1 }}
+    {{ with index (where $all "File.ContentBaseName" .file) 0 }}
+      {{ $ps = $ps | append . }}
+      {{ $total = add $total $parts }}
+    {{ end }}
+  {{ end }}
   {{ $ps = sort $ps "Date" "desc" }}
   {{ $groups = $groups | append (dict "name" .name "pages" $ps) }}
   {{ $eps = $eps | append $ps }}
@@ -51,11 +54,10 @@
 {{ end }}
 {{ $about := slice }}
 {{ range .Params.about }}{{ $about = $about | append (dict "@type" "Thing" "name" .) }}{{ end }}
-{{ $pageID := printf "%s#webpage" .Permalink }}
 {{ $graph := slice
   (dict
     "@type" "CollectionPage"
-    "@id" $pageID
+    "@id" (printf "%s#webpage" .Permalink)
     "url" .Permalink
     "name" .Title
     "description" .Params.description
@@ -88,24 +90,15 @@
 <div class="utmc">
   <div class="crumb"><a href="/">Home</a> › <a href="/materials-science-nanoscience-podcast-episodes/">Under the Microscope</a> › {{ .Params.short_title }}</div>
   <h1>{{ .Title }}</h1>
-  <p class="intro">Over the years, Under the Microscope has hosted conversations with researchers working on {{ .Params.topic_phrase }}. This page brings together {{ len $eps }} episodes on {{ lower .Params.short_title }}, released between {{ $first }} and {{ $last }}.</p>
+  <p class="intro">Over the years, Under the Microscope has hosted conversations with researchers working on {{ .Params.topic_phrase }}. This page brings together {{ $total }} episodes with {{ len $eps }} researchers on {{ lower .Params.short_title }}, released between {{ $first }} and {{ $last }}.</p>
 
   {{ range $groups }}
-  <h2>{{ .name }} ({{ len .pages }})</h2>
-  <div class="grid">
-    {{ range .pages }}{{ partial "utmc-card" . }}{{ end }}
-  </div>
+  <h2>{{ .name }}</h2>
+  <ul>
+    {{ range .pages }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><br><span class="g">{{ .Params.guest_name }}{{ with .Params.guest_institution }}, {{ . }}{{ end }} · {{ .Date.Year }}</span></li>
+    {{ end }}
+  </ul>
   {{ end }}
 </div>
-{{ end }}
-
-{{ define "partials/utmc-card" }}
-  <a class="card" href="{{ .RelPermalink }}">
-    {{ with .Params.episode_image }}<img src="{{ . }}" alt="{{ $.Params.guest_name }}" loading="lazy">{{ end }}
-    <div class="b">
-      <h3 class="t" style="font-size:1rem;margin:0 0 .35rem">{{ .Title }}</h3>
-      <div class="g">{{ .Params.guest_name }}{{ with .Params.guest_institution }} · {{ . }}{{ end }} · {{ .Date.Year }}</div>
-      <div class="d">{{ .Params.description | truncate 140 }}</div>
-    </div>
-  </a>
 {{ end }}
