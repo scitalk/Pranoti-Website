@@ -56,7 +56,8 @@
     "partOfSeries": {
       "@type": "PodcastSeries",
       "name": "Under the Microscope",
-      "url": "{{ .Site.BaseURL }}podcast/"
+      {{ if hasPrefix .RelPermalink "/under-the-microscope/" }}"@id": "{{ .Site.BaseURL }}materials-science-nanoscience-podcast-episodes/#series",
+      "url": "{{ .Site.BaseURL }}materials-science-nanoscience-podcast-episodes/"{{ else }}"url": "{{ .Site.BaseURL }}podcast/"{{ end }}
     },
     {{ with .Params.guest_name }}
     "actor": {

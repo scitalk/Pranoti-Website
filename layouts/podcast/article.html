@@ -21,6 +21,25 @@
 
     {{ partial "podcast-listen.html" . }}
 
+    {{/* Topic clusters this episode belongs to, plus up to 3 sibling episodes */}}
+    {{ $me := .File.ContentBaseName }}
+    {{ $all := where site.RegularPages "Section" "podcast" }}
+    {{ range where site.RegularPages "Params.groups" "!=" nil }}
+      {{ $cluster := . }}
+      {{ range .Params.groups }}
+        {{ if in .episodes $me }}
+        <div class="epa-cluster">
+          <p class="epa-cluster-label">Part of <a href="{{ $cluster.RelPermalink }}">{{ $cluster.Params.short_title }}</a> · {{ .name }}</p>
+          <ul>
+          {{ $n := 0 }}
+          {{ range .episodes }}{{ if and (ne . $me) (lt $n 3) }}{{ with index (where $all "File.ContentBaseName" .) 0 }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ $n = add $n 1 }}{{ end }}{{ end }}{{ end }}
+          </ul>
+          <a class="epa-cluster-all" href="{{ $cluster.RelPermalink }}">All {{ $cluster.Params.short_title }} episodes →</a>
+        </div>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
     <div class="epa-prevnext" role="navigation" aria-label="More episodes">
       {{ with .PrevInSection }}<a href="{{ .RelPermalink }}" class="epa-prev">← {{ .Title }}</a>{{ end }}
       {{ with .NextInSection }}<a href="{{ .RelPermalink }}" class="epa-next">{{ .Title }} →</a>{{ end }}
@@ -37,6 +56,11 @@
 .epa-crumbs a { color: var(--ink-soft); text-decoration: none; }
 .epa-crumbs a:hover { color: var(--accent-text); }
 .epa-crumbs span { opacity: 0.7; }
+.epa-cluster { margin: 2.5rem 0 1.5rem; padding: 1.2rem 1.4rem; border: 1px solid #e5e5e5; border-radius: 10px; }
+.epa-cluster-label { font-weight: 600; margin: 0 0 .6rem; }
+.epa-cluster ul { margin: 0 0 .8rem; padding-left: 1.2rem; }
+.epa-cluster li { margin: .3rem 0; }
+.epa-cluster-all { font-weight: 600; }
 
 .epa-title {
   font-size: clamp(1.8rem, 4vw, 2.6rem);

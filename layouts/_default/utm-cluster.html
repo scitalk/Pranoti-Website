@@ -1,0 +1,111 @@
+{{ define "main" }}
+<style>
+.utmc{max-width:1080px;margin:0 auto;padding:2rem 16px 4rem;font-family:Inter,sans-serif;color:#222}
+.utmc h1,.utmc h2{font-family:Ubuntu,sans-serif}
+.utmc .crumb{font-size:.85rem;color:#666;margin-bottom:1rem}
+.utmc .crumb a{color:#666}
+.utmc h1{font-size:2.1rem;line-height:1.2;margin:.2rem 0 1rem}
+.utmc .intro{font-size:1.1rem;line-height:1.7;max-width:760px}
+.utmc h2{font-size:1.4rem;margin:2.5rem 0 1rem;border-bottom:2px solid #eee;padding-bottom:.4rem}
+.utmc .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem}
+.utmc .card{border:1px solid #e5e5e5;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;background:#fff}
+.utmc .card:hover{box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.utmc .card img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#f2f2f2}
+.utmc .card .b{padding:.8rem 1rem 1rem}
+.utmc .card .t{font-weight:600;line-height:1.35;margin-bottom:.35rem}
+.utmc .card .g{font-size:.85rem;color:#555}
+.utmc .card .d{font-size:.85rem;color:#666;margin-top:.5rem;line-height:1.45}
+</style>
+
+{{/* Resolve each group's episode files to pages, newest first. */}}
+{{ $all := where site.RegularPages "Section" "podcast" }}
+{{ $groups := slice }}
+{{ $eps := slice }}
+{{ range .Params.groups }}
+  {{ $ps := slice }}
+  {{ range .episodes }}{{ with index (where $all "File.ContentBaseName" .) 0 }}{{ $ps = $ps | append . }}{{ end }}{{ end }}
+  {{ $ps = sort $ps "Date" "desc" }}
+  {{ $groups = $groups | append (dict "name" .name "pages" $ps) }}
+  {{ $eps = $eps | append $ps }}
+{{ end }}
+{{ $byDate := sort $eps "Date" }}
+{{ $first := (index $byDate 0).Date.Year }}
+{{ $last := (index $byDate (sub (len $byDate) 1)).Date.Year }}
+
+{{/* ---------- JSON-LD ---------- */}}
+{{ $base := .Site.BaseURL }}
+{{ $seriesURL := printf "%smaterials-science-nanoscience-podcast-episodes/" $base }}
+{{ $person := dict "@id" (printf "%sabout/#person" $base) }}
+{{ $series := dict "@type" "PodcastSeries" "@id" (printf "%s#series" $seriesURL) "name" "Under the Microscope" "url" $seriesURL "webFeed" "https://anchor.fm/s/7d43fb84/podcast/rss" "author" $person }}
+{{ $items := slice }}
+{{ range $i, $p := sort $eps "Date" "desc" }}
+  {{ $ep := dict "@type" "PodcastEpisode" "@id" $p.Permalink "name" $p.Title "url" $p.Permalink "datePublished" ($p.Date.Format "2006-01-02") "partOfSeries" (dict "@id" (printf "%s#series" $seriesURL)) }}
+  {{ with $p.Params.description }}{{ $ep = merge $ep (dict "description" .) }}{{ end }}
+  {{ with $p.Params.episode_image }}{{ $ep = merge $ep (dict "image" (absURL .)) }}{{ end }}
+  {{ with $p.Params.guest_name }}
+    {{ $actor := dict "@type" "Person" "name" . }}
+    {{ with $p.Params.guest_institution }}{{ $actor = merge $actor (dict "affiliation" (dict "@type" "Organization" "name" .)) }}{{ end }}
+    {{ $ep = merge $ep (dict "actor" $actor) }}
+  {{ end }}
+  {{ $items = $items | append (dict "@type" "ListItem" "position" (add $i 1) "item" $ep) }}
+{{ end }}
+{{ $about := slice }}
+{{ range .Params.about }}{{ $about = $about | append (dict "@type" "Thing" "name" .) }}{{ end }}
+{{ $pageID := printf "%s#webpage" .Permalink }}
+{{ $graph := slice
+  (dict
+    "@type" "CollectionPage"
+    "@id" $pageID
+    "url" .Permalink
+    "name" .Title
+    "description" .Params.description
+    "inLanguage" "en-GB"
+    "isPartOf" (dict "@id" (printf "%s#website" $base))
+    "author" $person
+    "about" $about
+    "keywords" (delimit .Params.about ", ")
+    "breadcrumb" (dict "@id" (printf "%s#breadcrumb" .Permalink))
+    "mainEntity" (dict "@id" (printf "%s#episodes" .Permalink))
+    "dateModified" (.Lastmod.Format "2006-01-02"))
+  (dict
+    "@type" "ItemList"
+    "@id" (printf "%s#episodes" .Permalink)
+    "name" (printf "Under the Microscope episodes on %s" .Params.short_title)
+    "numberOfItems" (len $eps)
+    "itemListOrder" "https://schema.org/ItemListOrderDescending"
+    "itemListElement" $items)
+  $series
+  (dict
+    "@type" "BreadcrumbList"
+    "@id" (printf "%s#breadcrumb" .Permalink)
+    "itemListElement" (slice
+      (dict "@type" "ListItem" "position" 1 "name" "Home" "item" $base)
+      (dict "@type" "ListItem" "position" 2 "name" "Under the Microscope" "item" $seriesURL)
+      (dict "@type" "ListItem" "position" 3 "name" .Params.short_title "item" .Permalink)))
+}}
+<script type="application/ld+json">{{ jsonify (dict "indent" "  ") (dict "@context" "https://schema.org" "@graph" $graph) | safeJS }}</script>
+
+<div class="utmc">
+  <div class="crumb"><a href="/">Home</a> › <a href="/materials-science-nanoscience-podcast-episodes/">Under the Microscope</a> › {{ .Params.short_title }}</div>
+  <h1>{{ .Title }}</h1>
+  <p class="intro">Over the years, Under the Microscope has hosted conversations with researchers working on {{ .Params.topic_phrase }}. This page brings together {{ len $eps }} episodes on {{ lower .Params.short_title }}, released between {{ $first }} and {{ $last }}.</p>
+
+  {{ range $groups }}
+  <h2>{{ .name }} ({{ len .pages }})</h2>
+  <div class="grid">
+    {{ range .pages }}{{ partial "utmc-card" . }}{{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ define "partials/utmc-card" }}
+  <a class="card" href="{{ .RelPermalink }}">
+    {{ with .Params.episode_image }}<img src="{{ . }}" alt="{{ $.Params.guest_name }}" loading="lazy">{{ end }}
+    <div class="b">
+      <h3 class="t" style="font-size:1rem;margin:0 0 .35rem">{{ .Title }}</h3>
+      <div class="g">{{ .Params.guest_name }}{{ with .Params.guest_institution }} · {{ . }}{{ end }} · {{ .Date.Year }}</div>
+      <div class="d">{{ .Params.description | truncate 140 }}</div>
+    </div>
+  </a>
+{{ end }}
