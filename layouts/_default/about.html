@@ -156,15 +156,34 @@
         {{ range $positions }}
         <div class="resume-position">
           <div class="resume-position-meta">
-            <span class="resume-position-title">{{ .title }}</span>
-            <em class="resume-position-dates">{{ .dates }}</em>
+            <span class="resume-position-title" style="font-weight:700;">{{ .title }}</span>
+            <em class="resume-position-dates" style="font-size:.9rem;">{{ .dates }}</em>
           </div>
           <div class="resume-position-org"><em>{{ .org }}</em></div>
-          <ul class="resume-pubs" style="margin-top:.5rem;">
+          <ul class="resume-pubs resume-work-bullets" style="margin-top:.5rem;">
             {{ range .bullets }}<li>{{ . }}</li>{{ end }}
           </ul>
         </div>
         {{ end }}
+        <hr>
+
+        <h3>Select Achievements</h3>
+        <ul class="resume-pubs resume-work-bullets">
+          <li>Awarded the 2025 IOP Lise Meitner Medal and Prize by the Institute of Physics for innovative public engagement across the UK and Europe.</li>
+          <li>Member of the EU AI Act Task Force for Code of Practice on Transparency of AI-generated Content.</li>
+          <li>An official European Innovation Council Business Acceleration Services partner, exclusively accessible to the 7000+ EIC-funded innovations across Europe.</li>
+          <li>Elected Executive Board Member, Lise-Meitner-Gesellschaft e.V., Berlin, 2020 to 2022.</li>
+        </ul>
+        <hr>
+
+        <h3>Skills</h3>
+        <ul class="resume-pubs resume-work-bullets">
+          <li>Product: Roadmap strategy and definition, end-to-end product delivery, product lifecycle, backlog prioritisation, business cases, go-to-market.</li>
+          <li>Cross functional leadership: EU-wide programmes across 14 countries, influencing senior leadership, stakeholder alignment from C-suite to operational level, issue and risk tracking, simplified intake processes for faster decisions.</li>
+          <li>Data and AI: AI-powered data products, data sourcing, enrichment and quality, workflow automation (Claude API, Make, n8n), EU AI Act governance and compliance.</li>
+          <li>Commercial: B2B SaaS, renewals and new business, customer lifecycle, value proposition and messaging, sales enablement.</li>
+          <li>Languages: English (fluent), German (professional proficiency), Hindi and Marathi (native).</li>
+        </ul>
         <hr>
 
         <h3>Education</h3>
@@ -186,7 +205,7 @@
         <p>Institution: Visvesvaraya National Institute of Technology, India</p>
         <hr>
 
-        <h3>Publications</h3>
+        <h3>Research Publications</h3>
         <ul class="resume-pubs">
           <li>Mierzejewski M, Steins H, Kshirsagar P and Jones PD, <em>J. Neural Eng.</em> 17 052001, <a href="https://doi.org/10.1088/1741-2552/abb3b4" rel="noreferrer" target="_blank">10.1088/1741-2552/abb3b4</a> (2020)</li>
           <li>Kshirsagar P, Burkhardt C, Mierzejewski M, Chassé T, Fleischer M and Jones PD, Conference Abstract: MEA Meeting 2018 | 11th International Meeting on Substrate Integrated Microelectrode Arrays, <a href="https://doi.org/10.3389/conf.fncel.2018.38.00036" rel="noreferrer" target="_blank">10.3389/conf.fncel.2018.38.00036</a> (2019)</li>
@@ -315,6 +334,7 @@
 .resume-body a { color: #2A6048; }
 .resume-pubs { padding-left: 1.25rem; margin: 0; }
 .resume-pubs li { font-size: 1.05rem; line-height: 1.7; color: #333; margin: 0 0 .6rem; }
+.resume-work-bullets li { margin-bottom: .2rem; }
 .resume-position { margin: 0 0 1.1rem; }
 .resume-body .resume-position-title { font-weight: 400; font-size: 1.1rem; color: #1c1c1c; line-height: 1.4; }
 .resume-position-org { font-size: 1.05rem; color: #333; }
