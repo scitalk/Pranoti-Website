@@ -18,6 +18,7 @@
 {{ $groups := slice }}
 {{ $eps := slice }}
 {{ $total := 0 }}
+{{ $guests := slice }}
 {{ range .Params.groups }}
   {{ $ps := slice }}
   {{ range .episodes }}
@@ -25,6 +26,7 @@
     {{ with index (where $all "File.ContentBaseName" .file) 0 }}
       {{ $ps = $ps | append . }}
       {{ $total = add $total $parts }}
+      {{ $guests = $guests | append .Params.guest_name }}
     {{ end }}
   {{ end }}
   {{ $ps = sort $ps "Date" "desc" }}
@@ -90,7 +92,7 @@
 <div class="utmc">
   <div class="crumb"><a href="/">Home</a> › <a href="/materials-science-nanoscience-podcast-episodes/">Under the Microscope</a> › {{ .Params.short_title }}</div>
   <h1>{{ .Title }}</h1>
-  <p class="intro">Over the years, Under the Microscope has hosted conversations with researchers working on {{ .Params.topic_phrase }}. This page brings together {{ $total }} episodes with {{ len $eps }} researchers on {{ lower .Params.short_title }}, released between {{ $first }} and {{ $last }}.</p>
+  <p class="intro">Over the years, Under the Microscope has hosted conversations with researchers working on {{ .Params.topic_phrase }}. This page brings together {{ $total }} episodes with {{ len (uniq $guests) }} researchers on {{ .Params.short_title }}, released between {{ $first }} and {{ $last }}.</p>
 
   {{ range $groups }}
   <h2>{{ .name }}</h2>
